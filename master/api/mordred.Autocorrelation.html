@@ -166,6 +166,158 @@
 <h1>mordred.Autocorrelation package<a class="headerlink" href="#mordred-autocorrelation-package" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="module-mordred.Autocorrelation">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-mordred.Autocorrelation" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="mordred.Autocorrelation.AATS">
+<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">AATS</code><span class="sig-paren">(</span><em>distance=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Autocorrelation/_descriptor.html#AATS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.AATS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.Autocorrelation._descriptor.ATS</span></code></p>
+<p>averaged ATS descriptor</p>
+<div class="math">
+\[{\rm AATS}_k = \frac{{\rm ATS}_k}{\Delta_k}\]</div>
+<p>where
+<span class="math">\(\Delta_k\)</span> is number of vertex pairs at distance equal to <span class="math">\(k\)</span>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>parameters</strong> &#8211; see ATS</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">AATS value</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.Autocorrelation.AATSC">
+<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">AATSC</code><span class="sig-paren">(</span><em>distance=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Autocorrelation/_descriptor.html#AATSC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.AATSC" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.Autocorrelation._descriptor.ATSC</span></code></p>
+<p>averaged ATSC descriptor</p>
+<div class="math">
+\[{\rm AATSC}_k = \frac{{\rm ATSC}_k}{\Delta_k}\]</div>
+<p>where
+<span class="math">\(\Delta_k\)</span> is number of vertex pairs at distance equal to <span class="math">\(k\)</span>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>parameters</strong> &#8211; see ATS</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">AATSC value</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.Autocorrelation.ATS">
+<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">ATS</code><span class="sig-paren">(</span><em>distance=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Autocorrelation/_descriptor.html#ATS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.ATS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.Autocorrelation._descriptor.Autocorrelation</span></code></p>
+<p>Autocorrelation of Topological Structure descriptor</p>
+<p>a.k.a. Moreau-Broto autocorrelation descriptor</p>
+<div class="math">
+\[{\rm ATS}_0 = \sum^{A}_{i=1} {\boldsymbol w}_i^2\]\[{\rm ATS}_k = \frac{1}{2}
+    \left(
+        {\boldsymbol w}^{\rm T} \cdot
+        {}^k{\boldsymbol B} \cdot
+        {\boldsymbol w}
+    \right)\]\[\begin{split}{}^k{\boldsymbol B} =
+    \begin{cases}
+        1 &amp; (d_{ij} =    k) \\
+        0 &amp; (d_{ij} \neq k)
+    \end{cases}\end{split}\]</div>
+<p>where
+<span class="math">\({\boldsymbol w}\)</span> is atomic property vector,
+<span class="math">\(d_{ij}\)</span> is graph distance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>distance</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; graph distance(<span class="math">\(k\)</span>)</li>
+<li><strong>property</strong> (<em>str, function</em>) &#8211; atomic property</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">ATS value</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.Autocorrelation.ATSC">
+<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">ATSC</code><span class="sig-paren">(</span><em>distance=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Autocorrelation/_descriptor.html#ATSC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.ATSC" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.Autocorrelation._descriptor.Autocorrelation</span></code></p>
+<p>centered ATS descriptor</p>
+<p>ATS with <span class="math">\({\boldsymbol w}_{\rm c}\)</span> property</p>
+<div class="math">
+\[{\boldsymbol w}_{\rm c} = {\boldsymbol w} - \bar{\boldsymbol w}\]</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>parameters</strong> &#8211; see ATS</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">ATSC value</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.Autocorrelation.GATS">
+<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">GATS</code><span class="sig-paren">(</span><em>distance=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Autocorrelation/_descriptor.html#GATS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.GATS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.Autocorrelation._descriptor.MATS</span></code></p>
+<p>Geary coefficient descriptor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>parameters</strong> &#8211; see ATS</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">GATS value</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.Autocorrelation.MATS">
+<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">MATS</code><span class="sig-paren">(</span><em>distance=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Autocorrelation/_descriptor.html#MATS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.MATS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.Autocorrelation._descriptor.Autocorrelation</span></code></p>
+<p>Moran coefficient descriptor</p>
+<div class="math">
+\[{\rm MATS}_k = \frac{
+    {\rm AATSC}_k
+    }{
+    \frac{1}{A} \cdot \sum {\boldsymbol w}_{\rm c}^2
+    }\]</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>parameters</strong> &#8211; see ATS</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">MATS value</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </div>
 </div>
 

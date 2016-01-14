@@ -166,6 +166,95 @@
 <h1>mordred.Matrix package<a class="headerlink" href="#mordred-matrix-package" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="module-mordred.Matrix">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-mordred.Matrix" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="mordred.Matrix.BCUT">
+<em class="property">class </em><code class="descclassname">mordred.Matrix.</code><code class="descname">BCUT</code><span class="sig-paren">(</span><em>prop='m'</em>, <em>nth=1</em>, <em>from_high=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Matrix/_burden.html#BCUT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Matrix.BCUT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.Matrix._burden.BurdenMatrixDescriptor</span></code></p>
+<p>BCUT descriptor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>prop</strong> (<em>str, function</em>) &#8211; atomic property</li>
+<li><strong>from_high</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; n-th eigen value from high</li>
+<li><strong>nth</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; n-th eigen value</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">result</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.Matrix.BaryszMatrix">
+<em class="property">class </em><code class="descclassname">mordred.Matrix.</code><code class="descname">BaryszMatrix</code><span class="sig-paren">(</span><em>prop='Z'</em>, <em>method='SpMax'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Matrix/_barysz.html#BaryszMatrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Matrix.BaryszMatrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.Matrix._barysz.BaryszMatrixDescriptor</span></code></p>
+<p>barysz matrix descriptor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>prop</strong> (<em>str, function</em>) &#8211; atomic property</li>
+<li><strong>method</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; matrix aggregate method</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">result</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.Matrix.DetourMatrix">
+<em class="property">class </em><code class="descclassname">mordred.Matrix.</code><code class="descname">DetourMatrix</code><span class="sig-paren">(</span><em>method='SpMax'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Matrix/_detour.html#DetourMatrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Matrix.DetourMatrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.Matrix._detour.DetourMatrixBase</span></code></p>
+<p>detour matrix descriptor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>method</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; matrix aggregate method</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">result</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.Matrix.DistanceMatrix">
+<em class="property">class </em><code class="descclassname">mordred.Matrix.</code><code class="descname">DistanceMatrix</code><span class="sig-paren">(</span><em>method='SpMax'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Matrix/_distance.html#DistanceMatrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Matrix.DistanceMatrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._base.Descriptor</span></code></p>
+<p>distance matrix descriptor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>method</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; matrix aggregate method</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">result</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </div>
 </div>
 

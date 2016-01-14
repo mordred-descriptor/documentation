@@ -166,6 +166,44 @@
 <h1>mordred.Ring package<a class="headerlink" href="#mordred-ring-package" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="module-mordred.Ring">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-mordred.Ring" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="mordred.Ring.RingCount">
+<em class="property">class </em><code class="descclassname">mordred.Ring.</code><code class="descname">RingCount</code><span class="sig-paren">(</span><em>length=None</em>, <em>greater=False</em>, <em>fused=False</em>, <em>aromatic=None</em>, <em>hetero=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Ring/_descriptor.html#RingCount"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Ring.RingCount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.Ring._descriptor.RingCountBase</span></code></p>
+<p>ring count descriptor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>length</strong> (<em>int or None</em>) &#8211; number of bonds in ring</li>
+<li><strong>greater</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; count length or greater rings</li>
+<li><strong>fused</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; count fused rings</li>
+<li><strong>aromatic</strong> (<em>bool, None</em>) &#8211; <ul>
+<li>True: count aromatic rings</li>
+<li>False: count non-aromatic rings</li>
+<li>None: count any rings</li>
+</ul>
+</li>
+<li><strong>hetero</strong> (<em>boo, None</em>) &#8211; <ul>
+<li>True: count hetero rings</li>
+<li>False: count carbon rings</li>
+<li>None: count any rings</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">ring count</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)">int</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </div>
 </div>
 
