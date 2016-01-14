@@ -134,6 +134,7 @@
 <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
 <span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
 <span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">chain</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
 
 <span class="k">class</span> <span class="nc">ChiType</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
@@ -300,7 +301,7 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">order</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">chi</span> <span class="o">=</span> <span class="n">ChiBonds</span><span class="p">([],</span> <span class="p">[{</span><span class="n">a</span><span class="o">.</span><span class="n">GetIdx</span><span class="p">()}</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">()],</span> <span class="p">[],</span> <span class="p">[])</span>
 
-        <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="mf">0.0</span>
         <span class="n">node_sets</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">chi</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">chi_type</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
         <span class="n">props</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">prop</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">()]</span>
         <span class="k">for</span> <span class="n">nodes</span> <span class="ow">in</span> <span class="n">node_sets</span><span class="p">:</span>
@@ -311,7 +312,7 @@
             <span class="n">x</span> <span class="o">+=</span> <span class="n">c</span> <span class="o">**</span> <span class="o">-</span><span class="mf">0.5</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">averaged</span><span class="p">:</span>
-            <span class="n">x</span> <span class="o">/=</span> <span class="nb">len</span><span class="p">(</span><span class="n">node_sets</span><span class="p">)</span> <span class="ow">or</span> <span class="mi">1</span>
+            <span class="n">x</span> <span class="o">/=</span> <span class="nb">len</span><span class="p">(</span><span class="n">node_sets</span><span class="p">)</span> <span class="ow">or</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
 
         <span class="k">return</span> <span class="n">x</span></div>
 

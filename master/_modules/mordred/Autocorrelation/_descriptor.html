@@ -204,9 +204,8 @@
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">gmat</span><span class="p">):</span>
         <span class="n">s</span> <span class="o">=</span> <span class="n">gmat</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-        <span class="k">if</span> <span class="n">s</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">distance</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">distance</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">s</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">s</span> <span class="o">/</span> <span class="mi">2</span>
@@ -305,13 +304,10 @@
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">avec</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_avec</span><span class="p">,</span> <span class="n">gmat</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_gmat</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">avec</span><span class="p">,</span> <span class="n">gmat</span><span class="p">):</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">gmat</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
-            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">distance</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">return</span> <span class="nb">float</span><span class="p">((</span><span class="n">avec</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">avec</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">gmat</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">avec</span><span class="p">)</span></div>
+
+        <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">avec</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">gmat</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">avec</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="AATS"><a class="viewcode-back" href="../../../api/mordred.Autocorrelation.html#mordred.Autocorrelation.AATS">[docs]</a><span class="k">class</span> <span class="nc">AATS</span><span class="p">(</span><span class="n">ATS</span><span class="p">):</span>
@@ -337,7 +333,7 @@
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">ATS</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_ATS</span><span class="p">,</span> <span class="n">gsum</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_gsum</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">ATS</span><span class="p">,</span> <span class="n">gsum</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">ATS</span> <span class="o">/</span> <span class="n">gsum</span></div>
+        <span class="k">return</span> <span class="n">ATS</span> <span class="o">/</span> <span class="p">(</span><span class="n">gsum</span> <span class="ow">or</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="ATSC"><a class="viewcode-back" href="../../../api/mordred.Autocorrelation.html#mordred.Autocorrelation.ATSC">[docs]</a><span class="k">class</span> <span class="nc">ATSC</span><span class="p">(</span><span class="n">Autocorrelation</span><span class="p">):</span>
@@ -366,13 +362,10 @@
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">cavec</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_cavec</span><span class="p">,</span> <span class="n">gmat</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_gmat</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">cavec</span><span class="p">,</span> <span class="n">gmat</span><span class="p">):</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">gmat</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
-            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">distance</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">return</span> <span class="nb">float</span><span class="p">((</span><span class="n">cavec</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">cavec</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">gmat</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">cavec</span><span class="p">)</span></div>
+
+        <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">cavec</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">gmat</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">cavec</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="AATSC"><a class="viewcode-back" href="../../../api/mordred.Autocorrelation.html#mordred.Autocorrelation.AATSC">[docs]</a><span class="k">class</span> <span class="nc">AATSC</span><span class="p">(</span><span class="n">ATSC</span><span class="p">):</span>
@@ -398,7 +391,7 @@
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">ATSC</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_ATSC</span><span class="p">,</span> <span class="n">gsum</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_gsum</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">ATSC</span><span class="p">,</span> <span class="n">gsum</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">ATSC</span> <span class="o">/</span> <span class="n">gsum</span></div>
+        <span class="k">return</span> <span class="n">ATSC</span> <span class="o">/</span> <span class="p">(</span><span class="n">gsum</span> <span class="ow">or</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="MATS"><a class="viewcode-back" href="../../../api/mordred.Autocorrelation.html#mordred.Autocorrelation.MATS">[docs]</a><span class="k">class</span> <span class="nc">MATS</span><span class="p">(</span><span class="n">Autocorrelation</span><span class="p">):</span>
@@ -448,11 +441,8 @@
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">avec</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_avec</span><span class="p">,</span> <span class="n">gmat</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_gmat</span><span class="p">,</span> <span class="n">gsum</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_gsum</span><span class="p">,</span> <span class="n">cavec</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_cavec</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">avec</span><span class="p">,</span> <span class="n">gmat</span><span class="p">,</span> <span class="n">gsum</span><span class="p">,</span> <span class="n">cavec</span><span class="p">):</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">gmat</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
-            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-
         <span class="n">W</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">avec</span><span class="p">,</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">avec</span><span class="p">),</span> <span class="mi">1</span><span class="p">))</span>
-        <span class="n">n</span> <span class="o">=</span> <span class="p">(</span><span class="n">gmat</span> <span class="o">*</span> <span class="p">(</span><span class="n">W</span> <span class="o">-</span> <span class="n">W</span><span class="o">.</span><span class="n">T</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">gsum</span><span class="p">)</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="p">(</span><span class="n">gmat</span> <span class="o">*</span> <span class="p">(</span><span class="n">W</span> <span class="o">-</span> <span class="n">W</span><span class="o">.</span><span class="n">T</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="n">gsum</span> <span class="ow">or</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">))</span>
         <span class="n">d</span> <span class="o">=</span> <span class="p">(</span><span class="n">cavec</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">avec</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">n</span> <span class="o">/</span> <span class="n">d</span></div>
 
