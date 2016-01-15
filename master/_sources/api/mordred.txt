@@ -1,6 +1,11 @@
 mordred package
 ===============
 
+.. automodule:: mordred
+    :members:
+    :imported-members:
+    :show-inheritance:
+
 Submodules
 ----------
 
@@ -34,10 +39,3 @@ Submodules
    mordred.WienerIndex
    mordred.ZagrebIndex
 
-Module contents
----------------
-
-.. automodule:: mordred
-    :members:
-    :imported-members:
-    :show-inheritance:
