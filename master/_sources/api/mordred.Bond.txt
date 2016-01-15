@@ -1,8 +1,5 @@
-mordred.Bond package
-====================
-
-Module contents
----------------
+mordred.Bond module
+===================
 
 .. automodule:: mordred.Bond
     :members:

@@ -1,8 +1,5 @@
-mordred.DistanceMatrix package
-==============================
-
-Module contents
----------------
+mordred.DistanceMatrix module
+=============================
 
 .. automodule:: mordred.DistanceMatrix
     :members:

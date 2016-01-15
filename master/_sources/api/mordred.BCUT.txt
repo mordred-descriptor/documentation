@@ -1,8 +1,5 @@
-mordred.BCUT package
-====================
-
-Module contents
----------------
+mordred.BCUT module
+===================
 
 .. automodule:: mordred.BCUT
     :members:

@@ -1,8 +1,5 @@
-mordred.FragmentComplexity package
-==================================
-
-Module contents
----------------
+mordred.FragmentComplexity module
+=================================
 
 .. automodule:: mordred.FragmentComplexity
     :members:

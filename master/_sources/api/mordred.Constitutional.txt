@@ -1,8 +1,5 @@
-mordred.Constitutional package
-==============================
-
-Module contents
----------------
+mordred.Constitutional module
+=============================
 
 .. automodule:: mordred.Constitutional
     :members:

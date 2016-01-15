@@ -1,8 +1,5 @@
-mordred.Lipinski package
-========================
-
-Module contents
----------------
+mordred.Lipinski module
+=======================
 
 .. automodule:: mordred.Lipinski
     :members:

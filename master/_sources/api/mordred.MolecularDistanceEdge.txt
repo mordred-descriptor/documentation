@@ -1,8 +1,5 @@
-mordred.MolecularDistanceEdge package
-=====================================
-
-Module contents
----------------
+mordred.MolecularDistanceEdge module
+====================================
 
 .. automodule:: mordred.MolecularDistanceEdge
     :members:

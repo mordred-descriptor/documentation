@@ -1,8 +1,5 @@
-mordred.TPSA package
-====================
-
-Module contents
----------------
+mordred.TPSA module
+===================
 
 .. automodule:: mordred.TPSA
     :members:

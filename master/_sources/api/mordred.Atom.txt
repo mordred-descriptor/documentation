@@ -1,8 +1,5 @@
-mordred.Atom package
-====================
-
-Module contents
----------------
+mordred.Atom module
+===================
 
 .. automodule:: mordred.Atom
     :members:

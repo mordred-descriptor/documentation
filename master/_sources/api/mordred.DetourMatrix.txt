@@ -1,8 +1,5 @@
-mordred.DetourMatrix package
-============================
-
-Module contents
----------------
+mordred.DetourMatrix module
+===========================
 
 .. automodule:: mordred.DetourMatrix
     :members:

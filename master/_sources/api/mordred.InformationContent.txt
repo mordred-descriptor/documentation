@@ -1,8 +1,5 @@
-mordred.InformationContent package
-==================================
-
-Module contents
----------------
+mordred.InformationContent module
+=================================
 
 .. automodule:: mordred.InformationContent
     :members:

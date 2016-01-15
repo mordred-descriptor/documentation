@@ -1,8 +1,5 @@
-mordred.Chi package
-===================
-
-Module contents
----------------
+mordred.Chi module
+==================
 
 .. automodule:: mordred.Chi
     :members:

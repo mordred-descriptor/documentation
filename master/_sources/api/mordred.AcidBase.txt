@@ -1,8 +1,5 @@
-mordred.AcidBase package
-========================
-
-Module contents
----------------
+mordred.AcidBase module
+=======================
 
 .. automodule:: mordred.AcidBase
     :members:

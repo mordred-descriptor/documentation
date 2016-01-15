@@ -1,8 +1,5 @@
-mordred.EccentricConnectivityIndex package
-==========================================
-
-Module contents
----------------
+mordred.EccentricConnectivityIndex module
+=========================================
 
 .. automodule:: mordred.EccentricConnectivityIndex
     :members:

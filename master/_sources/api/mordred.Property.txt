@@ -1,8 +1,5 @@
-mordred.Property package
-========================
-
-Module contents
----------------
+mordred.Property module
+=======================
 
 .. automodule:: mordred.Property
     :members:

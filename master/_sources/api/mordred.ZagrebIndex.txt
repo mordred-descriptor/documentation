@@ -1,8 +1,5 @@
-mordred.ZagrebIndex package
-===========================
-
-Module contents
----------------
+mordred.ZagrebIndex module
+==========================
 
 .. automodule:: mordred.ZagrebIndex
     :members:

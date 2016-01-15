@@ -1,8 +1,5 @@
-mordred.Autocorrelation package
-===============================
-
-Module contents
----------------
+mordred.Autocorrelation module
+==============================
 
 .. automodule:: mordred.Autocorrelation
     :members:

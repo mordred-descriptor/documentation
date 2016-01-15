@@ -1,8 +1,5 @@
-mordred.Framework package
-=========================
-
-Module contents
----------------
+mordred.Framework module
+========================
 
 .. automodule:: mordred.Framework
     :members:

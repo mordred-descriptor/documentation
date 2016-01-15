@@ -1,8 +1,5 @@
-mordred.BaryszMatrix package
-============================
-
-Module contents
----------------
+mordred.BaryszMatrix module
+===========================
 
 .. automodule:: mordred.BaryszMatrix
     :members:

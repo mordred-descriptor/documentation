@@ -1,39 +1,38 @@
 mordred package
 ===============
 
-Subpackages
------------
+Submodules
+----------
 
 .. toctree::
 
-    mordred.AcidBase
-    mordred.Atom
-    mordred.Autocorrelation
-    mordred.BCUT
-    mordred.BaryszMatrix
-    mordred.Bond
-    mordred.Chi
-    mordred.Constitutional
-    mordred.DetourMatrix
-    mordred.DistanceMatrix
-    mordred.EState
-    mordred.EccentricConnectivityIndex
-    mordred.FragmentComplexity
-    mordred.Framework
-    mordred.InformationContent
-    mordred.KappaShapeIndex
-    mordred.Lipinski
-    mordred.MolecularDistanceEdge
-    mordred.Polarizability
-    mordred.Property
-    mordred.RingCount
-    mordred.TPSA
-    mordred.TopologicalCharge
-    mordred.TopologicalIndex
-    mordred.WalkCount
-    mordred.WienerIndex
-    mordred.ZagrebIndex
-    mordred.all
+   mordred.AcidBase
+   mordred.Atom
+   mordred.Autocorrelation
+   mordred.BCUT
+   mordred.BaryszMatrix
+   mordred.Bond
+   mordred.Chi
+   mordred.Constitutional
+   mordred.DetourMatrix
+   mordred.DistanceMatrix
+   mordred.EState
+   mordred.EccentricConnectivityIndex
+   mordred.FragmentComplexity
+   mordred.Framework
+   mordred.InformationContent
+   mordred.KappaShapeIndex
+   mordred.Lipinski
+   mordred.MolecularDistanceEdge
+   mordred.Polarizability
+   mordred.Property
+   mordred.RingCount
+   mordred.TPSA
+   mordred.TopologicalCharge
+   mordred.TopologicalIndex
+   mordred.WalkCount
+   mordred.WienerIndex
+   mordred.ZagrebIndex
 
 Module contents
 ---------------

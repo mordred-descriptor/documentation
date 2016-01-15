@@ -1,8 +1,5 @@
-mordred.TopologicalIndex package
-================================
-
-Module contents
----------------
+mordred.TopologicalIndex module
+===============================
 
 .. automodule:: mordred.TopologicalIndex
     :members:

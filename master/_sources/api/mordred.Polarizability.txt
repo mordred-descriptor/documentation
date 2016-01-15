@@ -1,8 +1,5 @@
-mordred.Polarizability package
-==============================
-
-Module contents
----------------
+mordred.Polarizability module
+=============================
 
 .. automodule:: mordred.Polarizability
     :members:

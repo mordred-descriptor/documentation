@@ -1,8 +1,5 @@
-mordred.WienerIndex package
-===========================
-
-Module contents
----------------
+mordred.WienerIndex module
+==========================
 
 .. automodule:: mordred.WienerIndex
     :members:

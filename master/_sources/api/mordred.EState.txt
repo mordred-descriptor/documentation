@@ -1,8 +1,5 @@
-mordred.EState package
-======================
-
-Module contents
----------------
+mordred.EState module
+=====================
 
 .. automodule:: mordred.EState
     :members:

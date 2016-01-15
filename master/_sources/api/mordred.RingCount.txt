@@ -1,8 +1,5 @@
-mordred.RingCount package
-=========================
-
-Module contents
----------------
+mordred.RingCount module
+========================
 
 .. automodule:: mordred.RingCount
     :members:

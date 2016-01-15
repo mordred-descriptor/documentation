@@ -1,8 +1,5 @@
-mordred.KappaShapeIndex package
-===============================
-
-Module contents
----------------
+mordred.KappaShapeIndex module
+==============================
 
 .. automodule:: mordred.KappaShapeIndex
     :members:

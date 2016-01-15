@@ -1,8 +1,5 @@
-mordred.TopologicalCharge package
-=================================
-
-Module contents
----------------
+mordred.TopologicalCharge module
+================================
 
 .. automodule:: mordred.TopologicalCharge
     :members:

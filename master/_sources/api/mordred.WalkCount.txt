@@ -1,8 +1,5 @@
-mordred.WalkCount package
-=========================
-
-Module contents
----------------
+mordred.WalkCount module
+========================
 
 .. automodule:: mordred.WalkCount
     :members:
