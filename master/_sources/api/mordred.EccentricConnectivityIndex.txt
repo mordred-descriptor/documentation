@@ -1,0 +1,10 @@
+mordred.EccentricConnectivityIndex package
+==========================================
+
+Module contents
+---------------
+
+.. automodule:: mordred.EccentricConnectivityIndex
+    :members:
+    :imported-members:
+    :show-inheritance:

@@ -1,0 +1,10 @@
+mordred.AcidBase package
+========================
+
+Module contents
+---------------
+
+.. automodule:: mordred.AcidBase
+    :members:
+    :imported-members:
+    :show-inheritance:

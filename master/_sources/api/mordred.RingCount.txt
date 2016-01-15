@@ -1,0 +1,10 @@
+mordred.RingCount package
+=========================
+
+Module contents
+---------------
+
+.. automodule:: mordred.RingCount
+    :members:
+    :imported-members:
+    :show-inheritance:

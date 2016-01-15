@@ -1,0 +1,10 @@
+mordred.BCUT package
+====================
+
+Module contents
+---------------
+
+.. automodule:: mordred.BCUT
+    :members:
+    :imported-members:
+    :show-inheritance:

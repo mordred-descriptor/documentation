@@ -1,0 +1,10 @@
+mordred.ZagrebIndex package
+===========================
+
+Module contents
+---------------
+
+.. automodule:: mordred.ZagrebIndex
+    :members:
+    :imported-members:
+    :show-inheritance:

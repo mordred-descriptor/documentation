@@ -1,0 +1,10 @@
+mordred.KappaShapeIndex package
+===============================
+
+Module contents
+---------------
+
+.. automodule:: mordred.KappaShapeIndex
+    :members:
+    :imported-members:
+    :show-inheritance:

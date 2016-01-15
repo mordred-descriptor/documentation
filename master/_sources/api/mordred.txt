@@ -6,28 +6,33 @@ Subpackages
 
 .. toctree::
 
-    mordred.Aromatic
+    mordred.AcidBase
     mordred.Atom
     mordred.Autocorrelation
+    mordred.BCUT
+    mordred.BaryszMatrix
     mordred.Bond
     mordred.Chi
     mordred.Constitutional
-    mordred.DistanceEdge
+    mordred.DetourMatrix
+    mordred.DistanceMatrix
     mordred.EState
+    mordred.EccentricConnectivityIndex
     mordred.FragmentComplexity
     mordred.Framework
-    mordred.Indices
     mordred.InformationContent
+    mordred.KappaShapeIndex
     mordred.Lipinski
-    mordred.Matrix
-    mordred.Model
+    mordred.MolecularDistanceEdge
     mordred.Polarizability
     mordred.Property
-    mordred.Ring
-    mordred.Smarts
+    mordred.RingCount
     mordred.TPSA
     mordred.TopologicalCharge
-    mordred.Walk
+    mordred.TopologicalIndex
+    mordred.WalkCount
+    mordred.WienerIndex
+    mordred.ZagrebIndex
     mordred.all
 
 Module contents

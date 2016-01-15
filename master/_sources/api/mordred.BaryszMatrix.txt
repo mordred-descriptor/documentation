@@ -1,0 +1,10 @@
+mordred.BaryszMatrix package
+============================
+
+Module contents
+---------------
+
+.. automodule:: mordred.BaryszMatrix
+    :members:
+    :imported-members:
+    :show-inheritance:

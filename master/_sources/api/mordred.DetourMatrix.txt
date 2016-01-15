@@ -1,0 +1,10 @@
+mordred.DetourMatrix package
+============================
+
+Module contents
+---------------
+
+.. automodule:: mordred.DetourMatrix
+    :members:
+    :imported-members:
+    :show-inheritance:

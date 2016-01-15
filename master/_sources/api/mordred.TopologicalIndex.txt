@@ -1,0 +1,10 @@
+mordred.TopologicalIndex package
+================================
+
+Module contents
+---------------
+
+.. automodule:: mordred.TopologicalIndex
+    :members:
+    :imported-members:
+    :show-inheritance:

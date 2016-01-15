@@ -1,0 +1,10 @@
+mordred.WienerIndex package
+===========================
+
+Module contents
+---------------
+
+.. automodule:: mordred.WienerIndex
+    :members:
+    :imported-members:
+    :show-inheritance:

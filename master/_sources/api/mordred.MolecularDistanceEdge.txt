@@ -1,0 +1,10 @@
+mordred.MolecularDistanceEdge package
+=====================================
+
+Module contents
+---------------
+
+.. automodule:: mordred.MolecularDistanceEdge
+    :members:
+    :imported-members:
+    :show-inheritance:

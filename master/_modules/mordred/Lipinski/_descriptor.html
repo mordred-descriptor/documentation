@@ -128,8 +128,7 @@
             
   <h1>Source code for mordred.Lipinski._descriptor</h1><div class="highlight"><pre>
 <span class="kn">from</span> <span class="nn">.._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
-<span class="kn">from</span> <span class="nn">..Model</span> <span class="kn">import</span> <span class="n">WildmanCrippen</span>
-<span class="kn">from</span> <span class="nn">..Property</span> <span class="kn">import</span> <span class="n">Weight</span>
+<span class="kn">from</span> <span class="nn">..Property</span> <span class="kn">import</span> <span class="n">Weight</span><span class="p">,</span> <span class="n">WildmanCrippenLogP</span>
 
 <span class="kn">from</span> <span class="nn">rdkit.Chem</span> <span class="kn">import</span> <span class="n">Lipinski</span> <span class="k">as</span> <span class="n">L</span>
 
@@ -176,16 +175,16 @@
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
-            <span class="n">CLogP</span><span class="o">=</span><span class="n">WildmanCrippen</span><span class="o">.</span><span class="n">make_key</span><span class="p">(</span><span class="s">&#39;LogP&#39;</span><span class="p">),</span>
+            <span class="n">LogP</span><span class="o">=</span><span class="n">WildmanCrippenLogP</span><span class="o">.</span><span class="n">make_key</span><span class="p">(</span><span class="s">&#39;LogP&#39;</span><span class="p">),</span>
             <span class="n">Weight</span><span class="o">=</span><span class="n">Weight</span><span class="o">.</span><span class="n">make_key</span><span class="p">(),</span>
         <span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">Lipinski</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">CLogP</span><span class="p">,</span> <span class="n">Weight</span><span class="p">,</span> <span class="o">**</span><span class="n">other</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">Lipinski</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">LogP</span><span class="p">,</span> <span class="n">Weight</span><span class="p">,</span> <span class="o">**</span><span class="n">other</span><span class="p">):</span>
         <span class="k">return</span>\
             <span class="n">L</span><span class="o">.</span><span class="n">NumHDonors</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">5</span> <span class="ow">and</span>\
             <span class="n">L</span><span class="o">.</span><span class="n">NumHAcceptors</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">10</span> <span class="ow">and</span>\
             <span class="n">Weight</span> <span class="o">&lt;=</span> <span class="mi">500</span> <span class="ow">and</span>\
-            <span class="n">CLogP</span> <span class="o">&lt;=</span> <span class="mi">5</span>
+            <span class="n">LogP</span> <span class="o">&lt;=</span> <span class="mi">5</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="o">**</span><span class="n">deps</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">variant</span><span class="p">)(</span><span class="n">mol</span><span class="p">,</span> <span class="o">**</span><span class="n">deps</span><span class="p">)</span></div>

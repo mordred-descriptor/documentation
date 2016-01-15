@@ -1,0 +1,10 @@
+mordred.DistanceMatrix package
+==============================
+
+Module contents
+---------------
+
+.. automodule:: mordred.DistanceMatrix
+    :members:
+    :imported-members:
+    :show-inheritance:
