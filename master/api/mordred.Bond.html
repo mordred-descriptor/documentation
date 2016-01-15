@@ -183,24 +183,33 @@
 
 <dl class="class">
 <dt id="mordred.Bond.BondCount">
-<em class="property">class </em><code class="descclassname">mordred.Bond.</code><code class="descname">BondCount</code><span class="sig-paren">(</span><em>bond_type=''</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_bond_types.html#BondCount"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Bond.BondCount" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">mordred.Bond.</code><code class="descname">BondCount</code><span class="sig-paren">(</span><em>bond_type='any'</em>, <em>kekulize=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_bond_types.html#BondCount"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Bond.BondCount" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._base.Descriptor</span></code></p>
 <p>bond count descriptor</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>bond_type</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; <ul class="simple">
-<li>&#8216;&#8217; - any</li>
-<li>&#8216;O&#8217; - any, not include bond which connect to hydrogen</li>
-<li>&#8216;T&#8217; - triple,</li>
-<li>&#8216;M&#8217; - multiple, include aromatic</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>bond_type</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; <ul>
+<li>&#8216;any&#8217; - any</li>
+<li>&#8216;heavy&#8217; - any, not include bond which connect to hydrogen</li>
+<li>&#8216;single&#8217; - single bonds</li>
+<li>&#8216;double&#8217; - double bonds</li>
+<li>&#8216;triple&#8217; - triple bonds</li>
+<li>&#8216;aromatic&#8217; - aromatic bonds</li>
+<li>&#8216;multiple&#8217; - multiple, include aromatic</li>
+</ul>
+</li>
+<li><strong>kekulize</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; use kekulized structure</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">bond count</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">bond count</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)">int</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)">int</a></p>
+</td>
 </tr>
 </tbody>
 </table>

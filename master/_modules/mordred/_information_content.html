@@ -193,7 +193,11 @@
     <span class="k">return</span> <span class="n">tree</span><span class="o">.</span><span class="n">code</span>
 
 
-<span class="k">class</span> <span class="nc">Ag</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">InformationContentBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
+    <span class="n">kekulize</span> <span class="o">=</span> <span class="bp">True</span>
+
+
+<span class="k">class</span> <span class="nc">Ag</span><span class="p">(</span><span class="n">InformationContentBase</span><span class="p">):</span>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">D</span><span class="o">=</span><span class="n">DistanceMatrix</span><span class="o">.</span><span class="n">make_key</span><span class="p">(</span>
@@ -218,7 +222,7 @@
             <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">ag</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">ag</span> <span class="ow">in</span> <span class="n">Ags</span><span class="p">])</span>
 
 
-<div class="viewcode-block" id="InformationContent"><a class="viewcode-back" href="../../api/mordred.InformationContent.html#mordred.InformationContent.InformationContent">[docs]</a><span class="k">class</span> <span class="nc">InformationContent</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
+<div class="viewcode-block" id="InformationContent"><a class="viewcode-back" href="../../api/mordred.InformationContent.html#mordred.InformationContent.InformationContent">[docs]</a><span class="k">class</span> <span class="nc">InformationContent</span><span class="p">(</span><span class="n">InformationContentBase</span><span class="p">):</span>
     <span class="sd">r&#39;&#39;&#39;</span>
 <span class="sd">    information content descriptor</span>
 
