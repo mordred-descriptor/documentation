@@ -144,40 +144,6 @@
     <span class="kn">from</span> <span class="nn">inspect</span> <span class="kn">import</span> <span class="n">getargspec</span>
 
 
-<span class="k">class</span> <span class="nc">Key</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="s">&#39;cls&#39;</span><span class="p">,</span> <span class="s">&#39;args&#39;</span>
-
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
-        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">cls</span> <span class="o">=</span> <span class="n">cls</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">args</span>
-
-    <span class="k">def</span> <span class="nf">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">hash</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">cls</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">))</span>
-
-    <span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cls</span> <span class="ow">is</span> <span class="n">other</span><span class="o">.</span><span class="n">cls</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">args</span>
-
-    <span class="k">def</span> <span class="nf">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cls</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">other</span><span class="o">.</span><span class="n">cls</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">!=</span> <span class="n">other</span><span class="o">.</span><span class="n">args</span>
-
-    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cls</span><span class="o">.</span><span class="n">__name__</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">hash</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">)))</span>
-
-    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s">&#39;Key({!r}, *{!r})&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cls</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cls</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&#39;cannot create {!r} by {!r}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cls</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">))</span>
-
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">descriptor_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span>
-
-
 <div class="viewcode-block" id="Descriptor"><a class="viewcode-back" href="../../api/mordred.html#mordred.Descriptor">[docs]</a><span class="k">class</span> <span class="nc">Descriptor</span><span class="p">(</span><span class="n">with_metaclass</span><span class="p">(</span><span class="n">ABCMeta</span><span class="p">,</span> <span class="nb">object</span><span class="p">)):</span>
     <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    abstruct base class of descriptors</span>
@@ -186,6 +152,19 @@
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">True</span>
     <span class="n">gasteiger_charges</span> <span class="o">=</span> <span class="bp">False</span>
     <span class="n">kekulize</span> <span class="o">=</span> <span class="bp">False</span>
+
+    <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">hash</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">k</span><span class="p">:</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">descriptor_keys</span><span class="p">)))</span>
+
+    <span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span>\
+            <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span> <span class="ow">is</span> <span class="n">other</span><span class="o">.</span><span class="n">__class__</span> <span class="ow">and</span>\
+            <span class="nb">all</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="o">==</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">descriptor_keys</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span> <span class="o">==</span> <span class="n">other</span>
 
     <span class="nd">@classmethod</span>
 <div class="viewcode-block" id="Descriptor.preset"><a class="viewcode-back" href="../../api/mordred.html#mordred.Descriptor.preset">[docs]</a>    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
@@ -197,27 +176,9 @@
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">yield</span> <span class="n">cls</span><span class="p">()</span></div>
 
-    <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">make_key</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">Key</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
-
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">None</span>
-
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">descriptor_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">make_key</span><span class="p">()</span>
-
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">descriptor_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">        get descriptor name</span>
-
-<span class="sd">        Returns:</span>
-<span class="sd">            str: descriptor name</span>
-<span class="sd">        &#39;&#39;&#39;</span>
-        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">descriptor_key</span><span class="p">)</span>
 
     <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
@@ -354,14 +315,14 @@
         <span class="k">return</span> <span class="n">descs</span>
 
     <span class="k">def</span> <span class="nf">_calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">desc</span><span class="p">,</span> <span class="n">cache</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">desc</span><span class="o">.</span><span class="n">descriptor_key</span> <span class="ow">in</span> <span class="n">cache</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">cache</span><span class="p">[</span><span class="n">desc</span><span class="o">.</span><span class="n">descriptor_key</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">desc</span> <span class="ow">in</span> <span class="n">cache</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">cache</span><span class="p">[</span><span class="n">desc</span><span class="p">]</span>
 
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="n">Key</span><span class="p">):</span>
-            <span class="n">desc</span> <span class="o">=</span> <span class="n">desc</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
-
-        <span class="n">args</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calculate</span><span class="p">(</span><span class="n">dep</span><span class="p">,</span> <span class="n">cache</span><span class="p">)</span> <span class="k">if</span> <span class="n">dep</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="k">else</span> <span class="bp">None</span>
-                <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">dep</span> <span class="ow">in</span> <span class="p">(</span><span class="n">desc</span><span class="o">.</span><span class="n">dependencies</span> <span class="ow">or</span> <span class="p">{})</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+        <span class="n">args</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">name</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calculate</span><span class="p">(</span><span class="n">dep</span><span class="p">,</span> <span class="n">cache</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">dep</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="k">else</span> <span class="bp">None</span>
+            <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">dep</span> <span class="ow">in</span> <span class="p">(</span><span class="n">desc</span><span class="o">.</span><span class="n">dependencies</span> <span class="ow">or</span> <span class="p">{})</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+        <span class="p">}</span>
 
         <span class="n">mol</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">molecule</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
             <span class="n">explicitH</span><span class="o">=</span><span class="n">desc</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">,</span>
@@ -370,10 +331,7 @@
         <span class="p">)</span>
         <span class="n">r</span> <span class="o">=</span> <span class="n">desc</span><span class="o">.</span><span class="n">calculate</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="n">desc</span><span class="o">.</span><span class="n">descriptor_key</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&#39;[bug] descriptor key not provided: {!r}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">desc</span><span class="p">))</span>
-
-        <span class="n">cache</span><span class="p">[</span><span class="n">desc</span><span class="o">.</span><span class="n">descriptor_key</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span>
+        <span class="n">cache</span><span class="p">[</span><span class="n">desc</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span>
         <span class="k">return</span> <span class="n">r</span>
 
 <div class="viewcode-block" id="Calculator.__call__"><a class="viewcode-back" href="../../api/mordred.html#mordred.Calculator.__call__">[docs]</a>    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
@@ -387,7 +345,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">molecule</span> <span class="o">=</span> <span class="n">Molecule</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="p">(</span>
-            <span class="p">(</span><span class="n">desc</span><span class="o">.</span><span class="n">descriptor_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calculate</span><span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="n">cache</span><span class="p">))</span>
+            <span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calculate</span><span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="n">cache</span><span class="p">))</span>
             <span class="k">for</span> <span class="n">desc</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">descriptors</span>
         <span class="p">)</span></div></div>
 

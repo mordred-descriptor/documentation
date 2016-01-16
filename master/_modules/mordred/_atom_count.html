@@ -131,11 +131,11 @@
 
 
 <div class="viewcode-block" id="AtomCount"><a class="viewcode-back" href="../../api/mordred.Atom.html#mordred.Atom.AtomCount">[docs]</a><span class="k">class</span> <span class="nc">AtomCount</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;</span>
+    <span class="sd">r&#39;&#39;&#39;</span>
 <span class="sd">    atom count descriptor</span>
 
 <span class="sd">    Parameters:</span>
-<span class="sd">        symbol(str): target to count. &#39;Atom&#39;, &#39;HeavyAtom&#39;, &#39;X&#39;(all halogen), or element symbol.</span>
+<span class="sd">        target(str): target to count. &#39;Atom&#39;, &#39;HeavyAtom&#39;, &#39;X&#39;(all halogen), or element symbol.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        int: count</span>
@@ -150,38 +150,33 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">explicit_hydrogens</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">symbol</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">([</span><span class="s">&#39;H&#39;</span><span class="p">,</span> <span class="s">&#39;Atom&#39;</span><span class="p">])</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">target</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">([</span><span class="s">&#39;H&#39;</span><span class="p">,</span> <span class="s">&#39;Atom&#39;</span><span class="p">])</span>
 
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">descriptor_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s">&#39;n&#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">symbol</span>
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;n&#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">target</span>
 
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">descriptor_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">make_key</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">symbol</span><span class="p">)</span>
+    <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="s">&#39;target&#39;</span><span class="p">,</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">symbol</span><span class="o">=</span><span class="s">&#39;Atom&#39;</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">symbol</span> <span class="o">=</span> <span class="n">symbol</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">&#39;Atom&#39;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">target</span> <span class="o">=</span> <span class="n">target</span>
 
-        <span class="k">if</span> <span class="n">symbol</span> <span class="o">==</span> <span class="s">&#39;X&#39;</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calc_X</span>
-        <span class="k">elif</span> <span class="n">symbol</span> <span class="o">==</span> <span class="s">&#39;Atom&#39;</span> <span class="ow">or</span> <span class="n">symbol</span> <span class="o">==</span> <span class="s">&#39;HeavyAtom&#39;</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calc_all</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calc</span>
-
-    <span class="k">def</span> <span class="nf">calc_X</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_calc_X</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
         <span class="n">X</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">9</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">53</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">117</span><span class="p">])</span>
         <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">GetAtomicNum</span><span class="p">()</span> <span class="ow">in</span> <span class="n">X</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">())</span>
 
-    <span class="k">def</span> <span class="nf">calc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">GetSymbol</span><span class="p">()</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">symbol</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">())</span>
+    <span class="k">def</span> <span class="nf">_calc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">GetSymbol</span><span class="p">()</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">target</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">())</span>
 
-    <span class="k">def</span> <span class="nf">calc_all</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_calc_all</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span></div>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">target</span> <span class="o">==</span> <span class="s">&#39;X&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calc_X</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">target</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;Atom&#39;</span><span class="p">,</span> <span class="s">&#39;HeavyAtom&#39;</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calc_all</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calc</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span></div>
 </pre></div>
 
            </div>

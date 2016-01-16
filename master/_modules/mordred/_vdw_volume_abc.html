@@ -169,19 +169,22 @@
 <span class="sd">        float: VABC value</span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
-    <span class="n">descriptor_name</span> <span class="o">=</span> <span class="s">&#39;Vabc&#39;</span>
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;Vabc&#39;</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
-            <span class="n">Nb</span><span class="o">=</span><span class="n">BondCount</span><span class="o">.</span><span class="n">make_key</span><span class="p">(),</span>
-            <span class="n">NRa</span><span class="o">=</span><span class="n">RingCount</span><span class="o">.</span><span class="n">make_key</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">None</span><span class="p">),</span>
-            <span class="n">NRA</span><span class="o">=</span><span class="n">RingCount</span><span class="o">.</span><span class="n">make_key</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">None</span><span class="p">),</span>
+            <span class="n">Nb</span><span class="o">=</span><span class="n">BondCount</span><span class="p">(),</span>
+            <span class="n">NRa</span><span class="o">=</span><span class="n">RingCount</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">None</span><span class="p">),</span>
+            <span class="n">NRA</span><span class="o">=</span><span class="n">RingCount</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">None</span><span class="p">),</span>
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">Nb</span><span class="p">,</span> <span class="n">NRa</span><span class="p">,</span> <span class="n">NRA</span><span class="p">):</span>
-        <span class="n">ac</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">atom_contrib</span><span class="p">[</span><span class="n">a</span><span class="o">.</span><span class="n">GetAtomicNum</span><span class="p">()]</span>
-                 <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">())</span>
+        <span class="n">ac</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span>
+            <span class="n">atom_contrib</span><span class="p">[</span><span class="n">a</span><span class="o">.</span><span class="n">GetAtomicNum</span><span class="p">()]</span>
+            <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">()</span>
+        <span class="p">)</span>
 
         <span class="k">return</span> <span class="n">ac</span> <span class="o">-</span> <span class="mf">5.92</span> <span class="o">*</span> <span class="n">Nb</span> <span class="o">-</span> <span class="mf">14.7</span> <span class="o">*</span> <span class="n">NRa</span> <span class="o">-</span> <span class="mf">3.8</span> <span class="o">*</span> <span class="n">NRA</span></div>
 </pre></div>

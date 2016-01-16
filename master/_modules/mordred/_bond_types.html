@@ -146,7 +146,7 @@
 
 
 <div class="viewcode-block" id="BondCount"><a class="viewcode-back" href="../../api/mordred.Bond.html#mordred.Bond.BondCount">[docs]</a><span class="k">class</span> <span class="nc">BondCount</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;</span>
+    <span class="sd">r&#39;&#39;&#39;</span>
 <span class="sd">    bond count descriptor</span>
 
 <span class="sd">    Parameters:</span>
@@ -180,8 +180,7 @@
             <span class="p">])</span>
         <span class="p">)</span>
 
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">descriptor_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">K</span> <span class="o">=</span> <span class="s">&#39;K&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">kekulize</span> <span class="k">else</span> <span class="s">&#39;&#39;</span>
         <span class="k">return</span> <span class="s">&#39;nBonds{}{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">bond_name</span><span class="p">)</span>
 
@@ -189,9 +188,7 @@
     <span class="k">def</span> <span class="nf">explicit_hydrogens</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">bond_name</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="s">&#39;S&#39;</span><span class="p">]</span>
 
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">descriptor_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">make_key</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bond_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">kekulize</span><span class="p">)</span>
+    <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="s">&#39;bond_name&#39;</span><span class="p">,</span> <span class="s">&#39;kekulize&#39;</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bond_type</span><span class="o">=</span><span class="s">&#39;any&#39;</span><span class="p">,</span> <span class="n">kekulize</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">bond_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_bond</span> <span class="o">=</span> <span class="n">bond_type_dict</span><span class="p">[</span><span class="n">bond_type</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span>

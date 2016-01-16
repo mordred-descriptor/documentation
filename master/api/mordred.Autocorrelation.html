@@ -166,13 +166,13 @@
 <span id="mordred-autocorrelation-module"></span><h1>mordred.Autocorrelation module<a class="headerlink" href="#module-mordred.Autocorrelation" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="mordred.Autocorrelation.AATS">
-<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">AATS</code><span class="sig-paren">(</span><em>distance=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_autocorrelation.html#AATS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.AATS" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">AATS</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_autocorrelation.html#AATS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.AATS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._autocorrelation.ATS</span></code></p>
 <p>averaged ATS descriptor</p>
 <div class="math">
 \[{\rm AATS}_k = \frac{{\rm ATS}_k}{\Delta_k}\]</div>
 <p>where
-<span class="math">\(\Delta_k\)</span> is number of vertex pairs at distance equal to <span class="math">\(k\)</span>.</p>
+<span class="math">\(\Delta_k\)</span> is number of vertex pairs at order equal to <span class="math">\(k\)</span>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -189,13 +189,13 @@
 
 <dl class="class">
 <dt id="mordred.Autocorrelation.AATSC">
-<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">AATSC</code><span class="sig-paren">(</span><em>distance=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_autocorrelation.html#AATSC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.AATSC" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">AATSC</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_autocorrelation.html#AATSC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.AATSC" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._autocorrelation.ATSC</span></code></p>
 <p>averaged ATSC descriptor</p>
 <div class="math">
 \[{\rm AATSC}_k = \frac{{\rm ATSC}_k}{\Delta_k}\]</div>
 <p>where
-<span class="math">\(\Delta_k\)</span> is number of vertex pairs at distance equal to <span class="math">\(k\)</span>.</p>
+<span class="math">\(\Delta_k\)</span> is number of vertex pairs at order equal to <span class="math">\(k\)</span>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -212,7 +212,7 @@
 
 <dl class="class">
 <dt id="mordred.Autocorrelation.ATS">
-<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">ATS</code><span class="sig-paren">(</span><em>distance=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_autocorrelation.html#ATS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.ATS" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">ATS</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_autocorrelation.html#ATS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.ATS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._autocorrelation.Autocorrelation</span></code></p>
 <p>Autocorrelation of Topological Structure descriptor</p>
 <p>a.k.a. Moreau-Broto autocorrelation descriptor</p>
@@ -229,13 +229,13 @@
     \end{cases}\end{split}\]</div>
 <p>where
 <span class="math">\({\boldsymbol w}\)</span> is atomic property vector,
-<span class="math">\(d_{ij}\)</span> is graph distance.</p>
+<span class="math">\(d_{ij}\)</span> is graph distance(smallest number of bonds between atom i and j).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>distance</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; graph distance(<span class="math">\(k\)</span>)</li>
+<li><strong>order</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; order(<span class="math">\(k\)</span>)</li>
 <li><strong>property</strong> (<em>str, function</em>) &#8211; atomic property</li>
 </ul>
 </td>
@@ -252,7 +252,7 @@
 
 <dl class="class">
 <dt id="mordred.Autocorrelation.ATSC">
-<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">ATSC</code><span class="sig-paren">(</span><em>distance=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_autocorrelation.html#ATSC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.ATSC" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">ATSC</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_autocorrelation.html#ATSC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.ATSC" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._autocorrelation.Autocorrelation</span></code></p>
 <p>centered ATS descriptor</p>
 <p>ATS with <span class="math">\({\boldsymbol w}_{\rm c}\)</span> property</p>
@@ -274,7 +274,7 @@
 
 <dl class="class">
 <dt id="mordred.Autocorrelation.GATS">
-<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">GATS</code><span class="sig-paren">(</span><em>distance=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_autocorrelation.html#GATS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.GATS" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">GATS</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_autocorrelation.html#GATS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.GATS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._autocorrelation.MATS</span></code></p>
 <p>Geary coefficient descriptor</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -293,7 +293,7 @@
 
 <dl class="class">
 <dt id="mordred.Autocorrelation.MATS">
-<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">MATS</code><span class="sig-paren">(</span><em>distance=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_autocorrelation.html#MATS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.MATS" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">MATS</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_autocorrelation.html#MATS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.MATS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._autocorrelation.Autocorrelation</span></code></p>
 <p>Moran coefficient descriptor</p>
 <div class="math">

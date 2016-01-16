@@ -171,7 +171,7 @@
 
 
 <div class="viewcode-block" id="AtomTypeEState"><a class="viewcode-back" href="../../api/mordred.EState.html#mordred.EState.AtomTypeEState">[docs]</a><span class="k">class</span> <span class="nc">AtomTypeEState</span><span class="p">(</span><span class="n">EStateBase</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;</span>
+    <span class="sd">r&#39;&#39;&#39;</span>
 <span class="sd">    atom type e-state descriptor</span>
 
 <span class="sd">    Parameters:</span>
@@ -195,17 +195,12 @@
             <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">es_types</span>
         <span class="p">)</span>
 
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
-            <span class="n">E</span><span class="o">=</span><span class="n">EStateCache</span><span class="o">.</span><span class="n">make_key</span><span class="p">()</span>
-        <span class="p">)</span>
-
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">descriptor_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">aggr</span> <span class="o">=</span> <span class="n">aggr_name_dict</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">aggregate</span><span class="p">]</span>
 
         <span class="k">return</span> <span class="n">aggr</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">atom_type</span>
+
+    <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="s">&#39;aggregate&#39;</span><span class="p">,</span> <span class="s">&#39;atom_type&#39;</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">aggregate</span><span class="o">=</span><span class="s">&#39;count&#39;</span><span class="p">,</span> <span class="n">atom_type</span><span class="o">=</span><span class="s">&#39;sLi&#39;</span><span class="p">):</span>
         <span class="k">assert</span> <span class="n">aggregate</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;count&#39;</span><span class="p">,</span> <span class="s">&#39;sum&#39;</span><span class="p">,</span> <span class="s">&#39;max&#39;</span><span class="p">,</span> <span class="s">&#39;min&#39;</span><span class="p">]</span>
@@ -215,11 +210,8 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">atom_type</span> <span class="o">=</span> <span class="n">atom_type</span>
 
     <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">descriptor_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">make_key</span><span class="p">(</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">aggregate</span><span class="p">,</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">atom_type</span><span class="p">,</span>
-        <span class="p">)</span>
+    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">E</span><span class="o">=</span><span class="n">EStateCache</span><span class="p">())</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">E</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">aggregate</span> <span class="o">==</span> <span class="s">&#39;count&#39;</span><span class="p">:</span>

@@ -132,14 +132,13 @@
 
 
 <span class="k">class</span> <span class="nc">SmartsCount</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">mols</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">smarts</span><span class="p">:</span>
-            <span class="n">mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmarts</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">mols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">get_smarts</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mols</span> <span class="o">=</span> <span class="p">[</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmarts</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">smarts</span><span class="p">]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mols</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">GetSubstructMatches</span><span class="p">(</span><span class="n">q</span><span class="p">))</span> <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mols</span><span class="p">)</span>
+        <span class="n">mols</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&#39;mols&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_smarts</span><span class="p">()</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">GetSubstructMatches</span><span class="p">(</span><span class="n">q</span><span class="p">))</span> <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">mols</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="AcidicGroupCount"><a class="viewcode-back" href="../../api/mordred.AcidBase.html#mordred.AcidBase.AcidicGroupCount">[docs]</a><span class="k">class</span> <span class="nc">AcidicGroupCount</span><span class="p">(</span><span class="n">SmartsCount</span><span class="p">):</span>
@@ -150,7 +149,9 @@
 <span class="sd">        int: number of acidic groups</span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
-    <span class="n">descriptor_name</span> <span class="o">=</span> <span class="s">&#39;nAcid&#39;</span>
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;nAcid&#39;</span>
+
     <span class="n">smarts</span> <span class="o">=</span> <span class="p">[</span>
         <span class="s">&quot;[$([O;H1]-[C,S,P]=O)]&quot;</span><span class="p">,</span>
         <span class="s">&quot;[$([*;-;!$(*~[*;+])])]&quot;</span><span class="p">,</span>
@@ -167,7 +168,9 @@
 <span class="sd">        int: number of basic groups</span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
-    <span class="n">descriptor_name</span> <span class="o">=</span> <span class="s">&#39;nBase&#39;</span>
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;nBase&#39;</span>
+
     <span class="n">smarts</span> <span class="o">=</span> <span class="p">[</span>
         <span class="s">&quot;[$([NH2]-[CX4])]&quot;</span><span class="p">,</span>
         <span class="s">&quot;[$([NH](-[CX4])-[CX4])]&quot;</span><span class="p">,</span>
