@@ -82,6 +82,8 @@
             
                 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../api/mordred.html">mordred package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../matrix.html">Matrix aggregating methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../atomic_prop.html">atomic properties</a></li>
 </ul>
 
             
@@ -150,7 +152,7 @@
 <span class="sd">    bond count descriptor</span>
 
 <span class="sd">    Parameters:</span>
-<span class="sd">        bond_type(str):</span>
+<span class="sd">        type(str):</span>
 <span class="sd">            * &#39;any&#39; - any</span>
 <span class="sd">            * &#39;heavy&#39; - any, not include bond which connect to hydrogen</span>
 
@@ -190,8 +192,8 @@
 
     <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="s">&#39;bond_name&#39;</span><span class="p">,</span> <span class="s">&#39;kekulize&#39;</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bond_type</span><span class="o">=</span><span class="s">&#39;any&#39;</span><span class="p">,</span> <span class="n">kekulize</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">bond_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_bond</span> <span class="o">=</span> <span class="n">bond_type_dict</span><span class="p">[</span><span class="n">bond_type</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s">&#39;any&#39;</span><span class="p">,</span> <span class="n">kekulize</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bond_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_bond</span> <span class="o">=</span> <span class="n">bond_type_dict</span><span class="p">[</span><span class="nb">type</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">kekulize</span> <span class="o">=</span> <span class="n">kekulize</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
