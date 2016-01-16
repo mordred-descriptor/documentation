@@ -184,9 +184,32 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">iterator of descriptor name and value</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>mol</strong> (<em>rdkit.Chem.Mol</em>) &#8211; molecular</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">iterator&lt;str, scalar&gt;</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">iterator of descriptor and value</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">iterator of (Descriptor, scalar)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.Calculator.parallel">
+<code class="descname">parallel</code><span class="sig-paren">(</span><em>mols</em>, <em>processes=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base.html#Calculator.parallel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Calculator.parallel" title="Permalink to this definition">¶</a></dt>
+<dd><p>parallel calculate descriptors</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>mols</strong> (<em>iterable&lt;rdkit.Chem.Mol&gt;</em>) &#8211; moleculars</li>
+<li><strong>processes</strong> (<em>int or None</em>) &#8211; number of process. None is multiprocessing.cpu_count()</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">[[(Descriptor, scalar)]]</p>
+</td>
 </tr>
 </tbody>
 </table>
