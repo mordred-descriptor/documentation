@@ -133,7 +133,6 @@
 <span class="kn">from</span> <span class="nn">._common</span> <span class="kn">import</span> <span class="n">DistanceMatrix</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">groupby</span>
-<span class="kn">import</span> <span class="nn">math</span>
 
 
 <span class="k">class</span> <span class="nc">BFSTree</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -291,16 +290,19 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;T&#39;</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">N</span> <span class="o">*</span> <span class="n">ICm</span>
         <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;S&#39;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">ICm</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">ICm</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
         <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;C&#39;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">ICm</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="o">-</span> <span class="n">ICm</span>
         <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;B&#39;</span><span class="p">:</span>
             <span class="n">bts</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">GetBondTypeAsDouble</span><span class="p">()</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetBonds</span><span class="p">())</span>
-            <span class="k">return</span> <span class="n">ICm</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">bts</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span></div>
+            <span class="k">if</span> <span class="n">bts</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+            <span class="k">return</span> <span class="n">ICm</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">bts</span><span class="p">)</span></div>
 
 
 <span class="k">def</span> <span class="nf">entropy_term</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 
            </div>

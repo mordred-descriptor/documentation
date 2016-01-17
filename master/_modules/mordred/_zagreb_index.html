@@ -131,6 +131,7 @@
   <h1>Source code for mordred._zagreb_index</h1><div class="highlight"><pre>
 <span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
 <span class="kn">from</span> <span class="nn">._common</span> <span class="kn">import</span> <span class="n">Valence</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
 
 <div class="viewcode-block" id="ZagrebIndex"><a class="viewcode-back" href="../../api/mordred.ZagrebIndex.html#mordred.ZagrebIndex.ZagrebIndex">[docs]</a><span class="k">class</span> <span class="nc">ZagrebIndex</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
@@ -189,6 +190,9 @@
             <span class="n">V</span> <span class="o">=</span> <span class="n">V</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float&#39;</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">version</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">V</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
             <span class="k">return</span> <span class="p">(</span><span class="n">V</span> <span class="o">**</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">variable</span> <span class="o">*</span> <span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span>
