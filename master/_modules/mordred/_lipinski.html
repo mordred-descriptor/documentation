@@ -149,20 +149,22 @@
 <span class="sd">        bool: filter result</span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
+    <span class="n">require_connected</span> <span class="o">=</span> <span class="bp">False</span>
+
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
-        <span class="k">yield</span> <span class="n">cls</span><span class="p">(</span><span class="s">&#39;Lipinski&#39;</span><span class="p">)</span>
-        <span class="k">yield</span> <span class="n">cls</span><span class="p">(</span><span class="s">&#39;GhoseFilter&#39;</span><span class="p">)</span>
+        <span class="k">yield</span> <span class="n">cls</span><span class="p">(</span><span class="s1">&#39;Lipinski&#39;</span><span class="p">)</span>
+        <span class="k">yield</span> <span class="n">cls</span><span class="p">(</span><span class="s1">&#39;GhoseFilter&#39;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">variant</span>
 
-    <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="s">&#39;variant&#39;</span><span class="p">,</span>
+    <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="s1">&#39;variant&#39;</span><span class="p">,</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="s">&#39;Lipinski&#39;</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="s1">&#39;Lipinski&#39;</span><span class="p">):</span>
         <span class="k">assert</span> <span class="n">variant</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">([</span>
-            <span class="s">&#39;Lipinski&#39;</span><span class="p">,</span>
-            <span class="s">&#39;GhoseFilter&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Lipinski&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;GhoseFilter&#39;</span><span class="p">,</span>
         <span class="p">])</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">variant</span> <span class="o">=</span> <span class="n">variant</span>
@@ -193,13 +195,13 @@
         <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">variant</span><span class="p">)(</span><span class="n">mol</span><span class="p">,</span> <span class="o">**</span><span class="n">deps</span><span class="p">)</span></div>
 
 <span class="n">deps_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
-    <span class="n">Lipinski</span><span class="o">=</span><span class="nb">set</span><span class="p">([</span><span class="s">&#39;LogP&#39;</span><span class="p">,</span> <span class="s">&#39;MW&#39;</span><span class="p">,</span> <span class="s">&#39;HBDon&#39;</span><span class="p">,</span> <span class="s">&#39;HBAcc&#39;</span><span class="p">]),</span>
-    <span class="n">GhoseFilter</span><span class="o">=</span><span class="nb">set</span><span class="p">([</span><span class="s">&#39;MW&#39;</span><span class="p">,</span> <span class="s">&#39;LogP&#39;</span><span class="p">,</span> <span class="s">&#39;MR&#39;</span><span class="p">]),</span>
+    <span class="n">Lipinski</span><span class="o">=</span><span class="nb">set</span><span class="p">([</span><span class="s1">&#39;LogP&#39;</span><span class="p">,</span> <span class="s1">&#39;MW&#39;</span><span class="p">,</span> <span class="s1">&#39;HBDon&#39;</span><span class="p">,</span> <span class="s1">&#39;HBAcc&#39;</span><span class="p">]),</span>
+    <span class="n">GhoseFilter</span><span class="o">=</span><span class="nb">set</span><span class="p">([</span><span class="s1">&#39;MW&#39;</span><span class="p">,</span> <span class="s1">&#39;LogP&#39;</span><span class="p">,</span> <span class="s1">&#39;MR&#39;</span><span class="p">]),</span>
 <span class="p">)</span>
 
 <span class="n">deps_keys</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
-    <span class="n">LogP</span><span class="o">=</span><span class="n">WildmanCrippenLogP</span><span class="p">(</span><span class="s">&#39;LogP&#39;</span><span class="p">),</span>
-    <span class="n">MR</span><span class="o">=</span><span class="n">WildmanCrippenLogP</span><span class="p">(</span><span class="s">&#39;MR&#39;</span><span class="p">),</span>
+    <span class="n">LogP</span><span class="o">=</span><span class="n">WildmanCrippenLogP</span><span class="p">(</span><span class="s1">&#39;LogP&#39;</span><span class="p">),</span>
+    <span class="n">MR</span><span class="o">=</span><span class="n">WildmanCrippenLogP</span><span class="p">(</span><span class="s1">&#39;MR&#39;</span><span class="p">),</span>
 
     <span class="n">MW</span><span class="o">=</span><span class="n">Weight</span><span class="p">(),</span>
 

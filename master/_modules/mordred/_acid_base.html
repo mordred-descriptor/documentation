@@ -134,12 +134,14 @@
 
 
 <span class="k">class</span> <span class="nc">SmartsCount</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
+    <span class="n">require_connected</span> <span class="o">=</span> <span class="bp">False</span>
+
     <span class="k">def</span> <span class="nf">get_smarts</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">mols</span> <span class="o">=</span> <span class="p">[</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmarts</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">smarts</span><span class="p">]</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mols</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
-        <span class="n">mols</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&#39;mols&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_smarts</span><span class="p">()</span>
+        <span class="n">mols</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;mols&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_smarts</span><span class="p">()</span>
         <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">GetSubstructMatches</span><span class="p">(</span><span class="n">q</span><span class="p">))</span> <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">mols</span><span class="p">)</span>
 
 
@@ -152,13 +154,13 @@
 <span class="sd">    &#39;&#39;&#39;</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s">&#39;nAcid&#39;</span>
+        <span class="k">return</span> <span class="s1">&#39;nAcid&#39;</span>
 
     <span class="n">smarts</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="s">&quot;[$([O;H1]-[C,S,P]=O)]&quot;</span><span class="p">,</span>
-        <span class="s">&quot;[$([*;-;!$(*~[*;+])])]&quot;</span><span class="p">,</span>
-        <span class="s">&quot;[$([NH](S(=O)=O)C(F)(F)F)]&quot;</span><span class="p">,</span>
-        <span class="s">&quot;[$(n1nnnc1)]&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;[$([O;H1]-[C,S,P]=O)]&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;[$([*;-;!$(*~[*;+])])]&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;[$([NH](S(=O)=O)C(F)(F)F)]&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;[$(n1nnnc1)]&quot;</span><span class="p">,</span>
     <span class="p">]</span></div>
 
 
@@ -171,15 +173,15 @@
 <span class="sd">    &#39;&#39;&#39;</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s">&#39;nBase&#39;</span>
+        <span class="k">return</span> <span class="s1">&#39;nBase&#39;</span>
 
     <span class="n">smarts</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="s">&quot;[$([NH2]-[CX4])]&quot;</span><span class="p">,</span>
-        <span class="s">&quot;[$([NH](-[CX4])-[CX4])]&quot;</span><span class="p">,</span>
-        <span class="s">&quot;[$(N(-[CX4])(-[CX4])-[CX4])]&quot;</span><span class="p">,</span>
-        <span class="s">&quot;[$([*;+;!$(*~[*;-])])]&quot;</span><span class="p">,</span>
-        <span class="s">&quot;[$(N=C-N)]&quot;</span><span class="p">,</span>
-        <span class="s">&quot;[$(N-C=N)]&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;[$([NH2]-[CX4])]&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;[$([NH](-[CX4])-[CX4])]&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;[$(N(-[CX4])(-[CX4])-[CX4])]&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;[$([*;+;!$(*~[*;-])])]&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;[$(N=C-N)]&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;[$(N-C=N)]&quot;</span><span class="p">,</span>
     <span class="p">]</span></div>
 </pre></div>
 

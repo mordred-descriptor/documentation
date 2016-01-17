@@ -154,6 +154,7 @@
 <span class="sd">    &#39;&#39;&#39;</span>
 
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="n">require_connected</span> <span class="o">=</span> <span class="bp">False</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
@@ -165,15 +166,15 @@
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s">&#39;MDE{}-{}{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="k">return</span> <span class="s1">&#39;MDE{}-{}{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
             <span class="n">table</span><span class="o">.</span><span class="n">GetElementSymbol</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">atomic_num</span><span class="p">),</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">valence1</span><span class="p">,</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">valence2</span><span class="p">,</span>
         <span class="p">)</span>
 
-    <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="s">&#39;valence1&#39;</span><span class="p">,</span> <span class="s">&#39;valence2&#39;</span><span class="p">,</span> <span class="s">&#39;atomic_num&#39;</span>
+    <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="s1">&#39;valence1&#39;</span><span class="p">,</span> <span class="s1">&#39;valence2&#39;</span><span class="p">,</span> <span class="s1">&#39;atomic_num&#39;</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">valence1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">valence2</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">element</span><span class="o">=</span><span class="s">&#39;C&#39;</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">valence1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">valence2</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">element</span><span class="o">=</span><span class="s1">&#39;C&#39;</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">valence1</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">valence1</span><span class="p">,</span> <span class="n">valence2</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">valence2</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">valence1</span><span class="p">,</span> <span class="n">valence2</span><span class="p">)</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">integer_types</span><span class="p">):</span>
@@ -181,7 +182,7 @@
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">string_types</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">atomic_num</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">GetAtomicNumber</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&#39;element must be atomic number or atomic symbol&#39;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;element must be atomic number or atomic symbol&#39;</span><span class="p">)</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>

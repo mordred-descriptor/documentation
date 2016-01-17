@@ -139,6 +139,7 @@
 
 <span class="k">class</span> <span class="nc">ChargeTermMatrix</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="n">require_connected</span> <span class="o">=</span> <span class="bp">False</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -177,27 +178,28 @@
 <span class="sd">    &#39;&#39;&#39;</span>
 
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="n">require_connected</span> <span class="o">=</span> <span class="bp">False</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">chain</span><span class="p">(</span>
-            <span class="p">(</span><span class="n">cls</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">o</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="p">(</span><span class="s">&#39;raw&#39;</span><span class="p">,</span> <span class="s">&#39;mean&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)),</span>
-            <span class="p">[</span><span class="n">cls</span><span class="p">(</span><span class="s">&#39;global&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)]</span>
+            <span class="p">(</span><span class="n">cls</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">o</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;raw&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)),</span>
+            <span class="p">[</span><span class="n">cls</span><span class="p">(</span><span class="s1">&#39;global&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)]</span>
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s">&#39;global&#39;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="s">&#39;JGT{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">order</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s">&#39;mean&#39;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="s">&#39;JGI{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">order</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;global&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;JGT{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">order</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;mean&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;JGI{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">order</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="s">&#39;GGI{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">order</span><span class="p">)</span>
+            <span class="k">return</span> <span class="s1">&#39;GGI{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">order</span><span class="p">)</span>
 
-    <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="s">&#39;type&#39;</span><span class="p">,</span> <span class="s">&#39;order&#39;</span>
+    <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;order&#39;</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s">&#39;global&#39;</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
-        <span class="k">assert</span> <span class="nb">type</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;global&#39;</span><span class="p">,</span> <span class="s">&#39;mean&#39;</span><span class="p">,</span> <span class="s">&#39;raw&#39;</span><span class="p">]</span>
-        <span class="k">assert</span> <span class="nb">type</span> <span class="o">==</span> <span class="s">&#39;global&#39;</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">order</span><span class="p">,</span> <span class="n">integer_types</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;global&#39;</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="nb">type</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;global&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;raw&#39;</span><span class="p">]</span>
+        <span class="k">assert</span> <span class="nb">type</span> <span class="o">==</span> <span class="s1">&#39;global&#39;</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">order</span><span class="p">,</span> <span class="n">integer_types</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="nb">type</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">order</span> <span class="o">=</span> <span class="n">order</span>
@@ -217,14 +219,14 @@
         <span class="n">D</span> <span class="o">=</span> <span class="n">D</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">tri</span><span class="p">(</span><span class="o">*</span><span class="n">D</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
         <span class="n">D</span><span class="p">[</span><span class="n">D</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>
 
-        <span class="n">f</span> <span class="o">=</span> <span class="n">D</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">order</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s">&#39;global&#39;</span> <span class="k">else</span> <span class="n">D</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">order</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="n">D</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">order</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;global&#39;</span> <span class="k">else</span> <span class="n">D</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">order</span>
 
         <span class="n">CT</span> <span class="o">=</span> <span class="n">CT</span><span class="p">[</span><span class="n">f</span><span class="p">]</span>
 
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s">&#39;raw&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;raw&#39;</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">CT</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 
-        <span class="c"># create frequency vector</span>
+        <span class="c1"># create frequency vector</span>
         <span class="n">Df</span> <span class="o">=</span> <span class="n">D</span><span class="p">[</span><span class="n">f</span><span class="p">]</span>
         <span class="n">C</span> <span class="o">=</span> <span class="n">Df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">Df</span><span class="p">):</span>

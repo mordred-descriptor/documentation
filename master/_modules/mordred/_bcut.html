@@ -165,7 +165,7 @@
 
 
 <span class="k">class</span> <span class="nc">burden_eigen_values</span><span class="p">(</span><span class="n">BurdenMatrixDescriptor</span><span class="p">):</span>
-    <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="s">&#39;prop&#39;</span><span class="p">,</span> <span class="s">&#39;gasteiger_charges&#39;</span>
+    <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="s1">&#39;prop&#39;</span><span class="p">,</span> <span class="s1">&#39;gasteiger_charges&#39;</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prop</span><span class="p">,</span> <span class="n">gasteiger_charges</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">prop</span> <span class="o">=</span> <span class="n">prop</span>
@@ -177,8 +177,13 @@
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">burden</span><span class="p">):</span>
         <span class="n">bmat</span> <span class="o">=</span> <span class="n">burden</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-        <span class="n">np</span><span class="o">.</span><span class="n">fill_diagonal</span><span class="p">(</span><span class="n">bmat</span><span class="p">,</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">prop</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">()])</span>
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">bmat</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">ps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">prop</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">()])</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">ps</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">])</span>
+
+        <span class="n">np</span><span class="o">.</span><span class="n">fill_diagonal</span><span class="p">(</span><span class="n">bmat</span><span class="p">,</span> <span class="n">ps</span><span class="p">)</span>
+        <span class="n">ev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">bmat</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">ev</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
 
 <div class="viewcode-block" id="BCUT"><a class="viewcode-back" href="../../api/mordred.BCUT.html#mordred.BCUT.BCUT">[docs]</a><span class="k">class</span> <span class="nc">BCUT</span><span class="p">(</span><span class="n">BurdenMatrixDescriptor</span><span class="p">):</span>
@@ -203,17 +208,17 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">gasteiger_charges</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prop</span><span class="p">,</span> <span class="s">&#39;gasteiger_charges&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prop</span><span class="p">,</span> <span class="s1">&#39;gasteiger_charges&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">nth</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">return</span> <span class="s">&#39;BCUT{}-{}l&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prop_name</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nth</span><span class="p">))</span>
+            <span class="k">return</span> <span class="s1">&#39;BCUT{}-{}l&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prop_name</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nth</span><span class="p">))</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="s">&#39;BCUT{}-{}h&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prop_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="k">return</span> <span class="s1">&#39;BCUT{}-{}h&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prop_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 
-    <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="s">&#39;prop&#39;</span><span class="p">,</span> <span class="s">&#39;nth&#39;</span>
+    <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="s1">&#39;prop&#39;</span><span class="p">,</span> <span class="s1">&#39;nth&#39;</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prop</span><span class="o">=</span><span class="s">&#39;m&#39;</span><span class="p">,</span> <span class="n">nth</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prop</span><span class="o">=</span><span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="n">nth</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">prop_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">prop</span> <span class="o">=</span> <span class="n">_atomic_property</span><span class="o">.</span><span class="n">getter</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">nth</span> <span class="o">=</span> <span class="n">nth</span>
 
@@ -223,7 +228,7 @@
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">bev</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">bev</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="bp">self</span><span class="o">.</span><span class="n">nth</span><span class="p">]</span>
+            <span class="k">return</span> <span class="n">bev</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">nth</span><span class="p">]</span>
         <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span></div>
 </pre></div>

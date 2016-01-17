@@ -133,7 +133,12 @@
 <span class="kn">from</span> <span class="nn">._common</span> <span class="kn">import</span> <span class="n">Radius</span> <span class="k">as</span> <span class="n">_R</span><span class="p">,</span> <span class="n">Diameter</span> <span class="k">as</span> <span class="n">_D</span>
 
 
-<div class="viewcode-block" id="Radius"><a class="viewcode-back" href="../../api/mordred.TopologicalIndex.html#mordred.TopologicalIndex.Radius">[docs]</a><span class="k">class</span> <span class="nc">Radius</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">TopologicalIndexBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
+    <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="n">require_connected</span> <span class="o">=</span> <span class="bp">False</span>
+
+
+<div class="viewcode-block" id="Radius"><a class="viewcode-back" href="../../api/mordred.TopologicalIndex.html#mordred.TopologicalIndex.Radius">[docs]</a><span class="k">class</span> <span class="nc">Radius</span><span class="p">(</span><span class="n">TopologicalIndexBase</span><span class="p">):</span>
     <span class="sd">r&#39;&#39;&#39;</span>
 <span class="sd">    radius descriptor</span>
 
@@ -141,10 +146,8 @@
 <span class="sd">        int: graph radius</span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
-    <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
-
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s">&#39;Radius&#39;</span>
+        <span class="k">return</span> <span class="s1">&#39;Radius&#39;</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -159,7 +162,7 @@
         <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">R</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="Diameter"><a class="viewcode-back" href="../../api/mordred.TopologicalIndex.html#mordred.TopologicalIndex.Diameter">[docs]</a><span class="k">class</span> <span class="nc">Diameter</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
+<div class="viewcode-block" id="Diameter"><a class="viewcode-back" href="../../api/mordred.TopologicalIndex.html#mordred.TopologicalIndex.Diameter">[docs]</a><span class="k">class</span> <span class="nc">Diameter</span><span class="p">(</span><span class="n">TopologicalIndexBase</span><span class="p">):</span>
     <span class="sd">r&#39;&#39;&#39;</span>
 <span class="sd">    diameter descriptor</span>
 
@@ -167,10 +170,8 @@
 <span class="sd">        int: graph diameter</span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
-    <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
-
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s">&#39;Diameter&#39;</span>
+        <span class="k">return</span> <span class="s1">&#39;Diameter&#39;</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -184,7 +185,7 @@
         <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">D</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="TopologicalShapeIndex"><a class="viewcode-back" href="../../api/mordred.TopologicalIndex.html#mordred.TopologicalIndex.TopologicalShapeIndex">[docs]</a><span class="k">class</span> <span class="nc">TopologicalShapeIndex</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
+<div class="viewcode-block" id="TopologicalShapeIndex"><a class="viewcode-back" href="../../api/mordred.TopologicalIndex.html#mordred.TopologicalIndex.TopologicalShapeIndex">[docs]</a><span class="k">class</span> <span class="nc">TopologicalShapeIndex</span><span class="p">(</span><span class="n">TopologicalIndexBase</span><span class="p">):</span>
     <span class="sd">r&#39;&#39;&#39;</span>
 <span class="sd">    topological shape index descriptor</span>
 
@@ -200,10 +201,8 @@
 <span class="sd">        float: topological shape index</span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
-    <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
-
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s">&#39;TopoShapeIndex&#39;</span>
+        <span class="k">return</span> <span class="s1">&#39;TopoShapeIndex&#39;</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -218,7 +217,7 @@
         <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">D</span> <span class="o">-</span> <span class="n">R</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">R</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="PetitjeanIndex"><a class="viewcode-back" href="../../api/mordred.TopologicalIndex.html#mordred.TopologicalIndex.PetitjeanIndex">[docs]</a><span class="k">class</span> <span class="nc">PetitjeanIndex</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
+<div class="viewcode-block" id="PetitjeanIndex"><a class="viewcode-back" href="../../api/mordred.TopologicalIndex.html#mordred.TopologicalIndex.PetitjeanIndex">[docs]</a><span class="k">class</span> <span class="nc">PetitjeanIndex</span><span class="p">(</span><span class="n">TopologicalIndexBase</span><span class="p">):</span>
     <span class="sd">r&#39;&#39;&#39;</span>
 <span class="sd">    Petitjean index descriptor</span>
 
@@ -234,10 +233,8 @@
 <span class="sd">        float: Petitjean index</span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
-    <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
-
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s">&#39;PetitjeanIndex&#39;</span>
+        <span class="k">return</span> <span class="s1">&#39;PetitjeanIndex&#39;</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>

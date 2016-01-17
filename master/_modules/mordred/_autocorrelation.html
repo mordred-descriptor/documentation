@@ -141,11 +141,15 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">gasteiger_charges</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prop</span><span class="p">,</span> <span class="s">&#39;gasteiger_charges&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prop</span><span class="p">,</span> <span class="s1">&#39;gasteiger_charges&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">require_connected</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prop</span><span class="p">,</span> <span class="s1">&#39;require_connected&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
 
 
 <span class="k">class</span> <span class="nc">AVec</span><span class="p">(</span><span class="n">AutocorrelationBase</span><span class="p">):</span>
-    <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="s">&#39;prop&#39;</span><span class="p">,</span>
+    <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="s1">&#39;prop&#39;</span><span class="p">,</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prop</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">prop</span> <span class="o">=</span> <span class="n">prop</span>
@@ -155,7 +159,7 @@
 
 
 <span class="k">class</span> <span class="nc">CAVec</span><span class="p">(</span><span class="n">AutocorrelationBase</span><span class="p">):</span>
-    <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="s">&#39;prop&#39;</span><span class="p">,</span>
+    <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="s1">&#39;prop&#39;</span><span class="p">,</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prop</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">prop</span> <span class="o">=</span> <span class="n">prop</span>
@@ -169,7 +173,7 @@
 
 
 <span class="k">class</span> <span class="nc">GMat</span><span class="p">(</span><span class="n">AutocorrelationBase</span><span class="p">):</span>
-    <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="s">&#39;order&#39;</span><span class="p">,</span>
+    <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="s1">&#39;order&#39;</span><span class="p">,</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">order</span> <span class="o">=</span> <span class="n">order</span>
@@ -189,7 +193,7 @@
 
 
 <span class="k">class</span> <span class="nc">GSum</span><span class="p">(</span><span class="n">AutocorrelationBase</span><span class="p">):</span>
-    <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="s">&#39;order&#39;</span><span class="p">,</span>
+    <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="s1">&#39;order&#39;</span><span class="p">,</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">order</span> <span class="o">=</span> <span class="n">order</span>
@@ -209,15 +213,15 @@
 
 <span class="k">class</span> <span class="nc">Autocorrelation</span><span class="p">(</span><span class="n">AutocorrelationBase</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s">&#39;{}{}{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="k">return</span> <span class="s1">&#39;{}{}{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">order</span><span class="p">,</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">prop_name</span>
         <span class="p">)</span>
 
-    <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="s">&#39;order&#39;</span><span class="p">,</span> <span class="s">&#39;prop&#39;</span>
+    <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="s1">&#39;order&#39;</span><span class="p">,</span> <span class="s1">&#39;prop&#39;</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">prop</span><span class="o">=</span><span class="s">&#39;m&#39;</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">prop</span><span class="o">=</span><span class="s1">&#39;m&#39;</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">prop_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">prop</span> <span class="o">=</span> <span class="n">_atomic_property</span><span class="o">.</span><span class="n">getter</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">order</span> <span class="o">=</span> <span class="n">order</span>
 

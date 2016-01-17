@@ -192,14 +192,15 @@
 
 
 <span class="k">class</span> <span class="nc">ChiBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
+    <span class="n">require_connected</span> <span class="o">=</span> <span class="bp">False</span>
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
 
 
-<span class="n">ChiBonds</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s">&#39;ChiBonds&#39;</span><span class="p">,</span> <span class="s">&#39;chain path path_cluster cluster&#39;</span><span class="p">)</span>
+<span class="n">ChiBonds</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;ChiBonds&#39;</span><span class="p">,</span> <span class="s1">&#39;chain path path_cluster cluster&#39;</span><span class="p">)</span>
 
 
 <span class="k">class</span> <span class="nc">ChiCache</span><span class="p">(</span><span class="n">ChiBase</span><span class="p">):</span>
-    <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="s">&#39;order&#39;</span><span class="p">,</span>
+    <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="s1">&#39;order&#39;</span><span class="p">,</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">order</span> <span class="o">=</span> <span class="n">order</span>
@@ -233,16 +234,16 @@
         <span class="k">return</span> <span class="n">ChiBonds</span><span class="p">(</span><span class="n">chain</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">path_cluster</span><span class="p">,</span> <span class="n">cluster</span><span class="p">)</span>
 
 <span class="n">_chi_type_dict</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">ChiType</span><span class="o">.</span><span class="n">path</span><span class="p">:</span> <span class="s">&#39;P&#39;</span><span class="p">,</span>
-    <span class="n">ChiType</span><span class="o">.</span><span class="n">chain</span><span class="p">:</span> <span class="s">&#39;CH&#39;</span><span class="p">,</span>
-    <span class="n">ChiType</span><span class="o">.</span><span class="n">path_cluster</span><span class="p">:</span> <span class="s">&#39;PC&#39;</span><span class="p">,</span>
-    <span class="n">ChiType</span><span class="o">.</span><span class="n">cluster</span><span class="p">:</span> <span class="s">&#39;C&#39;</span>
+    <span class="n">ChiType</span><span class="o">.</span><span class="n">path</span><span class="p">:</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span>
+    <span class="n">ChiType</span><span class="o">.</span><span class="n">chain</span><span class="p">:</span> <span class="s1">&#39;CH&#39;</span><span class="p">,</span>
+    <span class="n">ChiType</span><span class="o">.</span><span class="n">path_cluster</span><span class="p">:</span> <span class="s1">&#39;PC&#39;</span><span class="p">,</span>
+    <span class="n">ChiType</span><span class="o">.</span><span class="n">cluster</span><span class="p">:</span> <span class="s1">&#39;C&#39;</span>
 <span class="p">}</span>
 
-<span class="n">_prop_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">delta</span><span class="o">=</span><span class="s">&#39;S&#39;</span><span class="p">,</span> <span class="n">delta_v</span><span class="o">=</span><span class="s">&#39;V&#39;</span><span class="p">)</span>
+<span class="n">_prop_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">delta</span><span class="o">=</span><span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="n">delta_v</span><span class="o">=</span><span class="s1">&#39;V&#39;</span><span class="p">)</span>
 
 
-<span class="n">_deltas</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;delta&#39;</span><span class="p">,</span> <span class="s">&#39;delta_v&#39;</span><span class="p">]</span>
+<span class="n">_deltas</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;delta&#39;</span><span class="p">,</span> <span class="s1">&#39;delta_v&#39;</span><span class="p">]</span>
 
 
 <div class="viewcode-block" id="Chi"><a class="viewcode-back" href="../../api/mordred.Chi.html#mordred.Chi.Chi">[docs]</a><span class="k">class</span> <span class="nc">Chi</span><span class="p">(</span><span class="n">ChiBase</span><span class="p">):</span>
@@ -277,17 +278,17 @@
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">prop</span> <span class="o">=</span> <span class="n">_prop_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prop_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">prop_name</span><span class="p">)</span>
         <span class="n">ct</span> <span class="o">=</span> <span class="n">_chi_type_dict</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">]</span>
-        <span class="n">p</span> <span class="o">=</span> <span class="s">&#39;A&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">averaged</span> <span class="k">else</span> <span class="s">&#39;&#39;</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="s1">&#39;A&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">averaged</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span>
 
-        <span class="k">return</span> <span class="s">&#39;{}{}{}-{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">prop</span><span class="p">,</span> <span class="n">ct</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">order</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s1">&#39;{}{}{}-{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">prop</span><span class="p">,</span> <span class="n">ct</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">order</span><span class="p">)</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">gasteiger_charges</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prop</span><span class="p">,</span> <span class="s">&#39;gasteiger_charges&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prop</span><span class="p">,</span> <span class="s1">&#39;gasteiger_charges&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
 
-    <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="s">&#39;type&#39;</span><span class="p">,</span> <span class="s">&#39;order&#39;</span><span class="p">,</span> <span class="s">&#39;prop&#39;</span><span class="p">,</span> <span class="s">&#39;averaged&#39;</span>
+    <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;order&#39;</span><span class="p">,</span> <span class="s1">&#39;prop&#39;</span><span class="p">,</span> <span class="s1">&#39;averaged&#39;</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s">&#39;path&#39;</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">prop</span><span class="o">=</span><span class="s">&#39;delta&#39;</span><span class="p">,</span> <span class="n">averaged</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;path&#39;</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">prop</span><span class="o">=</span><span class="s1">&#39;delta&#39;</span><span class="p">,</span> <span class="n">averaged</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">order</span> <span class="o">=</span> <span class="n">order</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">prop_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">prop</span> <span class="o">=</span> <span class="n">_atomic_property</span><span class="o">.</span><span class="n">getter</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">_parse_chi_type</span><span class="p">(</span><span class="nb">type</span><span class="p">)</span>
@@ -309,6 +310,9 @@
             <span class="n">c</span> <span class="o">=</span> <span class="mi">1</span>
             <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
                 <span class="n">c</span> <span class="o">*=</span> <span class="n">props</span><span class="p">[</span><span class="n">node</span><span class="p">]</span>
+
+            <span class="k">if</span> <span class="n">c</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
 
             <span class="n">x</span> <span class="o">+=</span> <span class="n">c</span> <span class="o">**</span> <span class="o">-</span><span class="mf">0.5</span>
 
