@@ -89,7 +89,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#spdiam">SpDiam</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#spad">SpAD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#spmad">SpMAD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ee">EE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#sm1">SM1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#ve1">VE1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#ve2">VE2</a></li>
@@ -170,11 +169,12 @@
 <h2>SpMAD<a class="headerlink" href="#spmad" title="Permalink to this headline">¶</a></h2>
 <div class="math">
 \[{\rm SpMAD} = \frac{\rm SpAD}{A}\]</div>
+<p>LogEE
+&#8211;
+.. math:</p>
+<div class="highlight-python"><div class="highlight"><pre>{\rm LogEE} = \log(\sum_{i = 1}^N \exp(\lambda_i))
+</pre></div>
 </div>
-<div class="section" id="ee">
-<h2>EE<a class="headerlink" href="#ee" title="Permalink to this headline">¶</a></h2>
-<div class="math">
-\[{\rm EE} = \log(\sum_{i = 1}^N \exp(\lambda_i))\]</div>
 </div>
 <div class="section" id="sm1">
 <h2>SM1<a class="headerlink" href="#sm1" title="Permalink to this headline">¶</a></h2>
@@ -185,6 +185,7 @@
 <h2>VE1<a class="headerlink" href="#ve1" title="Permalink to this headline">¶</a></h2>
 <div class="math">
 \[{\rm VE1} = \sum_{i = 1}^N \left| \ell_i \right|\]</div>
+<p>where <span class="math">\(\ell_i\)</span> is eigenvector elements corresponding to leading eigenvalue.</p>
 </div>
 <div class="section" id="ve2">
 <h2>VE2<a class="headerlink" href="#ve2" title="Permalink to this headline">¶</a></h2>

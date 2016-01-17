@@ -12,6 +12,7 @@ Submodules
 .. toctree::
 
    mordred.AcidBase
+   mordred.AdjacencyMatrix
    mordred.Atom
    mordred.Autocorrelation
    mordred.BCUT
