@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mordred.Framework module &mdash; mordred 0.1.0b0 documentation</title>
+  <title>mordred.VertexAdjacencyInformation module &mdash; mordred 0.1.0b0 documentation</title>
   
 
   
@@ -32,8 +32,8 @@
   
     <link rel="top" title="mordred 0.1.0b0 documentation" href="../index.html"/>
         <link rel="up" title="mordred package" href="mordred.html"/>
-        <link rel="next" title="mordred.InformationContent module" href="mordred.InformationContent.html"/>
-        <link rel="prev" title="mordred.FragmentComplexity module" href="mordred.FragmentComplexity.html"/> 
+        <link rel="next" title="mordred.WalkCount module" href="mordred.WalkCount.html"/>
+        <link rel="prev" title="mordred.TopologicalIndex module" href="mordred.TopologicalIndex.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -98,7 +98,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.EState.html">mordred.EState module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.EccentricConnectivityIndex.html">mordred.EccentricConnectivityIndex module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.FragmentComplexity.html">mordred.FragmentComplexity module</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="">mordred.Framework module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.Framework.html">mordred.Framework module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.InformationContent.html">mordred.InformationContent module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.KappaShapeIndex.html">mordred.KappaShapeIndex module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.Lipinski.html">mordred.Lipinski module</a></li>
@@ -109,7 +109,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.TPSA.html">mordred.TPSA module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.TopologicalCharge.html">mordred.TopologicalCharge module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.TopologicalIndex.html">mordred.TopologicalIndex module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mordred.VertexAdjacencyInformation.html">mordred.VertexAdjacencyInformation module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">mordred.VertexAdjacencyInformation module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.WalkCount.html">mordred.WalkCount module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.WienerIndex.html">mordred.WienerIndex module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.ZagrebIndex.html">mordred.ZagrebIndex module</a></li>
@@ -151,11 +151,11 @@
       
           <li><a href="mordred.html">mordred package</a> &raquo;</li>
       
-    <li>mordred.Framework module</li>
+    <li>mordred.VertexAdjacencyInformation module</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/api/mordred.Framework.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/api/mordred.VertexAdjacencyInformation.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -165,23 +165,21 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-mordred.Framework">
-<span id="mordred-framework-module"></span><h1>mordred.Framework module<a class="headerlink" href="#module-mordred.Framework" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-mordred.VertexAdjacencyInformation">
+<span id="mordred-vertexadjacencyinformation-module"></span><h1>mordred.VertexAdjacencyInformation module<a class="headerlink" href="#module-mordred.VertexAdjacencyInformation" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
-<dt id="mordred.Framework.Framework">
-<em class="property">class </em><code class="descclassname">mordred.Framework.</code><code class="descname">Framework</code><a class="reference internal" href="../_modules/mordred/_framework.html#Framework"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Framework.Framework" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.VertexAdjacencyInformation.VertexAdjacencyInformation">
+<em class="property">class </em><code class="descclassname">mordred.VertexAdjacencyInformation.</code><code class="descname">VertexAdjacencyInformation</code><a class="reference internal" href="../_modules/mordred/_vertex_adjacency_information.html#VertexAdjacencyInformation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.VertexAdjacencyInformation.VertexAdjacencyInformation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._base.Descriptor</span></code></p>
-<p>molecular framework ratio descriptor</p>
+<p>vertex adjacency information descriptor</p>
 <div class="math">
-\[f_{\rm MF} = \frac{N_{\rm MF}}{N}\]</div>
-<p>where
-<span class="math">\(N_{\rm MF}\)</span> is number of atoms in molecular framework,
-<span class="math">\(N\)</span> is number of all atoms.</p>
+\[{\rm VAdjMat} = 1 + \log_2(m)\]</div>
+<p>where <span class="math">\(m\)</span> is number of heavy-heavy bonds.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">fMF value</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">VAdjMat value</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
 </tr>
@@ -198,10 +196,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="mordred.InformationContent.html" class="btn btn-neutral float-right" title="mordred.InformationContent module" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mordred.WalkCount.html" class="btn btn-neutral float-right" title="mordred.WalkCount module" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="mordred.FragmentComplexity.html" class="btn btn-neutral" title="mordred.FragmentComplexity module" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mordred.TopologicalIndex.html" class="btn btn-neutral" title="mordred.TopologicalIndex module" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

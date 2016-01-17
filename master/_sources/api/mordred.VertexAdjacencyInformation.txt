@@ -1,0 +1,7 @@
+mordred.VertexAdjacencyInformation module
+=========================================
+
+.. automodule:: mordred.VertexAdjacencyInformation
+    :members:
+    :imported-members:
+    :show-inheritance:

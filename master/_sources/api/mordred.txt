@@ -35,6 +35,7 @@ Submodules
    mordred.TPSA
    mordred.TopologicalCharge
    mordred.TopologicalIndex
+   mordred.VertexAdjacencyInformation
    mordred.WalkCount
    mordred.WienerIndex
    mordred.ZagrebIndex
