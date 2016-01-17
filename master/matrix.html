@@ -89,6 +89,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#spdiam">SpDiam</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#spad">SpAD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#spmad">SpMAD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logee">LogEE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#sm1">SM1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#ve1">VE1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#ve2">VE2</a></li>
@@ -149,6 +150,7 @@
 <h2>SpAbs<a class="headerlink" href="#spabs" title="Permalink to this headline">¶</a></h2>
 <div class="math">
 \[{\rm SpAbs} = \sum_{i = 1}^N \left| \lambda_i \right|\]</div>
+<p>where <span class="math">\(\lambda_i\)</span> is <span class="math">\(i\)</span>-th eigenvalue.</p>
 </div>
 <div class="section" id="spmax">
 <h2>SpMax<a class="headerlink" href="#spmax" title="Permalink to this headline">¶</a></h2>
@@ -169,12 +171,12 @@
 <h2>SpMAD<a class="headerlink" href="#spmad" title="Permalink to this headline">¶</a></h2>
 <div class="math">
 \[{\rm SpMAD} = \frac{\rm SpAD}{A}\]</div>
-<p>LogEE
-&#8211;
-.. math:</p>
-<div class="highlight-python"><div class="highlight"><pre>{\rm LogEE} = \log(\sum_{i = 1}^N \exp(\lambda_i))
-</pre></div>
+<p>where <span class="math">\(A\)</span> is number of atoms.</p>
 </div>
+<div class="section" id="logee">
+<h2>LogEE<a class="headerlink" href="#logee" title="Permalink to this headline">¶</a></h2>
+<div class="math">
+\[{\rm LogEE} = \log(\sum_{i = 1}^N \exp(\lambda_i))\]</div>
 </div>
 <div class="section" id="sm1">
 <h2>SM1<a class="headerlink" href="#sm1" title="Permalink to this headline">¶</a></h2>
@@ -195,12 +197,12 @@
 <div class="section" id="ve3">
 <h2>VE3<a class="headerlink" href="#ve3" title="Permalink to this headline">¶</a></h2>
 <div class="math">
-\[{\rm VE3} = \frac{A}{10} \log({\rm VE1})\]</div>
+\[{\rm VE3} = \log(\frac{A}{10} \cdot {\rm VE1})\]</div>
 </div>
 <div class="section" id="vr1">
 <h2>VR1<a class="headerlink" href="#vr1" title="Permalink to this headline">¶</a></h2>
 <div class="math">
-\[{\rm VR1} = \sum_{(i, j) \in {\rm binds}} \left( \ell_i \cdot \ell_j \right)^{-1/2}\]</div>
+\[{\rm VR1} = \sum_{(i, j) \in {\rm bonds}} \left( \ell_i \cdot \ell_j \right)^{-1/2}\]</div>
 </div>
 <div class="section" id="vr2">
 <h2>VR2<a class="headerlink" href="#vr2" title="Permalink to this headline">¶</a></h2>
@@ -210,7 +212,7 @@
 <div class="section" id="vr3">
 <h2>VR3<a class="headerlink" href="#vr3" title="Permalink to this headline">¶</a></h2>
 <div class="math">
-\[{\rm VR3} = \frac{A}{10} \log({\rm VR1})\]</div>
+\[{\rm VR3} = \log(\frac{A}{10} \cdot {\rm VR1})\]</div>
 </div>
 </div>
 
