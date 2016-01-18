@@ -130,19 +130,20 @@
            <div itemprop="articleBody">
             
   <h1>Source code for mordred._molecular_distance_edge</h1><div class="highlight"><pre>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">nan</span><span class="p">,</span> <span class="n">product</span>
+
+<span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span>
+
+<span class="kn">from</span> <span class="nn">six</span> <span class="kn">import</span> <span class="n">integer_types</span><span class="p">,</span> <span class="n">string_types</span>
+
 <span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
 <span class="kn">from</span> <span class="nn">._common</span> <span class="kn">import</span> <span class="n">DistanceMatrix</span><span class="p">,</span> <span class="n">Valence</span>
-<span class="kn">from</span> <span class="nn">six</span> <span class="kn">import</span> <span class="n">integer_types</span><span class="p">,</span> <span class="n">string_types</span>
-<span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span>
-<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">product</span><span class="p">,</span> <span class="n">nan</span>
-
 
 <span class="n">table</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">GetPeriodicTable</span><span class="p">()</span>
 
 
 <div class="viewcode-block" id="MolecularDistanceEdge"><a class="viewcode-back" href="../../api/mordred.MolecularDistanceEdge.html#mordred.MolecularDistanceEdge.MolecularDistanceEdge">[docs]</a><span class="k">class</span> <span class="nc">MolecularDistanceEdge</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
-    <span class="sd">r&#39;&#39;&#39;</span>
-<span class="sd">    molecular distance edge descriptor</span>
+    <span class="sd">r&quot;&quot;&quot;molecular distance edge descriptor.</span>
 
 <span class="sd">    :type valence1: int</span>
 <span class="sd">    :param valence1: valence of first atom</span>
@@ -154,7 +155,7 @@
 <span class="sd">    :param element: atomic symbol or atomic number</span>
 
 <span class="sd">    :rtype: float</span>
-<span class="sd">    &#39;&#39;&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
     <span class="n">require_connected</span> <span class="o">=</span> <span class="bp">False</span>
@@ -206,8 +207,8 @@
             <span class="n">D</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
             <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">valence1</span> <span class="ow">and</span> <span class="n">V</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">valence2</span><span class="p">)</span>
-            <span class="ow">or</span> <span class="p">(</span><span class="n">V</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">valence1</span> <span class="ow">and</span> <span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">valence2</span><span class="p">)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">valence1</span> <span class="ow">and</span> <span class="n">V</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">valence2</span><span class="p">)</span> <span class="ow">or</span>
+            <span class="p">(</span><span class="n">V</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">valence1</span> <span class="ow">and</span> <span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">valence2</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetAtomWithIdx</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">GetAtomicNum</span><span class="p">()</span> <span class="o">==</span>
             <span class="n">mol</span><span class="o">.</span><span class="n">GetAtomWithIdx</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="o">.</span><span class="n">GetAtomicNum</span><span class="p">()</span> <span class="o">==</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">atomic_num</span>

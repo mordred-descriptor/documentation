@@ -130,10 +130,10 @@
            <div itemprop="articleBody">
             
   <h1>Source code for mordred._rotatable_bond</h1><div class="highlight"><pre>
+<span class="kn">from</span> <span class="nn">rdkit.Chem.rdMolDescriptors</span> <span class="kn">import</span> <span class="n">CalcNumRotatableBonds</span>
+
 <span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
 <span class="kn">from</span> <span class="nn">._bond_types</span> <span class="kn">import</span> <span class="n">BondCount</span>
-
-<span class="kn">from</span> <span class="nn">rdkit.Chem.rdMolDescriptors</span> <span class="kn">import</span> <span class="n">CalcNumRotatableBonds</span>
 
 
 <span class="k">class</span> <span class="nc">RotatableBondsBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
@@ -142,11 +142,10 @@
 
 
 <div class="viewcode-block" id="RotatableBondsCount"><a class="viewcode-back" href="../../api/mordred.Bond.html#mordred.Bond.RotatableBondsCount">[docs]</a><span class="k">class</span> <span class="nc">RotatableBondsCount</span><span class="p">(</span><span class="n">RotatableBondsBase</span><span class="p">):</span>
-    <span class="sd">r&#39;&#39;&#39;</span>
-<span class="sd">    ratatable bonds count descriptor</span>
+    <span class="sd">r&quot;&quot;&quot;ratatable bonds count descriptor.</span>
 
 <span class="sd">    :rtype: int</span>
-<span class="sd">    &#39;&#39;&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;nRot&#39;</span>
@@ -156,14 +155,13 @@
 
 
 <div class="viewcode-block" id="RotatableBondsRatio"><a class="viewcode-back" href="../../api/mordred.Bond.html#mordred.Bond.RotatableBondsRatio">[docs]</a><span class="k">class</span> <span class="nc">RotatableBondsRatio</span><span class="p">(</span><span class="n">RotatableBondsBase</span><span class="p">):</span>
-    <span class="sd">r&#39;&#39;&#39;</span>
-<span class="sd">    rotatable bonds ratio descriptor</span>
+    <span class="sd">r&quot;&quot;&quot;rotatable bonds ratio descriptor.</span>
 
 <span class="sd">    .. math::</span>
 <span class="sd">        {\rm RotRatio} = \frac{N_{\rm rotatable bonds}}{N_{\rm bonds}}</span>
 
 <span class="sd">    :rtype: float</span>
-<span class="sd">    &#39;&#39;&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;RotRatio&#39;</span>

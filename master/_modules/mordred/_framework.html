@@ -130,9 +130,10 @@
            <div itemprop="articleBody">
             
   <h1>Source code for mordred._framework</h1><div class="highlight"><pre>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="kn">as</span> <span class="nn">nx</span>
+
 <span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
 <span class="kn">from</span> <span class="nn">._ring_count</span> <span class="kn">import</span> <span class="n">Rings</span>
-<span class="kn">import</span> <span class="nn">networkx</span> <span class="kn">as</span> <span class="nn">nx</span>
 
 
 <span class="k">class</span> <span class="nc">FrameworkBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
@@ -172,8 +173,7 @@
 
 
 <div class="viewcode-block" id="Framework"><a class="viewcode-back" href="../../api/mordred.Framework.html#mordred.Framework.Framework">[docs]</a><span class="k">class</span> <span class="nc">Framework</span><span class="p">(</span><span class="n">FrameworkBase</span><span class="p">):</span>
-    <span class="sd">r&#39;&#39;&#39;</span>
-<span class="sd">    molecular framework ratio descriptor</span>
+    <span class="sd">r&quot;&quot;&quot;molecular framework ratio descriptor.</span>
 
 <span class="sd">    .. math::</span>
 
@@ -184,7 +184,7 @@
 <span class="sd">    :math:`N` is number of all atoms.</span>
 
 <span class="sd">    :rtype: float</span>
-<span class="sd">    &#39;&#39;&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;fMF&#39;</span>

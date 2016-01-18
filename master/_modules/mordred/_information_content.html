@@ -130,10 +130,12 @@
            <div itemprop="articleBody">
             
   <h1>Source code for mordred._information_content</h1><div class="highlight"><pre>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">groupby</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
 <span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
 <span class="kn">from</span> <span class="nn">._common</span> <span class="kn">import</span> <span class="n">DistanceMatrix</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">groupby</span>
 
 
 <span class="k">class</span> <span class="nc">BFSTree</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -226,8 +228,7 @@
 
 
 <div class="viewcode-block" id="InformationContent"><a class="viewcode-back" href="../../api/mordred.InformationContent.html#mordred.InformationContent.InformationContent">[docs]</a><span class="k">class</span> <span class="nc">InformationContent</span><span class="p">(</span><span class="n">InformationContentBase</span><span class="p">):</span>
-    <span class="sd">r&#39;&#39;&#39;</span>
-<span class="sd">    information content descriptor</span>
+    <span class="sd">r&quot;&quot;&quot;information content descriptor.</span>
 
 <span class="sd">    :type type: str</span>
 <span class="sd">    :param type:</span>
@@ -243,7 +244,7 @@
 <span class="sd">    :param order: order(number of edge) of subgraph</span>
 
 <span class="sd">    :rtype: float</span>
-<span class="sd">    &#39;&#39;&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>

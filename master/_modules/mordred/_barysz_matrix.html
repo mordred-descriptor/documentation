@@ -130,12 +130,15 @@
            <div itemprop="articleBody">
             
   <h1>Source code for mordred._barysz_matrix</h1><div class="highlight"><pre>
-<span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
-<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">_atomic_property</span>
-<span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span>
-<span class="kn">from</span> <span class="nn">scipy.sparse.csgraph</span> <span class="kn">import</span> <span class="n">shortest_path</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">._matrix_attributes</span> <span class="kn">import</span> <span class="n">methods</span><span class="p">,</span> <span class="n">get_method</span>
+
+<span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span>
+
+<span class="kn">from</span> <span class="nn">scipy.sparse.csgraph</span> <span class="kn">import</span> <span class="n">shortest_path</span>
+
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">_atomic_property</span>
+<span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
+<span class="kn">from</span> <span class="nn">._matrix_attributes</span> <span class="kn">import</span> <span class="n">get_method</span><span class="p">,</span> <span class="n">methods</span>
 
 
 <span class="k">class</span> <span class="nc">BaryszMatrixBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
@@ -149,7 +152,7 @@
 <span class="n">_carbon</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">Atom</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
 
 
-<span class="k">class</span> <span class="nc">barysz</span><span class="p">(</span><span class="n">BaryszMatrixBase</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">Barysz</span><span class="p">(</span><span class="n">BaryszMatrixBase</span><span class="p">):</span>
     <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="s1">&#39;prop&#39;</span><span class="p">,</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prop</span><span class="p">):</span>
@@ -163,15 +166,15 @@
         <span class="n">dmat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="p">))</span>
 
         <span class="k">for</span> <span class="n">bond</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetBonds</span><span class="p">():</span>
-            <span class="n">a</span> <span class="o">=</span> <span class="n">bond</span><span class="o">.</span><span class="n">GetBeginAtom</span><span class="p">()</span>
-            <span class="n">b</span> <span class="o">=</span> <span class="n">bond</span><span class="o">.</span><span class="n">GetEndAtom</span><span class="p">()</span>
+            <span class="n">ai</span> <span class="o">=</span> <span class="n">bond</span><span class="o">.</span><span class="n">GetBeginAtom</span><span class="p">()</span>
+            <span class="n">aj</span> <span class="o">=</span> <span class="n">bond</span><span class="o">.</span><span class="n">GetEndAtom</span><span class="p">()</span>
 
-            <span class="n">i</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">GetIdx</span><span class="p">()</span>
-            <span class="n">j</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">GetIdx</span><span class="p">()</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="n">ai</span><span class="o">.</span><span class="n">GetIdx</span><span class="p">()</span>
+            <span class="n">j</span> <span class="o">=</span> <span class="n">aj</span><span class="o">.</span><span class="n">GetIdx</span><span class="p">()</span>
 
             <span class="n">pi</span> <span class="o">=</span> <span class="n">bond</span><span class="o">.</span><span class="n">GetBondTypeAsDouble</span><span class="p">()</span>
 
-            <span class="n">w</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">C</span> <span class="o">*</span> <span class="n">C</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prop</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">prop</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="n">pi</span><span class="p">)</span>
+            <span class="n">w</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">C</span> <span class="o">*</span> <span class="n">C</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prop</span><span class="p">(</span><span class="n">ai</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">prop</span><span class="p">(</span><span class="n">aj</span><span class="p">)</span> <span class="o">*</span> <span class="n">pi</span><span class="p">)</span>
             <span class="n">dmat</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">w</span>
             <span class="n">dmat</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">w</span>
 
@@ -181,8 +184,7 @@
 
 
 <div class="viewcode-block" id="BaryszMatrix"><a class="viewcode-back" href="../../api/mordred.BaryszMatrix.html#mordred.BaryszMatrix.BaryszMatrix">[docs]</a><span class="k">class</span> <span class="nc">BaryszMatrix</span><span class="p">(</span><span class="n">BaryszMatrixBase</span><span class="p">):</span>
-    <span class="sd">r&#39;&#39;&#39;</span>
-<span class="sd">    barysz matrix descriptor</span>
+    <span class="sd">r&quot;&quot;&quot;barysz matrix descriptor.</span>
 
 <span class="sd">    :type prop: str or function</span>
 <span class="sd">    :param prop: atomic property</span>
@@ -191,7 +193,7 @@
 <span class="sd">    :param type: matrix aggregateing method</span>
 
 <span class="sd">    :rtype: float</span>
-<span class="sd">    &#39;&#39;&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
@@ -209,7 +211,7 @@
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
             <span class="n">result</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span>
-                <span class="n">barysz</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prop</span><span class="p">),</span>
+                <span class="n">Barysz</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prop</span><span class="p">),</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">,</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">gasteiger_charges</span><span class="p">,</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">kekulize</span><span class="p">,</span>

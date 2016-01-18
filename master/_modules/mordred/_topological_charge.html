@@ -130,12 +130,14 @@
            <div itemprop="articleBody">
             
   <h1>Source code for mordred._topological_charge</h1><div class="highlight"><pre>
-<span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
-<span class="kn">from</span> <span class="nn">._common</span> <span class="kn">import</span> <span class="n">AdjacencyMatrix</span><span class="p">,</span> <span class="n">DistanceMatrix</span>
-<span class="kn">from</span> <span class="nn">six</span> <span class="kn">import</span> <span class="n">integer_types</span>
 <span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">chain</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">six</span> <span class="kn">import</span> <span class="n">integer_types</span>
+
+<span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
+<span class="kn">from</span> <span class="nn">._common</span> <span class="kn">import</span> <span class="n">AdjacencyMatrix</span><span class="p">,</span> <span class="n">DistanceMatrix</span>
 
 
 <span class="k">class</span> <span class="nc">ChargeTermMatrix</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
@@ -165,8 +167,7 @@
 
 
 <div class="viewcode-block" id="TopologicalCharge"><a class="viewcode-back" href="../../api/mordred.TopologicalCharge.html#mordred.TopologicalCharge.TopologicalCharge">[docs]</a><span class="k">class</span> <span class="nc">TopologicalCharge</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
-    <span class="sd">r&#39;&#39;&#39;</span>
-<span class="sd">    topological charge descriptor</span>
+    <span class="sd">r&quot;&quot;&quot;topological charge descriptor.</span>
 
 <span class="sd">    :type type: str</span>
 <span class="sd">    :param type:</span>
@@ -178,7 +179,7 @@
 <span class="sd">    :param order: int</span>
 
 <span class="sd">    :rtype: float</span>
-<span class="sd">    &#39;&#39;&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
     <span class="n">require_connected</span> <span class="o">=</span> <span class="bp">False</span>

@@ -130,9 +130,10 @@
            <div itemprop="articleBody">
             
   <h1>Source code for mordred._autocorrelation</h1><div class="highlight"><pre>
-<span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
-<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">_atomic_property</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">_atomic_property</span>
+<span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
 <span class="kn">from</span> <span class="nn">._common</span> <span class="kn">import</span> <span class="n">DistanceMatrix</span>
 
 
@@ -255,8 +256,7 @@
 
 
 <div class="viewcode-block" id="ATS"><a class="viewcode-back" href="../../api/mordred.Autocorrelation.html#mordred.Autocorrelation.ATS">[docs]</a><span class="k">class</span> <span class="nc">ATS</span><span class="p">(</span><span class="n">Autocorrelation</span><span class="p">):</span>
-    <span class="sd">r&#39;&#39;&#39;</span>
-<span class="sd">    Autocorrelation of Topological Structure descriptor</span>
+    <span class="sd">r&quot;&quot;&quot;Autocorrelation of Topological Structure descriptor.</span>
 
 <span class="sd">    a.k.a. Moreau-Broto autocorrelation descriptor</span>
 
@@ -287,7 +287,7 @@
 <span class="sd">    :param property: atomic property</span>
 
 <span class="sd">    :type: float</span>
-<span class="sd">    &#39;&#39;&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
@@ -306,8 +306,7 @@
 
 
 <div class="viewcode-block" id="AATS"><a class="viewcode-back" href="../../api/mordred.Autocorrelation.html#mordred.Autocorrelation.AATS">[docs]</a><span class="k">class</span> <span class="nc">AATS</span><span class="p">(</span><span class="n">ATS</span><span class="p">):</span>
-    <span class="sd">r&#39;&#39;&#39;</span>
-<span class="sd">    averaged ATS descriptor</span>
+    <span class="sd">r&quot;&quot;&quot;averaged ATS descriptor.</span>
 
 <span class="sd">    .. math::</span>
 
@@ -319,7 +318,7 @@
 <span class="sd">    :Parameters: see ATS</span>
 
 <span class="sd">    :rtype: float</span>
-<span class="sd">    &#39;&#39;&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">ATS</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_ATS</span><span class="p">,</span> <span class="n">gsum</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_gsum</span><span class="p">)</span>
@@ -329,8 +328,7 @@
 
 
 <div class="viewcode-block" id="ATSC"><a class="viewcode-back" href="../../api/mordred.Autocorrelation.html#mordred.Autocorrelation.ATSC">[docs]</a><span class="k">class</span> <span class="nc">ATSC</span><span class="p">(</span><span class="n">Autocorrelation</span><span class="p">):</span>
-    <span class="sd">r&#39;&#39;&#39;</span>
-<span class="sd">    centered ATS descriptor</span>
+    <span class="sd">r&quot;&quot;&quot;centered ATS descriptor.</span>
 
 <span class="sd">    ATS with :math:`{\boldsymbol w}_{\rm c}` property</span>
 
@@ -340,7 +338,7 @@
 <span class="sd">    :Parameters: see ATS</span>
 
 <span class="sd">    :rtype: float</span>
-<span class="sd">    &#39;&#39;&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
@@ -359,8 +357,7 @@
 
 
 <div class="viewcode-block" id="AATSC"><a class="viewcode-back" href="../../api/mordred.Autocorrelation.html#mordred.Autocorrelation.AATSC">[docs]</a><span class="k">class</span> <span class="nc">AATSC</span><span class="p">(</span><span class="n">ATSC</span><span class="p">):</span>
-    <span class="sd">r&#39;&#39;&#39;</span>
-<span class="sd">    averaged ATSC descriptor</span>
+    <span class="sd">r&quot;&quot;&quot;averaged ATSC descriptor.</span>
 
 <span class="sd">    .. math::</span>
 
@@ -372,7 +369,7 @@
 <span class="sd">    :Parameters: see ATS</span>
 
 <span class="sd">    :rtype: float</span>
-<span class="sd">    &#39;&#39;&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">ATSC</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_ATSC</span><span class="p">,</span> <span class="n">gsum</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_gsum</span><span class="p">)</span>
@@ -382,8 +379,7 @@
 
 
 <div class="viewcode-block" id="MATS"><a class="viewcode-back" href="../../api/mordred.Autocorrelation.html#mordred.Autocorrelation.MATS">[docs]</a><span class="k">class</span> <span class="nc">MATS</span><span class="p">(</span><span class="n">Autocorrelation</span><span class="p">):</span>
-    <span class="sd">r&#39;&#39;&#39;</span>
-<span class="sd">    Moran coefficient descriptor</span>
+    <span class="sd">r&quot;&quot;&quot;Moran coefficient descriptor.</span>
 
 <span class="sd">    .. math::</span>
 
@@ -396,7 +392,7 @@
 <span class="sd">    :Parameters: see ATS</span>
 
 <span class="sd">    :rtype: float</span>
-<span class="sd">    &#39;&#39;&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
@@ -412,13 +408,12 @@
 
 
 <div class="viewcode-block" id="GATS"><a class="viewcode-back" href="../../api/mordred.Autocorrelation.html#mordred.Autocorrelation.GATS">[docs]</a><span class="k">class</span> <span class="nc">GATS</span><span class="p">(</span><span class="n">MATS</span><span class="p">):</span>
-    <span class="sd">r&#39;&#39;&#39;</span>
-<span class="sd">    Geary coefficient descriptor</span>
+    <span class="sd">r&quot;&quot;&quot;Geary coefficient descriptor.</span>
 
 <span class="sd">    :Parameters: see ATS</span>
 
 <span class="sd">    :rtype: float</span>
-<span class="sd">    &#39;&#39;&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">avec</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_avec</span><span class="p">,</span> <span class="n">gmat</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_gmat</span><span class="p">,</span> <span class="n">gsum</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_gsum</span><span class="p">,</span> <span class="n">cavec</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_cavec</span><span class="p">)</span>

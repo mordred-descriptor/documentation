@@ -130,10 +130,13 @@
            <div itemprop="articleBody">
             
   <h1>Source code for mordred._e_state</h1><div class="highlight"><pre>
-<span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
-<span class="kn">from</span> <span class="nn">rdkit.Chem</span> <span class="kn">import</span> <span class="n">EState</span> <span class="k">as</span> <span class="n">ES</span>
-<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">nan</span>
 <span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="nb">reduce</span>
+
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">nan</span>
+
+<span class="kn">from</span> <span class="nn">rdkit.Chem</span> <span class="kn">import</span> <span class="n">EState</span>
+
+<span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
 
 <span class="k">try</span><span class="p">:</span>
     <span class="kn">import</span> <span class="nn">builtins</span>
@@ -163,7 +166,7 @@
 
 <span class="k">class</span> <span class="nc">EStateCache</span><span class="p">(</span><span class="n">EStateBase</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">ES</span><span class="o">.</span><span class="n">TypeAtoms</span><span class="p">(</span><span class="n">mol</span><span class="p">),</span> <span class="n">ES</span><span class="o">.</span><span class="n">EStateIndices</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">EState</span><span class="o">.</span><span class="n">TypeAtoms</span><span class="p">(</span><span class="n">mol</span><span class="p">),</span> <span class="n">EState</span><span class="o">.</span><span class="n">EStateIndices</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
 
 
 <span class="n">aggr_name_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
@@ -175,8 +178,7 @@
 
 
 <div class="viewcode-block" id="AtomTypeEState"><a class="viewcode-back" href="../../api/mordred.EState.html#mordred.EState.AtomTypeEState">[docs]</a><span class="k">class</span> <span class="nc">AtomTypeEState</span><span class="p">(</span><span class="n">EStateBase</span><span class="p">):</span>
-    <span class="sd">r&#39;&#39;&#39;</span>
-<span class="sd">    atom type e-state descriptor</span>
+    <span class="sd">r&quot;&quot;&quot;atom type e-state descriptor.</span>
 
 <span class="sd">    :type type: str</span>
 <span class="sd">    :param type:</span>
@@ -189,7 +191,7 @@
 <span class="sd">    :param estate: e-state atom type</span>
 
 <span class="sd">    :rtype: int(&#39;count&#39;) or float(other)</span>
-<span class="sd">    &#39;&#39;&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>

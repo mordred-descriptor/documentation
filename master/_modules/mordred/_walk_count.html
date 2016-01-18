@@ -130,14 +130,14 @@
            <div itemprop="articleBody">
             
   <h1>Source code for mordred._walk_count</h1><div class="highlight"><pre>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
 <span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
 <span class="kn">from</span> <span class="nn">._common</span> <span class="kn">import</span> <span class="n">AdjacencyMatrix</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
 
 <div class="viewcode-block" id="WalkCount"><a class="viewcode-back" href="../../api/mordred.WalkCount.html#mordred.WalkCount.WalkCount">[docs]</a><span class="k">class</span> <span class="nc">WalkCount</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
-    <span class="sd">r&#39;&#39;&#39;</span>
-<span class="sd">    walk count descriptor</span>
+    <span class="sd">r&quot;&quot;&quot;walk count descriptor.</span>
 
 <span class="sd">    :type order: int</span>
 <span class="sd">    :param order: walk length</span>
@@ -149,7 +149,7 @@
 <span class="sd">    :param self_returning: use self returning walk only</span>
 
 <span class="sd">    :rtype: int</span>
-<span class="sd">    &#39;&#39;&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
 

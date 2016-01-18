@@ -134,14 +134,13 @@
 
 
 <div class="viewcode-block" id="AtomCount"><a class="viewcode-back" href="../../api/mordred.Atom.html#mordred.Atom.AtomCount">[docs]</a><span class="k">class</span> <span class="nc">AtomCount</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
-    <span class="sd">r&#39;&#39;&#39;</span>
-<span class="sd">    atom count descriptor</span>
+    <span class="sd">r&quot;&quot;&quot;atom count descriptor.</span>
 
 <span class="sd">    :type type: str</span>
 <span class="sd">    :param type: type to count. &#39;Atom&#39;, &#39;HeavyAtom&#39;, &#39;X&#39;(all halogen), or element symbol.</span>
 
 <span class="sd">    :rtype: int</span>
-<span class="sd">    &#39;&#39;&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">require_connected</span> <span class="o">=</span> <span class="bp">False</span>
 
@@ -154,10 +153,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">explicit_hydrogens</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">u&#39;&#39;&#39;</span>
-<span class="sd">        require explicit_hydrogens when type is &#39;H&#39; or &#39;Atom&#39;</span>
-<span class="sd">        &#39;&#39;&#39;</span>
-
+        <span class="sd">u&quot;&quot;&quot;require explicit_hydrogens when type is &#39;H&#39; or &#39;Atom&#39;.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">([</span><span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;Atom&#39;</span><span class="p">])</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>

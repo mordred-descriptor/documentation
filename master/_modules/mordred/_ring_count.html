@@ -130,9 +130,11 @@
            <div itemprop="articleBody">
             
   <h1>Source code for mordred._ring_count</h1><div class="highlight"><pre>
-<span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
-<span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span>
 <span class="kn">import</span> <span class="nn">networkx</span>
+
+<span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span>
+
+<span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
 
 
 <span class="k">class</span> <span class="nc">RingCountBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
@@ -167,8 +169,7 @@
 
 
 <div class="viewcode-block" id="RingCount"><a class="viewcode-back" href="../../api/mordred.RingCount.html#mordred.RingCount.RingCount">[docs]</a><span class="k">class</span> <span class="nc">RingCount</span><span class="p">(</span><span class="n">RingCountBase</span><span class="p">):</span>
-    <span class="sd">r&#39;&#39;&#39;</span>
-<span class="sd">    ring count descriptor</span>
+    <span class="sd">r&quot;&quot;&quot;ring count descriptor.</span>
 
 <span class="sd">    :type order: int or None</span>
 <span class="sd">    :param order: number of bonds in ring</span>
@@ -192,7 +193,7 @@
 <span class="sd">        * None: count any rings</span>
 
 <span class="sd">    :rtype: int</span>
-<span class="sd">    &#39;&#39;&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>

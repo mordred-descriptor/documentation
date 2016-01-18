@@ -130,14 +130,14 @@
            <div itemprop="articleBody">
             
   <h1>Source code for mordred._constitutional</h1><div class="highlight"><pre>
-<span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
-<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">_atomic_property</span>
 <span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span>
+
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">_atomic_property</span>
+<span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
 
 
 <div class="viewcode-block" id="ConstitutionalSum"><a class="viewcode-back" href="../../api/mordred.Constitutional.html#mordred.Constitutional.ConstitutionalSum">[docs]</a><span class="k">class</span> <span class="nc">ConstitutionalSum</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
-    <span class="sd">r&#39;&#39;&#39;</span>
-<span class="sd">    sum of constitutional descriptor</span>
+    <span class="sd">r&quot;&quot;&quot;sum of constitutional descriptor.</span>
 
 <span class="sd">    .. math::</span>
 <span class="sd">        S_p = \sum^A_{i=1} \frac{p_i}{p_{\rm C}}</span>
@@ -150,7 +150,7 @@
 <span class="sd">    :param prop: atomic property</span>
 
 <span class="sd">    :rtype: float</span>
-<span class="sd">    &#39;&#39;&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">require_connected</span> <span class="o">=</span> <span class="bp">False</span>
 
@@ -175,8 +175,7 @@
 
 
 <div class="viewcode-block" id="ConstitutionalMean"><a class="viewcode-back" href="../../api/mordred.Constitutional.html#mordred.Constitutional.ConstitutionalMean">[docs]</a><span class="k">class</span> <span class="nc">ConstitutionalMean</span><span class="p">(</span><span class="n">ConstitutionalSum</span><span class="p">):</span>
-    <span class="sd">r&#39;&#39;&#39;</span>
-<span class="sd">    mean of constitutional descriptor</span>
+    <span class="sd">r&quot;&quot;&quot;mean of constitutional descriptor.</span>
 
 <span class="sd">    .. math::</span>
 <span class="sd">        M_p = \frac{S_p}{A}</span>
@@ -185,7 +184,7 @@
 <span class="sd">    :param prop: atomic property</span>
 
 <span class="sd">    :rtype: float</span>
-<span class="sd">    &#39;&#39;&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>

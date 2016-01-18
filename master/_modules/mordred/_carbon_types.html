@@ -131,8 +131,10 @@
             
   <h1>Source code for mordred._carbon_types</h1><div class="highlight"><pre>
 <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
-<span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
+
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
 
 
 <span class="k">class</span> <span class="nc">CarbonTypesBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
@@ -179,8 +181,7 @@
 
 
 <div class="viewcode-block" id="CarbonTypes"><a class="viewcode-back" href="../../api/mordred.Atom.html#mordred.Atom.CarbonTypes">[docs]</a><span class="k">class</span> <span class="nc">CarbonTypes</span><span class="p">(</span><span class="n">CarbonTypesBase</span><span class="p">):</span>
-    <span class="sd">r&#39;&#39;&#39;</span>
-<span class="sd">    carbon types descriptor</span>
+    <span class="sd">r&quot;&quot;&quot;carbon types descriptor.</span>
 
 <span class="sd">    :type nCarbon: int</span>
 <span class="sd">    :param nCarbon: count `n`-carbon bonded carbon</span>
@@ -189,7 +190,7 @@
 <span class="sd">    :param SP: count :math:`{\rm SP}n` carbon</span>
 
 <span class="sd">    :rtype: int</span>
-<span class="sd">    &#39;&#39;&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
@@ -218,15 +219,14 @@
 
 
 <div class="viewcode-block" id="HybridizationRatio"><a class="viewcode-back" href="../../api/mordred.Atom.html#mordred.Atom.HybridizationRatio">[docs]</a><span class="k">class</span> <span class="nc">HybridizationRatio</span><span class="p">(</span><span class="n">CarbonTypesBase</span><span class="p">):</span>
-    <span class="sd">r&#39;&#39;&#39;</span>
-<span class="sd">    hybridization ratio descriptor</span>
+    <span class="sd">r&quot;&quot;&quot;hybridization ratio descriptor.</span>
 
 <span class="sd">    .. math::</span>
 
 <span class="sd">        {\rm HybRatio} = \frac{N_{\rm SP3}}{N_{\rm SP2} + N_{\rm SP3}}</span>
 
 <span class="sd">    :rtype: float</span>
-<span class="sd">    &#39;&#39;&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;HybRatio&#39;</span>

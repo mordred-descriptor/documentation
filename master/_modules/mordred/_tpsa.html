@@ -130,14 +130,15 @@
            <div itemprop="articleBody">
             
   <h1>Source code for mordred._tpsa</h1><div class="highlight"><pre>
-<span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
-<span class="kn">from</span> <span class="nn">rdkit.Chem</span> <span class="kn">import</span> <span class="n">rdMolDescriptors</span><span class="p">,</span> <span class="n">BondType</span>
 <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+
+<span class="kn">from</span> <span class="nn">rdkit.Chem</span> <span class="kn">import</span> <span class="n">BondType</span><span class="p">,</span> <span class="n">rdMolDescriptors</span>
+
+<span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
 
 
 <div class="viewcode-block" id="TPSA"><a class="viewcode-back" href="../../api/mordred.TPSA.html#mordred.TPSA.TPSA">[docs]</a><span class="k">class</span> <span class="nc">TPSA</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
-    <span class="sd">r&#39;&#39;&#39;</span>
-<span class="sd">    topological polar surface area descriptor</span>
+    <span class="sd">r&quot;&quot;&quot;topological polar surface area descriptor.</span>
 
 <span class="sd">    :type no_only: bool</span>
 <span class="sd">    :param no_only:</span>
@@ -145,7 +146,7 @@
 <span class="sd">        * False: all(N,O,S,P) TPSA</span>
 
 <span class="sd">    :rtype: float</span>
-<span class="sd">    &#39;&#39;&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">require_connected</span> <span class="o">=</span> <span class="bp">False</span>
 
@@ -194,9 +195,9 @@
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">cnt</span><span class="p">)</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">_get_phosphorus_contrib</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">atom</span><span class="p">):</span>
-        <span class="n">nH</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hydrogen_count</span><span class="p">(</span><span class="n">atom</span><span class="p">)</span>
-        <span class="n">cnt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bond_type_count</span><span class="p">(</span><span class="n">atom</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_get_phosphorus_contrib</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">atom</span><span class="p">):</span>
+        <span class="n">nH</span> <span class="o">=</span> <span class="n">cls</span><span class="o">.</span><span class="n">_hydrogen_count</span><span class="p">(</span><span class="n">atom</span><span class="p">)</span>
+        <span class="n">cnt</span> <span class="o">=</span> <span class="n">cls</span><span class="o">.</span><span class="n">_bond_type_count</span><span class="p">(</span><span class="n">atom</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">atom</span><span class="o">.</span><span class="n">GetFormalCharge</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">atom</span><span class="o">.</span><span class="n">GetIsAromatic</span><span class="p">():</span>
             <span class="k">return</span> <span class="mf">0.0</span>
@@ -214,9 +215,9 @@
         <span class="k">return</span> <span class="mf">0.0</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">_get_sulfur_contrib</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">atom</span><span class="p">):</span>
-        <span class="n">nH</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hydrogen_count</span><span class="p">(</span><span class="n">atom</span><span class="p">)</span>
-        <span class="n">cnt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bond_type_count</span><span class="p">(</span><span class="n">atom</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_get_sulfur_contrib</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">atom</span><span class="p">):</span>
+        <span class="n">nH</span> <span class="o">=</span> <span class="n">cls</span><span class="o">.</span><span class="n">_hydrogen_count</span><span class="p">(</span><span class="n">atom</span><span class="p">)</span>
+        <span class="n">cnt</span> <span class="o">=</span> <span class="n">cls</span><span class="o">.</span><span class="n">_bond_type_count</span><span class="p">(</span><span class="n">atom</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">atom</span><span class="o">.</span><span class="n">GetFormalCharge</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">return</span> <span class="mf">0.0</span>
