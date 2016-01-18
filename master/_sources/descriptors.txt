@@ -1,5 +1,10 @@
-Descriptor list
+Descriptor List
 ===============
+preset descriptors
+
+.. code:: python
+
+    calc = Calculator(all_descriptors())
 
 .. csv-table:: Descriptor list
     :header: "#", "module", "name", "constructor"

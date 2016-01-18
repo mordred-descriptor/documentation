@@ -84,7 +84,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../api/mordred.html">mordred package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../matrix.html">Matrix aggregating methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../atomic_prop.html">atomic properties</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../descriptors.html">Descriptor list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../descriptors.html">Descriptor List</a></li>
 </ul>
 
             
@@ -195,7 +195,7 @@
 <span class="sd">    &#39;&#39;&#39;</span>
 
     <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="RingCount.preset"><a class="viewcode-back" href="../../api/mordred.RingCount.html#mordred.RingCount.RingCount.preset">[docs]</a>    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">fused</span> <span class="ow">in</span> <span class="p">[</span><span class="bp">False</span><span class="p">,</span> <span class="bp">True</span><span class="p">]:</span>
             <span class="k">for</span> <span class="n">arom</span> <span class="ow">in</span> <span class="p">[</span><span class="bp">None</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">]:</span>
                 <span class="k">for</span> <span class="n">hetero</span> <span class="ow">in</span> <span class="p">[</span><span class="bp">None</span><span class="p">,</span> <span class="bp">True</span><span class="p">]:</span>
@@ -203,7 +203,7 @@
                     <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span> <span class="k">if</span> <span class="n">fused</span> <span class="k">else</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">13</span><span class="p">):</span>
                         <span class="k">yield</span> <span class="n">cls</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="n">fused</span><span class="p">,</span> <span class="n">arom</span><span class="p">,</span> <span class="n">hetero</span><span class="p">)</span>
 
-                    <span class="k">yield</span> <span class="n">cls</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="n">fused</span><span class="p">,</span> <span class="n">arom</span><span class="p">,</span> <span class="n">hetero</span><span class="p">)</span></div>
+                    <span class="k">yield</span> <span class="n">cls</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="n">fused</span><span class="p">,</span> <span class="n">arom</span><span class="p">,</span> <span class="n">hetero</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">attrs</span> <span class="o">=</span> <span class="p">[]</span>
