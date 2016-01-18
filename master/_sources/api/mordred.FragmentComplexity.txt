@@ -3,5 +3,5 @@ mordred.FragmentComplexity module
 
 .. automodule:: mordred.FragmentComplexity
     :members:
-    :imported-members:
+    :undoc-members:
     :show-inheritance:

@@ -3,5 +3,5 @@ mordred.InformationContent module
 
 .. automodule:: mordred.InformationContent
     :members:
-    :imported-members:
+    :undoc-members:
     :show-inheritance:

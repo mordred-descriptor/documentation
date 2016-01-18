@@ -3,5 +3,5 @@ mordred.VertexAdjacencyInformation module
 
 .. automodule:: mordred.VertexAdjacencyInformation
     :members:
-    :imported-members:
+    :undoc-members:
     :show-inheritance:

@@ -3,5 +3,5 @@ mordred.DetourMatrix module
 
 .. automodule:: mordred.DetourMatrix
     :members:
-    :imported-members:
+    :undoc-members:
     :show-inheritance:

@@ -3,5 +3,5 @@ mordred.Constitutional module
 
 .. automodule:: mordred.Constitutional
     :members:
-    :imported-members:
+    :undoc-members:
     :show-inheritance:

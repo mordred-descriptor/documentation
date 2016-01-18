@@ -3,5 +3,5 @@ mordred.BaryszMatrix module
 
 .. automodule:: mordred.BaryszMatrix
     :members:
-    :imported-members:
+    :undoc-members:
     :show-inheritance:

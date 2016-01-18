@@ -3,5 +3,5 @@ mordred.KappaShapeIndex module
 
 .. automodule:: mordred.KappaShapeIndex
     :members:
-    :imported-members:
+    :undoc-members:
     :show-inheritance:

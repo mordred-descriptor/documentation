@@ -3,5 +3,5 @@ mordred.DistanceMatrix module
 
 .. automodule:: mordred.DistanceMatrix
     :members:
-    :imported-members:
+    :undoc-members:
     :show-inheritance:

@@ -3,5 +3,5 @@ mordred.Framework module
 
 .. automodule:: mordred.Framework
     :members:
-    :imported-members:
+    :undoc-members:
     :show-inheritance:

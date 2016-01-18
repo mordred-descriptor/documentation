@@ -3,5 +3,5 @@ mordred.EccentricConnectivityIndex module
 
 .. automodule:: mordred.EccentricConnectivityIndex
     :members:
-    :imported-members:
+    :undoc-members:
     :show-inheritance:

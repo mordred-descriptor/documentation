@@ -169,23 +169,6 @@
   <div class="section" id="module-mordred.Bond">
 <span id="mordred-bond-module"></span><h1>mordred.Bond module<a class="headerlink" href="#module-mordred.Bond" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
-<dt id="mordred.Bond.AromaticBondsCount">
-<em class="property">class </em><code class="descclassname">mordred.Bond.</code><code class="descname">AromaticBondsCount</code><a class="reference internal" href="../_modules/mordred/_aromatic.html#AromaticBondsCount"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Bond.AromaticBondsCount" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._aromatic.AromaticBase</span></code></p>
-<p>aromatic bonds count descriptor</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">count of aromatic bonds</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)">int</a></td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="class">
 <dt id="mordred.Bond.BondCount">
 <em class="property">class </em><code class="descclassname">mordred.Bond.</code><code class="descname">BondCount</code><span class="sig-paren">(</span><em>type='any'</em>, <em>kekulize=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_bond_types.html#BondCount"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Bond.BondCount" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._base.Descriptor</span></code></p>
@@ -209,11 +192,40 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">bond count</p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)">int</a></p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)">int</a></p>
-</td>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="mordred.Bond.BondCount.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><a class="headerlink" href="#mordred.Bond.BondCount.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="mordred.Bond.BondCount.preset">
+<em class="property">classmethod </em><code class="descname">preset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_bond_types.html#BondCount.preset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Bond.BondCount.preset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Bond.BondCount.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Bond.BondCount.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.Bond.AromaticBondsCount">
+<em class="property">class </em><code class="descclassname">mordred.Bond.</code><code class="descname">AromaticBondsCount</code><a class="reference internal" href="../_modules/mordred/_aromatic.html#AromaticBondsCount"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Bond.AromaticBondsCount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._aromatic.AromaticBase</span></code></p>
+<p>aromatic bonds count descriptor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)">int</a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">count of aromatic bonds</td>
 </tr>
 </tbody>
 </table>
@@ -228,9 +240,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">hydrogen bond acceptor count</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)">int</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -245,9 +255,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">hydrogen bond donor count</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)">int</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -262,9 +270,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">rotatable bonds count</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)">int</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -281,9 +287,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">rotatable bonds ratio</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
 </tr>
 </tbody>
 </table>

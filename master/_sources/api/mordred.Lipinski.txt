@@ -3,5 +3,5 @@ mordred.Lipinski module
 
 .. automodule:: mordred.Lipinski
     :members:
-    :imported-members:
+    :undoc-members:
     :show-inheritance:

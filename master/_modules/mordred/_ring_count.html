@@ -145,7 +145,6 @@
 
 
 <span class="k">class</span> <span class="nc">FusedRings</span><span class="p">(</span><span class="n">RingCountBase</span><span class="p">):</span>
-    <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">Rings</span><span class="o">=</span><span class="n">Rings</span><span class="p">())</span>
 
@@ -170,25 +169,32 @@
     <span class="sd">r&#39;&#39;&#39;</span>
 <span class="sd">    ring count descriptor</span>
 
-<span class="sd">    Parameters:</span>
-<span class="sd">        order(int or None): number of bonds in ring</span>
-<span class="sd">        greater(bool): count length or greater rings</span>
-<span class="sd">        fused(bool): count fused rings</span>
-<span class="sd">        aromatic(bool, None):</span>
-<span class="sd">            * True: count aromatic rings</span>
-<span class="sd">            * False: count non-aromatic rings</span>
-<span class="sd">            * None: count any rings</span>
-<span class="sd">        hetero(boo, None):</span>
-<span class="sd">            * True: count hetero rings</span>
-<span class="sd">            * False: count carbon rings</span>
-<span class="sd">            * None: count any rings</span>
+<span class="sd">    :type order: int or None</span>
+<span class="sd">    :param order: number of bonds in ring</span>
 
-<span class="sd">    Returns:</span>
-<span class="sd">        int: ring count</span>
+<span class="sd">    :type greater: bool</span>
+<span class="sd">    :param greater: count length or greater rings</span>
+
+<span class="sd">    :type fused: bool</span>
+<span class="sd">    :param fused: count fused rings</span>
+
+<span class="sd">    :type aromatic: bool or None</span>
+<span class="sd">    :param aromatic:</span>
+<span class="sd">        * True: count aromatic rings</span>
+<span class="sd">        * False: count non-aromatic rings</span>
+<span class="sd">        * None: count any rings</span>
+
+<span class="sd">    :type hetero: bool or None</span>
+<span class="sd">    :param hetero:</span>
+<span class="sd">        * True: count hetero rings</span>
+<span class="sd">        * False: count carbon rings</span>
+<span class="sd">        * None: count any rings</span>
+
+<span class="sd">    :rtype: int</span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+<div class="viewcode-block" id="RingCount.preset"><a class="viewcode-back" href="../../api/mordred.RingCount.html#mordred.RingCount.RingCount.preset">[docs]</a>    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">fused</span> <span class="ow">in</span> <span class="p">[</span><span class="bp">False</span><span class="p">,</span> <span class="bp">True</span><span class="p">]:</span>
             <span class="k">for</span> <span class="n">arom</span> <span class="ow">in</span> <span class="p">[</span><span class="bp">None</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">]:</span>
                 <span class="k">for</span> <span class="n">hetero</span> <span class="ow">in</span> <span class="p">[</span><span class="bp">None</span><span class="p">,</span> <span class="bp">True</span><span class="p">]:</span>
@@ -196,7 +202,7 @@
                     <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span> <span class="k">if</span> <span class="n">fused</span> <span class="k">else</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">13</span><span class="p">):</span>
                         <span class="k">yield</span> <span class="n">cls</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="n">fused</span><span class="p">,</span> <span class="n">arom</span><span class="p">,</span> <span class="n">hetero</span><span class="p">)</span>
 
-                    <span class="k">yield</span> <span class="n">cls</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="n">fused</span><span class="p">,</span> <span class="n">arom</span><span class="p">,</span> <span class="n">hetero</span><span class="p">)</span>
+                    <span class="k">yield</span> <span class="n">cls</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="n">fused</span><span class="p">,</span> <span class="n">arom</span><span class="p">,</span> <span class="n">hetero</span><span class="p">)</span></div>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">attrs</span> <span class="o">=</span> <span class="p">[]</span>
@@ -231,7 +237,6 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">aromatic</span> <span class="o">=</span> <span class="n">aromatic</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">hetero</span> <span class="o">=</span> <span class="n">hetero</span>
 
-    <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
             <span class="n">Rs</span><span class="o">=</span><span class="p">(</span><span class="n">FusedRings</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">fused</span> <span class="k">else</span> <span class="n">Rings</span><span class="p">)()</span>

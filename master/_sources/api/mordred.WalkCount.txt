@@ -3,5 +3,5 @@ mordred.WalkCount module
 
 .. automodule:: mordred.WalkCount
     :members:
-    :imported-members:
+    :undoc-members:
     :show-inheritance:

@@ -3,5 +3,5 @@ mordred.Bond module
 
 .. automodule:: mordred.Bond
     :members:
-    :imported-members:
+    :undoc-members:
     :show-inheritance:

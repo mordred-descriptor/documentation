@@ -3,5 +3,5 @@ mordred.MolecularDistanceEdge module
 
 .. automodule:: mordred.MolecularDistanceEdge
     :members:
-    :imported-members:
+    :undoc-members:
     :show-inheritance:

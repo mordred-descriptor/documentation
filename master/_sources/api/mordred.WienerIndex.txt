@@ -3,5 +3,5 @@ mordred.WienerIndex module
 
 .. automodule:: mordred.WienerIndex
     :members:
-    :imported-members:
+    :undoc-members:
     :show-inheritance:

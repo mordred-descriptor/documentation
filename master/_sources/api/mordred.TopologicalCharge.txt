@@ -3,5 +3,5 @@ mordred.TopologicalCharge module
 
 .. automodule:: mordred.TopologicalCharge
     :members:
-    :imported-members:
+    :undoc-members:
     :show-inheritance:

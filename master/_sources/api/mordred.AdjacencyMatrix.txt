@@ -3,5 +3,5 @@ mordred.AdjacencyMatrix module
 
 .. automodule:: mordred.AdjacencyMatrix
     :members:
-    :imported-members:
+    :undoc-members:
     :show-inheritance:

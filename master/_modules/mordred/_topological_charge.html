@@ -141,7 +141,6 @@
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
     <span class="n">require_connected</span> <span class="o">=</span> <span class="bp">False</span>
 
-    <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
             <span class="n">A</span><span class="o">=</span><span class="n">AdjacencyMatrix</span><span class="p">(</span>
@@ -168,24 +167,27 @@
     <span class="sd">r&#39;&#39;&#39;</span>
 <span class="sd">    topological charge descriptor</span>
 
-<span class="sd">    Parameters:</span>
-<span class="sd">        type(str):</span>
-<span class="sd">            * &#39;sum&#39;: sum of order-distance atom pairs coefficient</span>
-<span class="sd">            * &#39;mean&#39;: mean of order-distance atom pairs coefficient</span>
-<span class="sd">            * &#39;global&#39;: sum of mean-topoCharge over 0 to order</span>
+<span class="sd">    :type type: str</span>
+<span class="sd">    :param type:</span>
+<span class="sd">        * &#39;sum&#39;: sum of order-distance atom pairs coefficient</span>
+<span class="sd">        * &#39;mean&#39;: mean of order-distance atom pairs coefficient</span>
+<span class="sd">        * &#39;global&#39;: sum of mean-topoCharge over 0 to order</span>
 
-<span class="sd">        order(int): distance of atom pairs</span>
+<span class="sd">    :type order: int</span>
+<span class="sd">    :param order: int</span>
+
+<span class="sd">    :rtype: float</span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
     <span class="n">require_connected</span> <span class="o">=</span> <span class="bp">False</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+<div class="viewcode-block" id="TopologicalCharge.preset"><a class="viewcode-back" href="../../api/mordred.TopologicalCharge.html#mordred.TopologicalCharge.TopologicalCharge.preset">[docs]</a>    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">chain</span><span class="p">(</span>
             <span class="p">(</span><span class="n">cls</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">o</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;raw&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)),</span>
             <span class="p">[</span><span class="n">cls</span><span class="p">(</span><span class="s1">&#39;global&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)]</span>
-        <span class="p">)</span>
+        <span class="p">)</span></div>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;global&#39;</span><span class="p">:</span>
@@ -204,7 +206,6 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="nb">type</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">order</span> <span class="o">=</span> <span class="n">order</span>
 
-    <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
             <span class="n">CT</span><span class="o">=</span><span class="n">ChargeTermMatrix</span><span class="p">(),</span>

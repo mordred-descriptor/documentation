@@ -3,5 +3,5 @@ mordred.Chi module
 
 .. automodule:: mordred.Chi
     :members:
-    :imported-members:
+    :undoc-members:
     :show-inheritance:

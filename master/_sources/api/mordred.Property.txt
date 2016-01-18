@@ -3,5 +3,5 @@ mordred.Property module
 
 .. automodule:: mordred.Property
     :members:
-    :imported-members:
+    :undoc-members:
     :show-inheritance:

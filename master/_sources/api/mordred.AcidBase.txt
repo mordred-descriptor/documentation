@@ -3,5 +3,5 @@ mordred.AcidBase module
 
 .. automodule:: mordred.AcidBase
     :members:
-    :imported-members:
+    :undoc-members:
     :show-inheritance:

@@ -164,7 +164,6 @@
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prop</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">prop</span> <span class="o">=</span> <span class="n">prop</span>
 
-    <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">avec</span><span class="o">=</span><span class="n">AVec</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prop</span><span class="p">))</span>
 
@@ -178,7 +177,6 @@
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">order</span> <span class="o">=</span> <span class="n">order</span>
 
-    <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
             <span class="n">dmat</span><span class="o">=</span><span class="n">DistanceMatrix</span><span class="p">(</span>
@@ -198,7 +196,6 @@
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">order</span> <span class="o">=</span> <span class="n">order</span>
 
-    <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">gmat</span><span class="o">=</span><span class="n">GMat</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">order</span><span class="p">))</span>
 
@@ -282,21 +279,21 @@
 <span class="sd">    :math:`{\boldsymbol w}` is atomic property vector,</span>
 <span class="sd">    :math:`d_{ij}` is graph distance(smallest number of bonds between atom i and j).</span>
 
-<span class="sd">    Parameters:</span>
-<span class="sd">        order(int): order(:math:`k`)</span>
-<span class="sd">        property(str, function): atomic property</span>
+<span class="sd">    :type order: int</span>
+<span class="sd">    :param order: order(:math:`k`)</span>
 
-<span class="sd">    Returns:</span>
-<span class="sd">        float: ATS value</span>
+<span class="sd">    :type property: str or function</span>
+<span class="sd">    :param property: atomic property</span>
+
+<span class="sd">    :type: float</span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+<div class="viewcode-block" id="ATS.preset"><a class="viewcode-back" href="../../api/mordred.Autocorrelation.html#mordred.Autocorrelation.ATS.preset">[docs]</a>    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">(</span><span class="n">cls</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
                 <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">_atomic_property</span><span class="o">.</span><span class="n">get_properties</span><span class="p">(</span><span class="n">istate</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-                <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">MAX_DISTANCE</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+                <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">MAX_DISTANCE</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span></div>
 
-    <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">avec</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_avec</span><span class="p">,</span> <span class="n">gmat</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_gmat</span><span class="p">)</span>
 
@@ -318,14 +315,11 @@
 <span class="sd">    where</span>
 <span class="sd">    :math:`\Delta_k` is number of vertex pairs at order equal to :math:`k`.</span>
 
-<span class="sd">    Parameters:</span>
-<span class="sd">        parameters: see ATS</span>
+<span class="sd">    :Parameters: see ATS</span>
 
-<span class="sd">    Returns:</span>
-<span class="sd">        float: AATS value</span>
+<span class="sd">    :rtype: float</span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
-    <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">ATS</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_ATS</span><span class="p">,</span> <span class="n">gsum</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_gsum</span><span class="p">)</span>
 
@@ -342,21 +336,17 @@
 <span class="sd">    .. math::</span>
 <span class="sd">        {\boldsymbol w}_{\rm c} = {\boldsymbol w} - \bar{\boldsymbol w}</span>
 
-<span class="sd">    Parameters:</span>
-<span class="sd">        parameters: see ATS</span>
+<span class="sd">    :Parameters: see ATS</span>
 
-<span class="sd">    Returns:</span>
-<span class="sd">        float: ATSC value</span>
-
+<span class="sd">    :rtype: float</span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+<div class="viewcode-block" id="ATSC.preset"><a class="viewcode-back" href="../../api/mordred.Autocorrelation.html#mordred.Autocorrelation.ATSC.preset">[docs]</a>    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">(</span><span class="n">cls</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
                 <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">_atomic_property</span><span class="o">.</span><span class="n">get_properties</span><span class="p">(</span><span class="n">charge</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">istate</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-                <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">MAX_DISTANCE</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+                <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">MAX_DISTANCE</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span></div>
 
-    <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">cavec</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_cavec</span><span class="p">,</span> <span class="n">gmat</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_gmat</span><span class="p">)</span>
 
@@ -378,14 +368,11 @@
 <span class="sd">    where</span>
 <span class="sd">    :math:`\Delta_k` is number of vertex pairs at order equal to :math:`k`.</span>
 
-<span class="sd">    Parameters:</span>
-<span class="sd">        parameters: see ATS</span>
+<span class="sd">    :Parameters: see ATS</span>
 
-<span class="sd">    Returns:</span>
-<span class="sd">        float: AATSC value</span>
+<span class="sd">    :rtype: float</span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
-    <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">ATSC</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_ATSC</span><span class="p">,</span> <span class="n">gsum</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_gsum</span><span class="p">)</span>
 
@@ -405,20 +392,17 @@
 <span class="sd">            \frac{1}{A} \cdot \sum {\boldsymbol w}_{\rm c}^2</span>
 <span class="sd">            }</span>
 
-<span class="sd">    Parameters:</span>
-<span class="sd">        parameters: see ATS</span>
+<span class="sd">    :Parameters: see ATS</span>
 
-<span class="sd">    Returns:</span>
-<span class="sd">        float: MATS value</span>
+<span class="sd">    :rtype: float</span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+<div class="viewcode-block" id="MATS.preset"><a class="viewcode-back" href="../../api/mordred.Autocorrelation.html#mordred.Autocorrelation.MATS.preset">[docs]</a>    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">(</span><span class="n">cls</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
                 <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">_atomic_property</span><span class="o">.</span><span class="n">get_properties</span><span class="p">(</span><span class="n">charge</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">istate</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-                <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">MAX_DISTANCE</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+                <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">MAX_DISTANCE</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span></div>
 
-    <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">avec</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_avec</span><span class="p">,</span> <span class="n">AATSC</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_AATSC</span><span class="p">,</span> <span class="n">cavec</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_cavec</span><span class="p">)</span>
 
@@ -430,14 +414,11 @@
     <span class="sd">r&#39;&#39;&#39;</span>
 <span class="sd">    Geary coefficient descriptor</span>
 
-<span class="sd">    Parameters:</span>
-<span class="sd">        parameters: see ATS</span>
+<span class="sd">    :Parameters: see ATS</span>
 
-<span class="sd">    Returns:</span>
-<span class="sd">        float: GATS value</span>
+<span class="sd">    :rtype: float</span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
-    <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">avec</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_avec</span><span class="p">,</span> <span class="n">gmat</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_gmat</span><span class="p">,</span> <span class="n">gsum</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_gsum</span><span class="p">,</span> <span class="n">cavec</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_cavec</span><span class="p">)</span>
 

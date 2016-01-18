@@ -3,5 +3,5 @@ mordred.RingCount module
 
 .. automodule:: mordred.RingCount
     :members:
-    :imported-members:
+    :undoc-members:
     :show-inheritance:

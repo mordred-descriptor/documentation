@@ -169,6 +169,38 @@
   <div class="section" id="module-mordred.Property">
 <span id="mordred-property-module"></span><h1>mordred.Property module<a class="headerlink" href="#module-mordred.Property" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
+<dt id="mordred.Property.Weight">
+<em class="property">class </em><code class="descclassname">mordred.Property.</code><code class="descname">Weight</code><span class="sig-paren">(</span><em>averaged=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_weight.html#Weight"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Property.Weight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._base.Descriptor</span></code></p>
+<p>molecular weight descriptor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>averaged</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; averaged by number of atom</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="mordred.Property.Weight.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.Property.Weight.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="mordred.Property.Weight.preset">
+<em class="property">classmethod </em><code class="descname">preset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_weight.html#Weight.preset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Property.Weight.preset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Property.Weight.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Property.Weight.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
 <dt id="mordred.Property.McGowanVolume">
 <em class="property">class </em><code class="descclassname">mordred.Property.</code><code class="descname">McGowanVolume</code><a class="reference internal" href="../_modules/mordred/_mc_gowan_volume.html#McGowanVolume"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Property.McGowanVolume" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._base.Descriptor</span></code></p>
@@ -177,12 +209,15 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">McGowan volume</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
 </tr>
 </tbody>
 </table>
+<dl class="attribute">
+<dt id="mordred.Property.McGowanVolume.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Property.McGowanVolume.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -194,31 +229,15 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">VABC value</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="class">
-<dt id="mordred.Property.Weight">
-<em class="property">class </em><code class="descclassname">mordred.Property.</code><code class="descname">Weight</code><span class="sig-paren">(</span><em>averaged=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_weight.html#Weight"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Property.Weight" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._base.Descriptor</span></code></p>
-<p>molecular weight descriptor</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>averaged</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; averaged by number of atom</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">exact molecular weight</td>
-</tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
 </tr>
 </tbody>
 </table>
+<dl class="attribute">
+<dt id="mordred.Property.VdwVolumeABC.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Property.VdwVolumeABC.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -230,14 +249,27 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>prop</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; &#8216;LogP&#8217; or &#8216;MR&#8217;</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> &#8211; &#8216;LogP&#8217; or &#8216;MR&#8217;</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">LogP or MR value</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
 </tr>
 </tbody>
 </table>
+<dl class="attribute">
+<dt id="mordred.Property.WildmanCrippenLogP.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Property.WildmanCrippenLogP.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="mordred.Property.WildmanCrippenLogP.preset">
+<em class="property">classmethod </em><code class="descname">preset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_wildman_crippen_logp.html#WildmanCrippenLogP.preset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Property.WildmanCrippenLogP.preset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Property.WildmanCrippenLogP.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Property.WildmanCrippenLogP.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>

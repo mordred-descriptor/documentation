@@ -142,14 +142,12 @@
     <span class="sd">r&#39;&#39;&#39;</span>
 <span class="sd">    radius descriptor</span>
 
-<span class="sd">    Returns:</span>
-<span class="sd">        int: graph radius</span>
+<span class="sd">    :rtype: int</span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;Radius&#39;</span>
 
-    <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
             <span class="n">R</span><span class="o">=</span><span class="n">_R</span><span class="p">(</span>
@@ -166,14 +164,12 @@
     <span class="sd">r&#39;&#39;&#39;</span>
 <span class="sd">    diameter descriptor</span>
 
-<span class="sd">    Returns:</span>
-<span class="sd">        int: graph diameter</span>
+<span class="sd">    :rtype: int</span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;Diameter&#39;</span>
 
-    <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
             <span class="n">D</span><span class="o">=</span><span class="n">_D</span><span class="p">(</span>
@@ -197,14 +193,12 @@
 <span class="sd">    :math:`R` is graph radius,</span>
 <span class="sd">    :math:`D` is graph diameter.</span>
 
-<span class="sd">    Returns:</span>
-<span class="sd">        float: topological shape index</span>
+<span class="sd">    :rtype: float</span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;TopoShapeIndex&#39;</span>
 
-    <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">]</span>
 
@@ -229,14 +223,12 @@
 <span class="sd">    :math:`R` is graph radius,</span>
 <span class="sd">    :math:`D` is graph diameter.</span>
 
-<span class="sd">    Returns:</span>
-<span class="sd">        float: Petitjean index</span>
+<span class="sd">    :rtype: float</span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;PetitjeanIndex&#39;</span>
 
-    <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">]</span>
 

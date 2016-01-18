@@ -139,7 +139,6 @@
 
 
 <span class="k">class</span> <span class="nc">FrameworkCache</span><span class="p">(</span><span class="n">FrameworkBase</span><span class="p">):</span>
-    <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
             <span class="n">Rs</span><span class="o">=</span><span class="n">Rings</span><span class="p">()</span>
@@ -183,14 +182,12 @@
 <span class="sd">    :math:`N_{\rm MF}` is number of atoms in molecular framework,</span>
 <span class="sd">    :math:`N` is number of all atoms.</span>
 
-<span class="sd">    Returns:</span>
-<span class="sd">        float: fMF value</span>
+<span class="sd">    :rtype: float</span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;fMF&#39;</span>
 
-    <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
             <span class="n">F</span><span class="o">=</span><span class="n">FrameworkCache</span><span class="p">()</span>

@@ -145,18 +145,17 @@
 <span class="sd">    :math:`p_i` is atomic property of i-th atom,</span>
 <span class="sd">    :math:`p_{\rm C}` is atomic property of carbon</span>
 
-<span class="sd">    Parameters:</span>
-<span class="sd">        prop(str, function): atomic property</span>
+<span class="sd">    :type prop: str or function</span>
+<span class="sd">    :param prop: atomic property</span>
 
-<span class="sd">    Returns:</span>
-<span class="sd">        float: sum of constitutional</span>
+<span class="sd">    :rtype: float</span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
     <span class="n">require_connected</span> <span class="o">=</span> <span class="bp">False</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">map</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">_atomic_property</span><span class="o">.</span><span class="n">get_properties</span><span class="p">())</span>
+<div class="viewcode-block" id="ConstitutionalSum.preset"><a class="viewcode-back" href="../../api/mordred.Constitutional.html#mordred.Constitutional.ConstitutionalSum.preset">[docs]</a>    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">map</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">_atomic_property</span><span class="o">.</span><span class="n">get_properties</span><span class="p">())</span></div>
 
     <span class="n">_carbon</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">Atom</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
 
@@ -181,21 +180,19 @@
 <span class="sd">    .. math::</span>
 <span class="sd">        M_p = \frac{S_p}{A}</span>
 
-<span class="sd">    Parameters:</span>
-<span class="sd">        prop(str, function): atomic property</span>
+<span class="sd">    :type prop: str or function</span>
+<span class="sd">    :param prop: atomic property</span>
 
-<span class="sd">    Returns:</span>
-<span class="sd">        float: mean of constitutional</span>
+<span class="sd">    :rtype: float</span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">map</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">_atomic_property</span><span class="o">.</span><span class="n">get_properties</span><span class="p">())</span>
+<div class="viewcode-block" id="ConstitutionalMean.preset"><a class="viewcode-back" href="../../api/mordred.Constitutional.html#mordred.Constitutional.ConstitutionalMean.preset">[docs]</a>    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">map</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">_atomic_property</span><span class="o">.</span><span class="n">get_properties</span><span class="p">())</span></div>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;M{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prop_name</span><span class="p">)</span>
 
-    <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">S</span><span class="o">=</span><span class="n">ConstitutionalSum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prop</span><span class="p">))</span>
 

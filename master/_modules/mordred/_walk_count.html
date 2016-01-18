@@ -138,24 +138,27 @@
     <span class="sd">r&#39;&#39;&#39;</span>
 <span class="sd">    walk count descriptor</span>
 
-<span class="sd">    Parameters:</span>
-<span class="sd">        order(int): walk length</span>
-<span class="sd">        total(bool): sum of walk count over 1 to order</span>
-<span class="sd">        self_returning(bool): use self returning walk only</span>
+<span class="sd">    :type order: int</span>
+<span class="sd">    :param order: walk length</span>
 
-<span class="sd">    Returns:</span>
-<span class="sd">        int: walk count</span>
+<span class="sd">    :type total: bool</span>
+<span class="sd">    :param total: sum of walk count over 1 to order</span>
+
+<span class="sd">    :type self_returning: bool</span>
+<span class="sd">    :param self_returning: use self returning walk only</span>
+
+<span class="sd">    :rtype: int</span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+<div class="viewcode-block" id="WalkCount.preset"><a class="viewcode-back" href="../../api/mordred.WalkCount.html#mordred.WalkCount.WalkCount.preset">[docs]</a>    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">start</span><span class="p">,</span> <span class="n">sr</span> <span class="ow">in</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">False</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="bp">True</span><span class="p">)]:</span>
             <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
                 <span class="k">yield</span> <span class="n">cls</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="n">sr</span><span class="p">)</span>
 
-            <span class="k">yield</span> <span class="n">cls</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="n">sr</span><span class="p">)</span>
+            <span class="k">yield</span> <span class="n">cls</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="n">sr</span><span class="p">)</span></div>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">T</span> <span class="o">=</span> <span class="s1">&#39;{}SRW{:02d}&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">self_returning</span> <span class="k">else</span> <span class="s1">&#39;{}MWC{:02d}&#39;</span>
@@ -168,7 +171,6 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">total</span> <span class="o">=</span> <span class="n">total</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">self_returning</span> <span class="o">=</span> <span class="n">self_returning</span>
 
-    <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">total</span><span class="p">:</span>
             <span class="n">W</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;W&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span>

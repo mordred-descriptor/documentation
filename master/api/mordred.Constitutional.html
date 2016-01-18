@@ -169,27 +169,6 @@
   <div class="section" id="module-mordred.Constitutional">
 <span id="mordred-constitutional-module"></span><h1>mordred.Constitutional module<a class="headerlink" href="#module-mordred.Constitutional" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
-<dt id="mordred.Constitutional.ConstitutionalMean">
-<em class="property">class </em><code class="descclassname">mordred.Constitutional.</code><code class="descname">ConstitutionalMean</code><span class="sig-paren">(</span><em>prop='v'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_constitutional.html#ConstitutionalMean"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Constitutional.ConstitutionalMean" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._constitutional.ConstitutionalSum</span></code></p>
-<p>mean of constitutional descriptor</p>
-<div class="math">
-\[M_p = \frac{S_p}{A}\]</div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>prop</strong> (<em>str, function</em>) &#8211; atomic property</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">mean of constitutional</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="class">
 <dt id="mordred.Constitutional.ConstitutionalSum">
 <em class="property">class </em><code class="descclassname">mordred.Constitutional.</code><code class="descname">ConstitutionalSum</code><span class="sig-paren">(</span><em>prop='v'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_constitutional.html#ConstitutionalSum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Constitutional.ConstitutionalSum" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._base.Descriptor</span></code></p>
@@ -203,14 +182,46 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>prop</strong> (<em>str, function</em>) &#8211; atomic property</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>prop</strong> (<em>str or function</em>) &#8211; atomic property</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">sum of constitutional</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
 </tr>
 </tbody>
 </table>
+<dl class="classmethod">
+<dt id="mordred.Constitutional.ConstitutionalSum.preset">
+<em class="property">classmethod </em><code class="descname">preset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_constitutional.html#ConstitutionalSum.preset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Constitutional.ConstitutionalSum.preset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Constitutional.ConstitutionalSum.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Constitutional.ConstitutionalSum.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.Constitutional.ConstitutionalMean">
+<em class="property">class </em><code class="descclassname">mordred.Constitutional.</code><code class="descname">ConstitutionalMean</code><span class="sig-paren">(</span><em>prop='v'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_constitutional.html#ConstitutionalMean"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Constitutional.ConstitutionalMean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._constitutional.ConstitutionalSum</span></code></p>
+<p>mean of constitutional descriptor</p>
+<div class="math">
+\[M_p = \frac{S_p}{A}\]</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>prop</strong> (<em>str or function</em>) &#8211; atomic property</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
+</tr>
+</tbody>
+</table>
+<dl class="classmethod">
+<dt id="mordred.Constitutional.ConstitutionalMean.preset">
+<em class="property">classmethod </em><code class="descname">preset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_constitutional.html#ConstitutionalMean.preset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Constitutional.ConstitutionalMean.preset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>

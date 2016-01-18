@@ -3,5 +3,5 @@ mordred.ZagrebIndex module
 
 .. automodule:: mordred.ZagrebIndex
     :members:
-    :imported-members:
+    :undoc-members:
     :show-inheritance:

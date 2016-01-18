@@ -206,7 +206,6 @@
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">order</span> <span class="o">=</span> <span class="n">order</span>
 
-    <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
             <span class="n">D</span><span class="o">=</span><span class="n">DistanceMatrix</span><span class="p">(</span>
@@ -229,26 +228,29 @@
     <span class="sd">r&#39;&#39;&#39;</span>
 <span class="sd">    information content descriptor</span>
 
-<span class="sd">    Parameters:</span>
-<span class="sd">        type(str):</span>
-<span class="sd">            * &#39;&#39; - normal IC</span>
-<span class="sd">            * &#39;T&#39;</span>
-<span class="sd">            * &#39;S&#39;</span>
-<span class="sd">            * &#39;C&#39;</span>
-<span class="sd">            * &#39;B&#39;</span>
-<span class="sd">            * &#39;M&#39;</span>
-<span class="sd">            * &#39;ZM&#39;</span>
+<span class="sd">    :type type: str</span>
+<span class="sd">    :param type:</span>
+<span class="sd">        * &#39;&#39; - normal IC</span>
+<span class="sd">        * &#39;T&#39;</span>
+<span class="sd">        * &#39;S&#39;</span>
+<span class="sd">        * &#39;C&#39;</span>
+<span class="sd">        * &#39;B&#39;</span>
+<span class="sd">        * &#39;M&#39;</span>
+<span class="sd">        * &#39;ZM&#39;</span>
 
-<span class="sd">        order(int): order(number of edge) of subgraph</span>
+<span class="sd">    :type order: int</span>
+<span class="sd">    :param order: order(number of edge) of subgraph</span>
+
+<span class="sd">    :rtype: float</span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+<div class="viewcode-block" id="InformationContent.preset"><a class="viewcode-back" href="../../api/mordred.InformationContent.html#mordred.InformationContent.InformationContent.preset">[docs]</a>    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">(</span>
             <span class="n">cls</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">o</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="s1">&#39;ZM&#39;</span><span class="p">]</span>
             <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
-        <span class="p">)</span>
+        <span class="p">)</span></div>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;{}IC{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">order</span><span class="p">)</span>
@@ -260,7 +262,6 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="nb">type</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">order</span> <span class="o">=</span> <span class="n">order</span>
 
-    <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">]:</span>
             <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>

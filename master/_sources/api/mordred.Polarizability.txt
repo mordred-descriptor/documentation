@@ -3,5 +3,5 @@ mordred.Polarizability module
 
 .. automodule:: mordred.Polarizability
     :members:
-    :imported-members:
+    :undoc-members:
     :show-inheritance:

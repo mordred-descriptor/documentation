@@ -151,28 +151,28 @@
     <span class="sd">r&#39;&#39;&#39;</span>
 <span class="sd">    bond count descriptor</span>
 
-<span class="sd">    Parameters:</span>
-<span class="sd">        type(str):</span>
-<span class="sd">            * &#39;any&#39; - any</span>
-<span class="sd">            * &#39;heavy&#39; - any, not include bond which connect to hydrogen</span>
+<span class="sd">    :type type: str</span>
+<span class="sd">    :param type:</span>
+<span class="sd">        * &#39;any&#39; - any</span>
+<span class="sd">        * &#39;heavy&#39; - any, not include bond which connect to hydrogen</span>
 
-<span class="sd">            * &#39;single&#39; - single bonds</span>
-<span class="sd">            * &#39;double&#39; - double bonds</span>
-<span class="sd">            * &#39;triple&#39; - triple bonds</span>
-<span class="sd">            * &#39;aromatic&#39; - aromatic bonds</span>
+<span class="sd">        * &#39;single&#39; - single bonds</span>
+<span class="sd">        * &#39;double&#39; - double bonds</span>
+<span class="sd">        * &#39;triple&#39; - triple bonds</span>
+<span class="sd">        * &#39;aromatic&#39; - aromatic bonds</span>
 
-<span class="sd">            * &#39;multiple&#39; - multiple, include aromatic</span>
+<span class="sd">        * &#39;multiple&#39; - multiple, include aromatic</span>
 
-<span class="sd">        kekulize(bool): use kekulized structure</span>
+<span class="sd">    :type kekulize: bool</span>
+<span class="sd">    :param kekulize: use kekulized structure</span>
 
-<span class="sd">    Returns:</span>
-<span class="sd">        int: bond count</span>
+<span class="sd">    :rtype: int</span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
     <span class="n">require_connected</span> <span class="o">=</span> <span class="bp">False</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+<div class="viewcode-block" id="BondCount.preset"><a class="viewcode-back" href="../../api/mordred.Bond.html#mordred.Bond.BondCount.preset">[docs]</a>    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">chain</span><span class="p">(</span>
             <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">cls</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="bp">False</span><span class="p">),</span> <span class="p">[</span>
                 <span class="s1">&#39;any&#39;</span><span class="p">,</span> <span class="s1">&#39;heavy&#39;</span><span class="p">,</span>
@@ -182,7 +182,7 @@
             <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">cls</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="bp">True</span><span class="p">),</span> <span class="p">[</span>
                 <span class="s1">&#39;single&#39;</span><span class="p">,</span> <span class="s1">&#39;double&#39;</span><span class="p">,</span>
             <span class="p">])</span>
-        <span class="p">)</span>
+        <span class="p">)</span></div>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">K</span> <span class="o">=</span> <span class="s1">&#39;K&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">kekulize</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span>

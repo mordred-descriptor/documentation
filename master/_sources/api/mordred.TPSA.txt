@@ -3,5 +3,5 @@ mordred.TPSA module
 
 .. automodule:: mordred.TPSA
     :members:
-    :imported-members:
+    :undoc-members:
     :show-inheritance:

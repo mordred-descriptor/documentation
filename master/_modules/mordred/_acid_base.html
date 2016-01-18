@@ -137,7 +137,7 @@
     <span class="n">require_connected</span> <span class="o">=</span> <span class="bp">False</span>
 
     <span class="k">def</span> <span class="nf">get_smarts</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">mols</span> <span class="o">=</span> <span class="p">[</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmarts</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">smarts</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mols</span> <span class="o">=</span> <span class="p">[</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmarts</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">SMARTS</span><span class="p">]</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mols</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
@@ -149,14 +149,13 @@
     <span class="sd">r&#39;&#39;&#39;</span>
 <span class="sd">    acidic group count descriptor</span>
 
-<span class="sd">    Returns:</span>
-<span class="sd">        int: number of acidic groups</span>
+<span class="sd">    :rtype: int</span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;nAcid&#39;</span>
 
-    <span class="n">smarts</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">SMARTS</span> <span class="o">=</span> <span class="p">[</span>
         <span class="s2">&quot;[$([O;H1]-[C,S,P]=O)]&quot;</span><span class="p">,</span>
         <span class="s2">&quot;[$([*;-;!$(*~[*;+])])]&quot;</span><span class="p">,</span>
         <span class="s2">&quot;[$([NH](S(=O)=O)C(F)(F)F)]&quot;</span><span class="p">,</span>
@@ -168,14 +167,13 @@
     <span class="sd">r&#39;&#39;&#39;</span>
 <span class="sd">    basic group count descriptor</span>
 
-<span class="sd">    Returns:</span>
-<span class="sd">        int: number of basic groups</span>
+<span class="sd">    :rtype: int</span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;nBase&#39;</span>
 
-    <span class="n">smarts</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">SMARTS</span> <span class="o">=</span> <span class="p">[</span>
         <span class="s2">&quot;[$([NH2]-[CX4])]&quot;</span><span class="p">,</span>
         <span class="s2">&quot;[$([NH](-[CX4])-[CX4])]&quot;</span><span class="p">,</span>
         <span class="s2">&quot;[$(N(-[CX4])(-[CX4])-[CX4])]&quot;</span><span class="p">,</span>

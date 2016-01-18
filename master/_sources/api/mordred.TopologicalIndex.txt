@@ -3,5 +3,5 @@ mordred.TopologicalIndex module
 
 .. automodule:: mordred.TopologicalIndex
     :members:
-    :imported-members:
+    :undoc-members:
     :show-inheritance:

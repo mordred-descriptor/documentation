@@ -144,8 +144,7 @@
     <span class="sd">r&#39;&#39;&#39;</span>
 <span class="sd">    ratatable bonds count descriptor</span>
 
-<span class="sd">    Returns:</span>
-<span class="sd">        int: rotatable bonds count</span>
+<span class="sd">    :rtype: int</span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -162,14 +161,12 @@
 <span class="sd">    .. math::</span>
 <span class="sd">        {\rm RotRatio} = \frac{N_{\rm rotatable bonds}}{N_{\rm bonds}}</span>
 
-<span class="sd">    Returns:</span>
-<span class="sd">        float: rotatable bonds ratio</span>
+<span class="sd">    :rtype: float</span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;RotRatio&#39;</span>
 
-    <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
             <span class="n">nRot</span><span class="o">=</span><span class="n">RotatableBondsCount</span><span class="p">(),</span>

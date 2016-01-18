@@ -3,5 +3,5 @@ mordred.Atom module
 
 .. automodule:: mordred.Atom
     :members:
-    :imported-members:
+    :undoc-members:
     :show-inheritance:

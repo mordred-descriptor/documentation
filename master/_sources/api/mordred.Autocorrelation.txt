@@ -3,5 +3,5 @@ mordred.Autocorrelation module
 
 .. automodule:: mordred.Autocorrelation
     :members:
-    :imported-members:
+    :undoc-members:
     :show-inheritance:

@@ -3,5 +3,5 @@ mordred.BCUT module
 
 .. automodule:: mordred.BCUT
     :members:
-    :imported-members:
+    :undoc-members:
     :show-inheritance:

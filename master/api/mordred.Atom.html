@@ -169,23 +169,6 @@
   <div class="section" id="module-mordred.Atom">
 <span id="mordred-atom-module"></span><h1>mordred.Atom module<a class="headerlink" href="#module-mordred.Atom" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
-<dt id="mordred.Atom.AromaticAtomsCount">
-<em class="property">class </em><code class="descclassname">mordred.Atom.</code><code class="descname">AromaticAtomsCount</code><a class="reference internal" href="../_modules/mordred/_aromatic.html#AromaticAtomsCount"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Atom.AromaticAtomsCount" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._aromatic.AromaticBase</span></code></p>
-<p>aromatic atoms count descriptor</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">count of aromatic atoms</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)">int</a></td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="class">
 <dt id="mordred.Atom.AtomCount">
 <em class="property">class </em><code class="descclassname">mordred.Atom.</code><code class="descname">AtomCount</code><span class="sig-paren">(</span><em>type='Atom'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_atom_count.html#AtomCount"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Atom.AtomCount" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._base.Descriptor</span></code></p>
@@ -196,9 +179,40 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; type to count. &#8216;Atom&#8217;, &#8216;HeavyAtom&#8217;, &#8216;X&#8217;(all halogen), or element symbol.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">count</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)">int</a></td>
 </tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="mordred.Atom.AtomCount.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><a class="headerlink" href="#mordred.Atom.AtomCount.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd><p>require explicit_hydrogens when type is &#8216;H&#8217; or &#8216;Atom&#8217;</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="mordred.Atom.AtomCount.preset">
+<em class="property">classmethod </em><code class="descname">preset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_atom_count.html#AtomCount.preset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Atom.AtomCount.preset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Atom.AtomCount.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Atom.AtomCount.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.Atom.AromaticAtomsCount">
+<em class="property">class </em><code class="descclassname">mordred.Atom.</code><code class="descname">AromaticAtomsCount</code><a class="reference internal" href="../_modules/mordred/_aromatic.html#AromaticAtomsCount"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Atom.AromaticAtomsCount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._aromatic.AromaticBase</span></code></p>
+<p>aromatic atoms count descriptor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)">int</a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">count of aromatic atoms</td>
 </tr>
 </tbody>
 </table>
@@ -219,14 +233,16 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">count</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)">int</a></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)">int</a></p>
 </td>
 </tr>
 </tbody>
 </table>
+<dl class="classmethod">
+<dt id="mordred.Atom.CarbonTypes.preset">
+<em class="property">classmethod </em><code class="descname">preset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_carbon_types.html#CarbonTypes.preset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Atom.CarbonTypes.preset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -240,9 +256,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">hybridization ratio</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
 </tr>
 </tbody>
 </table>
