@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Overview: module code &mdash; mordred 0.1.0b0 documentation</title>
+  <title>examples &mdash; mordred 0.1.0b0 documentation</title>
   
 
   
@@ -116,9 +116,11 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li>Overview: module code</li>
+    <li>examples</li>
       <li class="wy-breadcrumbs-aside">
         
+          
+            <a href="../_sources/README/70-examples.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -128,46 +130,60 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <h1>All modules for which code is available</h1>
-<ul><li><a href="mordred/_acid_base.html">mordred._acid_base</a></li>
-<li><a href="mordred/_adjacency_matrix.html">mordred._adjacency_matrix</a></li>
-<li><a href="mordred/_aromatic.html">mordred._aromatic</a></li>
-<li><a href="mordred/_atom_count.html">mordred._atom_count</a></li>
-<li><a href="mordred/_autocorrelation.html">mordred._autocorrelation</a></li>
-<li><a href="mordred/_barysz_matrix.html">mordred._barysz_matrix</a></li>
-<li><a href="mordred/_base.html">mordred._base</a></li>
-<li><a href="mordred/_bcut.html">mordred._bcut</a></li>
-<li><a href="mordred/_bond_types.html">mordred._bond_types</a></li>
-<li><a href="mordred/_carbon_types.html">mordred._carbon_types</a></li>
-<li><a href="mordred/_chi.html">mordred._chi</a></li>
-<li><a href="mordred/_constitutional.html">mordred._constitutional</a></li>
-<li><a href="mordred/_detour_index.html">mordred._detour_index</a></li>
-<li><a href="mordred/_detour_matrix.html">mordred._detour_matrix</a></li>
-<li><a href="mordred/_distance_matrix.html">mordred._distance_matrix</a></li>
-<li><a href="mordred/_e_state.html">mordred._e_state</a></li>
-<li><a href="mordred/_eccentric_connectivity_index.html">mordred._eccentric_connectivity_index</a></li>
-<li><a href="mordred/_fragment_complexity.html">mordred._fragment_complexity</a></li>
-<li><a href="mordred/_framework.html">mordred._framework</a></li>
-<li><a href="mordred/_hbond.html">mordred._hbond</a></li>
-<li><a href="mordred/_information_content.html">mordred._information_content</a></li>
-<li><a href="mordred/_kappa_shape_index.html">mordred._kappa_shape_index</a></li>
-<li><a href="mordred/_lipinski.html">mordred._lipinski</a></li>
-<li><a href="mordred/_mc_gowan_volume.html">mordred._mc_gowan_volume</a></li>
-<li><a href="mordred/_molecular_distance_edge.html">mordred._molecular_distance_edge</a></li>
-<li><a href="mordred/_polarizability.html">mordred._polarizability</a></li>
-<li><a href="mordred/_ring_count.html">mordred._ring_count</a></li>
-<li><a href="mordred/_rotatable_bond.html">mordred._rotatable_bond</a></li>
-<li><a href="mordred/_topological_charge.html">mordred._topological_charge</a></li>
-<li><a href="mordred/_topological_index.html">mordred._topological_index</a></li>
-<li><a href="mordred/_tpsa.html">mordred._tpsa</a></li>
-<li><a href="mordred/_vdw_volume_abc.html">mordred._vdw_volume_abc</a></li>
-<li><a href="mordred/_vertex_adjacency_information.html">mordred._vertex_adjacency_information</a></li>
-<li><a href="mordred/_walk_count.html">mordred._walk_count</a></li>
-<li><a href="mordred/_weight.html">mordred._weight</a></li>
-<li><a href="mordred/_wiener_index.html">mordred._wiener_index</a></li>
-<li><a href="mordred/_wildman_crippen_logp.html">mordred._wildman_crippen_logp</a></li>
-<li><a href="mordred/_zagreb_index.html">mordred._zagreb_index</a></li>
-</ul>
+  <div class="section" id="examples">
+<h1>examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="as-command">
+<h2>as command<a class="headerlink" href="#as-command" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="all-descriptors">
+<h3>all descriptors<a class="headerlink" href="#all-descriptors" title="Permalink to this headline">¶</a></h3>
+<div class="code console highlight-python"><div class="highlight"><pre>$ python -m mordred --help
+usage: mordred [-h] [-i [PATH]] [-f TYPE] [-o [PATH]] [-p N]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -i [PATH], --input [PATH]
+                        input file(default: stdin)
+  -f TYPE, --from TYPE  input filetype(one of auto, smi, sdf, default: auto)
+  -o [PATH], --output [PATH]
+                        output csv file(default: stdout)
+  -p N, --processes N   number of processes to use(default: number of threads)
+</pre></div>
+</div>
+</div>
+<div class="section" id="descriptors-in-submodule">
+<h3>descriptors in submodule<a class="headerlink" href="#descriptors-in-submodule" title="Permalink to this headline">¶</a></h3>
+<div class="code console highlight-python"><div class="highlight"><pre>$ python -m mordred.TPSA -i tests/data/structures.smi
+name,TPSA(NO),TPSA
+Hexane,0.0,0.0
+Benzene,0.0,0.0
+Caffeine,61.82,61.82
+Cyanidin,112.45,112.45
+Lycopene,0.0,0.0
+Epicatechin,110.38,110.38
+Limonene,0.0,0.0
+Allicin,17.07,61.58
+Glutathione,158.82,197.62
+</pre></div>
+</div>
+</div>
+<div class="section" id="as-library">
+<h3>as library<a class="headerlink" href="#as-library" title="Permalink to this headline">¶</a></h3>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span>
+
+<span class="kn">from</span> <span class="nn">mordred</span> <span class="kn">import</span> <span class="n">Calculator</span><span class="p">,</span> <span class="n">all_descriptors</span>
+
+<span class="c1"># create descriptor calculator with all descriptors</span>
+<span class="n">calc</span> <span class="o">=</span> <span class="n">Calculator</span><span class="p">(</span><span class="n">all_descriptors</span><span class="p">())</span>
+
+<span class="c1"># calculate and print descriptors</span>
+<span class="k">for</span> <span class="n">desc</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">calc</span><span class="p">(</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="s1">&#39;c1ccccc1O&#39;</span><span class="p">)):</span>
+   <span class="k">print</span><span class="p">(</span><span class="s1">&#39;{}</span><span class="se">\t</span><span class="s1">{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
 
            </div>
           </div>
