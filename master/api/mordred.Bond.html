@@ -181,16 +181,7 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>type</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; <ul>
-<li>&#8216;any&#8217; - any</li>
-<li>&#8216;heavy&#8217; - any, not include bond which connect to hydrogen</li>
-<li>&#8216;single&#8217; - single bonds</li>
-<li>&#8216;double&#8217; - double bonds</li>
-<li>&#8216;triple&#8217; - triple bonds</li>
-<li>&#8216;aromatic&#8217; - aromatic bonds</li>
-<li>&#8216;multiple&#8217; - multiple, include aromatic</li>
-</ul>
-</li>
+<li><strong>type</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; one of bond_types</li>
 <li><strong>kekulize</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; use kekulized structure</li>
 </ul>
 </td>
@@ -200,6 +191,11 @@
 </tr>
 </tbody>
 </table>
+<dl class="attribute">
+<dt id="mordred.Bond.BondCount.bond_types">
+<code class="descname">bond_types</code><em class="property"> = ('any', 'heavy', 'single', 'double', 'triple', 'aromatic', 'multiple')</em><a class="headerlink" href="#mordred.Bond.BondCount.bond_types" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.Bond.BondCount.explicit_hydrogens">
 <code class="descname">explicit_hydrogens</code><a class="headerlink" href="#mordred.Bond.BondCount.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>

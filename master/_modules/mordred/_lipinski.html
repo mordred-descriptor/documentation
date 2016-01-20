@@ -143,19 +143,18 @@
 <span class="sd">    LogP: WildmanCrippenLogP</span>
 
 <span class="sd">    :type variant: str</span>
-<span class="sd">    :param variant:</span>
-<span class="sd">        * &#39;Lipinski&#39;</span>
-<span class="sd">        * &#39;GhoseFilter&#39;</span>
+<span class="sd">    :param variant: one of variants</span>
 
 <span class="sd">    :rtype: bool</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">variants</span> <span class="o">=</span> <span class="s1">&#39;Lipinski&#39;</span><span class="p">,</span> <span class="s1">&#39;GhoseFilter&#39;</span>
 
     <span class="n">require_connected</span> <span class="o">=</span> <span class="bp">False</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
-        <span class="k">yield</span> <span class="n">cls</span><span class="p">(</span><span class="s1">&#39;Lipinski&#39;</span><span class="p">)</span>
-        <span class="k">yield</span> <span class="n">cls</span><span class="p">(</span><span class="s1">&#39;GhoseFilter&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">map</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">cls</span><span class="o">.</span><span class="n">variants</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">variant</span>
@@ -163,10 +162,7 @@
     <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="s1">&#39;variant&#39;</span><span class="p">,</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="s1">&#39;Lipinski&#39;</span><span class="p">):</span>
-        <span class="k">assert</span> <span class="n">variant</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">([</span>
-            <span class="s1">&#39;Lipinski&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;GhoseFilter&#39;</span><span class="p">,</span>
-        <span class="p">])</span>
+        <span class="k">assert</span> <span class="n">variant</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">variants</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">variant</span> <span class="o">=</span> <span class="n">variant</span>
 
