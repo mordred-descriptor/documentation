@@ -88,11 +88,13 @@
 <li class="toctree-l2 current"><a class="reference internal" href="mordred.html#submodules">Submodules</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="mordred.AcidBase.html">mordred.AcidBase module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.AdjacencyMatrix.html">mordred.AdjacencyMatrix module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mordred.Atom.html">mordred.Atom module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.Aromatic.html">mordred.Aromatic module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.AtomCount.html">mordred.AtomCount module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.Autocorrelation.html">mordred.Autocorrelation module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.BCUT.html">mordred.BCUT module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.BaryszMatrix.html">mordred.BaryszMatrix module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mordred.Bond.html">mordred.Bond module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.BondCount.html">mordred.BondCount module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.CarbonTypes.html">mordred.CarbonTypes module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.Chi.html">mordred.Chi module</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="">mordred.Constitutional module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.DetourMatrix.html">mordred.DetourMatrix module</a></li>
@@ -101,19 +103,24 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.EccentricConnectivityIndex.html">mordred.EccentricConnectivityIndex module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.FragmentComplexity.html">mordred.FragmentComplexity module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.Framework.html">mordred.Framework module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.HydrogenBond.html">mordred.HydrogenBond module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.InformationContent.html">mordred.InformationContent module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.KappaShapeIndex.html">mordred.KappaShapeIndex module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.Lipinski.html">mordred.Lipinski module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.McGowanVolume.html">mordred.McGowanVolume module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.MolecularDistanceEdge.html">mordred.MolecularDistanceEdge module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.Polarizability.html">mordred.Polarizability module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mordred.Property.html">mordred.Property module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.RingCount.html">mordred.RingCount module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.RotatableBond.html">mordred.RotatableBond module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.TPSA.html">mordred.TPSA module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.TopologicalCharge.html">mordred.TopologicalCharge module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.TopologicalIndex.html">mordred.TopologicalIndex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.VdwVolumeABC.html">mordred.VdwVolumeABC module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.VertexAdjacencyInformation.html">mordred.VertexAdjacencyInformation module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.WalkCount.html">mordred.WalkCount module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.Weight.html">mordred.Weight module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.WienerIndex.html">mordred.WienerIndex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.WildmanCrippenLogP.html">mordred.WildmanCrippenLogP module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.ZagrebIndex.html">mordred.ZagrebIndex module</a></li>
 </ul>
 </li>
@@ -185,7 +192,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>prop</strong> (<em>str or function</em>) &#8211; <a class="reference internal" href="../atomic_prop.html#atomic-properties"><span>atomic properties</span></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>prop</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">function</span></code>) &#8211; <a class="reference internal" href="../atomic_prop.html#atomic-properties"><span>atomic properties</span></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
 </tr>
@@ -209,7 +216,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>prop</strong> (<em>str or function</em>) &#8211; <a class="reference internal" href="../atomic_prop.html#atomic-properties"><span>atomic properties</span></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>prop</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">function</span></code>) &#8211; <a class="reference internal" href="../atomic_prop.html#atomic-properties"><span>atomic properties</span></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
 </tr>

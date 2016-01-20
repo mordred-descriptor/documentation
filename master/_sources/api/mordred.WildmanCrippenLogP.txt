@@ -1,0 +1,7 @@
+mordred.WildmanCrippenLogP module
+=================================
+
+.. automodule:: mordred.WildmanCrippenLogP
+    :members:
+    :undoc-members:
+    :show-inheritance:

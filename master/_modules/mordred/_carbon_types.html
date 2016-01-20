@@ -182,7 +182,7 @@
         <span class="k">return</span> <span class="n">r</span>
 
 
-<div class="viewcode-block" id="CarbonTypes"><a class="viewcode-back" href="../../api/mordred.Atom.html#mordred.Atom.CarbonTypes">[docs]</a><span class="k">class</span> <span class="nc">CarbonTypes</span><span class="p">(</span><span class="n">CarbonTypesBase</span><span class="p">):</span>
+<div class="viewcode-block" id="CarbonTypes"><a class="viewcode-back" href="../../api/mordred.CarbonTypes.html#mordred.CarbonTypes.CarbonTypes">[docs]</a><span class="k">class</span> <span class="nc">CarbonTypes</span><span class="p">(</span><span class="n">CarbonTypesBase</span><span class="p">):</span>
     <span class="sd">r&quot;&quot;&quot;carbon types descriptor.</span>
 
 <span class="sd">    :type nCarbon: int</span>
@@ -220,7 +220,7 @@
         <span class="k">return</span> <span class="n">CT</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">SP</span><span class="p">][</span><span class="bp">self</span><span class="o">.</span><span class="n">nCarbon</span><span class="p">]</span></div>
 
 
-<div class="viewcode-block" id="HybridizationRatio"><a class="viewcode-back" href="../../api/mordred.Atom.html#mordred.Atom.HybridizationRatio">[docs]</a><span class="k">class</span> <span class="nc">HybridizationRatio</span><span class="p">(</span><span class="n">CarbonTypesBase</span><span class="p">):</span>
+<div class="viewcode-block" id="HybridizationRatio"><a class="viewcode-back" href="../../api/mordred.CarbonTypes.html#mordred.CarbonTypes.HybridizationRatio">[docs]</a><span class="k">class</span> <span class="nc">HybridizationRatio</span><span class="p">(</span><span class="n">CarbonTypesBase</span><span class="p">):</span>
     <span class="sd">r&quot;&quot;&quot;hybridization ratio descriptor.</span>
 
 <span class="sd">    .. math::</span>
@@ -229,6 +229,10 @@
 
 <span class="sd">    :rtype: float</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="n">cls</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;HybRatio&#39;</span>

@@ -13,11 +13,13 @@ Submodules
 
    mordred.AcidBase
    mordred.AdjacencyMatrix
-   mordred.Atom
+   mordred.Aromatic
+   mordred.AtomCount
    mordred.Autocorrelation
    mordred.BCUT
    mordred.BaryszMatrix
-   mordred.Bond
+   mordred.BondCount
+   mordred.CarbonTypes
    mordred.Chi
    mordred.Constitutional
    mordred.DetourMatrix
@@ -26,18 +28,23 @@ Submodules
    mordred.EccentricConnectivityIndex
    mordred.FragmentComplexity
    mordred.Framework
+   mordred.HydrogenBond
    mordred.InformationContent
    mordred.KappaShapeIndex
    mordred.Lipinski
+   mordred.McGowanVolume
    mordred.MolecularDistanceEdge
    mordred.Polarizability
-   mordred.Property
    mordred.RingCount
+   mordred.RotatableBond
    mordred.TPSA
    mordred.TopologicalCharge
    mordred.TopologicalIndex
+   mordred.VdwVolumeABC
    mordred.VertexAdjacencyInformation
    mordred.WalkCount
+   mordred.Weight
    mordred.WienerIndex
+   mordred.WildmanCrippenLogP
    mordred.ZagrebIndex
 

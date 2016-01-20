@@ -132,24 +132,38 @@
            <div itemprop="articleBody">
             
   <h1>Source code for mordred._acid_base</h1><div class="highlight"><pre>
+<span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">abstractproperty</span>
+
 <span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span>
 
 <span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
 
 
-<span class="k">class</span> <span class="nc">SmartsCount</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">SmartsCountBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
     <span class="n">require_connected</span> <span class="o">=</span> <span class="bp">False</span>
 
-    <span class="k">def</span> <span class="nf">get_smarts</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="n">cls</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_get_smarts</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">mols</span> <span class="o">=</span> <span class="p">[</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmarts</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">SMARTS</span><span class="p">]</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mols</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
-        <span class="n">mols</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;mols&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_smarts</span><span class="p">()</span>
+        <span class="n">mols</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;mols&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_smarts</span><span class="p">()</span>
         <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">GetSubstructMatches</span><span class="p">(</span><span class="n">q</span><span class="p">))</span> <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">mols</span><span class="p">)</span>
 
+    <span class="nd">@abstractproperty</span>
+    <span class="k">def</span> <span class="nf">SMARTS</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">u&quot;&quot;&quot;target smarts.</span>
 
-<div class="viewcode-block" id="AcidicGroupCount"><a class="viewcode-back" href="../../api/mordred.AcidBase.html#mordred.AcidBase.AcidicGroupCount">[docs]</a><span class="k">class</span> <span class="nc">AcidicGroupCount</span><span class="p">(</span><span class="n">SmartsCount</span><span class="p">):</span>
+<span class="sd">        (abstruct property)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+
+<div class="viewcode-block" id="AcidicGroupCount"><a class="viewcode-back" href="../../api/mordred.AcidBase.html#mordred.AcidBase.AcidicGroupCount">[docs]</a><span class="k">class</span> <span class="nc">AcidicGroupCount</span><span class="p">(</span><span class="n">SmartsCountBase</span><span class="p">):</span>
     <span class="sd">r&quot;&quot;&quot;acidic group count descriptor.</span>
 
 <span class="sd">    :rtype: int</span>
@@ -166,7 +180,7 @@
     <span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="BasicGroupCount"><a class="viewcode-back" href="../../api/mordred.AcidBase.html#mordred.AcidBase.BasicGroupCount">[docs]</a><span class="k">class</span> <span class="nc">BasicGroupCount</span><span class="p">(</span><span class="n">SmartsCount</span><span class="p">):</span>
+<div class="viewcode-block" id="BasicGroupCount"><a class="viewcode-back" href="../../api/mordred.AcidBase.html#mordred.AcidBase.BasicGroupCount">[docs]</a><span class="k">class</span> <span class="nc">BasicGroupCount</span><span class="p">(</span><span class="n">SmartsCountBase</span><span class="p">):</span>
     <span class="sd">r&quot;&quot;&quot;basic group count descriptor.</span>
 
 <span class="sd">    :rtype: int</span>

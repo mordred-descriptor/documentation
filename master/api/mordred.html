@@ -87,11 +87,13 @@
 <li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="mordred.AcidBase.html">mordred.AcidBase module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.AdjacencyMatrix.html">mordred.AdjacencyMatrix module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mordred.Atom.html">mordred.Atom module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.Aromatic.html">mordred.Aromatic module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.AtomCount.html">mordred.AtomCount module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.Autocorrelation.html">mordred.Autocorrelation module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.BCUT.html">mordred.BCUT module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.BaryszMatrix.html">mordred.BaryszMatrix module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mordred.Bond.html">mordred.Bond module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.BondCount.html">mordred.BondCount module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.CarbonTypes.html">mordred.CarbonTypes module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.Chi.html">mordred.Chi module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.Constitutional.html">mordred.Constitutional module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.DetourMatrix.html">mordred.DetourMatrix module</a></li>
@@ -100,19 +102,24 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.EccentricConnectivityIndex.html">mordred.EccentricConnectivityIndex module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.FragmentComplexity.html">mordred.FragmentComplexity module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.Framework.html">mordred.Framework module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.HydrogenBond.html">mordred.HydrogenBond module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.InformationContent.html">mordred.InformationContent module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.KappaShapeIndex.html">mordred.KappaShapeIndex module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.Lipinski.html">mordred.Lipinski module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.McGowanVolume.html">mordred.McGowanVolume module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.MolecularDistanceEdge.html">mordred.MolecularDistanceEdge module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.Polarizability.html">mordred.Polarizability module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mordred.Property.html">mordred.Property module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.RingCount.html">mordred.RingCount module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.RotatableBond.html">mordred.RotatableBond module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.TPSA.html">mordred.TPSA module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.TopologicalCharge.html">mordred.TopologicalCharge module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.TopologicalIndex.html">mordred.TopologicalIndex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.VdwVolumeABC.html">mordred.VdwVolumeABC module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.VertexAdjacencyInformation.html">mordred.VertexAdjacencyInformation module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.WalkCount.html">mordred.WalkCount module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.Weight.html">mordred.Weight module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.WienerIndex.html">mordred.WienerIndex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.WildmanCrippenLogP.html">mordred.WildmanCrippenLogP module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.ZagrebIndex.html">mordred.ZagrebIndex module</a></li>
 </ul>
 </li>
@@ -271,6 +278,11 @@
 <code class="descname">gasteiger_charges</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Descriptor.gasteiger_charges" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="classmethod">
+<dt id="mordred.Descriptor.is_descriptor">
+<em class="property">classmethod </em><code class="descname">is_descriptor</code><span class="sig-paren">(</span><em>desc</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base.html#Descriptor.is_descriptor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Descriptor.is_descriptor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.Descriptor.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Descriptor.kekulize" title="Permalink to this definition">¶</a></dt>
@@ -317,11 +329,13 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="mordred.AcidBase.html">mordred.AcidBase module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mordred.AdjacencyMatrix.html">mordred.AdjacencyMatrix module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mordred.Atom.html">mordred.Atom module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.Aromatic.html">mordred.Aromatic module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.AtomCount.html">mordred.AtomCount module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mordred.Autocorrelation.html">mordred.Autocorrelation module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mordred.BCUT.html">mordred.BCUT module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mordred.BaryszMatrix.html">mordred.BaryszMatrix module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mordred.Bond.html">mordred.Bond module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.BondCount.html">mordred.BondCount module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.CarbonTypes.html">mordred.CarbonTypes module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mordred.Chi.html">mordred.Chi module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mordred.Constitutional.html">mordred.Constitutional module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mordred.DetourMatrix.html">mordred.DetourMatrix module</a></li>
@@ -330,19 +344,24 @@
 <li class="toctree-l1"><a class="reference internal" href="mordred.EccentricConnectivityIndex.html">mordred.EccentricConnectivityIndex module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mordred.FragmentComplexity.html">mordred.FragmentComplexity module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mordred.Framework.html">mordred.Framework module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.HydrogenBond.html">mordred.HydrogenBond module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mordred.InformationContent.html">mordred.InformationContent module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mordred.KappaShapeIndex.html">mordred.KappaShapeIndex module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mordred.Lipinski.html">mordred.Lipinski module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.McGowanVolume.html">mordred.McGowanVolume module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mordred.MolecularDistanceEdge.html">mordred.MolecularDistanceEdge module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mordred.Polarizability.html">mordred.Polarizability module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mordred.Property.html">mordred.Property module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mordred.RingCount.html">mordred.RingCount module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.RotatableBond.html">mordred.RotatableBond module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mordred.TPSA.html">mordred.TPSA module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mordred.TopologicalCharge.html">mordred.TopologicalCharge module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mordred.TopologicalIndex.html">mordred.TopologicalIndex module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.VdwVolumeABC.html">mordred.VdwVolumeABC module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mordred.VertexAdjacencyInformation.html">mordred.VertexAdjacencyInformation module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mordred.WalkCount.html">mordred.WalkCount module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.Weight.html">mordred.Weight module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mordred.WienerIndex.html">mordred.WienerIndex module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.WildmanCrippenLogP.html">mordred.WildmanCrippenLogP module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mordred.ZagrebIndex.html">mordred.ZagrebIndex module</a></li>
 </ul>
 </div>

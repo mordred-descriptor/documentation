@@ -1,10 +1,7 @@
-mordred.Aromatic package
-========================
-
-Module contents
----------------
+mordred.Aromatic module
+=======================
 
 .. automodule:: mordred.Aromatic
     :members:
-    :imported-members:
+    :undoc-members:
     :show-inheritance:
