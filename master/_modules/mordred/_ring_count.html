@@ -145,11 +145,15 @@
 
 
 <span class="k">class</span> <span class="nc">Rings</span><span class="p">(</span><span class="n">RingCountBase</span><span class="p">):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">[</span><span class="nb">frozenset</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">Chem</span><span class="o">.</span><span class="n">GetSymmSSSR</span><span class="p">(</span><span class="n">mol</span><span class="p">)]</span>
 
 
 <span class="k">class</span> <span class="nc">FusedRings</span><span class="p">(</span><span class="n">RingCountBase</span><span class="p">):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">Rings</span><span class="o">=</span><span class="n">Rings</span><span class="p">())</span>
 
@@ -232,7 +236,7 @@
 
         <span class="k">return</span> <span class="s1">&#39;n{}Ring&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">attrs</span><span class="p">))</span>
 
-    <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="s1">&#39;order&#39;</span><span class="p">,</span> <span class="s1">&#39;greater&#39;</span><span class="p">,</span> <span class="s1">&#39;fused&#39;</span><span class="p">,</span> <span class="s1">&#39;aromatic&#39;</span><span class="p">,</span> <span class="s1">&#39;hetero&#39;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;order&#39;</span><span class="p">,</span> <span class="s1">&#39;greater&#39;</span><span class="p">,</span> <span class="s1">&#39;fused&#39;</span><span class="p">,</span> <span class="s1">&#39;aromatic&#39;</span><span class="p">,</span> <span class="s1">&#39;hetero&#39;</span><span class="p">,)</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">greater</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">fused</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">aromatic</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">hetero</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">order</span> <span class="o">=</span> <span class="n">order</span>

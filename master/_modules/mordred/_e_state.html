@@ -168,6 +168,8 @@
 
 
 <span class="k">class</span> <span class="nc">EStateCache</span><span class="p">(</span><span class="n">EStateBase</span><span class="p">):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">EState</span><span class="o">.</span><span class="n">TypeAtoms</span><span class="p">(</span><span class="n">mol</span><span class="p">),</span> <span class="n">EState</span><span class="o">.</span><span class="n">EStateIndices</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
 
@@ -221,7 +223,7 @@
 
         <span class="k">return</span> <span class="n">aggr</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">estate</span>
 
-    <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;estate&#39;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;estate&#39;</span><span class="p">,)</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="n">estate</span><span class="o">=</span><span class="s1">&#39;sLi&#39;</span><span class="p">):</span>
         <span class="k">assert</span> <span class="n">estate</span> <span class="ow">in</span> <span class="n">es_type_set</span>

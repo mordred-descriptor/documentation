@@ -143,6 +143,8 @@
 
 
 <span class="k">class</span> <span class="nc">FrameworkCache</span><span class="p">(</span><span class="n">FrameworkBase</span><span class="p">):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
             <span class="n">Rs</span><span class="o">=</span><span class="n">Rings</span><span class="p">()</span>
@@ -190,6 +192,8 @@
 <span class="sd">    References</span>
 <span class="sd">        * :cite:`10.1021/jm9602928`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>

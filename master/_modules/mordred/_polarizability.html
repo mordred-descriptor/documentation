@@ -150,7 +150,8 @@
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;apol78&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">use78</span> <span class="k">else</span> <span class="s1">&#39;apol&#39;</span>
 
-    <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="s1">&#39;use78&#39;</span><span class="p">,</span>
+    <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;use78&#39;</span><span class="p">,)</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;use78&#39;</span><span class="p">,</span> <span class="s1">&#39;table&#39;</span><span class="p">,)</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">use78</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">use78</span> <span class="o">=</span> <span class="n">use78</span>
@@ -174,7 +175,8 @@
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;bpol78&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">use78</span> <span class="k">else</span> <span class="s1">&#39;bpol&#39;</span>
 
-    <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="s1">&#39;use78&#39;</span><span class="p">,</span>
+    <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;use78&#39;</span><span class="p">,)</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;use78&#39;</span><span class="p">,</span> <span class="s1">&#39;table&#39;</span><span class="p">,)</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">use78</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">use78</span> <span class="o">=</span> <span class="n">use78</span>
