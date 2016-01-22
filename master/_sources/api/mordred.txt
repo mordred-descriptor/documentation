@@ -26,6 +26,7 @@ Submodules
    mordred.DistanceMatrix
    mordred.EState
    mordred.EccentricConnectivityIndex
+   mordred.ExtendedTopochemicalAtom
    mordred.FragmentComplexity
    mordred.Framework
    mordred.HydrogenBond

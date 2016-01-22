@@ -1,0 +1,679 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>mordred.ExtendedTopochemicalAtom module &mdash; mordred 0.1.0b0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="mordred 0.1.0b0 documentation" href="../index.html"/>
+        <link rel="up" title="mordred package" href="mordred.html"/>
+        <link rel="next" title="mordred.FragmentComplexity module" href="mordred.FragmentComplexity.html"/>
+        <link rel="prev" title="mordred.EccentricConnectivityIndex module" href="mordred.EccentricConnectivityIndex.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> mordred
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.0b0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="mordred.html">mordred package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="mordred.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="mordred.AcidBase.html">mordred.AcidBase module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.AdjacencyMatrix.html">mordred.AdjacencyMatrix module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.Aromatic.html">mordred.Aromatic module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.AtomCount.html">mordred.AtomCount module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.Autocorrelation.html">mordred.Autocorrelation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.BCUT.html">mordred.BCUT module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.BaryszMatrix.html">mordred.BaryszMatrix module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.BondCount.html">mordred.BondCount module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.CarbonTypes.html">mordred.CarbonTypes module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.Chi.html">mordred.Chi module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.Constitutional.html">mordred.Constitutional module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.DetourMatrix.html">mordred.DetourMatrix module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.DistanceMatrix.html">mordred.DistanceMatrix module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.EState.html">mordred.EState module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.EccentricConnectivityIndex.html">mordred.EccentricConnectivityIndex module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">mordred.ExtendedTopochemicalAtom module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.FragmentComplexity.html">mordred.FragmentComplexity module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.Framework.html">mordred.Framework module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.HydrogenBond.html">mordred.HydrogenBond module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.InformationContent.html">mordred.InformationContent module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.KappaShapeIndex.html">mordred.KappaShapeIndex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.Lipinski.html">mordred.Lipinski module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.McGowanVolume.html">mordred.McGowanVolume module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.MolecularDistanceEdge.html">mordred.MolecularDistanceEdge module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.Polarizability.html">mordred.Polarizability module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.RingCount.html">mordred.RingCount module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.RotatableBond.html">mordred.RotatableBond module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.TPSA.html">mordred.TPSA module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.TopologicalCharge.html">mordred.TopologicalCharge module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.TopologicalIndex.html">mordred.TopologicalIndex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.VdwVolumeABC.html">mordred.VdwVolumeABC module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.VertexAdjacencyInformation.html">mordred.VertexAdjacencyInformation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.WalkCount.html">mordred.WalkCount module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.Weight.html">mordred.Weight module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.WienerIndex.html">mordred.WienerIndex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.WildmanCrippenLogP.html">mordred.WildmanCrippenLogP module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.ZagrebIndex.html">mordred.ZagrebIndex module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../matrix.html">Matrix aggregating methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../atomic_prop.html">atomic properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../descriptors.html">Descriptor List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography.html">bibliography</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">mordred</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="mordred.html">mordred package</a> &raquo;</li>
+      
+    <li>mordred.ExtendedTopochemicalAtom module</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/api/mordred.ExtendedTopochemicalAtom.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-mordred.ExtendedTopochemicalAtom">
+<span id="mordred-extendedtopochemicalatom-module"></span><h1>mordred.ExtendedTopochemicalAtom module<a class="headerlink" href="#module-mordred.ExtendedTopochemicalAtom" title="Permalink to this headline">¶</a></h1>
+<p>Extended Topochemical Atom(ETA) descriptor.</p>
+<dl class="docutils">
+<dt>References</dt>
+<dd><ul class="first last simple">
+<li><a class="reference internal" href="../bibliography.html#ci0342066" id="id1">[RG04]</a></li>
+<li><a class="reference internal" href="../bibliography.html#j-jhazmat-2013-03-023" id="id2">[RD13]</a></li>
+</ul>
+</dd>
+</dl>
+<dl class="class">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaCoreCount">
+<em class="property">class </em><code class="descclassname">mordred.ExtendedTopochemicalAtom.</code><code class="descname">EtaCoreCount</code><span class="sig-paren">(</span><em>averaged=False</em>, <em>reference=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_extended_topochemical_atom.html#EtaCoreCount"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._extended_topochemical_atom.EtaBase</span></code></p>
+<p>ETA core count descriptor.</p>
+<div class="math">
+\[\alpha = \sum_{i = 1}^A \frac{Z_i - Z_i^v}{Z_i^v} \cdot \frac{1}{PN_i - 1}\]</div>
+<p>where <span class="math">\(Z_i\)</span> and <span class="math">\(Z_i^v\)</span> are number of total and valence electons,
+<span class="math">\(PN\)</span> is periodic number.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>averaged</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; averaged by number of heavy count</li>
+<li><strong>reference</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; use reference alkane
+(same graph structure, but all atoms are carbon and all bonds are single bond)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaCoreCount.averaged">
+<code class="descname">averaged</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount.averaged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaCoreCount.reference">
+<code class="descname">reference</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount.reference" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaShapeIndex">
+<em class="property">class </em><code class="descclassname">mordred.ExtendedTopochemicalAtom.</code><code class="descname">EtaShapeIndex</code><span class="sig-paren">(</span><em>type='p'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_extended_topochemical_atom.html#EtaShapeIndex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._extended_topochemical_atom.EtaBase</span></code></p>
+<p>ETA shape index descriptor.</p>
+<div class="math">
+\[{\rm shape}_t = \frac{\alpha_t}{\alpha}\]</div>
+<p>where <span class="math">\(\alpha_t\)</span> is p(alpha value only atoms which bond to 1 heavy atom),
+y(3), or x(4).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; one of shape_types</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaShapeIndex.shape_types">
+<code class="descname">shape_types</code><em class="property"> = ('p', 'y', 'x')</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.shape_types" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaShapeIndex.type">
+<code class="descname">type</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaVEMCount">
+<em class="property">class </em><code class="descclassname">mordred.ExtendedTopochemicalAtom.</code><code class="descname">EtaVEMCount</code><span class="sig-paren">(</span><em>type=''</em>, <em>averaged=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_extended_topochemical_atom.html#EtaVEMCount"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._extended_topochemical_atom.EtaBase</span></code></p>
+<p>ETA VEM(valence electron mobile) count descriptor.</p>
+<div class="math">
+\[\beta^{\rm s} = \frac{1}{2} \sum^A_{i=1} \beta^{\rm s}_i\]\[\beta^{\rm s}_i = \sum^A_{j = 1} x_{ij}\sigma_{ij}\]\[\begin{split}x_{ij} = \begin{cases}
+    0.5  &amp; \left( \left| \epsilon_i - \epsilon_j \right| \leq 0.3 \right) \\
+    0.75 &amp; \left( \left| \epsilon_i - \epsilon_j \right| &gt; 0.3 \right)
+\end{cases}\end{split}\]\[\epsilon_i = - \alpha_i + 0.3 Z^{\rm v}\]</div>
+<p>where <span class="math">\(\sigma_{ij}\)</span> is sigma bond count between i and j.</p>
+<div class="math">
+\[\beta^{\rm ns\delta} = \sum^A_{i = 1} \beta^{\rm ns\delta}_i\]</div>
+<p>where <span class="math">\(\beta^{\rm ns\delta}_i\)</span> is
+0.5 if i-th atom is making resonance with an aromatic ring.</p>
+<div class="math">
+\[\beta^{\rm ns} = \frac{1}{2} \sum^A_{i=1} \beta^{\rm ns}_i\]\[\beta^{\rm ns}_i = \sum^A_{j = 1} y_{ij}\pi_{ij} + \beta^{\rm ns\delta}_i\]\[\begin{split}y_{ij} = \begin{cases}
+    2.0 &amp; \left( {\rm ij\ is\ aromatic\ bond} \right) \\
+    1.5 &amp; \left( \left| \epsilon_i - \epsilon_j \right| &gt; 0.3 \right) \\
+    1.0 &amp; \left( \left| \epsilon_i - \epsilon_j \right| \leq 0.3 \right)
+\end{cases}\end{split}\]</div>
+<p>where <span class="math">\(\pi_{ij}\)</span> is pi bond count between i and j.</p>
+<div class="math">
+\[\beta = \beta^{\rm s} + \beta^{\rm ns}\]</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>type</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; one of beta_types</li>
+<li><strong>averaged</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; averaged by heavy atom count</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaVEMCount.averaged">
+<code class="descname">averaged</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.averaged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaVEMCount.beta_types">
+<code class="descname">beta_types</code><em class="property"> = ('', 's', 'ns', 'ns_d')</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.beta_types" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaVEMCount.type">
+<code class="descname">type</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaCompositeIndex">
+<em class="property">class </em><code class="descclassname">mordred.ExtendedTopochemicalAtom.</code><code class="descname">EtaCompositeIndex</code><span class="sig-paren">(</span><em>reference=False</em>, <em>local=False</em>, <em>averaged=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_extended_topochemical_atom.html#EtaCompositeIndex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._extended_topochemical_atom.EtaBase</span></code></p>
+<p>ETA composite index descriptor.</p>
+<div class="math">
+\[\begin{split}\eta = \sum_{i &lt; j} \left( \frac{\gamma_i \gamma_j}{r_{ij}^2} \right)^{0.5}\end{split}\]\[\gamma_i = \frac{\alpha_i}{\beta_i}\]</div>
+<p>where <span class="math">\(r_{ij}\)</span> is graph distance.</p>
+<div class="math">
+\[\begin{split}\eta^{\rm local} = \sum_{i &lt; j, r_{ij} = 1} \left( \gamma_i \gamma_j \right)^{0.5}\end{split}\]</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>reference</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; use reference alkane.</li>
+<li><strong>local</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; use <span class="math">\(\eta^{\rm local}\)</span></li>
+<li><strong>averaged</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; averaged</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.averaged">
+<code class="descname">averaged</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.averaged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.local">
+<code class="descname">local</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.local" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.reference">
+<code class="descname">reference</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.reference" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex">
+<em class="property">class </em><code class="descclassname">mordred.ExtendedTopochemicalAtom.</code><code class="descname">EtaFunctionalityIndex</code><span class="sig-paren">(</span><em>local=False</em>, <em>averaged=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_extended_topochemical_atom.html#EtaFunctionalityIndex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._extended_topochemical_atom.EtaBase</span></code></p>
+<p>ETA functionality index descriptor.</p>
+<div class="math">
+\[\eta^{\rm F} = \eta^{\rm R} - \eta\]</div>
+<p>where <span class="math">\(\eta^{\rm R}\)</span> is eta value for reference alkane.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>local</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; use local eta</li>
+<li><strong>averaged</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; averaged</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.averaged">
+<code class="descname">averaged</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.averaged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.local">
+<code class="descname">local</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.local" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaBranchingIndex">
+<em class="property">class </em><code class="descclassname">mordred.ExtendedTopochemicalAtom.</code><code class="descname">EtaBranchingIndex</code><span class="sig-paren">(</span><em>ring=True</em>, <em>averaged=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_extended_topochemical_atom.html#EtaBranchingIndex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._extended_topochemical_atom.EtaBase</span></code></p>
+<p>ETA branching index descriptor.</p>
+<div class="math">
+\[\eta^{\rm B} = \eta^{\rm local,N} - \eta^{local,R} + 0.086 N^{\rm R}\]</div>
+<p>where <span class="math">\(\eta^{\rm local,N}\)</span> is <span class="math">\(\eta^{\rm local}\)</span> for normal alkane.
+<span class="math">\(N^{\rm R}\)</span> is ring count.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>ring</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; use ring count or not</li>
+<li><strong>averaged</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; averaged</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.averaged">
+<code class="descname">averaged</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.averaged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.ring">
+<code class="descname">ring</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.ring" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha">
+<em class="property">class </em><code class="descclassname">mordred.ExtendedTopochemicalAtom.</code><code class="descname">EtaDeltaAlpha</code><span class="sig-paren">(</span><em>type='A'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_extended_topochemical_atom.html#EtaDeltaAlpha"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._extended_topochemical_atom.EtaBase</span></code></p>
+<p>ETA delta alpha descriptor.</p>
+<div class="math">
+\[\Delta\alpha_{\rm A} = \max\left(\frac{\alpha - \alpha^{\rm R}}{A}, 0\right)\]\[\Delta\alpha_{\rm B} = \max\left(\frac{\alpha^{\rm R} - \alpha}{A}, 0\right)\]</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; one of delta_types</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.delta_types">
+<code class="descname">delta_types</code><em class="property"> = ('A', 'B')</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.delta_types" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.type">
+<code class="descname">type</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaEpsilon">
+<em class="property">class </em><code class="descclassname">mordred.ExtendedTopochemicalAtom.</code><code class="descname">EtaEpsilon</code><span class="sig-paren">(</span><em>type=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_extended_topochemical_atom.html#EtaEpsilon"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._extended_topochemical_atom.EtaBase</span></code></p>
+<p>ETA epsilon descriptor.</p>
+<div class="math">
+\[\epsilon^i = \frac{\epsilon^i}{N^i} (i \leq 4)
+\epsilon^5 = \frac{\epsilon^2 + \epsilon^{\rm XH}}{N^2 + N^{\rm XH}}\]</div>
+<dl class="docutils">
+<dt>types(i)</dt>
+<dd><dl class="first last docutils">
+<dt>1</dt>
+<dd>all atoms</dd>
+<dt>2</dt>
+<dd>heavy atoms</dd>
+<dt>3</dt>
+<dd>all atoms of reference alkane</dd>
+<dt>4</dt>
+<dd>all atoms of saturated carbon skeleton(reduce C-C bonds)</dd>
+<dt>XH</dt>
+<dd>hydrogens bond to hetero atoms</dd>
+</dl>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; one of epsilon_types</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaEpsilon.epsilon_types">
+<code class="descname">epsilon_types</code><em class="property"> = (1, 2, 3, 4, 5)</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.epsilon_types" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaEpsilon.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaEpsilon.type">
+<code class="descname">type</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon">
+<em class="property">class </em><code class="descclassname">mordred.ExtendedTopochemicalAtom.</code><code class="descname">EtaDeltaEpsilon</code><span class="sig-paren">(</span><em>type='A'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_extended_topochemical_atom.html#EtaDeltaEpsilon"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._extended_topochemical_atom.EtaBase</span></code></p>
+<p>ETA delta epsilon descriptor.</p>
+<div class="math">
+\[\Delta \epsilon^{\rm A} = \epsilon^1 - \epsilon^3\]\[\Delta \epsilon^{\rm B} = \epsilon^1 - \epsilon^4\]\[\Delta \epsilon^{\rm C} = \epsilon^3 - \epsilon^4\]\[\Delta \epsilon^{\rm D} = \epsilon^2 - \epsilon^5\]</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; one of delta_epsilon_types</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.delta_epsilon_types">
+<code class="descname">delta_epsilon_types</code><em class="property"> = ('A', 'B', 'C', 'D')</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.delta_epsilon_types" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.type">
+<code class="descname">type</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaBeta">
+<em class="property">class </em><code class="descclassname">mordred.ExtendedTopochemicalAtom.</code><code class="descname">EtaDeltaBeta</code><span class="sig-paren">(</span><em>averaged=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_extended_topochemical_atom.html#EtaDeltaBeta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._extended_topochemical_atom.EtaBase</span></code></p>
+<p>ETA delta beta descriptor.</p>
+<div class="math">
+\[\Delta\beta = \beta^{\rm ns} - \beta^{\rm s}\]</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>averaged</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; averaged</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.averaged">
+<code class="descname">averaged</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.averaged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaPsi">
+<em class="property">class </em><code class="descclassname">mordred.ExtendedTopochemicalAtom.</code><code class="descname">EtaPsi</code><a class="reference internal" href="../_modules/mordred/_extended_topochemical_atom.html#EtaPsi"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaPsi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._extended_topochemical_atom.EtaBase</span></code></p>
+<p>ETA psi descriptor.</p>
+<div class="math">
+\[\psi_1 = \frac{\alpha}{A \cdot \epsilon^2}\]</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaPsi">
+<em class="property">class </em><code class="descclassname">mordred.ExtendedTopochemicalAtom.</code><code class="descname">EtaDeltaPsi</code><span class="sig-paren">(</span><em>type='A'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_extended_topochemical_atom.html#EtaDeltaPsi"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._extended_topochemical_atom.EtaBase</span></code></p>
+<p>ETA delta psi descriptor.</p>
+<div class="math">
+\[\Delta\psi_{\rm A} = \max\left(0.714 - \psi_1, 0\right)\]\[\Delta\psi_{\rm B} = \max\left(\psi_1 - 0.714, 0\right)\]</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; one of delta_psi_types</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.delta_psi_types">
+<code class="descname">delta_psi_types</code><em class="property"> = ('A', 'B')</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.delta_psi_types" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.type">
+<code class="descname">type</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mordred.FragmentComplexity.html" class="btn btn-neutral float-right" title="mordred.FragmentComplexity module" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mordred.EccentricConnectivityIndex.html" class="btn btn-neutral" title="mordred.EccentricConnectivityIndex module" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Hirotomo Moriwaki.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1.0b0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
