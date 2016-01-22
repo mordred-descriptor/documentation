@@ -134,7 +134,7 @@
   <h1>Source code for mordred._lipinski</h1><div class="highlight"><pre>
 <span class="kn">from</span> <span class="nn">.HydrogenBond</span> <span class="kn">import</span> <span class="n">HBondAcceptor</span><span class="p">,</span> <span class="n">HBondDonor</span>
 <span class="kn">from</span> <span class="nn">.Weight</span> <span class="kn">import</span> <span class="n">Weight</span>
-<span class="kn">from</span> <span class="nn">.WildmanCrippenLogP</span> <span class="kn">import</span> <span class="n">WildmanCrippenLogP</span>
+<span class="kn">from</span> <span class="nn">.WildmanCrippenLogP</span> <span class="kn">import</span> <span class="n">WildmanCrippenLogP</span><span class="p">,</span> <span class="n">WildmanCrippenMR</span>
 
 <span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
 
@@ -162,7 +162,7 @@
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
-            <span class="n">LogP</span><span class="o">=</span><span class="n">WildmanCrippenLogP</span><span class="p">(</span><span class="s1">&#39;LogP&#39;</span><span class="p">),</span>
+            <span class="n">LogP</span><span class="o">=</span><span class="n">WildmanCrippenLogP</span><span class="p">(),</span>
             <span class="n">MW</span><span class="o">=</span><span class="n">Weight</span><span class="p">(),</span>
             <span class="n">HBDon</span><span class="o">=</span><span class="n">HBondDonor</span><span class="p">(),</span>
             <span class="n">HBAcc</span><span class="o">=</span><span class="n">HBondAcceptor</span><span class="p">(),</span>
@@ -188,8 +188,8 @@
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
-            <span class="n">LogP</span><span class="o">=</span><span class="n">WildmanCrippenLogP</span><span class="p">(</span><span class="s1">&#39;LogP&#39;</span><span class="p">),</span>
-            <span class="n">MR</span><span class="o">=</span><span class="n">WildmanCrippenLogP</span><span class="p">(</span><span class="s1">&#39;MR&#39;</span><span class="p">),</span>
+            <span class="n">LogP</span><span class="o">=</span><span class="n">WildmanCrippenLogP</span><span class="p">(),</span>
+            <span class="n">MR</span><span class="o">=</span><span class="n">WildmanCrippenMR</span><span class="p">(),</span>
             <span class="n">MW</span><span class="o">=</span><span class="n">Weight</span><span class="p">(),</span>
         <span class="p">)</span>
 

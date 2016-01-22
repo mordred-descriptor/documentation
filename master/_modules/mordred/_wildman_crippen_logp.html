@@ -137,40 +137,40 @@
 <span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
 
 
-<div class="viewcode-block" id="WildmanCrippenLogP"><a class="viewcode-back" href="../../api/mordred.WildmanCrippenLogP.html#mordred.WildmanCrippenLogP.WildmanCrippenLogP">[docs]</a><span class="k">class</span> <span class="nc">WildmanCrippenLogP</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
-    <span class="sd">r&quot;&quot;&quot;Wildman-Crippen LogP/MR descriptor.</span>
-
-<span class="sd">    :type prop: str</span>
-<span class="sd">    :param type: &#39;LogP&#39; or &#39;MR&#39;</span>
-
-<span class="sd">    :rtype: float</span>
-
-<span class="sd">    References</span>
-<span class="sd">        * :cite:`10.1021/ci990307l`</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
+<span class="k">class</span> <span class="nc">WildmanCrippenBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
-        <span class="k">yield</span> <span class="n">cls</span><span class="p">(</span><span class="s1">&#39;LogP&#39;</span><span class="p">)</span>
-        <span class="k">yield</span> <span class="n">cls</span><span class="p">(</span><span class="s1">&#39;MR&#39;</span><span class="p">)</span>
+        <span class="k">yield</span> <span class="n">cls</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span><span class="p">[</span><span class="mi">7</span><span class="p">:]</span>
 
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
     <span class="n">require_connected</span> <span class="o">=</span> <span class="bp">False</span>
 
-    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s1">&#39;Crippen{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="p">)</span>
 
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_prop&#39;</span><span class="p">,)</span>
+<div class="viewcode-block" id="WildmanCrippenLogP"><a class="viewcode-back" href="../../api/mordred.WildmanCrippenLogP.html#mordred.WildmanCrippenLogP.WildmanCrippenLogP">[docs]</a><span class="k">class</span> <span class="nc">WildmanCrippenLogP</span><span class="p">(</span><span class="n">WildmanCrippenBase</span><span class="p">):</span>
+    <span class="sd">r&quot;&quot;&quot;Wildman-Crippen LogP descriptor.</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prop</span><span class="o">=</span><span class="s1">&#39;LogP&#39;</span><span class="p">):</span>
-        <span class="k">assert</span> <span class="n">prop</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;LogP&#39;</span><span class="p">,</span> <span class="s1">&#39;MR&#39;</span><span class="p">]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_prop</span> <span class="o">=</span> <span class="n">prop</span>
+<span class="sd">    :rtype: float</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prop</span> <span class="o">==</span> <span class="s1">&#39;LogP&#39;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">_Crippen</span><span class="o">.</span><span class="n">MolLogP</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">_Crippen</span><span class="o">.</span><span class="n">MolMR</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">_Crippen</span><span class="o">.</span><span class="n">MolLogP</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="WildmanCrippenMR"><a class="viewcode-back" href="../../api/mordred.WildmanCrippenLogP.html#mordred.WildmanCrippenLogP.WildmanCrippenMR">[docs]</a><span class="k">class</span> <span class="nc">WildmanCrippenMR</span><span class="p">(</span><span class="n">WildmanCrippenBase</span><span class="p">):</span>
+    <span class="sd">r&quot;&quot;&quot;Wildman-Crippen MR descriptor.</span>
+
+<span class="sd">    :rtype: float</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">_Crippen</span><span class="o">.</span><span class="n">MolMR</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span></div>
 </pre></div>
 
            </div>
