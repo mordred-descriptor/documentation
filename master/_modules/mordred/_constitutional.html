@@ -162,19 +162,19 @@
 
     <span class="n">_carbon</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">Atom</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
 
-    <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;prop&#39;</span><span class="p">,)</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;prop_name&#39;</span><span class="p">,</span> <span class="s1">&#39;prop&#39;</span><span class="p">,)</span>
+    <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_prop&#39;</span><span class="p">,)</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_prop_name&#39;</span><span class="p">,</span> <span class="s1">&#39;_prop&#39;</span><span class="p">,)</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prop</span><span class="o">=</span><span class="s1">&#39;v&#39;</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">prop_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">prop</span> <span class="o">=</span> <span class="n">_atomic_property</span><span class="o">.</span><span class="n">getter</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">prop</span> <span class="o">==</span> <span class="n">_atomic_property</span><span class="o">.</span><span class="n">get_sanderson_en</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">prop_name</span> <span class="o">=</span> <span class="s1">&#39;se&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_prop_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prop</span> <span class="o">=</span> <span class="n">_atomic_property</span><span class="o">.</span><span class="n">getter</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prop</span> <span class="o">==</span> <span class="n">_atomic_property</span><span class="o">.</span><span class="n">get_sanderson_en</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_prop_name</span> <span class="o">=</span> <span class="s1">&#39;se&#39;</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s1">&#39;S{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prop_name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s1">&#39;S{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_prop_name</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prop</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">prop</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_carbon</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">())</span></div>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_carbon</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">())</span></div>
 
 
 <div class="viewcode-block" id="ConstitutionalMean"><a class="viewcode-back" href="../../api/mordred.Constitutional.html#mordred.Constitutional.ConstitutionalMean">[docs]</a><span class="k">class</span> <span class="nc">ConstitutionalMean</span><span class="p">(</span><span class="n">ConstitutionalSum</span><span class="p">):</span>
@@ -189,17 +189,17 @@
 <span class="sd">    :rtype: float</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;prop_name&#39;</span><span class="p">,</span> <span class="s1">&#39;prop&#39;</span><span class="p">,)</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_prop_name&#39;</span><span class="p">,</span> <span class="s1">&#39;_prop&#39;</span><span class="p">,)</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">map</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">_atomic_property</span><span class="o">.</span><span class="n">get_properties</span><span class="p">())</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s1">&#39;M{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prop_name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s1">&#39;M{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_prop_name</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">S</span><span class="o">=</span><span class="n">ConstitutionalSum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prop</span><span class="p">))</span>
+        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">S</span><span class="o">=</span><span class="n">ConstitutionalSum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="p">))</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">S</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">S</span> <span class="o">/</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span></div>

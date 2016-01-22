@@ -159,10 +159,7 @@
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
-            <span class="n">R</span><span class="o">=</span><span class="n">CRadius</span><span class="p">(</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">,</span>
-                <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span>
-            <span class="p">)</span>
+            <span class="n">R</span><span class="o">=</span><span class="n">CRadius</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)</span>
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">R</span><span class="p">):</span>
@@ -182,9 +179,7 @@
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
-            <span class="n">D</span><span class="o">=</span><span class="n">CDiameter</span><span class="p">(</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">,</span>
-                <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+            <span class="n">D</span><span class="o">=</span><span class="n">CDiameter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)</span>
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
@@ -211,11 +206,9 @@
         <span class="k">return</span> <span class="s1">&#39;TopoShapeIndex&#39;</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">]</span>
-
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
-            <span class="n">R</span><span class="o">=</span><span class="n">CRadius</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">),</span>
-            <span class="n">D</span><span class="o">=</span><span class="n">CDiameter</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+            <span class="n">R</span><span class="o">=</span><span class="n">CRadius</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">),</span>
+            <span class="n">D</span><span class="o">=</span><span class="n">CDiameter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">),</span>
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
@@ -242,11 +235,9 @@
         <span class="k">return</span> <span class="s1">&#39;PetitjeanIndex&#39;</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">]</span>
-
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
-            <span class="n">R</span><span class="o">=</span><span class="n">CRadius</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">),</span>
-            <span class="n">D</span><span class="o">=</span><span class="n">CDiameter</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+            <span class="n">R</span><span class="o">=</span><span class="n">CRadius</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">),</span>
+            <span class="n">D</span><span class="o">=</span><span class="n">CDiameter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">),</span>
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>

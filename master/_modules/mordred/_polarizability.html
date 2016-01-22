@@ -136,7 +136,20 @@
 <span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
 
 
-<div class="viewcode-block" id="APol"><a class="viewcode-back" href="../../api/mordred.Polarizability.html#mordred.Polarizability.APol">[docs]</a><span class="k">class</span> <span class="nc">APol</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">PolarizabilityBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
+    <span class="n">require_connected</span> <span class="o">=</span> <span class="bp">False</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">+</span> <span class="p">(</span><span class="s1">&#39;78&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_use78</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">use78</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_use78</span> <span class="o">=</span> <span class="n">use78</span>
+
+    <span class="k">def</span> <span class="nf">_get_table</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Polarizabilities78</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_use78</span> <span class="k">else</span> <span class="n">Polarizabilities94</span>
+
+
+<div class="viewcode-block" id="APol"><a class="viewcode-back" href="../../api/mordred.Polarizability.html#mordred.Polarizability.APol">[docs]</a><span class="k">class</span> <span class="nc">APol</span><span class="p">(</span><span class="n">PolarizabilityBase</span><span class="p">):</span>
     <span class="sd">r&quot;&quot;&quot;atomic polarizability descriptor.</span>
 
 <span class="sd">    :type use78: bool</span>
@@ -145,23 +158,14 @@
 <span class="sd">    :rtype: float</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">require_connected</span> <span class="o">=</span> <span class="bp">False</span>
-
-    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s1">&#39;apol78&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">use78</span> <span class="k">else</span> <span class="s1">&#39;apol&#39;</span>
-
-    <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;use78&#39;</span><span class="p">,)</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;use78&#39;</span><span class="p">,</span> <span class="s1">&#39;table&#39;</span><span class="p">,)</span>
-
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">use78</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">use78</span> <span class="o">=</span> <span class="n">use78</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">table</span> <span class="o">=</span> <span class="n">Polarizabilities78</span> <span class="k">if</span> <span class="n">use78</span> <span class="k">else</span> <span class="n">Polarizabilities94</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_use78&#39;</span><span class="p">,)</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">table</span><span class="p">[</span><span class="n">a</span><span class="o">.</span><span class="n">GetAtomicNum</span><span class="p">()]</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">())</span></div>
+        <span class="n">table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_table</span><span class="p">()</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="n">a</span><span class="o">.</span><span class="n">GetAtomicNum</span><span class="p">()]</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">())</span></div>
 
 
-<div class="viewcode-block" id="BPol"><a class="viewcode-back" href="../../api/mordred.Polarizability.html#mordred.Polarizability.BPol">[docs]</a><span class="k">class</span> <span class="nc">BPol</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
+<div class="viewcode-block" id="BPol"><a class="viewcode-back" href="../../api/mordred.Polarizability.html#mordred.Polarizability.BPol">[docs]</a><span class="k">class</span> <span class="nc">BPol</span><span class="p">(</span><span class="n">PolarizabilityBase</span><span class="p">):</span>
     <span class="sd">r&quot;&quot;&quot;bond polarizability descriptor.</span>
 
 <span class="sd">    :type use78: bool</span>
@@ -170,23 +174,15 @@
 <span class="sd">    :rtype: float</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">require_connected</span> <span class="o">=</span> <span class="bp">False</span>
-
-    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s1">&#39;bpol78&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">use78</span> <span class="k">else</span> <span class="s1">&#39;bpol&#39;</span>
-
-    <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;use78&#39;</span><span class="p">,)</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;use78&#39;</span><span class="p">,</span> <span class="s1">&#39;table&#39;</span><span class="p">,)</span>
-
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">use78</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">use78</span> <span class="o">=</span> <span class="n">use78</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">table</span> <span class="o">=</span> <span class="n">Polarizabilities78</span> <span class="k">if</span> <span class="n">use78</span> <span class="k">else</span> <span class="n">Polarizabilities94</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_use78&#39;</span><span class="p">,)</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
+        <span class="n">table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_table</span><span class="p">()</span>
+
         <span class="k">def</span> <span class="nf">bond_pol</span><span class="p">(</span><span class="n">bond</span><span class="p">):</span>
             <span class="n">a</span> <span class="o">=</span> <span class="n">bond</span><span class="o">.</span><span class="n">GetBeginAtom</span><span class="p">()</span><span class="o">.</span><span class="n">GetAtomicNum</span><span class="p">()</span>
             <span class="n">b</span> <span class="o">=</span> <span class="n">bond</span><span class="o">.</span><span class="n">GetEndAtom</span><span class="p">()</span><span class="o">.</span><span class="n">GetAtomicNum</span><span class="p">()</span>
-            <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">table</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">table</span><span class="p">[</span><span class="n">b</span><span class="p">])</span>
+            <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">-</span> <span class="n">table</span><span class="p">[</span><span class="n">b</span><span class="p">])</span>
 
         <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">bond_pol</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetBonds</span><span class="p">())</span></div>
 </pre></div>

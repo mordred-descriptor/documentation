@@ -173,34 +173,27 @@
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;MDE{}-{}{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-            <span class="n">table</span><span class="o">.</span><span class="n">GetElementSymbol</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">atomic_num</span><span class="p">),</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">valence1</span><span class="p">,</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">valence2</span><span class="p">,</span>
+            <span class="n">table</span><span class="o">.</span><span class="n">GetElementSymbol</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_atomic_num</span><span class="p">),</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_valence1</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_valence2</span><span class="p">,</span>
         <span class="p">)</span>
 
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;valence1&#39;</span><span class="p">,</span> <span class="s1">&#39;valence2&#39;</span><span class="p">,</span> <span class="s1">&#39;atomic_num&#39;</span><span class="p">,)</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_valence1&#39;</span><span class="p">,</span> <span class="s1">&#39;_valence2&#39;</span><span class="p">,</span> <span class="s1">&#39;_atomic_num&#39;</span><span class="p">,)</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">valence1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">valence2</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">element</span><span class="o">=</span><span class="s1">&#39;C&#39;</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">valence1</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">valence1</span><span class="p">,</span> <span class="n">valence2</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">valence2</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">valence1</span><span class="p">,</span> <span class="n">valence2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_valence1</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">valence1</span><span class="p">,</span> <span class="n">valence2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_valence2</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">valence1</span><span class="p">,</span> <span class="n">valence2</span><span class="p">)</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">integer_types</span><span class="p">):</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">atomic_num</span> <span class="o">=</span> <span class="n">element</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_atomic_num</span> <span class="o">=</span> <span class="n">element</span>
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">string_types</span><span class="p">):</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">atomic_num</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">GetAtomicNumber</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_atomic_num</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">GetAtomicNumber</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;element must be atomic number or atomic symbol&#39;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
-            <span class="n">D</span><span class="o">=</span><span class="n">DistanceMatrix</span><span class="p">(</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">,</span>
-                <span class="bp">False</span><span class="p">,</span>
-                <span class="bp">False</span><span class="p">,</span>
-            <span class="p">),</span>
-            <span class="n">V</span><span class="o">=</span><span class="n">Valence</span><span class="p">(</span>
-                <span class="bp">False</span><span class="p">,</span>
-                <span class="bp">False</span><span class="p">,</span>
-            <span class="p">)</span>
+            <span class="n">D</span><span class="o">=</span><span class="n">DistanceMatrix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">),</span>
+            <span class="n">V</span><span class="o">=</span><span class="n">Valence</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">),</span>
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">V</span><span class="p">):</span>
@@ -209,11 +202,11 @@
             <span class="n">D</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
             <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">valence1</span> <span class="ow">and</span> <span class="n">V</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">valence2</span><span class="p">)</span> <span class="ow">or</span>
-            <span class="p">(</span><span class="n">V</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">valence1</span> <span class="ow">and</span> <span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">valence2</span><span class="p">)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_valence1</span> <span class="ow">and</span> <span class="n">V</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_valence2</span><span class="p">)</span> <span class="ow">or</span>
+            <span class="p">(</span><span class="n">V</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_valence1</span> <span class="ow">and</span> <span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_valence2</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetAtomWithIdx</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">GetAtomicNum</span><span class="p">()</span> <span class="o">==</span>
             <span class="n">mol</span><span class="o">.</span><span class="n">GetAtomWithIdx</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="o">.</span><span class="n">GetAtomicNum</span><span class="p">()</span> <span class="o">==</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">atomic_num</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_atomic_num</span>
         <span class="p">]</span>
         <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">Dv</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>

@@ -139,73 +139,66 @@
 <span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
 
 
-<div class="viewcode-block" id="LipinskiLike"><a class="viewcode-back" href="../../api/mordred.Lipinski.html#mordred.Lipinski.LipinskiLike">[docs]</a><span class="k">class</span> <span class="nc">LipinskiLike</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
-    <span class="sd">r&quot;&quot;&quot;Lipinski like descriptor.</span>
-
-<span class="sd">    LogP: WildmanCrippenLogP</span>
-
-<span class="sd">    :type variant: str</span>
-<span class="sd">    :param variant: one of variants</span>
-
-<span class="sd">    :rtype: bool</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="n">variants</span> <span class="o">=</span> <span class="s1">&#39;Lipinski&#39;</span><span class="p">,</span> <span class="s1">&#39;GhoseFilter&#39;</span>
-
+<span class="k">class</span> <span class="nc">LipinskiLike</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
     <span class="n">require_connected</span> <span class="o">=</span> <span class="bp">False</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">map</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">cls</span><span class="o">.</span><span class="n">variants</span><span class="p">)</span>
+        <span class="k">yield</span> <span class="n">cls</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">variant</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span>
 
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;variant&#39;</span><span class="p">,)</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="s1">&#39;Lipinski&#39;</span><span class="p">):</span>
-        <span class="k">assert</span> <span class="n">variant</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">variants</span>
+<div class="viewcode-block" id="Lipinski"><a class="viewcode-back" href="../../api/mordred.Lipinski.html#mordred.Lipinski.Lipinski">[docs]</a><span class="k">class</span> <span class="nc">Lipinski</span><span class="p">(</span><span class="n">LipinskiLike</span><span class="p">):</span>
+    <span class="sd">r&quot;&quot;&quot;Lipinski rule of 5 descriptor.</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">variant</span> <span class="o">=</span> <span class="n">variant</span>
+<span class="sd">    LogP: WildmanCrippenLogP</span>
+
+<span class="sd">    :rtype: bool</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">{</span>
-            <span class="n">prop</span><span class="p">:</span> <span class="n">key</span>
-            <span class="k">for</span> <span class="n">prop</span><span class="p">,</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">deps_keys</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
-            <span class="k">if</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">deps_dict</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">variant</span><span class="p">]</span>
-        <span class="p">}</span>
+        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">LogP</span><span class="o">=</span><span class="n">WildmanCrippenLogP</span><span class="p">(</span><span class="s1">&#39;LogP&#39;</span><span class="p">),</span>
+            <span class="n">MW</span><span class="o">=</span><span class="n">Weight</span><span class="p">(),</span>
+            <span class="n">HBDon</span><span class="o">=</span><span class="n">HBondDonor</span><span class="p">(),</span>
+            <span class="n">HBAcc</span><span class="o">=</span><span class="n">HBondAcceptor</span><span class="p">(),</span>
+        <span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">_Lipinski</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">LogP</span><span class="p">,</span> <span class="n">MW</span><span class="p">,</span> <span class="n">HBDon</span><span class="p">,</span> <span class="n">HBAcc</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">LogP</span><span class="p">,</span> <span class="n">MW</span><span class="p">,</span> <span class="n">HBDon</span><span class="p">,</span> <span class="n">HBAcc</span><span class="p">):</span>
         <span class="k">return</span>\
             <span class="n">HBDon</span> <span class="o">&lt;=</span> <span class="mi">5</span> <span class="ow">and</span>\
             <span class="n">HBAcc</span> <span class="o">&lt;=</span> <span class="mi">10</span> <span class="ow">and</span>\
             <span class="n">MW</span> <span class="o">&lt;=</span> <span class="mi">500</span> <span class="ow">and</span>\
-            <span class="n">LogP</span> <span class="o">&lt;=</span> <span class="mi">5</span>
+            <span class="n">LogP</span> <span class="o">&lt;=</span> <span class="mi">5</span></div>
 
-    <span class="k">def</span> <span class="nf">_GhoseFilter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">MW</span><span class="p">,</span> <span class="n">LogP</span><span class="p">,</span> <span class="n">MR</span><span class="p">):</span>
+
+<div class="viewcode-block" id="GhoseFilter"><a class="viewcode-back" href="../../api/mordred.Lipinski.html#mordred.Lipinski.GhoseFilter">[docs]</a><span class="k">class</span> <span class="nc">GhoseFilter</span><span class="p">(</span><span class="n">LipinskiLike</span><span class="p">):</span>
+    <span class="sd">r&quot;&quot;&quot;Ghose filter descriptor.</span>
+
+<span class="sd">    LogP, MR: WildmanCrippenLogP</span>
+
+<span class="sd">    :rtype: bool</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">LogP</span><span class="o">=</span><span class="n">WildmanCrippenLogP</span><span class="p">(</span><span class="s1">&#39;LogP&#39;</span><span class="p">),</span>
+            <span class="n">MR</span><span class="o">=</span><span class="n">WildmanCrippenLogP</span><span class="p">(</span><span class="s1">&#39;MR&#39;</span><span class="p">),</span>
+            <span class="n">MW</span><span class="o">=</span><span class="n">Weight</span><span class="p">(),</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">MW</span><span class="p">,</span> <span class="n">LogP</span><span class="p">,</span> <span class="n">MR</span><span class="p">):</span>
         <span class="k">return</span>\
             <span class="p">(</span><span class="mi">160</span> <span class="o">&lt;=</span> <span class="n">MW</span> <span class="o">&lt;=</span> <span class="mi">480</span><span class="p">)</span> <span class="ow">and</span>\
             <span class="p">(</span><span class="mi">20</span> <span class="o">&lt;=</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mi">70</span><span class="p">)</span> <span class="ow">and</span>\
             <span class="p">(</span><span class="o">-</span><span class="mf">0.4</span> <span class="o">&lt;=</span> <span class="n">LogP</span> <span class="o">&lt;=</span> <span class="mf">5.6</span><span class="p">)</span> <span class="ow">and</span>\
-            <span class="p">(</span><span class="mi">40</span> <span class="o">&lt;=</span> <span class="n">MR</span> <span class="o">&lt;=</span> <span class="mi">130</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="o">**</span><span class="n">deps</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;_&#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">variant</span><span class="p">)(</span><span class="n">mol</span><span class="p">,</span> <span class="o">**</span><span class="n">deps</span><span class="p">)</span></div>
-
-<span class="n">deps_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
-    <span class="n">Lipinski</span><span class="o">=</span><span class="nb">set</span><span class="p">([</span><span class="s1">&#39;LogP&#39;</span><span class="p">,</span> <span class="s1">&#39;MW&#39;</span><span class="p">,</span> <span class="s1">&#39;HBDon&#39;</span><span class="p">,</span> <span class="s1">&#39;HBAcc&#39;</span><span class="p">]),</span>
-    <span class="n">GhoseFilter</span><span class="o">=</span><span class="nb">set</span><span class="p">([</span><span class="s1">&#39;MW&#39;</span><span class="p">,</span> <span class="s1">&#39;LogP&#39;</span><span class="p">,</span> <span class="s1">&#39;MR&#39;</span><span class="p">]),</span>
-<span class="p">)</span>
-
-<span class="n">deps_keys</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
-    <span class="n">LogP</span><span class="o">=</span><span class="n">WildmanCrippenLogP</span><span class="p">(</span><span class="s1">&#39;LogP&#39;</span><span class="p">),</span>
-    <span class="n">MR</span><span class="o">=</span><span class="n">WildmanCrippenLogP</span><span class="p">(</span><span class="s1">&#39;MR&#39;</span><span class="p">),</span>
-
-    <span class="n">MW</span><span class="o">=</span><span class="n">Weight</span><span class="p">(),</span>
-
-    <span class="n">HBDon</span><span class="o">=</span><span class="n">HBondDonor</span><span class="p">(),</span>
-    <span class="n">HBAcc</span><span class="o">=</span><span class="n">HBondAcceptor</span><span class="p">(),</span>
-<span class="p">)</span>
+            <span class="p">(</span><span class="mi">40</span> <span class="o">&lt;=</span> <span class="n">MR</span> <span class="o">&lt;=</span> <span class="mi">130</span><span class="p">)</span></div>
 </pre></div>
 
            </div>
