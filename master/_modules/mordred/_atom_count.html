@@ -132,6 +132,8 @@
            <div itemprop="articleBody">
             
   <h1>Source code for mordred._atom_count</h1><div class="highlight"><pre>
+<span class="kn">from</span> <span class="nn">rdkit.Chem</span> <span class="kn">import</span> <span class="n">rdMolDescriptors</span>
+
 <span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
 
 
@@ -143,6 +145,8 @@
 
 <span class="sd">        * &#39;Atom&#39;</span>
 <span class="sd">        * &#39;HeavyAtom&#39;</span>
+<span class="sd">        * &#39;Spiro&#39;</span>
+<span class="sd">        * &#39;Bridgehead&#39;</span>
 <span class="sd">        * &#39;X&#39; - all halogen</span>
 <span class="sd">        * element symbol</span>
 
@@ -154,7 +158,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">map</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="p">[</span>
-            <span class="s1">&#39;Atom&#39;</span><span class="p">,</span> <span class="s1">&#39;HeavyAtom&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Atom&#39;</span><span class="p">,</span> <span class="s1">&#39;HeavyAtom&#39;</span><span class="p">,</span> <span class="s1">&#39;Spiro&#39;</span><span class="p">,</span> <span class="s1">&#39;Bridgehead&#39;</span><span class="p">,</span>
             <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;Cl&#39;</span><span class="p">,</span> <span class="s1">&#39;Br&#39;</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span>
         <span class="p">])</span>
 
@@ -186,6 +190,10 @@
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calc_X</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
         <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Atom&#39;</span><span class="p">,</span> <span class="s1">&#39;HeavyAtom&#39;</span><span class="p">]:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calc_all</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="o">==</span> <span class="s1">&#39;Spiro&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">rdMolDescriptors</span><span class="o">.</span><span class="n">CalcNumSpiroAtoms</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="o">==</span> <span class="s1">&#39;Bridgehead&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">rdMolDescriptors</span><span class="o">.</span><span class="n">CalcNumBridgeheadAtoms</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calc</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span></div>
 </pre></div>

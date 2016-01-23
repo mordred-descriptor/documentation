@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mordred.Autocorrelation module &mdash; mordred 0.1.0b0 documentation</title>
+  <title>mordred.MoeType module &mdash; mordred 0.1.0b0 documentation</title>
   
 
   
@@ -32,8 +32,8 @@
   
     <link rel="top" title="mordred 0.1.0b0 documentation" href="../index.html"/>
         <link rel="up" title="mordred package" href="mordred.html"/>
-        <link rel="next" title="mordred.BCUT module" href="mordred.BCUT.html"/>
-        <link rel="prev" title="mordred.AtomCount module" href="mordred.AtomCount.html"/> 
+        <link rel="next" title="mordred.MolecularDistanceEdge module" href="mordred.MolecularDistanceEdge.html"/>
+        <link rel="prev" title="mordred.McGowanVolume module" href="mordred.McGowanVolume.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -90,7 +90,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.AdjacencyMatrix.html">mordred.AdjacencyMatrix module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.Aromatic.html">mordred.Aromatic module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.AtomCount.html">mordred.AtomCount module</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="">mordred.Autocorrelation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.Autocorrelation.html">mordred.Autocorrelation module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.BCUT.html">mordred.BCUT module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.BalabanJ.html">mordred.BalabanJ module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.BaryszMatrix.html">mordred.BaryszMatrix module</a></li>
@@ -111,7 +111,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.KappaShapeIndex.html">mordred.KappaShapeIndex module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.Lipinski.html">mordred.Lipinski module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.McGowanVolume.html">mordred.McGowanVolume module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mordred.MoeType.html">mordred.MoeType module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">mordred.MoeType module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.MolecularDistanceEdge.html">mordred.MolecularDistanceEdge module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.Polarizability.html">mordred.Polarizability module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.RingCount.html">mordred.RingCount module</a></li>
@@ -166,11 +166,11 @@
       
           <li><a href="mordred.html">mordred package</a> &raquo;</li>
       
-    <li>mordred.Autocorrelation module</li>
+    <li>mordred.MoeType module</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/api/mordred.Autocorrelation.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/api/mordred.MoeType.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -180,151 +180,136 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-mordred.Autocorrelation">
-<span id="mordred-autocorrelation-module"></span><h1>mordred.Autocorrelation module<a class="headerlink" href="#module-mordred.Autocorrelation" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-mordred.MoeType">
+<span id="mordred-moetype-module"></span><h1>mordred.MoeType module<a class="headerlink" href="#module-mordred.MoeType" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
-<dt id="mordred.Autocorrelation.ATS">
-<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">ATS</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_autocorrelation.html#ATS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.ATS" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._autocorrelation.AutocorrelationBase</span></code></p>
-<p>Autocorrelation of Topological Structure descriptor.</p>
-<p>a.k.a. Moreau-Broto autocorrelation descriptor</p>
-<div class="math">
-\[{\rm ATS}_0 = \sum^{A}_{i=1} {\boldsymbol w}_i^2\]\[{\rm ATS}_k = \frac{1}{2}
-    \left(
-        {\boldsymbol w}^{\rm T} \cdot
-        {}^k{\boldsymbol B} \cdot
-        {\boldsymbol w}
-    \right)\]\[\begin{split}{}^k{\boldsymbol B} =
-    \begin{cases}
-        1 &amp; (d_{ij} =    k) \\
-        0 &amp; (d_{ij} \neq k)
-    \end{cases}\end{split}\]</div>
-<p>where
-<span class="math">\({\boldsymbol w}\)</span> is atomic property vector,
-<span class="math">\(d_{ij}\)</span> is graph distance(smallest number of bonds between atom i and j).</p>
+<dt id="mordred.MoeType.LabuteASA">
+<em class="property">class </em><code class="descclassname">mordred.MoeType.</code><code class="descname">LabuteASA</code><a class="reference internal" href="../_modules/mordred/_moe_type.html#LabuteASA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.MoeType.LabuteASA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._base.Descriptor</span></code></p>
+<p>Labute&#8217;s Approximate Surface Area descriptor(rdkit wrapper).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>order</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; order(<span class="math">\(k\)</span>)</li>
-<li><strong>property</strong> (<em>str, function</em>) &#8211; <a class="reference internal" href="../atomic_prop.html#atomic-properties"><span>atomic properties</span></a></li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Type:</th><td class="field-body"><p class="first last">float</p>
-</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
 </tr>
 </tbody>
 </table>
+<dl class="attribute">
+<dt id="mordred.MoeType.LabuteASA.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.MoeType.LabuteASA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="class">
-<dt id="mordred.Autocorrelation.AATS">
-<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">AATS</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_autocorrelation.html#AATS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.AATS" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._autocorrelation.ATS</span></code></p>
-<p>averaged ATS descriptor.</p>
-<div class="math">
-\[{\rm AATS}_k = \frac{{\rm ATS}_k}{\Delta_k}\]</div>
-<p>where
-<span class="math">\(\Delta_k\)</span> is number of vertex pairs at order equal to <span class="math">\(k\)</span>.</p>
+<dt id="mordred.MoeType.PEOE_VSA">
+<em class="property">class </em><code class="descclassname">mordred.MoeType.</code><code class="descname">PEOE_VSA</code><span class="sig-paren">(</span><em>k=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_moe_type.html#PEOE_VSA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.MoeType.PEOE_VSA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._moe_type.MoeTypeBase</span></code></p>
+<p>MOE type descriptors using gasteiger charge and surface area contribution(rdkit wrapper).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body">see <a class="reference internal" href="#mordred.Autocorrelation.ATS" title="mordred.Autocorrelation.ATS"><code class="xref py py-class docutils literal"><span class="pre">ATS</span></code></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">NaN when <span class="math">\(\Delta_k = 0\)</span></td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="class">
-<dt id="mordred.Autocorrelation.ATSC">
-<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">ATSC</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_autocorrelation.html#ATSC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.ATSC" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._autocorrelation.AutocorrelationBase</span></code></p>
-<p>centered ATS descriptor.</p>
-<p>ATS with <span class="math">\({\boldsymbol w}_{\rm c}\)</span> property</p>
-<div class="math">
-\[{\boldsymbol w}_{\rm c} = {\boldsymbol w} - \bar{\boldsymbol w}\]</div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body">see <a class="reference internal" href="#mordred.Autocorrelation.ATS" title="mordred.Autocorrelation.ATS"><code class="xref py py-class docutils literal"><span class="pre">ATS</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>k</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; (<span class="math">\(1 &lt;= k &lt;= k_{\rm max}\)</span>)</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
 </tr>
 </tbody>
 </table>
+<dl class="attribute">
+<dt id="mordred.MoeType.PEOE_VSA.k_max">
+<code class="descname">k_max</code><em class="property"> = 14</em><a class="headerlink" href="#mordred.MoeType.PEOE_VSA.k_max" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="class">
-<dt id="mordred.Autocorrelation.AATSC">
-<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">AATSC</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_autocorrelation.html#AATSC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.AATSC" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._autocorrelation.ATSC</span></code></p>
-<p>averaged ATSC descriptor.</p>
-<div class="math">
-\[{\rm AATSC}_k = \frac{{\rm ATSC}_k}{\Delta_k}\]</div>
-<p>where
-<span class="math">\(\Delta_k\)</span> is number of vertex pairs at order equal to <span class="math">\(k\)</span>.</p>
+<dt id="mordred.MoeType.SMR_VSA">
+<em class="property">class </em><code class="descclassname">mordred.MoeType.</code><code class="descname">SMR_VSA</code><span class="sig-paren">(</span><em>k=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_moe_type.html#SMR_VSA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.MoeType.SMR_VSA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._moe_type.MoeTypeBase</span></code></p>
+<p>MOE type descriptors using Wildman-Crippen MR and surface area contribution(rdkit wrapper).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body">see <a class="reference internal" href="#mordred.Autocorrelation.ATS" title="mordred.Autocorrelation.ATS"><code class="xref py py-class docutils literal"><span class="pre">ATS</span></code></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">NaN when <span class="math">\(\Delta_k = 0\)</span></td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="class">
-<dt id="mordred.Autocorrelation.MATS">
-<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">MATS</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_autocorrelation.html#MATS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.MATS" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._autocorrelation.AutocorrelationBase</span></code></p>
-<p>Moran coefficient descriptor.</p>
-<div class="math">
-\[{\rm MATS}_k = \frac{
-    {\rm AATSC}_k
-    }{
-    \frac{1}{A} \cdot \sum {\boldsymbol w}_{\rm c}^2
-    }\]</div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body">see <a class="reference internal" href="#mordred.Autocorrelation.ATS" title="mordred.Autocorrelation.ATS"><code class="xref py py-class docutils literal"><span class="pre">ATS</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>k</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; (<span class="math">\(1 &lt;= k &lt;= k_{\rm max}\)</span>)</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
 </tr>
 </tbody>
 </table>
+<dl class="attribute">
+<dt id="mordred.MoeType.SMR_VSA.k_max">
+<code class="descname">k_max</code><em class="property"> = 10</em><a class="headerlink" href="#mordred.MoeType.SMR_VSA.k_max" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="class">
-<dt id="mordred.Autocorrelation.GATS">
-<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">GATS</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_autocorrelation.html#GATS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.GATS" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._autocorrelation.MATS</span></code></p>
-<p>Geary coefficient descriptor.</p>
+<dt id="mordred.MoeType.SlogP_VSA">
+<em class="property">class </em><code class="descclassname">mordred.MoeType.</code><code class="descname">SlogP_VSA</code><span class="sig-paren">(</span><em>k=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_moe_type.html#SlogP_VSA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.MoeType.SlogP_VSA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._moe_type.MoeTypeBase</span></code></p>
+<p>MOE type descriptors using Wildman-Crippen LogP and surface area contribution(rdkit wrapper).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body">see <a class="reference internal" href="#mordred.Autocorrelation.ATS" title="mordred.Autocorrelation.ATS"><code class="xref py py-class docutils literal"><span class="pre">ATS</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>k</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; (<span class="math">\(1 &lt;= k &lt;= k_{\rm max}\)</span>)</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">NaN when <span class="math">\(\Delta_k = 0\)</span></td>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="mordred.MoeType.SlogP_VSA.k_max">
+<code class="descname">k_max</code><em class="property"> = 12</em><a class="headerlink" href="#mordred.MoeType.SlogP_VSA.k_max" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.MoeType.EState_VSA">
+<em class="property">class </em><code class="descclassname">mordred.MoeType.</code><code class="descname">EState_VSA</code><span class="sig-paren">(</span><em>k=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_moe_type.html#EState_VSA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.MoeType.EState_VSA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._moe_type.MoeTypeBase</span></code></p>
+<p>MOE type descriptors using EState indices and surface area contribution(rdkit wrapper).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>k</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; (<span class="math">\(1 &lt;= k &lt;= k_{\rm max}\)</span>)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
 </tr>
 </tbody>
 </table>
+<dl class="attribute">
+<dt id="mordred.MoeType.EState_VSA.k_max">
+<code class="descname">k_max</code><em class="property"> = 11</em><a class="headerlink" href="#mordred.MoeType.EState_VSA.k_max" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.MoeType.VSA_EState">
+<em class="property">class </em><code class="descclassname">mordred.MoeType.</code><code class="descname">VSA_EState</code><span class="sig-paren">(</span><em>k=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_moe_type.html#VSA_EState"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.MoeType.VSA_EState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._moe_type.MoeTypeBase</span></code></p>
+<p>MOE type descriptors using EState indices and surface area contribution(rdkit wrapper).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>k</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; (<span class="math">\(1 &lt;= k &lt;= k_{\rm max}\)</span>)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="mordred.MoeType.VSA_EState.k_max">
+<code class="descname">k_max</code><em class="property"> = 10</em><a class="headerlink" href="#mordred.MoeType.VSA_EState.k_max" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -336,10 +321,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="mordred.BCUT.html" class="btn btn-neutral float-right" title="mordred.BCUT module" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mordred.MolecularDistanceEdge.html" class="btn btn-neutral float-right" title="mordred.MolecularDistanceEdge module" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="mordred.AtomCount.html" class="btn btn-neutral" title="mordred.AtomCount module" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mordred.McGowanVolume.html" class="btn btn-neutral" title="mordred.McGowanVolume module" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

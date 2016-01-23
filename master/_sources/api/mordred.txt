@@ -17,7 +17,9 @@ Submodules
    mordred.AtomCount
    mordred.Autocorrelation
    mordred.BCUT
+   mordred.BalabanJ
    mordred.BaryszMatrix
+   mordred.BertzCT
    mordred.BondCount
    mordred.CarbonTypes
    mordred.Chi
@@ -34,6 +36,7 @@ Submodules
    mordred.KappaShapeIndex
    mordred.Lipinski
    mordred.McGowanVolume
+   mordred.MoeType
    mordred.MolecularDistanceEdge
    mordred.Polarizability
    mordred.RingCount
