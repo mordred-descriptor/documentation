@@ -158,8 +158,12 @@
             <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">GetAtomicNum</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
                 <span class="k">continue</span>
 
-            <span class="n">new_a</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">Atom</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">GetAtomicNum</span><span class="p">()</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_saturated</span> <span class="k">else</span> <span class="mi">6</span><span class="p">)</span>
-            <span class="n">new_a</span><span class="o">.</span><span class="n">SetFormalCharge</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">GetFormalCharge</span><span class="p">())</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_saturated</span><span class="p">:</span>
+                <span class="n">new_a</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">Atom</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">GetAtomicNum</span><span class="p">())</span>
+                <span class="n">new_a</span><span class="o">.</span><span class="n">SetFormalCharge</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">GetFormalCharge</span><span class="p">())</span>
+
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">new_a</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">Atom</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
 
             <span class="n">ids</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">new</span><span class="o">.</span><span class="n">AddAtom</span><span class="p">(</span><span class="n">new_a</span><span class="p">))</span>
 
@@ -210,6 +214,7 @@
 <span class="sd">        (same graph structure, but all atoms are carbon and all bonds are single bond)</span>
 
 <span class="sd">    :rtype: float</span>
+<span class="sd">    :returns: reference and valence of any atoms &gt; 4</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nd">@classmethod</span>
@@ -235,7 +240,10 @@
             <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">rmol</span><span class="o">=</span><span class="n">AlterMolecule</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">))</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">rmol</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">rmol</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reference</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">rmol</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
             <span class="n">mol</span> <span class="o">=</span> <span class="n">rmol</span>
 
         <span class="n">v</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">ap</span><span class="o">.</span><span class="n">get_core_count</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">())</span>
@@ -417,6 +425,7 @@
 <span class="sd">    :param averaged: averaged</span>
 
 <span class="sd">    :rtype: float</span>
+<span class="sd">    :returns: reference and valence of any atoms &gt; 4</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_reference&#39;</span><span class="p">,</span> <span class="s1">&#39;_local&#39;</span><span class="p">,</span> <span class="s1">&#39;_averaged&#39;</span><span class="p">,)</span>
@@ -462,7 +471,10 @@
         <span class="k">return</span> <span class="n">D</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">rmol</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">rmol</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reference</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">rmol</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
             <span class="n">mol</span> <span class="o">=</span> <span class="n">rmol</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_local</span><span class="p">:</span>
@@ -558,6 +570,7 @@
 <span class="sd">    :param averaged: averaged</span>
 
 <span class="sd">    :rtype: float</span>
+<span class="sd">    :returns: NaN when A &lt; 2</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nd">@classmethod</span>
@@ -677,6 +690,7 @@
 <span class="sd">    :param type: one of epsilon_types</span>
 
 <span class="sd">    :rtype: float</span>
+<span class="sd">    :returns: type = 3 and valence of any atoms &gt; 4</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nd">@classmethod</span>
@@ -704,7 +718,10 @@
             <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">rmol</span><span class="o">=</span><span class="n">AlterMolecule</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">,</span> <span class="bp">True</span><span class="p">))</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">rmol</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">rmol</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">rmol</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
             <span class="n">mol</span> <span class="o">=</span> <span class="n">rmol</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>

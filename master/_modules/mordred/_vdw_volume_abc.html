@@ -173,10 +173,13 @@
     <span class="sd">r&quot;&quot;&quot;van der waals volume(ABC) descriptor.</span>
 
 <span class="sd">    :rtype: float</span>
+<span class="sd">    :returns: NaN when any atoms are non-compat_atoms</span>
 
 <span class="sd">    References</span>
 <span class="sd">        * :cite:`10.1021/jo034808o`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">compat_atoms</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">bondi_radii</span><span class="p">)</span>
 
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 

@@ -261,6 +261,10 @@
 <span class="sd">    :param averaged: averaged by number of subgraphs</span>
 
 <span class="sd">    :rtype: float</span>
+<span class="sd">    :returns: NaN when</span>
+
+<span class="sd">        * any atomic properties are 0</span>
+<span class="sd">        * averaged and :math:`N_{\chi} = 0`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">chi_types</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">ChiType</span><span class="p">)</span>
