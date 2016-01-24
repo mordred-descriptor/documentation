@@ -147,19 +147,16 @@
         <span class="k">yield</span> <span class="n">cls</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">_get_smarts</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_mols</span> <span class="o">=</span> <span class="p">[</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmarts</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">SMARTS</span><span class="p">]</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mols</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;$(&#39;</span> <span class="o">+</span> <span class="n">s</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">SMARTS</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmarts</span><span class="p">(</span><span class="s1">&#39;[&#39;</span> <span class="o">+</span> <span class="n">s</span> <span class="o">+</span> <span class="s1">&#39;]&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mol</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
-        <span class="n">mols</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;mols&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_smarts</span><span class="p">()</span>
-        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">GetSubstructMatches</span><span class="p">(</span><span class="n">q</span><span class="p">))</span> <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">mols</span><span class="p">)</span>
+        <span class="n">pat</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;_mol&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_smarts</span><span class="p">()</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">GetSubstructMatches</span><span class="p">(</span><span class="n">pat</span><span class="p">))</span>
 
     <span class="nd">@abstractproperty</span>
     <span class="k">def</span> <span class="nf">SMARTS</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">u&quot;&quot;&quot;target smarts.</span>
-
-<span class="sd">        (abstruct property)</span>
-<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">pass</span>
 
 
@@ -175,10 +172,10 @@
         <span class="k">return</span> <span class="s1">&#39;nAcid&#39;</span>
 
     <span class="n">SMARTS</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="s2">&quot;[$([O;H1]-[C,S,P]=O)]&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;[$([*;-;!$(*~[*;+])])]&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;[$([NH](S(=O)=O)C(F)(F)F)]&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;[$(n1nnnc1)]&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;[O;H1]-[C,S,P]=O&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;[*;-;!$(*~[*;+])]&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;[NH](S(=O)=O)C(F)(F)F&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;n1nnnc1&#39;</span><span class="p">,</span>
     <span class="p">)</span></div>
 
 
@@ -194,12 +191,12 @@
         <span class="k">return</span> <span class="s1">&#39;nBase&#39;</span>
 
     <span class="n">SMARTS</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="s2">&quot;[$([NH2]-[CX4])]&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;[$([NH](-[CX4])-[CX4])]&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;[$(N(-[CX4])(-[CX4])-[CX4])]&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;[$([*;+;!$(*~[*;-])])]&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;[$(N=C-N)]&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;[$(N-C=N)]&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;[NH2]-[CX4]&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;[NH](-[CX4])-[CX4]&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;N(-[CX4])(-[CX4])-[CX4]&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;[*;+;!$(*~[*;-])]&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;N=C-N&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;N-C=N&#39;</span><span class="p">,</span>
     <span class="p">)</span></div>
 </pre></div>
 
