@@ -137,13 +137,14 @@
 <div class="section" id="all-descriptors">
 <h3>all descriptors<a class="headerlink" href="#all-descriptors" title="Permalink to this headline">¶</a></h3>
 <div class="code console highlight-python"><div class="highlight"><pre>$ python -m mordred --help
-usage: python -m mordred [-h] [-i [PATH]] [-f TYPE] [-o [PATH]] [-p N]
+usage: python -m mordred [-h] [-i PATH] [-f TYPE] [-o [PATH]] [-p N]
 
 optional arguments:
   -h, --help            show this help message and exit
-  -i [PATH], --input [PATH]
-                        input file(default: stdin)
-  -f TYPE, --from TYPE  input filetype(one of auto, smi, sdf, default: auto)
+  -i PATH, --input PATH
+                        input file or directory(default: stdin)
+  -f TYPE, --from TYPE  input filetype(one of auto, smi, sdf, mol, default:
+                        auto)
   -o [PATH], --output [PATH]
                         output csv file(default: stdout)
   -p N, --processes N   number of processes to use(default: number of threads)
