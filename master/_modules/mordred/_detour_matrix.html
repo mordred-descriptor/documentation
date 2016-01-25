@@ -255,6 +255,7 @@
 
 <span class="k">class</span> <span class="nc">DetourMatrixBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="n">require_connected</span> <span class="o">=</span> <span class="bp">True</span>
 
 
 <span class="k">class</span> <span class="nc">DetourMatrixCache</span><span class="p">(</span><span class="n">DetourMatrixBase</span><span class="p">):</span>
@@ -303,6 +304,40 @@
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">result</span></div>
+
+
+<div class="viewcode-block" id="DetourIndex"><a class="viewcode-back" href="../../api/mordred.DetourMatrix.html#mordred.DetourMatrix.DetourIndex">[docs]</a><span class="k">class</span> <span class="nc">DetourIndex</span><span class="p">(</span><span class="n">DetourMatrixBase</span><span class="p">):</span>
+    <span class="sd">r&quot;&quot;&quot;detour index descriptor.</span>
+
+<span class="sd">    .. math::</span>
+
+<span class="sd">        I_{\rm D} = \frac{1}{A} \sum^A_{i=1} \sum^A_{j=1} {\boldsymbol D}_{ij}</span>
+
+<span class="sd">    where</span>
+<span class="sd">    :math:`D` is detour matrix,</span>
+<span class="sd">    :math:`A` is number of atoms.</span>
+
+<span class="sd">    :rtype: int</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="n">cls</span><span class="p">()</span>
+
+    <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;DetourIndex&#39;</span>
+
+    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">D</span><span class="o">=</span><span class="n">DetourMatrixCache</span><span class="p">()</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">D</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span></div>
 </pre></div>
 
            </div>
