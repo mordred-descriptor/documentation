@@ -144,7 +144,7 @@
 <span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span>
 <span class="kn">from</span> <span class="nn">rdkit.Chem.rdPartialCharges</span> <span class="kn">import</span> <span class="n">ComputeGasteigerCharges</span>
 
-<span class="kn">from</span> <span class="nn">six</span> <span class="kn">import</span> <span class="n">with_metaclass</span>
+<span class="kn">from</span> <span class="nn">six</span> <span class="kn">import</span> <span class="n">with_metaclass</span><span class="p">,</span> <span class="n">integer_types</span>
 
 
 <span class="k">class</span> <span class="nc">MordredException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
@@ -162,7 +162,7 @@
 
 
 <span class="k">class</span> <span class="nc">DescriptorException</span><span class="p">(</span><span class="n">MordredException</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">desc</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">parent</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">desc</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">desc</span> <span class="o">=</span> <span class="n">desc</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">e</span> <span class="o">=</span> <span class="n">e</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">mol</span> <span class="o">=</span> <span class="n">mol</span>
@@ -419,10 +419,20 @@
         <span class="n">cache</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">molecule</span> <span class="o">=</span> <span class="n">Molecule</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="p">[</span>
-            <span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calculate</span><span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="n">cache</span><span class="p">))</span>
-            <span class="k">for</span> <span class="n">desc</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">descriptors</span>
-        <span class="p">]</span>
+        <span class="n">rs</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">desc</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">descriptors</span><span class="p">:</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calculate</span><span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="n">cache</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="p">(</span><span class="n">integer_types</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)):</span>
+                <span class="k">raise</span> <span class="n">DescriptorException</span><span class="p">(</span>
+                    <span class="n">desc</span><span class="p">,</span>
+                    <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;not int or float: {!r}({})&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">r</span><span class="p">))),</span>
+                    <span class="n">mol</span>
+                <span class="p">)</span>
+
+            <span class="n">rs</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">desc</span><span class="p">,</span> <span class="n">r</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">rs</span>
 
     <span class="k">def</span> <span class="nf">_parallel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mols</span><span class="p">,</span> <span class="n">processes</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Pool</span>

@@ -132,11 +132,11 @@
            <div itemprop="articleBody">
             
   <h1>Source code for mordred._moe_type</h1><div class="highlight"><pre>
-<span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
-<span class="kn">from</span> <span class="nn">._common</span> <span class="kn">import</span> <span class="n">DistanceMatrix</span>
-
 <span class="kn">from</span> <span class="nn">rdkit.Chem</span> <span class="kn">import</span> <span class="n">MolSurf</span>
+
 <span class="kn">from</span> <span class="nn">rdkit.Chem.EState</span> <span class="kn">import</span> <span class="n">EState_VSA</span> <span class="k">as</span> <span class="n">RDKit_EState_VSA</span>
+
+<span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
 
 
 <div class="viewcode-block" id="LabuteASA"><a class="viewcode-back" href="../../api/mordred.MoeType.html#mordred.MoeType.LabuteASA">[docs]</a><span class="k">class</span> <span class="nc">LabuteASA</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
@@ -229,6 +229,7 @@
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_k&#39;</span><span class="p">,)</span>
     <span class="n">_module</span> <span class="o">=</span> <span class="n">RDKit_EState_VSA</span>
     <span class="n">k_max</span> <span class="o">=</span> <span class="mi">11</span></div>
+
 
 <div class="viewcode-block" id="VSA_EState"><a class="viewcode-back" href="../../api/mordred.MoeType.html#mordred.MoeType.VSA_EState">[docs]</a><span class="k">class</span> <span class="nc">VSA_EState</span><span class="p">(</span><span class="n">MoeTypeBase</span><span class="p">):</span>
     <span class="sd">r&quot;&quot;&quot;MOE type descriptors using EState indices and surface area contribution(rdkit wrapper).</span>
