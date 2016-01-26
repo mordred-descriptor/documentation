@@ -181,6 +181,9 @@
             <span class="n">dmat</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">w</span>
             <span class="n">dmat</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">w</span>
 
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">dmat</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="bp">None</span>
+
         <span class="n">sp</span> <span class="o">=</span> <span class="n">shortest_path</span><span class="p">(</span><span class="n">dmat</span><span class="p">)</span>
         <span class="n">np</span><span class="o">.</span><span class="n">fill_diagonal</span><span class="p">(</span><span class="n">sp</span><span class="p">,</span> <span class="p">[</span><span class="mf">1.</span> <span class="o">-</span> <span class="nb">float</span><span class="p">(</span><span class="n">C</span><span class="p">)</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">()])</span>
         <span class="k">return</span> <span class="n">sp</span>
@@ -196,6 +199,7 @@
 <span class="sd">    :param type: :ref:`matrix_aggregating_methods`</span>
 
 <span class="sd">    :rtype: float</span>
+<span class="sd">    :returns: NaN when any properties are NaN</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nd">@classmethod</span>

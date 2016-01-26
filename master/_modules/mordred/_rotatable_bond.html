@@ -132,6 +132,8 @@
            <div itemprop="articleBody">
             
   <h1>Source code for mordred._rotatable_bond</h1><div class="highlight"><pre>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
 <span class="kn">from</span> <span class="nn">rdkit.Chem.rdMolDescriptors</span> <span class="kn">import</span> <span class="n">CalcNumRotatableBonds</span>
 
 <span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
@@ -168,6 +170,7 @@
 <span class="sd">        {\rm RotRatio} = \frac{N_{\rm rotatable bonds}}{N_{\rm bonds}}</span>
 
 <span class="sd">    :rtype: float</span>
+<span class="sd">    :returns: NaN when :math:`N_{\rm bonds} = 0`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
@@ -182,6 +185,9 @@
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">nRot</span><span class="p">,</span> <span class="n">nB</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">nB</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
         <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">nRot</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">nB</span><span class="p">)</span></div>
 </pre></div>
 

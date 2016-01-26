@@ -262,7 +262,7 @@
 <span class="sd">    :rtype: float</span>
 <span class="sd">    :returns: NaN when</span>
 
-<span class="sd">        * any atomic properties are 0</span>
+<span class="sd">        * any atomic properties &lt;= 0</span>
 <span class="sd">        * averaged and :math:`N_{\chi} = 0`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
@@ -313,7 +313,7 @@
             <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
                 <span class="n">c</span> <span class="o">*=</span> <span class="n">props</span><span class="p">[</span><span class="n">node</span><span class="p">]</span>
 
-            <span class="k">if</span> <span class="n">c</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">c</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
 
             <span class="n">x</span> <span class="o">+=</span> <span class="n">c</span> <span class="o">**</span> <span class="o">-</span><span class="mf">0.5</span>
