@@ -1,0 +1,7 @@
+mordred.SLogP module
+====================
+
+.. automodule:: mordred.SLogP
+    :members:
+    :undoc-members:
+    :show-inheritance:

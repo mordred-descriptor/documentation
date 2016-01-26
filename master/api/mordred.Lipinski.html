@@ -116,6 +116,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.Polarizability.html">mordred.Polarizability module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.RingCount.html">mordred.RingCount module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.RotatableBond.html">mordred.RotatableBond module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.SLogP.html">mordred.SLogP module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.TPSA.html">mordred.TPSA module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.TopologicalCharge.html">mordred.TopologicalCharge module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.TopologicalIndex.html">mordred.TopologicalIndex module</a></li>
@@ -124,7 +125,6 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.WalkCount.html">mordred.WalkCount module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.Weight.html">mordred.Weight module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.WienerIndex.html">mordred.WienerIndex module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mordred.WildmanCrippenLogP.html">mordred.WildmanCrippenLogP module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.ZagrebIndex.html">mordred.ZagrebIndex module</a></li>
 </ul>
 </li>
@@ -187,7 +187,7 @@
 <em class="property">class </em><code class="descclassname">mordred.Lipinski.</code><code class="descname">Lipinski</code><a class="reference internal" href="../_modules/mordred/_lipinski.html#Lipinski"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Lipinski.Lipinski" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._lipinski.LipinskiLike</span></code></p>
 <p>Lipinski rule of 5 descriptor.</p>
-<p>LogP: WildmanCrippenLogP</p>
+<p>LogP: SLogP</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -223,7 +223,7 @@
 <em class="property">class </em><code class="descclassname">mordred.Lipinski.</code><code class="descname">GhoseFilter</code><a class="reference internal" href="../_modules/mordred/_lipinski.html#GhoseFilter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Lipinski.GhoseFilter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._lipinski.LipinskiLike</span></code></p>
 <p>Ghose filter descriptor.</p>
-<p>LogP, MR: WildmanCrippenLogP</p>
+<p>LogP, MR: SLogP, SMR</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />

@@ -41,6 +41,7 @@ Submodules
    mordred.Polarizability
    mordred.RingCount
    mordred.RotatableBond
+   mordred.SLogP
    mordred.TPSA
    mordred.TopologicalCharge
    mordred.TopologicalIndex
@@ -49,6 +50,5 @@ Submodules
    mordred.WalkCount
    mordred.Weight
    mordred.WienerIndex
-   mordred.WildmanCrippenLogP
    mordred.ZagrebIndex
 

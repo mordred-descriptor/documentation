@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mordred._lipinski &mdash; mordred 0.1.0b0 documentation</title>
+  <title>mordred._slogp &mdash; mordred 0.1.0b0 documentation</title>
   
 
   
@@ -119,7 +119,7 @@
       
           <li><a href="../index.html">Module code</a> &raquo;</li>
       
-    <li>mordred._lipinski</li>
+    <li>mordred._slogp</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -131,16 +131,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <h1>Source code for mordred._lipinski</h1><div class="highlight"><pre>
-<span class="kn">from</span> <span class="nn">.HydrogenBond</span> <span class="kn">import</span> <span class="n">HBondAcceptor</span><span class="p">,</span> <span class="n">HBondDonor</span>
-<span class="kn">from</span> <span class="nn">.Weight</span> <span class="kn">import</span> <span class="n">Weight</span>
-<span class="kn">from</span> <span class="nn">.SLogP</span> <span class="kn">import</span> <span class="n">SLogP</span><span class="p">,</span><span class="n">SMR</span> 
+  <h1>Source code for mordred._slogp</h1><div class="highlight"><pre>
+<span class="kn">from</span> <span class="nn">rdkit.Chem</span> <span class="kn">import</span> <span class="n">Crippen</span>
 
 <span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
 
 
-<span class="k">class</span> <span class="nc">LipinskiLike</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
-
+<span class="k">class</span> <span class="nc">WildmanCrippenBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="k">yield</span> <span class="n">cls</span><span class="p">()</span>
@@ -148,56 +145,31 @@
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span>
 
+    <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
 
-<div class="viewcode-block" id="Lipinski"><a class="viewcode-back" href="../../api/mordred.Lipinski.html#mordred.Lipinski.Lipinski">[docs]</a><span class="k">class</span> <span class="nc">Lipinski</span><span class="p">(</span><span class="n">LipinskiLike</span><span class="p">):</span>
-    <span class="sd">r&quot;&quot;&quot;Lipinski rule of 5 descriptor.</span>
 
-<span class="sd">    LogP: SLogP</span>
+<div class="viewcode-block" id="SLogP"><a class="viewcode-back" href="../../api/mordred.SLogP.html#mordred.SLogP.SLogP">[docs]</a><span class="k">class</span> <span class="nc">SLogP</span><span class="p">(</span><span class="n">WildmanCrippenBase</span><span class="p">):</span>
+    <span class="sd">r&quot;&quot;&quot;Wildman-Crippen LogP descriptor(rdkit wrapper).</span>
 
-<span class="sd">    :rtype: bool</span>
+<span class="sd">    :rtype: float</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
-            <span class="n">LogP</span><span class="o">=</span><span class="n">SLogP</span><span class="p">(),</span>
-            <span class="n">MW</span><span class="o">=</span><span class="n">Weight</span><span class="p">(),</span>
-            <span class="n">HBDon</span><span class="o">=</span><span class="n">HBondDonor</span><span class="p">(),</span>
-            <span class="n">HBAcc</span><span class="o">=</span><span class="n">HBondAcceptor</span><span class="p">(),</span>
-        <span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">LogP</span><span class="p">,</span> <span class="n">MW</span><span class="p">,</span> <span class="n">HBDon</span><span class="p">,</span> <span class="n">HBAcc</span><span class="p">):</span>
-        <span class="k">return</span>\
-            <span class="n">HBDon</span> <span class="o">&lt;=</span> <span class="mi">5</span> <span class="ow">and</span>\
-            <span class="n">HBAcc</span> <span class="o">&lt;=</span> <span class="mi">10</span> <span class="ow">and</span>\
-            <span class="n">MW</span> <span class="o">&lt;=</span> <span class="mi">500</span> <span class="ow">and</span>\
-            <span class="n">LogP</span> <span class="o">&lt;=</span> <span class="mi">5</span></div>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Crippen</span><span class="o">.</span><span class="n">MolLogP</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="GhoseFilter"><a class="viewcode-back" href="../../api/mordred.Lipinski.html#mordred.Lipinski.GhoseFilter">[docs]</a><span class="k">class</span> <span class="nc">GhoseFilter</span><span class="p">(</span><span class="n">LipinskiLike</span><span class="p">):</span>
-    <span class="sd">r&quot;&quot;&quot;Ghose filter descriptor.</span>
+<div class="viewcode-block" id="SMR"><a class="viewcode-back" href="../../api/mordred.SLogP.html#mordred.SLogP.SMR">[docs]</a><span class="k">class</span> <span class="nc">SMR</span><span class="p">(</span><span class="n">WildmanCrippenBase</span><span class="p">):</span>
+    <span class="sd">r&quot;&quot;&quot;Wildman-Crippen MR descriptor(rdkit wrapper).</span>
 
-<span class="sd">    LogP, MR: SLogP, SMR</span>
-
-<span class="sd">    :rtype: bool</span>
+<span class="sd">    :rtype: float</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
-            <span class="n">LogP</span><span class="o">=</span><span class="n">SLogP</span><span class="p">(),</span>
-            <span class="n">MR</span><span class="o">=</span><span class="n">SMR</span><span class="p">(),</span>
-            <span class="n">MW</span><span class="o">=</span><span class="n">Weight</span><span class="p">(),</span>
-        <span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">MW</span><span class="p">,</span> <span class="n">LogP</span><span class="p">,</span> <span class="n">MR</span><span class="p">):</span>
-        <span class="k">return</span>\
-            <span class="p">(</span><span class="mi">160</span> <span class="o">&lt;=</span> <span class="n">MW</span> <span class="o">&lt;=</span> <span class="mi">480</span><span class="p">)</span> <span class="ow">and</span>\
-            <span class="p">(</span><span class="mi">20</span> <span class="o">&lt;=</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mi">70</span><span class="p">)</span> <span class="ow">and</span>\
-            <span class="p">(</span><span class="o">-</span><span class="mf">0.4</span> <span class="o">&lt;=</span> <span class="n">LogP</span> <span class="o">&lt;=</span> <span class="mf">5.6</span><span class="p">)</span> <span class="ow">and</span>\
-            <span class="p">(</span><span class="mi">40</span> <span class="o">&lt;=</span> <span class="n">MR</span> <span class="o">&lt;=</span> <span class="mi">130</span><span class="p">)</span></div>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Crippen</span><span class="o">.</span><span class="n">MolMR</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span></div>
 </pre></div>
 
            </div>

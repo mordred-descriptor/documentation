@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mordred.Framework module &mdash; mordred 0.1.0b0 documentation</title>
+  <title>mordred.SLogP module &mdash; mordred 0.1.0b0 documentation</title>
   
 
   
@@ -32,8 +32,8 @@
   
     <link rel="top" title="mordred 0.1.0b0 documentation" href="../index.html"/>
         <link rel="up" title="mordred package" href="mordred.html"/>
-        <link rel="next" title="mordred.HydrogenBond module" href="mordred.HydrogenBond.html"/>
-        <link rel="prev" title="mordred.FragmentComplexity module" href="mordred.FragmentComplexity.html"/> 
+        <link rel="next" title="mordred.TPSA module" href="mordred.TPSA.html"/>
+        <link rel="prev" title="mordred.RotatableBond module" href="mordred.RotatableBond.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -105,7 +105,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.EccentricConnectivityIndex.html">mordred.EccentricConnectivityIndex module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.ExtendedTopochemicalAtom.html">mordred.ExtendedTopochemicalAtom module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.FragmentComplexity.html">mordred.FragmentComplexity module</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="">mordred.Framework module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.Framework.html">mordred.Framework module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.HydrogenBond.html">mordred.HydrogenBond module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.InformationContent.html">mordred.InformationContent module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.KappaShapeIndex.html">mordred.KappaShapeIndex module</a></li>
@@ -116,7 +116,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.Polarizability.html">mordred.Polarizability module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.RingCount.html">mordred.RingCount module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.RotatableBond.html">mordred.RotatableBond module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mordred.SLogP.html">mordred.SLogP module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">mordred.SLogP module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.TPSA.html">mordred.TPSA module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.TopologicalCharge.html">mordred.TopologicalCharge module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.TopologicalIndex.html">mordred.TopologicalIndex module</a></li>
@@ -166,11 +166,11 @@
       
           <li><a href="mordred.html">mordred package</a> &raquo;</li>
       
-    <li>mordred.Framework module</li>
+    <li>mordred.SLogP module</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/api/mordred.Framework.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/api/mordred.SLogP.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -180,18 +180,21 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-mordred.Framework">
-<span id="mordred-framework-module"></span><h1>mordred.Framework module<a class="headerlink" href="#module-mordred.Framework" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-mordred.SLogP">
+<span id="mordred-slogp-module"></span><h1>mordred.SLogP module<a class="headerlink" href="#module-mordred.SLogP" title="Permalink to this headline">¶</a></h1>
+<p>Wildman-Crippen LogP/MR descriptor.</p>
+<dl class="docutils">
+<dt>References</dt>
+<dd><ul class="first last simple">
+<li><a class="reference internal" href="../bibliography.html#ci990307l" id="id1">[WC99]</a></li>
+</ul>
+</dd>
+</dl>
 <dl class="class">
-<dt id="mordred.Framework.Framework">
-<em class="property">class </em><code class="descclassname">mordred.Framework.</code><code class="descname">Framework</code><a class="reference internal" href="../_modules/mordred/_framework.html#Framework"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Framework.Framework" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._framework.FrameworkBase</span></code></p>
-<p>molecular framework ratio descriptor.</p>
-<div class="math">
-\[f_{\rm MF} = \frac{N_{\rm MF}}{N}\]</div>
-<p>where
-<span class="math">\(N_{\rm MF}\)</span> is number of atoms in molecular framework,
-<span class="math">\(N\)</span> is number of all atoms.</p>
+<dt id="mordred.SLogP.SLogP">
+<em class="property">class </em><code class="descclassname">mordred.SLogP.</code><code class="descname">SLogP</code><a class="reference internal" href="../_modules/mordred/_slogp.html#SLogP"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.SLogP.SLogP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._slogp.WildmanCrippenBase</span></code></p>
+<p>Wildman-Crippen LogP descriptor(rdkit wrapper).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -200,31 +203,59 @@
 </tr>
 </tbody>
 </table>
-<dl class="docutils">
-<dt>References</dt>
-<dd><ul class="first last simple">
-<li><a class="reference internal" href="../bibliography.html#jm9602928" id="id1">[BM96]</a></li>
-</ul>
-</dd>
-</dl>
 <dl class="attribute">
-<dt id="mordred.Framework.Framework.explicit_hydrogens">
-<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.Framework.Framework.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.SLogP.SLogP.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.SLogP.SLogP.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.Framework.Framework.gasteiger_charges">
-<code class="descname">gasteiger_charges</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Framework.Framework.gasteiger_charges" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.SLogP.SLogP.gasteiger_charges">
+<code class="descname">gasteiger_charges</code><em class="property"> = False</em><a class="headerlink" href="#mordred.SLogP.SLogP.gasteiger_charges" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.Framework.Framework.kekulize">
-<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Framework.Framework.kekulize" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.SLogP.SLogP.kekulize">
+<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.SLogP.SLogP.kekulize" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.Framework.Framework.require_connected">
-<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Framework.Framework.require_connected" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.SLogP.SLogP.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.SLogP.SLogP.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.SLogP.SMR">
+<em class="property">class </em><code class="descclassname">mordred.SLogP.</code><code class="descname">SMR</code><a class="reference internal" href="../_modules/mordred/_slogp.html#SMR"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.SLogP.SMR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._slogp.WildmanCrippenBase</span></code></p>
+<p>Wildman-Crippen MR descriptor(rdkit wrapper).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="mordred.SLogP.SMR.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.SLogP.SMR.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.SLogP.SMR.gasteiger_charges">
+<code class="descname">gasteiger_charges</code><em class="property"> = False</em><a class="headerlink" href="#mordred.SLogP.SMR.gasteiger_charges" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.SLogP.SMR.kekulize">
+<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.SLogP.SMR.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.SLogP.SMR.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.SLogP.SMR.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -238,10 +269,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="mordred.HydrogenBond.html" class="btn btn-neutral float-right" title="mordred.HydrogenBond module" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mordred.TPSA.html" class="btn btn-neutral float-right" title="mordred.TPSA module" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="mordred.FragmentComplexity.html" class="btn btn-neutral" title="mordred.FragmentComplexity module" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mordred.RotatableBond.html" class="btn btn-neutral" title="mordred.RotatableBond module" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
