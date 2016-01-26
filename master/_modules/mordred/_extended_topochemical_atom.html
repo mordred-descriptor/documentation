@@ -146,6 +146,7 @@
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;explicit_hydrogens&#39;</span><span class="p">,</span> <span class="s1">&#39;_saturated&#39;</span><span class="p">,)</span>
 
     <span class="n">kekulize</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="n">require_connected</span> <span class="o">=</span> <span class="bp">True</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">explicit_hydrogens</span><span class="p">,</span> <span class="n">saturated</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_saturated</span> <span class="o">=</span> <span class="n">saturated</span>
@@ -153,7 +154,7 @@
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
         <span class="n">new</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">RWMol</span><span class="p">(</span><span class="n">Chem</span><span class="o">.</span><span class="n">Mol</span><span class="p">())</span>
-        <span class="n">ids</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="n">ids</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">():</span>
             <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">GetAtomicNum</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
                 <span class="k">continue</span>
@@ -165,20 +166,22 @@
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">new_a</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">Atom</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
 
-            <span class="n">ids</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">new</span><span class="o">.</span><span class="n">AddAtom</span><span class="p">(</span><span class="n">new_a</span><span class="p">))</span>
+            <span class="n">ids</span><span class="p">[</span><span class="n">a</span><span class="o">.</span><span class="n">GetIdx</span><span class="p">()]</span> <span class="o">=</span> <span class="n">new</span><span class="o">.</span><span class="n">AddAtom</span><span class="p">(</span><span class="n">new_a</span><span class="p">)</span>
 
         <span class="k">for</span> <span class="n">bond</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetBonds</span><span class="p">():</span>
             <span class="n">ai</span> <span class="o">=</span> <span class="n">bond</span><span class="o">.</span><span class="n">GetBeginAtom</span><span class="p">()</span>
             <span class="n">aj</span> <span class="o">=</span> <span class="n">bond</span><span class="o">.</span><span class="n">GetEndAtom</span><span class="p">()</span>
 
-            <span class="n">i</span> <span class="o">=</span> <span class="n">ai</span><span class="o">.</span><span class="n">GetIdx</span><span class="p">()</span>
-            <span class="n">j</span> <span class="o">=</span> <span class="n">aj</span><span class="o">.</span><span class="n">GetIdx</span><span class="p">()</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="n">ids</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">ai</span><span class="o">.</span><span class="n">GetIdx</span><span class="p">())</span>
+            <span class="n">j</span> <span class="o">=</span> <span class="n">ids</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">aj</span><span class="o">.</span><span class="n">GetIdx</span><span class="p">())</span>
 
-            <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ids</span> <span class="ow">and</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">ids</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">j</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
                 <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_saturated</span> <span class="ow">and</span> <span class="p">(</span><span class="n">ai</span><span class="o">.</span><span class="n">GetAtomicNum</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">6</span> <span class="ow">or</span> <span class="n">aj</span><span class="o">.</span><span class="n">GetAtomicNum</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">6</span><span class="p">):</span>
-                    <span class="n">new</span><span class="o">.</span><span class="n">AddBond</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">bond</span><span class="o">.</span><span class="n">GetBondType</span><span class="p">())</span>
+                    <span class="n">order</span> <span class="o">=</span> <span class="n">bond</span><span class="o">.</span><span class="n">GetBondType</span><span class="p">()</span>
                 <span class="k">else</span><span class="p">:</span>
-                    <span class="n">new</span><span class="o">.</span><span class="n">AddBond</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">Chem</span><span class="o">.</span><span class="n">BondType</span><span class="o">.</span><span class="n">SINGLE</span><span class="p">)</span>
+                    <span class="n">order</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">BondType</span><span class="o">.</span><span class="n">SINGLE</span>
+
+                <span class="n">new</span><span class="o">.</span><span class="n">AddBond</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">order</span><span class="p">)</span>
 
         <span class="n">new</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">Mol</span><span class="p">(</span><span class="n">new</span><span class="p">)</span>
         <span class="n">Chem</span><span class="o">.</span><span class="n">SanitizeMol</span><span class="p">(</span><span class="n">new</span><span class="p">)</span>
