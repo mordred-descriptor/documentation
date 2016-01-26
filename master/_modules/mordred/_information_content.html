@@ -336,10 +336,11 @@
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">ICm</span><span class="p">):</span>
         <span class="n">B</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">GetBondTypeAsDouble</span><span class="p">()</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetBonds</span><span class="p">())</span>
-        <span class="k">if</span> <span class="n">B</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">log2B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">log2B</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
 
-        <span class="k">return</span> <span class="n">ICm</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">B</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">ICm</span> <span class="o">/</span> <span class="n">log2B</span></div>
 
 
 <div class="viewcode-block" id="ComplementaryIC"><a class="viewcode-back" href="../../api/mordred.InformationContent.html#mordred.InformationContent.ComplementaryIC">[docs]</a><span class="k">class</span> <span class="nc">ComplementaryIC</span><span class="p">(</span><span class="n">InformationContentBase</span><span class="p">):</span>
