@@ -186,7 +186,7 @@
 <span id="mordred-molecularid-module"></span><h1>mordred.MolecularId module<a class="headerlink" href="#module-mordred.MolecularId" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="mordred.MolecularId.MolecularId">
-<em class="property">class </em><code class="descclassname">mordred.MolecularId.</code><code class="descname">MolecularId</code><span class="sig-paren">(</span><em>type='any'</em>, <em>averaged=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_molecular_id.html#MolecularId"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.MolecularId.MolecularId" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">mordred.MolecularId.</code><code class="descname">MolecularId</code><span class="sig-paren">(</span><em>type='any'</em>, <em>averaged=False</em>, <em>_eps=1e-10</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_molecular_id.html#MolecularId"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.MolecularId.MolecularId" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._molecular_id.MolecularIdBase</span></code></p>
 <p>molecular id descriptor.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -194,7 +194,7 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>type</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or :py:class`int`) &#8211; <p>target of atomic id source</p>
+<li><strong>type</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; <p>target of atomic id source</p>
 <ul>
 <li>&#8216;any&#8217;: normal molecular id(sum of all atomic id)</li>
 <li>&#8216;X&#8217;: sum of halogen atomic id</li>
@@ -203,6 +203,7 @@
 </ul>
 </li>
 <li><strong>averaged</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; averaged by number of atoms</li>
+<li><strong>_eps</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><em>float</em></a>) &#8211; internally used</li>
 </ul>
 </td>
 </tr>

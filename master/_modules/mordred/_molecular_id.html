@@ -142,7 +142,7 @@
 
 
 <span class="k">class</span> <span class="nc">AtomicId</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-10</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">eps</span><span class="p">):</span>
         <span class="n">G</span> <span class="o">=</span> <span class="n">Graph</span><span class="p">()</span>
 
         <span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">GetIdx</span><span class="p">()</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">())</span>
@@ -200,10 +200,13 @@
 
 
 <span class="k">class</span> <span class="nc">AtomicIds</span><span class="p">(</span><span class="n">MolecularIdBase</span><span class="p">):</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;eps&#39;</span><span class="p">,)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-10</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">eps</span> <span class="o">=</span> <span class="n">eps</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
-        <span class="n">aid</span> <span class="o">=</span> <span class="n">AtomicId</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+        <span class="n">aid</span> <span class="o">=</span> <span class="n">AtomicId</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">eps</span><span class="p">)</span>
         <span class="k">return</span> <span class="p">[</span>
             <span class="mi">1</span> <span class="o">+</span> <span class="n">aid</span><span class="o">.</span><span class="n">get_atomic_id</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span>
             <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">())</span>
@@ -213,7 +216,7 @@
 <div class="viewcode-block" id="MolecularId"><a class="viewcode-back" href="../../api/mordred.MolecularId.html#mordred.MolecularId.MolecularId">[docs]</a><span class="k">class</span> <span class="nc">MolecularId</span><span class="p">(</span><span class="n">MolecularIdBase</span><span class="p">):</span>
     <span class="sd">r&quot;&quot;&quot;molecular id descriptor.</span>
 
-<span class="sd">    :type type: :py:class:`str` or :py:class`int`</span>
+<span class="sd">    :type type: :py:class:`str` or :py:class:`int`</span>
 <span class="sd">    :param type: target of atomic id source</span>
 
 <span class="sd">        * &#39;any&#39;: normal molecular id(sum of all atomic id)</span>
@@ -223,6 +226,9 @@
 
 <span class="sd">    :type averaged: bool</span>
 <span class="sd">    :param averaged: averaged by number of atoms</span>
+
+<span class="sd">    :type _eps: float</span>
+<span class="sd">    :param _eps: internally used</span>
 
 <span class="sd">    :rtype: float</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -242,11 +248,12 @@
 
         <span class="k">return</span> <span class="n">n</span>
 
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_orig_type&#39;</span><span class="p">,</span> <span class="s1">&#39;_averaged&#39;</span><span class="p">,)</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_orig_type&#39;</span><span class="p">,</span> <span class="s1">&#39;_averaged&#39;</span><span class="p">,</span> <span class="s1">&#39;_eps&#39;</span><span class="p">,)</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;any&#39;</span><span class="p">,</span> <span class="n">averaged</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;any&#39;</span><span class="p">,</span> <span class="n">averaged</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">_eps</span><span class="o">=</span><span class="mf">1e-10</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_orig_type</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="o">=</span> <span class="nb">type</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span> <span class="o">=</span> <span class="n">averaged</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_eps</span> <span class="o">=</span> <span class="n">_eps</span>
 
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;any&#39;</span><span class="p">,</span> <span class="s1">&#39;hetero&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">]:</span>
             <span class="nb">type</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">GetAtomicNumber</span><span class="p">(</span><span class="nb">type</span><span class="p">)</span>
@@ -262,7 +269,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_check</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">a</span> <span class="o">==</span> <span class="nb">type</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">aids</span><span class="o">=</span><span class="n">AtomicIds</span><span class="p">())</span>
+        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">aids</span><span class="o">=</span><span class="n">AtomicIds</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_eps</span><span class="p">))</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">aids</span><span class="p">):</span>
         <span class="n">v</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span>
