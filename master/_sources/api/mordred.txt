@@ -38,6 +38,7 @@ Submodules
    mordred.McGowanVolume
    mordred.MoeType
    mordred.MolecularDistanceEdge
+   mordred.MolecularId
    mordred.Polarizability
    mordred.RingCount
    mordred.RotatableBond
