@@ -39,6 +39,7 @@ Submodules
    mordred.MoeType
    mordred.MolecularDistanceEdge
    mordred.MolecularId
+   mordred.PathCount
    mordred.Polarizability
    mordred.RingCount
    mordred.RotatableBond
