@@ -144,16 +144,10 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">gasteiger_charges</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;_prop&#39;</span><span class="p">):</span>
-            <span class="k">return</span> <span class="bp">False</span>
-
         <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="p">,</span> <span class="s1">&#39;gasteiger_charges&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">require_connected</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;_prop&#39;</span><span class="p">):</span>
-            <span class="k">return</span> <span class="bp">False</span>
-
         <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="p">,</span> <span class="s1">&#39;require_connected&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -162,6 +156,9 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">,</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_prop_name</span>
         <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__reduce_ex__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">version</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prop_name</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">prop</span><span class="o">=</span><span class="s1">&#39;m&#39;</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_prop_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prop</span> <span class="o">=</span> <span class="n">_atomic_property</span><span class="o">.</span><span class="n">getter</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)</span>
@@ -196,21 +193,33 @@
         <span class="k">return</span> <span class="n">AATSC</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="p">)</span>
 
 
-<span class="k">class</span> <span class="nc">AVec</span><span class="p">(</span><span class="n">AutocorrelationBase</span><span class="p">):</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_prop&#39;</span><span class="p">,)</span>
+<span class="k">class</span> <span class="nc">AutocorrelationProp</span><span class="p">(</span><span class="n">AutocorrelationBase</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__reduce_ex__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">version</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="p">,)</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prop</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_prop</span> <span class="o">=</span> <span class="n">prop</span>
+
+
+<span class="k">class</span> <span class="nc">AutocorrelationOrder</span><span class="p">(</span><span class="n">AutocorrelationBase</span><span class="p">):</span>
+    <span class="n">_prop</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">_</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+    <span class="k">def</span> <span class="nf">__reduce_ex__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">version</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">,)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_order</span> <span class="o">=</span> <span class="n">order</span>
+
+
+<span class="k">class</span> <span class="nc">AVec</span><span class="p">(</span><span class="n">AutocorrelationProp</span><span class="p">):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_prop&#39;</span><span class="p">,)</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">()])</span>
 
 
-<span class="k">class</span> <span class="nc">CAVec</span><span class="p">(</span><span class="n">AutocorrelationBase</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">CAVec</span><span class="p">(</span><span class="n">AutocorrelationProp</span><span class="p">):</span>
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_prop&#39;</span><span class="p">,)</span>
-
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prop</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_prop</span> <span class="o">=</span> <span class="n">prop</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">avec</span><span class="o">=</span><span class="n">AVec</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="p">))</span>
@@ -219,11 +228,8 @@
         <span class="k">return</span> <span class="n">avec</span> <span class="o">-</span> <span class="n">avec</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 
 
-<span class="k">class</span> <span class="nc">GMat</span><span class="p">(</span><span class="n">AutocorrelationBase</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">GMat</span><span class="p">(</span><span class="n">AutocorrelationOrder</span><span class="p">):</span>
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_order&#39;</span><span class="p">,)</span>
-
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_order</span> <span class="o">=</span> <span class="n">order</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
@@ -234,11 +240,8 @@
         <span class="k">return</span> <span class="n">dmat</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span>
 
 
-<span class="k">class</span> <span class="nc">GSum</span><span class="p">(</span><span class="n">AutocorrelationBase</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">GSum</span><span class="p">(</span><span class="n">AutocorrelationOrder</span><span class="p">):</span>
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_order&#39;</span><span class="p">,)</span>
-
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_order</span> <span class="o">=</span> <span class="n">order</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">gmat</span><span class="o">=</span><span class="n">GMat</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">))</span>
@@ -246,10 +249,7 @@
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">gmat</span><span class="p">):</span>
         <span class="n">s</span> <span class="o">=</span> <span class="n">gmat</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">s</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">s</span> <span class="o">/</span> <span class="mi">2</span>
+        <span class="k">return</span> <span class="n">s</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">s</span> <span class="o">/</span> <span class="mi">2</span>
 
 
 <span class="n">MAX_DISTANCE</span> <span class="o">=</span> <span class="mi">8</span>

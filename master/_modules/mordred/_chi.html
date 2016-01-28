@@ -217,6 +217,9 @@
 <span class="k">class</span> <span class="nc">ChiCache</span><span class="p">(</span><span class="n">ChiBase</span><span class="p">):</span>
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_order&#39;</span><span class="p">,)</span>
 
+    <span class="k">def</span> <span class="nf">__reduce_ex__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">version</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span>
+
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_order</span> <span class="o">=</span> <span class="n">order</span>
 
@@ -296,8 +299,10 @@
     <span class="k">def</span> <span class="nf">gasteiger_charges</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="p">,</span> <span class="s1">&#39;gasteiger_charges&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
 
-    <span class="n">descriptor_keys</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_type&#39;</span><span class="p">,</span> <span class="s1">&#39;_order&#39;</span><span class="p">,</span> <span class="s1">&#39;_prop&#39;</span><span class="p">,</span> <span class="s1">&#39;_averaged&#39;</span><span class="p">,)</span>
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_type&#39;</span><span class="p">,</span> <span class="s1">&#39;_order&#39;</span><span class="p">,</span> <span class="s1">&#39;_prop_name&#39;</span><span class="p">,</span> <span class="s1">&#39;_prop&#39;</span><span class="p">,</span> <span class="s1">&#39;_averaged&#39;</span><span class="p">,)</span>
+
+    <span class="k">def</span> <span class="nf">__reduce_ex__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">version</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;path&#39;</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">prop</span><span class="o">=</span><span class="s1">&#39;delta&#39;</span><span class="p">,</span> <span class="n">averaged</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="o">=</span> <span class="n">parse_enum</span><span class="p">(</span><span class="n">ChiType</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span>

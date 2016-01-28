@@ -148,6 +148,9 @@
     <span class="n">kekulize</span> <span class="o">=</span> <span class="bp">True</span>
     <span class="n">require_connected</span> <span class="o">=</span> <span class="bp">True</span>
 
+    <span class="k">def</span> <span class="nf">__reduce_ex__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">version</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_saturated</span><span class="p">)</span>
+
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">explicit_hydrogens</span><span class="p">,</span> <span class="n">saturated</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_saturated</span> <span class="o">=</span> <span class="n">saturated</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="n">explicit_hydrogens</span>
@@ -236,6 +239,9 @@
 
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_averaged&#39;</span><span class="p">,</span> <span class="s1">&#39;_reference&#39;</span><span class="p">,)</span>
 
+    <span class="k">def</span> <span class="nf">__reduce_ex__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">version</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reference</span><span class="p">)</span>
+
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">averaged</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">reference</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span> <span class="o">=</span> <span class="n">averaged</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_reference</span> <span class="o">=</span> <span class="n">reference</span>
@@ -284,6 +290,9 @@
         <span class="k">return</span> <span class="s1">&#39;ETA_shape_{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">)</span>
 
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_type&#39;</span><span class="p">,)</span>
+
+    <span class="k">def</span> <span class="nf">__reduce_ex__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">version</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">,)</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;p&#39;</span><span class="p">):</span>
         <span class="k">assert</span> <span class="nb">type</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">shape_types</span>
@@ -374,6 +383,9 @@
 
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_type&#39;</span><span class="p">,</span> <span class="s1">&#39;_averaged&#39;</span><span class="p">,)</span>
 
+    <span class="k">def</span> <span class="nf">__reduce_ex__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">version</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span><span class="p">)</span>
+
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">averaged</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="k">assert</span> <span class="nb">type</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">beta_types</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="o">=</span> <span class="nb">type</span>
@@ -462,6 +474,11 @@
 
         <span class="k">return</span> <span class="n">name</span>
 
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_reference&#39;</span><span class="p">,</span> <span class="s1">&#39;_local&#39;</span><span class="p">,</span> <span class="s1">&#39;_averaged&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__reduce_ex__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">version</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_reference</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_local</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span><span class="p">)</span>
+
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reference</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">local</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">averaged</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_reference</span> <span class="o">=</span> <span class="n">reference</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_local</span> <span class="o">=</span> <span class="n">local</span>
@@ -541,6 +558,9 @@
 
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_local&#39;</span><span class="p">,</span> <span class="s1">&#39;_averaged&#39;</span><span class="p">,)</span>
 
+    <span class="k">def</span> <span class="nf">__reduce_ex__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">version</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_local</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span><span class="p">)</span>
+
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">local</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">averaged</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_local</span> <span class="o">=</span> <span class="n">local</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span> <span class="o">=</span> <span class="n">averaged</span>
@@ -599,6 +619,9 @@
 
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_ring&#39;</span><span class="p">,</span> <span class="s1">&#39;_averaged&#39;</span><span class="p">,)</span>
 
+    <span class="k">def</span> <span class="nf">__reduce_ex__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">version</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ring</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span><span class="p">)</span>
+
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ring</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">averaged</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_ring</span> <span class="o">=</span> <span class="n">ring</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span> <span class="o">=</span> <span class="n">averaged</span>
@@ -651,6 +674,9 @@
         <span class="k">return</span> <span class="s1">&#39;ETA_dAlpha_{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">)</span>
 
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_type&#39;</span><span class="p">,)</span>
+
+    <span class="k">def</span> <span class="nf">__reduce_ex__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">version</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">,)</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;A&#39;</span><span class="p">):</span>
         <span class="k">assert</span> <span class="nb">type</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">delta_types</span>
@@ -713,6 +739,9 @@
 
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_type&#39;</span><span class="p">,)</span>
 
+    <span class="k">def</span> <span class="nf">__reduce_ex__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">version</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">,)</span>
+
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="o">=</span> <span class="nb">type</span>
 
@@ -769,6 +798,9 @@
 
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_type&#39;</span><span class="p">,)</span>
 
+    <span class="k">def</span> <span class="nf">__reduce_ex__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">version</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">,)</span>
+
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;A&#39;</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="o">=</span> <span class="nb">type</span>
 
@@ -816,6 +848,9 @@
 
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_averaged&#39;</span><span class="p">,)</span>
 
+    <span class="k">def</span> <span class="nf">__reduce_ex__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">version</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span><span class="p">,)</span>
+
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">averaged</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span> <span class="o">=</span> <span class="n">averaged</span>
 
@@ -849,6 +884,9 @@
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;ETA_psi_1&#39;</span>
+
+    <span class="k">def</span> <span class="nf">__reduce_ex__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">version</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
@@ -884,6 +922,9 @@
     <span class="n">delta_psi_types</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,)</span>
 
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_type&#39;</span><span class="p">,)</span>
+
+    <span class="k">def</span> <span class="nf">__reduce_ex__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">version</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">,)</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;A&#39;</span><span class="p">):</span>
         <span class="k">assert</span> <span class="nb">type</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">delta_psi_types</span>
