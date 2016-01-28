@@ -213,7 +213,7 @@
 </table>
 <dl class="method">
 <dt id="mordred.Calculator.map">
-<code class="descname">map</code><span class="sig-paren">(</span><em>mols</em>, <em>processes=None</em>, <em>on_exception='raise'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base.html#Calculator.map"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Calculator.map" title="Permalink to this definition">¶</a></dt>
+<code class="descname">map</code><span class="sig-paren">(</span><em>mols</em>, <em>processes=None</em>, <em>error_mode='raise'</em>, <em>callback=None</em>, <em>error_callback=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base.html#Calculator.map"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Calculator.map" title="Permalink to this definition">¶</a></dt>
 <dd><p>calculate descriptors over mols.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -222,6 +222,14 @@
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>mols</strong> (<em>iterable(rdkit.Chem.Mol)</em>) &#8211; moleculars</li>
 <li><strong>processes</strong> (<em>int or None</em>) &#8211; number of process. None is multiprocessing.cpu_count()</li>
+<li><strong>error_mode</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; <ul>
+<li>&#8216;raise&#8217;: raise Exception</li>
+<li>&#8216;ignore&#8217;: ignore Exception</li>
+<li>&#8216;log&#8217;: print Exception to stderr and ingore Exception</li>
+</ul>
+</li>
+<li><strong>callback</strong> (<em>callable([(Descriptor, scalar)]) -&gt; None</em>) &#8211; call when calculate finished par molecule</li>
+<li><strong>error_callback</strong> (<em>callable(Exception) -&gt; scalar</em>) &#8211; call when Exception raised</li>
 </ul>
 </td>
 </tr>
