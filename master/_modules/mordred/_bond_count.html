@@ -177,8 +177,6 @@
 
 <span class="sd">    :type kekulize: bool</span>
 <span class="sd">    :param kekulize: use kekulized structure</span>
-
-<span class="sd">    :rtype: int</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">bond_types</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">BondType</span><span class="p">)</span>
@@ -211,7 +209,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">kekulize</span> <span class="o">=</span> <span class="n">kekulize</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetBonds</span><span class="p">()</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_bond</span><span class="p">(</span><span class="n">b</span><span class="p">))</span></div>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetBonds</span><span class="p">()</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_bond</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+
+    <span class="n">rtype</span> <span class="o">=</span> <span class="nb">int</span></div>
 </pre></div>
 
            </div>

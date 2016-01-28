@@ -149,8 +149,6 @@
 
 <span class="sd">    :type self_returning: bool</span>
 <span class="sd">    :param self_returning: use self returning walk only</span>
-
-<span class="sd">    :rtype: int</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
@@ -215,9 +213,11 @@
 
         <span class="k">else</span><span class="p">:</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-                <span class="k">return</span> <span class="n">An</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="mi">2</span>
+                <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">An</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 
-            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">An</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span></div>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">An</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">rtype</span> <span class="o">=</span> <span class="nb">float</span></div>
 </pre></div>
 
            </div>

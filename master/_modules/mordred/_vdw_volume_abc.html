@@ -172,7 +172,6 @@
 <div class="viewcode-block" id="VdwVolumeABC"><a class="viewcode-back" href="../../api/mordred.VdwVolumeABC.html#mordred.VdwVolumeABC.VdwVolumeABC">[docs]</a><span class="k">class</span> <span class="nc">VdwVolumeABC</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
     <span class="sd">r&quot;&quot;&quot;van der waals volume(ABC) descriptor.</span>
 
-<span class="sd">    :rtype: float</span>
 <span class="sd">    :returns: NaN when any atoms are non-compat_atoms</span>
 
 <span class="sd">    References</span>
@@ -206,7 +205,9 @@
             <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">()</span>
         <span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">ac</span> <span class="o">-</span> <span class="mf">5.92</span> <span class="o">*</span> <span class="n">Nb</span> <span class="o">-</span> <span class="mf">14.7</span> <span class="o">*</span> <span class="n">NRa</span> <span class="o">-</span> <span class="mf">3.8</span> <span class="o">*</span> <span class="n">NRA</span></div>
+        <span class="k">return</span> <span class="n">ac</span> <span class="o">-</span> <span class="mf">5.92</span> <span class="o">*</span> <span class="n">Nb</span> <span class="o">-</span> <span class="mf">14.7</span> <span class="o">*</span> <span class="n">NRa</span> <span class="o">-</span> <span class="mf">3.8</span> <span class="o">*</span> <span class="n">NRA</span>
+
+    <span class="n">rtype</span> <span class="o">=</span> <span class="nb">float</span></div>
 </pre></div>
 
            </div>

@@ -163,12 +163,11 @@
         <span class="n">pat</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;_mol&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_smarts</span><span class="p">()</span>
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">GetSubstructMatches</span><span class="p">(</span><span class="n">pat</span><span class="p">))</span>
 
+    <span class="n">rtype</span> <span class="o">=</span> <span class="nb">int</span>
+
 
 <div class="viewcode-block" id="AcidicGroupCount"><a class="viewcode-back" href="../../api/mordred.AcidBase.html#mordred.AcidBase.AcidicGroupCount">[docs]</a><span class="k">class</span> <span class="nc">AcidicGroupCount</span><span class="p">(</span><span class="n">SmartsCountBase</span><span class="p">):</span>
-    <span class="sd">r&quot;&quot;&quot;acidic group count descriptor.</span>
-
-<span class="sd">    :rtype: int</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="sd">r&quot;&quot;&quot;acidic group count descriptor.&quot;&quot;&quot;</span>
 
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
@@ -183,10 +182,7 @@
 
 
 <div class="viewcode-block" id="BasicGroupCount"><a class="viewcode-back" href="../../api/mordred.AcidBase.html#mordred.AcidBase.BasicGroupCount">[docs]</a><span class="k">class</span> <span class="nc">BasicGroupCount</span><span class="p">(</span><span class="n">SmartsCountBase</span><span class="p">):</span>
-    <span class="sd">r&quot;&quot;&quot;basic group count descriptor.</span>
-
-<span class="sd">    :rtype: int</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="sd">r&quot;&quot;&quot;basic group count descriptor.&quot;&quot;&quot;</span>
 
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 

@@ -203,6 +203,8 @@
     <span class="n">kekulize</span> <span class="o">=</span> <span class="bp">True</span>
     <span class="n">require_connected</span> <span class="o">=</span> <span class="bp">True</span>
 
+    <span class="n">rtype</span> <span class="o">=</span> <span class="nb">float</span>
+
 
 <div class="viewcode-block" id="EtaCoreCount"><a class="viewcode-back" href="../../api/mordred.ExtendedTopochemicalAtom.html#mordred.ExtendedTopochemicalAtom.EtaCoreCount">[docs]</a><span class="k">class</span> <span class="nc">EtaCoreCount</span><span class="p">(</span><span class="n">EtaBase</span><span class="p">):</span>
     <span class="sd">r&quot;&quot;&quot;ETA core count descriptor.</span>
@@ -221,7 +223,6 @@
 <span class="sd">    :param reference: use reference alkane</span>
 <span class="sd">        (same graph structure, but all atoms are carbon and all bonds are single bond)</span>
 
-<span class="sd">    :rtype: float</span>
 <span class="sd">    :returns: reference and valence of any atoms &gt; 4</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
@@ -275,8 +276,6 @@
 
 <span class="sd">    :type type: str</span>
 <span class="sd">    :param type: one of shape_types</span>
-
-<span class="sd">    :rtype: float</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">shape_types</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,)</span>
@@ -356,8 +355,6 @@
 
 <span class="sd">    :type averaged: bool</span>
 <span class="sd">    :param averaged: averaged by heavy atom count</span>
-
-<span class="sd">    :rtype: float</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nd">@classmethod</span>
@@ -441,7 +438,6 @@
 <span class="sd">    :type averaged: bool</span>
 <span class="sd">    :param averaged: averaged</span>
 
-<span class="sd">    :rtype: float</span>
 <span class="sd">    :returns: reference and valence of any atoms &gt; 4</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
@@ -506,13 +502,13 @@
 
         <span class="n">gamma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">ap</span><span class="o">.</span><span class="n">get_eta_gamma</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">()])</span>
 
-        <span class="n">v</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span>
             <span class="nb">sum</span><span class="p">(</span>
                 <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">gamma</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">gamma</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">/</span> <span class="n">r</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
                 <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
                 <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">j</span> <span class="ow">and</span> <span class="n">checker</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
             <span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>
-        <span class="p">)</span>
+        <span class="p">))</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span><span class="p">:</span>
             <span class="n">v</span> <span class="o">/=</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span>
@@ -533,8 +529,6 @@
 
 <span class="sd">    :type averaged: bool</span>
 <span class="sd">    :param averaged: averaged</span>
-
-<span class="sd">    :rtype: float</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nd">@classmethod</span>
@@ -594,7 +588,6 @@
 <span class="sd">    :type averaged: bool</span>
 <span class="sd">    :param averaged: averaged</span>
 
-<span class="sd">    :rtype: float</span>
 <span class="sd">    :returns: NaN when A &lt; 2</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
@@ -660,8 +653,6 @@
 
 <span class="sd">    :type type: str</span>
 <span class="sd">    :param type: one of delta_types</span>
-
-<span class="sd">    :rtype: float</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">delta_types</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,)</span>
@@ -720,7 +711,6 @@
 <span class="sd">    :type type: str</span>
 <span class="sd">    :param type: one of epsilon_types</span>
 
-<span class="sd">    :rtype: float</span>
 <span class="sd">    :returns: type = 3 and valence of any atoms &gt; 4</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
@@ -783,8 +773,6 @@
 
 <span class="sd">    :type type: str</span>
 <span class="sd">    :param type: one of delta_epsilon_types</span>
-
-<span class="sd">    :rtype: float</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nd">@classmethod</span>
@@ -830,8 +818,6 @@
 
 <span class="sd">    :type averaged: bool</span>
 <span class="sd">    :param averaged: averaged</span>
-
-<span class="sd">    :rtype: float</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nd">@classmethod</span>
@@ -874,8 +860,6 @@
 
 <span class="sd">    .. math::</span>
 <span class="sd">        \psi_1 = \frac{\alpha}{A \cdot \epsilon^2}</span>
-
-<span class="sd">    :rtype: float</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nd">@classmethod</span>
@@ -908,8 +892,6 @@
 
 <span class="sd">    :type type: str</span>
 <span class="sd">    :param type: one of delta_psi_types</span>
-
-<span class="sd">    :rtype: float</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nd">@classmethod</span>

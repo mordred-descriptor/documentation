@@ -149,8 +149,6 @@
 <span class="sd">        * &#39;Bridgehead&#39;</span>
 <span class="sd">        * &#39;X&#39; - all halogen</span>
 <span class="sd">        * element symbol</span>
-
-<span class="sd">    :rtype: int</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nd">@classmethod</span>
@@ -196,7 +194,9 @@
         <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="o">==</span> <span class="s1">&#39;Bridgehead&#39;</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">rdMolDescriptors</span><span class="o">.</span><span class="n">CalcNumBridgeheadAtoms</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calc</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span></div>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calc</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+
+    <span class="n">rtype</span> <span class="o">=</span> <span class="nb">int</span></div>
 </pre></div>
 
            </div>

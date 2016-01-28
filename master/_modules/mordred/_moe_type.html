@@ -140,10 +140,7 @@
 
 
 <div class="viewcode-block" id="LabuteASA"><a class="viewcode-back" href="../../api/mordred.MoeType.html#mordred.MoeType.LabuteASA">[docs]</a><span class="k">class</span> <span class="nc">LabuteASA</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
-    <span class="sd">r&quot;&quot;&quot;Labute&#39;s Approximate Surface Area descriptor(rdkit wrapper).</span>
-
-<span class="sd">    :rtype: float</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="sd">r&quot;&quot;&quot;Labute&#39;s Approximate Surface Area descriptor(rdkit wrapper).&quot;&quot;&quot;</span>
 
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
 
@@ -158,7 +155,9 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">MolSurf</span><span class="o">.</span><span class="n">LabuteASA</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">MolSurf</span><span class="o">.</span><span class="n">LabuteASA</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+
+    <span class="n">rtype</span> <span class="o">=</span> <span class="nb">float</span></div>
 
 
 <span class="k">class</span> <span class="nc">MoeTypeBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
@@ -183,14 +182,14 @@
         <span class="n">f</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_module</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
         <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
 
+    <span class="n">rtype</span> <span class="o">=</span> <span class="nb">float</span>
+
 
 <div class="viewcode-block" id="PEOE_VSA"><a class="viewcode-back" href="../../api/mordred.MoeType.html#mordred.MoeType.PEOE_VSA">[docs]</a><span class="k">class</span> <span class="nc">PEOE_VSA</span><span class="p">(</span><span class="n">MoeTypeBase</span><span class="p">):</span>
     <span class="sd">r&quot;&quot;&quot;MOE type descriptors using gasteiger charge and surface area contribution(rdkit wrapper).</span>
 
 <span class="sd">    :type k: int</span>
 <span class="sd">    :param k: (:math:`1 &lt;= k &lt;= k_{\rm max}`)</span>
-
-<span class="sd">    :rtype: float</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_k&#39;</span><span class="p">,)</span>
@@ -202,8 +201,6 @@
 
 <span class="sd">    :type k: int</span>
 <span class="sd">    :param k: (:math:`1 &lt;= k &lt;= k_{\rm max}`)</span>
-
-<span class="sd">    :rtype: float</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_k&#39;</span><span class="p">,)</span>
@@ -215,8 +212,6 @@
 
 <span class="sd">    :type k: int</span>
 <span class="sd">    :param k: (:math:`1 &lt;= k &lt;= k_{\rm max}`)</span>
-
-<span class="sd">    :rtype: float</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_k&#39;</span><span class="p">,)</span>
@@ -228,8 +223,6 @@
 
 <span class="sd">    :type k: int</span>
 <span class="sd">    :param k: (:math:`1 &lt;= k &lt;= k_{\rm max}`)</span>
-
-<span class="sd">    :rtype: float</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_k&#39;</span><span class="p">,)</span>
@@ -242,8 +235,6 @@
 
 <span class="sd">    :type k: int</span>
 <span class="sd">    :param k: (:math:`1 &lt;= k &lt;= k_{\rm max}`)</span>
-
-<span class="sd">    :rtype: float</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_k&#39;</span><span class="p">,)</span>

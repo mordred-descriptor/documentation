@@ -153,10 +153,7 @@
 
 
 <div class="viewcode-block" id="RotatableBondsCount"><a class="viewcode-back" href="../../api/mordred.RotatableBond.html#mordred.RotatableBond.RotatableBondsCount">[docs]</a><span class="k">class</span> <span class="nc">RotatableBondsCount</span><span class="p">(</span><span class="n">RotatableBondsBase</span><span class="p">):</span>
-    <span class="sd">r&quot;&quot;&quot;ratatable bonds count descriptor(rdkit wrapper).</span>
-
-<span class="sd">    :rtype: int</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="sd">r&quot;&quot;&quot;ratatable bonds count descriptor(rdkit wrapper).&quot;&quot;&quot;</span>
 
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
@@ -164,7 +161,9 @@
         <span class="k">return</span> <span class="s1">&#39;nRot&#39;</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">CalcNumRotatableBonds</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">CalcNumRotatableBonds</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+
+    <span class="n">rtype</span> <span class="o">=</span> <span class="nb">int</span></div>
 
 
 <div class="viewcode-block" id="RotatableBondsRatio"><a class="viewcode-back" href="../../api/mordred.RotatableBond.html#mordred.RotatableBond.RotatableBondsRatio">[docs]</a><span class="k">class</span> <span class="nc">RotatableBondsRatio</span><span class="p">(</span><span class="n">RotatableBondsBase</span><span class="p">):</span>
@@ -173,7 +172,6 @@
 <span class="sd">    .. math::</span>
 <span class="sd">        {\rm RotRatio} = \frac{N_{\rm rotatable bonds}}{N_{\rm bonds}}</span>
 
-<span class="sd">    :rtype: float</span>
 <span class="sd">    :returns: NaN when :math:`N_{\rm bonds} = 0`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
@@ -192,7 +190,9 @@
         <span class="k">if</span> <span class="n">nB</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
 
-        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">nRot</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">nB</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">nRot</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">nB</span><span class="p">)</span>
+
+    <span class="n">rtype</span> <span class="o">=</span> <span class="nb">float</span></div>
 </pre></div>
 
            </div>

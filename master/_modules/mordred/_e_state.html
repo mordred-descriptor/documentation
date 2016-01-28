@@ -202,7 +202,6 @@
 <span class="sd">    :type estate: str</span>
 <span class="sd">    :param estate: one of es_types</span>
 
-<span class="sd">    :rtype: int(&#39;count&#39;) or float(other)</span>
 <span class="sd">    :returns: NaN when type in [&#39;min&#39;, &#39;max&#39;] and :math:`N_{\rm X} = 0`</span>
 
 <span class="sd">    References</span>
@@ -252,7 +251,16 @@
         <span class="k">try</span><span class="p">:</span>
             <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">builtins</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="o">.</span><span class="n">name</span><span class="p">)(</span><span class="n">indices</span><span class="p">))</span>
         <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>  <span class="c1"># min, max to empty list</span>
-            <span class="k">return</span> <span class="n">nan</span></div>
+            <span class="k">return</span> <span class="n">nan</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">rtype</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">r&quot;&quot;&quot;</span>
+<span class="sd">        * &#39;count&#39;: :py:class:`int`</span>
+<span class="sd">        * &#39;other&#39;: :py:class:`float`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="nb">int</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="o">==</span> <span class="n">AggrType</span><span class="o">.</span><span class="n">count</span> <span class="k">else</span> <span class="nb">float</span></div>
 </pre></div>
 
            </div>

@@ -219,6 +219,8 @@
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_order</span> <span class="o">=</span> <span class="n">order</span>
 
+    <span class="n">rtype</span> <span class="o">=</span> <span class="nb">float</span>
+
 
 <span class="k">class</span> <span class="nc">Ag</span><span class="p">(</span><span class="n">InformationContentBase</span><span class="p">):</span>
     <span class="nd">@classmethod</span>
@@ -259,8 +261,6 @@
 
 <span class="sd">    :type order: int</span>
 <span class="sd">    :param order: order(number of edge) of subgraph</span>
-
-<span class="sd">    :rtype: float</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;IC&#39;</span>
@@ -281,8 +281,6 @@
 
 <span class="sd">    :type order: int</span>
 <span class="sd">    :param order: order(number of edge) of subgraph</span>
-
-<span class="sd">    :rtype: float</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;TIC&#39;</span>
@@ -304,8 +302,6 @@
 
 <span class="sd">    :type order: int</span>
 <span class="sd">    :param order: order(number of edge) of subgraph</span>
-
-<span class="sd">    :rtype: float</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;SIC&#39;</span>
@@ -328,7 +324,6 @@
 <span class="sd">    :type order: int</span>
 <span class="sd">    :param order: order(number of edge) of subgraph</span>
 
-<span class="sd">    :rtype: float</span>
 <span class="sd">    :returns: NaN when :math:`\sum^B_{b=1} \pi^{*}_b &lt;= 0`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
@@ -358,8 +353,6 @@
 
 <span class="sd">    :type order: int</span>
 <span class="sd">    :param order: order(number of edge) of subgraph</span>
-
-<span class="sd">    :rtype: float</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;CIC&#39;</span>
@@ -378,8 +371,6 @@
 
 <span class="sd">    :type order: int</span>
 <span class="sd">    :param order: order(number of edge) of subgraph</span>
-
-<span class="sd">    :rtype: float</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;MIC&#39;</span>
@@ -398,8 +389,6 @@
 
 <span class="sd">    :type order: int</span>
 <span class="sd">    :param order: order(number of edge) of subgraph</span>
-
-<span class="sd">    :rtype: float</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;ZMIC&#39;</span>

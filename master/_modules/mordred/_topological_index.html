@@ -149,10 +149,7 @@
 
 
 <div class="viewcode-block" id="Radius"><a class="viewcode-back" href="../../api/mordred.TopologicalIndex.html#mordred.TopologicalIndex.Radius">[docs]</a><span class="k">class</span> <span class="nc">Radius</span><span class="p">(</span><span class="n">TopologicalIndexBase</span><span class="p">):</span>
-    <span class="sd">r&quot;&quot;&quot;radius descriptor.</span>
-
-<span class="sd">    :rtype: int</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="sd">r&quot;&quot;&quot;radius descriptor.&quot;&quot;&quot;</span>
 
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
@@ -165,14 +162,13 @@
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">R</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">R</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
+
+    <span class="n">rtype</span> <span class="o">=</span> <span class="nb">int</span></div>
 
 
 <div class="viewcode-block" id="Diameter"><a class="viewcode-back" href="../../api/mordred.TopologicalIndex.html#mordred.TopologicalIndex.Diameter">[docs]</a><span class="k">class</span> <span class="nc">Diameter</span><span class="p">(</span><span class="n">TopologicalIndexBase</span><span class="p">):</span>
-    <span class="sd">r&quot;&quot;&quot;diameter descriptor.</span>
-
-<span class="sd">    :rtype: int</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="sd">r&quot;&quot;&quot;diameter descriptor.&quot;&quot;&quot;</span>
 
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
@@ -185,7 +181,9 @@
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">D</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>
+
+    <span class="n">rtype</span> <span class="o">=</span> <span class="nb">int</span></div>
 
 
 <div class="viewcode-block" id="TopologicalShapeIndex"><a class="viewcode-back" href="../../api/mordred.TopologicalIndex.html#mordred.TopologicalIndex.TopologicalShapeIndex">[docs]</a><span class="k">class</span> <span class="nc">TopologicalShapeIndex</span><span class="p">(</span><span class="n">TopologicalIndexBase</span><span class="p">):</span>
@@ -199,7 +197,6 @@
 <span class="sd">    :math:`R` is graph radius,</span>
 <span class="sd">    :math:`D` is graph diameter.</span>
 
-<span class="sd">    :rtype: float</span>
 <span class="sd">    :returns: NaN when :math:`R = 0`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
@@ -218,7 +215,9 @@
         <span class="k">if</span> <span class="n">R</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;nan&#39;</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">D</span> <span class="o">-</span> <span class="n">R</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">R</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">D</span> <span class="o">-</span> <span class="n">R</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
+
+    <span class="n">rtype</span> <span class="o">=</span> <span class="nb">float</span></div>
 
 
 <div class="viewcode-block" id="PetitjeanIndex"><a class="viewcode-back" href="../../api/mordred.TopologicalIndex.html#mordred.TopologicalIndex.PetitjeanIndex">[docs]</a><span class="k">class</span> <span class="nc">PetitjeanIndex</span><span class="p">(</span><span class="n">TopologicalIndexBase</span><span class="p">):</span>
@@ -232,7 +231,6 @@
 <span class="sd">    :math:`R` is graph radius,</span>
 <span class="sd">    :math:`D` is graph diameter.</span>
 
-<span class="sd">    :rtype: float</span>
 <span class="sd">    :returns: NaN when :math:`D = 0`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
@@ -251,7 +249,9 @@
         <span class="k">if</span> <span class="n">D</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;nan&#39;</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">D</span> <span class="o">-</span> <span class="n">R</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">D</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">D</span> <span class="o">-</span> <span class="n">R</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>
+
+    <span class="n">rtype</span> <span class="o">=</span> <span class="nb">float</span></div>
 </pre></div>
 
            </div>

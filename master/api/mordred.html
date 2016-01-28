@@ -192,7 +192,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">all modules</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">iterator(module)</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><code class="xref py py-class docutils literal"><span class="pre">Iterator</span></code> (<code class="xref py py-class docutils literal"><span class="pre">module</span></code>)</td>
 </tr>
 </tbody>
 </table>
@@ -207,7 +207,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>descs</strong> &#8211; see <cite>register</cite> method</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>descs</strong> &#8211; see <a class="reference internal" href="#mordred.Calculator.register" title="mordred.Calculator.register"><code class="xref py py-meth docutils literal"><span class="pre">register()</span></code></a> method</td>
 </tr>
 </tbody>
 </table>
@@ -220,20 +220,21 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>mols</strong> (<em>iterable(rdkit.Chem.Mol)</em>) &#8211; moleculars</li>
-<li><strong>processes</strong> (<em>int or None</em>) &#8211; number of process. None is multiprocessing.cpu_count()</li>
-<li><strong>error_mode</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; <ul>
+<li><strong>mols</strong> (<code class="xref py py-class docutils literal"><span class="pre">Iterable</span></code> (<code class="xref py py-class docutils literal"><span class="pre">Mol</span></code>)) &#8211; moleculars</li>
+<li><strong>processes</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; number of process. None is <a class="reference external" href="https://docs.python.org/library/multiprocessing.html#multiprocessing.cpu_count" title="(in Python v2.7)"><code class="xref py py-func docutils literal"><span class="pre">multiprocessing.cpu_count()</span></code></a></li>
+<li><strong>error_mode</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; <ul>
 <li>&#8216;raise&#8217;: raise Exception</li>
 <li>&#8216;ignore&#8217;: ignore Exception</li>
 <li>&#8216;log&#8217;: print Exception to stderr and ingore Exception</li>
 </ul>
 </li>
-<li><strong>callback</strong> (<em>callable([(Descriptor, scalar)]) -&gt; None</em>) &#8211; call when calculate finished par molecule</li>
-<li><strong>error_callback</strong> (<em>callable(Exception) -&gt; scalar</em>) &#8211; call when Exception raised</li>
+<li><strong>callback</strong> (<code class="xref py py-class docutils literal"><span class="pre">Callable</span></code> ([(<a class="reference internal" href="#mordred.Descriptor" title="mordred.Descriptor"><code class="xref py py-class docutils literal"><span class="pre">Descriptor</span></code></a>, scalar)])
+-&gt; <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; call when calculate finished par molecule</li>
+<li><strong>error_callback</strong> (<code class="xref py py-class docutils literal"><span class="pre">Callable</span></code> (<code class="xref py py-class docutils literal"><span class="pre">Exception</span></code>) -&gt; scalar) &#8211; call when Exception raised</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">iterator((rdkit.Chem.Mol, [(Descriptor, scalar)]]))</p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><code class="xref py py-class docutils literal"><span class="pre">Iterator</span></code> ((<code class="xref py py-class docutils literal"><span class="pre">Mol</span></code>, [(<a class="reference internal" href="#mordred.Descriptor" title="mordred.Descriptor"><code class="xref py py-class docutils literal"><span class="pre">Descriptor</span></code></a>, scalar)]]))</p>
 </td>
 </tr>
 </tbody>
@@ -248,7 +249,14 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>descs</strong> (<em>module, descriptor class/instance, iterable</em>) &#8211; descriptors to register</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>descs</strong> (<code class="xref py py-class docutils literal"><span class="pre">module</span></code>,
+<a class="reference internal" href="#mordred.Descriptor" title="mordred.Descriptor"><code class="xref py py-class docutils literal"><span class="pre">Descriptor</span></code></a> class/instance or
+<code class="xref py py-class docutils literal"><span class="pre">Iterable</span></code>) &#8211; <p>descriptors to register</p>
+<ul class="simple">
+<li><code class="xref py py-class docutils literal"><span class="pre">module</span></code>: Descriptors in module</li>
+<li><a class="reference internal" href="#mordred.Descriptor" title="mordred.Descriptor"><code class="xref py py-class docutils literal"><span class="pre">Descriptor</span></code></a> class: use <a class="reference internal" href="#mordred.Descriptor.preset" title="mordred.Descriptor.preset"><code class="xref py py-meth docutils literal"><span class="pre">Descriptor.preset()</span></code></a></li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>
@@ -260,12 +268,12 @@
 <dt id="mordred.Descriptor">
 <em class="property">class </em><code class="descclassname">mordred.</code><code class="descname">Descriptor</code><a class="reference internal" href="../_modules/mordred/_base.html#Descriptor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Descriptor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
-<p>abstruct base class of descriptors.</p>
+<p>abstract base class of descriptors.</p>
 <dl class="method">
 <dt id="mordred.Descriptor.calculate">
 <code class="descname">calculate</code><span class="sig-paren">(</span><em>mol</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base.html#Descriptor.calculate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Descriptor.calculate" title="Permalink to this definition">¶</a></dt>
 <dd><p>calculate descriptor value.</p>
-<p>(abstruct method)</p>
+<p>(abstract method)</p>
 </dd></dl>
 
 <dl class="method">
@@ -276,7 +284,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">{str: (Descriptor or None)} or None</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">{<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>: (<a class="reference internal" href="#mordred.Descriptor" title="mordred.Descriptor"><code class="xref py py-class docutils literal"><span class="pre">Descriptor</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">None</span></code>)} or <code class="xref py py-class docutils literal"><span class="pre">None</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -293,9 +301,18 @@
 <dd></dd></dl>
 
 <dl class="classmethod">
-<dt id="mordred.Descriptor.is_descriptor">
-<em class="property">classmethod </em><code class="descname">is_descriptor</code><span class="sig-paren">(</span><em>desc</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base.html#Descriptor.is_descriptor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Descriptor.is_descriptor" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dt id="mordred.Descriptor.is_descriptor_class">
+<em class="property">classmethod </em><code class="descname">is_descriptor_class</code><span class="sig-paren">(</span><em>desc</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base.html#Descriptor.is_descriptor_class"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Descriptor.is_descriptor_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>check calculatable descriptor class or not.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.Descriptor.kekulize">
@@ -306,7 +323,7 @@
 <dt id="mordred.Descriptor.preset">
 <em class="property">classmethod </em><code class="descname">preset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base.html#Descriptor.preset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Descriptor.preset" title="Permalink to this definition">¶</a></dt>
 <dd><p>generate preset descriptor instances.</p>
-<p>(abstruct classmethod)</p>
+<p>(abstract classmethod)</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -322,6 +339,12 @@
 <code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Descriptor.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="attribute">
+<dt id="mordred.Descriptor.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.Descriptor.rtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">NoneType</span></code></p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="function">
@@ -332,7 +355,9 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">[Descriptor]</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>mdl</strong> (<em>module</em>) &#8211; module to search</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">[<a class="reference internal" href="#mordred.Descriptor" title="mordred.Descriptor"><code class="xref py py-class docutils literal"><span class="pre">Descriptor</span></code></a>]</td>
 </tr>
 </tbody>
 </table>
