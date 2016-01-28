@@ -132,11 +132,10 @@
            <div itemprop="articleBody">
             
   <h1>Source code for mordred._chi</h1><div class="highlight"><pre>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
 <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
 <span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">IntEnum</span>
 <span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">chain</span>
-
-<span class="kn">from</span> <span class="nn">networkx</span> <span class="kn">import</span> <span class="n">Graph</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
@@ -154,24 +153,37 @@
 
 
 <span class="k">class</span> <span class="nc">DFS</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;visited&#39;</span><span class="p">,</span> <span class="s1">&#39;vis_edges&#39;</span><span class="p">,</span> <span class="s1">&#39;is_chain&#39;</span><span class="p">,</span> <span class="s1">&#39;degrees&#39;</span><span class="p">)</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;mol&#39;</span><span class="p">,</span> <span class="s1">&#39;visited&#39;</span><span class="p">,</span> <span class="s1">&#39;vis_edges&#39;</span><span class="p">,</span> <span class="s1">&#39;is_chain&#39;</span><span class="p">,</span> <span class="s1">&#39;degrees&#39;</span><span class="p">,</span> <span class="s1">&#39;neighbors&#39;</span><span class="p">,)</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">G</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">G</span> <span class="o">=</span> <span class="n">G</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">use_bonds</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mol</span> <span class="o">=</span> <span class="n">mol</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">vis_edges</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">is_chain</span> <span class="o">=</span> <span class="bp">False</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">degrees</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">neighbors</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">set</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">use_bonds</span><span class="p">:</span>
+            <span class="n">bond</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetBondWithIdx</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="n">bond</span><span class="o">.</span><span class="n">GetBeginAtomIdx</span><span class="p">()</span>
+            <span class="n">b</span> <span class="o">=</span> <span class="n">bond</span><span class="o">.</span><span class="n">GetEndAtomIdx</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">neighbors</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">neighbors</span><span class="p">[</span><span class="n">b</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">nodes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">neighbors</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">_edge_key</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_dfs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">u</span><span class="p">):</span>
+        <span class="n">neighbors</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">neighbors</span><span class="p">[</span><span class="n">u</span><span class="p">]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">degrees</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">u</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">degrees</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">neighbors</span><span class="p">))</span>
 
-        <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="o">.</span><span class="n">neighbors_iter</span><span class="p">(</span><span class="n">u</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">neighbors</span><span class="p">:</span>
             <span class="n">ek</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_edge_key</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">visited</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">vis_edges</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">ek</span><span class="p">)</span>
@@ -181,16 +193,18 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">is_chain</span> <span class="o">=</span> <span class="bp">True</span>
 
     <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_dfs</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="o">.</span><span class="n">nodes_iter</span><span class="p">()))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dfs</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">neighbors</span><span class="o">.</span><span class="n">keys</span><span class="p">())))</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_chain</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">ChiType</span><span class="o">.</span><span class="n">chain</span>
+            <span class="n">t</span> <span class="o">=</span> <span class="n">ChiType</span><span class="o">.</span><span class="n">chain</span>
         <span class="k">elif</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">degrees</span> <span class="o">-</span> <span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]):</span>
-            <span class="k">return</span> <span class="n">ChiType</span><span class="o">.</span><span class="n">path</span>
+            <span class="n">t</span> <span class="o">=</span> <span class="n">ChiType</span><span class="o">.</span><span class="n">path</span>
         <span class="k">elif</span> <span class="mi">2</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">degrees</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">ChiType</span><span class="o">.</span><span class="n">path_cluster</span>
+            <span class="n">t</span> <span class="o">=</span> <span class="n">ChiType</span><span class="o">.</span><span class="n">path_cluster</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">ChiType</span><span class="o">.</span><span class="n">cluster</span>
+            <span class="n">t</span> <span class="o">=</span> <span class="n">ChiType</span><span class="o">.</span><span class="n">cluster</span>
+
+        <span class="k">return</span> <span class="n">t</span>
 
 
 <span class="k">class</span> <span class="nc">ChiBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
@@ -213,16 +227,10 @@
         <span class="n">cluster</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
         <span class="k">for</span> <span class="n">bonds</span> <span class="ow">in</span> <span class="n">Chem</span><span class="o">.</span><span class="n">FindAllSubgraphsOfLengthN</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">):</span>
 
-            <span class="n">G</span> <span class="o">=</span> <span class="n">Graph</span><span class="p">()</span>
-            <span class="n">nodes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-            <span class="k">for</span> <span class="n">bond</span> <span class="ow">in</span> <span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">GetBondWithIdx</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">bonds</span><span class="p">):</span>
-                <span class="n">a</span> <span class="o">=</span> <span class="n">bond</span><span class="o">.</span><span class="n">GetBeginAtomIdx</span><span class="p">()</span>
-                <span class="n">b</span> <span class="o">=</span> <span class="n">bond</span><span class="o">.</span><span class="n">GetEndAtomIdx</span><span class="p">()</span>
-                <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-                <span class="n">nodes</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-                <span class="n">nodes</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+            <span class="n">dfs</span> <span class="o">=</span> <span class="n">DFS</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">bonds</span><span class="p">)</span>
+            <span class="n">typ</span> <span class="o">=</span> <span class="n">dfs</span><span class="p">()</span>
+            <span class="n">nodes</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">nodes</span>
 
-            <span class="n">typ</span> <span class="o">=</span> <span class="n">DFS</span><span class="p">(</span><span class="n">G</span><span class="p">)()</span>
             <span class="k">if</span> <span class="n">typ</span> <span class="o">==</span> <span class="n">ChiType</span><span class="o">.</span><span class="n">chain</span><span class="p">:</span>
                 <span class="n">chain</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
             <span class="k">elif</span> <span class="n">typ</span> <span class="o">==</span> <span class="n">ChiType</span><span class="o">.</span><span class="n">path</span><span class="p">:</span>
