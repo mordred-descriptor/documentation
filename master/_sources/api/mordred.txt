@@ -11,6 +11,7 @@ Submodules
 
 .. toctree::
 
+   mordred.ABCIndex
    mordred.AcidBase
    mordred.AdjacencyMatrix
    mordred.Aromatic

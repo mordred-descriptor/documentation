@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mordred.BCUT module &mdash; mordred 0.1.0b0 documentation</title>
+  <title>mordred.ABCIndex module &mdash; mordred 0.1.0b0 documentation</title>
   
 
   
@@ -32,8 +32,8 @@
   
     <link rel="top" title="mordred 0.1.0b0 documentation" href="../index.html"/>
         <link rel="up" title="mordred package" href="mordred.html"/>
-        <link rel="next" title="mordred.BalabanJ module" href="mordred.BalabanJ.html"/>
-        <link rel="prev" title="mordred.Autocorrelation module" href="mordred.Autocorrelation.html"/> 
+        <link rel="next" title="mordred.AcidBase module" href="mordred.AcidBase.html"/>
+        <link rel="prev" title="mordred package" href="mordred.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -86,13 +86,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="mordred.html">mordred package</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="mordred.html#submodules">Submodules</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="mordred.ABCIndex.html">mordred.ABCIndex module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">mordred.ABCIndex module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.AcidBase.html">mordred.AcidBase module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.AdjacencyMatrix.html">mordred.AdjacencyMatrix module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.Aromatic.html">mordred.Aromatic module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.AtomCount.html">mordred.AtomCount module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.Autocorrelation.html">mordred.Autocorrelation module</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="">mordred.BCUT module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.BCUT.html">mordred.BCUT module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.BalabanJ.html">mordred.BalabanJ module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.BaryszMatrix.html">mordred.BaryszMatrix module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.BertzCT.html">mordred.BertzCT module</a></li>
@@ -169,11 +169,11 @@
       
           <li><a href="mordred.html">mordred package</a> &raquo;</li>
       
-    <li>mordred.BCUT module</li>
+    <li>mordred.ABCIndex module</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/api/mordred.BCUT.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/api/mordred.ABCIndex.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -183,56 +183,76 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-mordred.BCUT">
-<span id="mordred-bcut-module"></span><h1>mordred.BCUT module<a class="headerlink" href="#module-mordred.BCUT" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-mordred.ABCIndex">
+<span id="mordred-abcindex-module"></span><h1>mordred.ABCIndex module<a class="headerlink" href="#module-mordred.ABCIndex" title="Permalink to this headline">¶</a></h1>
+<dl class="docutils">
+<dt>References</dt>
+<dd><ul class="first last simple">
+<li><a class="reference internal" href="../bibliography.html#furtula-atom-bond-2016" id="id1">[Fur16]</a></li>
+</ul>
+</dd>
+</dl>
 <dl class="class">
-<dt id="mordred.BCUT.BCUT">
-<em class="property">class </em><code class="descclassname">mordred.BCUT.</code><code class="descname">BCUT</code><span class="sig-paren">(</span><em>prop='m'</em>, <em>nth=0</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_bcut.html#BCUT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.BCUT.BCUT" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._bcut.BCUTBase</span></code></p>
-<p>BCUT descriptor.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>prop</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">function</span></code>) &#8211; <a class="reference internal" href="../atomic_prop.html#atomic-properties"><span>atomic properties</span></a></li>
-<li><strong>nth</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; n-th eigen value. 0 is highest, -1 is lowest.</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><p>NaN when</p>
-<ul class="simple">
-<li>any atomic properties are NaN</li>
-<li><span class="math">\(\left| nth \right| &gt; A\)</span></li>
-</ul>
-</p>
-</td>
-</tr>
-</tbody>
-</table>
+<dt id="mordred.ABCIndex.ABCIndex">
+<em class="property">class </em><code class="descclassname">mordred.ABCIndex.</code><code class="descname">ABCIndex</code><a class="reference internal" href="../_modules/mordred/_abc_index.html#ABCIndex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.ABCIndex.ABCIndex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._abc_index.ABCIndexBase</span></code></p>
+<p>atom-bond connectivity indez descriptor.</p>
 <dl class="attribute">
-<dt id="mordred.BCUT.BCUT.explicit_hydrogens">
-<code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.BCUT.BCUT.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.ABCIndex.ABCIndex.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ABCIndex.ABCIndex.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.BCUT.BCUT.gasteiger_charges">
-<code class="descname">gasteiger_charges</code><a class="headerlink" href="#mordred.BCUT.BCUT.gasteiger_charges" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.ABCIndex.ABCIndex.gasteiger_charges">
+<code class="descname">gasteiger_charges</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ABCIndex.ABCIndex.gasteiger_charges" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.BCUT.BCUT.kekulize">
-<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.BCUT.BCUT.kekulize" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.ABCIndex.ABCIndex.kekulize">
+<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ABCIndex.ABCIndex.kekulize" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.BCUT.BCUT.require_connected">
-<code class="descname">require_connected</code><em class="property"> = True</em><a class="headerlink" href="#mordred.BCUT.BCUT.require_connected" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.ABCIndex.ABCIndex.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ABCIndex.ABCIndex.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.BCUT.BCUT.rtype">
-<code class="descname">rtype</code><a class="headerlink" href="#mordred.BCUT.BCUT.rtype" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.ABCIndex.ABCIndex.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.ABCIndex.ABCIndex.rtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.ABCIndex.ABCGGIndex">
+<em class="property">class </em><code class="descclassname">mordred.ABCIndex.</code><code class="descname">ABCGGIndex</code><a class="reference internal" href="../_modules/mordred/_abc_index.html#ABCGGIndex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.ABCIndex.ABCGGIndex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._abc_index.ABCIndexBase</span></code></p>
+<p>Graovac-Ghorbani atom-bond connectivity index descriptor.</p>
+<dl class="attribute">
+<dt id="mordred.ABCIndex.ABCGGIndex.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ABCIndex.ABCGGIndex.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.ABCIndex.ABCGGIndex.gasteiger_charges">
+<code class="descname">gasteiger_charges</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ABCIndex.ABCGGIndex.gasteiger_charges" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.ABCIndex.ABCGGIndex.kekulize">
+<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ABCIndex.ABCGGIndex.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.ABCIndex.ABCGGIndex.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ABCIndex.ABCGGIndex.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.ABCIndex.ABCGGIndex.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.ABCIndex.ABCGGIndex.rtype" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
 
@@ -247,10 +267,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="mordred.BalabanJ.html" class="btn btn-neutral float-right" title="mordred.BalabanJ module" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mordred.AcidBase.html" class="btn btn-neutral float-right" title="mordred.AcidBase module" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="mordred.Autocorrelation.html" class="btn btn-neutral" title="mordred.Autocorrelation module" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mordred.html" class="btn btn-neutral" title="mordred package" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
