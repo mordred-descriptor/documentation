@@ -1,0 +1,7 @@
+mordred.AcidBase module
+=======================
+
+.. automodule:: mordred.AcidBase
+    :members:
+    :undoc-members:
+    :show-inheritance:

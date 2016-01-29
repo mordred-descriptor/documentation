@@ -1,0 +1,7 @@
+mordred.BondCount module
+========================
+
+.. automodule:: mordred.BondCount
+    :members:
+    :undoc-members:
+    :show-inheritance:
