@@ -1,0 +1,7 @@
+mordred.EccentricConnectivityIndex module
+=========================================
+
+.. automodule:: mordred.EccentricConnectivityIndex
+    :members:
+    :undoc-members:
+    :show-inheritance:
