@@ -503,7 +503,11 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="n">checker</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="n">r</span> <span class="o">!=</span> <span class="mi">0</span>
 
-        <span class="n">gamma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">ap</span><span class="o">.</span><span class="n">get_eta_gamma</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">()])</span>
+        <span class="n">gamma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fromiter</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">ap</span><span class="o">.</span><span class="n">get_eta_gamma</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">()),</span>
+            <span class="s1">&#39;float&#39;</span><span class="p">,</span>
+            <span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">(),</span>
+        <span class="p">)</span>
 
         <span class="n">v</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span>
             <span class="nb">sum</span><span class="p">(</span>
