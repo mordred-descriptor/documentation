@@ -565,7 +565,7 @@
 
     <span class="k">else</span><span class="p">:</span>
         <span class="k">def</span> <span class="nf">ignore_and_log</span><span class="p">(</span><span class="n">e</span><span class="p">):</span>
-            <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;{}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;ERROR: {}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
             <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;nan&#39;</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="n">calc</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">error_callback</span><span class="o">=</span><span class="n">ignore_and_log</span><span class="p">)</span>
