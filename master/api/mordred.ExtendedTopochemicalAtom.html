@@ -97,6 +97,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.BaryszMatrix.html">mordred.BaryszMatrix module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.BertzCT.html">mordred.BertzCT module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.BondCount.html">mordred.BondCount module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.CPSA.html">mordred.CPSA module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.CarbonTypes.html">mordred.CarbonTypes module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.Chi.html">mordred.Chi module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.Constitutional.html">mordred.Constitutional module</a></li>
@@ -120,7 +121,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.RingCount.html">mordred.RingCount module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.RotatableBond.html">mordred.RotatableBond module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.SLogP.html">mordred.SLogP module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mordred.TPSA.html">mordred.TPSA module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.TopoPSA.html">mordred.TopoPSA module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.TopologicalCharge.html">mordred.TopologicalCharge module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.TopologicalIndex.html">mordred.TopologicalIndex module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.VdwVolumeABC.html">mordred.VdwVolumeABC module</a></li>
@@ -235,6 +236,11 @@
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaCoreCount.require_3D">
+<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaCoreCount.require_connected">
 <code class="descname">require_connected</code><em class="property"> = True</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -277,6 +283,11 @@ y(3), or x(4).</p>
 <dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaShapeIndex.kekulize">
 <code class="descname">kekulize</code><em class="property"> = True</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaShapeIndex.require_3D">
+<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.require_3D" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -354,6 +365,11 @@ y(3), or x(4).</p>
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaVEMCount.require_3D">
+<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaVEMCount.require_connected">
 <code class="descname">require_connected</code><em class="property"> = True</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -408,6 +424,11 @@ y(3), or x(4).</p>
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.require_3D">
+<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.require_connected">
 <code class="descname">require_connected</code><em class="property"> = True</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -453,6 +474,11 @@ y(3), or x(4).</p>
 <dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.kekulize">
 <code class="descname">kekulize</code><em class="property"> = True</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.require_3D">
+<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.require_3D" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -508,6 +534,11 @@ y(3), or x(4).</p>
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.require_3D">
+<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.require_connected">
 <code class="descname">require_connected</code><em class="property"> = True</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -553,6 +584,11 @@ y(3), or x(4).</p>
 <dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.kekulize">
 <code class="descname">kekulize</code><em class="property"> = True</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.require_3D">
+<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.require_3D" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -623,6 +659,11 @@ y(3), or x(4).</p>
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaEpsilon.require_3D">
+<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaEpsilon.require_connected">
 <code class="descname">require_connected</code><em class="property"> = True</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -671,6 +712,11 @@ y(3), or x(4).</p>
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.require_3D">
+<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.require_connected">
 <code class="descname">require_connected</code><em class="property"> = True</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -714,6 +760,11 @@ y(3), or x(4).</p>
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.require_3D">
+<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.require_connected">
 <code class="descname">require_connected</code><em class="property"> = True</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -746,6 +797,11 @@ y(3), or x(4).</p>
 <dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaPsi.kekulize">
 <code class="descname">kekulize</code><em class="property"> = True</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaPsi.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaPsi.require_3D">
+<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaPsi.require_3D" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -794,6 +850,11 @@ y(3), or x(4).</p>
 <dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.kekulize">
 <code class="descname">kekulize</code><em class="property"> = True</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.require_3D">
+<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.require_3D" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">

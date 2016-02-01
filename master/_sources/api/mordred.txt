@@ -22,6 +22,7 @@ Submodules
    mordred.BaryszMatrix
    mordred.BertzCT
    mordred.BondCount
+   mordred.CPSA
    mordred.CarbonTypes
    mordred.Chi
    mordred.Constitutional
@@ -45,7 +46,7 @@ Submodules
    mordred.RingCount
    mordred.RotatableBond
    mordred.SLogP
-   mordred.TPSA
+   mordred.TopoPSA
    mordred.TopologicalCharge
    mordred.TopologicalIndex
    mordred.VdwVolumeABC

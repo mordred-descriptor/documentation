@@ -96,6 +96,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.BaryszMatrix.html">mordred.BaryszMatrix module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.BertzCT.html">mordred.BertzCT module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.BondCount.html">mordred.BondCount module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.CPSA.html">mordred.CPSA module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.CarbonTypes.html">mordred.CarbonTypes module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.Chi.html">mordred.Chi module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.Constitutional.html">mordred.Constitutional module</a></li>
@@ -119,7 +120,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.RingCount.html">mordred.RingCount module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.RotatableBond.html">mordred.RotatableBond module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.SLogP.html">mordred.SLogP module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mordred.TPSA.html">mordred.TPSA module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.TopoPSA.html">mordred.TopoPSA module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.TopologicalCharge.html">mordred.TopologicalCharge module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.TopologicalIndex.html">mordred.TopologicalIndex module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.VdwVolumeABC.html">mordred.VdwVolumeABC module</a></li>
@@ -184,8 +185,13 @@
 <span id="mordred-package"></span><h1>mordred package<a class="headerlink" href="#module-mordred" title="Permalink to this headline">¶</a></h1>
 <p>modred descriptor calculator.</p>
 <dl class="function">
+<dt id="mordred.all_modules">
+<code class="descclassname">mordred.</code><code class="descname">all_modules</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base.html#all_modules"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.all_modules" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
 <dt id="mordred.all_descriptors">
-<code class="descclassname">mordred.</code><code class="descname">all_descriptors</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base.html#all_descriptors"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.all_descriptors" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">mordred.</code><code class="descname">all_descriptors</code><span class="sig-paren">(</span><em>with_3D=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base.html#all_descriptors"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.all_descriptors" title="Permalink to this definition">¶</a></dt>
 <dd><p>yield all descriptors.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -193,7 +199,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">all modules</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><code class="xref py py-class docutils literal"><span class="pre">Iterator</span></code> (<code class="xref py py-class docutils literal"><span class="pre">module</span></code>)</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><code class="xref py py-class docutils literal"><span class="pre">Iterator</span></code> (<a class="reference internal" href="#mordred.Descriptor" title="mordred.Descriptor"><code class="xref py py-class docutils literal"><span class="pre">Descriptor</span></code></a>)</td>
 </tr>
 </tbody>
 </table>
@@ -336,6 +342,11 @@
 </dd></dl>
 
 <dl class="attribute">
+<dt id="mordred.Descriptor.require_3D">
+<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Descriptor.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="mordred.Descriptor.require_connected">
 <code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Descriptor.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -379,6 +390,7 @@
 <li class="toctree-l1"><a class="reference internal" href="mordred.BaryszMatrix.html">mordred.BaryszMatrix module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mordred.BertzCT.html">mordred.BertzCT module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mordred.BondCount.html">mordred.BondCount module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.CPSA.html">mordred.CPSA module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mordred.CarbonTypes.html">mordred.CarbonTypes module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mordred.Chi.html">mordred.Chi module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mordred.Constitutional.html">mordred.Constitutional module</a></li>
@@ -402,7 +414,7 @@
 <li class="toctree-l1"><a class="reference internal" href="mordred.RingCount.html">mordred.RingCount module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mordred.RotatableBond.html">mordred.RotatableBond module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mordred.SLogP.html">mordred.SLogP module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mordred.TPSA.html">mordred.TPSA module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.TopoPSA.html">mordred.TopoPSA module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mordred.TopologicalCharge.html">mordred.TopologicalCharge module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mordred.TopologicalIndex.html">mordred.TopologicalIndex module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mordred.VdwVolumeABC.html">mordred.VdwVolumeABC module</a></li>

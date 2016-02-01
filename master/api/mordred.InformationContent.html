@@ -97,6 +97,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.BaryszMatrix.html">mordred.BaryszMatrix module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.BertzCT.html">mordred.BertzCT module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.BondCount.html">mordred.BondCount module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.CPSA.html">mordred.CPSA module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.CarbonTypes.html">mordred.CarbonTypes module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.Chi.html">mordred.Chi module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.Constitutional.html">mordred.Constitutional module</a></li>
@@ -120,7 +121,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.RingCount.html">mordred.RingCount module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.RotatableBond.html">mordred.RotatableBond module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.SLogP.html">mordred.SLogP module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mordred.TPSA.html">mordred.TPSA module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.TopoPSA.html">mordred.TopoPSA module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.TopologicalCharge.html">mordred.TopologicalCharge module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.TopologicalIndex.html">mordred.TopologicalIndex module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.VdwVolumeABC.html">mordred.VdwVolumeABC module</a></li>
@@ -214,6 +215,11 @@
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="mordred.InformationContent.InformationContent.require_3D">
+<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.InformationContent.InformationContent.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="mordred.InformationContent.InformationContent.require_connected">
 <code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.InformationContent.InformationContent.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -257,6 +263,11 @@
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="mordred.InformationContent.TotalIC.require_3D">
+<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.InformationContent.TotalIC.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="mordred.InformationContent.TotalIC.require_connected">
 <code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.InformationContent.TotalIC.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -297,6 +308,11 @@
 <dl class="attribute">
 <dt id="mordred.InformationContent.StructuralIC.kekulize">
 <code class="descname">kekulize</code><em class="property"> = True</em><a class="headerlink" href="#mordred.InformationContent.StructuralIC.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.InformationContent.StructuralIC.require_3D">
+<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.InformationContent.StructuralIC.require_3D" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -345,6 +361,11 @@
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="mordred.InformationContent.BondingIC.require_3D">
+<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.InformationContent.BondingIC.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="mordred.InformationContent.BondingIC.require_connected">
 <code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.InformationContent.BondingIC.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -385,6 +406,11 @@
 <dl class="attribute">
 <dt id="mordred.InformationContent.ComplementaryIC.kekulize">
 <code class="descname">kekulize</code><em class="property"> = True</em><a class="headerlink" href="#mordred.InformationContent.ComplementaryIC.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.InformationContent.ComplementaryIC.require_3D">
+<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.InformationContent.ComplementaryIC.require_3D" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -429,6 +455,11 @@
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="mordred.InformationContent.ModifiedIC.require_3D">
+<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.InformationContent.ModifiedIC.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="mordred.InformationContent.ModifiedIC.require_connected">
 <code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.InformationContent.ModifiedIC.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -467,6 +498,11 @@
 <dl class="attribute">
 <dt id="mordred.InformationContent.ZModifiedIC.kekulize">
 <code class="descname">kekulize</code><em class="property"> = True</em><a class="headerlink" href="#mordred.InformationContent.ZModifiedIC.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.InformationContent.ZModifiedIC.require_3D">
+<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.InformationContent.ZModifiedIC.require_3D" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
