@@ -198,8 +198,8 @@
 <h3>as command<a class="headerlink" href="#as-command" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="all-descriptors">
 <h4>all descriptors<a class="headerlink" href="#all-descriptors" title="Permalink to this headline">¶</a></h4>
-<div class="code console highlight-python"><div class="highlight"><pre>$ python -m mordred --help
-usage: python -m mordred [-h] [-i PATH] [-f TYPE] [-o [PATH]] [-p N]
+<div class="code console highlight-python"><div class="highlight"><pre>usage: python -m mordred [-h] [-i PATH] [-f TYPE] [-o PATH] [-p N] [-q] [-s]
+                         [-3]
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -207,9 +207,12 @@ optional arguments:
                         input file or directory(default: stdin)
   -f TYPE, --from TYPE  input filetype(one of auto, smi, sdf, mol, default:
                         auto)
-  -o [PATH], --output [PATH]
+  -o PATH, --output PATH
                         output csv file(default: stdout)
   -p N, --processes N   number of processes to use(default: number of threads)
+  -q, --quiet           hide progress bar
+  -s, --stream          stream read
+  -3, --with-3D         calculate 3D descriptor(require sdf or mol file)
 </pre></div>
 </div>
 </div>
@@ -236,7 +239,7 @@ Glutathione,158.82,197.62
 <span class="kn">from</span> <span class="nn">mordred</span> <span class="kn">import</span> <span class="n">Calculator</span><span class="p">,</span> <span class="n">all_descriptors</span>
 
 <span class="c1"># create descriptor calculator with all descriptors</span>
-<span class="n">calc</span> <span class="o">=</span> <span class="n">Calculator</span><span class="p">(</span><span class="n">all_descriptors</span><span class="p">())</span>
+<span class="n">calc</span> <span class="o">=</span> <span class="n">Calculator</span><span class="p">(</span><span class="n">all_descriptors</span><span class="p">(</span><span class="n">with_3D</span><span class="o">=</span><span class="bp">False</span><span class="p">))</span>
 
 <span class="c1"># calculate and print descriptors</span>
 <span class="k">for</span> <span class="n">desc</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">calc</span><span class="p">(</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="s1">&#39;c1ccccc1O&#39;</span><span class="p">)):</span>
