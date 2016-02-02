@@ -144,6 +144,20 @@
             
   <div class="section" id="module-mordred.surface_area">
 <span id="mordred-surface-area-package"></span><h1>mordred.surface_area package<a class="headerlink" href="#module-mordred.surface_area" title="Permalink to this headline">¶</a></h1>
+<p>surface area subpackage.</p>
+<div class="code console highlight-python"><div class="highlight"><pre>$ python -m mordred.surface_area -h
+usage: python -m mordred.surface_area [-h] [-s R] [-l L] FILE
+
+positional arguments:
+  FILE                  input sdf/mol file
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -s R, --solvent-radius R
+                        solvent radius (default: 1.4)
+  -l L, --mesh-level L  mesh level (default: 5)
+</pre></div>
+</div>
 <dl class="class">
 <dt id="mordred.surface_area.SurfaceArea">
 <em class="property">class </em><code class="descclassname">mordred.surface_area.</code><code class="descname">SurfaceArea</code><span class="sig-paren">(</span><em>radiuses</em>, <em>xyzs</em>, <em>level=5</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/surface_area/_sasa.html#SurfaceArea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.surface_area.SurfaceArea" title="Permalink to this definition">¶</a></dt>
