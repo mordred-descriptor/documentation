@@ -6,6 +6,13 @@ mordred package
     :undoc-members:
     :show-inheritance:
 
+Subpackages
+-----------
+
+.. toctree::
+
+    mordred.surface_area
+
 Submodules
 ----------
 
