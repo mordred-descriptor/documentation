@@ -205,7 +205,12 @@
     <span class="n">require_3D</span> <span class="o">=</span> <span class="bp">False</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">atoms_to_numpy</span><span class="p">(</span><span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">a</span><span class="o">.</span><span class="n">GetDoubleProp</span><span class="p">(</span><span class="s1">&#39;_GasteigerCharge&#39;</span><span class="p">),</span> <span class="n">mol</span><span class="p">)</span>
+        <span class="n">charges</span> <span class="o">=</span> <span class="n">atoms_to_numpy</span><span class="p">(</span><span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">a</span><span class="o">.</span><span class="n">GetDoubleProp</span><span class="p">(</span><span class="s1">&#39;_GasteigerCharge&#39;</span><span class="p">),</span> <span class="n">mol</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">charges</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="bp">None</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">charges</span>
 
 
 <div class="viewcode-block" id="PNSA"><a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.PNSA">[docs]</a><span class="k">class</span> <span class="nc">PNSA</span><span class="p">(</span><span class="n">VersionCPSABase</span><span class="p">):</span>
@@ -233,6 +238,9 @@
         <span class="k">return</span> <span class="n">charges</span> <span class="o">&lt;</span> <span class="mf">0.0</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">SA</span><span class="p">,</span> <span class="n">charges</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">charges</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
         <span class="n">mask</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mask</span><span class="p">(</span><span class="n">charges</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_version</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
@@ -344,6 +352,9 @@
         <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;charges&#39;</span><span class="p">:</span> <span class="n">AtomicCharge</span><span class="p">()}</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">charges</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">charges</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
         <span class="n">charges</span> <span class="o">=</span> <span class="n">charges</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_mask</span><span class="p">(</span><span class="n">charges</span><span class="p">)]</span>
         <span class="n">Qmax</span> <span class="o">=</span> <span class="n">charges</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">charges</span><span class="p">))]</span>
 
@@ -373,6 +384,9 @@
         <span class="k">return</span> <span class="n">charges</span> <span class="o">&lt;</span> <span class="mi">0</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">RCG</span><span class="p">,</span> <span class="n">SA</span><span class="p">,</span> <span class="n">charges</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">charges</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
         <span class="n">mask</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mask</span><span class="p">(</span><span class="n">charges</span><span class="p">)</span>
         <span class="n">charges</span> <span class="o">=</span> <span class="n">charges</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
 
@@ -412,6 +426,9 @@
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">SA</span><span class="p">,</span> <span class="n">charges</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">charges</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">SA</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_mask</span><span class="p">(</span><span class="n">charges</span><span class="p">)])</span></div>
 
 
