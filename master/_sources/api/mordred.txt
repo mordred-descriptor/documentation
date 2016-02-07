@@ -40,6 +40,7 @@ Submodules
    mordred.ExtendedTopochemicalAtom
    mordred.FragmentComplexity
    mordred.Framework
+   mordred.GeometricalIndex
    mordred.GravitationalIndex
    mordred.HydrogenBond
    mordred.InformationContent

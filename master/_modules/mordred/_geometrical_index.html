@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mordred._topological_index &mdash; mordred 0.1.0b0 documentation</title>
+  <title>mordred._geometrical_index &mdash; mordred 0.1.0b0 documentation</title>
   
 
   
@@ -119,7 +119,7 @@
       
           <li><a href="../index.html">Module code</a> &raquo;</li>
       
-    <li>mordred._topological_index</li>
+    <li>mordred._geometrical_index</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -131,14 +131,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <h1>Source code for mordred._topological_index</h1><div class="highlight"><pre>
+  <h1>Source code for mordred._geometrical_index</h1><div class="highlight"><pre>
 <span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
-<span class="kn">from</span> <span class="nn">._common</span> <span class="kn">import</span> <span class="n">Diameter</span> <span class="k">as</span> <span class="n">CDiameter</span>
-<span class="kn">from</span> <span class="nn">._common</span> <span class="kn">import</span> <span class="n">Radius</span> <span class="k">as</span> <span class="n">CRadius</span>
+<span class="kn">from</span> <span class="nn">._common</span> <span class="kn">import</span> <span class="n">Diameter3D</span> <span class="k">as</span> <span class="n">CDiameter3D</span>
+<span class="kn">from</span> <span class="nn">._common</span> <span class="kn">import</span> <span class="n">Radius3D</span> <span class="k">as</span> <span class="n">CRadius3D</span>
 
 
-<span class="k">class</span> <span class="nc">TopologicalIndexBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
-    <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="k">class</span> <span class="nc">GeometricalIndexBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
+    <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="n">require_3D</span> <span class="o">=</span> <span class="bp">True</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
@@ -147,53 +148,53 @@
     <span class="k">def</span> <span class="nf">__reduce_ex__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">version</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">()</span>
 
-    <span class="n">rtype</span> <span class="o">=</span> <span class="nb">int</span>
+    <span class="n">rtype</span> <span class="o">=</span> <span class="nb">float</span>
 
 
-<div class="viewcode-block" id="Radius"><a class="viewcode-back" href="../../api/mordred.TopologicalIndex.html#mordred.TopologicalIndex.Radius">[docs]</a><span class="k">class</span> <span class="nc">Radius</span><span class="p">(</span><span class="n">TopologicalIndexBase</span><span class="p">):</span>
-    <span class="sd">r&quot;&quot;&quot;radius descriptor.&quot;&quot;&quot;</span>
-
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
-
-    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s1">&#39;Radius&#39;</span>
-
-    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
-            <span class="n">R</span><span class="o">=</span><span class="n">CRadius</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)</span>
-        <span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">R</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">R</span><span class="p">)</span></div>
-
-
-<div class="viewcode-block" id="Diameter"><a class="viewcode-back" href="../../api/mordred.TopologicalIndex.html#mordred.TopologicalIndex.Diameter">[docs]</a><span class="k">class</span> <span class="nc">Diameter</span><span class="p">(</span><span class="n">TopologicalIndexBase</span><span class="p">):</span>
-    <span class="sd">r&quot;&quot;&quot;diameter descriptor.&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="Radius3D"><a class="viewcode-back" href="../../api/mordred.GeometricalIndex.html#mordred.GeometricalIndex.Radius3D">[docs]</a><span class="k">class</span> <span class="nc">Radius3D</span><span class="p">(</span><span class="n">GeometricalIndexBase</span><span class="p">):</span>
+    <span class="sd">r&quot;&quot;&quot;geometric radius descriptor.&quot;&quot;&quot;</span>
 
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s1">&#39;Diameter&#39;</span>
+        <span class="k">return</span> <span class="s1">&#39;GeomRadius&#39;</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
-            <span class="n">D</span><span class="o">=</span><span class="n">CDiameter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)</span>
+            <span class="n">R</span><span class="o">=</span><span class="n">CRadius3D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)</span>
         <span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">D</span><span class="p">)</span></div>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">R</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">R</span></div>
 
 
-<div class="viewcode-block" id="TopologicalShapeIndex"><a class="viewcode-back" href="../../api/mordred.TopologicalIndex.html#mordred.TopologicalIndex.TopologicalShapeIndex">[docs]</a><span class="k">class</span> <span class="nc">TopologicalShapeIndex</span><span class="p">(</span><span class="n">TopologicalIndexBase</span><span class="p">):</span>
-    <span class="sd">r&quot;&quot;&quot;topological shape index descriptor.</span>
+<div class="viewcode-block" id="Diameter3D"><a class="viewcode-back" href="../../api/mordred.GeometricalIndex.html#mordred.GeometricalIndex.Diameter3D">[docs]</a><span class="k">class</span> <span class="nc">Diameter3D</span><span class="p">(</span><span class="n">GeometricalIndexBase</span><span class="p">):</span>
+    <span class="sd">r&quot;&quot;&quot;geometric diameter descriptor.&quot;&quot;&quot;</span>
+
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;GeomDiameter&#39;</span>
+
+    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">D</span><span class="o">=</span><span class="n">CDiameter3D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">D</span></div>
+
+
+<div class="viewcode-block" id="GeometricalShapeIndex"><a class="viewcode-back" href="../../api/mordred.GeometricalIndex.html#mordred.GeometricalIndex.GeometricalShapeIndex">[docs]</a><span class="k">class</span> <span class="nc">GeometricalShapeIndex</span><span class="p">(</span><span class="n">GeometricalIndexBase</span><span class="p">):</span>
+    <span class="sd">r&quot;&quot;&quot;geometrical shape index descriptor.</span>
 
 <span class="sd">    .. math::</span>
 
 <span class="sd">        I_{\rm topo} = \frac{D - R}{R}</span>
 
 <span class="sd">    where</span>
-<span class="sd">    :math:`R` is graph radius,</span>
-<span class="sd">    :math:`D` is graph diameter.</span>
+<span class="sd">    :math:`R` is geometric radius,</span>
+<span class="sd">    :math:`D` is geometric diameter.</span>
 
 <span class="sd">    :returns: NaN when :math:`R = 0`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -201,33 +202,31 @@
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s1">&#39;TopoShapeIndex&#39;</span>
+        <span class="k">return</span> <span class="s1">&#39;GeomShapeIndex&#39;</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
-            <span class="n">R</span><span class="o">=</span><span class="n">CRadius</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">),</span>
-            <span class="n">D</span><span class="o">=</span><span class="n">CDiameter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">),</span>
+            <span class="n">R</span><span class="o">=</span><span class="n">CRadius3D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">),</span>
+            <span class="n">D</span><span class="o">=</span><span class="n">CDiameter3D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">),</span>
         <span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">R</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;nan&#39;</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">D</span> <span class="o">-</span> <span class="n">R</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
-
-    <span class="n">rtype</span> <span class="o">=</span> <span class="nb">float</span></div>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">D</span> <span class="o">-</span> <span class="n">R</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">R</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="PetitjeanIndex"><a class="viewcode-back" href="../../api/mordred.TopologicalIndex.html#mordred.TopologicalIndex.PetitjeanIndex">[docs]</a><span class="k">class</span> <span class="nc">PetitjeanIndex</span><span class="p">(</span><span class="n">TopologicalShapeIndex</span><span class="p">):</span>
-    <span class="sd">r&quot;&quot;&quot;Petitjean index descriptor.</span>
+<div class="viewcode-block" id="PetitjeanIndex3D"><a class="viewcode-back" href="../../api/mordred.GeometricalIndex.html#mordred.GeometricalIndex.PetitjeanIndex3D">[docs]</a><span class="k">class</span> <span class="nc">PetitjeanIndex3D</span><span class="p">(</span><span class="n">GeometricalShapeIndex</span><span class="p">):</span>
+    <span class="sd">r&quot;&quot;&quot;geometric Petitjean index descriptor.</span>
 
 <span class="sd">    .. math::</span>
 
 <span class="sd">        I_{\rm Petitjean} = \frac{D - R}{D}</span>
 
 <span class="sd">    where</span>
-<span class="sd">    :math:`R` is graph radius,</span>
-<span class="sd">    :math:`D` is graph diameter.</span>
+<span class="sd">    :math:`R` is geometric radius,</span>
+<span class="sd">    :math:`D` is geometric diameter.</span>
 
 <span class="sd">    :returns: NaN when :math:`D = 0`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -235,9 +234,9 @@
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s1">&#39;PetitjeanIndex&#39;</span>
+        <span class="k">return</span> <span class="s1">&#39;GeomPetitjeanIndex&#39;</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">D</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;nan&#39;</span><span class="p">)</span>
 

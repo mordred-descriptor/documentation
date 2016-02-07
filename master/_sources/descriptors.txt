@@ -1198,367 +1198,371 @@ preset descriptors
     1186, , ETA_dPsi_B, ":py:class:`~mordred.ExtendedTopochemicalAtom.EtaDeltaPsi` ('B')", 2D
     1187, :py:mod:`~mordred.FragmentComplexity`, fragCpx, ":py:class:`~mordred.FragmentComplexity.FragmentComplexity` ()", 2D
     1188, :py:mod:`~mordred.Framework`, fMF, ":py:class:`~mordred.Framework.Framework` ()", 2D
-    1189, :py:mod:`~mordred.GravitationalIndex`, GRAV, ":py:class:`~mordred.GravitationalIndex.GravitationalIndex` (True, False)", 3D
-    1190, , GRAVH, ":py:class:`~mordred.GravitationalIndex.GravitationalIndex` (False, False)", 3D
-    1191, , GRAVp, ":py:class:`~mordred.GravitationalIndex.GravitationalIndex` (True, True)", 3D
-    1192, , GRAVHp, ":py:class:`~mordred.GravitationalIndex.GravitationalIndex` (False, True)", 3D
-    1193, :py:mod:`~mordred.HydrogenBond`, nHBAcc, ":py:class:`~mordred.HydrogenBond.HBondAcceptor` ()", 2D
-    1194, , nHBDon, ":py:class:`~mordred.HydrogenBond.HBondDonor` ()", 2D
-    1195, :py:mod:`~mordred.InformationContent`, IC0, ":py:class:`~mordred.InformationContent.InformationContent` (0)", 2D
-    1196, , IC1, ":py:class:`~mordred.InformationContent.InformationContent` (1)", 2D
-    1197, , IC2, ":py:class:`~mordred.InformationContent.InformationContent` (2)", 2D
-    1198, , IC3, ":py:class:`~mordred.InformationContent.InformationContent` (3)", 2D
-    1199, , IC4, ":py:class:`~mordred.InformationContent.InformationContent` (4)", 2D
-    1200, , IC5, ":py:class:`~mordred.InformationContent.InformationContent` (5)", 2D
-    1201, , TIC0, ":py:class:`~mordred.InformationContent.TotalIC` (0)", 2D
-    1202, , TIC1, ":py:class:`~mordred.InformationContent.TotalIC` (1)", 2D
-    1203, , TIC2, ":py:class:`~mordred.InformationContent.TotalIC` (2)", 2D
-    1204, , TIC3, ":py:class:`~mordred.InformationContent.TotalIC` (3)", 2D
-    1205, , TIC4, ":py:class:`~mordred.InformationContent.TotalIC` (4)", 2D
-    1206, , TIC5, ":py:class:`~mordred.InformationContent.TotalIC` (5)", 2D
-    1207, , SIC0, ":py:class:`~mordred.InformationContent.StructuralIC` (0)", 2D
-    1208, , SIC1, ":py:class:`~mordred.InformationContent.StructuralIC` (1)", 2D
-    1209, , SIC2, ":py:class:`~mordred.InformationContent.StructuralIC` (2)", 2D
-    1210, , SIC3, ":py:class:`~mordred.InformationContent.StructuralIC` (3)", 2D
-    1211, , SIC4, ":py:class:`~mordred.InformationContent.StructuralIC` (4)", 2D
-    1212, , SIC5, ":py:class:`~mordred.InformationContent.StructuralIC` (5)", 2D
-    1213, , BIC0, ":py:class:`~mordred.InformationContent.BondingIC` (0)", 2D
-    1214, , BIC1, ":py:class:`~mordred.InformationContent.BondingIC` (1)", 2D
-    1215, , BIC2, ":py:class:`~mordred.InformationContent.BondingIC` (2)", 2D
-    1216, , BIC3, ":py:class:`~mordred.InformationContent.BondingIC` (3)", 2D
-    1217, , BIC4, ":py:class:`~mordred.InformationContent.BondingIC` (4)", 2D
-    1218, , BIC5, ":py:class:`~mordred.InformationContent.BondingIC` (5)", 2D
-    1219, , CIC0, ":py:class:`~mordred.InformationContent.ComplementaryIC` (0)", 2D
-    1220, , CIC1, ":py:class:`~mordred.InformationContent.ComplementaryIC` (1)", 2D
-    1221, , CIC2, ":py:class:`~mordred.InformationContent.ComplementaryIC` (2)", 2D
-    1222, , CIC3, ":py:class:`~mordred.InformationContent.ComplementaryIC` (3)", 2D
-    1223, , CIC4, ":py:class:`~mordred.InformationContent.ComplementaryIC` (4)", 2D
-    1224, , CIC5, ":py:class:`~mordred.InformationContent.ComplementaryIC` (5)", 2D
-    1225, , MIC0, ":py:class:`~mordred.InformationContent.ModifiedIC` (0)", 2D
-    1226, , MIC1, ":py:class:`~mordred.InformationContent.ModifiedIC` (1)", 2D
-    1227, , MIC2, ":py:class:`~mordred.InformationContent.ModifiedIC` (2)", 2D
-    1228, , MIC3, ":py:class:`~mordred.InformationContent.ModifiedIC` (3)", 2D
-    1229, , MIC4, ":py:class:`~mordred.InformationContent.ModifiedIC` (4)", 2D
-    1230, , MIC5, ":py:class:`~mordred.InformationContent.ModifiedIC` (5)", 2D
-    1231, , ZMIC0, ":py:class:`~mordred.InformationContent.ZModifiedIC` (0)", 2D
-    1232, , ZMIC1, ":py:class:`~mordred.InformationContent.ZModifiedIC` (1)", 2D
-    1233, , ZMIC2, ":py:class:`~mordred.InformationContent.ZModifiedIC` (2)", 2D
-    1234, , ZMIC3, ":py:class:`~mordred.InformationContent.ZModifiedIC` (3)", 2D
-    1235, , ZMIC4, ":py:class:`~mordred.InformationContent.ZModifiedIC` (4)", 2D
-    1236, , ZMIC5, ":py:class:`~mordred.InformationContent.ZModifiedIC` (5)", 2D
-    1237, :py:mod:`~mordred.KappaShapeIndex`, Kier1, ":py:class:`~mordred.KappaShapeIndex.KappaShapeIndex1` ()", 2D
-    1238, , Kier2, ":py:class:`~mordred.KappaShapeIndex.KappaShapeIndex2` ()", 2D
-    1239, , Kier3, ":py:class:`~mordred.KappaShapeIndex.KappaShapeIndex3` ()", 2D
-    1240, :py:mod:`~mordred.Lipinski`, Lipinski, ":py:class:`~mordred.Lipinski.Lipinski` ()", 2D
-    1241, , GhoseFilter, ":py:class:`~mordred.Lipinski.GhoseFilter` ()", 2D
-    1242, :py:mod:`~mordred.McGowanVolume`, VMcGowan, ":py:class:`~mordred.McGowanVolume.McGowanVolume` ()", 2D
-    1243, :py:mod:`~mordred.MoeType`, LabuteASA, ":py:class:`~mordred.MoeType.LabuteASA` ()", 2D
-    1244, , PEOE_VSA1, ":py:class:`~mordred.MoeType.PEOE_VSA` (1)", 2D
-    1245, , PEOE_VSA2, ":py:class:`~mordred.MoeType.PEOE_VSA` (2)", 2D
-    1246, , PEOE_VSA3, ":py:class:`~mordred.MoeType.PEOE_VSA` (3)", 2D
-    1247, , PEOE_VSA4, ":py:class:`~mordred.MoeType.PEOE_VSA` (4)", 2D
-    1248, , PEOE_VSA5, ":py:class:`~mordred.MoeType.PEOE_VSA` (5)", 2D
-    1249, , PEOE_VSA6, ":py:class:`~mordred.MoeType.PEOE_VSA` (6)", 2D
-    1250, , PEOE_VSA7, ":py:class:`~mordred.MoeType.PEOE_VSA` (7)", 2D
-    1251, , PEOE_VSA8, ":py:class:`~mordred.MoeType.PEOE_VSA` (8)", 2D
-    1252, , PEOE_VSA9, ":py:class:`~mordred.MoeType.PEOE_VSA` (9)", 2D
-    1253, , PEOE_VSA10, ":py:class:`~mordred.MoeType.PEOE_VSA` (10)", 2D
-    1254, , PEOE_VSA11, ":py:class:`~mordred.MoeType.PEOE_VSA` (11)", 2D
-    1255, , PEOE_VSA12, ":py:class:`~mordred.MoeType.PEOE_VSA` (12)", 2D
-    1256, , PEOE_VSA13, ":py:class:`~mordred.MoeType.PEOE_VSA` (13)", 2D
-    1257, , SMR_VSA1, ":py:class:`~mordred.MoeType.SMR_VSA` (1)", 2D
-    1258, , SMR_VSA2, ":py:class:`~mordred.MoeType.SMR_VSA` (2)", 2D
-    1259, , SMR_VSA3, ":py:class:`~mordred.MoeType.SMR_VSA` (3)", 2D
-    1260, , SMR_VSA4, ":py:class:`~mordred.MoeType.SMR_VSA` (4)", 2D
-    1261, , SMR_VSA5, ":py:class:`~mordred.MoeType.SMR_VSA` (5)", 2D
-    1262, , SMR_VSA6, ":py:class:`~mordred.MoeType.SMR_VSA` (6)", 2D
-    1263, , SMR_VSA7, ":py:class:`~mordred.MoeType.SMR_VSA` (7)", 2D
-    1264, , SMR_VSA8, ":py:class:`~mordred.MoeType.SMR_VSA` (8)", 2D
-    1265, , SMR_VSA9, ":py:class:`~mordred.MoeType.SMR_VSA` (9)", 2D
-    1266, , SlogP_VSA1, ":py:class:`~mordred.MoeType.SlogP_VSA` (1)", 2D
-    1267, , SlogP_VSA2, ":py:class:`~mordred.MoeType.SlogP_VSA` (2)", 2D
-    1268, , SlogP_VSA3, ":py:class:`~mordred.MoeType.SlogP_VSA` (3)", 2D
-    1269, , SlogP_VSA4, ":py:class:`~mordred.MoeType.SlogP_VSA` (4)", 2D
-    1270, , SlogP_VSA5, ":py:class:`~mordred.MoeType.SlogP_VSA` (5)", 2D
-    1271, , SlogP_VSA6, ":py:class:`~mordred.MoeType.SlogP_VSA` (6)", 2D
-    1272, , SlogP_VSA7, ":py:class:`~mordred.MoeType.SlogP_VSA` (7)", 2D
-    1273, , SlogP_VSA8, ":py:class:`~mordred.MoeType.SlogP_VSA` (8)", 2D
-    1274, , SlogP_VSA9, ":py:class:`~mordred.MoeType.SlogP_VSA` (9)", 2D
-    1275, , SlogP_VSA10, ":py:class:`~mordred.MoeType.SlogP_VSA` (10)", 2D
-    1276, , SlogP_VSA11, ":py:class:`~mordred.MoeType.SlogP_VSA` (11)", 2D
-    1277, , EState_VSA1, ":py:class:`~mordred.MoeType.EState_VSA` (1)", 2D
-    1278, , EState_VSA2, ":py:class:`~mordred.MoeType.EState_VSA` (2)", 2D
-    1279, , EState_VSA3, ":py:class:`~mordred.MoeType.EState_VSA` (3)", 2D
-    1280, , EState_VSA4, ":py:class:`~mordred.MoeType.EState_VSA` (4)", 2D
-    1281, , EState_VSA5, ":py:class:`~mordred.MoeType.EState_VSA` (5)", 2D
-    1282, , EState_VSA6, ":py:class:`~mordred.MoeType.EState_VSA` (6)", 2D
-    1283, , EState_VSA7, ":py:class:`~mordred.MoeType.EState_VSA` (7)", 2D
-    1284, , EState_VSA8, ":py:class:`~mordred.MoeType.EState_VSA` (8)", 2D
-    1285, , EState_VSA9, ":py:class:`~mordred.MoeType.EState_VSA` (9)", 2D
-    1286, , EState_VSA10, ":py:class:`~mordred.MoeType.EState_VSA` (10)", 2D
-    1287, , VSA_EState1, ":py:class:`~mordred.MoeType.VSA_EState` (1)", 2D
-    1288, , VSA_EState2, ":py:class:`~mordred.MoeType.VSA_EState` (2)", 2D
-    1289, , VSA_EState3, ":py:class:`~mordred.MoeType.VSA_EState` (3)", 2D
-    1290, , VSA_EState4, ":py:class:`~mordred.MoeType.VSA_EState` (4)", 2D
-    1291, , VSA_EState5, ":py:class:`~mordred.MoeType.VSA_EState` (5)", 2D
-    1292, , VSA_EState6, ":py:class:`~mordred.MoeType.VSA_EState` (6)", 2D
-    1293, , VSA_EState7, ":py:class:`~mordred.MoeType.VSA_EState` (7)", 2D
-    1294, , VSA_EState8, ":py:class:`~mordred.MoeType.VSA_EState` (8)", 2D
-    1295, , VSA_EState9, ":py:class:`~mordred.MoeType.VSA_EState` (9)", 2D
-    1296, :py:mod:`~mordred.MolecularDistanceEdge`, MDEC-11, ":py:class:`~mordred.MolecularDistanceEdge.MolecularDistanceEdge` (1, 1, 6)", 2D
-    1297, , MDEC-12, ":py:class:`~mordred.MolecularDistanceEdge.MolecularDistanceEdge` (1, 2, 6)", 2D
-    1298, , MDEC-13, ":py:class:`~mordred.MolecularDistanceEdge.MolecularDistanceEdge` (1, 3, 6)", 2D
-    1299, , MDEC-14, ":py:class:`~mordred.MolecularDistanceEdge.MolecularDistanceEdge` (1, 4, 6)", 2D
-    1300, , MDEC-22, ":py:class:`~mordred.MolecularDistanceEdge.MolecularDistanceEdge` (2, 2, 6)", 2D
-    1301, , MDEC-23, ":py:class:`~mordred.MolecularDistanceEdge.MolecularDistanceEdge` (2, 3, 6)", 2D
-    1302, , MDEC-24, ":py:class:`~mordred.MolecularDistanceEdge.MolecularDistanceEdge` (2, 4, 6)", 2D
-    1303, , MDEC-33, ":py:class:`~mordred.MolecularDistanceEdge.MolecularDistanceEdge` (3, 3, 6)", 2D
-    1304, , MDEC-34, ":py:class:`~mordred.MolecularDistanceEdge.MolecularDistanceEdge` (3, 4, 6)", 2D
-    1305, , MDEC-44, ":py:class:`~mordred.MolecularDistanceEdge.MolecularDistanceEdge` (4, 4, 6)", 2D
-    1306, , MDEO-11, ":py:class:`~mordred.MolecularDistanceEdge.MolecularDistanceEdge` (1, 1, 8)", 2D
-    1307, , MDEO-12, ":py:class:`~mordred.MolecularDistanceEdge.MolecularDistanceEdge` (1, 2, 8)", 2D
-    1308, , MDEO-22, ":py:class:`~mordred.MolecularDistanceEdge.MolecularDistanceEdge` (2, 2, 8)", 2D
-    1309, , MDEN-11, ":py:class:`~mordred.MolecularDistanceEdge.MolecularDistanceEdge` (1, 1, 7)", 2D
-    1310, , MDEN-12, ":py:class:`~mordred.MolecularDistanceEdge.MolecularDistanceEdge` (1, 2, 7)", 2D
-    1311, , MDEN-13, ":py:class:`~mordred.MolecularDistanceEdge.MolecularDistanceEdge` (1, 3, 7)", 2D
-    1312, , MDEN-22, ":py:class:`~mordred.MolecularDistanceEdge.MolecularDistanceEdge` (2, 2, 7)", 2D
-    1313, , MDEN-23, ":py:class:`~mordred.MolecularDistanceEdge.MolecularDistanceEdge` (2, 3, 7)", 2D
-    1314, , MDEN-33, ":py:class:`~mordred.MolecularDistanceEdge.MolecularDistanceEdge` (3, 3, 7)", 2D
-    1315, :py:mod:`~mordred.MolecularId`, MID, ":py:class:`~mordred.MolecularId.MolecularId` ('any', False, 1e-10)", 2D
-    1316, , AMID, ":py:class:`~mordred.MolecularId.MolecularId` ('any', True, 1e-10)", 2D
-    1317, , MID_h, ":py:class:`~mordred.MolecularId.MolecularId` ('hetero', False, 1e-10)", 2D
-    1318, , AMID_h, ":py:class:`~mordred.MolecularId.MolecularId` ('hetero', True, 1e-10)", 2D
-    1319, , MID_C, ":py:class:`~mordred.MolecularId.MolecularId` ('C', False, 1e-10)", 2D
-    1320, , AMID_C, ":py:class:`~mordred.MolecularId.MolecularId` ('C', True, 1e-10)", 2D
-    1321, , MID_N, ":py:class:`~mordred.MolecularId.MolecularId` ('N', False, 1e-10)", 2D
-    1322, , AMID_N, ":py:class:`~mordred.MolecularId.MolecularId` ('N', True, 1e-10)", 2D
-    1323, , MID_O, ":py:class:`~mordred.MolecularId.MolecularId` ('O', False, 1e-10)", 2D
-    1324, , AMID_O, ":py:class:`~mordred.MolecularId.MolecularId` ('O', True, 1e-10)", 2D
-    1325, , MID_X, ":py:class:`~mordred.MolecularId.MolecularId` ('X', False, 1e-10)", 2D
-    1326, , AMID_X, ":py:class:`~mordred.MolecularId.MolecularId` ('X', True, 1e-10)", 2D
-    1327, :py:mod:`~mordred.MomentOfInertia`, MOMI-X, ":py:class:`~mordred.MomentOfInertia.MomentOfInertia` ('X')", 3D
-    1328, , MOMI-Y, ":py:class:`~mordred.MomentOfInertia.MomentOfInertia` ('Y')", 3D
-    1329, , MOMI-Z, ":py:class:`~mordred.MomentOfInertia.MomentOfInertia` ('Z')", 3D
-    1330, :py:mod:`~mordred.PathCount`, MPC2, ":py:class:`~mordred.PathCount.PathCount` (2, False, False, False)", 2D
-    1331, , MPC3, ":py:class:`~mordred.PathCount.PathCount` (3, False, False, False)", 2D
-    1332, , MPC4, ":py:class:`~mordred.PathCount.PathCount` (4, False, False, False)", 2D
-    1333, , MPC5, ":py:class:`~mordred.PathCount.PathCount` (5, False, False, False)", 2D
-    1334, , MPC6, ":py:class:`~mordred.PathCount.PathCount` (6, False, False, False)", 2D
-    1335, , MPC7, ":py:class:`~mordred.PathCount.PathCount` (7, False, False, False)", 2D
-    1336, , MPC8, ":py:class:`~mordred.PathCount.PathCount` (8, False, False, False)", 2D
-    1337, , MPC9, ":py:class:`~mordred.PathCount.PathCount` (9, False, False, False)", 2D
-    1338, , MPC10, ":py:class:`~mordred.PathCount.PathCount` (10, False, False, False)", 2D
-    1339, , TMPC10, ":py:class:`~mordred.PathCount.PathCount` (10, False, True, False)", 2D
-    1340, , piPC1, ":py:class:`~mordred.PathCount.PathCount` (1, True, False, True)", 2D
-    1341, , piPC2, ":py:class:`~mordred.PathCount.PathCount` (2, True, False, True)", 2D
-    1342, , piPC3, ":py:class:`~mordred.PathCount.PathCount` (3, True, False, True)", 2D
-    1343, , piPC4, ":py:class:`~mordred.PathCount.PathCount` (4, True, False, True)", 2D
-    1344, , piPC5, ":py:class:`~mordred.PathCount.PathCount` (5, True, False, True)", 2D
-    1345, , piPC6, ":py:class:`~mordred.PathCount.PathCount` (6, True, False, True)", 2D
-    1346, , piPC7, ":py:class:`~mordred.PathCount.PathCount` (7, True, False, True)", 2D
-    1347, , piPC8, ":py:class:`~mordred.PathCount.PathCount` (8, True, False, True)", 2D
-    1348, , piPC9, ":py:class:`~mordred.PathCount.PathCount` (9, True, False, True)", 2D
-    1349, , piPC10, ":py:class:`~mordred.PathCount.PathCount` (10, True, False, True)", 2D
-    1350, , TpiPC10, ":py:class:`~mordred.PathCount.PathCount` (10, True, True, True)", 2D
-    1351, :py:mod:`~mordred.Polarizability`, apol, ":py:class:`~mordred.Polarizability.APol` (False)", 2D
-    1352, , bpol, ":py:class:`~mordred.Polarizability.BPol` (False)", 2D
-    1353, :py:mod:`~mordred.RingCount`, nRing, ":py:class:`~mordred.RingCount.RingCount` (None, False, False, None, None)", 2D
-    1354, , n3Ring, ":py:class:`~mordred.RingCount.RingCount` (3, False, False, None, None)", 2D
-    1355, , n4Ring, ":py:class:`~mordred.RingCount.RingCount` (4, False, False, None, None)", 2D
-    1356, , n5Ring, ":py:class:`~mordred.RingCount.RingCount` (5, False, False, None, None)", 2D
-    1357, , n6Ring, ":py:class:`~mordred.RingCount.RingCount` (6, False, False, None, None)", 2D
-    1358, , n7Ring, ":py:class:`~mordred.RingCount.RingCount` (7, False, False, None, None)", 2D
-    1359, , n8Ring, ":py:class:`~mordred.RingCount.RingCount` (8, False, False, None, None)", 2D
-    1360, , n9Ring, ":py:class:`~mordred.RingCount.RingCount` (9, False, False, None, None)", 2D
-    1361, , n10Ring, ":py:class:`~mordred.RingCount.RingCount` (10, False, False, None, None)", 2D
-    1362, , n11Ring, ":py:class:`~mordred.RingCount.RingCount` (11, False, False, None, None)", 2D
-    1363, , n12Ring, ":py:class:`~mordred.RingCount.RingCount` (12, False, False, None, None)", 2D
-    1364, , nG12Ring, ":py:class:`~mordred.RingCount.RingCount` (12, True, False, None, None)", 2D
-    1365, , nHRing, ":py:class:`~mordred.RingCount.RingCount` (None, False, False, None, True)", 2D
-    1366, , n3HRing, ":py:class:`~mordred.RingCount.RingCount` (3, False, False, None, True)", 2D
-    1367, , n4HRing, ":py:class:`~mordred.RingCount.RingCount` (4, False, False, None, True)", 2D
-    1368, , n5HRing, ":py:class:`~mordred.RingCount.RingCount` (5, False, False, None, True)", 2D
-    1369, , n6HRing, ":py:class:`~mordred.RingCount.RingCount` (6, False, False, None, True)", 2D
-    1370, , n7HRing, ":py:class:`~mordred.RingCount.RingCount` (7, False, False, None, True)", 2D
-    1371, , n8HRing, ":py:class:`~mordred.RingCount.RingCount` (8, False, False, None, True)", 2D
-    1372, , n9HRing, ":py:class:`~mordred.RingCount.RingCount` (9, False, False, None, True)", 2D
-    1373, , n10HRing, ":py:class:`~mordred.RingCount.RingCount` (10, False, False, None, True)", 2D
-    1374, , n11HRing, ":py:class:`~mordred.RingCount.RingCount` (11, False, False, None, True)", 2D
-    1375, , n12HRing, ":py:class:`~mordred.RingCount.RingCount` (12, False, False, None, True)", 2D
-    1376, , nG12HRing, ":py:class:`~mordred.RingCount.RingCount` (12, True, False, None, True)", 2D
-    1377, , naRing, ":py:class:`~mordred.RingCount.RingCount` (None, False, False, True, None)", 2D
-    1378, , n3aRing, ":py:class:`~mordred.RingCount.RingCount` (3, False, False, True, None)", 2D
-    1379, , n4aRing, ":py:class:`~mordred.RingCount.RingCount` (4, False, False, True, None)", 2D
-    1380, , n5aRing, ":py:class:`~mordred.RingCount.RingCount` (5, False, False, True, None)", 2D
-    1381, , n6aRing, ":py:class:`~mordred.RingCount.RingCount` (6, False, False, True, None)", 2D
-    1382, , n7aRing, ":py:class:`~mordred.RingCount.RingCount` (7, False, False, True, None)", 2D
-    1383, , n8aRing, ":py:class:`~mordred.RingCount.RingCount` (8, False, False, True, None)", 2D
-    1384, , n9aRing, ":py:class:`~mordred.RingCount.RingCount` (9, False, False, True, None)", 2D
-    1385, , n10aRing, ":py:class:`~mordred.RingCount.RingCount` (10, False, False, True, None)", 2D
-    1386, , n11aRing, ":py:class:`~mordred.RingCount.RingCount` (11, False, False, True, None)", 2D
-    1387, , n12aRing, ":py:class:`~mordred.RingCount.RingCount` (12, False, False, True, None)", 2D
-    1388, , nG12aRing, ":py:class:`~mordred.RingCount.RingCount` (12, True, False, True, None)", 2D
-    1389, , naHRing, ":py:class:`~mordred.RingCount.RingCount` (None, False, False, True, True)", 2D
-    1390, , n3aHRing, ":py:class:`~mordred.RingCount.RingCount` (3, False, False, True, True)", 2D
-    1391, , n4aHRing, ":py:class:`~mordred.RingCount.RingCount` (4, False, False, True, True)", 2D
-    1392, , n5aHRing, ":py:class:`~mordred.RingCount.RingCount` (5, False, False, True, True)", 2D
-    1393, , n6aHRing, ":py:class:`~mordred.RingCount.RingCount` (6, False, False, True, True)", 2D
-    1394, , n7aHRing, ":py:class:`~mordred.RingCount.RingCount` (7, False, False, True, True)", 2D
-    1395, , n8aHRing, ":py:class:`~mordred.RingCount.RingCount` (8, False, False, True, True)", 2D
-    1396, , n9aHRing, ":py:class:`~mordred.RingCount.RingCount` (9, False, False, True, True)", 2D
-    1397, , n10aHRing, ":py:class:`~mordred.RingCount.RingCount` (10, False, False, True, True)", 2D
-    1398, , n11aHRing, ":py:class:`~mordred.RingCount.RingCount` (11, False, False, True, True)", 2D
-    1399, , n12aHRing, ":py:class:`~mordred.RingCount.RingCount` (12, False, False, True, True)", 2D
-    1400, , nG12aHRing, ":py:class:`~mordred.RingCount.RingCount` (12, True, False, True, True)", 2D
-    1401, , nARing, ":py:class:`~mordred.RingCount.RingCount` (None, False, False, False, None)", 2D
-    1402, , n3ARing, ":py:class:`~mordred.RingCount.RingCount` (3, False, False, False, None)", 2D
-    1403, , n4ARing, ":py:class:`~mordred.RingCount.RingCount` (4, False, False, False, None)", 2D
-    1404, , n5ARing, ":py:class:`~mordred.RingCount.RingCount` (5, False, False, False, None)", 2D
-    1405, , n6ARing, ":py:class:`~mordred.RingCount.RingCount` (6, False, False, False, None)", 2D
-    1406, , n7ARing, ":py:class:`~mordred.RingCount.RingCount` (7, False, False, False, None)", 2D
-    1407, , n8ARing, ":py:class:`~mordred.RingCount.RingCount` (8, False, False, False, None)", 2D
-    1408, , n9ARing, ":py:class:`~mordred.RingCount.RingCount` (9, False, False, False, None)", 2D
-    1409, , n10ARing, ":py:class:`~mordred.RingCount.RingCount` (10, False, False, False, None)", 2D
-    1410, , n11ARing, ":py:class:`~mordred.RingCount.RingCount` (11, False, False, False, None)", 2D
-    1411, , n12ARing, ":py:class:`~mordred.RingCount.RingCount` (12, False, False, False, None)", 2D
-    1412, , nG12ARing, ":py:class:`~mordred.RingCount.RingCount` (12, True, False, False, None)", 2D
-    1413, , nAHRing, ":py:class:`~mordred.RingCount.RingCount` (None, False, False, False, True)", 2D
-    1414, , n3AHRing, ":py:class:`~mordred.RingCount.RingCount` (3, False, False, False, True)", 2D
-    1415, , n4AHRing, ":py:class:`~mordred.RingCount.RingCount` (4, False, False, False, True)", 2D
-    1416, , n5AHRing, ":py:class:`~mordred.RingCount.RingCount` (5, False, False, False, True)", 2D
-    1417, , n6AHRing, ":py:class:`~mordred.RingCount.RingCount` (6, False, False, False, True)", 2D
-    1418, , n7AHRing, ":py:class:`~mordred.RingCount.RingCount` (7, False, False, False, True)", 2D
-    1419, , n8AHRing, ":py:class:`~mordred.RingCount.RingCount` (8, False, False, False, True)", 2D
-    1420, , n9AHRing, ":py:class:`~mordred.RingCount.RingCount` (9, False, False, False, True)", 2D
-    1421, , n10AHRing, ":py:class:`~mordred.RingCount.RingCount` (10, False, False, False, True)", 2D
-    1422, , n11AHRing, ":py:class:`~mordred.RingCount.RingCount` (11, False, False, False, True)", 2D
-    1423, , n12AHRing, ":py:class:`~mordred.RingCount.RingCount` (12, False, False, False, True)", 2D
-    1424, , nG12AHRing, ":py:class:`~mordred.RingCount.RingCount` (12, True, False, False, True)", 2D
-    1425, , nFRing, ":py:class:`~mordred.RingCount.RingCount` (None, False, True, None, None)", 2D
-    1426, , n4FRing, ":py:class:`~mordred.RingCount.RingCount` (4, False, True, None, None)", 2D
-    1427, , n5FRing, ":py:class:`~mordred.RingCount.RingCount` (5, False, True, None, None)", 2D
-    1428, , n6FRing, ":py:class:`~mordred.RingCount.RingCount` (6, False, True, None, None)", 2D
-    1429, , n7FRing, ":py:class:`~mordred.RingCount.RingCount` (7, False, True, None, None)", 2D
-    1430, , n8FRing, ":py:class:`~mordred.RingCount.RingCount` (8, False, True, None, None)", 2D
-    1431, , n9FRing, ":py:class:`~mordred.RingCount.RingCount` (9, False, True, None, None)", 2D
-    1432, , n10FRing, ":py:class:`~mordred.RingCount.RingCount` (10, False, True, None, None)", 2D
-    1433, , n11FRing, ":py:class:`~mordred.RingCount.RingCount` (11, False, True, None, None)", 2D
-    1434, , n12FRing, ":py:class:`~mordred.RingCount.RingCount` (12, False, True, None, None)", 2D
-    1435, , nG12FRing, ":py:class:`~mordred.RingCount.RingCount` (12, True, True, None, None)", 2D
-    1436, , nFHRing, ":py:class:`~mordred.RingCount.RingCount` (None, False, True, None, True)", 2D
-    1437, , n4FHRing, ":py:class:`~mordred.RingCount.RingCount` (4, False, True, None, True)", 2D
-    1438, , n5FHRing, ":py:class:`~mordred.RingCount.RingCount` (5, False, True, None, True)", 2D
-    1439, , n6FHRing, ":py:class:`~mordred.RingCount.RingCount` (6, False, True, None, True)", 2D
-    1440, , n7FHRing, ":py:class:`~mordred.RingCount.RingCount` (7, False, True, None, True)", 2D
-    1441, , n8FHRing, ":py:class:`~mordred.RingCount.RingCount` (8, False, True, None, True)", 2D
-    1442, , n9FHRing, ":py:class:`~mordred.RingCount.RingCount` (9, False, True, None, True)", 2D
-    1443, , n10FHRing, ":py:class:`~mordred.RingCount.RingCount` (10, False, True, None, True)", 2D
-    1444, , n11FHRing, ":py:class:`~mordred.RingCount.RingCount` (11, False, True, None, True)", 2D
-    1445, , n12FHRing, ":py:class:`~mordred.RingCount.RingCount` (12, False, True, None, True)", 2D
-    1446, , nG12FHRing, ":py:class:`~mordred.RingCount.RingCount` (12, True, True, None, True)", 2D
-    1447, , nFaRing, ":py:class:`~mordred.RingCount.RingCount` (None, False, True, True, None)", 2D
-    1448, , n4FaRing, ":py:class:`~mordred.RingCount.RingCount` (4, False, True, True, None)", 2D
-    1449, , n5FaRing, ":py:class:`~mordred.RingCount.RingCount` (5, False, True, True, None)", 2D
-    1450, , n6FaRing, ":py:class:`~mordred.RingCount.RingCount` (6, False, True, True, None)", 2D
-    1451, , n7FaRing, ":py:class:`~mordred.RingCount.RingCount` (7, False, True, True, None)", 2D
-    1452, , n8FaRing, ":py:class:`~mordred.RingCount.RingCount` (8, False, True, True, None)", 2D
-    1453, , n9FaRing, ":py:class:`~mordred.RingCount.RingCount` (9, False, True, True, None)", 2D
-    1454, , n10FaRing, ":py:class:`~mordred.RingCount.RingCount` (10, False, True, True, None)", 2D
-    1455, , n11FaRing, ":py:class:`~mordred.RingCount.RingCount` (11, False, True, True, None)", 2D
-    1456, , n12FaRing, ":py:class:`~mordred.RingCount.RingCount` (12, False, True, True, None)", 2D
-    1457, , nG12FaRing, ":py:class:`~mordred.RingCount.RingCount` (12, True, True, True, None)", 2D
-    1458, , nFaHRing, ":py:class:`~mordred.RingCount.RingCount` (None, False, True, True, True)", 2D
-    1459, , n4FaHRing, ":py:class:`~mordred.RingCount.RingCount` (4, False, True, True, True)", 2D
-    1460, , n5FaHRing, ":py:class:`~mordred.RingCount.RingCount` (5, False, True, True, True)", 2D
-    1461, , n6FaHRing, ":py:class:`~mordred.RingCount.RingCount` (6, False, True, True, True)", 2D
-    1462, , n7FaHRing, ":py:class:`~mordred.RingCount.RingCount` (7, False, True, True, True)", 2D
-    1463, , n8FaHRing, ":py:class:`~mordred.RingCount.RingCount` (8, False, True, True, True)", 2D
-    1464, , n9FaHRing, ":py:class:`~mordred.RingCount.RingCount` (9, False, True, True, True)", 2D
-    1465, , n10FaHRing, ":py:class:`~mordred.RingCount.RingCount` (10, False, True, True, True)", 2D
-    1466, , n11FaHRing, ":py:class:`~mordred.RingCount.RingCount` (11, False, True, True, True)", 2D
-    1467, , n12FaHRing, ":py:class:`~mordred.RingCount.RingCount` (12, False, True, True, True)", 2D
-    1468, , nG12FaHRing, ":py:class:`~mordred.RingCount.RingCount` (12, True, True, True, True)", 2D
-    1469, , nFARing, ":py:class:`~mordred.RingCount.RingCount` (None, False, True, False, None)", 2D
-    1470, , n4FARing, ":py:class:`~mordred.RingCount.RingCount` (4, False, True, False, None)", 2D
-    1471, , n5FARing, ":py:class:`~mordred.RingCount.RingCount` (5, False, True, False, None)", 2D
-    1472, , n6FARing, ":py:class:`~mordred.RingCount.RingCount` (6, False, True, False, None)", 2D
-    1473, , n7FARing, ":py:class:`~mordred.RingCount.RingCount` (7, False, True, False, None)", 2D
-    1474, , n8FARing, ":py:class:`~mordred.RingCount.RingCount` (8, False, True, False, None)", 2D
-    1475, , n9FARing, ":py:class:`~mordred.RingCount.RingCount` (9, False, True, False, None)", 2D
-    1476, , n10FARing, ":py:class:`~mordred.RingCount.RingCount` (10, False, True, False, None)", 2D
-    1477, , n11FARing, ":py:class:`~mordred.RingCount.RingCount` (11, False, True, False, None)", 2D
-    1478, , n12FARing, ":py:class:`~mordred.RingCount.RingCount` (12, False, True, False, None)", 2D
-    1479, , nG12FARing, ":py:class:`~mordred.RingCount.RingCount` (12, True, True, False, None)", 2D
-    1480, , nFAHRing, ":py:class:`~mordred.RingCount.RingCount` (None, False, True, False, True)", 2D
-    1481, , n4FAHRing, ":py:class:`~mordred.RingCount.RingCount` (4, False, True, False, True)", 2D
-    1482, , n5FAHRing, ":py:class:`~mordred.RingCount.RingCount` (5, False, True, False, True)", 2D
-    1483, , n6FAHRing, ":py:class:`~mordred.RingCount.RingCount` (6, False, True, False, True)", 2D
-    1484, , n7FAHRing, ":py:class:`~mordred.RingCount.RingCount` (7, False, True, False, True)", 2D
-    1485, , n8FAHRing, ":py:class:`~mordred.RingCount.RingCount` (8, False, True, False, True)", 2D
-    1486, , n9FAHRing, ":py:class:`~mordred.RingCount.RingCount` (9, False, True, False, True)", 2D
-    1487, , n10FAHRing, ":py:class:`~mordred.RingCount.RingCount` (10, False, True, False, True)", 2D
-    1488, , n11FAHRing, ":py:class:`~mordred.RingCount.RingCount` (11, False, True, False, True)", 2D
-    1489, , n12FAHRing, ":py:class:`~mordred.RingCount.RingCount` (12, False, True, False, True)", 2D
-    1490, , nG12FAHRing, ":py:class:`~mordred.RingCount.RingCount` (12, True, True, False, True)", 2D
-    1491, :py:mod:`~mordred.RotatableBond`, nRot, ":py:class:`~mordred.RotatableBond.RotatableBondsCount` ()", 2D
-    1492, , RotRatio, ":py:class:`~mordred.RotatableBond.RotatableBondsRatio` ()", 2D
-    1493, :py:mod:`~mordred.SLogP`, SLogP, ":py:class:`~mordred.SLogP.SLogP` ()", 2D
-    1494, , SMR, ":py:class:`~mordred.SLogP.SMR` ()", 2D
-    1495, :py:mod:`~mordred.TopoPSA`, TopoPSA(NO), ":py:class:`~mordred.TopoPSA.TopoPSA` (True)", 2D
-    1496, , TopoPSA, ":py:class:`~mordred.TopoPSA.TopoPSA` (False)", 2D
-    1497, :py:mod:`~mordred.TopologicalCharge`, GGI1, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('raw', 1)", 2D
-    1498, , GGI2, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('raw', 2)", 2D
-    1499, , GGI3, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('raw', 3)", 2D
-    1500, , GGI4, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('raw', 4)", 2D
-    1501, , GGI5, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('raw', 5)", 2D
-    1502, , GGI6, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('raw', 6)", 2D
-    1503, , GGI7, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('raw', 7)", 2D
-    1504, , GGI8, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('raw', 8)", 2D
-    1505, , GGI9, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('raw', 9)", 2D
-    1506, , GGI10, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('raw', 10)", 2D
-    1507, , JGI1, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('mean', 1)", 2D
-    1508, , JGI2, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('mean', 2)", 2D
-    1509, , JGI3, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('mean', 3)", 2D
-    1510, , JGI4, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('mean', 4)", 2D
-    1511, , JGI5, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('mean', 5)", 2D
-    1512, , JGI6, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('mean', 6)", 2D
-    1513, , JGI7, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('mean', 7)", 2D
-    1514, , JGI8, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('mean', 8)", 2D
-    1515, , JGI9, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('mean', 9)", 2D
-    1516, , JGI10, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('mean', 10)", 2D
-    1517, , JGT10, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('global', 10)", 2D
-    1518, :py:mod:`~mordred.TopologicalIndex`, Radius, ":py:class:`~mordred.TopologicalIndex.Radius` ()", 2D
-    1519, , Diameter, ":py:class:`~mordred.TopologicalIndex.Diameter` ()", 2D
-    1520, , TopoShapeIndex, ":py:class:`~mordred.TopologicalIndex.TopologicalShapeIndex` ()", 2D
-    1521, , PetitjeanIndex, ":py:class:`~mordred.TopologicalIndex.PetitjeanIndex` ()", 2D
-    1522, :py:mod:`~mordred.VdwVolumeABC`, Vabc, ":py:class:`~mordred.VdwVolumeABC.VdwVolumeABC` ()", 2D
-    1523, :py:mod:`~mordred.VertexAdjacencyInformation`, VAdjMat, ":py:class:`~mordred.VertexAdjacencyInformation.VertexAdjacencyInformation` ()", 2D
-    1524, :py:mod:`~mordred.WalkCount`, MWC01, ":py:class:`~mordred.WalkCount.WalkCount` (1, False, False)", 2D
-    1525, , MWC02, ":py:class:`~mordred.WalkCount.WalkCount` (2, False, False)", 2D
-    1526, , MWC03, ":py:class:`~mordred.WalkCount.WalkCount` (3, False, False)", 2D
-    1527, , MWC04, ":py:class:`~mordred.WalkCount.WalkCount` (4, False, False)", 2D
-    1528, , MWC05, ":py:class:`~mordred.WalkCount.WalkCount` (5, False, False)", 2D
-    1529, , MWC06, ":py:class:`~mordred.WalkCount.WalkCount` (6, False, False)", 2D
-    1530, , MWC07, ":py:class:`~mordred.WalkCount.WalkCount` (7, False, False)", 2D
-    1531, , MWC08, ":py:class:`~mordred.WalkCount.WalkCount` (8, False, False)", 2D
-    1532, , MWC09, ":py:class:`~mordred.WalkCount.WalkCount` (9, False, False)", 2D
-    1533, , MWC10, ":py:class:`~mordred.WalkCount.WalkCount` (10, False, False)", 2D
-    1534, , TMWC10, ":py:class:`~mordred.WalkCount.WalkCount` (10, True, False)", 2D
-    1535, , SRW02, ":py:class:`~mordred.WalkCount.WalkCount` (2, False, True)", 2D
-    1536, , SRW03, ":py:class:`~mordred.WalkCount.WalkCount` (3, False, True)", 2D
-    1537, , SRW04, ":py:class:`~mordred.WalkCount.WalkCount` (4, False, True)", 2D
-    1538, , SRW05, ":py:class:`~mordred.WalkCount.WalkCount` (5, False, True)", 2D
-    1539, , SRW06, ":py:class:`~mordred.WalkCount.WalkCount` (6, False, True)", 2D
-    1540, , SRW07, ":py:class:`~mordred.WalkCount.WalkCount` (7, False, True)", 2D
-    1541, , SRW08, ":py:class:`~mordred.WalkCount.WalkCount` (8, False, True)", 2D
-    1542, , SRW09, ":py:class:`~mordred.WalkCount.WalkCount` (9, False, True)", 2D
-    1543, , SRW10, ":py:class:`~mordred.WalkCount.WalkCount` (10, False, True)", 2D
-    1544, , TSRW10, ":py:class:`~mordred.WalkCount.WalkCount` (10, True, True)", 2D
-    1545, :py:mod:`~mordred.Weight`, MW, ":py:class:`~mordred.Weight.Weight` (False)", 2D
-    1546, , AMW, ":py:class:`~mordred.Weight.Weight` (True)", 2D
-    1547, :py:mod:`~mordred.WienerIndex`, WPath, ":py:class:`~mordred.WienerIndex.WienerIndex` (False)", 2D
-    1548, , WPol, ":py:class:`~mordred.WienerIndex.WienerIndex` (True)", 2D
-    1549, :py:mod:`~mordred.ZagrebIndex`, Zagreb1, ":py:class:`~mordred.ZagrebIndex.ZagrebIndex` (1, 1)", 2D
-    1550, , Zagreb2, ":py:class:`~mordred.ZagrebIndex.ZagrebIndex` (2, 1)", 2D
-    1551, , mZagreb1, ":py:class:`~mordred.ZagrebIndex.ZagrebIndex` (1, -1)", 2D
-    1552, , mZagreb2, ":py:class:`~mordred.ZagrebIndex.ZagrebIndex` (2, -1)", 2D
+    1189, :py:mod:`~mordred.GeometricalIndex`, GeomRadius, ":py:class:`~mordred.GeometricalIndex.Radius3D` ()", 3D
+    1190, , GeomDiameter, ":py:class:`~mordred.GeometricalIndex.Diameter3D` ()", 3D
+    1191, , GeomShapeIndex, ":py:class:`~mordred.GeometricalIndex.GeometricalShapeIndex` ()", 3D
+    1192, , GeomPetitjeanIndex, ":py:class:`~mordred.GeometricalIndex.PetitjeanIndex3D` ()", 3D
+    1193, :py:mod:`~mordred.GravitationalIndex`, GRAV, ":py:class:`~mordred.GravitationalIndex.GravitationalIndex` (True, False)", 3D
+    1194, , GRAVH, ":py:class:`~mordred.GravitationalIndex.GravitationalIndex` (False, False)", 3D
+    1195, , GRAVp, ":py:class:`~mordred.GravitationalIndex.GravitationalIndex` (True, True)", 3D
+    1196, , GRAVHp, ":py:class:`~mordred.GravitationalIndex.GravitationalIndex` (False, True)", 3D
+    1197, :py:mod:`~mordred.HydrogenBond`, nHBAcc, ":py:class:`~mordred.HydrogenBond.HBondAcceptor` ()", 2D
+    1198, , nHBDon, ":py:class:`~mordred.HydrogenBond.HBondDonor` ()", 2D
+    1199, :py:mod:`~mordred.InformationContent`, IC0, ":py:class:`~mordred.InformationContent.InformationContent` (0)", 2D
+    1200, , IC1, ":py:class:`~mordred.InformationContent.InformationContent` (1)", 2D
+    1201, , IC2, ":py:class:`~mordred.InformationContent.InformationContent` (2)", 2D
+    1202, , IC3, ":py:class:`~mordred.InformationContent.InformationContent` (3)", 2D
+    1203, , IC4, ":py:class:`~mordred.InformationContent.InformationContent` (4)", 2D
+    1204, , IC5, ":py:class:`~mordred.InformationContent.InformationContent` (5)", 2D
+    1205, , TIC0, ":py:class:`~mordred.InformationContent.TotalIC` (0)", 2D
+    1206, , TIC1, ":py:class:`~mordred.InformationContent.TotalIC` (1)", 2D
+    1207, , TIC2, ":py:class:`~mordred.InformationContent.TotalIC` (2)", 2D
+    1208, , TIC3, ":py:class:`~mordred.InformationContent.TotalIC` (3)", 2D
+    1209, , TIC4, ":py:class:`~mordred.InformationContent.TotalIC` (4)", 2D
+    1210, , TIC5, ":py:class:`~mordred.InformationContent.TotalIC` (5)", 2D
+    1211, , SIC0, ":py:class:`~mordred.InformationContent.StructuralIC` (0)", 2D
+    1212, , SIC1, ":py:class:`~mordred.InformationContent.StructuralIC` (1)", 2D
+    1213, , SIC2, ":py:class:`~mordred.InformationContent.StructuralIC` (2)", 2D
+    1214, , SIC3, ":py:class:`~mordred.InformationContent.StructuralIC` (3)", 2D
+    1215, , SIC4, ":py:class:`~mordred.InformationContent.StructuralIC` (4)", 2D
+    1216, , SIC5, ":py:class:`~mordred.InformationContent.StructuralIC` (5)", 2D
+    1217, , BIC0, ":py:class:`~mordred.InformationContent.BondingIC` (0)", 2D
+    1218, , BIC1, ":py:class:`~mordred.InformationContent.BondingIC` (1)", 2D
+    1219, , BIC2, ":py:class:`~mordred.InformationContent.BondingIC` (2)", 2D
+    1220, , BIC3, ":py:class:`~mordred.InformationContent.BondingIC` (3)", 2D
+    1221, , BIC4, ":py:class:`~mordred.InformationContent.BondingIC` (4)", 2D
+    1222, , BIC5, ":py:class:`~mordred.InformationContent.BondingIC` (5)", 2D
+    1223, , CIC0, ":py:class:`~mordred.InformationContent.ComplementaryIC` (0)", 2D
+    1224, , CIC1, ":py:class:`~mordred.InformationContent.ComplementaryIC` (1)", 2D
+    1225, , CIC2, ":py:class:`~mordred.InformationContent.ComplementaryIC` (2)", 2D
+    1226, , CIC3, ":py:class:`~mordred.InformationContent.ComplementaryIC` (3)", 2D
+    1227, , CIC4, ":py:class:`~mordred.InformationContent.ComplementaryIC` (4)", 2D
+    1228, , CIC5, ":py:class:`~mordred.InformationContent.ComplementaryIC` (5)", 2D
+    1229, , MIC0, ":py:class:`~mordred.InformationContent.ModifiedIC` (0)", 2D
+    1230, , MIC1, ":py:class:`~mordred.InformationContent.ModifiedIC` (1)", 2D
+    1231, , MIC2, ":py:class:`~mordred.InformationContent.ModifiedIC` (2)", 2D
+    1232, , MIC3, ":py:class:`~mordred.InformationContent.ModifiedIC` (3)", 2D
+    1233, , MIC4, ":py:class:`~mordred.InformationContent.ModifiedIC` (4)", 2D
+    1234, , MIC5, ":py:class:`~mordred.InformationContent.ModifiedIC` (5)", 2D
+    1235, , ZMIC0, ":py:class:`~mordred.InformationContent.ZModifiedIC` (0)", 2D
+    1236, , ZMIC1, ":py:class:`~mordred.InformationContent.ZModifiedIC` (1)", 2D
+    1237, , ZMIC2, ":py:class:`~mordred.InformationContent.ZModifiedIC` (2)", 2D
+    1238, , ZMIC3, ":py:class:`~mordred.InformationContent.ZModifiedIC` (3)", 2D
+    1239, , ZMIC4, ":py:class:`~mordred.InformationContent.ZModifiedIC` (4)", 2D
+    1240, , ZMIC5, ":py:class:`~mordred.InformationContent.ZModifiedIC` (5)", 2D
+    1241, :py:mod:`~mordred.KappaShapeIndex`, Kier1, ":py:class:`~mordred.KappaShapeIndex.KappaShapeIndex1` ()", 2D
+    1242, , Kier2, ":py:class:`~mordred.KappaShapeIndex.KappaShapeIndex2` ()", 2D
+    1243, , Kier3, ":py:class:`~mordred.KappaShapeIndex.KappaShapeIndex3` ()", 2D
+    1244, :py:mod:`~mordred.Lipinski`, Lipinski, ":py:class:`~mordred.Lipinski.Lipinski` ()", 2D
+    1245, , GhoseFilter, ":py:class:`~mordred.Lipinski.GhoseFilter` ()", 2D
+    1246, :py:mod:`~mordred.McGowanVolume`, VMcGowan, ":py:class:`~mordred.McGowanVolume.McGowanVolume` ()", 2D
+    1247, :py:mod:`~mordred.MoeType`, LabuteASA, ":py:class:`~mordred.MoeType.LabuteASA` ()", 2D
+    1248, , PEOE_VSA1, ":py:class:`~mordred.MoeType.PEOE_VSA` (1)", 2D
+    1249, , PEOE_VSA2, ":py:class:`~mordred.MoeType.PEOE_VSA` (2)", 2D
+    1250, , PEOE_VSA3, ":py:class:`~mordred.MoeType.PEOE_VSA` (3)", 2D
+    1251, , PEOE_VSA4, ":py:class:`~mordred.MoeType.PEOE_VSA` (4)", 2D
+    1252, , PEOE_VSA5, ":py:class:`~mordred.MoeType.PEOE_VSA` (5)", 2D
+    1253, , PEOE_VSA6, ":py:class:`~mordred.MoeType.PEOE_VSA` (6)", 2D
+    1254, , PEOE_VSA7, ":py:class:`~mordred.MoeType.PEOE_VSA` (7)", 2D
+    1255, , PEOE_VSA8, ":py:class:`~mordred.MoeType.PEOE_VSA` (8)", 2D
+    1256, , PEOE_VSA9, ":py:class:`~mordred.MoeType.PEOE_VSA` (9)", 2D
+    1257, , PEOE_VSA10, ":py:class:`~mordred.MoeType.PEOE_VSA` (10)", 2D
+    1258, , PEOE_VSA11, ":py:class:`~mordred.MoeType.PEOE_VSA` (11)", 2D
+    1259, , PEOE_VSA12, ":py:class:`~mordred.MoeType.PEOE_VSA` (12)", 2D
+    1260, , PEOE_VSA13, ":py:class:`~mordred.MoeType.PEOE_VSA` (13)", 2D
+    1261, , SMR_VSA1, ":py:class:`~mordred.MoeType.SMR_VSA` (1)", 2D
+    1262, , SMR_VSA2, ":py:class:`~mordred.MoeType.SMR_VSA` (2)", 2D
+    1263, , SMR_VSA3, ":py:class:`~mordred.MoeType.SMR_VSA` (3)", 2D
+    1264, , SMR_VSA4, ":py:class:`~mordred.MoeType.SMR_VSA` (4)", 2D
+    1265, , SMR_VSA5, ":py:class:`~mordred.MoeType.SMR_VSA` (5)", 2D
+    1266, , SMR_VSA6, ":py:class:`~mordred.MoeType.SMR_VSA` (6)", 2D
+    1267, , SMR_VSA7, ":py:class:`~mordred.MoeType.SMR_VSA` (7)", 2D
+    1268, , SMR_VSA8, ":py:class:`~mordred.MoeType.SMR_VSA` (8)", 2D
+    1269, , SMR_VSA9, ":py:class:`~mordred.MoeType.SMR_VSA` (9)", 2D
+    1270, , SlogP_VSA1, ":py:class:`~mordred.MoeType.SlogP_VSA` (1)", 2D
+    1271, , SlogP_VSA2, ":py:class:`~mordred.MoeType.SlogP_VSA` (2)", 2D
+    1272, , SlogP_VSA3, ":py:class:`~mordred.MoeType.SlogP_VSA` (3)", 2D
+    1273, , SlogP_VSA4, ":py:class:`~mordred.MoeType.SlogP_VSA` (4)", 2D
+    1274, , SlogP_VSA5, ":py:class:`~mordred.MoeType.SlogP_VSA` (5)", 2D
+    1275, , SlogP_VSA6, ":py:class:`~mordred.MoeType.SlogP_VSA` (6)", 2D
+    1276, , SlogP_VSA7, ":py:class:`~mordred.MoeType.SlogP_VSA` (7)", 2D
+    1277, , SlogP_VSA8, ":py:class:`~mordred.MoeType.SlogP_VSA` (8)", 2D
+    1278, , SlogP_VSA9, ":py:class:`~mordred.MoeType.SlogP_VSA` (9)", 2D
+    1279, , SlogP_VSA10, ":py:class:`~mordred.MoeType.SlogP_VSA` (10)", 2D
+    1280, , SlogP_VSA11, ":py:class:`~mordred.MoeType.SlogP_VSA` (11)", 2D
+    1281, , EState_VSA1, ":py:class:`~mordred.MoeType.EState_VSA` (1)", 2D
+    1282, , EState_VSA2, ":py:class:`~mordred.MoeType.EState_VSA` (2)", 2D
+    1283, , EState_VSA3, ":py:class:`~mordred.MoeType.EState_VSA` (3)", 2D
+    1284, , EState_VSA4, ":py:class:`~mordred.MoeType.EState_VSA` (4)", 2D
+    1285, , EState_VSA5, ":py:class:`~mordred.MoeType.EState_VSA` (5)", 2D
+    1286, , EState_VSA6, ":py:class:`~mordred.MoeType.EState_VSA` (6)", 2D
+    1287, , EState_VSA7, ":py:class:`~mordred.MoeType.EState_VSA` (7)", 2D
+    1288, , EState_VSA8, ":py:class:`~mordred.MoeType.EState_VSA` (8)", 2D
+    1289, , EState_VSA9, ":py:class:`~mordred.MoeType.EState_VSA` (9)", 2D
+    1290, , EState_VSA10, ":py:class:`~mordred.MoeType.EState_VSA` (10)", 2D
+    1291, , VSA_EState1, ":py:class:`~mordred.MoeType.VSA_EState` (1)", 2D
+    1292, , VSA_EState2, ":py:class:`~mordred.MoeType.VSA_EState` (2)", 2D
+    1293, , VSA_EState3, ":py:class:`~mordred.MoeType.VSA_EState` (3)", 2D
+    1294, , VSA_EState4, ":py:class:`~mordred.MoeType.VSA_EState` (4)", 2D
+    1295, , VSA_EState5, ":py:class:`~mordred.MoeType.VSA_EState` (5)", 2D
+    1296, , VSA_EState6, ":py:class:`~mordred.MoeType.VSA_EState` (6)", 2D
+    1297, , VSA_EState7, ":py:class:`~mordred.MoeType.VSA_EState` (7)", 2D
+    1298, , VSA_EState8, ":py:class:`~mordred.MoeType.VSA_EState` (8)", 2D
+    1299, , VSA_EState9, ":py:class:`~mordred.MoeType.VSA_EState` (9)", 2D
+    1300, :py:mod:`~mordred.MolecularDistanceEdge`, MDEC-11, ":py:class:`~mordred.MolecularDistanceEdge.MolecularDistanceEdge` (1, 1, 6)", 2D
+    1301, , MDEC-12, ":py:class:`~mordred.MolecularDistanceEdge.MolecularDistanceEdge` (1, 2, 6)", 2D
+    1302, , MDEC-13, ":py:class:`~mordred.MolecularDistanceEdge.MolecularDistanceEdge` (1, 3, 6)", 2D
+    1303, , MDEC-14, ":py:class:`~mordred.MolecularDistanceEdge.MolecularDistanceEdge` (1, 4, 6)", 2D
+    1304, , MDEC-22, ":py:class:`~mordred.MolecularDistanceEdge.MolecularDistanceEdge` (2, 2, 6)", 2D
+    1305, , MDEC-23, ":py:class:`~mordred.MolecularDistanceEdge.MolecularDistanceEdge` (2, 3, 6)", 2D
+    1306, , MDEC-24, ":py:class:`~mordred.MolecularDistanceEdge.MolecularDistanceEdge` (2, 4, 6)", 2D
+    1307, , MDEC-33, ":py:class:`~mordred.MolecularDistanceEdge.MolecularDistanceEdge` (3, 3, 6)", 2D
+    1308, , MDEC-34, ":py:class:`~mordred.MolecularDistanceEdge.MolecularDistanceEdge` (3, 4, 6)", 2D
+    1309, , MDEC-44, ":py:class:`~mordred.MolecularDistanceEdge.MolecularDistanceEdge` (4, 4, 6)", 2D
+    1310, , MDEO-11, ":py:class:`~mordred.MolecularDistanceEdge.MolecularDistanceEdge` (1, 1, 8)", 2D
+    1311, , MDEO-12, ":py:class:`~mordred.MolecularDistanceEdge.MolecularDistanceEdge` (1, 2, 8)", 2D
+    1312, , MDEO-22, ":py:class:`~mordred.MolecularDistanceEdge.MolecularDistanceEdge` (2, 2, 8)", 2D
+    1313, , MDEN-11, ":py:class:`~mordred.MolecularDistanceEdge.MolecularDistanceEdge` (1, 1, 7)", 2D
+    1314, , MDEN-12, ":py:class:`~mordred.MolecularDistanceEdge.MolecularDistanceEdge` (1, 2, 7)", 2D
+    1315, , MDEN-13, ":py:class:`~mordred.MolecularDistanceEdge.MolecularDistanceEdge` (1, 3, 7)", 2D
+    1316, , MDEN-22, ":py:class:`~mordred.MolecularDistanceEdge.MolecularDistanceEdge` (2, 2, 7)", 2D
+    1317, , MDEN-23, ":py:class:`~mordred.MolecularDistanceEdge.MolecularDistanceEdge` (2, 3, 7)", 2D
+    1318, , MDEN-33, ":py:class:`~mordred.MolecularDistanceEdge.MolecularDistanceEdge` (3, 3, 7)", 2D
+    1319, :py:mod:`~mordred.MolecularId`, MID, ":py:class:`~mordred.MolecularId.MolecularId` ('any', False, 1e-10)", 2D
+    1320, , AMID, ":py:class:`~mordred.MolecularId.MolecularId` ('any', True, 1e-10)", 2D
+    1321, , MID_h, ":py:class:`~mordred.MolecularId.MolecularId` ('hetero', False, 1e-10)", 2D
+    1322, , AMID_h, ":py:class:`~mordred.MolecularId.MolecularId` ('hetero', True, 1e-10)", 2D
+    1323, , MID_C, ":py:class:`~mordred.MolecularId.MolecularId` ('C', False, 1e-10)", 2D
+    1324, , AMID_C, ":py:class:`~mordred.MolecularId.MolecularId` ('C', True, 1e-10)", 2D
+    1325, , MID_N, ":py:class:`~mordred.MolecularId.MolecularId` ('N', False, 1e-10)", 2D
+    1326, , AMID_N, ":py:class:`~mordred.MolecularId.MolecularId` ('N', True, 1e-10)", 2D
+    1327, , MID_O, ":py:class:`~mordred.MolecularId.MolecularId` ('O', False, 1e-10)", 2D
+    1328, , AMID_O, ":py:class:`~mordred.MolecularId.MolecularId` ('O', True, 1e-10)", 2D
+    1329, , MID_X, ":py:class:`~mordred.MolecularId.MolecularId` ('X', False, 1e-10)", 2D
+    1330, , AMID_X, ":py:class:`~mordred.MolecularId.MolecularId` ('X', True, 1e-10)", 2D
+    1331, :py:mod:`~mordred.MomentOfInertia`, MOMI-X, ":py:class:`~mordred.MomentOfInertia.MomentOfInertia` ('X')", 3D
+    1332, , MOMI-Y, ":py:class:`~mordred.MomentOfInertia.MomentOfInertia` ('Y')", 3D
+    1333, , MOMI-Z, ":py:class:`~mordred.MomentOfInertia.MomentOfInertia` ('Z')", 3D
+    1334, :py:mod:`~mordred.PathCount`, MPC2, ":py:class:`~mordred.PathCount.PathCount` (2, False, False, False)", 2D
+    1335, , MPC3, ":py:class:`~mordred.PathCount.PathCount` (3, False, False, False)", 2D
+    1336, , MPC4, ":py:class:`~mordred.PathCount.PathCount` (4, False, False, False)", 2D
+    1337, , MPC5, ":py:class:`~mordred.PathCount.PathCount` (5, False, False, False)", 2D
+    1338, , MPC6, ":py:class:`~mordred.PathCount.PathCount` (6, False, False, False)", 2D
+    1339, , MPC7, ":py:class:`~mordred.PathCount.PathCount` (7, False, False, False)", 2D
+    1340, , MPC8, ":py:class:`~mordred.PathCount.PathCount` (8, False, False, False)", 2D
+    1341, , MPC9, ":py:class:`~mordred.PathCount.PathCount` (9, False, False, False)", 2D
+    1342, , MPC10, ":py:class:`~mordred.PathCount.PathCount` (10, False, False, False)", 2D
+    1343, , TMPC10, ":py:class:`~mordred.PathCount.PathCount` (10, False, True, False)", 2D
+    1344, , piPC1, ":py:class:`~mordred.PathCount.PathCount` (1, True, False, True)", 2D
+    1345, , piPC2, ":py:class:`~mordred.PathCount.PathCount` (2, True, False, True)", 2D
+    1346, , piPC3, ":py:class:`~mordred.PathCount.PathCount` (3, True, False, True)", 2D
+    1347, , piPC4, ":py:class:`~mordred.PathCount.PathCount` (4, True, False, True)", 2D
+    1348, , piPC5, ":py:class:`~mordred.PathCount.PathCount` (5, True, False, True)", 2D
+    1349, , piPC6, ":py:class:`~mordred.PathCount.PathCount` (6, True, False, True)", 2D
+    1350, , piPC7, ":py:class:`~mordred.PathCount.PathCount` (7, True, False, True)", 2D
+    1351, , piPC8, ":py:class:`~mordred.PathCount.PathCount` (8, True, False, True)", 2D
+    1352, , piPC9, ":py:class:`~mordred.PathCount.PathCount` (9, True, False, True)", 2D
+    1353, , piPC10, ":py:class:`~mordred.PathCount.PathCount` (10, True, False, True)", 2D
+    1354, , TpiPC10, ":py:class:`~mordred.PathCount.PathCount` (10, True, True, True)", 2D
+    1355, :py:mod:`~mordred.Polarizability`, apol, ":py:class:`~mordred.Polarizability.APol` (False)", 2D
+    1356, , bpol, ":py:class:`~mordred.Polarizability.BPol` (False)", 2D
+    1357, :py:mod:`~mordred.RingCount`, nRing, ":py:class:`~mordred.RingCount.RingCount` (None, False, False, None, None)", 2D
+    1358, , n3Ring, ":py:class:`~mordred.RingCount.RingCount` (3, False, False, None, None)", 2D
+    1359, , n4Ring, ":py:class:`~mordred.RingCount.RingCount` (4, False, False, None, None)", 2D
+    1360, , n5Ring, ":py:class:`~mordred.RingCount.RingCount` (5, False, False, None, None)", 2D
+    1361, , n6Ring, ":py:class:`~mordred.RingCount.RingCount` (6, False, False, None, None)", 2D
+    1362, , n7Ring, ":py:class:`~mordred.RingCount.RingCount` (7, False, False, None, None)", 2D
+    1363, , n8Ring, ":py:class:`~mordred.RingCount.RingCount` (8, False, False, None, None)", 2D
+    1364, , n9Ring, ":py:class:`~mordred.RingCount.RingCount` (9, False, False, None, None)", 2D
+    1365, , n10Ring, ":py:class:`~mordred.RingCount.RingCount` (10, False, False, None, None)", 2D
+    1366, , n11Ring, ":py:class:`~mordred.RingCount.RingCount` (11, False, False, None, None)", 2D
+    1367, , n12Ring, ":py:class:`~mordred.RingCount.RingCount` (12, False, False, None, None)", 2D
+    1368, , nG12Ring, ":py:class:`~mordred.RingCount.RingCount` (12, True, False, None, None)", 2D
+    1369, , nHRing, ":py:class:`~mordred.RingCount.RingCount` (None, False, False, None, True)", 2D
+    1370, , n3HRing, ":py:class:`~mordred.RingCount.RingCount` (3, False, False, None, True)", 2D
+    1371, , n4HRing, ":py:class:`~mordred.RingCount.RingCount` (4, False, False, None, True)", 2D
+    1372, , n5HRing, ":py:class:`~mordred.RingCount.RingCount` (5, False, False, None, True)", 2D
+    1373, , n6HRing, ":py:class:`~mordred.RingCount.RingCount` (6, False, False, None, True)", 2D
+    1374, , n7HRing, ":py:class:`~mordred.RingCount.RingCount` (7, False, False, None, True)", 2D
+    1375, , n8HRing, ":py:class:`~mordred.RingCount.RingCount` (8, False, False, None, True)", 2D
+    1376, , n9HRing, ":py:class:`~mordred.RingCount.RingCount` (9, False, False, None, True)", 2D
+    1377, , n10HRing, ":py:class:`~mordred.RingCount.RingCount` (10, False, False, None, True)", 2D
+    1378, , n11HRing, ":py:class:`~mordred.RingCount.RingCount` (11, False, False, None, True)", 2D
+    1379, , n12HRing, ":py:class:`~mordred.RingCount.RingCount` (12, False, False, None, True)", 2D
+    1380, , nG12HRing, ":py:class:`~mordred.RingCount.RingCount` (12, True, False, None, True)", 2D
+    1381, , naRing, ":py:class:`~mordred.RingCount.RingCount` (None, False, False, True, None)", 2D
+    1382, , n3aRing, ":py:class:`~mordred.RingCount.RingCount` (3, False, False, True, None)", 2D
+    1383, , n4aRing, ":py:class:`~mordred.RingCount.RingCount` (4, False, False, True, None)", 2D
+    1384, , n5aRing, ":py:class:`~mordred.RingCount.RingCount` (5, False, False, True, None)", 2D
+    1385, , n6aRing, ":py:class:`~mordred.RingCount.RingCount` (6, False, False, True, None)", 2D
+    1386, , n7aRing, ":py:class:`~mordred.RingCount.RingCount` (7, False, False, True, None)", 2D
+    1387, , n8aRing, ":py:class:`~mordred.RingCount.RingCount` (8, False, False, True, None)", 2D
+    1388, , n9aRing, ":py:class:`~mordred.RingCount.RingCount` (9, False, False, True, None)", 2D
+    1389, , n10aRing, ":py:class:`~mordred.RingCount.RingCount` (10, False, False, True, None)", 2D
+    1390, , n11aRing, ":py:class:`~mordred.RingCount.RingCount` (11, False, False, True, None)", 2D
+    1391, , n12aRing, ":py:class:`~mordred.RingCount.RingCount` (12, False, False, True, None)", 2D
+    1392, , nG12aRing, ":py:class:`~mordred.RingCount.RingCount` (12, True, False, True, None)", 2D
+    1393, , naHRing, ":py:class:`~mordred.RingCount.RingCount` (None, False, False, True, True)", 2D
+    1394, , n3aHRing, ":py:class:`~mordred.RingCount.RingCount` (3, False, False, True, True)", 2D
+    1395, , n4aHRing, ":py:class:`~mordred.RingCount.RingCount` (4, False, False, True, True)", 2D
+    1396, , n5aHRing, ":py:class:`~mordred.RingCount.RingCount` (5, False, False, True, True)", 2D
+    1397, , n6aHRing, ":py:class:`~mordred.RingCount.RingCount` (6, False, False, True, True)", 2D
+    1398, , n7aHRing, ":py:class:`~mordred.RingCount.RingCount` (7, False, False, True, True)", 2D
+    1399, , n8aHRing, ":py:class:`~mordred.RingCount.RingCount` (8, False, False, True, True)", 2D
+    1400, , n9aHRing, ":py:class:`~mordred.RingCount.RingCount` (9, False, False, True, True)", 2D
+    1401, , n10aHRing, ":py:class:`~mordred.RingCount.RingCount` (10, False, False, True, True)", 2D
+    1402, , n11aHRing, ":py:class:`~mordred.RingCount.RingCount` (11, False, False, True, True)", 2D
+    1403, , n12aHRing, ":py:class:`~mordred.RingCount.RingCount` (12, False, False, True, True)", 2D
+    1404, , nG12aHRing, ":py:class:`~mordred.RingCount.RingCount` (12, True, False, True, True)", 2D
+    1405, , nARing, ":py:class:`~mordred.RingCount.RingCount` (None, False, False, False, None)", 2D
+    1406, , n3ARing, ":py:class:`~mordred.RingCount.RingCount` (3, False, False, False, None)", 2D
+    1407, , n4ARing, ":py:class:`~mordred.RingCount.RingCount` (4, False, False, False, None)", 2D
+    1408, , n5ARing, ":py:class:`~mordred.RingCount.RingCount` (5, False, False, False, None)", 2D
+    1409, , n6ARing, ":py:class:`~mordred.RingCount.RingCount` (6, False, False, False, None)", 2D
+    1410, , n7ARing, ":py:class:`~mordred.RingCount.RingCount` (7, False, False, False, None)", 2D
+    1411, , n8ARing, ":py:class:`~mordred.RingCount.RingCount` (8, False, False, False, None)", 2D
+    1412, , n9ARing, ":py:class:`~mordred.RingCount.RingCount` (9, False, False, False, None)", 2D
+    1413, , n10ARing, ":py:class:`~mordred.RingCount.RingCount` (10, False, False, False, None)", 2D
+    1414, , n11ARing, ":py:class:`~mordred.RingCount.RingCount` (11, False, False, False, None)", 2D
+    1415, , n12ARing, ":py:class:`~mordred.RingCount.RingCount` (12, False, False, False, None)", 2D
+    1416, , nG12ARing, ":py:class:`~mordred.RingCount.RingCount` (12, True, False, False, None)", 2D
+    1417, , nAHRing, ":py:class:`~mordred.RingCount.RingCount` (None, False, False, False, True)", 2D
+    1418, , n3AHRing, ":py:class:`~mordred.RingCount.RingCount` (3, False, False, False, True)", 2D
+    1419, , n4AHRing, ":py:class:`~mordred.RingCount.RingCount` (4, False, False, False, True)", 2D
+    1420, , n5AHRing, ":py:class:`~mordred.RingCount.RingCount` (5, False, False, False, True)", 2D
+    1421, , n6AHRing, ":py:class:`~mordred.RingCount.RingCount` (6, False, False, False, True)", 2D
+    1422, , n7AHRing, ":py:class:`~mordred.RingCount.RingCount` (7, False, False, False, True)", 2D
+    1423, , n8AHRing, ":py:class:`~mordred.RingCount.RingCount` (8, False, False, False, True)", 2D
+    1424, , n9AHRing, ":py:class:`~mordred.RingCount.RingCount` (9, False, False, False, True)", 2D
+    1425, , n10AHRing, ":py:class:`~mordred.RingCount.RingCount` (10, False, False, False, True)", 2D
+    1426, , n11AHRing, ":py:class:`~mordred.RingCount.RingCount` (11, False, False, False, True)", 2D
+    1427, , n12AHRing, ":py:class:`~mordred.RingCount.RingCount` (12, False, False, False, True)", 2D
+    1428, , nG12AHRing, ":py:class:`~mordred.RingCount.RingCount` (12, True, False, False, True)", 2D
+    1429, , nFRing, ":py:class:`~mordred.RingCount.RingCount` (None, False, True, None, None)", 2D
+    1430, , n4FRing, ":py:class:`~mordred.RingCount.RingCount` (4, False, True, None, None)", 2D
+    1431, , n5FRing, ":py:class:`~mordred.RingCount.RingCount` (5, False, True, None, None)", 2D
+    1432, , n6FRing, ":py:class:`~mordred.RingCount.RingCount` (6, False, True, None, None)", 2D
+    1433, , n7FRing, ":py:class:`~mordred.RingCount.RingCount` (7, False, True, None, None)", 2D
+    1434, , n8FRing, ":py:class:`~mordred.RingCount.RingCount` (8, False, True, None, None)", 2D
+    1435, , n9FRing, ":py:class:`~mordred.RingCount.RingCount` (9, False, True, None, None)", 2D
+    1436, , n10FRing, ":py:class:`~mordred.RingCount.RingCount` (10, False, True, None, None)", 2D
+    1437, , n11FRing, ":py:class:`~mordred.RingCount.RingCount` (11, False, True, None, None)", 2D
+    1438, , n12FRing, ":py:class:`~mordred.RingCount.RingCount` (12, False, True, None, None)", 2D
+    1439, , nG12FRing, ":py:class:`~mordred.RingCount.RingCount` (12, True, True, None, None)", 2D
+    1440, , nFHRing, ":py:class:`~mordred.RingCount.RingCount` (None, False, True, None, True)", 2D
+    1441, , n4FHRing, ":py:class:`~mordred.RingCount.RingCount` (4, False, True, None, True)", 2D
+    1442, , n5FHRing, ":py:class:`~mordred.RingCount.RingCount` (5, False, True, None, True)", 2D
+    1443, , n6FHRing, ":py:class:`~mordred.RingCount.RingCount` (6, False, True, None, True)", 2D
+    1444, , n7FHRing, ":py:class:`~mordred.RingCount.RingCount` (7, False, True, None, True)", 2D
+    1445, , n8FHRing, ":py:class:`~mordred.RingCount.RingCount` (8, False, True, None, True)", 2D
+    1446, , n9FHRing, ":py:class:`~mordred.RingCount.RingCount` (9, False, True, None, True)", 2D
+    1447, , n10FHRing, ":py:class:`~mordred.RingCount.RingCount` (10, False, True, None, True)", 2D
+    1448, , n11FHRing, ":py:class:`~mordred.RingCount.RingCount` (11, False, True, None, True)", 2D
+    1449, , n12FHRing, ":py:class:`~mordred.RingCount.RingCount` (12, False, True, None, True)", 2D
+    1450, , nG12FHRing, ":py:class:`~mordred.RingCount.RingCount` (12, True, True, None, True)", 2D
+    1451, , nFaRing, ":py:class:`~mordred.RingCount.RingCount` (None, False, True, True, None)", 2D
+    1452, , n4FaRing, ":py:class:`~mordred.RingCount.RingCount` (4, False, True, True, None)", 2D
+    1453, , n5FaRing, ":py:class:`~mordred.RingCount.RingCount` (5, False, True, True, None)", 2D
+    1454, , n6FaRing, ":py:class:`~mordred.RingCount.RingCount` (6, False, True, True, None)", 2D
+    1455, , n7FaRing, ":py:class:`~mordred.RingCount.RingCount` (7, False, True, True, None)", 2D
+    1456, , n8FaRing, ":py:class:`~mordred.RingCount.RingCount` (8, False, True, True, None)", 2D
+    1457, , n9FaRing, ":py:class:`~mordred.RingCount.RingCount` (9, False, True, True, None)", 2D
+    1458, , n10FaRing, ":py:class:`~mordred.RingCount.RingCount` (10, False, True, True, None)", 2D
+    1459, , n11FaRing, ":py:class:`~mordred.RingCount.RingCount` (11, False, True, True, None)", 2D
+    1460, , n12FaRing, ":py:class:`~mordred.RingCount.RingCount` (12, False, True, True, None)", 2D
+    1461, , nG12FaRing, ":py:class:`~mordred.RingCount.RingCount` (12, True, True, True, None)", 2D
+    1462, , nFaHRing, ":py:class:`~mordred.RingCount.RingCount` (None, False, True, True, True)", 2D
+    1463, , n4FaHRing, ":py:class:`~mordred.RingCount.RingCount` (4, False, True, True, True)", 2D
+    1464, , n5FaHRing, ":py:class:`~mordred.RingCount.RingCount` (5, False, True, True, True)", 2D
+    1465, , n6FaHRing, ":py:class:`~mordred.RingCount.RingCount` (6, False, True, True, True)", 2D
+    1466, , n7FaHRing, ":py:class:`~mordred.RingCount.RingCount` (7, False, True, True, True)", 2D
+    1467, , n8FaHRing, ":py:class:`~mordred.RingCount.RingCount` (8, False, True, True, True)", 2D
+    1468, , n9FaHRing, ":py:class:`~mordred.RingCount.RingCount` (9, False, True, True, True)", 2D
+    1469, , n10FaHRing, ":py:class:`~mordred.RingCount.RingCount` (10, False, True, True, True)", 2D
+    1470, , n11FaHRing, ":py:class:`~mordred.RingCount.RingCount` (11, False, True, True, True)", 2D
+    1471, , n12FaHRing, ":py:class:`~mordred.RingCount.RingCount` (12, False, True, True, True)", 2D
+    1472, , nG12FaHRing, ":py:class:`~mordred.RingCount.RingCount` (12, True, True, True, True)", 2D
+    1473, , nFARing, ":py:class:`~mordred.RingCount.RingCount` (None, False, True, False, None)", 2D
+    1474, , n4FARing, ":py:class:`~mordred.RingCount.RingCount` (4, False, True, False, None)", 2D
+    1475, , n5FARing, ":py:class:`~mordred.RingCount.RingCount` (5, False, True, False, None)", 2D
+    1476, , n6FARing, ":py:class:`~mordred.RingCount.RingCount` (6, False, True, False, None)", 2D
+    1477, , n7FARing, ":py:class:`~mordred.RingCount.RingCount` (7, False, True, False, None)", 2D
+    1478, , n8FARing, ":py:class:`~mordred.RingCount.RingCount` (8, False, True, False, None)", 2D
+    1479, , n9FARing, ":py:class:`~mordred.RingCount.RingCount` (9, False, True, False, None)", 2D
+    1480, , n10FARing, ":py:class:`~mordred.RingCount.RingCount` (10, False, True, False, None)", 2D
+    1481, , n11FARing, ":py:class:`~mordred.RingCount.RingCount` (11, False, True, False, None)", 2D
+    1482, , n12FARing, ":py:class:`~mordred.RingCount.RingCount` (12, False, True, False, None)", 2D
+    1483, , nG12FARing, ":py:class:`~mordred.RingCount.RingCount` (12, True, True, False, None)", 2D
+    1484, , nFAHRing, ":py:class:`~mordred.RingCount.RingCount` (None, False, True, False, True)", 2D
+    1485, , n4FAHRing, ":py:class:`~mordred.RingCount.RingCount` (4, False, True, False, True)", 2D
+    1486, , n5FAHRing, ":py:class:`~mordred.RingCount.RingCount` (5, False, True, False, True)", 2D
+    1487, , n6FAHRing, ":py:class:`~mordred.RingCount.RingCount` (6, False, True, False, True)", 2D
+    1488, , n7FAHRing, ":py:class:`~mordred.RingCount.RingCount` (7, False, True, False, True)", 2D
+    1489, , n8FAHRing, ":py:class:`~mordred.RingCount.RingCount` (8, False, True, False, True)", 2D
+    1490, , n9FAHRing, ":py:class:`~mordred.RingCount.RingCount` (9, False, True, False, True)", 2D
+    1491, , n10FAHRing, ":py:class:`~mordred.RingCount.RingCount` (10, False, True, False, True)", 2D
+    1492, , n11FAHRing, ":py:class:`~mordred.RingCount.RingCount` (11, False, True, False, True)", 2D
+    1493, , n12FAHRing, ":py:class:`~mordred.RingCount.RingCount` (12, False, True, False, True)", 2D
+    1494, , nG12FAHRing, ":py:class:`~mordred.RingCount.RingCount` (12, True, True, False, True)", 2D
+    1495, :py:mod:`~mordred.RotatableBond`, nRot, ":py:class:`~mordred.RotatableBond.RotatableBondsCount` ()", 2D
+    1496, , RotRatio, ":py:class:`~mordred.RotatableBond.RotatableBondsRatio` ()", 2D
+    1497, :py:mod:`~mordred.SLogP`, SLogP, ":py:class:`~mordred.SLogP.SLogP` ()", 2D
+    1498, , SMR, ":py:class:`~mordred.SLogP.SMR` ()", 2D
+    1499, :py:mod:`~mordred.TopoPSA`, TopoPSA(NO), ":py:class:`~mordred.TopoPSA.TopoPSA` (True)", 2D
+    1500, , TopoPSA, ":py:class:`~mordred.TopoPSA.TopoPSA` (False)", 2D
+    1501, :py:mod:`~mordred.TopologicalCharge`, GGI1, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('raw', 1)", 2D
+    1502, , GGI2, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('raw', 2)", 2D
+    1503, , GGI3, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('raw', 3)", 2D
+    1504, , GGI4, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('raw', 4)", 2D
+    1505, , GGI5, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('raw', 5)", 2D
+    1506, , GGI6, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('raw', 6)", 2D
+    1507, , GGI7, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('raw', 7)", 2D
+    1508, , GGI8, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('raw', 8)", 2D
+    1509, , GGI9, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('raw', 9)", 2D
+    1510, , GGI10, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('raw', 10)", 2D
+    1511, , JGI1, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('mean', 1)", 2D
+    1512, , JGI2, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('mean', 2)", 2D
+    1513, , JGI3, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('mean', 3)", 2D
+    1514, , JGI4, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('mean', 4)", 2D
+    1515, , JGI5, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('mean', 5)", 2D
+    1516, , JGI6, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('mean', 6)", 2D
+    1517, , JGI7, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('mean', 7)", 2D
+    1518, , JGI8, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('mean', 8)", 2D
+    1519, , JGI9, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('mean', 9)", 2D
+    1520, , JGI10, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('mean', 10)", 2D
+    1521, , JGT10, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('global', 10)", 2D
+    1522, :py:mod:`~mordred.TopologicalIndex`, Radius, ":py:class:`~mordred.TopologicalIndex.Radius` ()", 2D
+    1523, , Diameter, ":py:class:`~mordred.TopologicalIndex.Diameter` ()", 2D
+    1524, , TopoShapeIndex, ":py:class:`~mordred.TopologicalIndex.TopologicalShapeIndex` ()", 2D
+    1525, , PetitjeanIndex, ":py:class:`~mordred.TopologicalIndex.PetitjeanIndex` ()", 2D
+    1526, :py:mod:`~mordred.VdwVolumeABC`, Vabc, ":py:class:`~mordred.VdwVolumeABC.VdwVolumeABC` ()", 2D
+    1527, :py:mod:`~mordred.VertexAdjacencyInformation`, VAdjMat, ":py:class:`~mordred.VertexAdjacencyInformation.VertexAdjacencyInformation` ()", 2D
+    1528, :py:mod:`~mordred.WalkCount`, MWC01, ":py:class:`~mordred.WalkCount.WalkCount` (1, False, False)", 2D
+    1529, , MWC02, ":py:class:`~mordred.WalkCount.WalkCount` (2, False, False)", 2D
+    1530, , MWC03, ":py:class:`~mordred.WalkCount.WalkCount` (3, False, False)", 2D
+    1531, , MWC04, ":py:class:`~mordred.WalkCount.WalkCount` (4, False, False)", 2D
+    1532, , MWC05, ":py:class:`~mordred.WalkCount.WalkCount` (5, False, False)", 2D
+    1533, , MWC06, ":py:class:`~mordred.WalkCount.WalkCount` (6, False, False)", 2D
+    1534, , MWC07, ":py:class:`~mordred.WalkCount.WalkCount` (7, False, False)", 2D
+    1535, , MWC08, ":py:class:`~mordred.WalkCount.WalkCount` (8, False, False)", 2D
+    1536, , MWC09, ":py:class:`~mordred.WalkCount.WalkCount` (9, False, False)", 2D
+    1537, , MWC10, ":py:class:`~mordred.WalkCount.WalkCount` (10, False, False)", 2D
+    1538, , TMWC10, ":py:class:`~mordred.WalkCount.WalkCount` (10, True, False)", 2D
+    1539, , SRW02, ":py:class:`~mordred.WalkCount.WalkCount` (2, False, True)", 2D
+    1540, , SRW03, ":py:class:`~mordred.WalkCount.WalkCount` (3, False, True)", 2D
+    1541, , SRW04, ":py:class:`~mordred.WalkCount.WalkCount` (4, False, True)", 2D
+    1542, , SRW05, ":py:class:`~mordred.WalkCount.WalkCount` (5, False, True)", 2D
+    1543, , SRW06, ":py:class:`~mordred.WalkCount.WalkCount` (6, False, True)", 2D
+    1544, , SRW07, ":py:class:`~mordred.WalkCount.WalkCount` (7, False, True)", 2D
+    1545, , SRW08, ":py:class:`~mordred.WalkCount.WalkCount` (8, False, True)", 2D
+    1546, , SRW09, ":py:class:`~mordred.WalkCount.WalkCount` (9, False, True)", 2D
+    1547, , SRW10, ":py:class:`~mordred.WalkCount.WalkCount` (10, False, True)", 2D
+    1548, , TSRW10, ":py:class:`~mordred.WalkCount.WalkCount` (10, True, True)", 2D
+    1549, :py:mod:`~mordred.Weight`, MW, ":py:class:`~mordred.Weight.Weight` (False)", 2D
+    1550, , AMW, ":py:class:`~mordred.Weight.Weight` (True)", 2D
+    1551, :py:mod:`~mordred.WienerIndex`, WPath, ":py:class:`~mordred.WienerIndex.WienerIndex` (False)", 2D
+    1552, , WPol, ":py:class:`~mordred.WienerIndex.WienerIndex` (True)", 2D
+    1553, :py:mod:`~mordred.ZagrebIndex`, Zagreb1, ":py:class:`~mordred.ZagrebIndex.ZagrebIndex` (1, 1)", 2D
+    1554, , Zagreb2, ":py:class:`~mordred.ZagrebIndex.ZagrebIndex` (2, 1)", 2D
+    1555, , mZagreb1, ":py:class:`~mordred.ZagrebIndex.ZagrebIndex` (1, -1)", 2D
+    1556, , mZagreb2, ":py:class:`~mordred.ZagrebIndex.ZagrebIndex` (2, -1)", 2D

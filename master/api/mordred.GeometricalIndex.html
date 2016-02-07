@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mordred.KappaShapeIndex module &mdash; mordred 0.1.0b0 documentation</title>
+  <title>mordred.GeometricalIndex module &mdash; mordred 0.1.0b0 documentation</title>
   
 
   
@@ -32,8 +32,8 @@
   
     <link rel="top" title="mordred 0.1.0b0 documentation" href="../index.html"/>
         <link rel="up" title="mordred package" href="mordred.html"/>
-        <link rel="next" title="mordred.Lipinski module" href="mordred.Lipinski.html"/>
-        <link rel="prev" title="mordred.InformationContent module" href="mordred.InformationContent.html"/> 
+        <link rel="next" title="mordred.GravitationalIndex module" href="mordred.GravitationalIndex.html"/>
+        <link rel="prev" title="mordred.Framework module" href="mordred.Framework.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -109,11 +109,11 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.ExtendedTopochemicalAtom.html">mordred.ExtendedTopochemicalAtom module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.FragmentComplexity.html">mordred.FragmentComplexity module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.Framework.html">mordred.Framework module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mordred.GeometricalIndex.html">mordred.GeometricalIndex module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">mordred.GeometricalIndex module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.GravitationalIndex.html">mordred.GravitationalIndex module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.HydrogenBond.html">mordred.HydrogenBond module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.InformationContent.html">mordred.InformationContent module</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="">mordred.KappaShapeIndex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.KappaShapeIndex.html">mordred.KappaShapeIndex module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.Lipinski.html">mordred.Lipinski module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.McGowanVolume.html">mordred.McGowanVolume module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.MoeType.html">mordred.MoeType module</a></li>
@@ -174,11 +174,11 @@
       
           <li><a href="mordred.html">mordred package</a> &raquo;</li>
       
-    <li>mordred.KappaShapeIndex module</li>
+    <li>mordred.GeometricalIndex module</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/api/mordred.KappaShapeIndex.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/api/mordred.GeometricalIndex.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -188,141 +188,181 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-mordred.KappaShapeIndex">
-<span id="mordred-kappashapeindex-module"></span><h1>mordred.KappaShapeIndex module<a class="headerlink" href="#module-mordred.KappaShapeIndex" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-mordred.GeometricalIndex">
+<span id="mordred-geometricalindex-module"></span><h1>mordred.GeometricalIndex module<a class="headerlink" href="#module-mordred.GeometricalIndex" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
-<dt id="mordred.KappaShapeIndex.KappaShapeIndex1">
-<em class="property">class </em><code class="descclassname">mordred.KappaShapeIndex.</code><code class="descname">KappaShapeIndex1</code><a class="reference internal" href="../_modules/mordred/_kappa_shape_index.html#KappaShapeIndex1"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.KappaShapeIndex.KappaShapeIndex1" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._kappa_shape_index.KappaShapeIndexBase</span></code></p>
-<p>Kappa shape index 1 descriptor.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">NaN when <span class="math">\(N_{\rm Chi-path} = 0\)</span></td>
-</tr>
-</tbody>
-</table>
+<dt id="mordred.GeometricalIndex.Diameter3D">
+<em class="property">class </em><code class="descclassname">mordred.GeometricalIndex.</code><code class="descname">Diameter3D</code><a class="reference internal" href="../_modules/mordred/_geometrical_index.html#Diameter3D"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.GeometricalIndex.Diameter3D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._geometrical_index.GeometricalIndexBase</span></code></p>
+<p>geometric diameter descriptor.</p>
 <dl class="attribute">
-<dt id="mordred.KappaShapeIndex.KappaShapeIndex1.explicit_hydrogens">
-<code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.KappaShapeIndex.KappaShapeIndex1.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.GeometricalIndex.Diameter3D.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.GeometricalIndex.Diameter3D.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.KappaShapeIndex.KappaShapeIndex1.gasteiger_charges">
-<code class="descname">gasteiger_charges</code><em class="property"> = False</em><a class="headerlink" href="#mordred.KappaShapeIndex.KappaShapeIndex1.gasteiger_charges" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.GeometricalIndex.Diameter3D.gasteiger_charges">
+<code class="descname">gasteiger_charges</code><em class="property"> = False</em><a class="headerlink" href="#mordred.GeometricalIndex.Diameter3D.gasteiger_charges" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.KappaShapeIndex.KappaShapeIndex1.kekulize">
-<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.KappaShapeIndex.KappaShapeIndex1.kekulize" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.GeometricalIndex.Diameter3D.kekulize">
+<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.GeometricalIndex.Diameter3D.kekulize" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.KappaShapeIndex.KappaShapeIndex1.require_3D">
-<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.KappaShapeIndex.KappaShapeIndex1.require_3D" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.GeometricalIndex.Diameter3D.require_3D">
+<code class="descname">require_3D</code><em class="property"> = True</em><a class="headerlink" href="#mordred.GeometricalIndex.Diameter3D.require_3D" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.KappaShapeIndex.KappaShapeIndex1.require_connected">
-<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.KappaShapeIndex.KappaShapeIndex1.require_connected" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.GeometricalIndex.Diameter3D.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.GeometricalIndex.Diameter3D.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.KappaShapeIndex.KappaShapeIndex1.rtype">
-<code class="descname">rtype</code><a class="headerlink" href="#mordred.KappaShapeIndex.KappaShapeIndex1.rtype" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.GeometricalIndex.Diameter3D.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.GeometricalIndex.Diameter3D.rtype" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="class">
-<dt id="mordred.KappaShapeIndex.KappaShapeIndex2">
-<em class="property">class </em><code class="descclassname">mordred.KappaShapeIndex.</code><code class="descname">KappaShapeIndex2</code><a class="reference internal" href="../_modules/mordred/_kappa_shape_index.html#KappaShapeIndex2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.KappaShapeIndex.KappaShapeIndex2" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._kappa_shape_index.KappaShapeIndexBase</span></code></p>
-<p>Kappa shape index 2 descriptor.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">NaN when <span class="math">\(N_{\rm Chi-path} = 0\)</span></td>
-</tr>
-</tbody>
-</table>
+<dt id="mordred.GeometricalIndex.Radius3D">
+<em class="property">class </em><code class="descclassname">mordred.GeometricalIndex.</code><code class="descname">Radius3D</code><a class="reference internal" href="../_modules/mordred/_geometrical_index.html#Radius3D"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.GeometricalIndex.Radius3D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._geometrical_index.GeometricalIndexBase</span></code></p>
+<p>geometric radius descriptor.</p>
 <dl class="attribute">
-<dt id="mordred.KappaShapeIndex.KappaShapeIndex2.explicit_hydrogens">
-<code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.KappaShapeIndex.KappaShapeIndex2.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.GeometricalIndex.Radius3D.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.GeometricalIndex.Radius3D.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.KappaShapeIndex.KappaShapeIndex2.gasteiger_charges">
-<code class="descname">gasteiger_charges</code><em class="property"> = False</em><a class="headerlink" href="#mordred.KappaShapeIndex.KappaShapeIndex2.gasteiger_charges" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.GeometricalIndex.Radius3D.gasteiger_charges">
+<code class="descname">gasteiger_charges</code><em class="property"> = False</em><a class="headerlink" href="#mordred.GeometricalIndex.Radius3D.gasteiger_charges" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.KappaShapeIndex.KappaShapeIndex2.kekulize">
-<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.KappaShapeIndex.KappaShapeIndex2.kekulize" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.GeometricalIndex.Radius3D.kekulize">
+<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.GeometricalIndex.Radius3D.kekulize" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.KappaShapeIndex.KappaShapeIndex2.require_3D">
-<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.KappaShapeIndex.KappaShapeIndex2.require_3D" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.GeometricalIndex.Radius3D.require_3D">
+<code class="descname">require_3D</code><em class="property"> = True</em><a class="headerlink" href="#mordred.GeometricalIndex.Radius3D.require_3D" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.KappaShapeIndex.KappaShapeIndex2.require_connected">
-<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.KappaShapeIndex.KappaShapeIndex2.require_connected" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.GeometricalIndex.Radius3D.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.GeometricalIndex.Radius3D.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.KappaShapeIndex.KappaShapeIndex2.rtype">
-<code class="descname">rtype</code><a class="headerlink" href="#mordred.KappaShapeIndex.KappaShapeIndex2.rtype" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.GeometricalIndex.Radius3D.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.GeometricalIndex.Radius3D.rtype" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="class">
-<dt id="mordred.KappaShapeIndex.KappaShapeIndex3">
-<em class="property">class </em><code class="descclassname">mordred.KappaShapeIndex.</code><code class="descname">KappaShapeIndex3</code><a class="reference internal" href="../_modules/mordred/_kappa_shape_index.html#KappaShapeIndex3"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.KappaShapeIndex.KappaShapeIndex3" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._kappa_shape_index.KappaShapeIndexBase</span></code></p>
-<p>Kappa shape index 3 descriptor.</p>
+<dt id="mordred.GeometricalIndex.GeometricalShapeIndex">
+<em class="property">class </em><code class="descclassname">mordred.GeometricalIndex.</code><code class="descname">GeometricalShapeIndex</code><a class="reference internal" href="../_modules/mordred/_geometrical_index.html#GeometricalShapeIndex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.GeometricalIndex.GeometricalShapeIndex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._geometrical_index.GeometricalIndexBase</span></code></p>
+<p>geometrical shape index descriptor.</p>
+<div class="math">
+\[I_{\rm topo} = \frac{D - R}{R}\]</div>
+<p>where
+<span class="math">\(R\)</span> is geometric radius,
+<span class="math">\(D\)</span> is geometric diameter.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">NaN when <span class="math">\(N_{\rm Chi-path} = 0\)</span></td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">NaN when <span class="math">\(R = 0\)</span></td>
 </tr>
 </tbody>
 </table>
 <dl class="attribute">
-<dt id="mordred.KappaShapeIndex.KappaShapeIndex3.explicit_hydrogens">
-<code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.KappaShapeIndex.KappaShapeIndex3.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.GeometricalIndex.GeometricalShapeIndex.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.GeometricalIndex.GeometricalShapeIndex.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.KappaShapeIndex.KappaShapeIndex3.gasteiger_charges">
-<code class="descname">gasteiger_charges</code><em class="property"> = False</em><a class="headerlink" href="#mordred.KappaShapeIndex.KappaShapeIndex3.gasteiger_charges" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.GeometricalIndex.GeometricalShapeIndex.gasteiger_charges">
+<code class="descname">gasteiger_charges</code><em class="property"> = False</em><a class="headerlink" href="#mordred.GeometricalIndex.GeometricalShapeIndex.gasteiger_charges" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.KappaShapeIndex.KappaShapeIndex3.kekulize">
-<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.KappaShapeIndex.KappaShapeIndex3.kekulize" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.GeometricalIndex.GeometricalShapeIndex.kekulize">
+<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.GeometricalIndex.GeometricalShapeIndex.kekulize" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.KappaShapeIndex.KappaShapeIndex3.require_3D">
-<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.KappaShapeIndex.KappaShapeIndex3.require_3D" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.GeometricalIndex.GeometricalShapeIndex.require_3D">
+<code class="descname">require_3D</code><em class="property"> = True</em><a class="headerlink" href="#mordred.GeometricalIndex.GeometricalShapeIndex.require_3D" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.KappaShapeIndex.KappaShapeIndex3.require_connected">
-<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.KappaShapeIndex.KappaShapeIndex3.require_connected" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.GeometricalIndex.GeometricalShapeIndex.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.GeometricalIndex.GeometricalShapeIndex.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.KappaShapeIndex.KappaShapeIndex3.rtype">
-<code class="descname">rtype</code><a class="headerlink" href="#mordred.KappaShapeIndex.KappaShapeIndex3.rtype" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.GeometricalIndex.GeometricalShapeIndex.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.GeometricalIndex.GeometricalShapeIndex.rtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.GeometricalIndex.PetitjeanIndex3D">
+<em class="property">class </em><code class="descclassname">mordred.GeometricalIndex.</code><code class="descname">PetitjeanIndex3D</code><a class="reference internal" href="../_modules/mordred/_geometrical_index.html#PetitjeanIndex3D"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.GeometricalIndex.PetitjeanIndex3D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._geometrical_index.GeometricalShapeIndex</span></code></p>
+<p>geometric Petitjean index descriptor.</p>
+<div class="math">
+\[I_{\rm Petitjean} = \frac{D - R}{D}\]</div>
+<p>where
+<span class="math">\(R\)</span> is geometric radius,
+<span class="math">\(D\)</span> is geometric diameter.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">NaN when <span class="math">\(D = 0\)</span></td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="mordred.GeometricalIndex.PetitjeanIndex3D.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.GeometricalIndex.PetitjeanIndex3D.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.GeometricalIndex.PetitjeanIndex3D.gasteiger_charges">
+<code class="descname">gasteiger_charges</code><em class="property"> = False</em><a class="headerlink" href="#mordred.GeometricalIndex.PetitjeanIndex3D.gasteiger_charges" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.GeometricalIndex.PetitjeanIndex3D.kekulize">
+<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.GeometricalIndex.PetitjeanIndex3D.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.GeometricalIndex.PetitjeanIndex3D.require_3D">
+<code class="descname">require_3D</code><em class="property"> = True</em><a class="headerlink" href="#mordred.GeometricalIndex.PetitjeanIndex3D.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.GeometricalIndex.PetitjeanIndex3D.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.GeometricalIndex.PetitjeanIndex3D.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.GeometricalIndex.PetitjeanIndex3D.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.GeometricalIndex.PetitjeanIndex3D.rtype" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
 
@@ -337,10 +377,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="mordred.Lipinski.html" class="btn btn-neutral float-right" title="mordred.Lipinski module" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mordred.GravitationalIndex.html" class="btn btn-neutral float-right" title="mordred.GravitationalIndex module" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="mordred.InformationContent.html" class="btn btn-neutral" title="mordred.InformationContent module" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mordred.Framework.html" class="btn btn-neutral" title="mordred.Framework module" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
