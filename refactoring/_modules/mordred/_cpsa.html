@@ -132,12 +132,12 @@
            <div itemprop="articleBody">
             
   <h1>Source code for mordred._cpsa</h1><div class="highlight"><pre>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
 <span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
 <span class="kn">from</span> <span class="nn">._atomic_property</span> <span class="kn">import</span> <span class="n">Rvdw</span><span class="p">,</span> <span class="n">AtomicProperty</span>
 <span class="kn">from</span> <span class="nn">.surface_area</span> <span class="kn">import</span> <span class="n">SurfaceArea</span>
-<span class="kn">from</span> <span class="nn">._util</span> <span class="kn">import</span> <span class="n">conformer_to_numpy</span><span class="p">,</span> <span class="n">atoms_to_numpy</span>
+<span class="kn">from</span> <span class="nn">._util</span> <span class="kn">import</span> <span class="n">atoms_to_numpy</span>
 
 
 <span class="k">class</span> <span class="nc">CPSABase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
@@ -184,10 +184,10 @@
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">conf</span><span class="p">):</span>
         <span class="n">rs</span> <span class="o">=</span> <span class="n">atoms_to_numpy</span><span class="p">(</span><span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">Rvdw</span><span class="p">[</span><span class="n">a</span><span class="o">.</span><span class="n">GetAtomicNum</span><span class="p">()]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_solvent_radius</span><span class="p">,</span> <span class="n">mol</span><span class="p">)</span>
 
-        <span class="n">ps</span> <span class="o">=</span> <span class="n">conformer_to_numpy</span><span class="p">(</span><span class="n">conf</span><span class="p">)</span>
-
-        <span class="n">sa</span> <span class="o">=</span> <span class="n">SurfaceArea</span><span class="p">(</span><span class="n">rs</span><span class="p">,</span> <span class="n">ps</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_level</span><span class="p">)</span>
+        <span class="n">sa</span> <span class="o">=</span> <span class="n">SurfaceArea</span><span class="p">(</span><span class="n">rs</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_level</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">sa</span><span class="o">.</span><span class="n">surface_area</span><span class="p">())</span>
+
+    <span class="n">rtype</span> <span class="o">=</span> <span class="bp">None</span>
 
 
 <span class="k">class</span> <span class="nc">TotalSurfaceArea</span><span class="p">(</span><span class="n">CPSABase</span><span class="p">):</span>
@@ -210,6 +210,8 @@
 
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">charges</span>
+
+    <span class="n">rtype</span> <span class="o">=</span> <span class="bp">None</span>
 
 
 <div class="viewcode-block" id="PNSA"><a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.PNSA">[docs]</a><span class="k">class</span> <span class="nc">PNSA</span><span class="p">(</span><span class="n">VersionCPSABase</span><span class="p">):</span>
@@ -358,6 +360,9 @@
             <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
 
         <span class="n">charges</span> <span class="o">=</span> <span class="n">charges</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_mask</span><span class="p">(</span><span class="n">charges</span><span class="p">)]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">charges</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">0.0</span>
+
         <span class="n">Qmax</span> <span class="o">=</span> <span class="n">charges</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">charges</span><span class="p">))]</span>
 
         <span class="k">return</span> <span class="n">Qmax</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">charges</span><span class="p">)</span></div>
@@ -393,6 +398,8 @@
 
         <span class="n">mask</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mask</span><span class="p">(</span><span class="n">charges</span><span class="p">)</span>
         <span class="n">charges</span> <span class="o">=</span> <span class="n">charges</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">charges</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">0.0</span>
 
         <span class="n">SAmax</span> <span class="o">=</span> <span class="n">SA</span><span class="p">[</span><span class="n">mask</span><span class="p">][</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">charges</span><span class="p">))]</span>
 
