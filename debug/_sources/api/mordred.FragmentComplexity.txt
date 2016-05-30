@@ -1,0 +1,7 @@
+mordred.FragmentComplexity module
+=================================
+
+.. automodule:: mordred.FragmentComplexity
+    :members:
+    :undoc-members:
+    :show-inheritance:
