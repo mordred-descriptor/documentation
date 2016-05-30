@@ -92,7 +92,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.AdjacencyMatrix.html">mordred.AdjacencyMatrix module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.Aromatic.html">mordred.Aromatic module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.AtomCount.html">mordred.AtomCount module</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="">mordred.Autocorrelation module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">mordred.Autocorrelation module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.BCUT.html">mordred.BCUT module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.BalabanJ.html">mordred.BalabanJ module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.BaryszMatrix.html">mordred.BaryszMatrix module</a></li>
@@ -164,7 +164,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -197,16 +197,16 @@
 <p>Autocorrelation of Topological Structure descriptor.</p>
 <p>a.k.a. Moreau-Broto autocorrelation descriptor</p>
 <div class="math">
-\[{\rm ATS}_0 = \sum^{A}_{i=1} {\boldsymbol w}_i^2\]\[{\rm ATS}_k = \frac{1}{2}
+\[ \begin{align}\begin{aligned}{\rm ATS}_0 = \sum^{A}_{i=1} {\boldsymbol w}_i^2\\{\rm ATS}_k = \frac{1}{2}
     \left(
         {\boldsymbol w}^{\rm T} \cdot
         {}^k{\boldsymbol B} \cdot
         {\boldsymbol w}
-    \right)\]\[\begin{split}{}^k{\boldsymbol B} =
+    \right)\\\begin{split}{}^k{\boldsymbol B} =
     \begin{cases}
         1 &amp; (d_{ij} =    k) \\
         0 &amp; (d_{ij} \neq k)
-    \end{cases}\end{split}\]</div>
+    \end{cases}\end{split}\end{aligned}\end{align} \]</div>
 <p>where
 <span class="math">\({\boldsymbol w}\)</span> is atomic property vector,
 <span class="math">\(d_{ij}\)</span> is graph distance(smallest number of bonds between atom i and j).</p>
@@ -216,7 +216,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>order</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; order(<span class="math">\(k\)</span>)</li>
-<li><strong>property</strong> (<em>str, function</em>) &#8211; <a class="reference internal" href="../atomic_prop.html#atomic-properties"><span>atomic properties</span></a></li>
+<li><strong>property</strong> (<em>str, function</em>) &#8211; <a class="reference internal" href="../atomic_prop.html#atomic-properties"><span class="std std-ref">atomic properties</span></a></li>
 </ul>
 </td>
 </tr>

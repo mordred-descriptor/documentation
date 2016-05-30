@@ -106,7 +106,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.DistanceMatrix.html">mordred.DistanceMatrix module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.EState.html">mordred.EState module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.EccentricConnectivityIndex.html">mordred.EccentricConnectivityIndex module</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="">mordred.ExtendedTopochemicalAtom module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">mordred.ExtendedTopochemicalAtom module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.FragmentComplexity.html">mordred.FragmentComplexity module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.Framework.html">mordred.Framework module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.GeometricalIndex.html">mordred.GeometricalIndex module</a></li>
@@ -164,7 +164,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -308,21 +308,21 @@ y(3), or x(4).</p>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._extended_topochemical_atom.EtaBase</span></code></p>
 <p>ETA VEM(valence electron mobile) count descriptor.</p>
 <div class="math">
-\[\beta^{\rm s} = \frac{1}{2} \sum^A_{i=1} \beta^{\rm s}_i\]\[\beta^{\rm s}_i = \sum^A_{j = 1} x_{ij}\sigma_{ij}\]\[\begin{split}x_{ij} = \begin{cases}
+\[ \begin{align}\begin{aligned}\beta^{\rm s} = \frac{1}{2} \sum^A_{i=1} \beta^{\rm s}_i\\\beta^{\rm s}_i = \sum^A_{j = 1} x_{ij}\sigma_{ij}\\\begin{split}x_{ij} = \begin{cases}
     0.5  &amp; \left( \left| \epsilon_i - \epsilon_j \right| \leq 0.3 \right) \\
     0.75 &amp; \left( \left| \epsilon_i - \epsilon_j \right| &gt; 0.3 \right)
-\end{cases}\end{split}\]\[\epsilon_i = - \alpha_i + 0.3 Z^{\rm v}\]</div>
+\end{cases}\end{split}\\\epsilon_i = - \alpha_i + 0.3 Z^{\rm v}\end{aligned}\end{align} \]</div>
 <p>where <span class="math">\(\sigma_{ij}\)</span> is sigma bond count between i and j.</p>
 <div class="math">
 \[\beta^{\rm ns\delta} = \sum^A_{i = 1} \beta^{\rm ns\delta}_i\]</div>
 <p>where <span class="math">\(\beta^{\rm ns\delta}_i\)</span> is
 0.5 if i-th atom is making resonance with an aromatic ring.</p>
 <div class="math">
-\[\beta^{\rm ns} = \frac{1}{2} \sum^A_{i=1} \beta^{\rm ns}_i\]\[\beta^{\rm ns}_i = \sum^A_{j = 1} y_{ij}\pi_{ij} + \beta^{\rm ns\delta}_i\]\[\begin{split}y_{ij} = \begin{cases}
+\[ \begin{align}\begin{aligned}\beta^{\rm ns} = \frac{1}{2} \sum^A_{i=1} \beta^{\rm ns}_i\\\beta^{\rm ns}_i = \sum^A_{j = 1} y_{ij}\pi_{ij} + \beta^{\rm ns\delta}_i\\\begin{split}y_{ij} = \begin{cases}
     2.0 &amp; \left( {\rm ij\ is\ aromatic\ bond} \right) \\
     1.5 &amp; \left( \left| \epsilon_i - \epsilon_j \right| &gt; 0.3 \right) \\
     1.0 &amp; \left( \left| \epsilon_i - \epsilon_j \right| \leq 0.3 \right)
-\end{cases}\end{split}\]</div>
+\end{cases}\end{split}\end{aligned}\end{align} \]</div>
 <p>where <span class="math">\(\pi_{ij}\)</span> is pi bond count between i and j.</p>
 <div class="math">
 \[\beta = \beta^{\rm s} + \beta^{\rm ns}\]</div>
@@ -377,10 +377,10 @@ y(3), or x(4).</p>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._extended_topochemical_atom.EtaBase</span></code></p>
 <p>ETA composite index descriptor.</p>
 <div class="math">
-\[\begin{split}\eta = \sum_{i &lt; j} \left( \frac{\gamma_i \gamma_j}{r_{ij}^2} \right)^{0.5}\end{split}\]\[\gamma_i = \frac{\alpha_i}{\beta_i}\]</div>
+\[ \begin{align}\begin{aligned}\eta = \sum_{i &lt; j} \left( \frac{\gamma_i \gamma_j}{r_{ij}^2} \right)^{0.5}\\\gamma_i = \frac{\alpha_i}{\beta_i}\end{aligned}\end{align} \]</div>
 <p>where <span class="math">\(r_{ij}\)</span> is graph distance.</p>
 <div class="math">
-\[\begin{split}\eta^{\rm local} = \sum_{i &lt; j, r_{ij} = 1} \left( \gamma_i \gamma_j \right)^{0.5}\end{split}\]</div>
+\[\eta^{\rm local} = \sum_{i &lt; j, r_{ij} = 1} \left( \gamma_i \gamma_j \right)^{0.5}\]</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -531,7 +531,7 @@ y(3), or x(4).</p>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._extended_topochemical_atom.EtaBase</span></code></p>
 <p>ETA delta alpha descriptor.</p>
 <div class="math">
-\[\Delta\alpha_{\rm A} = \max\left(\frac{\alpha - \alpha^{\rm R}}{A}, 0\right)\]\[\Delta\alpha_{\rm B} = \max\left(\frac{\alpha^{\rm R} - \alpha}{A}, 0\right)\]</div>
+\[ \begin{align}\begin{aligned}\Delta\alpha_{\rm A} = \max\left(\frac{\alpha - \alpha^{\rm R}}{A}, 0\right)\\\Delta\alpha_{\rm B} = \max\left(\frac{\alpha^{\rm R} - \alpha}{A}, 0\right)\end{aligned}\end{align} \]</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -646,7 +646,7 @@ y(3), or x(4).</p>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._extended_topochemical_atom.EtaBase</span></code></p>
 <p>ETA delta epsilon descriptor.</p>
 <div class="math">
-\[\Delta \epsilon^{\rm A} = \epsilon^1 - \epsilon^3\]\[\Delta \epsilon^{\rm B} = \epsilon^1 - \epsilon^4\]\[\Delta \epsilon^{\rm C} = \epsilon^3 - \epsilon^4\]\[\Delta \epsilon^{\rm D} = \epsilon^2 - \epsilon^5\]</div>
+\[ \begin{align}\begin{aligned}\Delta \epsilon^{\rm A} = \epsilon^1 - \epsilon^3\\\Delta \epsilon^{\rm B} = \epsilon^1 - \epsilon^4\\\Delta \epsilon^{\rm C} = \epsilon^3 - \epsilon^4\\\Delta \epsilon^{\rm D} = \epsilon^2 - \epsilon^5\end{aligned}\end{align} \]</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -772,7 +772,7 @@ y(3), or x(4).</p>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._extended_topochemical_atom.EtaBase</span></code></p>
 <p>ETA delta psi descriptor.</p>
 <div class="math">
-\[\Delta\psi_{\rm A} = \max\left(0.714 - \psi_1, 0\right)\]\[\Delta\psi_{\rm B} = \max\left(\psi_1 - 0.714, 0\right)\]</div>
+\[ \begin{align}\begin{aligned}\Delta\psi_{\rm A} = \max\left(0.714 - \psi_1, 0\right)\\\Delta\psi_{\rm B} = \max\left(\psi_1 - 0.714, 0\right)\end{aligned}\end{align} \]</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
