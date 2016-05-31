@@ -192,13 +192,19 @@
 <span id="mordred-moetype-module"></span><h1>mordred.MoeType module<a class="headerlink" href="#module-mordred.MoeType" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="mordred.MoeType.LabuteASA">
-<em class="property">class </em><code class="descclassname">mordred.MoeType.</code><code class="descname">LabuteASA</code><a class="reference internal" href="../_modules/mordred/_moe_type.html#LabuteASA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.MoeType.LabuteASA" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">mordred.MoeType.</code><code class="descname">LabuteASA</code><a class="reference internal" href="../_modules/mordred/MoeType.html#LabuteASA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.MoeType.LabuteASA" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._base.Descriptor</span></code></p>
 <p>Labute&#8217;s Approximate Surface Area descriptor(rdkit wrapper).</p>
 <dl class="attribute">
 <dt id="mordred.MoeType.LabuteASA.explicit_hydrogens">
 <code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.MoeType.LabuteASA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.MoeType.LabuteASA.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.MoeType.LabuteASA.rtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.MoeType.LabuteASA.kekulize">
@@ -215,18 +221,12 @@
 <code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.MoeType.LabuteASA.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
-<dt id="mordred.MoeType.LabuteASA.rtype">
-<code class="descname">rtype</code><a class="headerlink" href="#mordred.MoeType.LabuteASA.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
-</dd></dl>
-
 </dd></dl>
 
 <dl class="class">
 <dt id="mordred.MoeType.PEOE_VSA">
-<em class="property">class </em><code class="descclassname">mordred.MoeType.</code><code class="descname">PEOE_VSA</code><span class="sig-paren">(</span><em>k=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_moe_type.html#PEOE_VSA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.MoeType.PEOE_VSA" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._moe_type.MoeTypeBase</span></code></p>
+<em class="property">class </em><code class="descclassname">mordred.MoeType.</code><code class="descname">PEOE_VSA</code><span class="sig-paren">(</span><em>k=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/MoeType.html#PEOE_VSA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.MoeType.PEOE_VSA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.MoeType.MoeTypeBase</span></code></p>
 <p>MOE type descriptors using gasteiger charge and surface area contribution(rdkit wrapper).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -237,13 +237,13 @@
 </tbody>
 </table>
 <dl class="attribute">
-<dt id="mordred.MoeType.PEOE_VSA.explicit_hydrogens">
-<code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.MoeType.PEOE_VSA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.MoeType.PEOE_VSA.k_max">
+<code class="descname">k_max</code><em class="property"> = 14</em><a class="headerlink" href="#mordred.MoeType.PEOE_VSA.k_max" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.MoeType.PEOE_VSA.k_max">
-<code class="descname">k_max</code><em class="property"> = 14</em><a class="headerlink" href="#mordred.MoeType.PEOE_VSA.k_max" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.MoeType.PEOE_VSA.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.MoeType.PEOE_VSA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -271,8 +271,8 @@
 
 <dl class="class">
 <dt id="mordred.MoeType.SMR_VSA">
-<em class="property">class </em><code class="descclassname">mordred.MoeType.</code><code class="descname">SMR_VSA</code><span class="sig-paren">(</span><em>k=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_moe_type.html#SMR_VSA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.MoeType.SMR_VSA" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._moe_type.MoeTypeBase</span></code></p>
+<em class="property">class </em><code class="descclassname">mordred.MoeType.</code><code class="descname">SMR_VSA</code><span class="sig-paren">(</span><em>k=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/MoeType.html#SMR_VSA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.MoeType.SMR_VSA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.MoeType.MoeTypeBase</span></code></p>
 <p>MOE type descriptors using Wildman-Crippen MR and surface area contribution(rdkit wrapper).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -283,13 +283,13 @@
 </tbody>
 </table>
 <dl class="attribute">
-<dt id="mordred.MoeType.SMR_VSA.explicit_hydrogens">
-<code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.MoeType.SMR_VSA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.MoeType.SMR_VSA.k_max">
+<code class="descname">k_max</code><em class="property"> = 10</em><a class="headerlink" href="#mordred.MoeType.SMR_VSA.k_max" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.MoeType.SMR_VSA.k_max">
-<code class="descname">k_max</code><em class="property"> = 10</em><a class="headerlink" href="#mordred.MoeType.SMR_VSA.k_max" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.MoeType.SMR_VSA.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.MoeType.SMR_VSA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -317,8 +317,8 @@
 
 <dl class="class">
 <dt id="mordred.MoeType.SlogP_VSA">
-<em class="property">class </em><code class="descclassname">mordred.MoeType.</code><code class="descname">SlogP_VSA</code><span class="sig-paren">(</span><em>k=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_moe_type.html#SlogP_VSA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.MoeType.SlogP_VSA" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._moe_type.MoeTypeBase</span></code></p>
+<em class="property">class </em><code class="descclassname">mordred.MoeType.</code><code class="descname">SlogP_VSA</code><span class="sig-paren">(</span><em>k=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/MoeType.html#SlogP_VSA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.MoeType.SlogP_VSA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.MoeType.MoeTypeBase</span></code></p>
 <p>MOE type descriptors using Wildman-Crippen LogP and surface area contribution(rdkit wrapper).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -329,13 +329,13 @@
 </tbody>
 </table>
 <dl class="attribute">
-<dt id="mordred.MoeType.SlogP_VSA.explicit_hydrogens">
-<code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.MoeType.SlogP_VSA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.MoeType.SlogP_VSA.k_max">
+<code class="descname">k_max</code><em class="property"> = 12</em><a class="headerlink" href="#mordred.MoeType.SlogP_VSA.k_max" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.MoeType.SlogP_VSA.k_max">
-<code class="descname">k_max</code><em class="property"> = 12</em><a class="headerlink" href="#mordred.MoeType.SlogP_VSA.k_max" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.MoeType.SlogP_VSA.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.MoeType.SlogP_VSA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -363,8 +363,8 @@
 
 <dl class="class">
 <dt id="mordred.MoeType.EState_VSA">
-<em class="property">class </em><code class="descclassname">mordred.MoeType.</code><code class="descname">EState_VSA</code><span class="sig-paren">(</span><em>k=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_moe_type.html#EState_VSA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.MoeType.EState_VSA" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._moe_type.MoeTypeBase</span></code></p>
+<em class="property">class </em><code class="descclassname">mordred.MoeType.</code><code class="descname">EState_VSA</code><span class="sig-paren">(</span><em>k=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/MoeType.html#EState_VSA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.MoeType.EState_VSA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.MoeType.MoeTypeBase</span></code></p>
 <p>MOE type descriptors using EState indices and surface area contribution(rdkit wrapper).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -375,13 +375,13 @@
 </tbody>
 </table>
 <dl class="attribute">
-<dt id="mordred.MoeType.EState_VSA.explicit_hydrogens">
-<code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.MoeType.EState_VSA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.MoeType.EState_VSA.k_max">
+<code class="descname">k_max</code><em class="property"> = 11</em><a class="headerlink" href="#mordred.MoeType.EState_VSA.k_max" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.MoeType.EState_VSA.k_max">
-<code class="descname">k_max</code><em class="property"> = 11</em><a class="headerlink" href="#mordred.MoeType.EState_VSA.k_max" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.MoeType.EState_VSA.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.MoeType.EState_VSA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -409,8 +409,8 @@
 
 <dl class="class">
 <dt id="mordred.MoeType.VSA_EState">
-<em class="property">class </em><code class="descclassname">mordred.MoeType.</code><code class="descname">VSA_EState</code><span class="sig-paren">(</span><em>k=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_moe_type.html#VSA_EState"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.MoeType.VSA_EState" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._moe_type.MoeTypeBase</span></code></p>
+<em class="property">class </em><code class="descclassname">mordred.MoeType.</code><code class="descname">VSA_EState</code><span class="sig-paren">(</span><em>k=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/MoeType.html#VSA_EState"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.MoeType.VSA_EState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.MoeType.MoeTypeBase</span></code></p>
 <p>MOE type descriptors using EState indices and surface area contribution(rdkit wrapper).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -421,13 +421,13 @@
 </tbody>
 </table>
 <dl class="attribute">
-<dt id="mordred.MoeType.VSA_EState.explicit_hydrogens">
-<code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.MoeType.VSA_EState.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.MoeType.VSA_EState.k_max">
+<code class="descname">k_max</code><em class="property"> = 10</em><a class="headerlink" href="#mordred.MoeType.VSA_EState.k_max" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.MoeType.VSA_EState.k_max">
-<code class="descname">k_max</code><em class="property"> = 10</em><a class="headerlink" href="#mordred.MoeType.VSA_EState.k_max" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.MoeType.VSA_EState.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.MoeType.VSA_EState.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">

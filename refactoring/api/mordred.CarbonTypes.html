@@ -192,8 +192,8 @@
 <span id="mordred-carbontypes-module"></span><h1>mordred.CarbonTypes module<a class="headerlink" href="#module-mordred.CarbonTypes" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="mordred.CarbonTypes.CarbonTypes">
-<em class="property">class </em><code class="descclassname">mordred.CarbonTypes.</code><code class="descname">CarbonTypes</code><span class="sig-paren">(</span><em>nCarbon=1</em>, <em>SP=3</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_carbon_types.html#CarbonTypes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.CarbonTypes.CarbonTypes" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._carbon_types.CarbonTypesBase</span></code></p>
+<em class="property">class </em><code class="descclassname">mordred.CarbonTypes.</code><code class="descname">CarbonTypes</code><span class="sig-paren">(</span><em>nCarbon=1</em>, <em>SP=3</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/CarbonTypes.html#CarbonTypes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.CarbonTypes.CarbonTypes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.CarbonTypes.CarbonTypesBase</span></code></p>
 <p>carbon types descriptor.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -207,6 +207,12 @@
 </tr>
 </tbody>
 </table>
+<dl class="attribute">
+<dt id="mordred.CarbonTypes.CarbonTypes.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.CarbonTypes.CarbonTypes.rtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a></p>
+</dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CarbonTypes.CarbonTypes.explicit_hydrogens">
 <code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CarbonTypes.CarbonTypes.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
@@ -227,18 +233,12 @@
 <code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CarbonTypes.CarbonTypes.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
-<dt id="mordred.CarbonTypes.CarbonTypes.rtype">
-<code class="descname">rtype</code><a class="headerlink" href="#mordred.CarbonTypes.CarbonTypes.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a></p>
-</dd></dl>
-
 </dd></dl>
 
 <dl class="class">
 <dt id="mordred.CarbonTypes.HybridizationRatio">
-<em class="property">class </em><code class="descclassname">mordred.CarbonTypes.</code><code class="descname">HybridizationRatio</code><a class="reference internal" href="../_modules/mordred/_carbon_types.html#HybridizationRatio"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.CarbonTypes.HybridizationRatio" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._carbon_types.CarbonTypesBase</span></code></p>
+<em class="property">class </em><code class="descclassname">mordred.CarbonTypes.</code><code class="descname">HybridizationRatio</code><a class="reference internal" href="../_modules/mordred/CarbonTypes.html#HybridizationRatio"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.CarbonTypes.HybridizationRatio" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.CarbonTypes.CarbonTypesBase</span></code></p>
 <p>hybridization ratio descriptor.</p>
 <div class="math">
 \[{\rm HybRatio} = \frac{N_{\rm SP3}}{N_{\rm SP2} + N_{\rm SP3}}\]</div>
@@ -250,6 +250,12 @@
 </tr>
 </tbody>
 </table>
+<dl class="attribute">
+<dt id="mordred.CarbonTypes.HybridizationRatio.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.CarbonTypes.HybridizationRatio.rtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CarbonTypes.HybridizationRatio.explicit_hydrogens">
 <code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CarbonTypes.HybridizationRatio.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
@@ -269,12 +275,6 @@
 <dt id="mordred.CarbonTypes.HybridizationRatio.require_connected">
 <code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CarbonTypes.HybridizationRatio.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-<dl class="attribute">
-<dt id="mordred.CarbonTypes.HybridizationRatio.rtype">
-<code class="descname">rtype</code><a class="headerlink" href="#mordred.CarbonTypes.HybridizationRatio.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
-</dd></dl>
 
 </dd></dl>
 

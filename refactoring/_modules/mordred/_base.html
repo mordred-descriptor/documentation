@@ -565,15 +565,16 @@
 
 <span class="sd">    :rtype: [:py:class:`Descriptor`]</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">descs</span> <span class="o">=</span> <span class="p">[]</span>
 
-    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">mdl</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">name</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;_&#39;</span><span class="p">:</span>
-            <span class="k">continue</span>
+    <span class="n">__all__</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">mdl</span><span class="p">,</span> <span class="s1">&#39;__all__&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">__all__</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">__all__</span> <span class="o">=</span> <span class="nb">dir</span><span class="p">(</span><span class="n">mdl</span><span class="p">)</span>
 
-        <span class="n">desc</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">mdl</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">Descriptor</span><span class="o">.</span><span class="n">is_descriptor_class</span><span class="p">(</span><span class="n">desc</span><span class="p">):</span>
-            <span class="n">descs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">desc</span><span class="p">)</span>
+    <span class="n">descs</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">fn</span>
+        <span class="k">for</span> <span class="n">fn</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">mdl</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">__all__</span> <span class="k">if</span> <span class="n">name</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;_&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">Descriptor</span><span class="o">.</span><span class="n">is_descriptor_class</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+    <span class="p">]</span>
 
     <span class="k">def</span> <span class="nf">key_by_def</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
