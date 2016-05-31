@@ -141,7 +141,6 @@
 <span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">maxsize</span>
 <span class="kn">from</span> <span class="nn">types</span> <span class="kn">import</span> <span class="n">ModuleType</span>
 <span class="kn">from</span> <span class="nn">numbers</span> <span class="kn">import</span> <span class="n">Real</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
 <span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span>
 
@@ -150,6 +149,7 @@
 <span class="kn">from</span> <span class="nn">logging</span> <span class="kn">import</span> <span class="n">getLogger</span>
 
 <span class="kn">from</span> <span class="nn">._exception</span> <span class="kn">import</span> <span class="n">FragmentError</span>
+<span class="kn">from</span> <span class="nn">._util</span> <span class="kn">import</span> <span class="n">conformer_to_numpy</span>
 
 
 <div class="viewcode-block" id="Descriptor"><a class="viewcode-back" href="../../api/mordred.html#mordred.Descriptor">[docs]</a><span class="k">class</span> <span class="nc">Descriptor</span><span class="p">(</span><span class="n">six</span><span class="o">.</span><span class="n">with_metaclass</span><span class="p">(</span><span class="n">ABCMeta</span><span class="p">,</span> <span class="nb">object</span><span class="p">)):</span>
@@ -178,18 +178,21 @@
     <span class="k">def</span> <span class="nf">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">hash</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__reduce_ex__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_reduce_ex_version</span><span class="p">))</span>
 
-    <span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="n">l</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__reduce_ex__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_reduce_ex_version</span><span class="p">)</span>
-        <span class="n">r</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">__reduce_ex__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_reduce_ex_version</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">l</span><span class="o">.</span><span class="n">__eq__</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">__compare_by_reduce</span><span class="p">(</span><span class="n">meth</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">compare</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+            <span class="n">l</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__reduce_ex__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_reduce_ex_version</span><span class="p">)</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">__reduce_ex__</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">_reduce_ex_version</span><span class="p">)</span>
+            <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">meth</span><span class="p">)(</span><span class="n">r</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span> <span class="o">==</span> <span class="n">other</span>
+        <span class="k">return</span> <span class="n">compare</span>
 
-    <span class="k">def</span> <span class="nf">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="n">l</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__reduce_ex__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_reduce_ex_version</span><span class="p">)</span>
-        <span class="n">r</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">__reduce_ex__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_reduce_ex_version</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">l</span><span class="o">.</span><span class="n">__lt__</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+    <span class="n">__eq__</span> <span class="o">=</span> <span class="n">__compare_by_reduce</span><span class="p">(</span><span class="s1">&#39;__eq__&#39;</span><span class="p">)</span>
+    <span class="n">__ne__</span> <span class="o">=</span> <span class="n">__compare_by_reduce</span><span class="p">(</span><span class="s1">&#39;__ne__&#39;</span><span class="p">)</span>
+
+    <span class="n">__lt__</span> <span class="o">=</span> <span class="n">__compare_by_reduce</span><span class="p">(</span><span class="s1">&#39;__lt__&#39;</span><span class="p">)</span>
+    <span class="n">__gt__</span> <span class="o">=</span> <span class="n">__compare_by_reduce</span><span class="p">(</span><span class="s1">&#39;__gt__&#39;</span><span class="p">)</span>
+    <span class="n">__le__</span> <span class="o">=</span> <span class="n">__compare_by_reduce</span><span class="p">(</span><span class="s1">&#39;__le__&#39;</span><span class="p">)</span>
+    <span class="n">__ge__</span> <span class="o">=</span> <span class="n">__compare_by_reduce</span><span class="p">(</span><span class="s1">&#39;__ge__&#39;</span><span class="p">)</span>
 
     <span class="n">rtype</span> <span class="o">=</span> <span class="bp">None</span>
 
@@ -237,12 +240,6 @@
         <span class="p">)</span></div></div>
 
 
-<span class="k">def</span> <span class="nf">conformer_to_numpy</span><span class="p">(</span><span class="n">conf</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
-        <span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">conf</span><span class="o">.</span><span class="n">GetAtomPosition</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">conf</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">())]</span>
-    <span class="p">)</span>
-
-
 <span class="k">class</span> <span class="nc">Context</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__reduce_ex__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">version</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">None</span><span class="p">,),</span> <span class="p">{</span>
@@ -259,9 +256,9 @@
     <span class="k">def</span> <span class="nf">from_calculator</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">calc</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">cls</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">calc</span><span class="o">.</span><span class="n">_require_3D</span><span class="p">,</span> <span class="n">calc</span><span class="o">.</span><span class="n">_explicit_hydrogens</span><span class="p">,</span> <span class="n">calc</span><span class="o">.</span><span class="n">_kekulizes</span><span class="p">,</span> <span class="nb">id</span><span class="p">)</span>
 
-    <span class="n">_tf</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">])</span>
+    <span class="n">__tf</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">])</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">require_3D</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">explicit_hydrogens</span><span class="o">=</span><span class="n">_tf</span><span class="p">,</span> <span class="n">kekulizes</span><span class="o">=</span><span class="n">_tf</span><span class="p">,</span> <span class="nb">id</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">require_3D</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">explicit_hydrogens</span><span class="o">=</span><span class="n">__tf</span><span class="p">,</span> <span class="n">kekulizes</span><span class="o">=</span><span class="n">__tf</span><span class="p">,</span> <span class="nb">id</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">mol</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="k">return</span>
 
