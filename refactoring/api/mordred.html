@@ -194,19 +194,19 @@
 <p>modred descriptor calculator.</p>
 <dl class="class">
 <dt id="mordred.Descriptor">
-<em class="property">class </em><code class="descclassname">mordred.</code><code class="descname">Descriptor</code><a class="reference internal" href="../_modules/mordred/_base.html#Descriptor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Descriptor" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">mordred.</code><code class="descname">Descriptor</code><a class="reference internal" href="../_modules/mordred/_base/descriptor.html#Descriptor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Descriptor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
 <p>abstract base class of descriptors.</p>
 <dl class="method">
 <dt id="mordred.Descriptor.calculate">
-<code class="descname">calculate</code><span class="sig-paren">(</span><em>mol</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base.html#Descriptor.calculate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Descriptor.calculate" title="Permalink to this definition">¶</a></dt>
+<code class="descname">calculate</code><span class="sig-paren">(</span><em>mol</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base/descriptor.html#Descriptor.calculate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Descriptor.calculate" title="Permalink to this definition">¶</a></dt>
 <dd><p>calculate descriptor value.</p>
 <p>(abstract method)</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="mordred.Descriptor.dependencies">
-<code class="descname">dependencies</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base.html#Descriptor.dependencies"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Descriptor.dependencies" title="Permalink to this definition">¶</a></dt>
+<code class="descname">dependencies</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base/descriptor.html#Descriptor.dependencies"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Descriptor.dependencies" title="Permalink to this definition">¶</a></dt>
 <dd><p>descriptor dependencies.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -225,7 +225,7 @@
 
 <dl class="classmethod">
 <dt id="mordred.Descriptor.is_descriptor_class">
-<em class="property">classmethod </em><code class="descname">is_descriptor_class</code><span class="sig-paren">(</span><em>desc</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base.html#Descriptor.is_descriptor_class"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Descriptor.is_descriptor_class" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">is_descriptor_class</code><span class="sig-paren">(</span><em>desc</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base/descriptor.html#Descriptor.is_descriptor_class"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Descriptor.is_descriptor_class" title="Permalink to this definition">¶</a></dt>
 <dd><p>check calculatable descriptor class or not.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -244,7 +244,7 @@
 
 <dl class="classmethod">
 <dt id="mordred.Descriptor.preset">
-<em class="property">classmethod </em><code class="descname">preset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base.html#Descriptor.preset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Descriptor.preset" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">preset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base/descriptor.html#Descriptor.preset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Descriptor.preset" title="Permalink to this definition">¶</a></dt>
 <dd><p>generate preset descriptor instances.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -275,7 +275,7 @@
 
 <dl class="class">
 <dt id="mordred.Calculator">
-<em class="property">class </em><code class="descclassname">mordred.</code><code class="descname">Calculator</code><span class="sig-paren">(</span><em>descs=[]</em>, <em>exclude3D=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base.html#Calculator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Calculator" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">mordred.</code><code class="descname">Calculator</code><span class="sig-paren">(</span><em>descs=[]</em>, <em>exclude3D=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base/calculator.html#Calculator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Calculator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
 <p>descriptor calculator.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -295,7 +295,7 @@
 
 <dl class="method">
 <dt id="mordred.Calculator.map">
-<code class="descname">map</code><span class="sig-paren">(</span><em>mols</em>, <em>processes=None</em>, <em>callback=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base.html#Calculator.map"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Calculator.map" title="Permalink to this definition">¶</a></dt>
+<code class="descname">map</code><span class="sig-paren">(</span><em>mols</em>, <em>processes=None</em>, <em>callback=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base/calculator.html#Calculator.map"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Calculator.map" title="Permalink to this definition">¶</a></dt>
 <dd><p>calculate descriptors over mols.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -318,7 +318,7 @@
 
 <dl class="method">
 <dt id="mordred.Calculator.register">
-<code class="descname">register</code><span class="sig-paren">(</span><em>desc</em>, <em>exclude3D=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base.html#Calculator.register"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Calculator.register" title="Permalink to this definition">¶</a></dt>
+<code class="descname">register</code><span class="sig-paren">(</span><em>desc</em>, <em>exclude3D=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base/calculator.html#Calculator.register"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Calculator.register" title="Permalink to this definition">¶</a></dt>
 <dd><p>register descriptors.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -357,7 +357,7 @@
 
 <dl class="function">
 <dt id="mordred.get_descriptors_from_module">
-<code class="descclassname">mordred.</code><code class="descname">get_descriptors_from_module</code><span class="sig-paren">(</span><em>mdl</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base.html#get_descriptors_from_module"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.get_descriptors_from_module" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">mordred.</code><code class="descname">get_descriptors_from_module</code><span class="sig-paren">(</span><em>mdl</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base/calculator.html#get_descriptors_from_module"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.get_descriptors_from_module" title="Permalink to this definition">¶</a></dt>
 <dd><p>get descriptors from module.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
