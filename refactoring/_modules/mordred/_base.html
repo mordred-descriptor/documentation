@@ -82,6 +82,7 @@
             
                 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html#mordred">mordred</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/mordred.html">mordred package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../matrix.html">Matrix aggregating methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../atomic_prop.html">atomic properties</a></li>
@@ -305,7 +306,7 @@
             <span class="s1">&#39;_require_3D&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_require_3D</span><span class="p">,</span>
         <span class="p">}</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">descs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">descs</span><span class="o">=</span><span class="p">[],</span> <span class="n">exclude3D</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_descriptors</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">logger</span> <span class="o">=</span> <span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
 
@@ -313,7 +314,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_kekulizes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_require_3D</span> <span class="o">=</span> <span class="bp">False</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="o">*</span><span class="n">descs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">descs</span><span class="p">,</span> <span class="n">exclude3D</span><span class="o">=</span><span class="n">exclude3D</span><span class="p">)</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">descriptors</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -338,9 +339,12 @@
     <span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_descriptors</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">_register_one</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">desc</span><span class="p">,</span> <span class="n">check_only</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_register_one</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">desc</span><span class="p">,</span> <span class="n">check_only</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">exclude3D</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="n">Descriptor</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;{!r} is not descriptor&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">desc</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">exclude3D</span> <span class="ow">and</span> <span class="n">desc</span><span class="o">.</span><span class="n">require_3D</span><span class="p">:</span>
+            <span class="k">return</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_explicit_hydrogens</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="n">desc</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_kekulizes</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="n">desc</span><span class="o">.</span><span class="n">kekulize</span><span class="p">))</span>
@@ -348,38 +352,37 @@
 
         <span class="k">for</span> <span class="n">dep</span> <span class="ow">in</span> <span class="p">(</span><span class="n">desc</span><span class="o">.</span><span class="n">dependencies</span><span class="p">()</span> <span class="ow">or</span> <span class="p">{})</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dep</span><span class="p">,</span> <span class="n">Descriptor</span><span class="p">):</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_register_one</span><span class="p">(</span><span class="n">dep</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_register_one</span><span class="p">(</span><span class="n">dep</span><span class="p">,</span> <span class="n">check_only</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="ow">not</span> <span class="n">check_only</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_descriptors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">desc</span><span class="p">)</span>
 
-<div class="viewcode-block" id="Calculator.register"><a class="viewcode-back" href="../../api/mordred.html#mordred.Calculator.register">[docs]</a>    <span class="k">def</span> <span class="nf">register</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">descs</span><span class="p">):</span>
+<div class="viewcode-block" id="Calculator.register"><a class="viewcode-back" href="../../api/mordred.html#mordred.Calculator.register">[docs]</a>    <span class="k">def</span> <span class="nf">register</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">desc</span><span class="p">,</span> <span class="n">exclude3D</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">r&quot;&quot;&quot;register descriptors.</span>
 
-<span class="sd">        :type descs: :py:class:`module`,</span>
+<span class="sd">        :type desc: :py:class:`module`,</span>
 <span class="sd">            :py:class:`Descriptor` class/instance or</span>
 <span class="sd">            :py:class:`Iterable`</span>
 
-<span class="sd">        :param descs: descriptors to register</span>
+<span class="sd">        :param desc: descriptors to register</span>
 
 <span class="sd">            * :py:class:`module`: Descriptors in module</span>
 <span class="sd">            * :py:class:`Descriptor` class: use :py:meth:`Descriptor.preset`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">for</span> <span class="n">desc</span> <span class="ow">in</span> <span class="n">descs</span><span class="p">:</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="s1">&#39;__iter__&#39;</span><span class="p">):</span>
-                <span class="k">if</span> <span class="n">Descriptor</span><span class="o">.</span><span class="n">is_descriptor_class</span><span class="p">(</span><span class="n">desc</span><span class="p">):</span>
-                    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">desc</span><span class="o">.</span><span class="n">preset</span><span class="p">():</span>
-                        <span class="bp">self</span><span class="o">.</span><span class="n">_register_one</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="s1">&#39;__iter__&#39;</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">Descriptor</span><span class="o">.</span><span class="n">is_descriptor_class</span><span class="p">(</span><span class="n">desc</span><span class="p">):</span>
+                <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">desc</span><span class="o">.</span><span class="n">preset</span><span class="p">():</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_register_one</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">exclude3D</span><span class="o">=</span><span class="n">exclude3D</span><span class="p">)</span>
 
-                <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="n">ModuleType</span><span class="p">):</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">get_descriptors_from_module</span><span class="p">(</span><span class="n">desc</span><span class="p">))</span>
-
-                <span class="k">else</span><span class="p">:</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">_register_one</span><span class="p">(</span><span class="n">desc</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="n">ModuleType</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">get_descriptors_from_module</span><span class="p">(</span><span class="n">desc</span><span class="p">),</span> <span class="n">exclude3D</span><span class="o">=</span><span class="n">exclude3D</span><span class="p">)</span>
 
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">desc</span><span class="p">:</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">d</span><span class="p">)</span></div>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_register_one</span><span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="n">exclude3D</span><span class="o">=</span><span class="n">exclude3D</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">desc</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">exclude3D</span><span class="o">=</span><span class="n">exclude3D</span><span class="p">)</span></div>
 
     <span class="k">def</span> <span class="nf">_calculate_one</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cxt</span><span class="p">,</span> <span class="n">desc</span><span class="p">,</span> <span class="n">caller</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">desc</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">:</span>
@@ -531,7 +534,12 @@
     <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">calculator</span><span class="o">.</span><span class="n">_calculate</span><span class="p">(</span><span class="n">cxt</span><span class="p">))</span>
 
 
-<div class="viewcode-block" id="all_modules"><a class="viewcode-back" href="../../api/mordred.html#mordred.all_modules">[docs]</a><span class="k">def</span> <span class="nf">all_modules</span><span class="p">():</span>
+<div class="viewcode-block" id="all_descriptors"><a class="viewcode-back" href="../../api/mordred.html#mordred.all_descriptors">[docs]</a><span class="k">def</span> <span class="nf">all_descriptors</span><span class="p">():</span>
+    <span class="sd">r&quot;&quot;&quot;yield all descriptor modules.</span>
+
+<span class="sd">    :returns: all modules</span>
+<span class="sd">    :rtype: :py:class:`Iterator` (:py:class:`Descriptor`)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">base_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">__file__</span><span class="p">)</span>
 
     <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">base_dir</span><span class="p">):</span>
@@ -540,21 +548,6 @@
             <span class="k">continue</span>
 
         <span class="k">yield</span> <span class="n">import_module</span><span class="p">(</span><span class="s1">&#39;.&#39;</span> <span class="o">+</span> <span class="n">name</span><span class="p">,</span> <span class="n">__package__</span><span class="p">)</span></div>
-
-
-<div class="viewcode-block" id="all_descriptors"><a class="viewcode-back" href="../../api/mordred.html#mordred.all_descriptors">[docs]</a><span class="k">def</span> <span class="nf">all_descriptors</span><span class="p">(</span><span class="n">with_3D</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
-    <span class="sd">r&quot;&quot;&quot;yield all descriptors.</span>
-
-<span class="sd">    :returns: all modules</span>
-<span class="sd">    :rtype: :py:class:`Iterator` (:py:class:`Descriptor`)</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="k">for</span> <span class="n">mdl</span> <span class="ow">in</span> <span class="n">all_modules</span><span class="p">():</span>
-        <span class="k">for</span> <span class="n">desc</span> <span class="ow">in</span> <span class="n">get_descriptors_from_module</span><span class="p">(</span><span class="n">mdl</span><span class="p">):</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="n">with_3D</span> <span class="ow">and</span> <span class="n">desc</span><span class="o">.</span><span class="n">require_3D</span> <span class="ow">is</span> <span class="bp">True</span><span class="p">:</span>
-                <span class="k">continue</span>
-
-            <span class="k">yield</span> <span class="n">desc</span></div>
 
 
 <div class="viewcode-block" id="get_descriptors_from_module"><a class="viewcode-back" href="../../api/mordred.html#mordred.get_descriptors_from_module">[docs]</a><span class="k">def</span> <span class="nf">get_descriptors_from_module</span><span class="p">(</span><span class="n">mdl</span><span class="p">):</span>
