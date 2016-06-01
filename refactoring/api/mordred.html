@@ -295,7 +295,7 @@
 
 <dl class="method">
 <dt id="mordred.Calculator.map">
-<code class="descname">map</code><span class="sig-paren">(</span><em>mols</em>, <em>processes=None</em>, <em>callback=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base/calculator.html#Calculator.map"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Calculator.map" title="Permalink to this definition">¶</a></dt>
+<code class="descname">map</code><span class="sig-paren">(</span><em>mols</em>, <em>nproc=None</em>, <em>nmols=None</em>, <em>quiet=False</em>, <em>id=-1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base/calculator.html#Calculator.map"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Calculator.map" title="Permalink to this definition">¶</a></dt>
 <dd><p>calculate descriptors over mols.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -303,9 +303,10 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>mols</strong> (<code class="xref py py-class docutils literal"><span class="pre">Iterable</span></code> (<code class="xref py py-class docutils literal"><span class="pre">Mol</span></code>)) &#8211; moleculars</li>
-<li><strong>processes</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; number of process. None is <a class="reference external" href="https://docs.python.org/library/multiprocessing.html#multiprocessing.cpu_count" title="(in Python v2.7)"><code class="xref py py-func docutils literal"><span class="pre">multiprocessing.cpu_count()</span></code></a></li>
-<li><strong>callback</strong> (<code class="xref py py-class docutils literal"><span class="pre">Callable</span></code> ([scalar])
--&gt; <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; call when calculate finished par molecule</li>
+<li><strong>nproc</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; number of process. None is <a class="reference external" href="https://docs.python.org/library/multiprocessing.html#multiprocessing.cpu_count" title="(in Python v2.7)"><code class="xref py py-func docutils literal"><span class="pre">multiprocessing.cpu_count()</span></code></a></li>
+<li><strong>nmols</strong> (<code class="xref py py-class docutils literal"><span class="pre">None</span></code> or <a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; number of all mols for display progress bar</li>
+<li><strong>quiet</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a>) &#8211; weather display progress bar or not</li>
+<li><strong>id</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; conformer id</li>
 </ul>
 </td>
 </tr>
