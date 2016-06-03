@@ -12,6 +12,7 @@ Subpackages
 .. toctree::
 
     mordred.surface_area
+    mordred.tests
 
 Submodules
 ----------
@@ -65,4 +66,5 @@ Submodules
    mordred.Weight
    mordred.WienerIndex
    mordred.ZagrebIndex
+   mordred.exception
 

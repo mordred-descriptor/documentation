@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mordred package &mdash; mordred 0.1.0 documentation</title>
+  <title>mordred package &mdash; mordred 0.2.0a0 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="mordred 0.1.0 documentation" href="../index.html"/>
+    <link rel="top" title="mordred 0.2.0a0 documentation" href="../index.html"/>
         <link rel="next" title="mordred.surface_area package" href="mordred.surface_area.html"/>
         <link rel="prev" title="Introduction" href="../introduction.html"/> 
 
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                0.1.0
+                0.2.0a0
               </div>
             
           
@@ -87,6 +87,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">mordred package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="mordred.surface_area.html">mordred.surface_area package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.tests.html">mordred.tests package</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a><ul>
@@ -137,6 +138,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.Weight.html">mordred.Weight module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.WienerIndex.html">mordred.WienerIndex module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.ZagrebIndex.html">mordred.ZagrebIndex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.exception.html">mordred.exception module</a></li>
 </ul>
 </li>
 </ul>
@@ -197,6 +199,16 @@
 <em class="property">class </em><code class="descclassname">mordred.</code><code class="descname">Descriptor</code><a class="reference internal" href="../_modules/mordred/_base/descriptor.html#Descriptor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Descriptor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
 <p>abstract base class of descriptors.</p>
+<dl class="attribute">
+<dt id="mordred.Descriptor.as_argument">
+<code class="descname">as_argument</code><a class="headerlink" href="#mordred.Descriptor.as_argument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.Descriptor.as_key">
+<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base/descriptor.html#Descriptor.as_key"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Descriptor.as_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="method">
 <dt id="mordred.Descriptor.calculate">
 <code class="descname">calculate</code><span class="sig-paren">(</span><em>mol</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base/descriptor.html#Descriptor.calculate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Descriptor.calculate" title="Permalink to this definition">¶</a></dt>
@@ -319,6 +331,22 @@
 </dd></dl>
 
 <dl class="method">
+<dt id="mordred.Calculator.pandas">
+<code class="descname">pandas</code><span class="sig-paren">(</span><em>mols</em>, <em>mol_name='mol'</em>, <em>nproc=None</em>, <em>nmols=None</em>, <em>quiet=False</em>, <em>ipynb=False</em>, <em>id=-1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base/calculator.html#Calculator.pandas"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Calculator.pandas" title="Permalink to this definition">¶</a></dt>
+<dd><p>calculate descriptors over mols.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>mol_name</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; molecular column name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><code class="xref py py-class docutils literal"><span class="pre">pandas.DataFrame</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="mordred.Calculator.register">
 <code class="descname">register</code><span class="sig-paren">(</span><em>desc</em>, <em>exclude3D=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base/calculator.html#Calculator.register"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Calculator.register" title="Permalink to this definition">¶</a></dt>
 <dd><p>register descriptors.</p>
@@ -378,6 +406,24 @@
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="mordred.surface_area.html">mordred.surface_area package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.tests.html">mordred.tests package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mordred.tests.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mordred.tests.Dummy.html">mordred.tests.Dummy module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.tests.gen_sdf_file.html">mordred.tests.gen_sdf_file module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.tests.test_ABCIndex.html">mordred.tests.test_ABCIndex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.tests.test_ETA.html">mordred.tests.test_ETA module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.tests.test_SASA.html">mordred.tests.test_SASA module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.tests.test_SLogP.html">mordred.tests.test_SLogP module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.tests.test_VEA.html">mordred.tests.test_VEA module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.tests.test_atomic_property.html">mordred.tests.test_atomic_property module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.tests.test_base.html">mordred.tests.test_base module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.tests.test_by_references.html">mordred.tests.test_by_references module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.tests.test_exceptions.html">mordred.tests.test_exceptions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.tests.test_parallel.html">mordred.tests.test_parallel module</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -432,6 +478,7 @@
 <li class="toctree-l1"><a class="reference internal" href="mordred.Weight.html">mordred.Weight module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mordred.WienerIndex.html">mordred.WienerIndex module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mordred.ZagrebIndex.html">mordred.ZagrebIndex module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.exception.html">mordred.exception module</a></li>
 </ul>
 </div>
 </div>
@@ -478,7 +525,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'0.1.0',
+            VERSION:'0.2.0a0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
