@@ -12,7 +12,6 @@ Submodules
 .. toctree::
 
    mordred.tests.Dummy
-   mordred.tests.gen_sdf_file
    mordred.tests.test_ABCIndex
    mordred.tests.test_ETA
    mordred.tests.test_SASA
