@@ -1,0 +1,7 @@
+mordred.exception module
+========================
+
+.. automodule:: mordred.exception
+    :members:
+    :undoc-members:
+    :show-inheritance:

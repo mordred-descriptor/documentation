@@ -1,0 +1,1164 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>mordred.CPSA module &mdash; mordred 0.2.0a0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="mordred 0.2.0a0 documentation" href="../index.html"/>
+        <link rel="up" title="mordred package" href="mordred.html"/>
+        <link rel="next" title="mordred.CarbonTypes module" href="mordred.CarbonTypes.html"/>
+        <link rel="prev" title="mordred.BondCount module" href="mordred.BondCount.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> mordred
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2.0a0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html#mordred">mordred</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="mordred.html">mordred package</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="mordred.html#subpackages">Subpackages</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="mordred.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="mordred.ABCIndex.html">mordred.ABCIndex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.AcidBase.html">mordred.AcidBase module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.AdjacencyMatrix.html">mordred.AdjacencyMatrix module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.Aromatic.html">mordred.Aromatic module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.AtomCount.html">mordred.AtomCount module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.Autocorrelation.html">mordred.Autocorrelation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.BCUT.html">mordred.BCUT module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.BalabanJ.html">mordred.BalabanJ module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.BaryszMatrix.html">mordred.BaryszMatrix module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.BertzCT.html">mordred.BertzCT module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.BondCount.html">mordred.BondCount module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">mordred.CPSA module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.CarbonTypes.html">mordred.CarbonTypes module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.Chi.html">mordred.Chi module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.Constitutional.html">mordred.Constitutional module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.DetourMatrix.html">mordred.DetourMatrix module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.DistanceMatrix.html">mordred.DistanceMatrix module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.EState.html">mordred.EState module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.EccentricConnectivityIndex.html">mordred.EccentricConnectivityIndex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.ExtendedTopochemicalAtom.html">mordred.ExtendedTopochemicalAtom module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.FragmentComplexity.html">mordred.FragmentComplexity module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.Framework.html">mordred.Framework module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.GeometricalIndex.html">mordred.GeometricalIndex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.GravitationalIndex.html">mordred.GravitationalIndex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.HydrogenBond.html">mordred.HydrogenBond module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.InformationContent.html">mordred.InformationContent module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.KappaShapeIndex.html">mordred.KappaShapeIndex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.Lipinski.html">mordred.Lipinski module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.McGowanVolume.html">mordred.McGowanVolume module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.MoeType.html">mordred.MoeType module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.MolecularDistanceEdge.html">mordred.MolecularDistanceEdge module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.MolecularId.html">mordred.MolecularId module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.MomentOfInertia.html">mordred.MomentOfInertia module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.PathCount.html">mordred.PathCount module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.Polarizability.html">mordred.Polarizability module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.RingCount.html">mordred.RingCount module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.RotatableBond.html">mordred.RotatableBond module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.SLogP.html">mordred.SLogP module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.TopoPSA.html">mordred.TopoPSA module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.TopologicalCharge.html">mordred.TopologicalCharge module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.TopologicalIndex.html">mordred.TopologicalIndex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.VdwVolumeABC.html">mordred.VdwVolumeABC module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.VertexAdjacencyInformation.html">mordred.VertexAdjacencyInformation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.WalkCount.html">mordred.WalkCount module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.Weight.html">mordred.Weight module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.WienerIndex.html">mordred.WienerIndex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.ZagrebIndex.html">mordred.ZagrebIndex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.exception.html">mordred.exception module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../matrix.html">Matrix aggregating methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../atomic_prop.html">atomic properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../descriptors.html">Descriptor List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography.html">bibliography</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">mordred</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="mordred.html">mordred package</a> &raquo;</li>
+      
+    <li>mordred.CPSA module</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/api/mordred.CPSA.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-mordred.CPSA">
+<span id="mordred-cpsa-module"></span><h1>mordred.CPSA module<a class="headerlink" href="#module-mordred.CPSA" title="Permalink to this headline">¶</a></h1>
+<p>charged partial surface area descriptor.</p>
+<dl class="docutils">
+<dt>References</dt>
+<dd><ul class="first last simple">
+<li><a class="reference internal" href="../bibliography.html#ac00220a013" id="id1">[SJ90]</a></li>
+</ul>
+</dd>
+</dl>
+<dl class="class">
+<dt id="mordred.CPSA.PNSA">
+<em class="property">class </em><code class="descclassname">mordred.CPSA.</code><code class="descname">PNSA</code><span class="sig-paren">(</span><em>version=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/CPSA.html#PNSA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.CPSA.PNSA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.CPSA.VersionCPSABase</span></code></p>
+<p>partial negative surface area descriptor.</p>
+<div class="math">
+\[{\rm PNSA}_1 = \sum_{a-} {\rm SA}_a^-\]</div>
+<p>where <span class="math">\(\sum_{a-}\)</span> means sum over negative charged atoms,
+<span class="math">\({\rm SA}_a^-\)</span> is atomic partial surface area.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>version</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; one of <a class="reference internal" href="#mordred.CPSA.PNSA.versions" title="mordred.CPSA.PNSA.versions"><code class="xref py py-attr docutils literal"><span class="pre">versions</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="mordred.CPSA.PNSA.as_argument">
+<code class="descname">as_argument</code><a class="headerlink" href="#mordred.CPSA.PNSA.as_argument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.PNSA.as_key">
+<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.PNSA.as_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.PNSA.coord">
+<code class="descname">coord</code><a class="headerlink" href="#mordred.CPSA.PNSA.coord" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.PNSA.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.PNSA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.PNSA.kekulize">
+<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.PNSA.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.PNSA.mol">
+<code class="descname">mol</code><a class="headerlink" href="#mordred.CPSA.PNSA.mol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.PNSA.require_3D">
+<code class="descname">require_3D</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.PNSA.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.PNSA.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.PNSA.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.PNSA.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.CPSA.PNSA.rtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.PNSA.versions">
+<code class="descname">versions</code><em class="property"> = [1, 2, 3, 4, 5]</em><a class="headerlink" href="#mordred.CPSA.PNSA.versions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.CPSA.PPSA">
+<em class="property">class </em><code class="descclassname">mordred.CPSA.</code><code class="descname">PPSA</code><span class="sig-paren">(</span><em>version=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/CPSA.html#PPSA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.CPSA.PPSA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mordred.CPSA.PNSA" title="mordred.CPSA.PNSA"><code class="xref py py-class docutils literal"><span class="pre">mordred.CPSA.PNSA</span></code></a></p>
+<p>partial positive surface area descriptor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>version</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; one of <a class="reference internal" href="#mordred.CPSA.PPSA.versions" title="mordred.CPSA.PPSA.versions"><code class="xref py py-attr docutils literal"><span class="pre">versions</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="mordred.CPSA.PPSA.as_argument">
+<code class="descname">as_argument</code><a class="headerlink" href="#mordred.CPSA.PPSA.as_argument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.PPSA.as_key">
+<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.PPSA.as_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.PPSA.coord">
+<code class="descname">coord</code><a class="headerlink" href="#mordred.CPSA.PPSA.coord" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.PPSA.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.PPSA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.PPSA.kekulize">
+<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.PPSA.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.PPSA.mol">
+<code class="descname">mol</code><a class="headerlink" href="#mordred.CPSA.PPSA.mol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.PPSA.require_3D">
+<code class="descname">require_3D</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.PPSA.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.PPSA.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.PPSA.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.PPSA.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.CPSA.PPSA.rtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.PPSA.versions">
+<code class="descname">versions</code><em class="property"> = [1, 2, 3, 4, 5]</em><a class="headerlink" href="#mordred.CPSA.PPSA.versions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.CPSA.DPSA">
+<em class="property">class </em><code class="descclassname">mordred.CPSA.</code><code class="descname">DPSA</code><span class="sig-paren">(</span><em>version=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/CPSA.html#DPSA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.CPSA.DPSA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.CPSA.VersionCPSABase</span></code></p>
+<p>difference in charged partial surface area descriptor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>version</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; one of <a class="reference internal" href="#mordred.CPSA.DPSA.versions" title="mordred.CPSA.DPSA.versions"><code class="xref py py-attr docutils literal"><span class="pre">versions</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="mordred.CPSA.DPSA.as_argument">
+<code class="descname">as_argument</code><a class="headerlink" href="#mordred.CPSA.DPSA.as_argument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.DPSA.as_key">
+<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.DPSA.as_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.DPSA.coord">
+<code class="descname">coord</code><a class="headerlink" href="#mordred.CPSA.DPSA.coord" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.DPSA.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.DPSA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.DPSA.kekulize">
+<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.DPSA.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.DPSA.mol">
+<code class="descname">mol</code><a class="headerlink" href="#mordred.CPSA.DPSA.mol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.DPSA.require_3D">
+<code class="descname">require_3D</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.DPSA.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.DPSA.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.DPSA.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.DPSA.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.CPSA.DPSA.rtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.DPSA.versions">
+<code class="descname">versions</code><em class="property"> = [1, 2, 3, 4, 5]</em><a class="headerlink" href="#mordred.CPSA.DPSA.versions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.CPSA.FNSA">
+<em class="property">class </em><code class="descclassname">mordred.CPSA.</code><code class="descname">FNSA</code><span class="sig-paren">(</span><em>version=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/CPSA.html#FNSA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.CPSA.FNSA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.CPSA.VersionCPSABase</span></code></p>
+<p>fractional charged partial negative surface area descriptor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>version</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; one of <a class="reference internal" href="#mordred.CPSA.FNSA.versions" title="mordred.CPSA.FNSA.versions"><code class="xref py py-attr docutils literal"><span class="pre">versions</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="mordred.CPSA.FNSA.as_argument">
+<code class="descname">as_argument</code><a class="headerlink" href="#mordred.CPSA.FNSA.as_argument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.FNSA.as_key">
+<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.FNSA.as_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.FNSA.coord">
+<code class="descname">coord</code><a class="headerlink" href="#mordred.CPSA.FNSA.coord" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.FNSA.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.FNSA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.FNSA.kekulize">
+<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.FNSA.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.FNSA.mol">
+<code class="descname">mol</code><a class="headerlink" href="#mordred.CPSA.FNSA.mol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.FNSA.require_3D">
+<code class="descname">require_3D</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.FNSA.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.FNSA.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.FNSA.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.FNSA.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.CPSA.FNSA.rtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.FNSA.versions">
+<code class="descname">versions</code><em class="property"> = [1, 2, 3, 4, 5]</em><a class="headerlink" href="#mordred.CPSA.FNSA.versions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.CPSA.FPSA">
+<em class="property">class </em><code class="descclassname">mordred.CPSA.</code><code class="descname">FPSA</code><span class="sig-paren">(</span><em>version=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/CPSA.html#FPSA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.CPSA.FPSA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mordred.CPSA.FNSA" title="mordred.CPSA.FNSA"><code class="xref py py-class docutils literal"><span class="pre">mordred.CPSA.FNSA</span></code></a></p>
+<p>fractional charged partial positive surface area descriptor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>version</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; one of <a class="reference internal" href="#mordred.CPSA.FPSA.versions" title="mordred.CPSA.FPSA.versions"><code class="xref py py-attr docutils literal"><span class="pre">versions</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="mordred.CPSA.FPSA.as_argument">
+<code class="descname">as_argument</code><a class="headerlink" href="#mordred.CPSA.FPSA.as_argument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.FPSA.as_key">
+<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.FPSA.as_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.FPSA.coord">
+<code class="descname">coord</code><a class="headerlink" href="#mordred.CPSA.FPSA.coord" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.FPSA.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.FPSA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.FPSA.kekulize">
+<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.FPSA.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.FPSA.mol">
+<code class="descname">mol</code><a class="headerlink" href="#mordred.CPSA.FPSA.mol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.FPSA.require_3D">
+<code class="descname">require_3D</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.FPSA.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.FPSA.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.FPSA.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.FPSA.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.CPSA.FPSA.rtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.FPSA.versions">
+<code class="descname">versions</code><em class="property"> = [1, 2, 3, 4, 5]</em><a class="headerlink" href="#mordred.CPSA.FPSA.versions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.CPSA.WNSA">
+<em class="property">class </em><code class="descclassname">mordred.CPSA.</code><code class="descname">WNSA</code><span class="sig-paren">(</span><em>version=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/CPSA.html#WNSA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.CPSA.WNSA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.CPSA.WxSAMixin</span></code>, <a class="reference internal" href="#mordred.CPSA.FNSA" title="mordred.CPSA.FNSA"><code class="xref py py-class docutils literal"><span class="pre">mordred.CPSA.FNSA</span></code></a></p>
+<p>surface weighted charged partial negative surface area descriptor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>version</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; one of <a class="reference internal" href="#mordred.CPSA.WNSA.versions" title="mordred.CPSA.WNSA.versions"><code class="xref py py-attr docutils literal"><span class="pre">versions</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="mordred.CPSA.WNSA.as_argument">
+<code class="descname">as_argument</code><a class="headerlink" href="#mordred.CPSA.WNSA.as_argument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.WNSA.as_key">
+<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.WNSA.as_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.WNSA.coord">
+<code class="descname">coord</code><a class="headerlink" href="#mordred.CPSA.WNSA.coord" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.WNSA.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.WNSA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.WNSA.kekulize">
+<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.WNSA.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.WNSA.mol">
+<code class="descname">mol</code><a class="headerlink" href="#mordred.CPSA.WNSA.mol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.WNSA.require_3D">
+<code class="descname">require_3D</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.WNSA.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.WNSA.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.WNSA.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.WNSA.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.CPSA.WNSA.rtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.WNSA.versions">
+<code class="descname">versions</code><em class="property"> = [1, 2, 3, 4, 5]</em><a class="headerlink" href="#mordred.CPSA.WNSA.versions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.CPSA.WPSA">
+<em class="property">class </em><code class="descclassname">mordred.CPSA.</code><code class="descname">WPSA</code><span class="sig-paren">(</span><em>version=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/CPSA.html#WPSA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.CPSA.WPSA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.CPSA.WxSAMixin</span></code>, <a class="reference internal" href="#mordred.CPSA.FPSA" title="mordred.CPSA.FPSA"><code class="xref py py-class docutils literal"><span class="pre">mordred.CPSA.FPSA</span></code></a></p>
+<p>surface weighted charged partial positive surface area descriptor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>version</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; one of <a class="reference internal" href="#mordred.CPSA.WPSA.versions" title="mordred.CPSA.WPSA.versions"><code class="xref py py-attr docutils literal"><span class="pre">versions</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="mordred.CPSA.WPSA.as_argument">
+<code class="descname">as_argument</code><a class="headerlink" href="#mordred.CPSA.WPSA.as_argument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.WPSA.as_key">
+<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.WPSA.as_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.WPSA.coord">
+<code class="descname">coord</code><a class="headerlink" href="#mordred.CPSA.WPSA.coord" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.WPSA.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.WPSA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.WPSA.kekulize">
+<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.WPSA.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.WPSA.mol">
+<code class="descname">mol</code><a class="headerlink" href="#mordred.CPSA.WPSA.mol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.WPSA.require_3D">
+<code class="descname">require_3D</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.WPSA.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.WPSA.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.WPSA.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.WPSA.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.CPSA.WPSA.rtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.WPSA.versions">
+<code class="descname">versions</code><em class="property"> = [1, 2, 3, 4, 5]</em><a class="headerlink" href="#mordred.CPSA.WPSA.versions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.CPSA.RNCG">
+<em class="property">class </em><code class="descclassname">mordred.CPSA.</code><code class="descname">RNCG</code><a class="reference internal" href="../_modules/mordred/CPSA.html#RNCG"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.CPSA.RNCG" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.CPSA.CPSABase</span></code></p>
+<p>relative negative charge descriptor.</p>
+<dl class="attribute">
+<dt id="mordred.CPSA.RNCG.require_3D">
+<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.RNCG.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RNCG.as_argument">
+<code class="descname">as_argument</code><a class="headerlink" href="#mordred.CPSA.RNCG.as_argument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.RNCG.as_key">
+<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RNCG.as_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RNCG.coord">
+<code class="descname">coord</code><a class="headerlink" href="#mordred.CPSA.RNCG.coord" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RNCG.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.RNCG.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RNCG.kekulize">
+<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.RNCG.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RNCG.mol">
+<code class="descname">mol</code><a class="headerlink" href="#mordred.CPSA.RNCG.mol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RNCG.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.RNCG.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RNCG.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.CPSA.RNCG.rtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.CPSA.RPCG">
+<em class="property">class </em><code class="descclassname">mordred.CPSA.</code><code class="descname">RPCG</code><a class="reference internal" href="../_modules/mordred/CPSA.html#RPCG"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.CPSA.RPCG" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mordred.CPSA.RNCG" title="mordred.CPSA.RNCG"><code class="xref py py-class docutils literal"><span class="pre">mordred.CPSA.RNCG</span></code></a></p>
+<p>relative positive charge descriptor.</p>
+<dl class="attribute">
+<dt id="mordred.CPSA.RPCG.as_argument">
+<code class="descname">as_argument</code><a class="headerlink" href="#mordred.CPSA.RPCG.as_argument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.RPCG.as_key">
+<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPCG.as_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RPCG.coord">
+<code class="descname">coord</code><a class="headerlink" href="#mordred.CPSA.RPCG.coord" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RPCG.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.RPCG.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RPCG.kekulize">
+<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.RPCG.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RPCG.mol">
+<code class="descname">mol</code><a class="headerlink" href="#mordred.CPSA.RPCG.mol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RPCG.require_3D">
+<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.RPCG.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RPCG.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.RPCG.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RPCG.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.CPSA.RPCG.rtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.CPSA.RNCS">
+<em class="property">class </em><code class="descclassname">mordred.CPSA.</code><code class="descname">RNCS</code><a class="reference internal" href="../_modules/mordred/CPSA.html#RNCS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.CPSA.RNCS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.CPSA.CPSABase</span></code></p>
+<p>relative negative charge surface area descriptor.</p>
+<dl class="attribute">
+<dt id="mordred.CPSA.RNCS.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.CPSA.RNCS.rtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RNCS.as_argument">
+<code class="descname">as_argument</code><a class="headerlink" href="#mordred.CPSA.RNCS.as_argument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.RNCS.as_key">
+<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RNCS.as_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RNCS.coord">
+<code class="descname">coord</code><a class="headerlink" href="#mordred.CPSA.RNCS.coord" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RNCS.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.RNCS.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RNCS.kekulize">
+<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.RNCS.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RNCS.mol">
+<code class="descname">mol</code><a class="headerlink" href="#mordred.CPSA.RNCS.mol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RNCS.require_3D">
+<code class="descname">require_3D</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.RNCS.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RNCS.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.RNCS.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.CPSA.RPCS">
+<em class="property">class </em><code class="descclassname">mordred.CPSA.</code><code class="descname">RPCS</code><a class="reference internal" href="../_modules/mordred/CPSA.html#RPCS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.CPSA.RPCS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mordred.CPSA.RNCS" title="mordred.CPSA.RNCS"><code class="xref py py-class docutils literal"><span class="pre">mordred.CPSA.RNCS</span></code></a></p>
+<p>relative positive charge surface area descriptor.</p>
+<dl class="attribute">
+<dt id="mordred.CPSA.RPCS.as_argument">
+<code class="descname">as_argument</code><a class="headerlink" href="#mordred.CPSA.RPCS.as_argument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.RPCS.as_key">
+<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPCS.as_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RPCS.coord">
+<code class="descname">coord</code><a class="headerlink" href="#mordred.CPSA.RPCS.coord" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RPCS.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.RPCS.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RPCS.kekulize">
+<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.RPCS.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RPCS.mol">
+<code class="descname">mol</code><a class="headerlink" href="#mordred.CPSA.RPCS.mol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RPCS.require_3D">
+<code class="descname">require_3D</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.RPCS.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RPCS.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.RPCS.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RPCS.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.CPSA.RPCS.rtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.CPSA.TASA">
+<em class="property">class </em><code class="descclassname">mordred.CPSA.</code><code class="descname">TASA</code><a class="reference internal" href="../_modules/mordred/CPSA.html#TASA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.CPSA.TASA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.CPSA.CPSABase</span></code></p>
+<p>total hydrophobic surface area descriptor.</p>
+<dl class="attribute">
+<dt id="mordred.CPSA.TASA.as_argument">
+<code class="descname">as_argument</code><a class="headerlink" href="#mordred.CPSA.TASA.as_argument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.TASA.as_key">
+<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.TASA.as_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.TASA.coord">
+<code class="descname">coord</code><a class="headerlink" href="#mordred.CPSA.TASA.coord" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.TASA.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.TASA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.TASA.kekulize">
+<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.TASA.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.TASA.mol">
+<code class="descname">mol</code><a class="headerlink" href="#mordred.CPSA.TASA.mol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.TASA.require_3D">
+<code class="descname">require_3D</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.TASA.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.TASA.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.TASA.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.TASA.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.CPSA.TASA.rtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.CPSA.TPSA">
+<em class="property">class </em><code class="descclassname">mordred.CPSA.</code><code class="descname">TPSA</code><a class="reference internal" href="../_modules/mordred/CPSA.html#TPSA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.CPSA.TPSA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mordred.CPSA.TASA" title="mordred.CPSA.TASA"><code class="xref py py-class docutils literal"><span class="pre">mordred.CPSA.TASA</span></code></a></p>
+<p>total polar surface area descriptor.</p>
+<dl class="attribute">
+<dt id="mordred.CPSA.TPSA.as_argument">
+<code class="descname">as_argument</code><a class="headerlink" href="#mordred.CPSA.TPSA.as_argument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.TPSA.as_key">
+<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.TPSA.as_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.TPSA.coord">
+<code class="descname">coord</code><a class="headerlink" href="#mordred.CPSA.TPSA.coord" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.TPSA.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.TPSA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.TPSA.kekulize">
+<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.TPSA.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.TPSA.mol">
+<code class="descname">mol</code><a class="headerlink" href="#mordred.CPSA.TPSA.mol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.TPSA.require_3D">
+<code class="descname">require_3D</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.TPSA.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.TPSA.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.TPSA.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.TPSA.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.CPSA.TPSA.rtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.CPSA.RASA">
+<em class="property">class </em><code class="descclassname">mordred.CPSA.</code><code class="descname">RASA</code><a class="reference internal" href="../_modules/mordred/CPSA.html#RASA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.CPSA.RASA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.CPSA.CPSABase</span></code></p>
+<p>relative hydrophobic surface area descriptor.</p>
+<dl class="attribute">
+<dt id="mordred.CPSA.RASA.as_argument">
+<code class="descname">as_argument</code><a class="headerlink" href="#mordred.CPSA.RASA.as_argument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.RASA.as_key">
+<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RASA.as_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RASA.coord">
+<code class="descname">coord</code><a class="headerlink" href="#mordred.CPSA.RASA.coord" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RASA.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.RASA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RASA.kekulize">
+<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.RASA.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RASA.mol">
+<code class="descname">mol</code><a class="headerlink" href="#mordred.CPSA.RASA.mol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RASA.require_3D">
+<code class="descname">require_3D</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.RASA.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RASA.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.RASA.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RASA.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.CPSA.RASA.rtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.CPSA.RPSA">
+<em class="property">class </em><code class="descclassname">mordred.CPSA.</code><code class="descname">RPSA</code><a class="reference internal" href="../_modules/mordred/CPSA.html#RPSA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.CPSA.RPSA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mordred.CPSA.RASA" title="mordred.CPSA.RASA"><code class="xref py py-class docutils literal"><span class="pre">mordred.CPSA.RASA</span></code></a></p>
+<p>relative polar surface area descriptor.</p>
+<dl class="attribute">
+<dt id="mordred.CPSA.RPSA.as_argument">
+<code class="descname">as_argument</code><a class="headerlink" href="#mordred.CPSA.RPSA.as_argument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.RPSA.as_key">
+<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPSA.as_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RPSA.coord">
+<code class="descname">coord</code><a class="headerlink" href="#mordred.CPSA.RPSA.coord" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RPSA.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.RPSA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RPSA.kekulize">
+<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.RPSA.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RPSA.mol">
+<code class="descname">mol</code><a class="headerlink" href="#mordred.CPSA.RPSA.mol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RPSA.require_3D">
+<code class="descname">require_3D</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.RPSA.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RPSA.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.RPSA.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RPSA.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.CPSA.RPSA.rtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mordred.CarbonTypes.html" class="btn btn-neutral float-right" title="mordred.CarbonTypes module" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mordred.BondCount.html" class="btn btn-neutral" title="mordred.BondCount module" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Hirotomo Moriwaki.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.2.0a0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

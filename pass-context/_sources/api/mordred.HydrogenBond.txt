@@ -1,0 +1,7 @@
+mordred.HydrogenBond module
+===========================
+
+.. automodule:: mordred.HydrogenBond
+    :members:
+    :undoc-members:
+    :show-inheritance:

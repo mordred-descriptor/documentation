@@ -1,0 +1,7 @@
+mordred.MolecularDistanceEdge module
+====================================
+
+.. automodule:: mordred.MolecularDistanceEdge
+    :members:
+    :undoc-members:
+    :show-inheritance:
