@@ -1,0 +1,7 @@
+mordred.AtomCount module
+========================
+
+.. automodule:: mordred.AtomCount
+    :members:
+    :undoc-members:
+    :show-inheritance:

@@ -1,0 +1,7 @@
+mordred.Autocorrelation module
+==============================
+
+.. automodule:: mordred.Autocorrelation
+    :members:
+    :undoc-members:
+    :show-inheritance:

@@ -1,0 +1,7 @@
+mordred.AdjacencyMatrix module
+==============================
+
+.. automodule:: mordred.AdjacencyMatrix
+    :members:
+    :undoc-members:
+    :show-inheritance:

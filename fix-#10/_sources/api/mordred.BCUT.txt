@@ -1,0 +1,7 @@
+mordred.BCUT module
+===================
+
+.. automodule:: mordred.BCUT
+    :members:
+    :undoc-members:
+    :show-inheritance:

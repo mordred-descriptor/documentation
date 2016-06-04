@@ -1,0 +1,7 @@
+mordred.RotatableBond module
+============================
+
+.. automodule:: mordred.RotatableBond
+    :members:
+    :undoc-members:
+    :show-inheritance:

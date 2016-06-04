@@ -1,0 +1,7 @@
+mordred.WienerIndex module
+==========================
+
+.. automodule:: mordred.WienerIndex
+    :members:
+    :undoc-members:
+    :show-inheritance:
