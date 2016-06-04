@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mordred.Polarizability module &mdash; mordred 0.1.0b0 documentation</title>
+  <title>mordred.Polarizability module &mdash; mordred 0.2.0a0 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="mordred 0.1.0b0 documentation" href="../index.html"/>
+    <link rel="top" title="mordred 0.2.0a0 documentation" href="../index.html"/>
         <link rel="up" title="mordred package" href="mordred.html"/>
         <link rel="next" title="mordred.RingCount module" href="mordred.RingCount.html"/>
         <link rel="prev" title="mordred.PathCount module" href="mordred.PathCount.html"/> 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                0.1.0b0
+                0.2.0a0
               </div>
             
           
@@ -84,6 +84,7 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html#mordred">mordred</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="mordred.html">mordred package</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="mordred.html#subpackages">Subpackages</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="mordred.html#submodules">Submodules</a><ul class="current">
@@ -121,7 +122,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.MolecularId.html">mordred.MolecularId module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.MomentOfInertia.html">mordred.MomentOfInertia module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.PathCount.html">mordred.PathCount module</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="">mordred.Polarizability module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">mordred.Polarizability module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.RingCount.html">mordred.RingCount module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.RotatableBond.html">mordred.RotatableBond module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.SLogP.html">mordred.SLogP module</a></li>
@@ -134,6 +135,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.Weight.html">mordred.Weight module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.WienerIndex.html">mordred.WienerIndex module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.ZagrebIndex.html">mordred.ZagrebIndex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.exception.html">mordred.exception module</a></li>
 </ul>
 </li>
 </ul>
@@ -164,7 +166,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -192,8 +194,8 @@
 <span id="mordred-polarizability-module"></span><h1>mordred.Polarizability module<a class="headerlink" href="#module-mordred.Polarizability" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="mordred.Polarizability.APol">
-<em class="property">class </em><code class="descclassname">mordred.Polarizability.</code><code class="descname">APol</code><span class="sig-paren">(</span><em>use78=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_polarizability.html#APol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Polarizability.APol" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._polarizability.PolarizabilityBase</span></code></p>
+<em class="property">class </em><code class="descclassname">mordred.Polarizability.</code><code class="descname">APol</code><span class="sig-paren">(</span><em>use78=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Polarizability.html#APol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Polarizability.APol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.Polarizability.PolarizabilityBase</span></code></p>
 <p>atomic polarizability descriptor.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -204,13 +206,18 @@
 </tbody>
 </table>
 <dl class="attribute">
-<dt id="mordred.Polarizability.APol.explicit_hydrogens">
-<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.Polarizability.APol.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.Polarizability.APol.as_argument">
+<code class="descname">as_argument</code><a class="headerlink" href="#mordred.Polarizability.APol.as_argument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.Polarizability.APol.as_key">
+<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Polarizability.APol.as_key" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.Polarizability.APol.gasteiger_charges">
-<code class="descname">gasteiger_charges</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Polarizability.APol.gasteiger_charges" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.Polarizability.APol.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.Polarizability.APol.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -238,8 +245,8 @@
 
 <dl class="class">
 <dt id="mordred.Polarizability.BPol">
-<em class="property">class </em><code class="descclassname">mordred.Polarizability.</code><code class="descname">BPol</code><span class="sig-paren">(</span><em>use78=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_polarizability.html#BPol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Polarizability.BPol" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._polarizability.PolarizabilityBase</span></code></p>
+<em class="property">class </em><code class="descclassname">mordred.Polarizability.</code><code class="descname">BPol</code><span class="sig-paren">(</span><em>use78=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Polarizability.html#BPol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Polarizability.BPol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.Polarizability.PolarizabilityBase</span></code></p>
 <p>bond polarizability descriptor.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -250,13 +257,18 @@
 </tbody>
 </table>
 <dl class="attribute">
-<dt id="mordred.Polarizability.BPol.explicit_hydrogens">
-<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.Polarizability.BPol.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.Polarizability.BPol.as_argument">
+<code class="descname">as_argument</code><a class="headerlink" href="#mordred.Polarizability.BPol.as_argument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.Polarizability.BPol.as_key">
+<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Polarizability.BPol.as_key" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.Polarizability.BPol.gasteiger_charges">
-<code class="descname">gasteiger_charges</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Polarizability.BPol.gasteiger_charges" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.Polarizability.BPol.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.Polarizability.BPol.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -325,7 +337,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'0.1.0b0',
+            VERSION:'0.2.0a0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mordred.Autocorrelation module &mdash; mordred 0.1.0b0 documentation</title>
+  <title>mordred.Autocorrelation module &mdash; mordred 0.2.0a0 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="mordred 0.1.0b0 documentation" href="../index.html"/>
+    <link rel="top" title="mordred 0.2.0a0 documentation" href="../index.html"/>
         <link rel="up" title="mordred package" href="mordred.html"/>
         <link rel="next" title="mordred.BCUT module" href="mordred.BCUT.html"/>
         <link rel="prev" title="mordred.AtomCount module" href="mordred.AtomCount.html"/> 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                0.1.0b0
+                0.2.0a0
               </div>
             
           
@@ -84,6 +84,7 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html#mordred">mordred</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="mordred.html">mordred package</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="mordred.html#subpackages">Subpackages</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="mordred.html#submodules">Submodules</a><ul class="current">
@@ -92,7 +93,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.AdjacencyMatrix.html">mordred.AdjacencyMatrix module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.Aromatic.html">mordred.Aromatic module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.AtomCount.html">mordred.AtomCount module</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="">mordred.Autocorrelation module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">mordred.Autocorrelation module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.BCUT.html">mordred.BCUT module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.BalabanJ.html">mordred.BalabanJ module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.BaryszMatrix.html">mordred.BaryszMatrix module</a></li>
@@ -134,6 +135,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.Weight.html">mordred.Weight module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.WienerIndex.html">mordred.WienerIndex module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.ZagrebIndex.html">mordred.ZagrebIndex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.exception.html">mordred.exception module</a></li>
 </ul>
 </li>
 </ul>
@@ -164,7 +166,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -192,21 +194,21 @@
 <span id="mordred-autocorrelation-module"></span><h1>mordred.Autocorrelation module<a class="headerlink" href="#module-mordred.Autocorrelation" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="mordred.Autocorrelation.ATS">
-<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">ATS</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_autocorrelation.html#ATS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.ATS" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._autocorrelation.AutocorrelationBase</span></code></p>
+<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">ATS</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Autocorrelation.html#ATS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.ATS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.Autocorrelation.AutocorrelationBase</span></code></p>
 <p>Autocorrelation of Topological Structure descriptor.</p>
 <p>a.k.a. Moreau-Broto autocorrelation descriptor</p>
 <div class="math">
-\[{\rm ATS}_0 = \sum^{A}_{i=1} {\boldsymbol w}_i^2\]\[{\rm ATS}_k = \frac{1}{2}
+\[ \begin{align}\begin{aligned}{\rm ATS}_0 = \sum^{A}_{i=1} {\boldsymbol w}_i^2\\{\rm ATS}_k = \frac{1}{2}
     \left(
         {\boldsymbol w}^{\rm T} \cdot
         {}^k{\boldsymbol B} \cdot
         {\boldsymbol w}
-    \right)\]\[\begin{split}{}^k{\boldsymbol B} =
+    \right)\\\begin{split}{}^k{\boldsymbol B} =
     \begin{cases}
         1 &amp; (d_{ij} =    k) \\
         0 &amp; (d_{ij} \neq k)
-    \end{cases}\end{split}\]</div>
+    \end{cases}\end{split}\end{aligned}\end{align} \]</div>
 <p>where
 <span class="math">\({\boldsymbol w}\)</span> is atomic property vector,
 <span class="math">\(d_{ij}\)</span> is graph distance(smallest number of bonds between atom i and j).</p>
@@ -216,7 +218,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>order</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; order(<span class="math">\(k\)</span>)</li>
-<li><strong>property</strong> (<em>str, function</em>) &#8211; <a class="reference internal" href="../atomic_prop.html#atomic-properties"><span>atomic properties</span></a></li>
+<li><strong>property</strong> (<em>str, function</em>) &#8211; <a class="reference internal" href="../atomic_prop.html#atomic-properties"><span class="std std-ref">atomic properties</span></a></li>
 </ul>
 </td>
 </tr>
@@ -226,13 +228,18 @@
 </tbody>
 </table>
 <dl class="attribute">
-<dt id="mordred.Autocorrelation.ATS.explicit_hydrogens">
-<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.Autocorrelation.ATS.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.Autocorrelation.ATS.as_argument">
+<code class="descname">as_argument</code><a class="headerlink" href="#mordred.Autocorrelation.ATS.as_argument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.Autocorrelation.ATS.as_key">
+<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Autocorrelation.ATS.as_key" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.Autocorrelation.ATS.gasteiger_charges">
-<code class="descname">gasteiger_charges</code><a class="headerlink" href="#mordred.Autocorrelation.ATS.gasteiger_charges" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.Autocorrelation.ATS.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.Autocorrelation.ATS.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -247,7 +254,7 @@
 
 <dl class="attribute">
 <dt id="mordred.Autocorrelation.ATS.require_connected">
-<code class="descname">require_connected</code><a class="headerlink" href="#mordred.Autocorrelation.ATS.require_connected" title="Permalink to this definition">¶</a></dt>
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Autocorrelation.ATS.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -260,8 +267,8 @@
 
 <dl class="class">
 <dt id="mordred.Autocorrelation.AATS">
-<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">AATS</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_autocorrelation.html#AATS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.AATS" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._autocorrelation.ATS</span></code></p>
+<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">AATS</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Autocorrelation.html#AATS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.AATS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mordred.Autocorrelation.ATS" title="mordred.Autocorrelation.ATS"><code class="xref py py-class docutils literal"><span class="pre">mordred.Autocorrelation.ATS</span></code></a></p>
 <p>averaged ATS descriptor.</p>
 <div class="math">
 \[{\rm AATS}_k = \frac{{\rm ATS}_k}{\Delta_k}\]</div>
@@ -282,13 +289,18 @@
 </tbody>
 </table>
 <dl class="attribute">
-<dt id="mordred.Autocorrelation.AATS.explicit_hydrogens">
-<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.Autocorrelation.AATS.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.Autocorrelation.AATS.as_argument">
+<code class="descname">as_argument</code><a class="headerlink" href="#mordred.Autocorrelation.AATS.as_argument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.Autocorrelation.AATS.as_key">
+<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Autocorrelation.AATS.as_key" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.Autocorrelation.AATS.gasteiger_charges">
-<code class="descname">gasteiger_charges</code><a class="headerlink" href="#mordred.Autocorrelation.AATS.gasteiger_charges" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.Autocorrelation.AATS.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.Autocorrelation.AATS.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -303,7 +315,7 @@
 
 <dl class="attribute">
 <dt id="mordred.Autocorrelation.AATS.require_connected">
-<code class="descname">require_connected</code><a class="headerlink" href="#mordred.Autocorrelation.AATS.require_connected" title="Permalink to this definition">¶</a></dt>
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Autocorrelation.AATS.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -316,8 +328,8 @@
 
 <dl class="class">
 <dt id="mordred.Autocorrelation.ATSC">
-<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">ATSC</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_autocorrelation.html#ATSC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.ATSC" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._autocorrelation.AutocorrelationBase</span></code></p>
+<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">ATSC</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Autocorrelation.html#ATSC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.ATSC" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.Autocorrelation.AutocorrelationBase</span></code></p>
 <p>centered ATS descriptor.</p>
 <p>ATS with <span class="math">\({\boldsymbol w}_{\rm c}\)</span> property</p>
 <div class="math">
@@ -333,13 +345,18 @@
 </tbody>
 </table>
 <dl class="attribute">
-<dt id="mordred.Autocorrelation.ATSC.explicit_hydrogens">
-<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.Autocorrelation.ATSC.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.Autocorrelation.ATSC.as_argument">
+<code class="descname">as_argument</code><a class="headerlink" href="#mordred.Autocorrelation.ATSC.as_argument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.Autocorrelation.ATSC.as_key">
+<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Autocorrelation.ATSC.as_key" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.Autocorrelation.ATSC.gasteiger_charges">
-<code class="descname">gasteiger_charges</code><a class="headerlink" href="#mordred.Autocorrelation.ATSC.gasteiger_charges" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.Autocorrelation.ATSC.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.Autocorrelation.ATSC.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -354,7 +371,7 @@
 
 <dl class="attribute">
 <dt id="mordred.Autocorrelation.ATSC.require_connected">
-<code class="descname">require_connected</code><a class="headerlink" href="#mordred.Autocorrelation.ATSC.require_connected" title="Permalink to this definition">¶</a></dt>
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Autocorrelation.ATSC.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -367,8 +384,8 @@
 
 <dl class="class">
 <dt id="mordred.Autocorrelation.AATSC">
-<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">AATSC</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_autocorrelation.html#AATSC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.AATSC" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._autocorrelation.ATSC</span></code></p>
+<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">AATSC</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Autocorrelation.html#AATSC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.AATSC" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mordred.Autocorrelation.ATSC" title="mordred.Autocorrelation.ATSC"><code class="xref py py-class docutils literal"><span class="pre">mordred.Autocorrelation.ATSC</span></code></a></p>
 <p>averaged ATSC descriptor.</p>
 <div class="math">
 \[{\rm AATSC}_k = \frac{{\rm ATSC}_k}{\Delta_k}\]</div>
@@ -389,13 +406,18 @@
 </tbody>
 </table>
 <dl class="attribute">
-<dt id="mordred.Autocorrelation.AATSC.explicit_hydrogens">
-<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.Autocorrelation.AATSC.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.Autocorrelation.AATSC.as_argument">
+<code class="descname">as_argument</code><a class="headerlink" href="#mordred.Autocorrelation.AATSC.as_argument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.Autocorrelation.AATSC.as_key">
+<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Autocorrelation.AATSC.as_key" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.Autocorrelation.AATSC.gasteiger_charges">
-<code class="descname">gasteiger_charges</code><a class="headerlink" href="#mordred.Autocorrelation.AATSC.gasteiger_charges" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.Autocorrelation.AATSC.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.Autocorrelation.AATSC.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -410,7 +432,7 @@
 
 <dl class="attribute">
 <dt id="mordred.Autocorrelation.AATSC.require_connected">
-<code class="descname">require_connected</code><a class="headerlink" href="#mordred.Autocorrelation.AATSC.require_connected" title="Permalink to this definition">¶</a></dt>
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Autocorrelation.AATSC.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -423,8 +445,8 @@
 
 <dl class="class">
 <dt id="mordred.Autocorrelation.MATS">
-<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">MATS</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_autocorrelation.html#MATS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.MATS" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._autocorrelation.AutocorrelationBase</span></code></p>
+<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">MATS</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Autocorrelation.html#MATS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.MATS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.Autocorrelation.AutocorrelationBase</span></code></p>
 <p>Moran coefficient descriptor.</p>
 <div class="math">
 \[{\rm MATS}_k = \frac{
@@ -447,13 +469,18 @@
 </tbody>
 </table>
 <dl class="attribute">
-<dt id="mordred.Autocorrelation.MATS.explicit_hydrogens">
-<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.Autocorrelation.MATS.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.Autocorrelation.MATS.as_argument">
+<code class="descname">as_argument</code><a class="headerlink" href="#mordred.Autocorrelation.MATS.as_argument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.Autocorrelation.MATS.as_key">
+<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Autocorrelation.MATS.as_key" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.Autocorrelation.MATS.gasteiger_charges">
-<code class="descname">gasteiger_charges</code><a class="headerlink" href="#mordred.Autocorrelation.MATS.gasteiger_charges" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.Autocorrelation.MATS.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.Autocorrelation.MATS.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -468,7 +495,7 @@
 
 <dl class="attribute">
 <dt id="mordred.Autocorrelation.MATS.require_connected">
-<code class="descname">require_connected</code><a class="headerlink" href="#mordred.Autocorrelation.MATS.require_connected" title="Permalink to this definition">¶</a></dt>
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Autocorrelation.MATS.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -481,8 +508,8 @@
 
 <dl class="class">
 <dt id="mordred.Autocorrelation.GATS">
-<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">GATS</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_autocorrelation.html#GATS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.GATS" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._autocorrelation.MATS</span></code></p>
+<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">GATS</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Autocorrelation.html#GATS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.GATS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mordred.Autocorrelation.MATS" title="mordred.Autocorrelation.MATS"><code class="xref py py-class docutils literal"><span class="pre">mordred.Autocorrelation.MATS</span></code></a></p>
 <p>Geary coefficient descriptor.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -500,13 +527,18 @@
 </tbody>
 </table>
 <dl class="attribute">
-<dt id="mordred.Autocorrelation.GATS.explicit_hydrogens">
-<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.Autocorrelation.GATS.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.Autocorrelation.GATS.as_argument">
+<code class="descname">as_argument</code><a class="headerlink" href="#mordred.Autocorrelation.GATS.as_argument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.Autocorrelation.GATS.as_key">
+<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Autocorrelation.GATS.as_key" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.Autocorrelation.GATS.gasteiger_charges">
-<code class="descname">gasteiger_charges</code><a class="headerlink" href="#mordred.Autocorrelation.GATS.gasteiger_charges" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.Autocorrelation.GATS.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.Autocorrelation.GATS.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -521,7 +553,7 @@
 
 <dl class="attribute">
 <dt id="mordred.Autocorrelation.GATS.require_connected">
-<code class="descname">require_connected</code><a class="headerlink" href="#mordred.Autocorrelation.GATS.require_connected" title="Permalink to this definition">¶</a></dt>
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Autocorrelation.GATS.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -575,7 +607,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'0.1.0b0',
+            VERSION:'0.2.0a0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

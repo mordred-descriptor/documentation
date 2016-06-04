@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mordred.DetourMatrix module &mdash; mordred 0.1.0b0 documentation</title>
+  <title>mordred.DetourMatrix module &mdash; mordred 0.2.0a0 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="mordred 0.1.0b0 documentation" href="../index.html"/>
+    <link rel="top" title="mordred 0.2.0a0 documentation" href="../index.html"/>
         <link rel="up" title="mordred package" href="mordred.html"/>
         <link rel="next" title="mordred.DistanceMatrix module" href="mordred.DistanceMatrix.html"/>
         <link rel="prev" title="mordred.Constitutional module" href="mordred.Constitutional.html"/> 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                0.1.0b0
+                0.2.0a0
               </div>
             
           
@@ -84,6 +84,7 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html#mordred">mordred</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="mordred.html">mordred package</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="mordred.html#subpackages">Subpackages</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="mordred.html#submodules">Submodules</a><ul class="current">
@@ -102,7 +103,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.CarbonTypes.html">mordred.CarbonTypes module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.Chi.html">mordred.Chi module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.Constitutional.html">mordred.Constitutional module</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="">mordred.DetourMatrix module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">mordred.DetourMatrix module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.DistanceMatrix.html">mordred.DistanceMatrix module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.EState.html">mordred.EState module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.EccentricConnectivityIndex.html">mordred.EccentricConnectivityIndex module</a></li>
@@ -134,6 +135,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.Weight.html">mordred.Weight module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.WienerIndex.html">mordred.WienerIndex module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.ZagrebIndex.html">mordred.ZagrebIndex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.exception.html">mordred.exception module</a></li>
 </ul>
 </li>
 </ul>
@@ -164,7 +166,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -192,25 +194,36 @@
 <span id="mordred-detourmatrix-module"></span><h1>mordred.DetourMatrix module<a class="headerlink" href="#module-mordred.DetourMatrix" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="mordred.DetourMatrix.DetourMatrix">
-<em class="property">class </em><code class="descclassname">mordred.DetourMatrix.</code><code class="descname">DetourMatrix</code><span class="sig-paren">(</span><em>type='SpMax'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_detour_matrix.html#DetourMatrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.DetourMatrix.DetourMatrix" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._detour_matrix.DetourMatrixBase</span></code></p>
+<em class="property">class </em><code class="descclassname">mordred.DetourMatrix.</code><code class="descname">DetourMatrix</code><span class="sig-paren">(</span><em>type='SpMax'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/DetourMatrix.html#DetourMatrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.DetourMatrix.DetourMatrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.DetourMatrix.DetourMatrixBase</span></code></p>
 <p>detour matrix descriptor.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; <a class="reference internal" href="../matrix.html#matrix-aggregating-methods"><span>Matrix aggregating methods</span></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; <a class="reference internal" href="../matrix.html#matrix-aggregating-methods"><span class="std std-ref">Matrix aggregating methods</span></a></td>
 </tr>
 </tbody>
 </table>
-<dl class="attribute">
-<dt id="mordred.DetourMatrix.DetourMatrix.explicit_hydrogens">
-<code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.DetourMatrix.DetourMatrix.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dl class="method">
+<dt id="mordred.DetourMatrix.DetourMatrix.as_key">
+<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/DetourMatrix.html#DetourMatrix.as_key"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.DetourMatrix.DetourMatrix.as_key" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.DetourMatrix.DetourMatrix.gasteiger_charges">
-<code class="descname">gasteiger_charges</code><em class="property"> = False</em><a class="headerlink" href="#mordred.DetourMatrix.DetourMatrix.gasteiger_charges" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.DetourMatrix.DetourMatrix.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.DetourMatrix.DetourMatrix.rtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.DetourMatrix.DetourMatrix.as_argument">
+<code class="descname">as_argument</code><a class="headerlink" href="#mordred.DetourMatrix.DetourMatrix.as_argument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.DetourMatrix.DetourMatrix.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.DetourMatrix.DetourMatrix.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -228,32 +241,37 @@
 <code class="descname">require_connected</code><em class="property"> = True</em><a class="headerlink" href="#mordred.DetourMatrix.DetourMatrix.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
-<dt id="mordred.DetourMatrix.DetourMatrix.rtype">
-<code class="descname">rtype</code><a class="headerlink" href="#mordred.DetourMatrix.DetourMatrix.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
-</dd></dl>
-
 </dd></dl>
 
 <dl class="class">
 <dt id="mordred.DetourMatrix.DetourIndex">
-<em class="property">class </em><code class="descclassname">mordred.DetourMatrix.</code><code class="descname">DetourIndex</code><a class="reference internal" href="../_modules/mordred/_detour_matrix.html#DetourIndex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.DetourMatrix.DetourIndex" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._detour_matrix.DetourMatrixBase</span></code></p>
+<em class="property">class </em><code class="descclassname">mordred.DetourMatrix.</code><code class="descname">DetourIndex</code><a class="reference internal" href="../_modules/mordred/DetourMatrix.html#DetourIndex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.DetourMatrix.DetourIndex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.DetourMatrix.DetourMatrixBase</span></code></p>
 <p>detour index descriptor.</p>
 <div class="math">
 \[I_{\rm D} = \frac{1}{A} \sum^A_{i=1} \sum^A_{j=1} {\boldsymbol D}_{ij}\]</div>
 <p>where
 <span class="math">\(D\)</span> is detour matrix,
 <span class="math">\(A\)</span> is number of atoms.</p>
+<dl class="method">
+<dt id="mordred.DetourMatrix.DetourIndex.as_key">
+<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/DetourMatrix.html#DetourIndex.as_key"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.DetourMatrix.DetourIndex.as_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.DetourMatrix.DetourIndex.explicit_hydrogens">
 <code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.DetourMatrix.DetourIndex.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.DetourMatrix.DetourIndex.gasteiger_charges">
-<code class="descname">gasteiger_charges</code><em class="property"> = False</em><a class="headerlink" href="#mordred.DetourMatrix.DetourIndex.gasteiger_charges" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.DetourMatrix.DetourIndex.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.DetourMatrix.DetourIndex.rtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.DetourMatrix.DetourIndex.as_argument">
+<code class="descname">as_argument</code><a class="headerlink" href="#mordred.DetourMatrix.DetourIndex.as_argument" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -270,12 +288,6 @@
 <dt id="mordred.DetourMatrix.DetourIndex.require_connected">
 <code class="descname">require_connected</code><em class="property"> = True</em><a class="headerlink" href="#mordred.DetourMatrix.DetourIndex.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-<dl class="attribute">
-<dt id="mordred.DetourMatrix.DetourIndex.rtype">
-<code class="descname">rtype</code><a class="headerlink" href="#mordred.DetourMatrix.DetourIndex.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a></p>
-</dd></dl>
 
 </dd></dl>
 
@@ -322,7 +334,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'0.1.0b0',
+            VERSION:'0.2.0a0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

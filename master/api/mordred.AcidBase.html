@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mordred.AcidBase module &mdash; mordred 0.1.0b0 documentation</title>
+  <title>mordred.AcidBase module &mdash; mordred 0.2.0a0 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="mordred 0.1.0b0 documentation" href="../index.html"/>
+    <link rel="top" title="mordred 0.2.0a0 documentation" href="../index.html"/>
         <link rel="up" title="mordred package" href="mordred.html"/>
         <link rel="next" title="mordred.AdjacencyMatrix module" href="mordred.AdjacencyMatrix.html"/>
         <link rel="prev" title="mordred.ABCIndex module" href="mordred.ABCIndex.html"/> 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                0.1.0b0
+                0.2.0a0
               </div>
             
           
@@ -84,11 +84,12 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html#mordred">mordred</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="mordred.html">mordred package</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="mordred.html#subpackages">Subpackages</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="mordred.html#submodules">Submodules</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="mordred.ABCIndex.html">mordred.ABCIndex module</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="">mordred.AcidBase module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">mordred.AcidBase module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.AdjacencyMatrix.html">mordred.AdjacencyMatrix module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.Aromatic.html">mordred.Aromatic module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.AtomCount.html">mordred.AtomCount module</a></li>
@@ -134,6 +135,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.Weight.html">mordred.Weight module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.WienerIndex.html">mordred.WienerIndex module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.ZagrebIndex.html">mordred.ZagrebIndex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.exception.html">mordred.exception module</a></li>
 </ul>
 </li>
 </ul>
@@ -164,7 +166,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -192,8 +194,8 @@
 <span id="mordred-acidbase-module"></span><h1>mordred.AcidBase module<a class="headerlink" href="#module-mordred.AcidBase" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="mordred.AcidBase.AcidicGroupCount">
-<em class="property">class </em><code class="descclassname">mordred.AcidBase.</code><code class="descname">AcidicGroupCount</code><a class="reference internal" href="../_modules/mordred/_acid_base.html#AcidicGroupCount"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.AcidBase.AcidicGroupCount" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._acid_base.SmartsCountBase</span></code></p>
+<em class="property">class </em><code class="descclassname">mordred.AcidBase.</code><code class="descname">AcidicGroupCount</code><a class="reference internal" href="../_modules/mordred/AcidBase.html#AcidicGroupCount"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.AcidBase.AcidicGroupCount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.AcidBase.SmartsCountBase</span></code></p>
 <p>acidic group count descriptor.</p>
 <dl class="attribute">
 <dt id="mordred.AcidBase.AcidicGroupCount.SMARTS">
@@ -201,13 +203,18 @@
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.AcidBase.AcidicGroupCount.explicit_hydrogens">
-<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.AcidBase.AcidicGroupCount.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.AcidBase.AcidicGroupCount.as_argument">
+<code class="descname">as_argument</code><a class="headerlink" href="#mordred.AcidBase.AcidicGroupCount.as_argument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.AcidBase.AcidicGroupCount.as_key">
+<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.AcidBase.AcidicGroupCount.as_key" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.AcidBase.AcidicGroupCount.gasteiger_charges">
-<code class="descname">gasteiger_charges</code><em class="property"> = False</em><a class="headerlink" href="#mordred.AcidBase.AcidicGroupCount.gasteiger_charges" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.AcidBase.AcidicGroupCount.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.AcidBase.AcidicGroupCount.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -235,8 +242,8 @@
 
 <dl class="class">
 <dt id="mordred.AcidBase.BasicGroupCount">
-<em class="property">class </em><code class="descclassname">mordred.AcidBase.</code><code class="descname">BasicGroupCount</code><a class="reference internal" href="../_modules/mordred/_acid_base.html#BasicGroupCount"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.AcidBase.BasicGroupCount" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._acid_base.SmartsCountBase</span></code></p>
+<em class="property">class </em><code class="descclassname">mordred.AcidBase.</code><code class="descname">BasicGroupCount</code><a class="reference internal" href="../_modules/mordred/AcidBase.html#BasicGroupCount"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.AcidBase.BasicGroupCount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.AcidBase.SmartsCountBase</span></code></p>
 <p>basic group count descriptor.</p>
 <dl class="attribute">
 <dt id="mordred.AcidBase.BasicGroupCount.SMARTS">
@@ -244,13 +251,18 @@
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.AcidBase.BasicGroupCount.explicit_hydrogens">
-<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.AcidBase.BasicGroupCount.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.AcidBase.BasicGroupCount.as_argument">
+<code class="descname">as_argument</code><a class="headerlink" href="#mordred.AcidBase.BasicGroupCount.as_argument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.AcidBase.BasicGroupCount.as_key">
+<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.AcidBase.BasicGroupCount.as_key" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.AcidBase.BasicGroupCount.gasteiger_charges">
-<code class="descname">gasteiger_charges</code><em class="property"> = False</em><a class="headerlink" href="#mordred.AcidBase.BasicGroupCount.gasteiger_charges" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.AcidBase.BasicGroupCount.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.AcidBase.BasicGroupCount.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -319,7 +331,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'0.1.0b0',
+            VERSION:'0.2.0a0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

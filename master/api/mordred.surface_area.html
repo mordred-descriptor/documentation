@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mordred.surface_area package &mdash; mordred 0.1.0b0 documentation</title>
+  <title>mordred.surface_area package &mdash; mordred 0.2.0a0 documentation</title>
   
 
   
@@ -30,9 +30,9 @@
   
 
   
-    <link rel="top" title="mordred 0.1.0b0 documentation" href="../index.html"/>
+    <link rel="top" title="mordred 0.2.0a0 documentation" href="../index.html"/>
         <link rel="up" title="mordred package" href="mordred.html"/>
-        <link rel="next" title="mordred.ABCIndex module" href="mordred.ABCIndex.html"/>
+        <link rel="next" title="mordred.tests package" href="mordred.tests.html"/>
         <link rel="prev" title="mordred package" href="mordred.html"/> 
 
   
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                0.1.0b0
+                0.2.0a0
               </div>
             
           
@@ -84,9 +84,11 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html#mordred">mordred</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="mordred.html">mordred package</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="mordred.html#subpackages">Subpackages</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="">mordred.surface_area package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">mordred.surface_area package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.tests.html">mordred.tests package</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="mordred.html#submodules">Submodules</a></li>
@@ -118,7 +120,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -145,7 +147,7 @@
   <div class="section" id="module-mordred.surface_area">
 <span id="mordred-surface-area-package"></span><h1>mordred.surface_area package<a class="headerlink" href="#module-mordred.surface_area" title="Permalink to this headline">¶</a></h1>
 <p>surface area subpackage.</p>
-<div class="code console highlight-python"><div class="highlight"><pre>$ python -m mordred.surface_area -h
+<div class="code console highlight-default"><div class="highlight"><pre><span></span>$ python -m mordred.surface_area -h
 usage: python -m mordred.surface_area [-h] [-s R] [-l L] FILE
 
 positional arguments:
@@ -218,6 +220,11 @@ optional arguments:
 </table>
 </dd></dl>
 
+<dl class="classmethod">
+<dt id="mordred.surface_area.SurfaceArea.from_pdb">
+<em class="property">classmethod </em><code class="descname">from_pdb</code><span class="sig-paren">(</span><em>pdb</em>, <em>solvent_radius=1.4</em>, <em>level=3</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/surface_area/_sasa.html#SurfaceArea.from_pdb"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.surface_area.SurfaceArea.from_pdb" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="method">
 <dt id="mordred.surface_area.SurfaceArea.surface_area">
 <code class="descname">surface_area</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/surface_area/_sasa.html#SurfaceArea.surface_area"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.surface_area.SurfaceArea.surface_area" title="Permalink to this definition">¶</a></dt>
@@ -243,7 +250,7 @@ optional arguments:
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="mordred.ABCIndex.html" class="btn btn-neutral float-right" title="mordred.ABCIndex module" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mordred.tests.html" class="btn btn-neutral float-right" title="mordred.tests package" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="mordred.html" class="btn btn-neutral" title="mordred package" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -277,7 +284,7 @@ optional arguments:
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'0.1.0b0',
+            VERSION:'0.2.0a0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

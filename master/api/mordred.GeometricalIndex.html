@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mordred.GeometricalIndex module &mdash; mordred 0.1.0b0 documentation</title>
+  <title>mordred.GeometricalIndex module &mdash; mordred 0.2.0a0 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="mordred 0.1.0b0 documentation" href="../index.html"/>
+    <link rel="top" title="mordred 0.2.0a0 documentation" href="../index.html"/>
         <link rel="up" title="mordred package" href="mordred.html"/>
         <link rel="next" title="mordred.GravitationalIndex module" href="mordred.GravitationalIndex.html"/>
         <link rel="prev" title="mordred.Framework module" href="mordred.Framework.html"/> 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                0.1.0b0
+                0.2.0a0
               </div>
             
           
@@ -84,6 +84,7 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html#mordred">mordred</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="mordred.html">mordred package</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="mordred.html#subpackages">Subpackages</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="mordred.html#submodules">Submodules</a><ul class="current">
@@ -109,7 +110,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.ExtendedTopochemicalAtom.html">mordred.ExtendedTopochemicalAtom module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.FragmentComplexity.html">mordred.FragmentComplexity module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.Framework.html">mordred.Framework module</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="">mordred.GeometricalIndex module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">mordred.GeometricalIndex module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.GravitationalIndex.html">mordred.GravitationalIndex module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.HydrogenBond.html">mordred.HydrogenBond module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.InformationContent.html">mordred.InformationContent module</a></li>
@@ -134,6 +135,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.Weight.html">mordred.Weight module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.WienerIndex.html">mordred.WienerIndex module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.ZagrebIndex.html">mordred.ZagrebIndex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.exception.html">mordred.exception module</a></li>
 </ul>
 </li>
 </ul>
@@ -164,7 +166,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -191,56 +193,23 @@
   <div class="section" id="module-mordred.GeometricalIndex">
 <span id="mordred-geometricalindex-module"></span><h1>mordred.GeometricalIndex module<a class="headerlink" href="#module-mordred.GeometricalIndex" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
-<dt id="mordred.GeometricalIndex.Diameter3D">
-<em class="property">class </em><code class="descclassname">mordred.GeometricalIndex.</code><code class="descname">Diameter3D</code><a class="reference internal" href="../_modules/mordred/_geometrical_index.html#Diameter3D"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.GeometricalIndex.Diameter3D" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._geometrical_index.GeometricalIndexBase</span></code></p>
-<p>geometric diameter descriptor.</p>
-<dl class="attribute">
-<dt id="mordred.GeometricalIndex.Diameter3D.explicit_hydrogens">
-<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.GeometricalIndex.Diameter3D.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="mordred.GeometricalIndex.Diameter3D.gasteiger_charges">
-<code class="descname">gasteiger_charges</code><em class="property"> = False</em><a class="headerlink" href="#mordred.GeometricalIndex.Diameter3D.gasteiger_charges" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="mordred.GeometricalIndex.Diameter3D.kekulize">
-<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.GeometricalIndex.Diameter3D.kekulize" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="mordred.GeometricalIndex.Diameter3D.require_3D">
-<code class="descname">require_3D</code><em class="property"> = True</em><a class="headerlink" href="#mordred.GeometricalIndex.Diameter3D.require_3D" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="mordred.GeometricalIndex.Diameter3D.require_connected">
-<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.GeometricalIndex.Diameter3D.require_connected" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="mordred.GeometricalIndex.Diameter3D.rtype">
-<code class="descname">rtype</code><a class="headerlink" href="#mordred.GeometricalIndex.Diameter3D.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
 <dt id="mordred.GeometricalIndex.Radius3D">
-<em class="property">class </em><code class="descclassname">mordred.GeometricalIndex.</code><code class="descname">Radius3D</code><a class="reference internal" href="../_modules/mordred/_geometrical_index.html#Radius3D"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.GeometricalIndex.Radius3D" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._geometrical_index.GeometricalIndexBase</span></code></p>
+<em class="property">class </em><code class="descclassname">mordred.GeometricalIndex.</code><code class="descname">Radius3D</code><a class="reference internal" href="../_modules/mordred/GeometricalIndex.html#Radius3D"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.GeometricalIndex.Radius3D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.GeometricalIndex.GeometricalIndexBase</span></code></p>
 <p>geometric radius descriptor.</p>
+<dl class="attribute">
+<dt id="mordred.GeometricalIndex.Radius3D.as_argument">
+<code class="descname">as_argument</code><a class="headerlink" href="#mordred.GeometricalIndex.Radius3D.as_argument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.GeometricalIndex.Radius3D.as_key">
+<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.GeometricalIndex.Radius3D.as_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.GeometricalIndex.Radius3D.explicit_hydrogens">
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.GeometricalIndex.Radius3D.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="mordred.GeometricalIndex.Radius3D.gasteiger_charges">
-<code class="descname">gasteiger_charges</code><em class="property"> = False</em><a class="headerlink" href="#mordred.GeometricalIndex.Radius3D.gasteiger_charges" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -267,9 +236,52 @@
 </dd></dl>
 
 <dl class="class">
+<dt id="mordred.GeometricalIndex.Diameter3D">
+<em class="property">class </em><code class="descclassname">mordred.GeometricalIndex.</code><code class="descname">Diameter3D</code><a class="reference internal" href="../_modules/mordred/GeometricalIndex.html#Diameter3D"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.GeometricalIndex.Diameter3D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.GeometricalIndex.GeometricalIndexBase</span></code></p>
+<p>geometric diameter descriptor.</p>
+<dl class="attribute">
+<dt id="mordred.GeometricalIndex.Diameter3D.as_argument">
+<code class="descname">as_argument</code><a class="headerlink" href="#mordred.GeometricalIndex.Diameter3D.as_argument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.GeometricalIndex.Diameter3D.as_key">
+<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.GeometricalIndex.Diameter3D.as_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.GeometricalIndex.Diameter3D.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.GeometricalIndex.Diameter3D.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.GeometricalIndex.Diameter3D.kekulize">
+<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.GeometricalIndex.Diameter3D.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.GeometricalIndex.Diameter3D.require_3D">
+<code class="descname">require_3D</code><em class="property"> = True</em><a class="headerlink" href="#mordred.GeometricalIndex.Diameter3D.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.GeometricalIndex.Diameter3D.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.GeometricalIndex.Diameter3D.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.GeometricalIndex.Diameter3D.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.GeometricalIndex.Diameter3D.rtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
 <dt id="mordred.GeometricalIndex.GeometricalShapeIndex">
-<em class="property">class </em><code class="descclassname">mordred.GeometricalIndex.</code><code class="descname">GeometricalShapeIndex</code><a class="reference internal" href="../_modules/mordred/_geometrical_index.html#GeometricalShapeIndex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.GeometricalIndex.GeometricalShapeIndex" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._geometrical_index.GeometricalIndexBase</span></code></p>
+<em class="property">class </em><code class="descclassname">mordred.GeometricalIndex.</code><code class="descname">GeometricalShapeIndex</code><a class="reference internal" href="../_modules/mordred/GeometricalIndex.html#GeometricalShapeIndex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.GeometricalIndex.GeometricalShapeIndex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.GeometricalIndex.GeometricalIndexBase</span></code></p>
 <p>geometrical shape index descriptor.</p>
 <div class="math">
 \[I_{\rm topo} = \frac{D - R}{R}\]</div>
@@ -285,13 +297,18 @@
 </tbody>
 </table>
 <dl class="attribute">
-<dt id="mordred.GeometricalIndex.GeometricalShapeIndex.explicit_hydrogens">
-<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.GeometricalIndex.GeometricalShapeIndex.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.GeometricalIndex.GeometricalShapeIndex.as_argument">
+<code class="descname">as_argument</code><a class="headerlink" href="#mordred.GeometricalIndex.GeometricalShapeIndex.as_argument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.GeometricalIndex.GeometricalShapeIndex.as_key">
+<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.GeometricalIndex.GeometricalShapeIndex.as_key" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.GeometricalIndex.GeometricalShapeIndex.gasteiger_charges">
-<code class="descname">gasteiger_charges</code><em class="property"> = False</em><a class="headerlink" href="#mordred.GeometricalIndex.GeometricalShapeIndex.gasteiger_charges" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.GeometricalIndex.GeometricalShapeIndex.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.GeometricalIndex.GeometricalShapeIndex.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -319,8 +336,8 @@
 
 <dl class="class">
 <dt id="mordred.GeometricalIndex.PetitjeanIndex3D">
-<em class="property">class </em><code class="descclassname">mordred.GeometricalIndex.</code><code class="descname">PetitjeanIndex3D</code><a class="reference internal" href="../_modules/mordred/_geometrical_index.html#PetitjeanIndex3D"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.GeometricalIndex.PetitjeanIndex3D" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._geometrical_index.GeometricalShapeIndex</span></code></p>
+<em class="property">class </em><code class="descclassname">mordred.GeometricalIndex.</code><code class="descname">PetitjeanIndex3D</code><a class="reference internal" href="../_modules/mordred/GeometricalIndex.html#PetitjeanIndex3D"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.GeometricalIndex.PetitjeanIndex3D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mordred.GeometricalIndex.GeometricalShapeIndex" title="mordred.GeometricalIndex.GeometricalShapeIndex"><code class="xref py py-class docutils literal"><span class="pre">mordred.GeometricalIndex.GeometricalShapeIndex</span></code></a></p>
 <p>geometric Petitjean index descriptor.</p>
 <div class="math">
 \[I_{\rm Petitjean} = \frac{D - R}{D}\]</div>
@@ -336,13 +353,18 @@
 </tbody>
 </table>
 <dl class="attribute">
-<dt id="mordred.GeometricalIndex.PetitjeanIndex3D.explicit_hydrogens">
-<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.GeometricalIndex.PetitjeanIndex3D.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.GeometricalIndex.PetitjeanIndex3D.as_argument">
+<code class="descname">as_argument</code><a class="headerlink" href="#mordred.GeometricalIndex.PetitjeanIndex3D.as_argument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.GeometricalIndex.PetitjeanIndex3D.as_key">
+<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.GeometricalIndex.PetitjeanIndex3D.as_key" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.GeometricalIndex.PetitjeanIndex3D.gasteiger_charges">
-<code class="descname">gasteiger_charges</code><em class="property"> = False</em><a class="headerlink" href="#mordred.GeometricalIndex.PetitjeanIndex3D.gasteiger_charges" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.GeometricalIndex.PetitjeanIndex3D.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.GeometricalIndex.PetitjeanIndex3D.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -411,7 +433,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'0.1.0b0',
+            VERSION:'0.2.0a0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

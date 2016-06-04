@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mordred.DistanceMatrix module &mdash; mordred 0.1.0b0 documentation</title>
+  <title>mordred.DistanceMatrix module &mdash; mordred 0.2.0a0 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="mordred 0.1.0b0 documentation" href="../index.html"/>
+    <link rel="top" title="mordred 0.2.0a0 documentation" href="../index.html"/>
         <link rel="up" title="mordred package" href="mordred.html"/>
         <link rel="next" title="mordred.EState module" href="mordred.EState.html"/>
         <link rel="prev" title="mordred.DetourMatrix module" href="mordred.DetourMatrix.html"/> 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                0.1.0b0
+                0.2.0a0
               </div>
             
           
@@ -84,6 +84,7 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html#mordred">mordred</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="mordred.html">mordred package</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="mordred.html#subpackages">Subpackages</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="mordred.html#submodules">Submodules</a><ul class="current">
@@ -103,7 +104,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.Chi.html">mordred.Chi module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.Constitutional.html">mordred.Constitutional module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.DetourMatrix.html">mordred.DetourMatrix module</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="">mordred.DistanceMatrix module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">mordred.DistanceMatrix module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.EState.html">mordred.EState module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.EccentricConnectivityIndex.html">mordred.EccentricConnectivityIndex module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.ExtendedTopochemicalAtom.html">mordred.ExtendedTopochemicalAtom module</a></li>
@@ -134,6 +135,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.Weight.html">mordred.Weight module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.WienerIndex.html">mordred.WienerIndex module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.ZagrebIndex.html">mordred.ZagrebIndex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.exception.html">mordred.exception module</a></li>
 </ul>
 </li>
 </ul>
@@ -164,7 +166,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -192,14 +194,14 @@
 <span id="mordred-distancematrix-module"></span><h1>mordred.DistanceMatrix module<a class="headerlink" href="#module-mordred.DistanceMatrix" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="mordred.DistanceMatrix.DistanceMatrix">
-<em class="property">class </em><code class="descclassname">mordred.DistanceMatrix.</code><code class="descname">DistanceMatrix</code><span class="sig-paren">(</span><em>type='SpMax'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_distance_matrix.html#DistanceMatrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.DistanceMatrix.DistanceMatrix" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._base.Descriptor</span></code></p>
+<em class="property">class </em><code class="descclassname">mordred.DistanceMatrix.</code><code class="descname">DistanceMatrix</code><span class="sig-paren">(</span><em>type='SpMax'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/DistanceMatrix.html#DistanceMatrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.DistanceMatrix.DistanceMatrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._base.descriptor.Descriptor</span></code></p>
 <p>distance matrix descriptor.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; <a class="reference internal" href="../matrix.html#matrix-aggregating-methods"><span>Matrix aggregating methods</span></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; <a class="reference internal" href="../matrix.html#matrix-aggregating-methods"><span class="std std-ref">Matrix aggregating methods</span></a></td>
 </tr>
 </tbody>
 </table>
@@ -208,9 +210,20 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.DistanceMatrix.DistanceMatrix.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.DistanceMatrix.DistanceMatrix.as_key">
+<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/DistanceMatrix.html#DistanceMatrix.as_key"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.DistanceMatrix.DistanceMatrix.as_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
-<dt id="mordred.DistanceMatrix.DistanceMatrix.gasteiger_charges">
-<code class="descname">gasteiger_charges</code><em class="property"> = False</em><a class="headerlink" href="#mordred.DistanceMatrix.DistanceMatrix.gasteiger_charges" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.DistanceMatrix.DistanceMatrix.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.DistanceMatrix.DistanceMatrix.rtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.DistanceMatrix.DistanceMatrix.as_argument">
+<code class="descname">as_argument</code><a class="headerlink" href="#mordred.DistanceMatrix.DistanceMatrix.as_argument" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -227,12 +240,6 @@
 <dt id="mordred.DistanceMatrix.DistanceMatrix.require_connected">
 <code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.DistanceMatrix.DistanceMatrix.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-<dl class="attribute">
-<dt id="mordred.DistanceMatrix.DistanceMatrix.rtype">
-<code class="descname">rtype</code><a class="headerlink" href="#mordred.DistanceMatrix.DistanceMatrix.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
-</dd></dl>
 
 </dd></dl>
 
@@ -279,7 +286,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'0.1.0b0',
+            VERSION:'0.2.0a0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
