@@ -141,6 +141,8 @@
 
 
 <span class="k">class</span> <span class="nc">PolarizabilityBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="s1">&#39;_use78&#39;</span><span class="p">,</span>
+
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="k">yield</span> <span class="n">cls</span><span class="p">()</span>
@@ -166,8 +168,7 @@
 <span class="sd">    :type use78: bool</span>
 <span class="sd">    :param use78: use old atomic polarizability data</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_use78&#39;</span><span class="p">,)</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_table</span><span class="p">()</span>
@@ -180,8 +181,7 @@
 <span class="sd">    :type use78: bool</span>
 <span class="sd">    :param use78: use old atomic polarizability data</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_use78&#39;</span><span class="p">,)</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_table</span><span class="p">()</span>

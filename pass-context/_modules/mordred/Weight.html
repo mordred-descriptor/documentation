@@ -149,7 +149,7 @@
 <span class="sd">    :type averaged: bool</span>
 <span class="sd">    :param averaged: averaged by number of atom</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_averaged&#39;</span><span class="p">,)</span>
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">True</span>
 
     <span class="nd">@classmethod</span>
@@ -159,8 +159,6 @@
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;AMW&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span> <span class="k">else</span> <span class="s1">&#39;MW&#39;</span>
-
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_averaged&#39;</span><span class="p">,)</span>
 
 <div class="viewcode-block" id="Weight.as_key"><a class="viewcode-back" href="../../api/mordred.Weight.html#mordred.Weight.Weight.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span><span class="p">,)</span></div>

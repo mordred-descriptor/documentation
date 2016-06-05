@@ -142,6 +142,7 @@
 
 
 <span class="k">class</span> <span class="nc">TopologicalIndexBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
 
     <span class="nd">@classmethod</span>
@@ -156,7 +157,6 @@
 
 <div class="viewcode-block" id="Radius"><a class="viewcode-back" href="../../api/mordred.TopologicalIndex.html#mordred.TopologicalIndex.Radius">[docs]</a><span class="k">class</span> <span class="nc">Radius</span><span class="p">(</span><span class="n">TopologicalIndexBase</span><span class="p">):</span>
     <span class="sd">r&quot;&quot;&quot;radius descriptor.&quot;&quot;&quot;</span>
-
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -171,7 +171,6 @@
 
 <div class="viewcode-block" id="Diameter"><a class="viewcode-back" href="../../api/mordred.TopologicalIndex.html#mordred.TopologicalIndex.Diameter">[docs]</a><span class="k">class</span> <span class="nc">Diameter</span><span class="p">(</span><span class="n">TopologicalIndexBase</span><span class="p">):</span>
     <span class="sd">r&quot;&quot;&quot;diameter descriptor.&quot;&quot;&quot;</span>
-
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -197,7 +196,6 @@
 
 <span class="sd">    :returns: NaN when :math:`R = 0`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -229,7 +227,6 @@
 
 <span class="sd">    :returns: NaN when :math:`D = 0`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>

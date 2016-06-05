@@ -144,6 +144,8 @@
 
 
 <span class="k">class</span> <span class="nc">SmartsCountBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="s1">&#39;_mol&#39;</span><span class="p">,</span>
+
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="k">yield</span> <span class="n">cls</span><span class="p">()</span>

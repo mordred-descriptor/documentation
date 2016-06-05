@@ -144,6 +144,7 @@
 
 
 <span class="k">class</span> <span class="nc">AutocorrelationBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="s1">&#39;_prop&#39;</span><span class="p">,</span> <span class="s1">&#39;_order&#39;</span>
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">True</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -192,6 +193,8 @@
 
 
 <span class="k">class</span> <span class="nc">AutocorrelationProp</span><span class="p">(</span><span class="n">AutocorrelationBase</span><span class="p">):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
     <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="p">,)</span>
 
@@ -202,6 +205,8 @@
 
 
 <span class="k">class</span> <span class="nc">AutocorrelationOrder</span><span class="p">(</span><span class="n">AutocorrelationBase</span><span class="p">):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
     <span class="k">def</span> <span class="nf">_prop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">pass</span>
 
@@ -215,7 +220,7 @@
 
 
 <span class="k">class</span> <span class="nc">CAVec</span><span class="p">(</span><span class="n">AutocorrelationProp</span><span class="p">):</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_prop&#39;</span><span class="p">,)</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
     <span class="n">_order</span> <span class="o">=</span> <span class="mi">0</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -226,7 +231,7 @@
 
 
 <span class="k">class</span> <span class="nc">GMat</span><span class="p">(</span><span class="n">AutocorrelationOrder</span><span class="p">):</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_order&#39;</span><span class="p">,)</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;dmat&#39;</span><span class="p">:</span> <span class="n">DistanceMatrix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)}</span>
@@ -236,7 +241,7 @@
 
 
 <span class="k">class</span> <span class="nc">GSum</span><span class="p">(</span><span class="n">AutocorrelationOrder</span><span class="p">):</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_order&#39;</span><span class="p">,)</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;gmat&#39;</span><span class="p">:</span> <span class="n">GMat</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">)}</span>
@@ -284,7 +289,7 @@
 <span class="sd">    :returns: NaN when any properties are NaN</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_order&#39;</span><span class="p">,</span> <span class="s1">&#39;_prop&#39;</span><span class="p">,)</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
@@ -322,7 +327,7 @@
 <span class="sd">        * some properties are NaN</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_order&#39;</span><span class="p">,</span> <span class="s1">&#39;_prop&#39;</span><span class="p">,)</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;ATS&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ATS</span><span class="p">,</span> <span class="s1">&#39;gsum&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gsum</span><span class="p">}</span>
@@ -345,7 +350,7 @@
 <span class="sd">    :returns: NaN when any properties are NaN</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_order&#39;</span><span class="p">,</span> <span class="s1">&#39;_prop&#39;</span><span class="p">,)</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
@@ -383,7 +388,7 @@
 <span class="sd">        * any properties are NaN</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_order&#39;</span><span class="p">,</span> <span class="s1">&#39;_prop&#39;</span><span class="p">,)</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;ATSC&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ATSC</span><span class="p">,</span> <span class="s1">&#39;gsum&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gsum</span><span class="p">}</span>
@@ -412,7 +417,7 @@
 <span class="sd">        * denominator = 0</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_order&#39;</span><span class="p">,</span> <span class="s1">&#39;_prop&#39;</span><span class="p">,)</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
@@ -446,7 +451,7 @@
 <span class="sd">        * denominator = 0</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_order&#39;</span><span class="p">,</span> <span class="s1">&#39;_prop&#39;</span><span class="p">,)</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span>

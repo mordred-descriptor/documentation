@@ -143,6 +143,7 @@
 
 
 <span class="k">class</span> <span class="nc">MomentOfInertiaBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
     <span class="n">require_3D</span> <span class="o">=</span> <span class="bp">True</span>
 
     <span class="k">def</span> <span class="nf">_numpy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -153,6 +154,8 @@
 
 
 <span class="k">class</span> <span class="nc">PrincipalAxis</span><span class="p">(</span><span class="n">MomentOfInertiaBase</span><span class="p">):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
     <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">()</span>
 
@@ -176,6 +179,8 @@
 
 
 <div class="viewcode-block" id="MomentOfInertia"><a class="viewcode-back" href="../../api/mordred.MomentOfInertia.html#mordred.MomentOfInertia.MomentOfInertia">[docs]</a><span class="k">class</span> <span class="nc">MomentOfInertia</span><span class="p">(</span><span class="n">MomentOfInertiaBase</span><span class="p">):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="s1">&#39;_axis&#39;</span><span class="p">,</span>
+
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">map</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">cls</span><span class="o">.</span><span class="n">axes</span><span class="p">)</span>

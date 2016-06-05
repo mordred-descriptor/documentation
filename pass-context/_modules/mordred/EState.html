@@ -166,6 +166,7 @@
 
 
 <span class="k">class</span> <span class="nc">EStateBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
 
 
@@ -180,6 +181,8 @@
 
 
 <span class="k">class</span> <span class="nc">AggrType</span><span class="p">(</span><span class="n">IntEnum</span><span class="p">):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
     <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="nb">sum</span> <span class="o">=</span> <span class="mi">2</span>
     <span class="nb">max</span> <span class="o">=</span> <span class="mi">3</span>
@@ -213,6 +216,7 @@
 <span class="sd">    References</span>
 <span class="sd">        * :cite:`10.1021/ci00028a014`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_type&#39;</span><span class="p">,</span> <span class="s1">&#39;_estate&#39;</span><span class="p">,)</span>
 
     <span class="n">aggr_types</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">AggrType</span><span class="p">)</span>
 
@@ -230,8 +234,6 @@
         <span class="n">aggr</span> <span class="o">=</span> <span class="n">aggr_name_dict</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">]</span>
 
         <span class="k">return</span> <span class="n">aggr</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_estate</span>
-
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_type&#39;</span><span class="p">,</span> <span class="s1">&#39;_estate&#39;</span><span class="p">,)</span>
 
 <div class="viewcode-block" id="AtomTypeEState.as_key"><a class="viewcode-back" href="../../api/mordred.EState.html#mordred.EState.AtomTypeEState.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_estate</span><span class="p">)</span></div>

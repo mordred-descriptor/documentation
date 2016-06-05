@@ -148,6 +148,8 @@
 
 
 <span class="k">class</span> <span class="nc">ABCIndexBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="k">yield</span> <span class="n">cls</span><span class="p">()</span>
@@ -166,6 +168,7 @@
 <div class="viewcode-block" id="ABCIndex"><a class="viewcode-back" href="../../api/mordred.ABCIndex.html#mordred.ABCIndex.ABCIndex">[docs]</a><span class="k">class</span> <span class="nc">ABCIndex</span><span class="p">(</span><span class="n">ABCIndexBase</span><span class="p">):</span>
     <span class="sd">r&quot;&quot;&quot;atom-bond connectivity indez descriptor.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">_each_bond</span><span class="p">(</span><span class="n">bond</span><span class="p">):</span>
@@ -186,6 +189,7 @@
 <div class="viewcode-block" id="ABCGGIndex"><a class="viewcode-back" href="../../api/mordred.ABCIndex.html#mordred.ABCIndex.ABCGGIndex">[docs]</a><span class="k">class</span> <span class="nc">ABCGGIndex</span><span class="p">(</span><span class="n">ABCIndexBase</span><span class="p">):</span>
     <span class="sd">r&quot;&quot;&quot;Graovac-Ghorbani atom-bond connectivity index descriptor.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="n">DistanceMatrix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)}</span>

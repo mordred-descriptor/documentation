@@ -146,6 +146,8 @@
 
 
 <span class="k">class</span> <span class="nc">BondType</span><span class="p">(</span><span class="n">IntEnum</span><span class="p">):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
     <span class="nb">any</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">heavy</span> <span class="o">=</span> <span class="mi">2</span>
 
@@ -187,6 +189,7 @@
 <span class="sd">    :type kekulize: bool</span>
 <span class="sd">    :param kekulize: use kekulized structure</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_type&#39;</span><span class="p">,</span> <span class="s1">&#39;_bond_name&#39;</span><span class="p">,</span> <span class="s1">&#39;_check_bond&#39;</span><span class="p">,</span> <span class="s1">&#39;kekulize&#39;</span><span class="p">,)</span>
 
     <span class="n">bond_types</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">BondType</span><span class="p">)</span>
 
@@ -206,8 +209,6 @@
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">explicit_hydrogens</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="ow">in</span> <span class="p">(</span><span class="n">BondType</span><span class="o">.</span><span class="n">any</span><span class="p">,</span> <span class="n">BondType</span><span class="o">.</span><span class="n">single</span><span class="p">)</span>
-
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_type&#39;</span><span class="p">,</span> <span class="s1">&#39;_bond_name&#39;</span><span class="p">,</span> <span class="s1">&#39;_check_bond&#39;</span><span class="p">,</span> <span class="s1">&#39;kekulize&#39;</span><span class="p">,)</span>
 
 <div class="viewcode-block" id="BondCount.as_key"><a class="viewcode-back" href="../../api/mordred.BondCount.html#mordred.BondCount.BondCount.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">kekulize</span><span class="p">)</span></div>

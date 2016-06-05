@@ -223,6 +223,8 @@
 
 
 <span class="k">class</span> <span class="nc">EtaBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
     <span class="n">kekulize</span> <span class="o">=</span> <span class="bp">True</span>
     <span class="n">require_connected</span> <span class="o">=</span> <span class="bp">True</span>
@@ -249,6 +251,7 @@
 
 <span class="sd">    :returns: reference and valence of any atoms &gt; 4</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_averaged&#39;</span><span class="p">,</span> <span class="s1">&#39;_reference&#39;</span><span class="p">,)</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
@@ -261,8 +264,6 @@
             <span class="n">name</span> <span class="o">+=</span> <span class="s1">&#39;_R&#39;</span>
 
         <span class="k">return</span> <span class="n">name</span> <span class="o">+</span> <span class="p">(</span><span class="s2">&quot;&#39;&quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
-
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_averaged&#39;</span><span class="p">,</span> <span class="s1">&#39;_reference&#39;</span><span class="p">,)</span>
 
 <div class="viewcode-block" id="EtaCoreCount.as_key"><a class="viewcode-back" href="../../api/mordred.ExtendedTopochemicalAtom.html#mordred.ExtendedTopochemicalAtom.EtaCoreCount.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reference</span><span class="p">)</span></div>
@@ -297,6 +298,7 @@
 <span class="sd">    :type type: str</span>
 <span class="sd">    :param type: one of shape_types</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_type&#39;</span><span class="p">,)</span>
 
     <span class="n">shape_types</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,)</span>
     <span class="n">_type_to_degree</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
@@ -307,8 +309,6 @@
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;ETA_shape_{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">)</span>
-
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_type&#39;</span><span class="p">,)</span>
 
 <div class="viewcode-block" id="EtaShapeIndex.as_key"><a class="viewcode-back" href="../../api/mordred.ExtendedTopochemicalAtom.html#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">,)</span></div>
@@ -376,6 +376,7 @@
 <span class="sd">    :type averaged: bool</span>
 <span class="sd">    :param averaged: averaged by heavy atom count</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_type&#39;</span><span class="p">,</span> <span class="s1">&#39;_averaged&#39;</span><span class="p">,)</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
@@ -397,8 +398,6 @@
         <span class="k">return</span> <span class="n">name</span>
 
     <span class="n">beta_types</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;ns&#39;</span><span class="p">,</span> <span class="s1">&#39;ns_d&#39;</span><span class="p">)</span>
-
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_type&#39;</span><span class="p">,</span> <span class="s1">&#39;_averaged&#39;</span><span class="p">,)</span>
 
 <div class="viewcode-block" id="EtaVEMCount.as_key"><a class="viewcode-back" href="../../api/mordred.ExtendedTopochemicalAtom.html#mordred.ExtendedTopochemicalAtom.EtaVEMCount.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span><span class="p">)</span></div>
@@ -460,7 +459,6 @@
 
 <span class="sd">    :returns: reference and valence of any atoms &gt; 4</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_reference&#39;</span><span class="p">,</span> <span class="s1">&#39;_local&#39;</span><span class="p">,</span> <span class="s1">&#39;_averaged&#39;</span><span class="p">,)</span>
 
     <span class="nd">@classmethod</span>
@@ -485,8 +483,6 @@
             <span class="n">name</span> <span class="o">+=</span> <span class="s2">&quot;&#39;&quot;</span>
 
         <span class="k">return</span> <span class="n">name</span>
-
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_reference&#39;</span><span class="p">,</span> <span class="s1">&#39;_local&#39;</span><span class="p">,</span> <span class="s1">&#39;_averaged&#39;</span><span class="p">)</span>
 
 <div class="viewcode-block" id="EtaCompositeIndex.as_key"><a class="viewcode-back" href="../../api/mordred.ExtendedTopochemicalAtom.html#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_reference</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_local</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span><span class="p">)</span></div>
@@ -544,6 +540,7 @@
 <span class="sd">    :type averaged: bool</span>
 <span class="sd">    :param averaged: averaged</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_local&#39;</span><span class="p">,</span> <span class="s1">&#39;_averaged&#39;</span><span class="p">,)</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
@@ -563,8 +560,6 @@
             <span class="n">name</span> <span class="o">+=</span> <span class="s2">&quot;&#39;&quot;</span>
 
         <span class="k">return</span> <span class="n">name</span>
-
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_local&#39;</span><span class="p">,</span> <span class="s1">&#39;_averaged&#39;</span><span class="p">,)</span>
 
 <div class="viewcode-block" id="EtaFunctionalityIndex.as_key"><a class="viewcode-back" href="../../api/mordred.ExtendedTopochemicalAtom.html#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_local</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span><span class="p">)</span></div>
@@ -604,6 +599,7 @@
 
 <span class="sd">    :returns: NaN when A &lt; 2</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_ring&#39;</span><span class="p">,</span> <span class="s1">&#39;_averaged&#39;</span><span class="p">,)</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
@@ -623,8 +619,6 @@
             <span class="n">name</span> <span class="o">+=</span> <span class="s2">&quot;&#39;&quot;</span>
 
         <span class="k">return</span> <span class="n">name</span>
-
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_ring&#39;</span><span class="p">,</span> <span class="s1">&#39;_averaged&#39;</span><span class="p">,)</span>
 
 <div class="viewcode-block" id="EtaBranchingIndex.as_key"><a class="viewcode-back" href="../../api/mordred.ExtendedTopochemicalAtom.html#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ring</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span><span class="p">)</span></div>
@@ -668,6 +662,7 @@
 <span class="sd">    :type type: str</span>
 <span class="sd">    :param type: one of delta_types</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_type&#39;</span><span class="p">,)</span>
 
     <span class="n">delta_types</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,)</span>
 
@@ -677,8 +672,6 @@
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;ETA_dAlpha_{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">)</span>
-
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_type&#39;</span><span class="p">,)</span>
 
 <div class="viewcode-block" id="EtaDeltaAlpha.as_key"><a class="viewcode-back" href="../../api/mordred.ExtendedTopochemicalAtom.html#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">,)</span></div>
@@ -727,6 +720,7 @@
 
 <span class="sd">    :returns: type = 3 and valence of any atoms &gt; 4</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_type&#39;</span><span class="p">,)</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
@@ -740,8 +734,6 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="o">!=</span> <span class="mi">2</span>
 
     <span class="n">epsilon_types</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_type&#39;</span><span class="p">,)</span>
 
 <div class="viewcode-block" id="EtaEpsilon.as_key"><a class="viewcode-back" href="../../api/mordred.ExtendedTopochemicalAtom.html#mordred.ExtendedTopochemicalAtom.EtaEpsilon.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">,)</span></div>
@@ -784,6 +776,7 @@
 <span class="sd">    :type type: str</span>
 <span class="sd">    :param type: one of delta_epsilon_types</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_type&#39;</span><span class="p">,)</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
@@ -793,8 +786,6 @@
         <span class="k">return</span> <span class="s1">&#39;ETA_dEpsilon_{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">)</span>
 
     <span class="n">delta_epsilon_types</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="s1">&#39;ABCD&#39;</span><span class="p">)</span>
-
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_type&#39;</span><span class="p">,)</span>
 
 <div class="viewcode-block" id="EtaDeltaEpsilon.as_key"><a class="viewcode-back" href="../../api/mordred.ExtendedTopochemicalAtom.html#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">,)</span></div>
@@ -829,6 +820,7 @@
 <span class="sd">    :type averaged: bool</span>
 <span class="sd">    :param averaged: averaged</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_averaged&#39;</span><span class="p">,)</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
@@ -841,8 +833,6 @@
             <span class="n">name</span> <span class="o">+=</span> <span class="s2">&quot;&#39;&quot;</span>
 
         <span class="k">return</span> <span class="n">name</span>
-
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_averaged&#39;</span><span class="p">,)</span>
 
 <div class="viewcode-block" id="EtaDeltaBeta.as_key"><a class="viewcode-back" href="../../api/mordred.ExtendedTopochemicalAtom.html#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span><span class="p">,)</span></div>
@@ -903,6 +893,7 @@
 <span class="sd">    :type type: str</span>
 <span class="sd">    :param type: one of delta_psi_types</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_type&#39;</span><span class="p">,)</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
@@ -912,8 +903,6 @@
         <span class="k">return</span> <span class="s1">&#39;ETA_dPsi_{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">)</span>
 
     <span class="n">delta_psi_types</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,)</span>
-
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_type&#39;</span><span class="p">,)</span>
 
 <div class="viewcode-block" id="EtaDeltaPsi.as_key"><a class="viewcode-back" href="../../api/mordred.ExtendedTopochemicalAtom.html#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">,)</span></div>
