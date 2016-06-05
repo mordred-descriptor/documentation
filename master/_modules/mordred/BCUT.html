@@ -143,6 +143,7 @@
 
 
 <span class="k">class</span> <span class="nc">BCUTBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
     <span class="n">require_connected</span> <span class="o">=</span> <span class="bp">True</span>
 
@@ -153,12 +154,12 @@
     <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
-        <span class="n">N</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">N</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span>
 
         <span class="n">mat</span> <span class="o">=</span> <span class="mf">0.001</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="p">))</span>
 
-        <span class="k">for</span> <span class="n">bond</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetBonds</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">bond</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetBonds</span><span class="p">():</span>
             <span class="n">a</span> <span class="o">=</span> <span class="n">bond</span><span class="o">.</span><span class="n">GetBeginAtom</span><span class="p">()</span>
             <span class="n">b</span> <span class="o">=</span> <span class="n">bond</span><span class="o">.</span><span class="n">GetEndAtom</span><span class="p">()</span>
             <span class="n">i</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">GetIdx</span><span class="p">()</span>
@@ -167,7 +168,7 @@
             <span class="k">try</span><span class="p">:</span>
                 <span class="n">w</span> <span class="o">=</span> <span class="n">bond</span><span class="o">.</span><span class="n">GetBondTypeAsDouble</span><span class="p">()</span> <span class="o">/</span> <span class="mf">10.0</span>
             <span class="k">except</span> <span class="ne">RuntimeError</span><span class="p">:</span>
-                <span class="n">w</span> <span class="o">=</span> <span class="mf">1.0</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;unknown bond type&#39;</span><span class="p">))</span>
 
             <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">GetDegree</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">b</span><span class="o">.</span><span class="n">GetDegree</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
                 <span class="n">w</span> <span class="o">+=</span> <span class="mf">0.01</span>
@@ -193,11 +194,8 @@
             <span class="s1">&#39;burden&#39;</span><span class="p">:</span> <span class="n">Burden</span><span class="p">(),</span>
         <span class="p">}</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">burden</span><span class="p">,</span> <span class="n">ps</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">burden</span><span class="p">,</span> <span class="n">ps</span><span class="p">):</span>
         <span class="n">bmat</span> <span class="o">=</span> <span class="n">burden</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-
-        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">ps</span><span class="p">)):</span>
-            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">])</span>
 
         <span class="n">np</span><span class="o">.</span><span class="n">fill_diagonal</span><span class="p">(</span><span class="n">bmat</span><span class="p">,</span> <span class="n">ps</span><span class="p">)</span>
         <span class="n">ev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">bmat</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
@@ -222,6 +220,7 @@
 <span class="sd">        * any atomic properties are NaN</span>
 <span class="sd">        * :math:`\left| nth \right| &gt; A`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_prop&#39;</span><span class="p">,</span> <span class="s1">&#39;_nth&#39;</span><span class="p">,)</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
@@ -237,8 +236,6 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="s1">&#39;BCUT{}-{}h&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_prop&#39;</span><span class="p">,</span> <span class="s1">&#39;_nth&#39;</span><span class="p">,)</span>
-
 <div class="viewcode-block" id="BCUT.as_key"><a class="viewcode-back" href="../../api/mordred.BCUT.html#mordred.BCUT.BCUT.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nth</span><span class="p">)</span></div>
 
@@ -249,11 +246,11 @@
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;bev&#39;</span><span class="p">:</span> <span class="n">BurdenEigenValues</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="p">)}</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">bev</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bev</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">bev</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_nth</span><span class="p">]</span>
         <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;nth greater then atom count&#39;</span><span class="p">))</span>
 
     <span class="n">rtype</span> <span class="o">=</span> <span class="nb">float</span></div>
 </pre></div>

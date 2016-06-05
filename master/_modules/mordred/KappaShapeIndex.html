@@ -133,9 +133,7 @@
            <div itemprop="articleBody">
             
   <h1>Source code for mordred.KappaShapeIndex</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">nan</span>
-
-<span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
+<span></span><span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
 <span class="kn">from</span> <span class="nn">.Chi</span> <span class="kn">import</span> <span class="n">ChiCache</span>
 
 
@@ -161,12 +159,10 @@
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;Chi&#39;</span><span class="p">:</span> <span class="n">ChiCache</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">)}</span>
 
-    <span class="k">def</span> <span class="nf">_common</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">Chi</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_common</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Chi</span><span class="p">):</span>
         <span class="n">P</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">Chi</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">P</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">P</span> <span class="o">=</span> <span class="n">nan</span>
 
-        <span class="n">A</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span>
+        <span class="n">A</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span>
         <span class="n">Pmin</span> <span class="o">=</span> <span class="n">A</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span>
 
         <span class="k">return</span> <span class="n">P</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">Pmin</span>
@@ -182,11 +178,12 @@
 
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">Chi</span><span class="p">):</span>
-        <span class="n">P</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">Pmin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_common</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">Chi</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Chi</span><span class="p">):</span>
+        <span class="n">P</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">Pmin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_common</span><span class="p">(</span><span class="n">Chi</span><span class="p">)</span>
         <span class="n">Pmax</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">A</span> <span class="o">*</span> <span class="p">(</span><span class="n">A</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span> <span class="o">/</span> <span class="mf">2.0</span>
 
-        <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">Pmax</span> <span class="o">*</span> <span class="n">Pmin</span> <span class="o">/</span> <span class="p">(</span><span class="n">P</span> <span class="o">*</span> <span class="n">P</span><span class="p">)</span></div>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">rethrow_zerodiv</span><span class="p">():</span>
+            <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">Pmax</span> <span class="o">*</span> <span class="n">Pmin</span> <span class="o">/</span> <span class="p">(</span><span class="n">P</span> <span class="o">*</span> <span class="n">P</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="KappaShapeIndex2"><a class="viewcode-back" href="../../api/mordred.KappaShapeIndex.html#mordred.KappaShapeIndex.KappaShapeIndex2">[docs]</a><span class="k">class</span> <span class="nc">KappaShapeIndex2</span><span class="p">(</span><span class="n">KappaShapeIndexBase</span><span class="p">):</span>
@@ -197,11 +194,12 @@
 
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">Chi</span><span class="p">):</span>
-        <span class="n">P</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">Pmin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_common</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">Chi</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Chi</span><span class="p">):</span>
+        <span class="n">P</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">Pmin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_common</span><span class="p">(</span><span class="n">Chi</span><span class="p">)</span>
         <span class="n">Pmax</span> <span class="o">=</span> <span class="nb">float</span><span class="p">((</span><span class="n">A</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">A</span> <span class="o">-</span> <span class="mi">2</span><span class="p">))</span> <span class="o">/</span> <span class="mf">2.0</span>
 
-        <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">Pmax</span> <span class="o">*</span> <span class="n">Pmin</span> <span class="o">/</span> <span class="p">(</span><span class="n">P</span> <span class="o">*</span> <span class="n">P</span><span class="p">)</span></div>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">rethrow_zerodiv</span><span class="p">():</span>
+            <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">Pmax</span> <span class="o">*</span> <span class="n">Pmin</span> <span class="o">/</span> <span class="p">(</span><span class="n">P</span> <span class="o">*</span> <span class="n">P</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="KappaShapeIndex3"><a class="viewcode-back" href="../../api/mordred.KappaShapeIndex.html#mordred.KappaShapeIndex.KappaShapeIndex3">[docs]</a><span class="k">class</span> <span class="nc">KappaShapeIndex3</span><span class="p">(</span><span class="n">KappaShapeIndexBase</span><span class="p">):</span>
@@ -212,15 +210,16 @@
 
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">Chi</span><span class="p">):</span>
-        <span class="n">P</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">Pmin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_common</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">Chi</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Chi</span><span class="p">):</span>
+        <span class="n">P</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">Pmin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_common</span><span class="p">(</span><span class="n">Chi</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">A</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">Pmax</span> <span class="o">=</span> <span class="nb">float</span><span class="p">((</span><span class="n">A</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mf">4.0</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">Pmax</span> <span class="o">=</span> <span class="nb">float</span><span class="p">((</span><span class="n">A</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">A</span> <span class="o">-</span> <span class="mi">3</span><span class="p">))</span> <span class="o">/</span> <span class="mf">4.0</span>
 
-        <span class="k">return</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">Pmax</span> <span class="o">*</span> <span class="n">Pmin</span> <span class="o">/</span> <span class="p">(</span><span class="n">P</span> <span class="o">*</span> <span class="n">P</span><span class="p">)</span></div>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">rethrow_zerodiv</span><span class="p">():</span>
+            <span class="k">return</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">Pmax</span> <span class="o">*</span> <span class="n">Pmin</span> <span class="o">/</span> <span class="p">(</span><span class="n">P</span> <span class="o">*</span> <span class="n">P</span><span class="p">)</span></div>
 </pre></div>
 
            </div>

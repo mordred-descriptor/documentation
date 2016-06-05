@@ -144,6 +144,7 @@
 
 <div class="viewcode-block" id="BalabanJ"><a class="viewcode-back" href="../../api/mordred.BalabanJ.html#mordred.BalabanJ.BalabanJ">[docs]</a><span class="k">class</span> <span class="nc">BalabanJ</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
     <span class="sd">r&quot;&quot;&quot;Balaban&#39;s J index descriptor(rdkit wrapper).&quot;&quot;&quot;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
 
@@ -160,8 +161,8 @@
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="n">DistanceMatrix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)}</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">RDKit</span><span class="o">.</span><span class="n">BalabanJ</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">dMat</span><span class="o">=</span><span class="n">D</span><span class="p">))</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">RDKit</span><span class="o">.</span><span class="n">BalabanJ</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="p">,</span> <span class="n">dMat</span><span class="o">=</span><span class="n">D</span><span class="p">))</span>
 
     <span class="n">rtype</span> <span class="o">=</span> <span class="nb">float</span></div>
 </pre></div>

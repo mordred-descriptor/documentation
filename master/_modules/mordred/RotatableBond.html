@@ -133,9 +133,7 @@
            <div itemprop="articleBody">
             
   <h1>Source code for mordred.RotatableBond</h1><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-
-<span class="kn">from</span> <span class="nn">rdkit.Chem.rdMolDescriptors</span> <span class="kn">import</span> <span class="n">CalcNumRotatableBonds</span>
+<span></span><span class="kn">from</span> <span class="nn">rdkit.Chem.rdMolDescriptors</span> <span class="kn">import</span> <span class="n">CalcNumRotatableBonds</span>
 
 <span class="kn">from</span> <span class="nn">.BondCount</span> <span class="kn">import</span> <span class="n">BondCount</span>
 
@@ -148,6 +146,7 @@
 
 
 <div class="viewcode-block" id="RotatableBondsBase"><a class="viewcode-back" href="../../api/mordred.RotatableBond.html#mordred.RotatableBond.RotatableBondsBase">[docs]</a><span class="k">class</span> <span class="nc">RotatableBondsBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
 
     <span class="nd">@classmethod</span>
@@ -160,14 +159,13 @@
 
 <div class="viewcode-block" id="RotatableBondsCount"><a class="viewcode-back" href="../../api/mordred.RotatableBond.html#mordred.RotatableBond.RotatableBondsCount">[docs]</a><span class="k">class</span> <span class="nc">RotatableBondsCount</span><span class="p">(</span><span class="n">RotatableBondsBase</span><span class="p">):</span>
     <span class="sd">r&quot;&quot;&quot;ratatable bonds count descriptor(rdkit wrapper).&quot;&quot;&quot;</span>
-
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;nRot&#39;</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">CalcNumRotatableBonds</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">CalcNumRotatableBonds</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="p">)</span>
 
     <span class="n">rtype</span> <span class="o">=</span> <span class="nb">int</span></div>
 
@@ -180,7 +178,6 @@
 
 <span class="sd">    :returns: NaN when :math:`N_{\rm bonds} = 0`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -192,11 +189,9 @@
             <span class="s1">&#39;nB&#39;</span><span class="p">:</span> <span class="n">BondCount</span><span class="p">(</span><span class="s1">&#39;heavy&#39;</span><span class="p">),</span>
         <span class="p">}</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">nRot</span><span class="p">,</span> <span class="n">nB</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">nB</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-
-        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">nRot</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">nB</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nRot</span><span class="p">,</span> <span class="n">nB</span><span class="p">):</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">rethrow_zerodiv</span><span class="p">():</span>
+            <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">nRot</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">nB</span><span class="p">)</span>
 
     <span class="n">rtype</span> <span class="o">=</span> <span class="nb">float</span></div>
 </pre></div>
