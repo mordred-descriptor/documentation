@@ -135,7 +135,6 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.Weight.html">mordred.Weight module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.WienerIndex.html">mordred.WienerIndex module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.ZagrebIndex.html">mordred.ZagrebIndex module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mordred.exception.html">mordred.exception module</a></li>
 </ul>
 </li>
 </ul>
@@ -215,8 +214,8 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>averaged</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; averaged by number of heavy count</li>
-<li><strong>reference</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; use reference alkane
+<li><strong>averaged</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; averaged by number of heavy count</li>
+<li><strong>reference</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; use reference alkane
 (same graph structure, but all atoms are carbon and all bonds are single bond)</li>
 </ul>
 </td>
@@ -246,6 +245,11 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaCoreCount.fail">
+<code class="descname">fail</code><span class="sig-paren">(</span><em>ex</em>, <em>critical=False</em>, <em>warning=False</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount.fail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaCoreCount.kekulize">
 <code class="descname">kekulize</code><em class="property"> = True</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount.kekulize" title="Permalink to this definition">¶</a></dt>
@@ -266,10 +270,15 @@
 <code class="descname">require_connected</code><em class="property"> = True</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaCoreCount.rethrow_zerodiv">
+<code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaCoreCount.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
 
 </dd></dl>
@@ -287,7 +296,7 @@ y(3), or x(4).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; one of shape_types</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; one of shape_types</td>
 </tr>
 </tbody>
 </table>
@@ -316,6 +325,11 @@ y(3), or x(4).</p>
 <code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaShapeIndex.fail">
+<code class="descname">fail</code><span class="sig-paren">(</span><em>ex</em>, <em>critical=False</em>, <em>warning=False</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.fail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaShapeIndex.kekulize">
 <code class="descname">kekulize</code><em class="property"> = True</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.kekulize" title="Permalink to this definition">¶</a></dt>
@@ -336,10 +350,15 @@ y(3), or x(4).</p>
 <code class="descname">require_connected</code><em class="property"> = True</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaShapeIndex.rethrow_zerodiv">
+<code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaShapeIndex.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
 
 </dd></dl>
@@ -373,8 +392,8 @@ y(3), or x(4).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>type</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; one of beta_types</li>
-<li><strong>averaged</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; averaged by heavy atom count</li>
+<li><strong>type</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; one of beta_types</li>
+<li><strong>averaged</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; averaged by heavy atom count</li>
 </ul>
 </td>
 </tr>
@@ -405,6 +424,11 @@ y(3), or x(4).</p>
 <code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaVEMCount.fail">
+<code class="descname">fail</code><span class="sig-paren">(</span><em>ex</em>, <em>critical=False</em>, <em>warning=False</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.fail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaVEMCount.kekulize">
 <code class="descname">kekulize</code><em class="property"> = True</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.kekulize" title="Permalink to this definition">¶</a></dt>
@@ -425,10 +449,15 @@ y(3), or x(4).</p>
 <code class="descname">require_connected</code><em class="property"> = True</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaVEMCount.rethrow_zerodiv">
+<code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaVEMCount.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
 
 </dd></dl>
@@ -448,9 +477,9 @@ y(3), or x(4).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>reference</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; use reference alkane.</li>
-<li><strong>local</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; use <span class="math">\(\eta^{\rm local}\)</span></li>
-<li><strong>averaged</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; averaged</li>
+<li><strong>reference</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; use reference alkane.</li>
+<li><strong>local</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; use <span class="math">\(\eta^{\rm local}\)</span></li>
+<li><strong>averaged</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; averaged</li>
 </ul>
 </td>
 </tr>
@@ -479,6 +508,11 @@ y(3), or x(4).</p>
 <code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.fail">
+<code class="descname">fail</code><span class="sig-paren">(</span><em>ex</em>, <em>critical=False</em>, <em>warning=False</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.fail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.kekulize">
 <code class="descname">kekulize</code><em class="property"> = True</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.kekulize" title="Permalink to this definition">¶</a></dt>
@@ -499,10 +533,15 @@ y(3), or x(4).</p>
 <code class="descname">require_connected</code><em class="property"> = True</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.rethrow_zerodiv">
+<code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
 
 </dd></dl>
@@ -520,8 +559,8 @@ y(3), or x(4).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>local</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; use local eta</li>
-<li><strong>averaged</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; averaged</li>
+<li><strong>local</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; use local eta</li>
+<li><strong>averaged</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; averaged</li>
 </ul>
 </td>
 </tr>
@@ -547,6 +586,11 @@ y(3), or x(4).</p>
 <code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.fail">
+<code class="descname">fail</code><span class="sig-paren">(</span><em>ex</em>, <em>critical=False</em>, <em>warning=False</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.fail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.kekulize">
 <code class="descname">kekulize</code><em class="property"> = True</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.kekulize" title="Permalink to this definition">¶</a></dt>
@@ -567,10 +611,15 @@ y(3), or x(4).</p>
 <code class="descname">require_connected</code><em class="property"> = True</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.rethrow_zerodiv">
+<code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
 
 </dd></dl>
@@ -589,8 +638,8 @@ y(3), or x(4).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>ring</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; use ring count or not</li>
-<li><strong>averaged</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; averaged</li>
+<li><strong>ring</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; use ring count or not</li>
+<li><strong>averaged</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; averaged</li>
 </ul>
 </td>
 </tr>
@@ -619,6 +668,11 @@ y(3), or x(4).</p>
 <code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.fail">
+<code class="descname">fail</code><span class="sig-paren">(</span><em>ex</em>, <em>critical=False</em>, <em>warning=False</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.fail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.kekulize">
 <code class="descname">kekulize</code><em class="property"> = True</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.kekulize" title="Permalink to this definition">¶</a></dt>
@@ -639,10 +693,15 @@ y(3), or x(4).</p>
 <code class="descname">require_connected</code><em class="property"> = True</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.rethrow_zerodiv">
+<code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
 
 </dd></dl>
@@ -658,7 +717,7 @@ y(3), or x(4).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; one of delta_types</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; one of delta_types</td>
 </tr>
 </tbody>
 </table>
@@ -687,6 +746,11 @@ y(3), or x(4).</p>
 <code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.fail">
+<code class="descname">fail</code><span class="sig-paren">(</span><em>ex</em>, <em>critical=False</em>, <em>warning=False</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.fail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.kekulize">
 <code class="descname">kekulize</code><em class="property"> = True</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.kekulize" title="Permalink to this definition">¶</a></dt>
@@ -707,10 +771,15 @@ y(3), or x(4).</p>
 <code class="descname">require_connected</code><em class="property"> = True</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.rethrow_zerodiv">
+<code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
 
 </dd></dl>
@@ -743,7 +812,7 @@ y(3), or x(4).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; one of epsilon_types</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; one of epsilon_types</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">type = 3 and valence of any atoms &gt; 4</td>
 </tr>
@@ -774,6 +843,11 @@ y(3), or x(4).</p>
 <code class="descname">coord</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.coord" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaEpsilon.fail">
+<code class="descname">fail</code><span class="sig-paren">(</span><em>ex</em>, <em>critical=False</em>, <em>warning=False</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.fail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaEpsilon.kekulize">
 <code class="descname">kekulize</code><em class="property"> = True</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.kekulize" title="Permalink to this definition">¶</a></dt>
@@ -794,10 +868,15 @@ y(3), or x(4).</p>
 <code class="descname">require_connected</code><em class="property"> = True</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaEpsilon.rethrow_zerodiv">
+<code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaEpsilon.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
 
 </dd></dl>
@@ -813,7 +892,7 @@ y(3), or x(4).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; one of delta_epsilon_types</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; one of delta_epsilon_types</td>
 </tr>
 </tbody>
 </table>
@@ -842,6 +921,11 @@ y(3), or x(4).</p>
 <code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.fail">
+<code class="descname">fail</code><span class="sig-paren">(</span><em>ex</em>, <em>critical=False</em>, <em>warning=False</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.fail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.kekulize">
 <code class="descname">kekulize</code><em class="property"> = True</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.kekulize" title="Permalink to this definition">¶</a></dt>
@@ -862,10 +946,15 @@ y(3), or x(4).</p>
 <code class="descname">require_connected</code><em class="property"> = True</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.rethrow_zerodiv">
+<code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
 
 </dd></dl>
@@ -881,7 +970,7 @@ y(3), or x(4).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>averaged</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; averaged</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>averaged</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; averaged</td>
 </tr>
 </tbody>
 </table>
@@ -905,6 +994,11 @@ y(3), or x(4).</p>
 <code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.fail">
+<code class="descname">fail</code><span class="sig-paren">(</span><em>ex</em>, <em>critical=False</em>, <em>warning=False</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.fail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.kekulize">
 <code class="descname">kekulize</code><em class="property"> = True</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.kekulize" title="Permalink to this definition">¶</a></dt>
@@ -925,10 +1019,15 @@ y(3), or x(4).</p>
 <code class="descname">require_connected</code><em class="property"> = True</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.rethrow_zerodiv">
+<code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
 
 </dd></dl>
@@ -960,6 +1059,11 @@ y(3), or x(4).</p>
 <code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaPsi.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaPsi.fail">
+<code class="descname">fail</code><span class="sig-paren">(</span><em>ex</em>, <em>critical=False</em>, <em>warning=False</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaPsi.fail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaPsi.kekulize">
 <code class="descname">kekulize</code><em class="property"> = True</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaPsi.kekulize" title="Permalink to this definition">¶</a></dt>
@@ -980,10 +1084,15 @@ y(3), or x(4).</p>
 <code class="descname">require_connected</code><em class="property"> = True</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaPsi.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaPsi.rethrow_zerodiv">
+<code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaPsi.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaPsi.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaPsi.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
 
 </dd></dl>
@@ -999,7 +1108,7 @@ y(3), or x(4).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; one of delta_psi_types</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; one of delta_psi_types</td>
 </tr>
 </tbody>
 </table>
@@ -1028,6 +1137,11 @@ y(3), or x(4).</p>
 <code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.fail">
+<code class="descname">fail</code><span class="sig-paren">(</span><em>ex</em>, <em>critical=False</em>, <em>warning=False</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.fail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.kekulize">
 <code class="descname">kekulize</code><em class="property"> = True</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.kekulize" title="Permalink to this definition">¶</a></dt>
@@ -1048,10 +1162,15 @@ y(3), or x(4).</p>
 <code class="descname">require_connected</code><em class="property"> = True</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.rethrow_zerodiv">
+<code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
 
 </dd></dl>

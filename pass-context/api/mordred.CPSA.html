@@ -135,7 +135,6 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.Weight.html">mordred.Weight module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.WienerIndex.html">mordred.WienerIndex module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.ZagrebIndex.html">mordred.ZagrebIndex module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mordred.exception.html">mordred.exception module</a></li>
 </ul>
 </li>
 </ul>
@@ -213,7 +212,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>version</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; one of <a class="reference internal" href="#mordred.CPSA.PNSA.versions" title="mordred.CPSA.PNSA.versions"><code class="xref py py-attr docutils literal"><span class="pre">versions</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>version</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; one of <a class="reference internal" href="#mordred.CPSA.PNSA.versions" title="mordred.CPSA.PNSA.versions"><code class="xref py py-attr docutils literal"><span class="pre">versions</span></code></a></td>
 </tr>
 </tbody>
 </table>
@@ -237,6 +236,11 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.PNSA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.PNSA.fail">
+<code class="descname">fail</code><span class="sig-paren">(</span><em>ex</em>, <em>critical=False</em>, <em>warning=False</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.PNSA.fail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.PNSA.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.PNSA.kekulize" title="Permalink to this definition">¶</a></dt>
@@ -257,10 +261,15 @@
 <code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.PNSA.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.PNSA.rethrow_zerodiv">
+<code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.PNSA.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.PNSA.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.CPSA.PNSA.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
 
 <dl class="attribute">
@@ -279,7 +288,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>version</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; one of <a class="reference internal" href="#mordred.CPSA.PPSA.versions" title="mordred.CPSA.PPSA.versions"><code class="xref py py-attr docutils literal"><span class="pre">versions</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>version</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; one of <a class="reference internal" href="#mordred.CPSA.PPSA.versions" title="mordred.CPSA.PPSA.versions"><code class="xref py py-attr docutils literal"><span class="pre">versions</span></code></a></td>
 </tr>
 </tbody>
 </table>
@@ -303,6 +312,11 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.PPSA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.PPSA.fail">
+<code class="descname">fail</code><span class="sig-paren">(</span><em>ex</em>, <em>critical=False</em>, <em>warning=False</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.PPSA.fail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.PPSA.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.PPSA.kekulize" title="Permalink to this definition">¶</a></dt>
@@ -323,10 +337,15 @@
 <code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.PPSA.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.PPSA.rethrow_zerodiv">
+<code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.PPSA.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.PPSA.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.CPSA.PPSA.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
 
 <dl class="attribute">
@@ -345,7 +364,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>version</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; one of <a class="reference internal" href="#mordred.CPSA.DPSA.versions" title="mordred.CPSA.DPSA.versions"><code class="xref py py-attr docutils literal"><span class="pre">versions</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>version</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; one of <a class="reference internal" href="#mordred.CPSA.DPSA.versions" title="mordred.CPSA.DPSA.versions"><code class="xref py py-attr docutils literal"><span class="pre">versions</span></code></a></td>
 </tr>
 </tbody>
 </table>
@@ -369,6 +388,11 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.DPSA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.DPSA.fail">
+<code class="descname">fail</code><span class="sig-paren">(</span><em>ex</em>, <em>critical=False</em>, <em>warning=False</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.DPSA.fail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.DPSA.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.DPSA.kekulize" title="Permalink to this definition">¶</a></dt>
@@ -389,10 +413,15 @@
 <code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.DPSA.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.DPSA.rethrow_zerodiv">
+<code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.DPSA.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.DPSA.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.CPSA.DPSA.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
 
 <dl class="attribute">
@@ -411,7 +440,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>version</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; one of <a class="reference internal" href="#mordred.CPSA.FNSA.versions" title="mordred.CPSA.FNSA.versions"><code class="xref py py-attr docutils literal"><span class="pre">versions</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>version</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; one of <a class="reference internal" href="#mordred.CPSA.FNSA.versions" title="mordred.CPSA.FNSA.versions"><code class="xref py py-attr docutils literal"><span class="pre">versions</span></code></a></td>
 </tr>
 </tbody>
 </table>
@@ -435,6 +464,11 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.FNSA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.FNSA.fail">
+<code class="descname">fail</code><span class="sig-paren">(</span><em>ex</em>, <em>critical=False</em>, <em>warning=False</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.FNSA.fail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.FNSA.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.FNSA.kekulize" title="Permalink to this definition">¶</a></dt>
@@ -455,10 +489,15 @@
 <code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.FNSA.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.FNSA.rethrow_zerodiv">
+<code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.FNSA.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.FNSA.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.CPSA.FNSA.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
 
 <dl class="attribute">
@@ -477,7 +516,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>version</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; one of <a class="reference internal" href="#mordred.CPSA.FPSA.versions" title="mordred.CPSA.FPSA.versions"><code class="xref py py-attr docutils literal"><span class="pre">versions</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>version</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; one of <a class="reference internal" href="#mordred.CPSA.FPSA.versions" title="mordred.CPSA.FPSA.versions"><code class="xref py py-attr docutils literal"><span class="pre">versions</span></code></a></td>
 </tr>
 </tbody>
 </table>
@@ -501,6 +540,11 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.FPSA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.FPSA.fail">
+<code class="descname">fail</code><span class="sig-paren">(</span><em>ex</em>, <em>critical=False</em>, <em>warning=False</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.FPSA.fail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.FPSA.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.FPSA.kekulize" title="Permalink to this definition">¶</a></dt>
@@ -521,10 +565,15 @@
 <code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.FPSA.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.FPSA.rethrow_zerodiv">
+<code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.FPSA.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.FPSA.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.CPSA.FPSA.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
 
 <dl class="attribute">
@@ -543,7 +592,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>version</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; one of <a class="reference internal" href="#mordred.CPSA.WNSA.versions" title="mordred.CPSA.WNSA.versions"><code class="xref py py-attr docutils literal"><span class="pre">versions</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>version</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; one of <a class="reference internal" href="#mordred.CPSA.WNSA.versions" title="mordred.CPSA.WNSA.versions"><code class="xref py py-attr docutils literal"><span class="pre">versions</span></code></a></td>
 </tr>
 </tbody>
 </table>
@@ -567,6 +616,11 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.WNSA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.WNSA.fail">
+<code class="descname">fail</code><span class="sig-paren">(</span><em>ex</em>, <em>critical=False</em>, <em>warning=False</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.WNSA.fail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.WNSA.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.WNSA.kekulize" title="Permalink to this definition">¶</a></dt>
@@ -587,10 +641,15 @@
 <code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.WNSA.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.WNSA.rethrow_zerodiv">
+<code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.WNSA.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.WNSA.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.CPSA.WNSA.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
 
 <dl class="attribute">
@@ -609,7 +668,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>version</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; one of <a class="reference internal" href="#mordred.CPSA.WPSA.versions" title="mordred.CPSA.WPSA.versions"><code class="xref py py-attr docutils literal"><span class="pre">versions</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>version</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; one of <a class="reference internal" href="#mordred.CPSA.WPSA.versions" title="mordred.CPSA.WPSA.versions"><code class="xref py py-attr docutils literal"><span class="pre">versions</span></code></a></td>
 </tr>
 </tbody>
 </table>
@@ -633,6 +692,11 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.WPSA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.WPSA.fail">
+<code class="descname">fail</code><span class="sig-paren">(</span><em>ex</em>, <em>critical=False</em>, <em>warning=False</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.WPSA.fail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.WPSA.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.WPSA.kekulize" title="Permalink to this definition">¶</a></dt>
@@ -653,10 +717,15 @@
 <code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.WPSA.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.WPSA.rethrow_zerodiv">
+<code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.WPSA.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.WPSA.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.CPSA.WPSA.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
 
 <dl class="attribute">
@@ -696,6 +765,11 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.RNCG.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.RNCG.fail">
+<code class="descname">fail</code><span class="sig-paren">(</span><em>ex</em>, <em>critical=False</em>, <em>warning=False</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RNCG.fail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.RNCG.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.RNCG.kekulize" title="Permalink to this definition">¶</a></dt>
@@ -711,10 +785,15 @@
 <code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.RNCG.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.RNCG.rethrow_zerodiv">
+<code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RNCG.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.RNCG.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.CPSA.RNCG.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
 
 </dd></dl>
@@ -744,6 +823,11 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.RPCG.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.RPCG.fail">
+<code class="descname">fail</code><span class="sig-paren">(</span><em>ex</em>, <em>critical=False</em>, <em>warning=False</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPCG.fail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.RPCG.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.RPCG.kekulize" title="Permalink to this definition">¶</a></dt>
@@ -764,10 +848,15 @@
 <code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.RPCG.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.RPCG.rethrow_zerodiv">
+<code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPCG.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.RPCG.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.CPSA.RPCG.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
 
 </dd></dl>
@@ -780,7 +869,7 @@
 <dl class="attribute">
 <dt id="mordred.CPSA.RNCS.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.CPSA.RNCS.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
 
 <dl class="attribute">
@@ -803,6 +892,11 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.RNCS.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.RNCS.fail">
+<code class="descname">fail</code><span class="sig-paren">(</span><em>ex</em>, <em>critical=False</em>, <em>warning=False</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RNCS.fail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.RNCS.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.RNCS.kekulize" title="Permalink to this definition">¶</a></dt>
@@ -821,6 +915,11 @@
 <dl class="attribute">
 <dt id="mordred.CPSA.RNCS.require_connected">
 <code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.RNCS.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.RNCS.rethrow_zerodiv">
+<code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RNCS.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -850,6 +949,11 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.RPCS.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.RPCS.fail">
+<code class="descname">fail</code><span class="sig-paren">(</span><em>ex</em>, <em>critical=False</em>, <em>warning=False</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPCS.fail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.RPCS.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.RPCS.kekulize" title="Permalink to this definition">¶</a></dt>
@@ -870,10 +974,15 @@
 <code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.RPCS.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.RPCS.rethrow_zerodiv">
+<code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPCS.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.RPCS.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.CPSA.RPCS.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
 
 </dd></dl>
@@ -903,6 +1012,11 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.TASA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.TASA.fail">
+<code class="descname">fail</code><span class="sig-paren">(</span><em>ex</em>, <em>critical=False</em>, <em>warning=False</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.TASA.fail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.TASA.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.TASA.kekulize" title="Permalink to this definition">¶</a></dt>
@@ -923,10 +1037,15 @@
 <code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.TASA.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.TASA.rethrow_zerodiv">
+<code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.TASA.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.TASA.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.CPSA.TASA.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
 
 </dd></dl>
@@ -956,6 +1075,11 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.TPSA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.TPSA.fail">
+<code class="descname">fail</code><span class="sig-paren">(</span><em>ex</em>, <em>critical=False</em>, <em>warning=False</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.TPSA.fail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.TPSA.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.TPSA.kekulize" title="Permalink to this definition">¶</a></dt>
@@ -976,10 +1100,15 @@
 <code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.TPSA.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.TPSA.rethrow_zerodiv">
+<code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.TPSA.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.TPSA.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.CPSA.TPSA.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
 
 </dd></dl>
@@ -1009,6 +1138,11 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.RASA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.RASA.fail">
+<code class="descname">fail</code><span class="sig-paren">(</span><em>ex</em>, <em>critical=False</em>, <em>warning=False</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RASA.fail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.RASA.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.RASA.kekulize" title="Permalink to this definition">¶</a></dt>
@@ -1029,10 +1163,15 @@
 <code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.RASA.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.RASA.rethrow_zerodiv">
+<code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RASA.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.RASA.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.CPSA.RASA.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
 
 </dd></dl>
@@ -1062,6 +1201,11 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.RPSA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.RPSA.fail">
+<code class="descname">fail</code><span class="sig-paren">(</span><em>ex</em>, <em>critical=False</em>, <em>warning=False</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPSA.fail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.RPSA.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.RPSA.kekulize" title="Permalink to this definition">¶</a></dt>
@@ -1082,10 +1226,15 @@
 <code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.RPSA.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.RPSA.rethrow_zerodiv">
+<code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPSA.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.RPSA.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.CPSA.RPSA.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
 
 </dd></dl>

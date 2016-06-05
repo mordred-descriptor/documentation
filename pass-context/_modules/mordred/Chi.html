@@ -138,8 +138,6 @@
 <span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">IntEnum</span>
 <span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">chain</span>
 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-
 <span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span>
 
 <span class="kn">from</span> <span class="nn">._atomic_property</span> <span class="kn">import</span> <span class="n">AtomicProperty</span>
@@ -332,12 +330,13 @@
                 <span class="n">c</span> <span class="o">*=</span> <span class="n">P</span><span class="p">[</span><span class="n">node</span><span class="p">]</span>
 
             <span class="k">if</span> <span class="n">c</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;some properties less then or equal to 0&#39;</span><span class="p">))</span>
 
             <span class="n">x</span> <span class="o">+=</span> <span class="n">c</span> <span class="o">**</span> <span class="o">-</span><span class="mf">0.5</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span><span class="p">:</span>
-            <span class="n">x</span> <span class="o">/=</span> <span class="nb">len</span><span class="p">(</span><span class="n">node_sets</span><span class="p">)</span> <span class="ow">or</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+            <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">rethrow_zerodiv</span><span class="p">():</span>
+                <span class="n">x</span> <span class="o">/=</span> <span class="nb">len</span><span class="p">(</span><span class="n">node_sets</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">x</span>
 
