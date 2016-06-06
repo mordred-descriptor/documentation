@@ -168,7 +168,7 @@
             <span class="k">try</span><span class="p">:</span>
                 <span class="n">w</span> <span class="o">=</span> <span class="n">bond</span><span class="o">.</span><span class="n">GetBondTypeAsDouble</span><span class="p">()</span> <span class="o">/</span> <span class="mf">10.0</span>
             <span class="k">except</span> <span class="ne">RuntimeError</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;unknown bond type&#39;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;unknown bond type&#39;</span><span class="p">))</span>
 
             <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">GetDegree</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">b</span><span class="o">.</span><span class="n">GetDegree</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
                 <span class="n">w</span> <span class="o">+=</span> <span class="mf">0.01</span>
@@ -250,7 +250,7 @@
         <span class="k">try</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">bev</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_nth</span><span class="p">]</span>
         <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;nth greater then atom count&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;nth greater then atom count&#39;</span><span class="p">))</span>
 
     <span class="n">rtype</span> <span class="o">=</span> <span class="nb">float</span></div>
 </pre></div>

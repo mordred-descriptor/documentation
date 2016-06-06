@@ -136,7 +136,7 @@
 <span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
 
-<div class="viewcode-block" id="Error"><a class="viewcode-back" href="../../api/mordred.error.html#mordred.error.Error">[docs]</a><span class="k">class</span> <span class="nc">Error</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="MissingValue"><a class="viewcode-back" href="../../api/mordred.error.html#mordred.error.MissingValue">[docs]</a><span class="k">class</span> <span class="nc">MissingValue</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="n">__slots__</span> <span class="o">=</span> <span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="s1">&#39;stack&#39;</span>
 
     <span class="k">def</span> <span class="nf">__reduce_ex__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">version</span><span class="p">):</span>
@@ -159,9 +159,18 @@
         <span class="k">return</span> <span class="s1">&#39;{} ({})&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">error</span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">stack</span><span class="p">))</span></div>
 
 
-<div class="viewcode-block" id="MordredException"><a class="viewcode-back" href="../../api/mordred.error.html#mordred.error.MordredException">[docs]</a><span class="k">class</span> <span class="nc">MordredException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<div class="viewcode-block" id="NA"><a class="viewcode-back" href="../../api/mordred.error.html#mordred.error.NA">[docs]</a><span class="k">class</span> <span class="nc">NA</span><span class="p">(</span><span class="n">MissingValue</span><span class="p">):</span>
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
-    <span class="k">pass</span></div>
+    <span class="n">header</span> <span class="o">=</span> <span class="s1">&#39;WARNING&#39;</span></div>
+
+
+<div class="viewcode-block" id="Error"><a class="viewcode-back" href="../../api/mordred.error.html#mordred.error.Error">[docs]</a><span class="k">class</span> <span class="nc">Error</span><span class="p">(</span><span class="n">MissingValue</span><span class="p">):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="n">header</span> <span class="o">=</span> <span class="s1">&#39;ERROR&#39;</span></div>
+
+
+<div class="viewcode-block" id="MordredException"><a class="viewcode-back" href="../../api/mordred.error.html#mordred.error.MordredException">[docs]</a><span class="k">class</span> <span class="nc">MordredException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span></div>
 
 
 <div class="viewcode-block" id="MultipleFragments"><a class="viewcode-back" href="../../api/mordred.error.html#mordred.error.MultipleFragments">[docs]</a><span class="k">class</span> <span class="nc">MultipleFragments</span><span class="p">(</span><span class="n">MordredException</span><span class="p">):</span>

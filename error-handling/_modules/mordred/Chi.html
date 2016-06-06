@@ -332,7 +332,7 @@
                 <span class="n">c</span> <span class="o">*=</span> <span class="n">P</span><span class="p">[</span><span class="n">node</span><span class="p">]</span>
 
             <span class="k">if</span> <span class="n">c</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;some properties less then or equal to 0&#39;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;some properties less then or equal to 0&#39;</span><span class="p">))</span>
 
             <span class="n">x</span> <span class="o">+=</span> <span class="n">c</span> <span class="o">**</span> <span class="o">-</span><span class="mf">0.5</span>
 

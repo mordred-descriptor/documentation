@@ -206,7 +206,7 @@
                 <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">()</span>
             <span class="p">)</span>
         <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;unknown atom type&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;unknown atom type&#39;</span><span class="p">))</span>
 
         <span class="k">return</span> <span class="n">ac</span> <span class="o">-</span> <span class="mf">5.92</span> <span class="o">*</span> <span class="n">Nb</span> <span class="o">-</span> <span class="mf">14.7</span> <span class="o">*</span> <span class="n">NRa</span> <span class="o">-</span> <span class="mf">3.8</span> <span class="o">*</span> <span class="n">NRA</span>
 
