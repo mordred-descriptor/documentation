@@ -1,0 +1,315 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>mordred.surface_area package &mdash; mordred 0.2.0a0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="mordred 0.2.0a0 documentation" href="../index.html"/>
+        <link rel="up" title="mordred package" href="mordred.html"/>
+        <link rel="next" title="mordred.tests package" href="mordred.tests.html"/>
+        <link rel="prev" title="mordred package" href="mordred.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> mordred
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2.0a0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html#mordred">mordred</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="mordred.html">mordred package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="mordred.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">mordred.surface_area package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.tests.html">mordred.tests package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mordred.html#submodules">Submodules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../matrix.html">Matrix aggregating methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../atomic_prop.html">atomic properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../descriptors.html">Descriptor List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography.html">bibliography</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">mordred</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="mordred.html">mordred package</a> &raquo;</li>
+      
+    <li>mordred.surface_area package</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/api/mordred.surface_area.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-mordred.surface_area">
+<span id="mordred-surface-area-package"></span><h1>mordred.surface_area package<a class="headerlink" href="#module-mordred.surface_area" title="Permalink to this headline">¶</a></h1>
+<p>surface area subpackage.</p>
+<div class="code console highlight-default"><div class="highlight"><pre><span></span>$ python -m mordred.surface_area -h
+usage: python -m mordred.surface_area [-h] [-s R] [-l L] FILE
+
+positional arguments:
+  FILE                  input sdf/mol file
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -s R, --solvent-radius R
+                        solvent radius (default: 1.4)
+  -l L, --mesh-level L  mesh level (default: 5)
+</pre></div>
+</div>
+<dl class="class">
+<dt id="mordred.surface_area.SurfaceArea">
+<em class="property">class </em><code class="descclassname">mordred.surface_area.</code><code class="descname">SurfaceArea</code><span class="sig-paren">(</span><em>radiuses</em>, <em>xyzs</em>, <em>level=5</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/surface_area/_sasa.html#SurfaceArea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.surface_area.SurfaceArea" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>calculate solvent accessible surface area.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>radiuses</strong> (<em>np.ndarray(dtype=float, shape=(N,))</em>) &#8211; atomic radius + solvent radius vector</li>
+<li><strong>xyzs</strong> (<em>np.ndarray(dtype=float, shape=(N, 3))</em>) &#8211; atomic position matrix</li>
+<li><strong>level</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; <p>mesh level. subdivide icosahedron n-1 times.</p>
+<div class="math">
+\[N_{\rm points} = 5 \times 4^{level} - 8\]</div>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="mordred.surface_area.SurfaceArea.atomic_sa">
+<code class="descname">atomic_sa</code><span class="sig-paren">(</span><em>i</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/surface_area/_sasa.html#SurfaceArea.atomic_sa"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.surface_area.SurfaceArea.atomic_sa" title="Permalink to this definition">¶</a></dt>
+<dd><p>calculate atomic surface area.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>i</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; atom index</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)">float</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="mordred.surface_area.SurfaceArea.from_mol">
+<em class="property">classmethod </em><code class="descname">from_mol</code><span class="sig-paren">(</span><em>mol</em>, <em>conformer=-1</em>, <em>solvent_radius=1.4</em>, <em>level=5</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/surface_area/_sasa.html#SurfaceArea.from_mol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.surface_area.SurfaceArea.from_mol" title="Permalink to this definition">¶</a></dt>
+<dd><p>construct SurfaceArea from rdkit Mol type.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>mol</strong> (<em>rdkit.Chem.Mol</em>) &#8211; input molecule</li>
+<li><strong>conformer</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; conformer id</li>
+<li><strong>solvent_radius</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><em>float</em></a>) &#8211; solvent radius</li>
+<li><strong>level</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; mesh level</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#mordred.surface_area.SurfaceArea" title="mordred.surface_area.SurfaceArea">SurfaceArea</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="mordred.surface_area.SurfaceArea.from_pdb">
+<em class="property">classmethod </em><code class="descname">from_pdb</code><span class="sig-paren">(</span><em>pdb</em>, <em>solvent_radius=1.4</em>, <em>level=3</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/surface_area/_sasa.html#SurfaceArea.from_pdb"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.surface_area.SurfaceArea.from_pdb" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.surface_area.SurfaceArea.surface_area">
+<code class="descname">surface_area</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/surface_area/_sasa.html#SurfaceArea.surface_area"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.surface_area.SurfaceArea.surface_area" title="Permalink to this definition">¶</a></dt>
+<dd><p>calculate all atomic surface area.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">[float]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mordred.tests.html" class="btn btn-neutral float-right" title="mordred.tests package" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mordred.html" class="btn btn-neutral" title="mordred package" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Hirotomo Moriwaki.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.2.0a0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+mordred.Constitutional module
+=============================
+
+.. automodule:: mordred.Constitutional
+    :members:
+    :undoc-members:
+    :show-inheritance:
