@@ -1,0 +1,7 @@
+mordred.BertzCT module
+======================
+
+.. automodule:: mordred.BertzCT
+    :members:
+    :undoc-members:
+    :show-inheritance:
