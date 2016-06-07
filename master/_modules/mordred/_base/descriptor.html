@@ -142,7 +142,7 @@
 <span class="kn">from</span> <span class="nn">contextlib</span> <span class="kn">import</span> <span class="n">contextmanager</span>
 
 
-<span class="k">class</span> <span class="nc">NAException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">MissingValueException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,)</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">error</span><span class="p">):</span>
@@ -256,7 +256,7 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="ne">ZeroDivisionError</span><span class="p">(</span><span class="o">*</span><span class="n">e</span><span class="o">.</span><span class="n">args</span><span class="p">))</span></div>
 
 <div class="viewcode-block" id="Descriptor.fail"><a class="viewcode-back" href="../../../api/mordred.html#mordred.Descriptor.fail">[docs]</a>    <span class="k">def</span> <span class="nf">fail</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exception</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="n">NAException</span><span class="p">(</span><span class="n">exception</span><span class="p">)</span></div>
+        <span class="k">raise</span> <span class="n">MissingValueException</span><span class="p">(</span><span class="n">exception</span><span class="p">)</span></div>
 
     <span class="nd">@contextmanager</span>
 <div class="viewcode-block" id="Descriptor.rethrow_na"><a class="viewcode-back" href="../../../api/mordred.html#mordred.Descriptor.rethrow_na">[docs]</a>    <span class="k">def</span> <span class="nf">rethrow_na</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exception</span><span class="p">):</span>
