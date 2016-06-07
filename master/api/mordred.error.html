@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mordred.BCUT module &mdash; mordred 0.2.0a0 documentation</title>
+  <title>mordred.error module &mdash; mordred 0.2.0a0 documentation</title>
   
 
   
@@ -32,8 +32,8 @@
   
     <link rel="top" title="mordred 0.2.0a0 documentation" href="../index.html"/>
         <link rel="up" title="mordred package" href="mordred.html"/>
-        <link rel="next" title="mordred.BalabanJ module" href="mordred.BalabanJ.html"/>
-        <link rel="prev" title="mordred.Autocorrelation module" href="mordred.Autocorrelation.html"/> 
+        <link rel="next" title="Matrix aggregating methods" href="../matrix.html"/>
+        <link rel="prev" title="mordred.ZagrebIndex module" href="mordred.ZagrebIndex.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -94,7 +94,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.Aromatic.html">mordred.Aromatic module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.AtomCount.html">mordred.AtomCount module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.Autocorrelation.html">mordred.Autocorrelation module</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">mordred.BCUT module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.BCUT.html">mordred.BCUT module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.BalabanJ.html">mordred.BalabanJ module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.BaryszMatrix.html">mordred.BaryszMatrix module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.BertzCT.html">mordred.BertzCT module</a></li>
@@ -135,7 +135,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.Weight.html">mordred.Weight module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.WienerIndex.html">mordred.WienerIndex module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.ZagrebIndex.html">mordred.ZagrebIndex module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mordred.error.html">mordred.error module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">mordred.error module</a></li>
 </ul>
 </li>
 </ul>
@@ -176,11 +176,11 @@
       
           <li><a href="mordred.html">mordred package</a> &raquo;</li>
       
-    <li>mordred.BCUT module</li>
+    <li>mordred.error module</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/api/mordred.BCUT.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/api/mordred.error.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -190,93 +190,99 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-mordred.BCUT">
-<span id="mordred-bcut-module"></span><h1>mordred.BCUT module<a class="headerlink" href="#module-mordred.BCUT" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-mordred.error">
+<span id="mordred-error-module"></span><h1>mordred.error module<a class="headerlink" href="#module-mordred.error" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
-<dt id="mordred.BCUT.BCUT">
-<em class="property">class </em><code class="descclassname">mordred.BCUT.</code><code class="descname">BCUT</code><span class="sig-paren">(</span><em>prop='m'</em>, <em>nth=0</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/BCUT.html#BCUT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.BCUT.BCUT" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.BCUT.BCUTBase</span></code></p>
-<p>BCUT descriptor.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>prop</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">function</span></code>) &#8211; <a class="reference internal" href="../atomic_prop.html#atomic-properties"><span class="std std-ref">atomic properties</span></a></li>
-<li><strong>nth</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; n-th eigen value. 0 is highest, -1 is lowest.</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><p>NaN when</p>
-<ul class="simple">
-<li>any atomic properties are NaN</li>
-<li><span class="math">\(\left| nth \right| &gt; A\)</span></li>
-</ul>
-</p>
-</td>
-</tr>
-</tbody>
-</table>
-<dl class="method">
-<dt id="mordred.BCUT.BCUT.as_key">
-<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/BCUT.html#BCUT.as_key"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.BCUT.BCUT.as_key" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.error.MissingValue">
+<em class="property">class </em><code class="descclassname">mordred.error.</code><code class="descname">MissingValue</code><span class="sig-paren">(</span><em>error</em>, <em>stack</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/error.html#MissingValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.error.MissingValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<dl class="attribute">
+<dt id="mordred.error.MissingValue.error">
+<code class="descname">error</code><a class="headerlink" href="#mordred.error.MissingValue.error" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.BCUT.BCUT.rtype">
-<code class="descname">rtype</code><a class="headerlink" href="#mordred.BCUT.BCUT.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+<dt id="mordred.error.MissingValue.stack">
+<code class="descname">stack</code><a class="headerlink" href="#mordred.error.MissingValue.stack" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
+<dl class="class">
+<dt id="mordred.error.NA">
+<em class="property">class </em><code class="descclassname">mordred.error.</code><code class="descname">NA</code><span class="sig-paren">(</span><em>error</em>, <em>stack</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/error.html#NA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.error.NA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mordred.error.MissingValue" title="mordred.error.MissingValue"><code class="xref py py-class docutils literal"><span class="pre">mordred.error.MissingValue</span></code></a></p>
 <dl class="attribute">
-<dt id="mordred.BCUT.BCUT.as_argument">
-<code class="descname">as_argument</code><a class="headerlink" href="#mordred.BCUT.BCUT.as_argument" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.error.NA.header">
+<code class="descname">header</code><em class="property"> = 'WARNING'</em><a class="headerlink" href="#mordred.error.NA.header" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.BCUT.BCUT.coord">
-<code class="descname">coord</code><a class="headerlink" href="#mordred.BCUT.BCUT.coord" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.error.NA.error">
+<code class="descname">error</code><a class="headerlink" href="#mordred.error.NA.error" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.BCUT.BCUT.explicit_hydrogens">
-<code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.BCUT.BCUT.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.error.NA.stack">
+<code class="descname">stack</code><a class="headerlink" href="#mordred.error.NA.stack" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.error.Error">
+<em class="property">class </em><code class="descclassname">mordred.error.</code><code class="descname">Error</code><span class="sig-paren">(</span><em>error</em>, <em>stack</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/error.html#Error"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.error.Error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mordred.error.MissingValue" title="mordred.error.MissingValue"><code class="xref py py-class docutils literal"><span class="pre">mordred.error.MissingValue</span></code></a></p>
+<dl class="attribute">
+<dt id="mordred.error.Error.header">
+<code class="descname">header</code><em class="property"> = 'ERROR'</em><a class="headerlink" href="#mordred.error.Error.header" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.error.Error.error">
+<code class="descname">error</code><a class="headerlink" href="#mordred.error.Error.error" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.error.Error.stack">
+<code class="descname">stack</code><a class="headerlink" href="#mordred.error.Error.stack" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="mordred.error.MordredException">
+<em class="property">exception </em><code class="descclassname">mordred.error.</code><code class="descname">MordredException</code><a class="reference internal" href="../_modules/mordred/error.html#MordredException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.error.MordredException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
+<dl class="attribute">
+<dt id="mordred.error.MordredException.args">
+<code class="descname">args</code><a class="headerlink" href="#mordred.error.MordredException.args" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="mordred.BCUT.BCUT.fail">
-<code class="descname">fail</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.BCUT.BCUT.fail" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dt id="mordred.error.MordredException.with_traceback">
+<code class="descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.error.MordredException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) &#8211;
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
 
-<dl class="attribute">
-<dt id="mordred.BCUT.BCUT.kekulize">
-<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.BCUT.BCUT.kekulize" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+</dd></dl>
 
+<dl class="exception">
+<dt id="mordred.error.MultipleFragments">
+<em class="property">exception </em><code class="descclassname">mordred.error.</code><code class="descname">MultipleFragments</code><a class="reference internal" href="../_modules/mordred/error.html#MultipleFragments"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.error.MultipleFragments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mordred.error.MordredException" title="mordred.error.MordredException"><code class="xref py py-class docutils literal"><span class="pre">mordred.error.MordredException</span></code></a></p>
 <dl class="attribute">
-<dt id="mordred.BCUT.BCUT.mol">
-<code class="descname">mol</code><a class="headerlink" href="#mordred.BCUT.BCUT.mol" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="mordred.BCUT.BCUT.require_3D">
-<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.BCUT.BCUT.require_3D" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="mordred.BCUT.BCUT.require_connected">
-<code class="descname">require_connected</code><em class="property"> = True</em><a class="headerlink" href="#mordred.BCUT.BCUT.require_connected" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.error.MultipleFragments.args">
+<code class="descname">args</code><a class="headerlink" href="#mordred.error.MultipleFragments.args" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="mordred.BCUT.BCUT.rethrow_na">
-<code class="descname">rethrow_na</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.BCUT.BCUT.rethrow_na" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="mordred.BCUT.BCUT.rethrow_zerodiv">
-<code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.BCUT.BCUT.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dt id="mordred.error.MultipleFragments.with_traceback">
+<code class="descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.error.MultipleFragments.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) &#8211;
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -289,10 +295,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="mordred.BalabanJ.html" class="btn btn-neutral float-right" title="mordred.BalabanJ module" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../matrix.html" class="btn btn-neutral float-right" title="Matrix aggregating methods" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="mordred.Autocorrelation.html" class="btn btn-neutral" title="mordred.Autocorrelation module" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mordred.ZagrebIndex.html" class="btn btn-neutral" title="mordred.ZagrebIndex module" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -175,6 +175,12 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_saturated</span> <span class="o">=</span> <span class="n">saturated</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="n">explicit_hydrogens</span>
 
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="s1">&#39;Saturated&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_saturated</span> <span class="k">else</span> <span class="s1">&#39;Reference&#39;</span>
+        <span class="n">H</span> <span class="o">=</span> <span class="s1">&#39;H&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span>
+
+        <span class="k">return</span> <span class="s1">&#39;{}Mol{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">H</span><span class="p">)</span>
+
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">new</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">RWMol</span><span class="p">(</span><span class="n">Chem</span><span class="o">.</span><span class="n">Mol</span><span class="p">())</span>
         <span class="n">ids</span> <span class="o">=</span> <span class="p">{}</span>

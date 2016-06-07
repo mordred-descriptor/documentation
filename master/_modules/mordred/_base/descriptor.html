@@ -142,29 +142,11 @@
 <span class="kn">from</span> <span class="nn">contextlib</span> <span class="kn">import</span> <span class="n">contextmanager</span>
 
 
-<div class="viewcode-block" id="Error"><a class="viewcode-back" href="../../../api/mordred.html#mordred.Error">[docs]</a><span class="k">class</span> <span class="nc">Error</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="s1">&#39;stack&#39;</span><span class="p">,</span> <span class="s1">&#39;critical&#39;</span><span class="p">,</span> <span class="s1">&#39;warning&#39;</span>
+<span class="k">class</span> <span class="nc">NAException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,)</span>
 
-    <span class="k">def</span> <span class="nf">__reduce_ex__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">version</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">error</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stack</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">critical</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">warning</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">stack</span><span class="p">,</span> <span class="n">critical</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">warning</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">error</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">error</span> <span class="o">=</span> <span class="n">error</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">stack</span> <span class="o">=</span> <span class="n">stack</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">critical</span> <span class="o">=</span> <span class="n">critical</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">warning</span> <span class="o">=</span> <span class="n">warning</span>
-
-    <span class="k">def</span> <span class="nf">__float__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-
-    <span class="k">def</span> <span class="nf">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-
-    <span class="k">def</span> <span class="nf">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-
-    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s1">&#39;{} ({})&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">error</span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">stack</span><span class="p">))</span></div>
 
 
 <div class="viewcode-block" id="Descriptor"><a class="viewcode-back" href="../../../api/mordred.html#mordred.Descriptor">[docs]</a><span class="k">class</span> <span class="nc">Descriptor</span><span class="p">(</span><span class="n">six</span><span class="o">.</span><span class="n">with_metaclass</span><span class="p">(</span><span class="n">ABCMeta</span><span class="p">,</span> <span class="nb">object</span><span class="p">)):</span>
@@ -182,7 +164,7 @@
 
     <span class="nd">@abstractmethod</span>
 <div class="viewcode-block" id="Descriptor.as_key"><a class="viewcode-back" href="../../../api/mordred.html#mordred.Descriptor.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;not implemented Descriptor.as_key method&#39;</span><span class="p">)</span></div>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s1">&#39;not implemented Descriptor.as_key method&#39;</span><span class="p">)</span></div>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">as_argument</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -202,9 +184,13 @@
 
     <span class="k">def</span> <span class="nf">__compare_by_reduce</span><span class="p">(</span><span class="n">meth</span><span class="p">):</span>
         <span class="k">def</span> <span class="nf">compare</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-            <span class="n">l</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">as_key</span><span class="p">()</span>
-            <span class="n">r</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">as_key</span><span class="p">()</span>
-            <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">meth</span><span class="p">)(</span><span class="n">r</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">):</span>
+                <span class="n">l</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">as_key</span><span class="p">()</span>
+                <span class="n">r</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">as_key</span><span class="p">()</span>
+                <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">meth</span><span class="p">)(</span><span class="n">r</span><span class="p">)</span>
+
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">l</span><span class="p">),</span> <span class="n">meth</span><span class="p">)(</span><span class="nb">str</span><span class="p">(</span><span class="n">r</span><span class="p">))</span>
 
         <span class="k">return</span> <span class="n">compare</span>
 
@@ -239,7 +225,7 @@
 
 <span class="sd">        (abstract method)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;not implemented Descriptor.calculate method&#39;</span><span class="p">)</span></div>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s1">&#39;not implemented Descriptor.calculate method&#39;</span><span class="p">)</span></div>
 
     <span class="nd">@classmethod</span>
 <div class="viewcode-block" id="Descriptor.is_descriptor_class"><a class="viewcode-back" href="../../../api/mordred.html#mordred.Descriptor.is_descriptor_class">[docs]</a>    <span class="k">def</span> <span class="nf">is_descriptor_class</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">desc</span><span class="p">):</span>
@@ -255,14 +241,11 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">mol</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">get_mol</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">kekulize</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">get_mol</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">coord</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">get_coord</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">kekulize</span><span class="p">)</span>
-
-<div class="viewcode-block" id="Descriptor.fail"><a class="viewcode-back" href="../../../api/mordred.html#mordred.Descriptor.fail">[docs]</a>    <span class="k">def</span> <span class="nf">fail</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ex</span><span class="p">,</span> <span class="n">critical</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">warning</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="n">Error</span><span class="p">(</span><span class="n">ex</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">get_stack</span><span class="p">(),</span> <span class="n">critical</span><span class="p">,</span> <span class="n">warning</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">get_coord</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
     <span class="nd">@contextmanager</span>
 <div class="viewcode-block" id="Descriptor.rethrow_zerodiv"><a class="viewcode-back" href="../../../api/mordred.html#mordred.Descriptor.rethrow_zerodiv">[docs]</a>    <span class="k">def</span> <span class="nf">rethrow_zerodiv</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -270,7 +253,17 @@
             <span class="k">try</span><span class="p">:</span>
                 <span class="k">yield</span>
             <span class="k">except</span> <span class="p">(</span><span class="ne">FloatingPointError</span><span class="p">,</span> <span class="ne">ZeroDivisionError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="ne">ZeroDivisionError</span><span class="p">(</span><span class="o">*</span><span class="n">e</span><span class="o">.</span><span class="n">args</span><span class="p">))</span></div></div>
+                <span class="bp">self</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="ne">ZeroDivisionError</span><span class="p">(</span><span class="o">*</span><span class="n">e</span><span class="o">.</span><span class="n">args</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="Descriptor.fail"><a class="viewcode-back" href="../../../api/mordred.html#mordred.Descriptor.fail">[docs]</a>    <span class="k">def</span> <span class="nf">fail</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exception</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="n">NAException</span><span class="p">(</span><span class="n">exception</span><span class="p">)</span></div>
+
+    <span class="nd">@contextmanager</span>
+<div class="viewcode-block" id="Descriptor.rethrow_na"><a class="viewcode-back" href="../../../api/mordred.html#mordred.Descriptor.rethrow_na">[docs]</a>    <span class="k">def</span> <span class="nf">rethrow_na</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exception</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">yield</span>
+        <span class="k">except</span> <span class="n">exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="n">e</span><span class="p">)</span></div></div>
 </pre></div>
 
            </div>

@@ -135,6 +135,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.Weight.html">mordred.Weight module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.WienerIndex.html">mordred.WienerIndex module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.ZagrebIndex.html">mordred.ZagrebIndex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.error.html">mordred.error module</a></li>
 </ul>
 </li>
 </ul>
@@ -213,7 +214,7 @@
 </dl>
 <dl class="attribute">
 <dt id="mordred.VdwVolumeABC.VdwVolumeABC.compat_atoms">
-<code class="descname">compat_atoms</code><em class="property"> = ('B', 'Br', 'Se', 'P', 'S', 'N', 'As', 'C', 'O', 'H', 'F', 'Si', 'Cl')</em><a class="headerlink" href="#mordred.VdwVolumeABC.VdwVolumeABC.compat_atoms" title="Permalink to this definition">¶</a></dt>
+<code class="descname">compat_atoms</code><em class="property"> = ('C', 'Se', 'S', 'H', 'N', 'F', 'P', 'Br', 'B', 'As', 'Si', 'O', 'Cl')</em><a class="headerlink" href="#mordred.VdwVolumeABC.VdwVolumeABC.compat_atoms" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -244,7 +245,7 @@
 
 <dl class="method">
 <dt id="mordred.VdwVolumeABC.VdwVolumeABC.fail">
-<code class="descname">fail</code><span class="sig-paren">(</span><em>ex</em>, <em>critical=False</em>, <em>warning=False</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.VdwVolumeABC.VdwVolumeABC.fail" title="Permalink to this definition">¶</a></dt>
+<code class="descname">fail</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.VdwVolumeABC.VdwVolumeABC.fail" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -265,6 +266,11 @@
 <dl class="attribute">
 <dt id="mordred.VdwVolumeABC.VdwVolumeABC.require_connected">
 <code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.VdwVolumeABC.VdwVolumeABC.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.VdwVolumeABC.VdwVolumeABC.rethrow_na">
+<code class="descname">rethrow_na</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.VdwVolumeABC.VdwVolumeABC.rethrow_na" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">

@@ -298,7 +298,7 @@
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">prop</span> <span class="o">=</span> <span class="n">_prop_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="p">)</span>
+        <span class="n">prop</span> <span class="o">=</span> <span class="n">_prop_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="o">.</span><span class="n">as_argument</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="p">)</span>
         <span class="n">ct</span> <span class="o">=</span> <span class="n">_chi_type_dict</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">]</span>
         <span class="n">p</span> <span class="o">=</span> <span class="s1">&#39;A&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span>
 

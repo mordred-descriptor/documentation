@@ -134,9 +134,10 @@
             
   <h1>Source code for mordred.tests.test_exceptions</h1><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span>
-<span class="kn">from</span> <span class="nn">mordred</span> <span class="kn">import</span> <span class="n">Descriptor</span><span class="p">,</span> <span class="n">Calculator</span><span class="p">,</span> <span class="n">Error</span>
+<span class="kn">from</span> <span class="nn">mordred</span> <span class="kn">import</span> <span class="n">Descriptor</span><span class="p">,</span> <span class="n">Calculator</span>
+<span class="kn">from</span> <span class="nn">mordred.error</span> <span class="kn">import</span> <span class="n">Error</span>
 
-<span class="kn">from</span> <span class="nn">nose.tools</span> <span class="kn">import</span> <span class="n">raises</span><span class="p">,</span> <span class="n">eq_</span>
+<span class="kn">from</span> <span class="nn">nose.tools</span> <span class="kn">import</span> <span class="n">eq_</span>
 
 
 <div class="viewcode-block" id="RaiseDescriptor"><a class="viewcode-back" href="../../../api/mordred.tests.test_exceptions.html#mordred.tests.test_exceptions.RaiseDescriptor">[docs]</a><span class="k">class</span> <span class="nc">RaiseDescriptor</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
@@ -148,16 +149,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">critical</span> <span class="o">=</span> <span class="n">critical</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">e</span><span class="p">,</span> <span class="n">critical</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">critical</span><span class="p">)</span></div>
+        <span class="k">raise</span> <span class="bp">self</span><span class="o">.</span><span class="n">e</span></div>
 
 
 <span class="n">mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="s1">&#39;c1ccccc1&#39;</span><span class="p">)</span>
-
-
-<span class="nd">@raises</span><span class="p">(</span><span class="n">Error</span><span class="p">)</span>
-<div class="viewcode-block" id="test_through_critical_error"><a class="viewcode-back" href="../../../api/mordred.tests.test_exceptions.html#mordred.tests.test_exceptions.test_through_critical_error">[docs]</a><span class="k">def</span> <span class="nf">test_through_critical_error</span><span class="p">():</span>
-    <span class="n">calc</span> <span class="o">=</span> <span class="n">Calculator</span><span class="p">(</span><span class="n">RaiseDescriptor</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">(),</span> <span class="bp">True</span><span class="p">))</span>
-    <span class="n">calc</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="test_catch_non_critical_error"><a class="viewcode-back" href="../../../api/mordred.tests.test_exceptions.html#mordred.tests.test_exceptions.test_catch_non_critical_error">[docs]</a><span class="k">def</span> <span class="nf">test_catch_non_critical_error</span><span class="p">():</span>

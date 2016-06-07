@@ -174,7 +174,7 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="o">.</span><span class="n">prop</span> <span class="o">==</span> <span class="n">get_sanderson_en</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_prop_name</span> <span class="o">=</span> <span class="s1">&#39;se&#39;</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_prop_name</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_prop_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="o">.</span><span class="n">as_argument</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;S{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_prop_name</span><span class="p">)</span>
