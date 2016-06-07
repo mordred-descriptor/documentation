@@ -147,6 +147,8 @@
 
 
 <span class="k">class</span> <span class="nc">WildmanCrippenBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="k">yield</span> <span class="n">cls</span><span class="p">()</span>
@@ -164,20 +166,18 @@
 
 <div class="viewcode-block" id="SLogP"><a class="viewcode-back" href="../../api/mordred.SLogP.html#mordred.SLogP.SLogP">[docs]</a><span class="k">class</span> <span class="nc">SLogP</span><span class="p">(</span><span class="n">WildmanCrippenBase</span><span class="p">):</span>
     <span class="sd">r&quot;&quot;&quot;Wildman-Crippen LogP descriptor(rdkit wrapper).&quot;&quot;&quot;</span>
-
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">Crippen</span><span class="o">.</span><span class="n">MolLogP</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span></div>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Crippen</span><span class="o">.</span><span class="n">MolLogP</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="SMR"><a class="viewcode-back" href="../../api/mordred.SLogP.html#mordred.SLogP.SMR">[docs]</a><span class="k">class</span> <span class="nc">SMR</span><span class="p">(</span><span class="n">WildmanCrippenBase</span><span class="p">):</span>
     <span class="sd">r&quot;&quot;&quot;Wildman-Crippen MR descriptor(rdkit wrapper).&quot;&quot;&quot;</span>
-
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">Crippen</span><span class="o">.</span><span class="n">MolMR</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span></div>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Crippen</span><span class="o">.</span><span class="n">MolMR</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="p">)</span></div>
 </pre></div>
 
            </div>

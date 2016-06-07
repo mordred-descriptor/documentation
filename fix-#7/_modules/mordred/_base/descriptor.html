@@ -135,13 +135,24 @@
            <div itemprop="articleBody">
             
   <h1>Source code for mordred._base.descriptor</h1><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">six</span>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">six</span>
 <span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABCMeta</span><span class="p">,</span> <span class="n">abstractmethod</span>
 <span class="kn">from</span> <span class="nn">inspect</span> <span class="kn">import</span> <span class="n">isabstract</span>
+<span class="kn">from</span> <span class="nn">contextlib</span> <span class="kn">import</span> <span class="n">contextmanager</span>
+
+
+<span class="k">class</span> <span class="nc">NAException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">error</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">error</span> <span class="o">=</span> <span class="n">error</span>
 
 
 <div class="viewcode-block" id="Descriptor"><a class="viewcode-back" href="../../../api/mordred.html#mordred.Descriptor">[docs]</a><span class="k">class</span> <span class="nc">Descriptor</span><span class="p">(</span><span class="n">six</span><span class="o">.</span><span class="n">with_metaclass</span><span class="p">(</span><span class="n">ABCMeta</span><span class="p">,</span> <span class="nb">object</span><span class="p">)):</span>
     <span class="sd">r&quot;&quot;&quot;abstract base class of descriptors.&quot;&quot;&quot;</span>
+
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="s1">&#39;_context&#39;</span><span class="p">,</span>
 
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">True</span>
     <span class="n">kekulize</span> <span class="o">=</span> <span class="bp">False</span>
@@ -153,7 +164,7 @@
 
     <span class="nd">@abstractmethod</span>
 <div class="viewcode-block" id="Descriptor.as_key"><a class="viewcode-back" href="../../../api/mordred.html#mordred.Descriptor.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;not implemented Descriptor.as_key method&#39;</span><span class="p">)</span></div>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s1">&#39;not implemented Descriptor.as_key method&#39;</span><span class="p">)</span></div>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">as_argument</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -173,9 +184,13 @@
 
     <span class="k">def</span> <span class="nf">__compare_by_reduce</span><span class="p">(</span><span class="n">meth</span><span class="p">):</span>
         <span class="k">def</span> <span class="nf">compare</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-            <span class="n">l</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">as_key</span><span class="p">()</span>
-            <span class="n">r</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">as_key</span><span class="p">()</span>
-            <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">meth</span><span class="p">)(</span><span class="n">r</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">):</span>
+                <span class="n">l</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">as_key</span><span class="p">()</span>
+                <span class="n">r</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">as_key</span><span class="p">()</span>
+                <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">meth</span><span class="p">)(</span><span class="n">r</span><span class="p">)</span>
+
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">l</span><span class="p">),</span> <span class="n">meth</span><span class="p">)(</span><span class="nb">str</span><span class="p">(</span><span class="n">r</span><span class="p">))</span>
 
         <span class="k">return</span> <span class="n">compare</span>
 
@@ -210,15 +225,7 @@
 
 <span class="sd">        (abstract method)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;not implemented Descriptor.calculate method&#39;</span><span class="p">)</span></div>
-
-    <span class="c1"># def __call__(self, mol, coord_id=-1):</span>
-    <span class="c1">#     r&quot;&quot;&quot;calculate single descriptor value.</span>
-
-    <span class="c1">#     :returns: descriptor result</span>
-    <span class="c1">#     :rtype: scalar</span>
-    <span class="c1">#     &quot;&quot;&quot;</span>
-    <span class="c1">#     return Calculator(self)(mol, coord_id)[0]</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s1">&#39;not implemented Descriptor.calculate method&#39;</span><span class="p">)</span></div>
 
     <span class="nd">@classmethod</span>
 <div class="viewcode-block" id="Descriptor.is_descriptor_class"><a class="viewcode-back" href="../../../api/mordred.html#mordred.Descriptor.is_descriptor_class">[docs]</a>    <span class="k">def</span> <span class="nf">is_descriptor_class</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">desc</span><span class="p">):</span>
@@ -230,7 +237,33 @@
             <span class="nb">isinstance</span><span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span> <span class="ow">and</span>
             <span class="nb">issubclass</span><span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="n">cls</span><span class="p">)</span> <span class="ow">and</span>
             <span class="ow">not</span> <span class="n">isabstract</span><span class="p">(</span><span class="n">desc</span><span class="p">)</span>
-        <span class="p">)</span></div></div>
+        <span class="p">)</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">mol</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">get_mol</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">coord</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">get_coord</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="nd">@contextmanager</span>
+<div class="viewcode-block" id="Descriptor.rethrow_zerodiv"><a class="viewcode-back" href="../../../api/mordred.html#mordred.Descriptor.rethrow_zerodiv">[docs]</a>    <span class="k">def</span> <span class="nf">rethrow_zerodiv</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">np</span><span class="o">.</span><span class="n">errstate</span><span class="p">(</span><span class="n">divide</span><span class="o">=</span><span class="s1">&#39;raise&#39;</span><span class="p">,</span> <span class="n">invalid</span><span class="o">=</span><span class="s1">&#39;raise&#39;</span><span class="p">):</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">yield</span>
+            <span class="k">except</span> <span class="p">(</span><span class="ne">FloatingPointError</span><span class="p">,</span> <span class="ne">ZeroDivisionError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="ne">ZeroDivisionError</span><span class="p">(</span><span class="o">*</span><span class="n">e</span><span class="o">.</span><span class="n">args</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="Descriptor.fail"><a class="viewcode-back" href="../../../api/mordred.html#mordred.Descriptor.fail">[docs]</a>    <span class="k">def</span> <span class="nf">fail</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exception</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="n">NAException</span><span class="p">(</span><span class="n">exception</span><span class="p">)</span></div>
+
+    <span class="nd">@contextmanager</span>
+<div class="viewcode-block" id="Descriptor.rethrow_na"><a class="viewcode-back" href="../../../api/mordred.html#mordred.Descriptor.rethrow_na">[docs]</a>    <span class="k">def</span> <span class="nf">rethrow_na</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exception</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">yield</span>
+        <span class="k">except</span> <span class="n">exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="n">e</span><span class="p">)</span></div></div>
 </pre></div>
 
            </div>

@@ -149,7 +149,7 @@
 
 <div class="viewcode-block" id="LabuteASA"><a class="viewcode-back" href="../../api/mordred.MoeType.html#mordred.MoeType.LabuteASA">[docs]</a><span class="k">class</span> <span class="nc">LabuteASA</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
     <span class="sd">r&quot;&quot;&quot;Labute&#39;s Approximate Surface Area descriptor(rdkit wrapper).&quot;&quot;&quot;</span>
-
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
 
     <span class="nd">@classmethod</span>
@@ -162,13 +162,14 @@
 <div class="viewcode-block" id="LabuteASA.as_key"><a class="viewcode-back" href="../../api/mordred.MoeType.html#mordred.MoeType.LabuteASA.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">()</span></div>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">MolSurf</span><span class="o">.</span><span class="n">LabuteASA</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">MolSurf</span><span class="o">.</span><span class="n">LabuteASA</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="p">)</span>
 
     <span class="n">rtype</span> <span class="o">=</span> <span class="nb">float</span></div>
 
 
 <span class="k">class</span> <span class="nc">MoeTypeBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_k&#39;</span><span class="p">,)</span>
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
     <span class="n">_module</span> <span class="o">=</span> <span class="n">MolSurf</span>
 
@@ -186,9 +187,9 @@
         <span class="k">assert</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">k_max</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_k</span> <span class="o">=</span> <span class="n">k</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">f</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_module</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
-        <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="p">)</span>
 
     <span class="n">rtype</span> <span class="o">=</span> <span class="nb">float</span>
 
@@ -199,8 +200,7 @@
 <span class="sd">    :type k: int</span>
 <span class="sd">    :param k: (:math:`1 &lt;= k &lt;= k_{\rm max}`)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_k&#39;</span><span class="p">,)</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
     <span class="n">k_max</span> <span class="o">=</span> <span class="mi">14</span></div>
 
 
@@ -210,8 +210,7 @@
 <span class="sd">    :type k: int</span>
 <span class="sd">    :param k: (:math:`1 &lt;= k &lt;= k_{\rm max}`)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_k&#39;</span><span class="p">,)</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
     <span class="n">k_max</span> <span class="o">=</span> <span class="mi">10</span></div>
 
 
@@ -221,8 +220,7 @@
 <span class="sd">    :type k: int</span>
 <span class="sd">    :param k: (:math:`1 &lt;= k &lt;= k_{\rm max}`)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_k&#39;</span><span class="p">,)</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
     <span class="n">k_max</span> <span class="o">=</span> <span class="mi">12</span></div>
 
 
@@ -232,8 +230,7 @@
 <span class="sd">    :type k: int</span>
 <span class="sd">    :param k: (:math:`1 &lt;= k &lt;= k_{\rm max}`)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_k&#39;</span><span class="p">,)</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
     <span class="n">_module</span> <span class="o">=</span> <span class="n">RDKit_EState_VSA</span>
     <span class="n">k_max</span> <span class="o">=</span> <span class="mi">11</span></div>
 
@@ -244,8 +241,7 @@
 <span class="sd">    :type k: int</span>
 <span class="sd">    :param k: (:math:`1 &lt;= k &lt;= k_{\rm max}`)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_k&#39;</span><span class="p">,)</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
     <span class="n">_module</span> <span class="o">=</span> <span class="n">RDKit_EState_VSA</span>
     <span class="n">k_max</span> <span class="o">=</span> <span class="mi">10</span></div>
 </pre></div>

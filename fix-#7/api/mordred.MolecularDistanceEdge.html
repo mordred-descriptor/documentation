@@ -135,7 +135,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.Weight.html">mordred.Weight module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.WienerIndex.html">mordred.WienerIndex module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.ZagrebIndex.html">mordred.ZagrebIndex module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mordred.exception.html">mordred.exception module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.error.html">mordred.error module</a></li>
 </ul>
 </li>
 </ul>
@@ -202,8 +202,8 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>valence1</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; valence of first atom</li>
-<li><strong>valence2</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; valence of second atom</li>
+<li><strong>valence1</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; valence of first atom</li>
+<li><strong>valence2</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; valence of second atom</li>
 <li><strong>element</strong> (<em>str or int</em>) &#8211; atomic symbol or atomic number</li>
 </ul>
 </td>
@@ -229,8 +229,23 @@
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="mordred.MolecularDistanceEdge.MolecularDistanceEdge.coord">
+<code class="descname">coord</code><a class="headerlink" href="#mordred.MolecularDistanceEdge.MolecularDistanceEdge.coord" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.MolecularDistanceEdge.MolecularDistanceEdge.fail">
+<code class="descname">fail</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MolecularDistanceEdge.MolecularDistanceEdge.fail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="mordred.MolecularDistanceEdge.MolecularDistanceEdge.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.MolecularDistanceEdge.MolecularDistanceEdge.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.MolecularDistanceEdge.MolecularDistanceEdge.mol">
+<code class="descname">mol</code><a class="headerlink" href="#mordred.MolecularDistanceEdge.MolecularDistanceEdge.mol" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -243,10 +258,20 @@
 <code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.MolecularDistanceEdge.MolecularDistanceEdge.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.MolecularDistanceEdge.MolecularDistanceEdge.rethrow_na">
+<code class="descname">rethrow_na</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MolecularDistanceEdge.MolecularDistanceEdge.rethrow_na" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.MolecularDistanceEdge.MolecularDistanceEdge.rethrow_zerodiv">
+<code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MolecularDistanceEdge.MolecularDistanceEdge.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.MolecularDistanceEdge.MolecularDistanceEdge.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.MolecularDistanceEdge.MolecularDistanceEdge.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
 
 </dd></dl>

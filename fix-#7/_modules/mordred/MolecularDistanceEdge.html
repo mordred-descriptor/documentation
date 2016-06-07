@@ -133,7 +133,7 @@
            <div itemprop="articleBody">
             
   <h1>Source code for mordred.MolecularDistanceEdge</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">nan</span><span class="p">,</span> <span class="n">product</span>
+<span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">product</span>
 
 <span class="kn">from</span> <span class="nn">six</span> <span class="kn">import</span> <span class="n">integer_types</span><span class="p">,</span> <span class="n">string_types</span>
 
@@ -159,7 +159,7 @@
 
 <span class="sd">    :returns: NaN when :math:`N_{\rm MDE} = 0`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_valence1&#39;</span><span class="p">,</span> <span class="s1">&#39;_valence2&#39;</span><span class="p">,</span> <span class="s1">&#39;_atomic_num&#39;</span><span class="p">,)</span>
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
 
     <span class="nd">@classmethod</span>
@@ -177,8 +177,6 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_valence1</span><span class="p">,</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_valence2</span><span class="p">,</span>
         <span class="p">)</span>
-
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_valence1&#39;</span><span class="p">,</span> <span class="s1">&#39;_valence2&#39;</span><span class="p">,</span> <span class="s1">&#39;_atomic_num&#39;</span><span class="p">,)</span>
 
 <div class="viewcode-block" id="MolecularDistanceEdge.as_key"><a class="viewcode-back" href="../../api/mordred.MolecularDistanceEdge.html#mordred.MolecularDistanceEdge.MolecularDistanceEdge.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_valence1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_valence2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_atomic_num</span><span class="p">)</span></div>
@@ -199,23 +197,22 @@
             <span class="s1">&#39;V&#39;</span><span class="p">:</span> <span class="n">Valence</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">),</span>
         <span class="p">}</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">V</span><span class="p">):</span>
-        <span class="n">N</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">V</span><span class="p">):</span>
+        <span class="n">N</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span>
         <span class="n">Dv</span> <span class="o">=</span> <span class="p">[</span>
             <span class="n">D</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
             <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
             <span class="k">if</span> <span class="p">(</span><span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_valence1</span> <span class="ow">and</span> <span class="n">V</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_valence2</span><span class="p">)</span> <span class="ow">or</span>
             <span class="p">(</span><span class="n">V</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_valence1</span> <span class="ow">and</span> <span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_valence2</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetAtomWithIdx</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">GetAtomicNum</span><span class="p">()</span> <span class="o">==</span>
-            <span class="n">mol</span><span class="o">.</span><span class="n">GetAtomWithIdx</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="o">.</span><span class="n">GetAtomicNum</span><span class="p">()</span> <span class="o">==</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetAtomWithIdx</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">GetAtomicNum</span><span class="p">()</span> <span class="o">==</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetAtomWithIdx</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="o">.</span><span class="n">GetAtomicNum</span><span class="p">()</span> <span class="o">==</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_atomic_num</span>
         <span class="p">]</span>
         <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">Dv</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">nan</span>
 
-        <span class="n">dx</span> <span class="o">=</span> <span class="n">product</span><span class="p">(</span><span class="n">Dv</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.</span> <span class="o">*</span> <span class="n">n</span><span class="p">))</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">rethrow_zerodiv</span><span class="p">():</span>
+            <span class="n">dx</span> <span class="o">=</span> <span class="n">product</span><span class="p">(</span><span class="n">Dv</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.</span> <span class="o">*</span> <span class="n">n</span><span class="p">))</span>
 
         <span class="k">return</span> <span class="n">n</span> <span class="o">/</span> <span class="p">(</span><span class="n">dx</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
 

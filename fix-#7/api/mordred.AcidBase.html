@@ -135,7 +135,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.Weight.html">mordred.Weight module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.WienerIndex.html">mordred.WienerIndex module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.ZagrebIndex.html">mordred.ZagrebIndex module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mordred.exception.html">mordred.exception module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.error.html">mordred.error module</a></li>
 </ul>
 </li>
 </ul>
@@ -213,13 +213,28 @@
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="mordred.AcidBase.AcidicGroupCount.coord">
+<code class="descname">coord</code><a class="headerlink" href="#mordred.AcidBase.AcidicGroupCount.coord" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="mordred.AcidBase.AcidicGroupCount.explicit_hydrogens">
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.AcidBase.AcidicGroupCount.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.AcidBase.AcidicGroupCount.fail">
+<code class="descname">fail</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.AcidBase.AcidicGroupCount.fail" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.AcidBase.AcidicGroupCount.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.AcidBase.AcidicGroupCount.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.AcidBase.AcidicGroupCount.mol">
+<code class="descname">mol</code><a class="headerlink" href="#mordred.AcidBase.AcidicGroupCount.mol" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -232,10 +247,20 @@
 <code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.AcidBase.AcidicGroupCount.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.AcidBase.AcidicGroupCount.rethrow_na">
+<code class="descname">rethrow_na</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.AcidBase.AcidicGroupCount.rethrow_na" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.AcidBase.AcidicGroupCount.rethrow_zerodiv">
+<code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.AcidBase.AcidicGroupCount.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.AcidBase.AcidicGroupCount.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.AcidBase.AcidicGroupCount.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a></p>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a></p>
 </dd></dl>
 
 </dd></dl>
@@ -261,13 +286,28 @@
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="mordred.AcidBase.BasicGroupCount.coord">
+<code class="descname">coord</code><a class="headerlink" href="#mordred.AcidBase.BasicGroupCount.coord" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="mordred.AcidBase.BasicGroupCount.explicit_hydrogens">
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.AcidBase.BasicGroupCount.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.AcidBase.BasicGroupCount.fail">
+<code class="descname">fail</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.AcidBase.BasicGroupCount.fail" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.AcidBase.BasicGroupCount.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.AcidBase.BasicGroupCount.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.AcidBase.BasicGroupCount.mol">
+<code class="descname">mol</code><a class="headerlink" href="#mordred.AcidBase.BasicGroupCount.mol" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -280,10 +320,20 @@
 <code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.AcidBase.BasicGroupCount.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.AcidBase.BasicGroupCount.rethrow_na">
+<code class="descname">rethrow_na</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.AcidBase.BasicGroupCount.rethrow_na" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.AcidBase.BasicGroupCount.rethrow_zerodiv">
+<code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.AcidBase.BasicGroupCount.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.AcidBase.BasicGroupCount.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.AcidBase.BasicGroupCount.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a></p>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a></p>
 </dd></dl>
 
 </dd></dl>

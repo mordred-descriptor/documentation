@@ -146,6 +146,7 @@
 
 
 <span class="k">class</span> <span class="nc">CarbonTypesBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
     <span class="n">kekulize</span> <span class="o">=</span> <span class="bp">True</span>
 
@@ -164,9 +165,9 @@
         <span class="n">HybridizationType</span><span class="o">.</span><span class="n">SP3D2</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
     <span class="p">}</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">r</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">int</span><span class="p">))</span>
-        <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">():</span>
             <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">GetAtomicNum</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">6</span><span class="p">:</span>
                 <span class="k">continue</span>
 
@@ -191,6 +192,7 @@
 <span class="sd">    :type SP: int</span>
 <span class="sd">    :param SP: count :math:`{\rm SP}n` carbon</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_nCarbon&#39;</span><span class="p">,</span> <span class="s1">&#39;_SP&#39;</span><span class="p">,)</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
@@ -202,8 +204,6 @@
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;C{}SP{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_nCarbon</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_SP</span><span class="p">)</span>
-
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_nCarbon&#39;</span><span class="p">,</span> <span class="s1">&#39;_SP&#39;</span><span class="p">,)</span>
 
 <div class="viewcode-block" id="CarbonTypes.as_key"><a class="viewcode-back" href="../../api/mordred.CarbonTypes.html#mordred.CarbonTypes.CarbonTypes.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_nCarbon</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_SP</span><span class="p">)</span></div>
@@ -217,7 +217,7 @@
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;CT&#39;</span><span class="p">:</span> <span class="n">CarbonTypesCache</span><span class="p">()}</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">CT</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">CT</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">CT</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_SP</span><span class="p">][</span><span class="bp">self</span><span class="o">.</span><span class="n">_nCarbon</span><span class="p">]</span>
 
     <span class="n">rtype</span> <span class="o">=</span> <span class="nb">int</span></div>
@@ -232,7 +232,6 @@
 
 <span class="sd">    :returns: NaN when :math:`N_{\rm SP2} + N_{\rm SP3} = 0`.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="nd">@classmethod</span>
@@ -248,12 +247,12 @@
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;CT&#39;</span><span class="p">:</span> <span class="n">CarbonTypesCache</span><span class="p">()}</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">CT</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">CT</span><span class="p">):</span>
         <span class="n">Nsp3</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">CT</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
         <span class="n">Nsp2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">CT</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
 
         <span class="k">if</span> <span class="n">Nsp3</span> <span class="o">==</span> <span class="n">Nsp2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;nan&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;there are no sp3 and sp2 carbons&#39;</span><span class="p">))</span>
 
         <span class="k">return</span> <span class="n">Nsp3</span> <span class="o">/</span> <span class="p">(</span><span class="n">Nsp2</span> <span class="o">+</span> <span class="n">Nsp3</span><span class="p">)</span>
 

@@ -66,5 +66,5 @@ Submodules
    mordred.Weight
    mordred.WienerIndex
    mordred.ZagrebIndex
-   mordred.exception
+   mordred.error
 

@@ -144,13 +144,14 @@
 
 
 <span class="k">class</span> <span class="nc">AutocorrelationBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="s1">&#39;_prop&#39;</span><span class="p">,</span> <span class="s1">&#39;_order&#39;</span>
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">True</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;{}{}{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">,</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_avec</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_avec</span><span class="o">.</span><span class="n">as_argument</span>
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -192,6 +193,8 @@
 
 
 <span class="k">class</span> <span class="nc">AutocorrelationProp</span><span class="p">(</span><span class="n">AutocorrelationBase</span><span class="p">):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
     <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="p">,)</span>
 
@@ -202,8 +205,10 @@
 
 
 <span class="k">class</span> <span class="nc">AutocorrelationOrder</span><span class="p">(</span><span class="n">AutocorrelationBase</span><span class="p">):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
     <span class="k">def</span> <span class="nf">_prop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+        <span class="k">pass</span>
 
     <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">,)</span>
@@ -215,33 +220,33 @@
 
 
 <span class="k">class</span> <span class="nc">CAVec</span><span class="p">(</span><span class="n">AutocorrelationProp</span><span class="p">):</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_prop&#39;</span><span class="p">,)</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
     <span class="n">_order</span> <span class="o">=</span> <span class="mi">0</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;avec&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_avec</span><span class="p">}</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">avec</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">avec</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">avec</span> <span class="o">-</span> <span class="n">avec</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 
 
 <span class="k">class</span> <span class="nc">GMat</span><span class="p">(</span><span class="n">AutocorrelationOrder</span><span class="p">):</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_order&#39;</span><span class="p">,)</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;dmat&#39;</span><span class="p">:</span> <span class="n">DistanceMatrix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)}</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">dmat</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dmat</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">dmat</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span>
 
 
 <span class="k">class</span> <span class="nc">GSum</span><span class="p">(</span><span class="n">AutocorrelationOrder</span><span class="p">):</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_order&#39;</span><span class="p">,)</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;gmat&#39;</span><span class="p">:</span> <span class="n">GMat</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">)}</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">gmat</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gmat</span><span class="p">):</span>
         <span class="n">s</span> <span class="o">=</span> <span class="n">gmat</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 
         <span class="k">return</span> <span class="n">s</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">s</span>
@@ -284,7 +289,7 @@
 <span class="sd">    :returns: NaN when any properties are NaN</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_order&#39;</span><span class="p">,</span> <span class="s1">&#39;_prop&#39;</span><span class="p">,)</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
@@ -297,7 +302,7 @@
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;avec&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_avec</span><span class="p">,</span> <span class="s1">&#39;gmat&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gmat</span><span class="p">}</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">avec</span><span class="p">,</span> <span class="n">gmat</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">avec</span><span class="p">,</span> <span class="n">gmat</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">return</span> <span class="p">(</span><span class="n">avec</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float&#39;</span><span class="p">)</span>
 
@@ -319,16 +324,17 @@
 <span class="sd">    :returns: NaN when</span>
 
 <span class="sd">        * :math:`\Delta_k = 0`</span>
-<span class="sd">        * any properties are NaN</span>
+<span class="sd">        * some properties are NaN</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_order&#39;</span><span class="p">,</span> <span class="s1">&#39;_prop&#39;</span><span class="p">,)</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;ATS&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ATS</span><span class="p">,</span> <span class="s1">&#39;gsum&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gsum</span><span class="p">}</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">ATS</span><span class="p">,</span> <span class="n">gsum</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">ATS</span> <span class="o">/</span> <span class="p">(</span><span class="n">gsum</span> <span class="ow">or</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span></div>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ATS</span><span class="p">,</span> <span class="n">gsum</span><span class="p">):</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">rethrow_zerodiv</span><span class="p">():</span>
+            <span class="k">return</span> <span class="n">ATS</span> <span class="o">/</span> <span class="n">gsum</span></div>
 
 
 <div class="viewcode-block" id="ATSC"><a class="viewcode-back" href="../../api/mordred.Autocorrelation.html#mordred.Autocorrelation.ATSC">[docs]</a><span class="k">class</span> <span class="nc">ATSC</span><span class="p">(</span><span class="n">AutocorrelationBase</span><span class="p">):</span>
@@ -344,7 +350,7 @@
 <span class="sd">    :returns: NaN when any properties are NaN</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_order&#39;</span><span class="p">,</span> <span class="s1">&#39;_prop&#39;</span><span class="p">,)</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
@@ -357,7 +363,7 @@
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;cavec&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cavec</span><span class="p">,</span> <span class="s1">&#39;gmat&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gmat</span><span class="p">}</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">cavec</span><span class="p">,</span> <span class="n">gmat</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cavec</span><span class="p">,</span> <span class="n">gmat</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">return</span> <span class="p">(</span><span class="n">cavec</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float&#39;</span><span class="p">)</span>
 
@@ -382,13 +388,14 @@
 <span class="sd">        * any properties are NaN</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_order&#39;</span><span class="p">,</span> <span class="s1">&#39;_prop&#39;</span><span class="p">,)</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;ATSC&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ATSC</span><span class="p">,</span> <span class="s1">&#39;gsum&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gsum</span><span class="p">}</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">ATSC</span><span class="p">,</span> <span class="n">gsum</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">ATSC</span> <span class="o">/</span> <span class="p">(</span><span class="n">gsum</span> <span class="ow">or</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span></div>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ATSC</span><span class="p">,</span> <span class="n">gsum</span><span class="p">):</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">rethrow_zerodiv</span><span class="p">():</span>
+            <span class="k">return</span> <span class="n">ATSC</span> <span class="o">/</span> <span class="n">gsum</span></div>
 
 
 <div class="viewcode-block" id="MATS"><a class="viewcode-back" href="../../api/mordred.Autocorrelation.html#mordred.Autocorrelation.MATS">[docs]</a><span class="k">class</span> <span class="nc">MATS</span><span class="p">(</span><span class="n">AutocorrelationBase</span><span class="p">):</span>
@@ -406,11 +413,11 @@
 
 <span class="sd">    :returns: NaN when</span>
 
-<span class="sd">        * any properties are NaN</span>
+<span class="sd">        * some properties are NaN</span>
 <span class="sd">        * denominator = 0</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_order&#39;</span><span class="p">,</span> <span class="s1">&#39;_prop&#39;</span><span class="p">,)</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
@@ -427,8 +434,9 @@
             <span class="s1">&#39;cavec&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cavec</span><span class="p">,</span>
         <span class="p">}</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">avec</span><span class="p">,</span> <span class="n">AATSC</span><span class="p">,</span> <span class="n">cavec</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">avec</span><span class="p">)</span> <span class="o">*</span> <span class="n">AATSC</span> <span class="o">/</span> <span class="p">((</span><span class="n">cavec</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="ow">or</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span></div>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">avec</span><span class="p">,</span> <span class="n">AATSC</span><span class="p">,</span> <span class="n">cavec</span><span class="p">):</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">rethrow_zerodiv</span><span class="p">():</span>
+            <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">avec</span><span class="p">)</span> <span class="o">*</span> <span class="n">AATSC</span> <span class="o">/</span> <span class="p">(</span><span class="n">cavec</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span></div>
 
 
 <div class="viewcode-block" id="GATS"><a class="viewcode-back" href="../../api/mordred.Autocorrelation.html#mordred.Autocorrelation.GATS">[docs]</a><span class="k">class</span> <span class="nc">GATS</span><span class="p">(</span><span class="n">MATS</span><span class="p">):</span>
@@ -443,7 +451,7 @@
 <span class="sd">        * denominator = 0</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_order&#39;</span><span class="p">,</span> <span class="s1">&#39;_prop&#39;</span><span class="p">,)</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span>
@@ -453,13 +461,14 @@
             <span class="s1">&#39;cavec&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cavec</span><span class="p">,</span>
         <span class="p">}</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">avec</span><span class="p">,</span> <span class="n">gmat</span><span class="p">,</span> <span class="n">gsum</span><span class="p">,</span> <span class="n">cavec</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">avec</span><span class="p">))</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">avec</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">avec</span><span class="p">,</span> <span class="n">gmat</span><span class="p">,</span> <span class="n">gsum</span><span class="p">,</span> <span class="n">cavec</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">avec</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;no bond&#39;</span><span class="p">))</span>
 
-        <span class="n">n</span> <span class="o">=</span> <span class="p">(</span><span class="n">gmat</span> <span class="o">*</span> <span class="p">(</span><span class="n">avec</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span> <span class="o">-</span> <span class="n">avec</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="n">gsum</span> <span class="ow">or</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">))</span>
-        <span class="n">d</span> <span class="o">=</span> <span class="p">(</span><span class="n">cavec</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">avec</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">n</span> <span class="o">/</span> <span class="p">(</span><span class="n">d</span> <span class="ow">or</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span></div>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">rethrow_zerodiv</span><span class="p">():</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="p">(</span><span class="n">gmat</span> <span class="o">*</span> <span class="p">(</span><span class="n">avec</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span> <span class="o">-</span> <span class="n">avec</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">gsum</span><span class="p">)</span>
+            <span class="n">d</span> <span class="o">=</span> <span class="p">(</span><span class="n">cavec</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">avec</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">n</span> <span class="o">/</span> <span class="n">d</span></div>
 </pre></div>
 
            </div>

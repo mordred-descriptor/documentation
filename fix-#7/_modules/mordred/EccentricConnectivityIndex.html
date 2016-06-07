@@ -150,9 +150,7 @@
 <span class="sd">    :math:`E` is eccentricity of atoms,</span>
 <span class="sd">    :math:`V` is valences of atoms.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
-
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
 
     <span class="nd">@classmethod</span>
@@ -171,7 +169,7 @@
             <span class="s1">&#39;V&#39;</span><span class="p">:</span> <span class="n">Valence</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">),</span>
         <span class="p">}</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">V</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">V</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">int</span><span class="p">((</span><span class="n">E</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int&#39;</span><span class="p">)</span> <span class="o">*</span> <span class="n">V</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
 
     <span class="n">rtype</span> <span class="o">=</span> <span class="nb">int</span></div>
