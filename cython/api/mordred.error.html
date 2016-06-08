@@ -193,38 +193,43 @@
   <div class="section" id="module-mordred.error">
 <span id="mordred-error-module"></span><h1>mordred.error module<a class="headerlink" href="#module-mordred.error" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
-<dt id="mordred.error.MissingValue">
-<em class="property">class </em><code class="descclassname">mordred.error.</code><code class="descname">MissingValue</code><span class="sig-paren">(</span><em>error</em>, <em>stack</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/error.html#MissingValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.error.MissingValue" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.error.MissingValueBase">
+<em class="property">class </em><code class="descclassname">mordred.error.</code><code class="descname">MissingValueBase</code><span class="sig-paren">(</span><em>error</em>, <em>stack</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/error.html#MissingValueBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.error.MissingValueBase" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
 <dl class="attribute">
-<dt id="mordred.error.MissingValue.error">
-<code class="descname">error</code><a class="headerlink" href="#mordred.error.MissingValue.error" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.error.MissingValueBase.error">
+<code class="descname">error</code><a class="headerlink" href="#mordred.error.MissingValueBase.error" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.error.MissingValue.stack">
-<code class="descname">stack</code><a class="headerlink" href="#mordred.error.MissingValue.stack" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.error.MissingValueBase.stack">
+<code class="descname">stack</code><a class="headerlink" href="#mordred.error.MissingValueBase.stack" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.error.MissingValueBase.header">
+<code class="descname">header</code><a class="headerlink" href="#mordred.error.MissingValueBase.header" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
-<dt id="mordred.error.NA">
-<em class="property">class </em><code class="descclassname">mordred.error.</code><code class="descname">NA</code><span class="sig-paren">(</span><em>error</em>, <em>stack</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/error.html#NA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.error.NA" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#mordred.error.MissingValue" title="mordred.error.MissingValue"><code class="xref py py-class docutils literal"><span class="pre">mordred.error.MissingValue</span></code></a></p>
+<dt id="mordred.error.Missing">
+<em class="property">class </em><code class="descclassname">mordred.error.</code><code class="descname">Missing</code><span class="sig-paren">(</span><em>error</em>, <em>stack</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/error.html#Missing"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.error.Missing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mordred.error.MissingValueBase" title="mordred.error.MissingValueBase"><code class="xref py py-class docutils literal"><span class="pre">mordred.error.MissingValueBase</span></code></a></p>
 <dl class="attribute">
-<dt id="mordred.error.NA.header">
-<code class="descname">header</code><em class="property"> = 'WARNING'</em><a class="headerlink" href="#mordred.error.NA.header" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.error.Missing.header">
+<code class="descname">header</code><em class="property"> = 'Missing'</em><a class="headerlink" href="#mordred.error.Missing.header" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.error.NA.error">
-<code class="descname">error</code><a class="headerlink" href="#mordred.error.NA.error" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.error.Missing.error">
+<code class="descname">error</code><a class="headerlink" href="#mordred.error.Missing.error" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.error.NA.stack">
-<code class="descname">stack</code><a class="headerlink" href="#mordred.error.NA.stack" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.error.Missing.stack">
+<code class="descname">stack</code><a class="headerlink" href="#mordred.error.Missing.stack" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -232,7 +237,7 @@
 <dl class="class">
 <dt id="mordred.error.Error">
 <em class="property">class </em><code class="descclassname">mordred.error.</code><code class="descname">Error</code><span class="sig-paren">(</span><em>error</em>, <em>stack</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/error.html#Error"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.error.Error" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#mordred.error.MissingValue" title="mordred.error.MissingValue"><code class="xref py py-class docutils literal"><span class="pre">mordred.error.MissingValue</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#mordred.error.MissingValueBase" title="mordred.error.MissingValueBase"><code class="xref py py-class docutils literal"><span class="pre">mordred.error.MissingValueBase</span></code></a></p>
 <dl class="attribute">
 <dt id="mordred.error.Error.header">
 <code class="descname">header</code><em class="property"> = 'ERROR'</em><a class="headerlink" href="#mordred.error.Error.header" title="Permalink to this definition">¶</a></dt>
