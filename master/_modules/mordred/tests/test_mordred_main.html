@@ -150,7 +150,7 @@
 
 
 <div class="viewcode-block" id="in_"><a class="viewcode-back" href="../../../api/mordred.tests.test_mordred_main.html#mordred.tests.test_mordred_main.in_">[docs]</a><span class="k">def</span> <span class="nf">in_</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
-    <span class="k">assert</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">s</span><span class="p">,</span> <span class="s1">&#39;{} not in {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span></div>
+    <span class="k">assert</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">s</span><span class="p">,</span> <span class="s1">&#39;{!r} not in {!r}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span></div>
 
 
 <span class="nd">@contextmanager</span>
@@ -167,7 +167,10 @@
 
 <div class="viewcode-block" id="Result"><a class="viewcode-back" href="../../../api/mordred.tests.test_mordred_main.html#mordred.tests.test_mordred_main.Result">[docs]</a><span class="k">class</span> <span class="nc">Result</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">iter</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stderr</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">exitcode</span><span class="p">])</span></div>
+        <span class="k">return</span> <span class="nb">iter</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stderr</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">exitcode</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;{!r} {!r} {!r}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stderr</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">exitcode</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="command"><a class="viewcode-back" href="../../../api/mordred.tests.test_mordred_main.html#mordred.tests.test_mordred_main.command">[docs]</a><span class="k">def</span> <span class="nf">command</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -303,8 +306,8 @@
 
         <span class="n">eq_</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">exitcode</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
         <span class="n">eq_</span><span class="p">(</span><span class="n">number_of_field</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">stdout</span><span class="p">),</span> <span class="n">Nd2D</span><span class="p">)</span>
-        <span class="n">eq_</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;Benzene&#39;</span><span class="p">)</span></div>
-        <span class="c1"># in_(&#39;[Missing]&#39;, str(r.log)) # TODO</span>
+        <span class="n">eq_</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;Benzene&#39;</span><span class="p">)</span>
+        <span class="n">in_</span><span class="p">(</span><span class="s1">&#39;[Missing]&#39;</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span></div>
 </pre></div>
 
            </div>
