@@ -1,0 +1,7 @@
+mordred.tests.test_by_references module
+=======================================
+
+.. automodule:: mordred.tests.test_by_references
+    :members:
+    :undoc-members:
+    :show-inheritance:

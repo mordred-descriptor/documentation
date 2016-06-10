@@ -1,0 +1,7 @@
+mordred.ZagrebIndex module
+==========================
+
+.. automodule:: mordred.ZagrebIndex
+    :members:
+    :undoc-members:
+    :show-inheritance:
