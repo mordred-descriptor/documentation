@@ -1,0 +1,7 @@
+mordred.GravitationalIndex module
+=================================
+
+.. automodule:: mordred.GravitationalIndex
+    :members:
+    :undoc-members:
+    :show-inheritance:

@@ -1,0 +1,7 @@
+mordred.tests.test_parallel module
+==================================
+
+.. automodule:: mordred.tests.test_parallel
+    :members:
+    :undoc-members:
+    :show-inheritance:

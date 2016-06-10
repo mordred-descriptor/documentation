@@ -1,0 +1,308 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>mordred.MoeType &mdash; mordred 0.2.0b0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="mordred 0.2.0b0 documentation" href="../../index.html"/>
+        <link rel="up" title="Module code" href="../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> mordred
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2.0b0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html#mordred">mordred</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/mordred.html">mordred package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../matrix.html">Matrix aggregating methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../atomic_prop.html">atomic properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../descriptors.html">Descriptor List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bibliography.html">bibliography</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">mordred</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+      
+    <li>mordred.MoeType</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for mordred.MoeType</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">rdkit.Chem</span> <span class="kn">import</span> <span class="n">MolSurf</span>
+
+<span class="kn">from</span> <span class="nn">rdkit.Chem.EState</span> <span class="kn">import</span> <span class="n">EState_VSA</span> <span class="k">as</span> <span class="n">RDKit_EState_VSA</span>
+
+<span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
+
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s1">&#39;LabuteASA&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;PEOE_VSA&#39;</span><span class="p">,</span> <span class="s1">&#39;SMR_VSA&#39;</span><span class="p">,</span> <span class="s1">&#39;SlogP_VSA&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;EState_VSA&#39;</span><span class="p">,</span> <span class="s1">&#39;VSA_EState&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<div class="viewcode-block" id="LabuteASA"><a class="viewcode-back" href="../../api/mordred.MoeType.html#mordred.MoeType.LabuteASA">[docs]</a><span class="k">class</span> <span class="nc">LabuteASA</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
+    <span class="sd">r&quot;&quot;&quot;Labute&#39;s Approximate Surface Area descriptor(rdkit wrapper).&quot;&quot;&quot;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="n">cls</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;LabuteASA&#39;</span>
+
+<div class="viewcode-block" id="LabuteASA.as_key"><a class="viewcode-back" href="../../api/mordred.MoeType.html#mordred.MoeType.LabuteASA.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">()</span></div>
+
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">MolSurf</span><span class="o">.</span><span class="n">LabuteASA</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="p">)</span>
+
+    <span class="n">rtype</span> <span class="o">=</span> <span class="nb">float</span></div>
+
+
+<span class="k">class</span> <span class="nc">MoeTypeBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_k&#39;</span><span class="p">,)</span>
+    <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="n">_module</span> <span class="o">=</span> <span class="n">MolSurf</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">map</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">cls</span><span class="o">.</span><span class="n">k_max</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_k</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_k</span><span class="p">,)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">k_max</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_k</span> <span class="o">=</span> <span class="n">k</span>
+
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_module</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="p">)</span>
+
+    <span class="n">rtype</span> <span class="o">=</span> <span class="nb">float</span>
+
+
+<div class="viewcode-block" id="PEOE_VSA"><a class="viewcode-back" href="../../api/mordred.MoeType.html#mordred.MoeType.PEOE_VSA">[docs]</a><span class="k">class</span> <span class="nc">PEOE_VSA</span><span class="p">(</span><span class="n">MoeTypeBase</span><span class="p">):</span>
+    <span class="sd">r&quot;&quot;&quot;MOE type descriptors using gasteiger charge and surface area contribution(rdkit wrapper).</span>
+
+<span class="sd">    :type k: int</span>
+<span class="sd">    :param k: (:math:`1 &lt;= k &lt;= k_{\rm max}`)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="n">k_max</span> <span class="o">=</span> <span class="mi">14</span></div>
+
+
+<div class="viewcode-block" id="SMR_VSA"><a class="viewcode-back" href="../../api/mordred.MoeType.html#mordred.MoeType.SMR_VSA">[docs]</a><span class="k">class</span> <span class="nc">SMR_VSA</span><span class="p">(</span><span class="n">MoeTypeBase</span><span class="p">):</span>
+    <span class="sd">r&quot;&quot;&quot;MOE type descriptors using Wildman-Crippen MR and surface area contribution(rdkit wrapper).</span>
+
+<span class="sd">    :type k: int</span>
+<span class="sd">    :param k: (:math:`1 &lt;= k &lt;= k_{\rm max}`)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="n">k_max</span> <span class="o">=</span> <span class="mi">10</span></div>
+
+
+<div class="viewcode-block" id="SlogP_VSA"><a class="viewcode-back" href="../../api/mordred.MoeType.html#mordred.MoeType.SlogP_VSA">[docs]</a><span class="k">class</span> <span class="nc">SlogP_VSA</span><span class="p">(</span><span class="n">MoeTypeBase</span><span class="p">):</span>
+    <span class="sd">r&quot;&quot;&quot;MOE type descriptors using Wildman-Crippen LogP and surface area contribution(rdkit wrapper).</span>
+
+<span class="sd">    :type k: int</span>
+<span class="sd">    :param k: (:math:`1 &lt;= k &lt;= k_{\rm max}`)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="n">k_max</span> <span class="o">=</span> <span class="mi">12</span></div>
+
+
+<div class="viewcode-block" id="EState_VSA"><a class="viewcode-back" href="../../api/mordred.MoeType.html#mordred.MoeType.EState_VSA">[docs]</a><span class="k">class</span> <span class="nc">EState_VSA</span><span class="p">(</span><span class="n">MoeTypeBase</span><span class="p">):</span>
+    <span class="sd">r&quot;&quot;&quot;MOE type descriptors using EState indices and surface area contribution(rdkit wrapper).</span>
+
+<span class="sd">    :type k: int</span>
+<span class="sd">    :param k: (:math:`1 &lt;= k &lt;= k_{\rm max}`)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="n">_module</span> <span class="o">=</span> <span class="n">RDKit_EState_VSA</span>
+    <span class="n">k_max</span> <span class="o">=</span> <span class="mi">11</span></div>
+
+
+<div class="viewcode-block" id="VSA_EState"><a class="viewcode-back" href="../../api/mordred.MoeType.html#mordred.MoeType.VSA_EState">[docs]</a><span class="k">class</span> <span class="nc">VSA_EState</span><span class="p">(</span><span class="n">MoeTypeBase</span><span class="p">):</span>
+    <span class="sd">r&quot;&quot;&quot;MOE type descriptors using EState indices and surface area contribution(rdkit wrapper).</span>
+
+<span class="sd">    :type k: int</span>
+<span class="sd">    :param k: (:math:`1 &lt;= k &lt;= k_{\rm max}`)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="n">_module</span> <span class="o">=</span> <span class="n">RDKit_EState_VSA</span>
+    <span class="n">k_max</span> <span class="o">=</span> <span class="mi">10</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Hirotomo Moriwaki.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.2.0b0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
