@@ -1,0 +1,263 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>mordred.tests.test_SASA &mdash; mordred 0.2.0b0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="mordred 0.2.0b0 documentation" href="../../../index.html"/>
+        <link rel="up" title="Module code" href="../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> mordred
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2.0b0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../introduction.html#mordred">mordred</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/mordred.html">mordred package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../matrix.html">Matrix aggregating methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../atomic_prop.html">atomic properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../descriptors.html">Descriptor List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bibliography.html">bibliography</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">mordred</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      
+    <li>mordred.tests.test_SASA</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for mordred.tests.test_SASA</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span>
+<span class="kn">from</span> <span class="nn">nose.tools</span> <span class="kn">import</span> <span class="n">ok_</span>
+<span class="kn">from</span> <span class="nn">mordred.CPSA</span> <span class="kn">import</span> <span class="n">TotalSurfaceArea</span>
+<span class="kn">from</span> <span class="nn">mordred.surface_area</span> <span class="kn">import</span> <span class="n">SurfaceArea</span>
+
+<span class="c1"># calculated by pymol</span>
+<span class="n">txt_data</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">Hexane               296.910</span>
+<span class="s1">Benzene              243.552</span>
+<span class="s1">Caffeine             369.973</span>
+<span class="s1">Cyanidin             483.873</span>
+<span class="s1">Lycopene            1172.253</span>
+<span class="s1">Epicatechin          489.498</span>
+<span class="s1">Limonene             361.278</span>
+<span class="s1">Allicin              356.872</span>
+<span class="s1">Glutathione          530.679</span>
+<span class="s1">Digoxin             1074.428</span>
+<span class="s1">Capsaicin            641.527</span>
+<span class="s1">EllagicAcid          440.267</span>
+<span class="s1">Astaxanthin         1080.941</span>
+<span class="s1">DMSO                 227.926</span>
+<span class="s1">DiethylThioketone    290.503</span>
+<span class="s1">VinylsulfonicAcid    246.033</span>
+<span class="s1">Thiophene            227.046</span>
+<span class="s1">Triethoxyphosphine   396.482</span>
+<span class="s1">MethylphosphonicAcid 235.685</span>
+<span class="s1">MethylCyclopropane   229.071</span>
+<span class="s1">Acetonitrile         182.197</span>
+<span class="s1">Histidine            335.672</span>
+<span class="s1">&#39;&#39;&#39;</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+
+<span class="n">sdf_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">__file__</span><span class="p">),</span>
+    <span class="s1">&#39;references&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;structures.sdf&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<div class="viewcode-block" id="test_SASA"><a class="viewcode-back" href="../../../api/mordred.tests.test_SASA.html#mordred.tests.test_SASA.test_SASA">[docs]</a><span class="k">def</span> <span class="nf">test_SASA</span><span class="p">():</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">txt_data</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">):</span>
+        <span class="n">n</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="n">data</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+
+    <span class="n">tsa</span> <span class="o">=</span> <span class="n">TotalSurfaceArea</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">mol</span> <span class="ow">in</span> <span class="n">Chem</span><span class="o">.</span><span class="n">SDMolSupplier</span><span class="p">(</span><span class="n">sdf_file</span><span class="p">,</span> <span class="n">removeHs</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetProp</span><span class="p">(</span><span class="s1">&#39;_Name&#39;</span><span class="p">)</span>
+        <span class="n">actual</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">SurfaceArea</span><span class="o">.</span><span class="n">from_mol</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span><span class="o">.</span><span class="n">surface_area</span><span class="p">())</span>
+
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+            <span class="k">continue</span>
+
+        <span class="n">desired</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+
+        <span class="n">e</span> <span class="o">=</span> <span class="n">actual</span> <span class="o">/</span> <span class="n">desired</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="mf">0.05</span>
+
+        <span class="k">yield</span> <span class="n">ok_</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="n">e</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">p</span><span class="p">,</span> <span class="s1">&#39;large SASA error in {}: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+
+        <span class="n">e</span> <span class="o">=</span> <span class="n">tsa</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span> <span class="o">/</span> <span class="n">desired</span>
+
+        <span class="k">yield</span> <span class="n">ok_</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="n">e</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">p</span><span class="p">,</span> <span class="s1">&#39;large SASA error in {}: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Hirotomo Moriwaki.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.2.0b0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
