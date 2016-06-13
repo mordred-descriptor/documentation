@@ -135,15 +135,15 @@
   <h1>Source code for mordred.tests.test_by_references</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">glob</span> <span class="kn">import</span> <span class="n">glob</span>
-<span class="kn">from</span> <span class="nn">nose.tools</span> <span class="kn">import</span> <span class="n">eq_</span>
-<span class="kn">from</span> <span class="nn">numpy.testing</span> <span class="kn">import</span> <span class="n">assert_almost_equal</span>
-<span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span>
-
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">mordred</span> <span class="kn">import</span> <span class="n">Calculator</span><span class="p">,</span> <span class="n">all_descriptors</span><span class="p">,</span> <span class="n">Polarizability</span>
-<span class="kn">from</span> <span class="nn">mordred.error</span> <span class="kn">import</span> <span class="n">MissingValueBase</span>
 
 <span class="kn">import</span> <span class="nn">yaml</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span>
+<span class="kn">from</span> <span class="nn">mordred</span> <span class="kn">import</span> <span class="n">Calculator</span><span class="p">,</span> <span class="n">Polarizability</span><span class="p">,</span> <span class="n">all_descriptors</span>
+<span class="kn">from</span> <span class="nn">nose.tools</span> <span class="kn">import</span> <span class="n">eq_</span>
+<span class="kn">from</span> <span class="nn">mordred.error</span> <span class="kn">import</span> <span class="n">MissingValueBase</span>
+<span class="kn">from</span> <span class="nn">numpy.testing</span> <span class="kn">import</span> <span class="n">assert_almost_equal</span>
+
 <span class="k">try</span><span class="p">:</span>
     <span class="kn">from</span> <span class="nn">yaml</span> <span class="kn">import</span> <span class="n">CLoader</span> <span class="k">as</span> <span class="n">Loader</span>
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
