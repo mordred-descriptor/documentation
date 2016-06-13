@@ -1,0 +1,7 @@
+mordred.InformationContent module
+=================================
+
+.. automodule:: mordred.InformationContent
+    :members:
+    :undoc-members:
+    :show-inheritance:
