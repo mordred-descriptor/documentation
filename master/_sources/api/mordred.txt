@@ -49,6 +49,7 @@ Submodules
    mordred.KappaShapeIndex
    mordred.Lipinski
    mordred.McGowanVolume
+   mordred.MoRSE
    mordred.MoeType
    mordred.MolecularDistanceEdge
    mordred.MolecularId
