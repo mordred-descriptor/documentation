@@ -210,7 +210,8 @@
     <span class="n">eq_</span><span class="p">(</span><span class="n">exitcode</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
     <span class="n">eq_</span><span class="p">(</span><span class="n">stdout</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
     <span class="n">in_</span><span class="p">(</span><span class="s1">&#39;usage:&#39;</span><span class="p">,</span> <span class="n">stderr</span><span class="p">)</span>
-    <span class="n">in_</span><span class="p">(</span><span class="s1">&#39;the following arguments are required: INPUT&#39;</span><span class="p">,</span> <span class="n">stderr</span><span class="p">)</span></div>
+    <span class="c1"># python3 or python2</span>
+    <span class="k">assert</span> <span class="s1">&#39;the following arguments are required: INPUT&#39;</span> <span class="ow">in</span> <span class="n">stderr</span> <span class="ow">or</span> <span class="s1">&#39;too few arguments&#39;</span> <span class="ow">in</span> <span class="n">stderr</span></div>
 
 
 <div class="viewcode-block" id="test_help"><a class="viewcode-back" href="../../../api/mordred.tests.test_mordred_main.html#mordred.tests.test_mordred_main.test_help">[docs]</a><span class="k">def</span> <span class="nf">test_help</span><span class="p">():</span>
@@ -224,8 +225,10 @@
 <div class="viewcode-block" id="test_version"><a class="viewcode-back" href="../../../api/mordred.tests.test_mordred_main.html#mordred.tests.test_mordred_main.test_version">[docs]</a><span class="k">def</span> <span class="nf">test_version</span><span class="p">():</span>
     <span class="n">stdout</span><span class="p">,</span> <span class="n">stderr</span><span class="p">,</span> <span class="n">exitcode</span> <span class="o">=</span> <span class="n">command</span><span class="p">(</span><span class="n">mordred</span><span class="p">,</span> <span class="s1">&#39;--version&#39;</span><span class="p">)</span>
     <span class="n">eq_</span><span class="p">(</span><span class="n">exitcode</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-    <span class="n">eq_</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
-    <span class="n">eq_</span><span class="p">(</span><span class="n">stdout</span><span class="p">,</span> <span class="s1">&#39;mordred-</span><span class="si">{}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">__version__</span><span class="p">))</span></div>
+
+    <span class="n">vstr</span> <span class="o">=</span> <span class="s1">&#39;mordred-</span><span class="si">{}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">__version__</span><span class="p">)</span>
+    <span class="c1"># python3 or python2</span>
+    <span class="k">assert</span> <span class="p">(</span><span class="n">stderr</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span> <span class="ow">and</span> <span class="n">stdout</span> <span class="o">==</span> <span class="n">vstr</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">stdout</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span> <span class="ow">and</span> <span class="n">stderr</span> <span class="o">==</span> <span class="n">vstr</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="test_missing_file"><a class="viewcode-back" href="../../../api/mordred.tests.test_mordred_main.html#mordred.tests.test_mordred_main.test_missing_file">[docs]</a><span class="k">def</span> <span class="nf">test_missing_file</span><span class="p">():</span>
