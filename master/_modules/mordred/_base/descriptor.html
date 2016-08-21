@@ -135,12 +135,12 @@
            <div itemprop="articleBody">
             
   <h1>Source code for mordred._base.descriptor</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABCMeta</span><span class="p">,</span> <span class="n">abstractmethod</span>
-<span class="kn">from</span> <span class="nn">inspect</span> <span class="kn">import</span> <span class="n">isabstract</span>
-<span class="kn">from</span> <span class="nn">contextlib</span> <span class="kn">import</span> <span class="n">contextmanager</span>
+<span></span><span class="kn">from</span> <span class="nn">abc</span> <span class="k">import</span> <span class="n">ABCMeta</span><span class="p">,</span> <span class="n">abstractmethod</span>
+<span class="kn">from</span> <span class="nn">inspect</span> <span class="k">import</span> <span class="n">isabstract</span>
+<span class="kn">from</span> <span class="nn">contextlib</span> <span class="k">import</span> <span class="n">contextmanager</span>
 
 <span class="kn">import</span> <span class="nn">six</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 
 <span class="k">class</span> <span class="nc">MissingValueException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
@@ -155,10 +155,10 @@
 
     <span class="n">__slots__</span> <span class="o">=</span> <span class="s1">&#39;_context&#39;</span><span class="p">,</span>
 
-    <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">True</span>
-    <span class="n">kekulize</span> <span class="o">=</span> <span class="bp">False</span>
-    <span class="n">require_connected</span> <span class="o">=</span> <span class="bp">False</span>
-    <span class="n">require_3D</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">kekulize</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">require_connected</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">require_3D</span> <span class="o">=</span> <span class="kc">False</span>
 
     <span class="k">def</span> <span class="nf">__reduce_ex__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">version</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">as_key</span><span class="p">()</span>
@@ -178,7 +178,7 @@
 
     <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">cls</span><span class="p">,</span> <span class="n">args</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">as_key</span><span class="p">()</span>
-        <span class="k">return</span> <span class="s1">&#39;{}({})&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cls</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_pretty</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">args</span><span class="p">))</span>
+        <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">(</span><span class="si">{}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cls</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_pretty</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">args</span><span class="p">))</span>
 
     <span class="k">def</span> <span class="nf">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">hash</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">as_key</span><span class="p">())</span>
@@ -203,7 +203,7 @@
     <span class="n">__le__</span> <span class="o">=</span> <span class="n">__compare_by_reduce</span><span class="p">(</span><span class="s1">&#39;__le__&#39;</span><span class="p">)</span>
     <span class="n">__ge__</span> <span class="o">=</span> <span class="n">__compare_by_reduce</span><span class="p">(</span><span class="s1">&#39;__ge__&#39;</span><span class="p">)</span>
 
-    <span class="n">rtype</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">rtype</span> <span class="o">=</span> <span class="kc">None</span>
 
     <span class="nd">@classmethod</span>
 <div class="viewcode-block" id="Descriptor.preset"><a class="viewcode-back" href="../../../api/mordred.html#mordred.Descriptor.preset">[docs]</a>    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>

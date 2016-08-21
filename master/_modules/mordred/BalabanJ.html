@@ -133,10 +133,10 @@
            <div itemprop="articleBody">
             
   <h1>Source code for mordred.BalabanJ</h1><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">rdkit.Chem.GraphDescriptors</span> <span class="kn">as</span> <span class="nn">RDKit</span>
+<span></span><span class="kn">import</span> <span class="nn">rdkit.Chem.GraphDescriptors</span> <span class="k">as</span> <span class="nn">RDKit</span>
 
-<span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
-<span class="kn">from</span> <span class="nn">._graph_matrix</span> <span class="kn">import</span> <span class="n">DistanceMatrix</span>
+<span class="kn">from</span> <span class="nn">._base</span> <span class="k">import</span> <span class="n">Descriptor</span>
+<span class="kn">from</span> <span class="nn">._graph_matrix</span> <span class="k">import</span> <span class="n">DistanceMatrix</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;BalabanJ&#39;</span><span class="p">,)</span>
 
@@ -145,7 +145,7 @@
     <span class="sd">r&quot;&quot;&quot;Balaban&#39;s J index descriptor(rdkit wrapper).&quot;&quot;&quot;</span>
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
-    <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="kc">False</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>

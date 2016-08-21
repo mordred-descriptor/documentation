@@ -133,13 +133,13 @@
            <div itemprop="articleBody">
             
   <h1>Source code for mordred.BondCount</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">IntEnum</span>
-<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">chain</span>
+<span></span><span class="kn">from</span> <span class="nn">enum</span> <span class="k">import</span> <span class="n">IntEnum</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="k">import</span> <span class="n">chain</span>
 
-<span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span>
+<span class="kn">from</span> <span class="nn">rdkit</span> <span class="k">import</span> <span class="n">Chem</span>
 
-<span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
-<span class="kn">from</span> <span class="nn">._util</span> <span class="kn">import</span> <span class="n">parse_enum</span>
+<span class="kn">from</span> <span class="nn">._base</span> <span class="k">import</span> <span class="n">Descriptor</span>
+<span class="kn">from</span> <span class="nn">._util</span> <span class="k">import</span> <span class="n">parse_enum</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;BondCount&#39;</span><span class="p">,)</span>
 
@@ -163,8 +163,8 @@
 
 
 <span class="n">bond_types</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="p">(</span><span class="n">BondType</span><span class="o">.</span><span class="n">any</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">_</span><span class="p">:</span> <span class="bp">True</span><span class="p">)),</span>
-    <span class="p">(</span><span class="n">BondType</span><span class="o">.</span><span class="n">heavy</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">_</span><span class="p">:</span> <span class="bp">True</span><span class="p">)),</span>
+    <span class="p">(</span><span class="n">BondType</span><span class="o">.</span><span class="n">any</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">_</span><span class="p">:</span> <span class="kc">True</span><span class="p">)),</span>
+    <span class="p">(</span><span class="n">BondType</span><span class="o">.</span><span class="n">heavy</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">_</span><span class="p">:</span> <span class="kc">True</span><span class="p">)),</span>
 
     <span class="p">(</span><span class="n">BondType</span><span class="o">.</span><span class="n">single</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">b</span><span class="p">:</span> <span class="n">b</span><span class="o">.</span><span class="n">GetBondType</span><span class="p">()</span> <span class="o">==</span> <span class="n">Chem</span><span class="o">.</span><span class="n">BondType</span><span class="o">.</span><span class="n">SINGLE</span><span class="p">)),</span>
     <span class="p">(</span><span class="n">BondType</span><span class="o">.</span><span class="n">double</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">b</span><span class="p">:</span> <span class="n">b</span><span class="o">.</span><span class="n">GetBondType</span><span class="p">()</span> <span class="o">==</span> <span class="n">Chem</span><span class="o">.</span><span class="n">BondType</span><span class="o">.</span><span class="n">DOUBLE</span><span class="p">)),</span>
@@ -195,15 +195,15 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">chain</span><span class="p">(</span>
-            <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">cls</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="bp">False</span><span class="p">),</span> <span class="n">BondType</span><span class="p">),</span>
-            <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">cls</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="bp">True</span><span class="p">),</span> <span class="p">[</span>
+            <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">cls</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span> <span class="n">BondType</span><span class="p">),</span>
+            <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">cls</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span> <span class="p">[</span>
                 <span class="n">BondType</span><span class="o">.</span><span class="n">single</span><span class="p">,</span> <span class="n">BondType</span><span class="o">.</span><span class="n">double</span><span class="p">,</span>
             <span class="p">])</span>
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">K</span> <span class="o">=</span> <span class="s1">&#39;K&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">kekulize</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span>
-        <span class="k">return</span> <span class="s1">&#39;nBonds{}{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bond_name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s1">&#39;nBonds</span><span class="si">{}{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bond_name</span><span class="p">)</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">explicit_hydrogens</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -212,7 +212,7 @@
 <div class="viewcode-block" id="BondCount.as_key"><a class="viewcode-back" href="../../api/mordred.BondCount.html#mordred.BondCount.BondCount.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">kekulize</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;any&#39;</span><span class="p">,</span> <span class="n">kekulize</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;any&#39;</span><span class="p">,</span> <span class="n">kekulize</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="o">=</span> <span class="n">parse_enum</span><span class="p">(</span><span class="n">BondType</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_bond_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_bond</span> <span class="o">=</span> <span class="n">bond_type_dict</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">kekulize</span> <span class="o">=</span> <span class="n">kekulize</span>

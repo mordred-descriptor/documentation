@@ -133,17 +133,17 @@
            <div itemprop="articleBody">
             
   <h1>Source code for mordred.MomentOfInertia</h1><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
-<span class="kn">from</span> <span class="nn">._util</span> <span class="kn">import</span> <span class="n">atoms_to_numpy</span>
+<span class="kn">from</span> <span class="nn">._base</span> <span class="k">import</span> <span class="n">Descriptor</span>
+<span class="kn">from</span> <span class="nn">._util</span> <span class="k">import</span> <span class="n">atoms_to_numpy</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;MomentOfInertia&#39;</span><span class="p">,)</span>
 
 
 <span class="k">class</span> <span class="nc">MomentOfInertiaBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
-    <span class="n">require_3D</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="n">require_3D</span> <span class="o">=</span> <span class="kc">True</span>
 
     <span class="k">def</span> <span class="nf">_numpy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">ws</span> <span class="o">=</span> <span class="n">atoms_to_numpy</span><span class="p">(</span><span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">a</span><span class="o">.</span><span class="n">GetMass</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="p">)</span>
@@ -185,7 +185,7 @@
         <span class="k">return</span> <span class="nb">map</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">cls</span><span class="o">.</span><span class="n">axes</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s1">&#39;MOMI-{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_axis</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s1">&#39;MOMI-</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_axis</span><span class="p">)</span>
 
 <div class="viewcode-block" id="MomentOfInertia.as_key"><a class="viewcode-back" href="../../api/mordred.MomentOfInertia.html#mordred.MomentOfInertia.MomentOfInertia.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_axis</span><span class="p">,)</span></div>

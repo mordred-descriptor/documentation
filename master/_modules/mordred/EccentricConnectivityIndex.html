@@ -133,8 +133,8 @@
            <div itemprop="articleBody">
             
   <h1>Source code for mordred.EccentricConnectivityIndex</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
-<span class="kn">from</span> <span class="nn">._graph_matrix</span> <span class="kn">import</span> <span class="n">Valence</span><span class="p">,</span> <span class="n">Eccentricity</span>
+<span></span><span class="kn">from</span> <span class="nn">._base</span> <span class="k">import</span> <span class="n">Descriptor</span>
+<span class="kn">from</span> <span class="nn">._graph_matrix</span> <span class="k">import</span> <span class="n">Valence</span><span class="p">,</span> <span class="n">Eccentricity</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;EccentricConnectivityIndex&#39;</span><span class="p">,)</span>
 
@@ -150,7 +150,7 @@
 <span class="sd">    :math:`V` is valences of atoms.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
-    <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="kc">False</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>

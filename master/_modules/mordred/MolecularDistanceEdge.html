@@ -133,12 +133,12 @@
            <div itemprop="articleBody">
             
   <h1>Source code for mordred.MolecularDistanceEdge</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">six</span> <span class="kn">import</span> <span class="n">string_types</span><span class="p">,</span> <span class="n">integer_types</span>
-<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">product</span>
+<span></span><span class="kn">from</span> <span class="nn">six</span> <span class="k">import</span> <span class="n">string_types</span><span class="p">,</span> <span class="n">integer_types</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="k">import</span> <span class="n">product</span>
 
-<span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
-<span class="kn">from</span> <span class="nn">._graph_matrix</span> <span class="kn">import</span> <span class="n">Valence</span><span class="p">,</span> <span class="n">DistanceMatrix</span>
-<span class="kn">from</span> <span class="nn">._atomic_property</span> <span class="kn">import</span> <span class="n">table</span>
+<span class="kn">from</span> <span class="nn">._base</span> <span class="k">import</span> <span class="n">Descriptor</span>
+<span class="kn">from</span> <span class="nn">._graph_matrix</span> <span class="k">import</span> <span class="n">Valence</span><span class="p">,</span> <span class="n">DistanceMatrix</span>
+<span class="kn">from</span> <span class="nn">._atomic_property</span> <span class="k">import</span> <span class="n">table</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;MolecularDistanceEdge&#39;</span><span class="p">,)</span>
 
@@ -158,7 +158,7 @@
 <span class="sd">    :returns: NaN when :math:`N_{\rm MDE} = 0`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_valence1&#39;</span><span class="p">,</span> <span class="s1">&#39;_valence2&#39;</span><span class="p">,</span> <span class="s1">&#39;_atomic_num&#39;</span><span class="p">,)</span>
-    <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="kc">False</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
@@ -170,7 +170,7 @@
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s1">&#39;MDE{}-{}{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="k">return</span> <span class="s1">&#39;MDE</span><span class="si">{}</span><span class="s1">-</span><span class="si">{}{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
             <span class="n">table</span><span class="o">.</span><span class="n">GetElementSymbol</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_atomic_num</span><span class="p">),</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_valence1</span><span class="p">,</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_valence2</span><span class="p">,</span>

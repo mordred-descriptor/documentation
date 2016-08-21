@@ -133,12 +133,12 @@
            <div itemprop="articleBody">
             
   <h1>Source code for mordred.VdwVolumeABC</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
+<span></span><span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">pi</span>
 
-<span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
-<span class="kn">from</span> <span class="nn">.BondCount</span> <span class="kn">import</span> <span class="n">BondCount</span>
-<span class="kn">from</span> <span class="nn">.RingCount</span> <span class="kn">import</span> <span class="n">RingCount</span>
-<span class="kn">from</span> <span class="nn">._atomic_property</span> <span class="kn">import</span> <span class="n">table</span>
+<span class="kn">from</span> <span class="nn">._base</span> <span class="k">import</span> <span class="n">Descriptor</span>
+<span class="kn">from</span> <span class="nn">.BondCount</span> <span class="k">import</span> <span class="n">BondCount</span>
+<span class="kn">from</span> <span class="nn">.RingCount</span> <span class="k">import</span> <span class="n">RingCount</span>
+<span class="kn">from</span> <span class="nn">._atomic_property</span> <span class="k">import</span> <span class="n">table</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span>
     <span class="s1">&#39;VdwVolumeABC&#39;</span><span class="p">,</span>
@@ -193,8 +193,8 @@
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span>
             <span class="s1">&#39;Nb&#39;</span><span class="p">:</span> <span class="n">BondCount</span><span class="p">(),</span>
-            <span class="s1">&#39;NRa&#39;</span><span class="p">:</span> <span class="n">RingCount</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">None</span><span class="p">),</span>
-            <span class="s1">&#39;NRA&#39;</span><span class="p">:</span> <span class="n">RingCount</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">None</span><span class="p">),</span>
+            <span class="s1">&#39;NRa&#39;</span><span class="p">:</span> <span class="n">RingCount</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+            <span class="s1">&#39;NRA&#39;</span><span class="p">:</span> <span class="n">RingCount</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
         <span class="p">}</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Nb</span><span class="p">,</span> <span class="n">NRa</span><span class="p">,</span> <span class="n">NRA</span><span class="p">):</span>

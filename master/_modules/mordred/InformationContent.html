@@ -133,12 +133,12 @@
            <div itemprop="articleBody">
             
   <h1>Source code for mordred.InformationContent</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">chain</span><span class="p">,</span> <span class="n">groupby</span>
+<span></span><span class="kn">from</span> <span class="nn">itertools</span> <span class="k">import</span> <span class="n">chain</span><span class="p">,</span> <span class="n">groupby</span>
 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
-<span class="kn">from</span> <span class="nn">._graph_matrix</span> <span class="kn">import</span> <span class="n">DistanceMatrix</span>
+<span class="kn">from</span> <span class="nn">._base</span> <span class="k">import</span> <span class="n">Descriptor</span>
+<span class="kn">from</span> <span class="nn">._graph_matrix</span> <span class="k">import</span> <span class="n">DistanceMatrix</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span>
     <span class="s1">&#39;InformationContent&#39;</span><span class="p">,</span>
@@ -197,7 +197,7 @@
             <span class="k">for</span> <span class="n">src</span><span class="p">,</span> <span class="n">dst</span> <span class="ow">in</span> <span class="n">tree</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
 
                 <span class="n">code</span> <span class="o">=</span> <span class="p">[]</span>
-                <span class="k">if</span> <span class="n">before</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">before</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                     <span class="n">bt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bonds</span><span class="p">[</span><span class="n">before</span><span class="p">,</span> <span class="n">src</span><span class="p">]</span>
                     <span class="n">code</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bt</span><span class="p">)</span>
 
@@ -213,12 +213,12 @@
         <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">order</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span>
 
-        <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_code</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tree</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="p">())))</span>
+        <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_code</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tree</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="p">())))</span>
 
 
 <span class="k">class</span> <span class="nc">InformationContentBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_order&#39;</span><span class="p">,)</span>
-    <span class="n">kekulize</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="n">kekulize</span> <span class="o">=</span> <span class="kc">True</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">)</span>
@@ -266,7 +266,7 @@
             <span class="n">np</span><span class="o">.</span><span class="n">fromiter</span><span class="p">((</span><span class="n">ag</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">ag</span> <span class="ow">in</span> <span class="n">Ags</span><span class="p">),</span> <span class="s1">&#39;float&#39;</span><span class="p">,</span> <span class="n">Nags</span><span class="p">),</span>
         <span class="p">)</span>
 
-    <span class="n">rtype</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">rtype</span> <span class="o">=</span> <span class="kc">None</span>
 
 
 <span class="k">def</span> <span class="nf">_shannon_entropy_term</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>

@@ -133,9 +133,10 @@
            <div itemprop="articleBody">
             
   <h1>Source code for mordred.tests.test_ETA</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span>
-<span class="kn">from</span> <span class="nn">mordred</span> <span class="kn">import</span> <span class="n">Calculator</span><span class="p">,</span> <span class="n">ExtendedTopochemicalAtom</span>
-<span class="kn">from</span> <span class="nn">numpy.testing</span> <span class="kn">import</span> <span class="n">assert_almost_equal</span>
+<span></span><span class="kn">from</span> <span class="nn">rdkit</span> <span class="k">import</span> <span class="n">Chem</span>
+<span class="kn">from</span> <span class="nn">numpy.testing</span> <span class="k">import</span> <span class="n">assert_almost_equal</span>
+
+<span class="kn">from</span> <span class="nn">mordred</span> <span class="k">import</span> <span class="n">Calculator</span><span class="p">,</span> <span class="n">ExtendedTopochemicalAtom</span>
 
 <span class="n">references</span> <span class="o">=</span> <span class="p">{</span>
     <span class="c1"># Roy et. al. Quantitative Structure-Activity Relationships in Drug Design, Predictive Toxicology, and Risk Assessment. p. 65</span>
@@ -246,7 +247,7 @@
         <span class="n">actuals</span> <span class="o">=</span> <span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">d</span><span class="p">):</span> <span class="n">v</span> <span class="k">for</span> <span class="n">d</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">calc</span><span class="o">.</span><span class="n">descriptors</span><span class="p">,</span> <span class="n">calc</span><span class="p">(</span><span class="n">mol</span><span class="p">))}</span>
 
         <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">desired</span> <span class="ow">in</span> <span class="n">desireds</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-            <span class="k">yield</span> <span class="n">assert_almost_equal</span><span class="p">,</span> <span class="n">actuals</span><span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="n">desired</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;{} of {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">smi</span><span class="p">)</span></div>
+            <span class="k">yield</span> <span class="n">assert_almost_equal</span><span class="p">,</span> <span class="n">actuals</span><span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="n">desired</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> of </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">smi</span><span class="p">)</span></div>
 </pre></div>
 
            </div>
