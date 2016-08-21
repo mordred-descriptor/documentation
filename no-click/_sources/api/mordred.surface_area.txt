@@ -1,0 +1,8 @@
+mordred.surface_area package
+============================
+
+.. automodule:: mordred.surface_area
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
