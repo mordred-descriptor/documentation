@@ -45,33 +45,33 @@ preset descriptors
     33, , nBr, ":py:class:`~mordred.AtomCount.AtomCount` ('Br')", 2D
     34, , nI, ":py:class:`~mordred.AtomCount.AtomCount` ('I')", 2D
     35, , nX, ":py:class:`~mordred.AtomCount.AtomCount` ('X')", 2D
-    36, :py:mod:`~mordred.Autocorrelation`, ATS0s, ":py:class:`~mordred.Autocorrelation.ATS` (0, 's')", 2D
-    37, , ATS1s, ":py:class:`~mordred.Autocorrelation.ATS` (1, 's')", 2D
-    38, , ATS2s, ":py:class:`~mordred.Autocorrelation.ATS` (2, 's')", 2D
-    39, , ATS3s, ":py:class:`~mordred.Autocorrelation.ATS` (3, 's')", 2D
-    40, , ATS4s, ":py:class:`~mordred.Autocorrelation.ATS` (4, 's')", 2D
-    41, , ATS5s, ":py:class:`~mordred.Autocorrelation.ATS` (5, 's')", 2D
-    42, , ATS6s, ":py:class:`~mordred.Autocorrelation.ATS` (6, 's')", 2D
-    43, , ATS7s, ":py:class:`~mordred.Autocorrelation.ATS` (7, 's')", 2D
-    44, , ATS8s, ":py:class:`~mordred.Autocorrelation.ATS` (8, 's')", 2D
-    45, , ATS0d, ":py:class:`~mordred.Autocorrelation.ATS` (0, 'd')", 2D
-    46, , ATS1d, ":py:class:`~mordred.Autocorrelation.ATS` (1, 'd')", 2D
-    47, , ATS2d, ":py:class:`~mordred.Autocorrelation.ATS` (2, 'd')", 2D
-    48, , ATS3d, ":py:class:`~mordred.Autocorrelation.ATS` (3, 'd')", 2D
-    49, , ATS4d, ":py:class:`~mordred.Autocorrelation.ATS` (4, 'd')", 2D
-    50, , ATS5d, ":py:class:`~mordred.Autocorrelation.ATS` (5, 'd')", 2D
-    51, , ATS6d, ":py:class:`~mordred.Autocorrelation.ATS` (6, 'd')", 2D
-    52, , ATS7d, ":py:class:`~mordred.Autocorrelation.ATS` (7, 'd')", 2D
-    53, , ATS8d, ":py:class:`~mordred.Autocorrelation.ATS` (8, 'd')", 2D
-    54, , ATS0se, ":py:class:`~mordred.Autocorrelation.ATS` (0, 'se')", 2D
-    55, , ATS1se, ":py:class:`~mordred.Autocorrelation.ATS` (1, 'se')", 2D
-    56, , ATS2se, ":py:class:`~mordred.Autocorrelation.ATS` (2, 'se')", 2D
-    57, , ATS3se, ":py:class:`~mordred.Autocorrelation.ATS` (3, 'se')", 2D
-    58, , ATS4se, ":py:class:`~mordred.Autocorrelation.ATS` (4, 'se')", 2D
-    59, , ATS5se, ":py:class:`~mordred.Autocorrelation.ATS` (5, 'se')", 2D
-    60, , ATS6se, ":py:class:`~mordred.Autocorrelation.ATS` (6, 'se')", 2D
-    61, , ATS7se, ":py:class:`~mordred.Autocorrelation.ATS` (7, 'se')", 2D
-    62, , ATS8se, ":py:class:`~mordred.Autocorrelation.ATS` (8, 'se')", 2D
+    36, :py:mod:`~mordred.Autocorrelation`, ATS0d, ":py:class:`~mordred.Autocorrelation.ATS` (0, 'd')", 2D
+    37, , ATS1d, ":py:class:`~mordred.Autocorrelation.ATS` (1, 'd')", 2D
+    38, , ATS2d, ":py:class:`~mordred.Autocorrelation.ATS` (2, 'd')", 2D
+    39, , ATS3d, ":py:class:`~mordred.Autocorrelation.ATS` (3, 'd')", 2D
+    40, , ATS4d, ":py:class:`~mordred.Autocorrelation.ATS` (4, 'd')", 2D
+    41, , ATS5d, ":py:class:`~mordred.Autocorrelation.ATS` (5, 'd')", 2D
+    42, , ATS6d, ":py:class:`~mordred.Autocorrelation.ATS` (6, 'd')", 2D
+    43, , ATS7d, ":py:class:`~mordred.Autocorrelation.ATS` (7, 'd')", 2D
+    44, , ATS8d, ":py:class:`~mordred.Autocorrelation.ATS` (8, 'd')", 2D
+    45, , ATS0pe, ":py:class:`~mordred.Autocorrelation.ATS` (0, 'pe')", 2D
+    46, , ATS1pe, ":py:class:`~mordred.Autocorrelation.ATS` (1, 'pe')", 2D
+    47, , ATS2pe, ":py:class:`~mordred.Autocorrelation.ATS` (2, 'pe')", 2D
+    48, , ATS3pe, ":py:class:`~mordred.Autocorrelation.ATS` (3, 'pe')", 2D
+    49, , ATS4pe, ":py:class:`~mordred.Autocorrelation.ATS` (4, 'pe')", 2D
+    50, , ATS5pe, ":py:class:`~mordred.Autocorrelation.ATS` (5, 'pe')", 2D
+    51, , ATS6pe, ":py:class:`~mordred.Autocorrelation.ATS` (6, 'pe')", 2D
+    52, , ATS7pe, ":py:class:`~mordred.Autocorrelation.ATS` (7, 'pe')", 2D
+    53, , ATS8pe, ":py:class:`~mordred.Autocorrelation.ATS` (8, 'pe')", 2D
+    54, , ATS0i, ":py:class:`~mordred.Autocorrelation.ATS` (0, 'i')", 2D
+    55, , ATS1i, ":py:class:`~mordred.Autocorrelation.ATS` (1, 'i')", 2D
+    56, , ATS2i, ":py:class:`~mordred.Autocorrelation.ATS` (2, 'i')", 2D
+    57, , ATS3i, ":py:class:`~mordred.Autocorrelation.ATS` (3, 'i')", 2D
+    58, , ATS4i, ":py:class:`~mordred.Autocorrelation.ATS` (4, 'i')", 2D
+    59, , ATS5i, ":py:class:`~mordred.Autocorrelation.ATS` (5, 'i')", 2D
+    60, , ATS6i, ":py:class:`~mordred.Autocorrelation.ATS` (6, 'i')", 2D
+    61, , ATS7i, ":py:class:`~mordred.Autocorrelation.ATS` (7, 'i')", 2D
+    62, , ATS8i, ":py:class:`~mordred.Autocorrelation.ATS` (8, 'i')", 2D
     63, , ATS0are, ":py:class:`~mordred.Autocorrelation.ATS` (0, 'are')", 2D
     64, , ATS1are, ":py:class:`~mordred.Autocorrelation.ATS` (1, 'are')", 2D
     65, , ATS2are, ":py:class:`~mordred.Autocorrelation.ATS` (2, 'are')", 2D
@@ -81,60 +81,60 @@ preset descriptors
     69, , ATS6are, ":py:class:`~mordred.Autocorrelation.ATS` (6, 'are')", 2D
     70, , ATS7are, ":py:class:`~mordred.Autocorrelation.ATS` (7, 'are')", 2D
     71, , ATS8are, ":py:class:`~mordred.Autocorrelation.ATS` (8, 'are')", 2D
-    72, , ATS0Z, ":py:class:`~mordred.Autocorrelation.ATS` (0, 'Z')", 2D
-    73, , ATS1Z, ":py:class:`~mordred.Autocorrelation.ATS` (1, 'Z')", 2D
-    74, , ATS2Z, ":py:class:`~mordred.Autocorrelation.ATS` (2, 'Z')", 2D
-    75, , ATS3Z, ":py:class:`~mordred.Autocorrelation.ATS` (3, 'Z')", 2D
-    76, , ATS4Z, ":py:class:`~mordred.Autocorrelation.ATS` (4, 'Z')", 2D
-    77, , ATS5Z, ":py:class:`~mordred.Autocorrelation.ATS` (5, 'Z')", 2D
-    78, , ATS6Z, ":py:class:`~mordred.Autocorrelation.ATS` (6, 'Z')", 2D
-    79, , ATS7Z, ":py:class:`~mordred.Autocorrelation.ATS` (7, 'Z')", 2D
-    80, , ATS8Z, ":py:class:`~mordred.Autocorrelation.ATS` (8, 'Z')", 2D
-    81, , ATS0i, ":py:class:`~mordred.Autocorrelation.ATS` (0, 'i')", 2D
-    82, , ATS1i, ":py:class:`~mordred.Autocorrelation.ATS` (1, 'i')", 2D
-    83, , ATS2i, ":py:class:`~mordred.Autocorrelation.ATS` (2, 'i')", 2D
-    84, , ATS3i, ":py:class:`~mordred.Autocorrelation.ATS` (3, 'i')", 2D
-    85, , ATS4i, ":py:class:`~mordred.Autocorrelation.ATS` (4, 'i')", 2D
-    86, , ATS5i, ":py:class:`~mordred.Autocorrelation.ATS` (5, 'i')", 2D
-    87, , ATS6i, ":py:class:`~mordred.Autocorrelation.ATS` (6, 'i')", 2D
-    88, , ATS7i, ":py:class:`~mordred.Autocorrelation.ATS` (7, 'i')", 2D
-    89, , ATS8i, ":py:class:`~mordred.Autocorrelation.ATS` (8, 'i')", 2D
-    90, , ATS0v, ":py:class:`~mordred.Autocorrelation.ATS` (0, 'v')", 2D
-    91, , ATS1v, ":py:class:`~mordred.Autocorrelation.ATS` (1, 'v')", 2D
-    92, , ATS2v, ":py:class:`~mordred.Autocorrelation.ATS` (2, 'v')", 2D
-    93, , ATS3v, ":py:class:`~mordred.Autocorrelation.ATS` (3, 'v')", 2D
-    94, , ATS4v, ":py:class:`~mordred.Autocorrelation.ATS` (4, 'v')", 2D
-    95, , ATS5v, ":py:class:`~mordred.Autocorrelation.ATS` (5, 'v')", 2D
-    96, , ATS6v, ":py:class:`~mordred.Autocorrelation.ATS` (6, 'v')", 2D
-    97, , ATS7v, ":py:class:`~mordred.Autocorrelation.ATS` (7, 'v')", 2D
-    98, , ATS8v, ":py:class:`~mordred.Autocorrelation.ATS` (8, 'v')", 2D
-    99, , ATS0p, ":py:class:`~mordred.Autocorrelation.ATS` (0, 'p')", 2D
-    100, , ATS1p, ":py:class:`~mordred.Autocorrelation.ATS` (1, 'p')", 2D
-    101, , ATS2p, ":py:class:`~mordred.Autocorrelation.ATS` (2, 'p')", 2D
-    102, , ATS3p, ":py:class:`~mordred.Autocorrelation.ATS` (3, 'p')", 2D
-    103, , ATS4p, ":py:class:`~mordred.Autocorrelation.ATS` (4, 'p')", 2D
-    104, , ATS5p, ":py:class:`~mordred.Autocorrelation.ATS` (5, 'p')", 2D
-    105, , ATS6p, ":py:class:`~mordred.Autocorrelation.ATS` (6, 'p')", 2D
-    106, , ATS7p, ":py:class:`~mordred.Autocorrelation.ATS` (7, 'p')", 2D
-    107, , ATS8p, ":py:class:`~mordred.Autocorrelation.ATS` (8, 'p')", 2D
-    108, , ATS0pe, ":py:class:`~mordred.Autocorrelation.ATS` (0, 'pe')", 2D
-    109, , ATS1pe, ":py:class:`~mordred.Autocorrelation.ATS` (1, 'pe')", 2D
-    110, , ATS2pe, ":py:class:`~mordred.Autocorrelation.ATS` (2, 'pe')", 2D
-    111, , ATS3pe, ":py:class:`~mordred.Autocorrelation.ATS` (3, 'pe')", 2D
-    112, , ATS4pe, ":py:class:`~mordred.Autocorrelation.ATS` (4, 'pe')", 2D
-    113, , ATS5pe, ":py:class:`~mordred.Autocorrelation.ATS` (5, 'pe')", 2D
-    114, , ATS6pe, ":py:class:`~mordred.Autocorrelation.ATS` (6, 'pe')", 2D
-    115, , ATS7pe, ":py:class:`~mordred.Autocorrelation.ATS` (7, 'pe')", 2D
-    116, , ATS8pe, ":py:class:`~mordred.Autocorrelation.ATS` (8, 'pe')", 2D
-    117, , ATS0dv, ":py:class:`~mordred.Autocorrelation.ATS` (0, 'dv')", 2D
-    118, , ATS1dv, ":py:class:`~mordred.Autocorrelation.ATS` (1, 'dv')", 2D
-    119, , ATS2dv, ":py:class:`~mordred.Autocorrelation.ATS` (2, 'dv')", 2D
-    120, , ATS3dv, ":py:class:`~mordred.Autocorrelation.ATS` (3, 'dv')", 2D
-    121, , ATS4dv, ":py:class:`~mordred.Autocorrelation.ATS` (4, 'dv')", 2D
-    122, , ATS5dv, ":py:class:`~mordred.Autocorrelation.ATS` (5, 'dv')", 2D
-    123, , ATS6dv, ":py:class:`~mordred.Autocorrelation.ATS` (6, 'dv')", 2D
-    124, , ATS7dv, ":py:class:`~mordred.Autocorrelation.ATS` (7, 'dv')", 2D
-    125, , ATS8dv, ":py:class:`~mordred.Autocorrelation.ATS` (8, 'dv')", 2D
+    72, , ATS0v, ":py:class:`~mordred.Autocorrelation.ATS` (0, 'v')", 2D
+    73, , ATS1v, ":py:class:`~mordred.Autocorrelation.ATS` (1, 'v')", 2D
+    74, , ATS2v, ":py:class:`~mordred.Autocorrelation.ATS` (2, 'v')", 2D
+    75, , ATS3v, ":py:class:`~mordred.Autocorrelation.ATS` (3, 'v')", 2D
+    76, , ATS4v, ":py:class:`~mordred.Autocorrelation.ATS` (4, 'v')", 2D
+    77, , ATS5v, ":py:class:`~mordred.Autocorrelation.ATS` (5, 'v')", 2D
+    78, , ATS6v, ":py:class:`~mordred.Autocorrelation.ATS` (6, 'v')", 2D
+    79, , ATS7v, ":py:class:`~mordred.Autocorrelation.ATS` (7, 'v')", 2D
+    80, , ATS8v, ":py:class:`~mordred.Autocorrelation.ATS` (8, 'v')", 2D
+    81, , ATS0s, ":py:class:`~mordred.Autocorrelation.ATS` (0, 's')", 2D
+    82, , ATS1s, ":py:class:`~mordred.Autocorrelation.ATS` (1, 's')", 2D
+    83, , ATS2s, ":py:class:`~mordred.Autocorrelation.ATS` (2, 's')", 2D
+    84, , ATS3s, ":py:class:`~mordred.Autocorrelation.ATS` (3, 's')", 2D
+    85, , ATS4s, ":py:class:`~mordred.Autocorrelation.ATS` (4, 's')", 2D
+    86, , ATS5s, ":py:class:`~mordred.Autocorrelation.ATS` (5, 's')", 2D
+    87, , ATS6s, ":py:class:`~mordred.Autocorrelation.ATS` (6, 's')", 2D
+    88, , ATS7s, ":py:class:`~mordred.Autocorrelation.ATS` (7, 's')", 2D
+    89, , ATS8s, ":py:class:`~mordred.Autocorrelation.ATS` (8, 's')", 2D
+    90, , ATS0se, ":py:class:`~mordred.Autocorrelation.ATS` (0, 'se')", 2D
+    91, , ATS1se, ":py:class:`~mordred.Autocorrelation.ATS` (1, 'se')", 2D
+    92, , ATS2se, ":py:class:`~mordred.Autocorrelation.ATS` (2, 'se')", 2D
+    93, , ATS3se, ":py:class:`~mordred.Autocorrelation.ATS` (3, 'se')", 2D
+    94, , ATS4se, ":py:class:`~mordred.Autocorrelation.ATS` (4, 'se')", 2D
+    95, , ATS5se, ":py:class:`~mordred.Autocorrelation.ATS` (5, 'se')", 2D
+    96, , ATS6se, ":py:class:`~mordred.Autocorrelation.ATS` (6, 'se')", 2D
+    97, , ATS7se, ":py:class:`~mordred.Autocorrelation.ATS` (7, 'se')", 2D
+    98, , ATS8se, ":py:class:`~mordred.Autocorrelation.ATS` (8, 'se')", 2D
+    99, , ATS0dv, ":py:class:`~mordred.Autocorrelation.ATS` (0, 'dv')", 2D
+    100, , ATS1dv, ":py:class:`~mordred.Autocorrelation.ATS` (1, 'dv')", 2D
+    101, , ATS2dv, ":py:class:`~mordred.Autocorrelation.ATS` (2, 'dv')", 2D
+    102, , ATS3dv, ":py:class:`~mordred.Autocorrelation.ATS` (3, 'dv')", 2D
+    103, , ATS4dv, ":py:class:`~mordred.Autocorrelation.ATS` (4, 'dv')", 2D
+    104, , ATS5dv, ":py:class:`~mordred.Autocorrelation.ATS` (5, 'dv')", 2D
+    105, , ATS6dv, ":py:class:`~mordred.Autocorrelation.ATS` (6, 'dv')", 2D
+    106, , ATS7dv, ":py:class:`~mordred.Autocorrelation.ATS` (7, 'dv')", 2D
+    107, , ATS8dv, ":py:class:`~mordred.Autocorrelation.ATS` (8, 'dv')", 2D
+    108, , ATS0p, ":py:class:`~mordred.Autocorrelation.ATS` (0, 'p')", 2D
+    109, , ATS1p, ":py:class:`~mordred.Autocorrelation.ATS` (1, 'p')", 2D
+    110, , ATS2p, ":py:class:`~mordred.Autocorrelation.ATS` (2, 'p')", 2D
+    111, , ATS3p, ":py:class:`~mordred.Autocorrelation.ATS` (3, 'p')", 2D
+    112, , ATS4p, ":py:class:`~mordred.Autocorrelation.ATS` (4, 'p')", 2D
+    113, , ATS5p, ":py:class:`~mordred.Autocorrelation.ATS` (5, 'p')", 2D
+    114, , ATS6p, ":py:class:`~mordred.Autocorrelation.ATS` (6, 'p')", 2D
+    115, , ATS7p, ":py:class:`~mordred.Autocorrelation.ATS` (7, 'p')", 2D
+    116, , ATS8p, ":py:class:`~mordred.Autocorrelation.ATS` (8, 'p')", 2D
+    117, , ATS0Z, ":py:class:`~mordred.Autocorrelation.ATS` (0, 'Z')", 2D
+    118, , ATS1Z, ":py:class:`~mordred.Autocorrelation.ATS` (1, 'Z')", 2D
+    119, , ATS2Z, ":py:class:`~mordred.Autocorrelation.ATS` (2, 'Z')", 2D
+    120, , ATS3Z, ":py:class:`~mordred.Autocorrelation.ATS` (3, 'Z')", 2D
+    121, , ATS4Z, ":py:class:`~mordred.Autocorrelation.ATS` (4, 'Z')", 2D
+    122, , ATS5Z, ":py:class:`~mordred.Autocorrelation.ATS` (5, 'Z')", 2D
+    123, , ATS6Z, ":py:class:`~mordred.Autocorrelation.ATS` (6, 'Z')", 2D
+    124, , ATS7Z, ":py:class:`~mordred.Autocorrelation.ATS` (7, 'Z')", 2D
+    125, , ATS8Z, ":py:class:`~mordred.Autocorrelation.ATS` (8, 'Z')", 2D
     126, , ATS0m, ":py:class:`~mordred.Autocorrelation.ATS` (0, 'm')", 2D
     127, , ATS1m, ":py:class:`~mordred.Autocorrelation.ATS` (1, 'm')", 2D
     128, , ATS2m, ":py:class:`~mordred.Autocorrelation.ATS` (2, 'm')", 2D
@@ -144,33 +144,33 @@ preset descriptors
     132, , ATS6m, ":py:class:`~mordred.Autocorrelation.ATS` (6, 'm')", 2D
     133, , ATS7m, ":py:class:`~mordred.Autocorrelation.ATS` (7, 'm')", 2D
     134, , ATS8m, ":py:class:`~mordred.Autocorrelation.ATS` (8, 'm')", 2D
-    135, , AATS0s, ":py:class:`~mordred.Autocorrelation.AATS` (0, 's')", 2D
-    136, , AATS1s, ":py:class:`~mordred.Autocorrelation.AATS` (1, 's')", 2D
-    137, , AATS2s, ":py:class:`~mordred.Autocorrelation.AATS` (2, 's')", 2D
-    138, , AATS3s, ":py:class:`~mordred.Autocorrelation.AATS` (3, 's')", 2D
-    139, , AATS4s, ":py:class:`~mordred.Autocorrelation.AATS` (4, 's')", 2D
-    140, , AATS5s, ":py:class:`~mordred.Autocorrelation.AATS` (5, 's')", 2D
-    141, , AATS6s, ":py:class:`~mordred.Autocorrelation.AATS` (6, 's')", 2D
-    142, , AATS7s, ":py:class:`~mordred.Autocorrelation.AATS` (7, 's')", 2D
-    143, , AATS8s, ":py:class:`~mordred.Autocorrelation.AATS` (8, 's')", 2D
-    144, , AATS0d, ":py:class:`~mordred.Autocorrelation.AATS` (0, 'd')", 2D
-    145, , AATS1d, ":py:class:`~mordred.Autocorrelation.AATS` (1, 'd')", 2D
-    146, , AATS2d, ":py:class:`~mordred.Autocorrelation.AATS` (2, 'd')", 2D
-    147, , AATS3d, ":py:class:`~mordred.Autocorrelation.AATS` (3, 'd')", 2D
-    148, , AATS4d, ":py:class:`~mordred.Autocorrelation.AATS` (4, 'd')", 2D
-    149, , AATS5d, ":py:class:`~mordred.Autocorrelation.AATS` (5, 'd')", 2D
-    150, , AATS6d, ":py:class:`~mordred.Autocorrelation.AATS` (6, 'd')", 2D
-    151, , AATS7d, ":py:class:`~mordred.Autocorrelation.AATS` (7, 'd')", 2D
-    152, , AATS8d, ":py:class:`~mordred.Autocorrelation.AATS` (8, 'd')", 2D
-    153, , AATS0se, ":py:class:`~mordred.Autocorrelation.AATS` (0, 'se')", 2D
-    154, , AATS1se, ":py:class:`~mordred.Autocorrelation.AATS` (1, 'se')", 2D
-    155, , AATS2se, ":py:class:`~mordred.Autocorrelation.AATS` (2, 'se')", 2D
-    156, , AATS3se, ":py:class:`~mordred.Autocorrelation.AATS` (3, 'se')", 2D
-    157, , AATS4se, ":py:class:`~mordred.Autocorrelation.AATS` (4, 'se')", 2D
-    158, , AATS5se, ":py:class:`~mordred.Autocorrelation.AATS` (5, 'se')", 2D
-    159, , AATS6se, ":py:class:`~mordred.Autocorrelation.AATS` (6, 'se')", 2D
-    160, , AATS7se, ":py:class:`~mordred.Autocorrelation.AATS` (7, 'se')", 2D
-    161, , AATS8se, ":py:class:`~mordred.Autocorrelation.AATS` (8, 'se')", 2D
+    135, , AATS0d, ":py:class:`~mordred.Autocorrelation.AATS` (0, 'd')", 2D
+    136, , AATS1d, ":py:class:`~mordred.Autocorrelation.AATS` (1, 'd')", 2D
+    137, , AATS2d, ":py:class:`~mordred.Autocorrelation.AATS` (2, 'd')", 2D
+    138, , AATS3d, ":py:class:`~mordred.Autocorrelation.AATS` (3, 'd')", 2D
+    139, , AATS4d, ":py:class:`~mordred.Autocorrelation.AATS` (4, 'd')", 2D
+    140, , AATS5d, ":py:class:`~mordred.Autocorrelation.AATS` (5, 'd')", 2D
+    141, , AATS6d, ":py:class:`~mordred.Autocorrelation.AATS` (6, 'd')", 2D
+    142, , AATS7d, ":py:class:`~mordred.Autocorrelation.AATS` (7, 'd')", 2D
+    143, , AATS8d, ":py:class:`~mordred.Autocorrelation.AATS` (8, 'd')", 2D
+    144, , AATS0pe, ":py:class:`~mordred.Autocorrelation.AATS` (0, 'pe')", 2D
+    145, , AATS1pe, ":py:class:`~mordred.Autocorrelation.AATS` (1, 'pe')", 2D
+    146, , AATS2pe, ":py:class:`~mordred.Autocorrelation.AATS` (2, 'pe')", 2D
+    147, , AATS3pe, ":py:class:`~mordred.Autocorrelation.AATS` (3, 'pe')", 2D
+    148, , AATS4pe, ":py:class:`~mordred.Autocorrelation.AATS` (4, 'pe')", 2D
+    149, , AATS5pe, ":py:class:`~mordred.Autocorrelation.AATS` (5, 'pe')", 2D
+    150, , AATS6pe, ":py:class:`~mordred.Autocorrelation.AATS` (6, 'pe')", 2D
+    151, , AATS7pe, ":py:class:`~mordred.Autocorrelation.AATS` (7, 'pe')", 2D
+    152, , AATS8pe, ":py:class:`~mordred.Autocorrelation.AATS` (8, 'pe')", 2D
+    153, , AATS0i, ":py:class:`~mordred.Autocorrelation.AATS` (0, 'i')", 2D
+    154, , AATS1i, ":py:class:`~mordred.Autocorrelation.AATS` (1, 'i')", 2D
+    155, , AATS2i, ":py:class:`~mordred.Autocorrelation.AATS` (2, 'i')", 2D
+    156, , AATS3i, ":py:class:`~mordred.Autocorrelation.AATS` (3, 'i')", 2D
+    157, , AATS4i, ":py:class:`~mordred.Autocorrelation.AATS` (4, 'i')", 2D
+    158, , AATS5i, ":py:class:`~mordred.Autocorrelation.AATS` (5, 'i')", 2D
+    159, , AATS6i, ":py:class:`~mordred.Autocorrelation.AATS` (6, 'i')", 2D
+    160, , AATS7i, ":py:class:`~mordred.Autocorrelation.AATS` (7, 'i')", 2D
+    161, , AATS8i, ":py:class:`~mordred.Autocorrelation.AATS` (8, 'i')", 2D
     162, , AATS0are, ":py:class:`~mordred.Autocorrelation.AATS` (0, 'are')", 2D
     163, , AATS1are, ":py:class:`~mordred.Autocorrelation.AATS` (1, 'are')", 2D
     164, , AATS2are, ":py:class:`~mordred.Autocorrelation.AATS` (2, 'are')", 2D
@@ -180,60 +180,60 @@ preset descriptors
     168, , AATS6are, ":py:class:`~mordred.Autocorrelation.AATS` (6, 'are')", 2D
     169, , AATS7are, ":py:class:`~mordred.Autocorrelation.AATS` (7, 'are')", 2D
     170, , AATS8are, ":py:class:`~mordred.Autocorrelation.AATS` (8, 'are')", 2D
-    171, , AATS0Z, ":py:class:`~mordred.Autocorrelation.AATS` (0, 'Z')", 2D
-    172, , AATS1Z, ":py:class:`~mordred.Autocorrelation.AATS` (1, 'Z')", 2D
-    173, , AATS2Z, ":py:class:`~mordred.Autocorrelation.AATS` (2, 'Z')", 2D
-    174, , AATS3Z, ":py:class:`~mordred.Autocorrelation.AATS` (3, 'Z')", 2D
-    175, , AATS4Z, ":py:class:`~mordred.Autocorrelation.AATS` (4, 'Z')", 2D
-    176, , AATS5Z, ":py:class:`~mordred.Autocorrelation.AATS` (5, 'Z')", 2D
-    177, , AATS6Z, ":py:class:`~mordred.Autocorrelation.AATS` (6, 'Z')", 2D
-    178, , AATS7Z, ":py:class:`~mordred.Autocorrelation.AATS` (7, 'Z')", 2D
-    179, , AATS8Z, ":py:class:`~mordred.Autocorrelation.AATS` (8, 'Z')", 2D
-    180, , AATS0i, ":py:class:`~mordred.Autocorrelation.AATS` (0, 'i')", 2D
-    181, , AATS1i, ":py:class:`~mordred.Autocorrelation.AATS` (1, 'i')", 2D
-    182, , AATS2i, ":py:class:`~mordred.Autocorrelation.AATS` (2, 'i')", 2D
-    183, , AATS3i, ":py:class:`~mordred.Autocorrelation.AATS` (3, 'i')", 2D
-    184, , AATS4i, ":py:class:`~mordred.Autocorrelation.AATS` (4, 'i')", 2D
-    185, , AATS5i, ":py:class:`~mordred.Autocorrelation.AATS` (5, 'i')", 2D
-    186, , AATS6i, ":py:class:`~mordred.Autocorrelation.AATS` (6, 'i')", 2D
-    187, , AATS7i, ":py:class:`~mordred.Autocorrelation.AATS` (7, 'i')", 2D
-    188, , AATS8i, ":py:class:`~mordred.Autocorrelation.AATS` (8, 'i')", 2D
-    189, , AATS0v, ":py:class:`~mordred.Autocorrelation.AATS` (0, 'v')", 2D
-    190, , AATS1v, ":py:class:`~mordred.Autocorrelation.AATS` (1, 'v')", 2D
-    191, , AATS2v, ":py:class:`~mordred.Autocorrelation.AATS` (2, 'v')", 2D
-    192, , AATS3v, ":py:class:`~mordred.Autocorrelation.AATS` (3, 'v')", 2D
-    193, , AATS4v, ":py:class:`~mordred.Autocorrelation.AATS` (4, 'v')", 2D
-    194, , AATS5v, ":py:class:`~mordred.Autocorrelation.AATS` (5, 'v')", 2D
-    195, , AATS6v, ":py:class:`~mordred.Autocorrelation.AATS` (6, 'v')", 2D
-    196, , AATS7v, ":py:class:`~mordred.Autocorrelation.AATS` (7, 'v')", 2D
-    197, , AATS8v, ":py:class:`~mordred.Autocorrelation.AATS` (8, 'v')", 2D
-    198, , AATS0p, ":py:class:`~mordred.Autocorrelation.AATS` (0, 'p')", 2D
-    199, , AATS1p, ":py:class:`~mordred.Autocorrelation.AATS` (1, 'p')", 2D
-    200, , AATS2p, ":py:class:`~mordred.Autocorrelation.AATS` (2, 'p')", 2D
-    201, , AATS3p, ":py:class:`~mordred.Autocorrelation.AATS` (3, 'p')", 2D
-    202, , AATS4p, ":py:class:`~mordred.Autocorrelation.AATS` (4, 'p')", 2D
-    203, , AATS5p, ":py:class:`~mordred.Autocorrelation.AATS` (5, 'p')", 2D
-    204, , AATS6p, ":py:class:`~mordred.Autocorrelation.AATS` (6, 'p')", 2D
-    205, , AATS7p, ":py:class:`~mordred.Autocorrelation.AATS` (7, 'p')", 2D
-    206, , AATS8p, ":py:class:`~mordred.Autocorrelation.AATS` (8, 'p')", 2D
-    207, , AATS0pe, ":py:class:`~mordred.Autocorrelation.AATS` (0, 'pe')", 2D
-    208, , AATS1pe, ":py:class:`~mordred.Autocorrelation.AATS` (1, 'pe')", 2D
-    209, , AATS2pe, ":py:class:`~mordred.Autocorrelation.AATS` (2, 'pe')", 2D
-    210, , AATS3pe, ":py:class:`~mordred.Autocorrelation.AATS` (3, 'pe')", 2D
-    211, , AATS4pe, ":py:class:`~mordred.Autocorrelation.AATS` (4, 'pe')", 2D
-    212, , AATS5pe, ":py:class:`~mordred.Autocorrelation.AATS` (5, 'pe')", 2D
-    213, , AATS6pe, ":py:class:`~mordred.Autocorrelation.AATS` (6, 'pe')", 2D
-    214, , AATS7pe, ":py:class:`~mordred.Autocorrelation.AATS` (7, 'pe')", 2D
-    215, , AATS8pe, ":py:class:`~mordred.Autocorrelation.AATS` (8, 'pe')", 2D
-    216, , AATS0dv, ":py:class:`~mordred.Autocorrelation.AATS` (0, 'dv')", 2D
-    217, , AATS1dv, ":py:class:`~mordred.Autocorrelation.AATS` (1, 'dv')", 2D
-    218, , AATS2dv, ":py:class:`~mordred.Autocorrelation.AATS` (2, 'dv')", 2D
-    219, , AATS3dv, ":py:class:`~mordred.Autocorrelation.AATS` (3, 'dv')", 2D
-    220, , AATS4dv, ":py:class:`~mordred.Autocorrelation.AATS` (4, 'dv')", 2D
-    221, , AATS5dv, ":py:class:`~mordred.Autocorrelation.AATS` (5, 'dv')", 2D
-    222, , AATS6dv, ":py:class:`~mordred.Autocorrelation.AATS` (6, 'dv')", 2D
-    223, , AATS7dv, ":py:class:`~mordred.Autocorrelation.AATS` (7, 'dv')", 2D
-    224, , AATS8dv, ":py:class:`~mordred.Autocorrelation.AATS` (8, 'dv')", 2D
+    171, , AATS0v, ":py:class:`~mordred.Autocorrelation.AATS` (0, 'v')", 2D
+    172, , AATS1v, ":py:class:`~mordred.Autocorrelation.AATS` (1, 'v')", 2D
+    173, , AATS2v, ":py:class:`~mordred.Autocorrelation.AATS` (2, 'v')", 2D
+    174, , AATS3v, ":py:class:`~mordred.Autocorrelation.AATS` (3, 'v')", 2D
+    175, , AATS4v, ":py:class:`~mordred.Autocorrelation.AATS` (4, 'v')", 2D
+    176, , AATS5v, ":py:class:`~mordred.Autocorrelation.AATS` (5, 'v')", 2D
+    177, , AATS6v, ":py:class:`~mordred.Autocorrelation.AATS` (6, 'v')", 2D
+    178, , AATS7v, ":py:class:`~mordred.Autocorrelation.AATS` (7, 'v')", 2D
+    179, , AATS8v, ":py:class:`~mordred.Autocorrelation.AATS` (8, 'v')", 2D
+    180, , AATS0s, ":py:class:`~mordred.Autocorrelation.AATS` (0, 's')", 2D
+    181, , AATS1s, ":py:class:`~mordred.Autocorrelation.AATS` (1, 's')", 2D
+    182, , AATS2s, ":py:class:`~mordred.Autocorrelation.AATS` (2, 's')", 2D
+    183, , AATS3s, ":py:class:`~mordred.Autocorrelation.AATS` (3, 's')", 2D
+    184, , AATS4s, ":py:class:`~mordred.Autocorrelation.AATS` (4, 's')", 2D
+    185, , AATS5s, ":py:class:`~mordred.Autocorrelation.AATS` (5, 's')", 2D
+    186, , AATS6s, ":py:class:`~mordred.Autocorrelation.AATS` (6, 's')", 2D
+    187, , AATS7s, ":py:class:`~mordred.Autocorrelation.AATS` (7, 's')", 2D
+    188, , AATS8s, ":py:class:`~mordred.Autocorrelation.AATS` (8, 's')", 2D
+    189, , AATS0se, ":py:class:`~mordred.Autocorrelation.AATS` (0, 'se')", 2D
+    190, , AATS1se, ":py:class:`~mordred.Autocorrelation.AATS` (1, 'se')", 2D
+    191, , AATS2se, ":py:class:`~mordred.Autocorrelation.AATS` (2, 'se')", 2D
+    192, , AATS3se, ":py:class:`~mordred.Autocorrelation.AATS` (3, 'se')", 2D
+    193, , AATS4se, ":py:class:`~mordred.Autocorrelation.AATS` (4, 'se')", 2D
+    194, , AATS5se, ":py:class:`~mordred.Autocorrelation.AATS` (5, 'se')", 2D
+    195, , AATS6se, ":py:class:`~mordred.Autocorrelation.AATS` (6, 'se')", 2D
+    196, , AATS7se, ":py:class:`~mordred.Autocorrelation.AATS` (7, 'se')", 2D
+    197, , AATS8se, ":py:class:`~mordred.Autocorrelation.AATS` (8, 'se')", 2D
+    198, , AATS0dv, ":py:class:`~mordred.Autocorrelation.AATS` (0, 'dv')", 2D
+    199, , AATS1dv, ":py:class:`~mordred.Autocorrelation.AATS` (1, 'dv')", 2D
+    200, , AATS2dv, ":py:class:`~mordred.Autocorrelation.AATS` (2, 'dv')", 2D
+    201, , AATS3dv, ":py:class:`~mordred.Autocorrelation.AATS` (3, 'dv')", 2D
+    202, , AATS4dv, ":py:class:`~mordred.Autocorrelation.AATS` (4, 'dv')", 2D
+    203, , AATS5dv, ":py:class:`~mordred.Autocorrelation.AATS` (5, 'dv')", 2D
+    204, , AATS6dv, ":py:class:`~mordred.Autocorrelation.AATS` (6, 'dv')", 2D
+    205, , AATS7dv, ":py:class:`~mordred.Autocorrelation.AATS` (7, 'dv')", 2D
+    206, , AATS8dv, ":py:class:`~mordred.Autocorrelation.AATS` (8, 'dv')", 2D
+    207, , AATS0p, ":py:class:`~mordred.Autocorrelation.AATS` (0, 'p')", 2D
+    208, , AATS1p, ":py:class:`~mordred.Autocorrelation.AATS` (1, 'p')", 2D
+    209, , AATS2p, ":py:class:`~mordred.Autocorrelation.AATS` (2, 'p')", 2D
+    210, , AATS3p, ":py:class:`~mordred.Autocorrelation.AATS` (3, 'p')", 2D
+    211, , AATS4p, ":py:class:`~mordred.Autocorrelation.AATS` (4, 'p')", 2D
+    212, , AATS5p, ":py:class:`~mordred.Autocorrelation.AATS` (5, 'p')", 2D
+    213, , AATS6p, ":py:class:`~mordred.Autocorrelation.AATS` (6, 'p')", 2D
+    214, , AATS7p, ":py:class:`~mordred.Autocorrelation.AATS` (7, 'p')", 2D
+    215, , AATS8p, ":py:class:`~mordred.Autocorrelation.AATS` (8, 'p')", 2D
+    216, , AATS0Z, ":py:class:`~mordred.Autocorrelation.AATS` (0, 'Z')", 2D
+    217, , AATS1Z, ":py:class:`~mordred.Autocorrelation.AATS` (1, 'Z')", 2D
+    218, , AATS2Z, ":py:class:`~mordred.Autocorrelation.AATS` (2, 'Z')", 2D
+    219, , AATS3Z, ":py:class:`~mordred.Autocorrelation.AATS` (3, 'Z')", 2D
+    220, , AATS4Z, ":py:class:`~mordred.Autocorrelation.AATS` (4, 'Z')", 2D
+    221, , AATS5Z, ":py:class:`~mordred.Autocorrelation.AATS` (5, 'Z')", 2D
+    222, , AATS6Z, ":py:class:`~mordred.Autocorrelation.AATS` (6, 'Z')", 2D
+    223, , AATS7Z, ":py:class:`~mordred.Autocorrelation.AATS` (7, 'Z')", 2D
+    224, , AATS8Z, ":py:class:`~mordred.Autocorrelation.AATS` (8, 'Z')", 2D
     225, , AATS0m, ":py:class:`~mordred.Autocorrelation.AATS` (0, 'm')", 2D
     226, , AATS1m, ":py:class:`~mordred.Autocorrelation.AATS` (1, 'm')", 2D
     227, , AATS2m, ":py:class:`~mordred.Autocorrelation.AATS` (2, 'm')", 2D
@@ -243,33 +243,33 @@ preset descriptors
     231, , AATS6m, ":py:class:`~mordred.Autocorrelation.AATS` (6, 'm')", 2D
     232, , AATS7m, ":py:class:`~mordred.Autocorrelation.AATS` (7, 'm')", 2D
     233, , AATS8m, ":py:class:`~mordred.Autocorrelation.AATS` (8, 'm')", 2D
-    234, , ATSC0s, ":py:class:`~mordred.Autocorrelation.ATSC` (0, 's')", 2D
-    235, , ATSC1s, ":py:class:`~mordred.Autocorrelation.ATSC` (1, 's')", 2D
-    236, , ATSC2s, ":py:class:`~mordred.Autocorrelation.ATSC` (2, 's')", 2D
-    237, , ATSC3s, ":py:class:`~mordred.Autocorrelation.ATSC` (3, 's')", 2D
-    238, , ATSC4s, ":py:class:`~mordred.Autocorrelation.ATSC` (4, 's')", 2D
-    239, , ATSC5s, ":py:class:`~mordred.Autocorrelation.ATSC` (5, 's')", 2D
-    240, , ATSC6s, ":py:class:`~mordred.Autocorrelation.ATSC` (6, 's')", 2D
-    241, , ATSC7s, ":py:class:`~mordred.Autocorrelation.ATSC` (7, 's')", 2D
-    242, , ATSC8s, ":py:class:`~mordred.Autocorrelation.ATSC` (8, 's')", 2D
-    243, , ATSC0d, ":py:class:`~mordred.Autocorrelation.ATSC` (0, 'd')", 2D
-    244, , ATSC1d, ":py:class:`~mordred.Autocorrelation.ATSC` (1, 'd')", 2D
-    245, , ATSC2d, ":py:class:`~mordred.Autocorrelation.ATSC` (2, 'd')", 2D
-    246, , ATSC3d, ":py:class:`~mordred.Autocorrelation.ATSC` (3, 'd')", 2D
-    247, , ATSC4d, ":py:class:`~mordred.Autocorrelation.ATSC` (4, 'd')", 2D
-    248, , ATSC5d, ":py:class:`~mordred.Autocorrelation.ATSC` (5, 'd')", 2D
-    249, , ATSC6d, ":py:class:`~mordred.Autocorrelation.ATSC` (6, 'd')", 2D
-    250, , ATSC7d, ":py:class:`~mordred.Autocorrelation.ATSC` (7, 'd')", 2D
-    251, , ATSC8d, ":py:class:`~mordred.Autocorrelation.ATSC` (8, 'd')", 2D
-    252, , ATSC0se, ":py:class:`~mordred.Autocorrelation.ATSC` (0, 'se')", 2D
-    253, , ATSC1se, ":py:class:`~mordred.Autocorrelation.ATSC` (1, 'se')", 2D
-    254, , ATSC2se, ":py:class:`~mordred.Autocorrelation.ATSC` (2, 'se')", 2D
-    255, , ATSC3se, ":py:class:`~mordred.Autocorrelation.ATSC` (3, 'se')", 2D
-    256, , ATSC4se, ":py:class:`~mordred.Autocorrelation.ATSC` (4, 'se')", 2D
-    257, , ATSC5se, ":py:class:`~mordred.Autocorrelation.ATSC` (5, 'se')", 2D
-    258, , ATSC6se, ":py:class:`~mordred.Autocorrelation.ATSC` (6, 'se')", 2D
-    259, , ATSC7se, ":py:class:`~mordred.Autocorrelation.ATSC` (7, 'se')", 2D
-    260, , ATSC8se, ":py:class:`~mordred.Autocorrelation.ATSC` (8, 'se')", 2D
+    234, , ATSC0d, ":py:class:`~mordred.Autocorrelation.ATSC` (0, 'd')", 2D
+    235, , ATSC1d, ":py:class:`~mordred.Autocorrelation.ATSC` (1, 'd')", 2D
+    236, , ATSC2d, ":py:class:`~mordred.Autocorrelation.ATSC` (2, 'd')", 2D
+    237, , ATSC3d, ":py:class:`~mordred.Autocorrelation.ATSC` (3, 'd')", 2D
+    238, , ATSC4d, ":py:class:`~mordred.Autocorrelation.ATSC` (4, 'd')", 2D
+    239, , ATSC5d, ":py:class:`~mordred.Autocorrelation.ATSC` (5, 'd')", 2D
+    240, , ATSC6d, ":py:class:`~mordred.Autocorrelation.ATSC` (6, 'd')", 2D
+    241, , ATSC7d, ":py:class:`~mordred.Autocorrelation.ATSC` (7, 'd')", 2D
+    242, , ATSC8d, ":py:class:`~mordred.Autocorrelation.ATSC` (8, 'd')", 2D
+    243, , ATSC0pe, ":py:class:`~mordred.Autocorrelation.ATSC` (0, 'pe')", 2D
+    244, , ATSC1pe, ":py:class:`~mordred.Autocorrelation.ATSC` (1, 'pe')", 2D
+    245, , ATSC2pe, ":py:class:`~mordred.Autocorrelation.ATSC` (2, 'pe')", 2D
+    246, , ATSC3pe, ":py:class:`~mordred.Autocorrelation.ATSC` (3, 'pe')", 2D
+    247, , ATSC4pe, ":py:class:`~mordred.Autocorrelation.ATSC` (4, 'pe')", 2D
+    248, , ATSC5pe, ":py:class:`~mordred.Autocorrelation.ATSC` (5, 'pe')", 2D
+    249, , ATSC6pe, ":py:class:`~mordred.Autocorrelation.ATSC` (6, 'pe')", 2D
+    250, , ATSC7pe, ":py:class:`~mordred.Autocorrelation.ATSC` (7, 'pe')", 2D
+    251, , ATSC8pe, ":py:class:`~mordred.Autocorrelation.ATSC` (8, 'pe')", 2D
+    252, , ATSC0i, ":py:class:`~mordred.Autocorrelation.ATSC` (0, 'i')", 2D
+    253, , ATSC1i, ":py:class:`~mordred.Autocorrelation.ATSC` (1, 'i')", 2D
+    254, , ATSC2i, ":py:class:`~mordred.Autocorrelation.ATSC` (2, 'i')", 2D
+    255, , ATSC3i, ":py:class:`~mordred.Autocorrelation.ATSC` (3, 'i')", 2D
+    256, , ATSC4i, ":py:class:`~mordred.Autocorrelation.ATSC` (4, 'i')", 2D
+    257, , ATSC5i, ":py:class:`~mordred.Autocorrelation.ATSC` (5, 'i')", 2D
+    258, , ATSC6i, ":py:class:`~mordred.Autocorrelation.ATSC` (6, 'i')", 2D
+    259, , ATSC7i, ":py:class:`~mordred.Autocorrelation.ATSC` (7, 'i')", 2D
+    260, , ATSC8i, ":py:class:`~mordred.Autocorrelation.ATSC` (8, 'i')", 2D
     261, , ATSC0are, ":py:class:`~mordred.Autocorrelation.ATSC` (0, 'are')", 2D
     262, , ATSC1are, ":py:class:`~mordred.Autocorrelation.ATSC` (1, 'are')", 2D
     263, , ATSC2are, ":py:class:`~mordred.Autocorrelation.ATSC` (2, 'are')", 2D
@@ -279,42 +279,42 @@ preset descriptors
     267, , ATSC6are, ":py:class:`~mordred.Autocorrelation.ATSC` (6, 'are')", 2D
     268, , ATSC7are, ":py:class:`~mordred.Autocorrelation.ATSC` (7, 'are')", 2D
     269, , ATSC8are, ":py:class:`~mordred.Autocorrelation.ATSC` (8, 'are')", 2D
-    270, , ATSC0c, ":py:class:`~mordred.Autocorrelation.ATSC` (0, 'c')", 2D
-    271, , ATSC1c, ":py:class:`~mordred.Autocorrelation.ATSC` (1, 'c')", 2D
-    272, , ATSC2c, ":py:class:`~mordred.Autocorrelation.ATSC` (2, 'c')", 2D
-    273, , ATSC3c, ":py:class:`~mordred.Autocorrelation.ATSC` (3, 'c')", 2D
-    274, , ATSC4c, ":py:class:`~mordred.Autocorrelation.ATSC` (4, 'c')", 2D
-    275, , ATSC5c, ":py:class:`~mordred.Autocorrelation.ATSC` (5, 'c')", 2D
-    276, , ATSC6c, ":py:class:`~mordred.Autocorrelation.ATSC` (6, 'c')", 2D
-    277, , ATSC7c, ":py:class:`~mordred.Autocorrelation.ATSC` (7, 'c')", 2D
-    278, , ATSC8c, ":py:class:`~mordred.Autocorrelation.ATSC` (8, 'c')", 2D
-    279, , ATSC0Z, ":py:class:`~mordred.Autocorrelation.ATSC` (0, 'Z')", 2D
-    280, , ATSC1Z, ":py:class:`~mordred.Autocorrelation.ATSC` (1, 'Z')", 2D
-    281, , ATSC2Z, ":py:class:`~mordred.Autocorrelation.ATSC` (2, 'Z')", 2D
-    282, , ATSC3Z, ":py:class:`~mordred.Autocorrelation.ATSC` (3, 'Z')", 2D
-    283, , ATSC4Z, ":py:class:`~mordred.Autocorrelation.ATSC` (4, 'Z')", 2D
-    284, , ATSC5Z, ":py:class:`~mordred.Autocorrelation.ATSC` (5, 'Z')", 2D
-    285, , ATSC6Z, ":py:class:`~mordred.Autocorrelation.ATSC` (6, 'Z')", 2D
-    286, , ATSC7Z, ":py:class:`~mordred.Autocorrelation.ATSC` (7, 'Z')", 2D
-    287, , ATSC8Z, ":py:class:`~mordred.Autocorrelation.ATSC` (8, 'Z')", 2D
-    288, , ATSC0i, ":py:class:`~mordred.Autocorrelation.ATSC` (0, 'i')", 2D
-    289, , ATSC1i, ":py:class:`~mordred.Autocorrelation.ATSC` (1, 'i')", 2D
-    290, , ATSC2i, ":py:class:`~mordred.Autocorrelation.ATSC` (2, 'i')", 2D
-    291, , ATSC3i, ":py:class:`~mordred.Autocorrelation.ATSC` (3, 'i')", 2D
-    292, , ATSC4i, ":py:class:`~mordred.Autocorrelation.ATSC` (4, 'i')", 2D
-    293, , ATSC5i, ":py:class:`~mordred.Autocorrelation.ATSC` (5, 'i')", 2D
-    294, , ATSC6i, ":py:class:`~mordred.Autocorrelation.ATSC` (6, 'i')", 2D
-    295, , ATSC7i, ":py:class:`~mordred.Autocorrelation.ATSC` (7, 'i')", 2D
-    296, , ATSC8i, ":py:class:`~mordred.Autocorrelation.ATSC` (8, 'i')", 2D
-    297, , ATSC0v, ":py:class:`~mordred.Autocorrelation.ATSC` (0, 'v')", 2D
-    298, , ATSC1v, ":py:class:`~mordred.Autocorrelation.ATSC` (1, 'v')", 2D
-    299, , ATSC2v, ":py:class:`~mordred.Autocorrelation.ATSC` (2, 'v')", 2D
-    300, , ATSC3v, ":py:class:`~mordred.Autocorrelation.ATSC` (3, 'v')", 2D
-    301, , ATSC4v, ":py:class:`~mordred.Autocorrelation.ATSC` (4, 'v')", 2D
-    302, , ATSC5v, ":py:class:`~mordred.Autocorrelation.ATSC` (5, 'v')", 2D
-    303, , ATSC6v, ":py:class:`~mordred.Autocorrelation.ATSC` (6, 'v')", 2D
-    304, , ATSC7v, ":py:class:`~mordred.Autocorrelation.ATSC` (7, 'v')", 2D
-    305, , ATSC8v, ":py:class:`~mordred.Autocorrelation.ATSC` (8, 'v')", 2D
+    270, , ATSC0v, ":py:class:`~mordred.Autocorrelation.ATSC` (0, 'v')", 2D
+    271, , ATSC1v, ":py:class:`~mordred.Autocorrelation.ATSC` (1, 'v')", 2D
+    272, , ATSC2v, ":py:class:`~mordred.Autocorrelation.ATSC` (2, 'v')", 2D
+    273, , ATSC3v, ":py:class:`~mordred.Autocorrelation.ATSC` (3, 'v')", 2D
+    274, , ATSC4v, ":py:class:`~mordred.Autocorrelation.ATSC` (4, 'v')", 2D
+    275, , ATSC5v, ":py:class:`~mordred.Autocorrelation.ATSC` (5, 'v')", 2D
+    276, , ATSC6v, ":py:class:`~mordred.Autocorrelation.ATSC` (6, 'v')", 2D
+    277, , ATSC7v, ":py:class:`~mordred.Autocorrelation.ATSC` (7, 'v')", 2D
+    278, , ATSC8v, ":py:class:`~mordred.Autocorrelation.ATSC` (8, 'v')", 2D
+    279, , ATSC0s, ":py:class:`~mordred.Autocorrelation.ATSC` (0, 's')", 2D
+    280, , ATSC1s, ":py:class:`~mordred.Autocorrelation.ATSC` (1, 's')", 2D
+    281, , ATSC2s, ":py:class:`~mordred.Autocorrelation.ATSC` (2, 's')", 2D
+    282, , ATSC3s, ":py:class:`~mordred.Autocorrelation.ATSC` (3, 's')", 2D
+    283, , ATSC4s, ":py:class:`~mordred.Autocorrelation.ATSC` (4, 's')", 2D
+    284, , ATSC5s, ":py:class:`~mordred.Autocorrelation.ATSC` (5, 's')", 2D
+    285, , ATSC6s, ":py:class:`~mordred.Autocorrelation.ATSC` (6, 's')", 2D
+    286, , ATSC7s, ":py:class:`~mordred.Autocorrelation.ATSC` (7, 's')", 2D
+    287, , ATSC8s, ":py:class:`~mordred.Autocorrelation.ATSC` (8, 's')", 2D
+    288, , ATSC0se, ":py:class:`~mordred.Autocorrelation.ATSC` (0, 'se')", 2D
+    289, , ATSC1se, ":py:class:`~mordred.Autocorrelation.ATSC` (1, 'se')", 2D
+    290, , ATSC2se, ":py:class:`~mordred.Autocorrelation.ATSC` (2, 'se')", 2D
+    291, , ATSC3se, ":py:class:`~mordred.Autocorrelation.ATSC` (3, 'se')", 2D
+    292, , ATSC4se, ":py:class:`~mordred.Autocorrelation.ATSC` (4, 'se')", 2D
+    293, , ATSC5se, ":py:class:`~mordred.Autocorrelation.ATSC` (5, 'se')", 2D
+    294, , ATSC6se, ":py:class:`~mordred.Autocorrelation.ATSC` (6, 'se')", 2D
+    295, , ATSC7se, ":py:class:`~mordred.Autocorrelation.ATSC` (7, 'se')", 2D
+    296, , ATSC8se, ":py:class:`~mordred.Autocorrelation.ATSC` (8, 'se')", 2D
+    297, , ATSC0dv, ":py:class:`~mordred.Autocorrelation.ATSC` (0, 'dv')", 2D
+    298, , ATSC1dv, ":py:class:`~mordred.Autocorrelation.ATSC` (1, 'dv')", 2D
+    299, , ATSC2dv, ":py:class:`~mordred.Autocorrelation.ATSC` (2, 'dv')", 2D
+    300, , ATSC3dv, ":py:class:`~mordred.Autocorrelation.ATSC` (3, 'dv')", 2D
+    301, , ATSC4dv, ":py:class:`~mordred.Autocorrelation.ATSC` (4, 'dv')", 2D
+    302, , ATSC5dv, ":py:class:`~mordred.Autocorrelation.ATSC` (5, 'dv')", 2D
+    303, , ATSC6dv, ":py:class:`~mordred.Autocorrelation.ATSC` (6, 'dv')", 2D
+    304, , ATSC7dv, ":py:class:`~mordred.Autocorrelation.ATSC` (7, 'dv')", 2D
+    305, , ATSC8dv, ":py:class:`~mordred.Autocorrelation.ATSC` (8, 'dv')", 2D
     306, , ATSC0p, ":py:class:`~mordred.Autocorrelation.ATSC` (0, 'p')", 2D
     307, , ATSC1p, ":py:class:`~mordred.Autocorrelation.ATSC` (1, 'p')", 2D
     308, , ATSC2p, ":py:class:`~mordred.Autocorrelation.ATSC` (2, 'p')", 2D
@@ -324,24 +324,24 @@ preset descriptors
     312, , ATSC6p, ":py:class:`~mordred.Autocorrelation.ATSC` (6, 'p')", 2D
     313, , ATSC7p, ":py:class:`~mordred.Autocorrelation.ATSC` (7, 'p')", 2D
     314, , ATSC8p, ":py:class:`~mordred.Autocorrelation.ATSC` (8, 'p')", 2D
-    315, , ATSC0pe, ":py:class:`~mordred.Autocorrelation.ATSC` (0, 'pe')", 2D
-    316, , ATSC1pe, ":py:class:`~mordred.Autocorrelation.ATSC` (1, 'pe')", 2D
-    317, , ATSC2pe, ":py:class:`~mordred.Autocorrelation.ATSC` (2, 'pe')", 2D
-    318, , ATSC3pe, ":py:class:`~mordred.Autocorrelation.ATSC` (3, 'pe')", 2D
-    319, , ATSC4pe, ":py:class:`~mordred.Autocorrelation.ATSC` (4, 'pe')", 2D
-    320, , ATSC5pe, ":py:class:`~mordred.Autocorrelation.ATSC` (5, 'pe')", 2D
-    321, , ATSC6pe, ":py:class:`~mordred.Autocorrelation.ATSC` (6, 'pe')", 2D
-    322, , ATSC7pe, ":py:class:`~mordred.Autocorrelation.ATSC` (7, 'pe')", 2D
-    323, , ATSC8pe, ":py:class:`~mordred.Autocorrelation.ATSC` (8, 'pe')", 2D
-    324, , ATSC0dv, ":py:class:`~mordred.Autocorrelation.ATSC` (0, 'dv')", 2D
-    325, , ATSC1dv, ":py:class:`~mordred.Autocorrelation.ATSC` (1, 'dv')", 2D
-    326, , ATSC2dv, ":py:class:`~mordred.Autocorrelation.ATSC` (2, 'dv')", 2D
-    327, , ATSC3dv, ":py:class:`~mordred.Autocorrelation.ATSC` (3, 'dv')", 2D
-    328, , ATSC4dv, ":py:class:`~mordred.Autocorrelation.ATSC` (4, 'dv')", 2D
-    329, , ATSC5dv, ":py:class:`~mordred.Autocorrelation.ATSC` (5, 'dv')", 2D
-    330, , ATSC6dv, ":py:class:`~mordred.Autocorrelation.ATSC` (6, 'dv')", 2D
-    331, , ATSC7dv, ":py:class:`~mordred.Autocorrelation.ATSC` (7, 'dv')", 2D
-    332, , ATSC8dv, ":py:class:`~mordred.Autocorrelation.ATSC` (8, 'dv')", 2D
+    315, , ATSC0c, ":py:class:`~mordred.Autocorrelation.ATSC` (0, 'c')", 2D
+    316, , ATSC1c, ":py:class:`~mordred.Autocorrelation.ATSC` (1, 'c')", 2D
+    317, , ATSC2c, ":py:class:`~mordred.Autocorrelation.ATSC` (2, 'c')", 2D
+    318, , ATSC3c, ":py:class:`~mordred.Autocorrelation.ATSC` (3, 'c')", 2D
+    319, , ATSC4c, ":py:class:`~mordred.Autocorrelation.ATSC` (4, 'c')", 2D
+    320, , ATSC5c, ":py:class:`~mordred.Autocorrelation.ATSC` (5, 'c')", 2D
+    321, , ATSC6c, ":py:class:`~mordred.Autocorrelation.ATSC` (6, 'c')", 2D
+    322, , ATSC7c, ":py:class:`~mordred.Autocorrelation.ATSC` (7, 'c')", 2D
+    323, , ATSC8c, ":py:class:`~mordred.Autocorrelation.ATSC` (8, 'c')", 2D
+    324, , ATSC0Z, ":py:class:`~mordred.Autocorrelation.ATSC` (0, 'Z')", 2D
+    325, , ATSC1Z, ":py:class:`~mordred.Autocorrelation.ATSC` (1, 'Z')", 2D
+    326, , ATSC2Z, ":py:class:`~mordred.Autocorrelation.ATSC` (2, 'Z')", 2D
+    327, , ATSC3Z, ":py:class:`~mordred.Autocorrelation.ATSC` (3, 'Z')", 2D
+    328, , ATSC4Z, ":py:class:`~mordred.Autocorrelation.ATSC` (4, 'Z')", 2D
+    329, , ATSC5Z, ":py:class:`~mordred.Autocorrelation.ATSC` (5, 'Z')", 2D
+    330, , ATSC6Z, ":py:class:`~mordred.Autocorrelation.ATSC` (6, 'Z')", 2D
+    331, , ATSC7Z, ":py:class:`~mordred.Autocorrelation.ATSC` (7, 'Z')", 2D
+    332, , ATSC8Z, ":py:class:`~mordred.Autocorrelation.ATSC` (8, 'Z')", 2D
     333, , ATSC0m, ":py:class:`~mordred.Autocorrelation.ATSC` (0, 'm')", 2D
     334, , ATSC1m, ":py:class:`~mordred.Autocorrelation.ATSC` (1, 'm')", 2D
     335, , ATSC2m, ":py:class:`~mordred.Autocorrelation.ATSC` (2, 'm')", 2D
@@ -351,33 +351,33 @@ preset descriptors
     339, , ATSC6m, ":py:class:`~mordred.Autocorrelation.ATSC` (6, 'm')", 2D
     340, , ATSC7m, ":py:class:`~mordred.Autocorrelation.ATSC` (7, 'm')", 2D
     341, , ATSC8m, ":py:class:`~mordred.Autocorrelation.ATSC` (8, 'm')", 2D
-    342, , AATSC0s, ":py:class:`~mordred.Autocorrelation.AATSC` (0, 's')", 2D
-    343, , AATSC1s, ":py:class:`~mordred.Autocorrelation.AATSC` (1, 's')", 2D
-    344, , AATSC2s, ":py:class:`~mordred.Autocorrelation.AATSC` (2, 's')", 2D
-    345, , AATSC3s, ":py:class:`~mordred.Autocorrelation.AATSC` (3, 's')", 2D
-    346, , AATSC4s, ":py:class:`~mordred.Autocorrelation.AATSC` (4, 's')", 2D
-    347, , AATSC5s, ":py:class:`~mordred.Autocorrelation.AATSC` (5, 's')", 2D
-    348, , AATSC6s, ":py:class:`~mordred.Autocorrelation.AATSC` (6, 's')", 2D
-    349, , AATSC7s, ":py:class:`~mordred.Autocorrelation.AATSC` (7, 's')", 2D
-    350, , AATSC8s, ":py:class:`~mordred.Autocorrelation.AATSC` (8, 's')", 2D
-    351, , AATSC0d, ":py:class:`~mordred.Autocorrelation.AATSC` (0, 'd')", 2D
-    352, , AATSC1d, ":py:class:`~mordred.Autocorrelation.AATSC` (1, 'd')", 2D
-    353, , AATSC2d, ":py:class:`~mordred.Autocorrelation.AATSC` (2, 'd')", 2D
-    354, , AATSC3d, ":py:class:`~mordred.Autocorrelation.AATSC` (3, 'd')", 2D
-    355, , AATSC4d, ":py:class:`~mordred.Autocorrelation.AATSC` (4, 'd')", 2D
-    356, , AATSC5d, ":py:class:`~mordred.Autocorrelation.AATSC` (5, 'd')", 2D
-    357, , AATSC6d, ":py:class:`~mordred.Autocorrelation.AATSC` (6, 'd')", 2D
-    358, , AATSC7d, ":py:class:`~mordred.Autocorrelation.AATSC` (7, 'd')", 2D
-    359, , AATSC8d, ":py:class:`~mordred.Autocorrelation.AATSC` (8, 'd')", 2D
-    360, , AATSC0se, ":py:class:`~mordred.Autocorrelation.AATSC` (0, 'se')", 2D
-    361, , AATSC1se, ":py:class:`~mordred.Autocorrelation.AATSC` (1, 'se')", 2D
-    362, , AATSC2se, ":py:class:`~mordred.Autocorrelation.AATSC` (2, 'se')", 2D
-    363, , AATSC3se, ":py:class:`~mordred.Autocorrelation.AATSC` (3, 'se')", 2D
-    364, , AATSC4se, ":py:class:`~mordred.Autocorrelation.AATSC` (4, 'se')", 2D
-    365, , AATSC5se, ":py:class:`~mordred.Autocorrelation.AATSC` (5, 'se')", 2D
-    366, , AATSC6se, ":py:class:`~mordred.Autocorrelation.AATSC` (6, 'se')", 2D
-    367, , AATSC7se, ":py:class:`~mordred.Autocorrelation.AATSC` (7, 'se')", 2D
-    368, , AATSC8se, ":py:class:`~mordred.Autocorrelation.AATSC` (8, 'se')", 2D
+    342, , AATSC0d, ":py:class:`~mordred.Autocorrelation.AATSC` (0, 'd')", 2D
+    343, , AATSC1d, ":py:class:`~mordred.Autocorrelation.AATSC` (1, 'd')", 2D
+    344, , AATSC2d, ":py:class:`~mordred.Autocorrelation.AATSC` (2, 'd')", 2D
+    345, , AATSC3d, ":py:class:`~mordred.Autocorrelation.AATSC` (3, 'd')", 2D
+    346, , AATSC4d, ":py:class:`~mordred.Autocorrelation.AATSC` (4, 'd')", 2D
+    347, , AATSC5d, ":py:class:`~mordred.Autocorrelation.AATSC` (5, 'd')", 2D
+    348, , AATSC6d, ":py:class:`~mordred.Autocorrelation.AATSC` (6, 'd')", 2D
+    349, , AATSC7d, ":py:class:`~mordred.Autocorrelation.AATSC` (7, 'd')", 2D
+    350, , AATSC8d, ":py:class:`~mordred.Autocorrelation.AATSC` (8, 'd')", 2D
+    351, , AATSC0pe, ":py:class:`~mordred.Autocorrelation.AATSC` (0, 'pe')", 2D
+    352, , AATSC1pe, ":py:class:`~mordred.Autocorrelation.AATSC` (1, 'pe')", 2D
+    353, , AATSC2pe, ":py:class:`~mordred.Autocorrelation.AATSC` (2, 'pe')", 2D
+    354, , AATSC3pe, ":py:class:`~mordred.Autocorrelation.AATSC` (3, 'pe')", 2D
+    355, , AATSC4pe, ":py:class:`~mordred.Autocorrelation.AATSC` (4, 'pe')", 2D
+    356, , AATSC5pe, ":py:class:`~mordred.Autocorrelation.AATSC` (5, 'pe')", 2D
+    357, , AATSC6pe, ":py:class:`~mordred.Autocorrelation.AATSC` (6, 'pe')", 2D
+    358, , AATSC7pe, ":py:class:`~mordred.Autocorrelation.AATSC` (7, 'pe')", 2D
+    359, , AATSC8pe, ":py:class:`~mordred.Autocorrelation.AATSC` (8, 'pe')", 2D
+    360, , AATSC0i, ":py:class:`~mordred.Autocorrelation.AATSC` (0, 'i')", 2D
+    361, , AATSC1i, ":py:class:`~mordred.Autocorrelation.AATSC` (1, 'i')", 2D
+    362, , AATSC2i, ":py:class:`~mordred.Autocorrelation.AATSC` (2, 'i')", 2D
+    363, , AATSC3i, ":py:class:`~mordred.Autocorrelation.AATSC` (3, 'i')", 2D
+    364, , AATSC4i, ":py:class:`~mordred.Autocorrelation.AATSC` (4, 'i')", 2D
+    365, , AATSC5i, ":py:class:`~mordred.Autocorrelation.AATSC` (5, 'i')", 2D
+    366, , AATSC6i, ":py:class:`~mordred.Autocorrelation.AATSC` (6, 'i')", 2D
+    367, , AATSC7i, ":py:class:`~mordred.Autocorrelation.AATSC` (7, 'i')", 2D
+    368, , AATSC8i, ":py:class:`~mordred.Autocorrelation.AATSC` (8, 'i')", 2D
     369, , AATSC0are, ":py:class:`~mordred.Autocorrelation.AATSC` (0, 'are')", 2D
     370, , AATSC1are, ":py:class:`~mordred.Autocorrelation.AATSC` (1, 'are')", 2D
     371, , AATSC2are, ":py:class:`~mordred.Autocorrelation.AATSC` (2, 'are')", 2D
@@ -387,42 +387,42 @@ preset descriptors
     375, , AATSC6are, ":py:class:`~mordred.Autocorrelation.AATSC` (6, 'are')", 2D
     376, , AATSC7are, ":py:class:`~mordred.Autocorrelation.AATSC` (7, 'are')", 2D
     377, , AATSC8are, ":py:class:`~mordred.Autocorrelation.AATSC` (8, 'are')", 2D
-    378, , AATSC0c, ":py:class:`~mordred.Autocorrelation.AATSC` (0, 'c')", 2D
-    379, , AATSC1c, ":py:class:`~mordred.Autocorrelation.AATSC` (1, 'c')", 2D
-    380, , AATSC2c, ":py:class:`~mordred.Autocorrelation.AATSC` (2, 'c')", 2D
-    381, , AATSC3c, ":py:class:`~mordred.Autocorrelation.AATSC` (3, 'c')", 2D
-    382, , AATSC4c, ":py:class:`~mordred.Autocorrelation.AATSC` (4, 'c')", 2D
-    383, , AATSC5c, ":py:class:`~mordred.Autocorrelation.AATSC` (5, 'c')", 2D
-    384, , AATSC6c, ":py:class:`~mordred.Autocorrelation.AATSC` (6, 'c')", 2D
-    385, , AATSC7c, ":py:class:`~mordred.Autocorrelation.AATSC` (7, 'c')", 2D
-    386, , AATSC8c, ":py:class:`~mordred.Autocorrelation.AATSC` (8, 'c')", 2D
-    387, , AATSC0Z, ":py:class:`~mordred.Autocorrelation.AATSC` (0, 'Z')", 2D
-    388, , AATSC1Z, ":py:class:`~mordred.Autocorrelation.AATSC` (1, 'Z')", 2D
-    389, , AATSC2Z, ":py:class:`~mordred.Autocorrelation.AATSC` (2, 'Z')", 2D
-    390, , AATSC3Z, ":py:class:`~mordred.Autocorrelation.AATSC` (3, 'Z')", 2D
-    391, , AATSC4Z, ":py:class:`~mordred.Autocorrelation.AATSC` (4, 'Z')", 2D
-    392, , AATSC5Z, ":py:class:`~mordred.Autocorrelation.AATSC` (5, 'Z')", 2D
-    393, , AATSC6Z, ":py:class:`~mordred.Autocorrelation.AATSC` (6, 'Z')", 2D
-    394, , AATSC7Z, ":py:class:`~mordred.Autocorrelation.AATSC` (7, 'Z')", 2D
-    395, , AATSC8Z, ":py:class:`~mordred.Autocorrelation.AATSC` (8, 'Z')", 2D
-    396, , AATSC0i, ":py:class:`~mordred.Autocorrelation.AATSC` (0, 'i')", 2D
-    397, , AATSC1i, ":py:class:`~mordred.Autocorrelation.AATSC` (1, 'i')", 2D
-    398, , AATSC2i, ":py:class:`~mordred.Autocorrelation.AATSC` (2, 'i')", 2D
-    399, , AATSC3i, ":py:class:`~mordred.Autocorrelation.AATSC` (3, 'i')", 2D
-    400, , AATSC4i, ":py:class:`~mordred.Autocorrelation.AATSC` (4, 'i')", 2D
-    401, , AATSC5i, ":py:class:`~mordred.Autocorrelation.AATSC` (5, 'i')", 2D
-    402, , AATSC6i, ":py:class:`~mordred.Autocorrelation.AATSC` (6, 'i')", 2D
-    403, , AATSC7i, ":py:class:`~mordred.Autocorrelation.AATSC` (7, 'i')", 2D
-    404, , AATSC8i, ":py:class:`~mordred.Autocorrelation.AATSC` (8, 'i')", 2D
-    405, , AATSC0v, ":py:class:`~mordred.Autocorrelation.AATSC` (0, 'v')", 2D
-    406, , AATSC1v, ":py:class:`~mordred.Autocorrelation.AATSC` (1, 'v')", 2D
-    407, , AATSC2v, ":py:class:`~mordred.Autocorrelation.AATSC` (2, 'v')", 2D
-    408, , AATSC3v, ":py:class:`~mordred.Autocorrelation.AATSC` (3, 'v')", 2D
-    409, , AATSC4v, ":py:class:`~mordred.Autocorrelation.AATSC` (4, 'v')", 2D
-    410, , AATSC5v, ":py:class:`~mordred.Autocorrelation.AATSC` (5, 'v')", 2D
-    411, , AATSC6v, ":py:class:`~mordred.Autocorrelation.AATSC` (6, 'v')", 2D
-    412, , AATSC7v, ":py:class:`~mordred.Autocorrelation.AATSC` (7, 'v')", 2D
-    413, , AATSC8v, ":py:class:`~mordred.Autocorrelation.AATSC` (8, 'v')", 2D
+    378, , AATSC0v, ":py:class:`~mordred.Autocorrelation.AATSC` (0, 'v')", 2D
+    379, , AATSC1v, ":py:class:`~mordred.Autocorrelation.AATSC` (1, 'v')", 2D
+    380, , AATSC2v, ":py:class:`~mordred.Autocorrelation.AATSC` (2, 'v')", 2D
+    381, , AATSC3v, ":py:class:`~mordred.Autocorrelation.AATSC` (3, 'v')", 2D
+    382, , AATSC4v, ":py:class:`~mordred.Autocorrelation.AATSC` (4, 'v')", 2D
+    383, , AATSC5v, ":py:class:`~mordred.Autocorrelation.AATSC` (5, 'v')", 2D
+    384, , AATSC6v, ":py:class:`~mordred.Autocorrelation.AATSC` (6, 'v')", 2D
+    385, , AATSC7v, ":py:class:`~mordred.Autocorrelation.AATSC` (7, 'v')", 2D
+    386, , AATSC8v, ":py:class:`~mordred.Autocorrelation.AATSC` (8, 'v')", 2D
+    387, , AATSC0s, ":py:class:`~mordred.Autocorrelation.AATSC` (0, 's')", 2D
+    388, , AATSC1s, ":py:class:`~mordred.Autocorrelation.AATSC` (1, 's')", 2D
+    389, , AATSC2s, ":py:class:`~mordred.Autocorrelation.AATSC` (2, 's')", 2D
+    390, , AATSC3s, ":py:class:`~mordred.Autocorrelation.AATSC` (3, 's')", 2D
+    391, , AATSC4s, ":py:class:`~mordred.Autocorrelation.AATSC` (4, 's')", 2D
+    392, , AATSC5s, ":py:class:`~mordred.Autocorrelation.AATSC` (5, 's')", 2D
+    393, , AATSC6s, ":py:class:`~mordred.Autocorrelation.AATSC` (6, 's')", 2D
+    394, , AATSC7s, ":py:class:`~mordred.Autocorrelation.AATSC` (7, 's')", 2D
+    395, , AATSC8s, ":py:class:`~mordred.Autocorrelation.AATSC` (8, 's')", 2D
+    396, , AATSC0se, ":py:class:`~mordred.Autocorrelation.AATSC` (0, 'se')", 2D
+    397, , AATSC1se, ":py:class:`~mordred.Autocorrelation.AATSC` (1, 'se')", 2D
+    398, , AATSC2se, ":py:class:`~mordred.Autocorrelation.AATSC` (2, 'se')", 2D
+    399, , AATSC3se, ":py:class:`~mordred.Autocorrelation.AATSC` (3, 'se')", 2D
+    400, , AATSC4se, ":py:class:`~mordred.Autocorrelation.AATSC` (4, 'se')", 2D
+    401, , AATSC5se, ":py:class:`~mordred.Autocorrelation.AATSC` (5, 'se')", 2D
+    402, , AATSC6se, ":py:class:`~mordred.Autocorrelation.AATSC` (6, 'se')", 2D
+    403, , AATSC7se, ":py:class:`~mordred.Autocorrelation.AATSC` (7, 'se')", 2D
+    404, , AATSC8se, ":py:class:`~mordred.Autocorrelation.AATSC` (8, 'se')", 2D
+    405, , AATSC0dv, ":py:class:`~mordred.Autocorrelation.AATSC` (0, 'dv')", 2D
+    406, , AATSC1dv, ":py:class:`~mordred.Autocorrelation.AATSC` (1, 'dv')", 2D
+    407, , AATSC2dv, ":py:class:`~mordred.Autocorrelation.AATSC` (2, 'dv')", 2D
+    408, , AATSC3dv, ":py:class:`~mordred.Autocorrelation.AATSC` (3, 'dv')", 2D
+    409, , AATSC4dv, ":py:class:`~mordred.Autocorrelation.AATSC` (4, 'dv')", 2D
+    410, , AATSC5dv, ":py:class:`~mordred.Autocorrelation.AATSC` (5, 'dv')", 2D
+    411, , AATSC6dv, ":py:class:`~mordred.Autocorrelation.AATSC` (6, 'dv')", 2D
+    412, , AATSC7dv, ":py:class:`~mordred.Autocorrelation.AATSC` (7, 'dv')", 2D
+    413, , AATSC8dv, ":py:class:`~mordred.Autocorrelation.AATSC` (8, 'dv')", 2D
     414, , AATSC0p, ":py:class:`~mordred.Autocorrelation.AATSC` (0, 'p')", 2D
     415, , AATSC1p, ":py:class:`~mordred.Autocorrelation.AATSC` (1, 'p')", 2D
     416, , AATSC2p, ":py:class:`~mordred.Autocorrelation.AATSC` (2, 'p')", 2D
@@ -432,24 +432,24 @@ preset descriptors
     420, , AATSC6p, ":py:class:`~mordred.Autocorrelation.AATSC` (6, 'p')", 2D
     421, , AATSC7p, ":py:class:`~mordred.Autocorrelation.AATSC` (7, 'p')", 2D
     422, , AATSC8p, ":py:class:`~mordred.Autocorrelation.AATSC` (8, 'p')", 2D
-    423, , AATSC0pe, ":py:class:`~mordred.Autocorrelation.AATSC` (0, 'pe')", 2D
-    424, , AATSC1pe, ":py:class:`~mordred.Autocorrelation.AATSC` (1, 'pe')", 2D
-    425, , AATSC2pe, ":py:class:`~mordred.Autocorrelation.AATSC` (2, 'pe')", 2D
-    426, , AATSC3pe, ":py:class:`~mordred.Autocorrelation.AATSC` (3, 'pe')", 2D
-    427, , AATSC4pe, ":py:class:`~mordred.Autocorrelation.AATSC` (4, 'pe')", 2D
-    428, , AATSC5pe, ":py:class:`~mordred.Autocorrelation.AATSC` (5, 'pe')", 2D
-    429, , AATSC6pe, ":py:class:`~mordred.Autocorrelation.AATSC` (6, 'pe')", 2D
-    430, , AATSC7pe, ":py:class:`~mordred.Autocorrelation.AATSC` (7, 'pe')", 2D
-    431, , AATSC8pe, ":py:class:`~mordred.Autocorrelation.AATSC` (8, 'pe')", 2D
-    432, , AATSC0dv, ":py:class:`~mordred.Autocorrelation.AATSC` (0, 'dv')", 2D
-    433, , AATSC1dv, ":py:class:`~mordred.Autocorrelation.AATSC` (1, 'dv')", 2D
-    434, , AATSC2dv, ":py:class:`~mordred.Autocorrelation.AATSC` (2, 'dv')", 2D
-    435, , AATSC3dv, ":py:class:`~mordred.Autocorrelation.AATSC` (3, 'dv')", 2D
-    436, , AATSC4dv, ":py:class:`~mordred.Autocorrelation.AATSC` (4, 'dv')", 2D
-    437, , AATSC5dv, ":py:class:`~mordred.Autocorrelation.AATSC` (5, 'dv')", 2D
-    438, , AATSC6dv, ":py:class:`~mordred.Autocorrelation.AATSC` (6, 'dv')", 2D
-    439, , AATSC7dv, ":py:class:`~mordred.Autocorrelation.AATSC` (7, 'dv')", 2D
-    440, , AATSC8dv, ":py:class:`~mordred.Autocorrelation.AATSC` (8, 'dv')", 2D
+    423, , AATSC0c, ":py:class:`~mordred.Autocorrelation.AATSC` (0, 'c')", 2D
+    424, , AATSC1c, ":py:class:`~mordred.Autocorrelation.AATSC` (1, 'c')", 2D
+    425, , AATSC2c, ":py:class:`~mordred.Autocorrelation.AATSC` (2, 'c')", 2D
+    426, , AATSC3c, ":py:class:`~mordred.Autocorrelation.AATSC` (3, 'c')", 2D
+    427, , AATSC4c, ":py:class:`~mordred.Autocorrelation.AATSC` (4, 'c')", 2D
+    428, , AATSC5c, ":py:class:`~mordred.Autocorrelation.AATSC` (5, 'c')", 2D
+    429, , AATSC6c, ":py:class:`~mordred.Autocorrelation.AATSC` (6, 'c')", 2D
+    430, , AATSC7c, ":py:class:`~mordred.Autocorrelation.AATSC` (7, 'c')", 2D
+    431, , AATSC8c, ":py:class:`~mordred.Autocorrelation.AATSC` (8, 'c')", 2D
+    432, , AATSC0Z, ":py:class:`~mordred.Autocorrelation.AATSC` (0, 'Z')", 2D
+    433, , AATSC1Z, ":py:class:`~mordred.Autocorrelation.AATSC` (1, 'Z')", 2D
+    434, , AATSC2Z, ":py:class:`~mordred.Autocorrelation.AATSC` (2, 'Z')", 2D
+    435, , AATSC3Z, ":py:class:`~mordred.Autocorrelation.AATSC` (3, 'Z')", 2D
+    436, , AATSC4Z, ":py:class:`~mordred.Autocorrelation.AATSC` (4, 'Z')", 2D
+    437, , AATSC5Z, ":py:class:`~mordred.Autocorrelation.AATSC` (5, 'Z')", 2D
+    438, , AATSC6Z, ":py:class:`~mordred.Autocorrelation.AATSC` (6, 'Z')", 2D
+    439, , AATSC7Z, ":py:class:`~mordred.Autocorrelation.AATSC` (7, 'Z')", 2D
+    440, , AATSC8Z, ":py:class:`~mordred.Autocorrelation.AATSC` (8, 'Z')", 2D
     441, , AATSC0m, ":py:class:`~mordred.Autocorrelation.AATSC` (0, 'm')", 2D
     442, , AATSC1m, ":py:class:`~mordred.Autocorrelation.AATSC` (1, 'm')", 2D
     443, , AATSC2m, ":py:class:`~mordred.Autocorrelation.AATSC` (2, 'm')", 2D
@@ -459,30 +459,30 @@ preset descriptors
     447, , AATSC6m, ":py:class:`~mordred.Autocorrelation.AATSC` (6, 'm')", 2D
     448, , AATSC7m, ":py:class:`~mordred.Autocorrelation.AATSC` (7, 'm')", 2D
     449, , AATSC8m, ":py:class:`~mordred.Autocorrelation.AATSC` (8, 'm')", 2D
-    450, , MATS1s, ":py:class:`~mordred.Autocorrelation.MATS` (1, 's')", 2D
-    451, , MATS2s, ":py:class:`~mordred.Autocorrelation.MATS` (2, 's')", 2D
-    452, , MATS3s, ":py:class:`~mordred.Autocorrelation.MATS` (3, 's')", 2D
-    453, , MATS4s, ":py:class:`~mordred.Autocorrelation.MATS` (4, 's')", 2D
-    454, , MATS5s, ":py:class:`~mordred.Autocorrelation.MATS` (5, 's')", 2D
-    455, , MATS6s, ":py:class:`~mordred.Autocorrelation.MATS` (6, 's')", 2D
-    456, , MATS7s, ":py:class:`~mordred.Autocorrelation.MATS` (7, 's')", 2D
-    457, , MATS8s, ":py:class:`~mordred.Autocorrelation.MATS` (8, 's')", 2D
-    458, , MATS1d, ":py:class:`~mordred.Autocorrelation.MATS` (1, 'd')", 2D
-    459, , MATS2d, ":py:class:`~mordred.Autocorrelation.MATS` (2, 'd')", 2D
-    460, , MATS3d, ":py:class:`~mordred.Autocorrelation.MATS` (3, 'd')", 2D
-    461, , MATS4d, ":py:class:`~mordred.Autocorrelation.MATS` (4, 'd')", 2D
-    462, , MATS5d, ":py:class:`~mordred.Autocorrelation.MATS` (5, 'd')", 2D
-    463, , MATS6d, ":py:class:`~mordred.Autocorrelation.MATS` (6, 'd')", 2D
-    464, , MATS7d, ":py:class:`~mordred.Autocorrelation.MATS` (7, 'd')", 2D
-    465, , MATS8d, ":py:class:`~mordred.Autocorrelation.MATS` (8, 'd')", 2D
-    466, , MATS1se, ":py:class:`~mordred.Autocorrelation.MATS` (1, 'se')", 2D
-    467, , MATS2se, ":py:class:`~mordred.Autocorrelation.MATS` (2, 'se')", 2D
-    468, , MATS3se, ":py:class:`~mordred.Autocorrelation.MATS` (3, 'se')", 2D
-    469, , MATS4se, ":py:class:`~mordred.Autocorrelation.MATS` (4, 'se')", 2D
-    470, , MATS5se, ":py:class:`~mordred.Autocorrelation.MATS` (5, 'se')", 2D
-    471, , MATS6se, ":py:class:`~mordred.Autocorrelation.MATS` (6, 'se')", 2D
-    472, , MATS7se, ":py:class:`~mordred.Autocorrelation.MATS` (7, 'se')", 2D
-    473, , MATS8se, ":py:class:`~mordred.Autocorrelation.MATS` (8, 'se')", 2D
+    450, , MATS1d, ":py:class:`~mordred.Autocorrelation.MATS` (1, 'd')", 2D
+    451, , MATS2d, ":py:class:`~mordred.Autocorrelation.MATS` (2, 'd')", 2D
+    452, , MATS3d, ":py:class:`~mordred.Autocorrelation.MATS` (3, 'd')", 2D
+    453, , MATS4d, ":py:class:`~mordred.Autocorrelation.MATS` (4, 'd')", 2D
+    454, , MATS5d, ":py:class:`~mordred.Autocorrelation.MATS` (5, 'd')", 2D
+    455, , MATS6d, ":py:class:`~mordred.Autocorrelation.MATS` (6, 'd')", 2D
+    456, , MATS7d, ":py:class:`~mordred.Autocorrelation.MATS` (7, 'd')", 2D
+    457, , MATS8d, ":py:class:`~mordred.Autocorrelation.MATS` (8, 'd')", 2D
+    458, , MATS1pe, ":py:class:`~mordred.Autocorrelation.MATS` (1, 'pe')", 2D
+    459, , MATS2pe, ":py:class:`~mordred.Autocorrelation.MATS` (2, 'pe')", 2D
+    460, , MATS3pe, ":py:class:`~mordred.Autocorrelation.MATS` (3, 'pe')", 2D
+    461, , MATS4pe, ":py:class:`~mordred.Autocorrelation.MATS` (4, 'pe')", 2D
+    462, , MATS5pe, ":py:class:`~mordred.Autocorrelation.MATS` (5, 'pe')", 2D
+    463, , MATS6pe, ":py:class:`~mordred.Autocorrelation.MATS` (6, 'pe')", 2D
+    464, , MATS7pe, ":py:class:`~mordred.Autocorrelation.MATS` (7, 'pe')", 2D
+    465, , MATS8pe, ":py:class:`~mordred.Autocorrelation.MATS` (8, 'pe')", 2D
+    466, , MATS1i, ":py:class:`~mordred.Autocorrelation.MATS` (1, 'i')", 2D
+    467, , MATS2i, ":py:class:`~mordred.Autocorrelation.MATS` (2, 'i')", 2D
+    468, , MATS3i, ":py:class:`~mordred.Autocorrelation.MATS` (3, 'i')", 2D
+    469, , MATS4i, ":py:class:`~mordred.Autocorrelation.MATS` (4, 'i')", 2D
+    470, , MATS5i, ":py:class:`~mordred.Autocorrelation.MATS` (5, 'i')", 2D
+    471, , MATS6i, ":py:class:`~mordred.Autocorrelation.MATS` (6, 'i')", 2D
+    472, , MATS7i, ":py:class:`~mordred.Autocorrelation.MATS` (7, 'i')", 2D
+    473, , MATS8i, ":py:class:`~mordred.Autocorrelation.MATS` (8, 'i')", 2D
     474, , MATS1are, ":py:class:`~mordred.Autocorrelation.MATS` (1, 'are')", 2D
     475, , MATS2are, ":py:class:`~mordred.Autocorrelation.MATS` (2, 'are')", 2D
     476, , MATS3are, ":py:class:`~mordred.Autocorrelation.MATS` (3, 'are')", 2D
@@ -491,38 +491,38 @@ preset descriptors
     479, , MATS6are, ":py:class:`~mordred.Autocorrelation.MATS` (6, 'are')", 2D
     480, , MATS7are, ":py:class:`~mordred.Autocorrelation.MATS` (7, 'are')", 2D
     481, , MATS8are, ":py:class:`~mordred.Autocorrelation.MATS` (8, 'are')", 2D
-    482, , MATS1c, ":py:class:`~mordred.Autocorrelation.MATS` (1, 'c')", 2D
-    483, , MATS2c, ":py:class:`~mordred.Autocorrelation.MATS` (2, 'c')", 2D
-    484, , MATS3c, ":py:class:`~mordred.Autocorrelation.MATS` (3, 'c')", 2D
-    485, , MATS4c, ":py:class:`~mordred.Autocorrelation.MATS` (4, 'c')", 2D
-    486, , MATS5c, ":py:class:`~mordred.Autocorrelation.MATS` (5, 'c')", 2D
-    487, , MATS6c, ":py:class:`~mordred.Autocorrelation.MATS` (6, 'c')", 2D
-    488, , MATS7c, ":py:class:`~mordred.Autocorrelation.MATS` (7, 'c')", 2D
-    489, , MATS8c, ":py:class:`~mordred.Autocorrelation.MATS` (8, 'c')", 2D
-    490, , MATS1Z, ":py:class:`~mordred.Autocorrelation.MATS` (1, 'Z')", 2D
-    491, , MATS2Z, ":py:class:`~mordred.Autocorrelation.MATS` (2, 'Z')", 2D
-    492, , MATS3Z, ":py:class:`~mordred.Autocorrelation.MATS` (3, 'Z')", 2D
-    493, , MATS4Z, ":py:class:`~mordred.Autocorrelation.MATS` (4, 'Z')", 2D
-    494, , MATS5Z, ":py:class:`~mordred.Autocorrelation.MATS` (5, 'Z')", 2D
-    495, , MATS6Z, ":py:class:`~mordred.Autocorrelation.MATS` (6, 'Z')", 2D
-    496, , MATS7Z, ":py:class:`~mordred.Autocorrelation.MATS` (7, 'Z')", 2D
-    497, , MATS8Z, ":py:class:`~mordred.Autocorrelation.MATS` (8, 'Z')", 2D
-    498, , MATS1i, ":py:class:`~mordred.Autocorrelation.MATS` (1, 'i')", 2D
-    499, , MATS2i, ":py:class:`~mordred.Autocorrelation.MATS` (2, 'i')", 2D
-    500, , MATS3i, ":py:class:`~mordred.Autocorrelation.MATS` (3, 'i')", 2D
-    501, , MATS4i, ":py:class:`~mordred.Autocorrelation.MATS` (4, 'i')", 2D
-    502, , MATS5i, ":py:class:`~mordred.Autocorrelation.MATS` (5, 'i')", 2D
-    503, , MATS6i, ":py:class:`~mordred.Autocorrelation.MATS` (6, 'i')", 2D
-    504, , MATS7i, ":py:class:`~mordred.Autocorrelation.MATS` (7, 'i')", 2D
-    505, , MATS8i, ":py:class:`~mordred.Autocorrelation.MATS` (8, 'i')", 2D
-    506, , MATS1v, ":py:class:`~mordred.Autocorrelation.MATS` (1, 'v')", 2D
-    507, , MATS2v, ":py:class:`~mordred.Autocorrelation.MATS` (2, 'v')", 2D
-    508, , MATS3v, ":py:class:`~mordred.Autocorrelation.MATS` (3, 'v')", 2D
-    509, , MATS4v, ":py:class:`~mordred.Autocorrelation.MATS` (4, 'v')", 2D
-    510, , MATS5v, ":py:class:`~mordred.Autocorrelation.MATS` (5, 'v')", 2D
-    511, , MATS6v, ":py:class:`~mordred.Autocorrelation.MATS` (6, 'v')", 2D
-    512, , MATS7v, ":py:class:`~mordred.Autocorrelation.MATS` (7, 'v')", 2D
-    513, , MATS8v, ":py:class:`~mordred.Autocorrelation.MATS` (8, 'v')", 2D
+    482, , MATS1v, ":py:class:`~mordred.Autocorrelation.MATS` (1, 'v')", 2D
+    483, , MATS2v, ":py:class:`~mordred.Autocorrelation.MATS` (2, 'v')", 2D
+    484, , MATS3v, ":py:class:`~mordred.Autocorrelation.MATS` (3, 'v')", 2D
+    485, , MATS4v, ":py:class:`~mordred.Autocorrelation.MATS` (4, 'v')", 2D
+    486, , MATS5v, ":py:class:`~mordred.Autocorrelation.MATS` (5, 'v')", 2D
+    487, , MATS6v, ":py:class:`~mordred.Autocorrelation.MATS` (6, 'v')", 2D
+    488, , MATS7v, ":py:class:`~mordred.Autocorrelation.MATS` (7, 'v')", 2D
+    489, , MATS8v, ":py:class:`~mordred.Autocorrelation.MATS` (8, 'v')", 2D
+    490, , MATS1s, ":py:class:`~mordred.Autocorrelation.MATS` (1, 's')", 2D
+    491, , MATS2s, ":py:class:`~mordred.Autocorrelation.MATS` (2, 's')", 2D
+    492, , MATS3s, ":py:class:`~mordred.Autocorrelation.MATS` (3, 's')", 2D
+    493, , MATS4s, ":py:class:`~mordred.Autocorrelation.MATS` (4, 's')", 2D
+    494, , MATS5s, ":py:class:`~mordred.Autocorrelation.MATS` (5, 's')", 2D
+    495, , MATS6s, ":py:class:`~mordred.Autocorrelation.MATS` (6, 's')", 2D
+    496, , MATS7s, ":py:class:`~mordred.Autocorrelation.MATS` (7, 's')", 2D
+    497, , MATS8s, ":py:class:`~mordred.Autocorrelation.MATS` (8, 's')", 2D
+    498, , MATS1se, ":py:class:`~mordred.Autocorrelation.MATS` (1, 'se')", 2D
+    499, , MATS2se, ":py:class:`~mordred.Autocorrelation.MATS` (2, 'se')", 2D
+    500, , MATS3se, ":py:class:`~mordred.Autocorrelation.MATS` (3, 'se')", 2D
+    501, , MATS4se, ":py:class:`~mordred.Autocorrelation.MATS` (4, 'se')", 2D
+    502, , MATS5se, ":py:class:`~mordred.Autocorrelation.MATS` (5, 'se')", 2D
+    503, , MATS6se, ":py:class:`~mordred.Autocorrelation.MATS` (6, 'se')", 2D
+    504, , MATS7se, ":py:class:`~mordred.Autocorrelation.MATS` (7, 'se')", 2D
+    505, , MATS8se, ":py:class:`~mordred.Autocorrelation.MATS` (8, 'se')", 2D
+    506, , MATS1dv, ":py:class:`~mordred.Autocorrelation.MATS` (1, 'dv')", 2D
+    507, , MATS2dv, ":py:class:`~mordred.Autocorrelation.MATS` (2, 'dv')", 2D
+    508, , MATS3dv, ":py:class:`~mordred.Autocorrelation.MATS` (3, 'dv')", 2D
+    509, , MATS4dv, ":py:class:`~mordred.Autocorrelation.MATS` (4, 'dv')", 2D
+    510, , MATS5dv, ":py:class:`~mordred.Autocorrelation.MATS` (5, 'dv')", 2D
+    511, , MATS6dv, ":py:class:`~mordred.Autocorrelation.MATS` (6, 'dv')", 2D
+    512, , MATS7dv, ":py:class:`~mordred.Autocorrelation.MATS` (7, 'dv')", 2D
+    513, , MATS8dv, ":py:class:`~mordred.Autocorrelation.MATS` (8, 'dv')", 2D
     514, , MATS1p, ":py:class:`~mordred.Autocorrelation.MATS` (1, 'p')", 2D
     515, , MATS2p, ":py:class:`~mordred.Autocorrelation.MATS` (2, 'p')", 2D
     516, , MATS3p, ":py:class:`~mordred.Autocorrelation.MATS` (3, 'p')", 2D
@@ -531,22 +531,22 @@ preset descriptors
     519, , MATS6p, ":py:class:`~mordred.Autocorrelation.MATS` (6, 'p')", 2D
     520, , MATS7p, ":py:class:`~mordred.Autocorrelation.MATS` (7, 'p')", 2D
     521, , MATS8p, ":py:class:`~mordred.Autocorrelation.MATS` (8, 'p')", 2D
-    522, , MATS1pe, ":py:class:`~mordred.Autocorrelation.MATS` (1, 'pe')", 2D
-    523, , MATS2pe, ":py:class:`~mordred.Autocorrelation.MATS` (2, 'pe')", 2D
-    524, , MATS3pe, ":py:class:`~mordred.Autocorrelation.MATS` (3, 'pe')", 2D
-    525, , MATS4pe, ":py:class:`~mordred.Autocorrelation.MATS` (4, 'pe')", 2D
-    526, , MATS5pe, ":py:class:`~mordred.Autocorrelation.MATS` (5, 'pe')", 2D
-    527, , MATS6pe, ":py:class:`~mordred.Autocorrelation.MATS` (6, 'pe')", 2D
-    528, , MATS7pe, ":py:class:`~mordred.Autocorrelation.MATS` (7, 'pe')", 2D
-    529, , MATS8pe, ":py:class:`~mordred.Autocorrelation.MATS` (8, 'pe')", 2D
-    530, , MATS1dv, ":py:class:`~mordred.Autocorrelation.MATS` (1, 'dv')", 2D
-    531, , MATS2dv, ":py:class:`~mordred.Autocorrelation.MATS` (2, 'dv')", 2D
-    532, , MATS3dv, ":py:class:`~mordred.Autocorrelation.MATS` (3, 'dv')", 2D
-    533, , MATS4dv, ":py:class:`~mordred.Autocorrelation.MATS` (4, 'dv')", 2D
-    534, , MATS5dv, ":py:class:`~mordred.Autocorrelation.MATS` (5, 'dv')", 2D
-    535, , MATS6dv, ":py:class:`~mordred.Autocorrelation.MATS` (6, 'dv')", 2D
-    536, , MATS7dv, ":py:class:`~mordred.Autocorrelation.MATS` (7, 'dv')", 2D
-    537, , MATS8dv, ":py:class:`~mordred.Autocorrelation.MATS` (8, 'dv')", 2D
+    522, , MATS1c, ":py:class:`~mordred.Autocorrelation.MATS` (1, 'c')", 2D
+    523, , MATS2c, ":py:class:`~mordred.Autocorrelation.MATS` (2, 'c')", 2D
+    524, , MATS3c, ":py:class:`~mordred.Autocorrelation.MATS` (3, 'c')", 2D
+    525, , MATS4c, ":py:class:`~mordred.Autocorrelation.MATS` (4, 'c')", 2D
+    526, , MATS5c, ":py:class:`~mordred.Autocorrelation.MATS` (5, 'c')", 2D
+    527, , MATS6c, ":py:class:`~mordred.Autocorrelation.MATS` (6, 'c')", 2D
+    528, , MATS7c, ":py:class:`~mordred.Autocorrelation.MATS` (7, 'c')", 2D
+    529, , MATS8c, ":py:class:`~mordred.Autocorrelation.MATS` (8, 'c')", 2D
+    530, , MATS1Z, ":py:class:`~mordred.Autocorrelation.MATS` (1, 'Z')", 2D
+    531, , MATS2Z, ":py:class:`~mordred.Autocorrelation.MATS` (2, 'Z')", 2D
+    532, , MATS3Z, ":py:class:`~mordred.Autocorrelation.MATS` (3, 'Z')", 2D
+    533, , MATS4Z, ":py:class:`~mordred.Autocorrelation.MATS` (4, 'Z')", 2D
+    534, , MATS5Z, ":py:class:`~mordred.Autocorrelation.MATS` (5, 'Z')", 2D
+    535, , MATS6Z, ":py:class:`~mordred.Autocorrelation.MATS` (6, 'Z')", 2D
+    536, , MATS7Z, ":py:class:`~mordred.Autocorrelation.MATS` (7, 'Z')", 2D
+    537, , MATS8Z, ":py:class:`~mordred.Autocorrelation.MATS` (8, 'Z')", 2D
     538, , MATS1m, ":py:class:`~mordred.Autocorrelation.MATS` (1, 'm')", 2D
     539, , MATS2m, ":py:class:`~mordred.Autocorrelation.MATS` (2, 'm')", 2D
     540, , MATS3m, ":py:class:`~mordred.Autocorrelation.MATS` (3, 'm')", 2D
@@ -555,30 +555,30 @@ preset descriptors
     543, , MATS6m, ":py:class:`~mordred.Autocorrelation.MATS` (6, 'm')", 2D
     544, , MATS7m, ":py:class:`~mordred.Autocorrelation.MATS` (7, 'm')", 2D
     545, , MATS8m, ":py:class:`~mordred.Autocorrelation.MATS` (8, 'm')", 2D
-    546, , GATS1s, ":py:class:`~mordred.Autocorrelation.GATS` (1, 's')", 2D
-    547, , GATS2s, ":py:class:`~mordred.Autocorrelation.GATS` (2, 's')", 2D
-    548, , GATS3s, ":py:class:`~mordred.Autocorrelation.GATS` (3, 's')", 2D
-    549, , GATS4s, ":py:class:`~mordred.Autocorrelation.GATS` (4, 's')", 2D
-    550, , GATS5s, ":py:class:`~mordred.Autocorrelation.GATS` (5, 's')", 2D
-    551, , GATS6s, ":py:class:`~mordred.Autocorrelation.GATS` (6, 's')", 2D
-    552, , GATS7s, ":py:class:`~mordred.Autocorrelation.GATS` (7, 's')", 2D
-    553, , GATS8s, ":py:class:`~mordred.Autocorrelation.GATS` (8, 's')", 2D
-    554, , GATS1d, ":py:class:`~mordred.Autocorrelation.GATS` (1, 'd')", 2D
-    555, , GATS2d, ":py:class:`~mordred.Autocorrelation.GATS` (2, 'd')", 2D
-    556, , GATS3d, ":py:class:`~mordred.Autocorrelation.GATS` (3, 'd')", 2D
-    557, , GATS4d, ":py:class:`~mordred.Autocorrelation.GATS` (4, 'd')", 2D
-    558, , GATS5d, ":py:class:`~mordred.Autocorrelation.GATS` (5, 'd')", 2D
-    559, , GATS6d, ":py:class:`~mordred.Autocorrelation.GATS` (6, 'd')", 2D
-    560, , GATS7d, ":py:class:`~mordred.Autocorrelation.GATS` (7, 'd')", 2D
-    561, , GATS8d, ":py:class:`~mordred.Autocorrelation.GATS` (8, 'd')", 2D
-    562, , GATS1se, ":py:class:`~mordred.Autocorrelation.GATS` (1, 'se')", 2D
-    563, , GATS2se, ":py:class:`~mordred.Autocorrelation.GATS` (2, 'se')", 2D
-    564, , GATS3se, ":py:class:`~mordred.Autocorrelation.GATS` (3, 'se')", 2D
-    565, , GATS4se, ":py:class:`~mordred.Autocorrelation.GATS` (4, 'se')", 2D
-    566, , GATS5se, ":py:class:`~mordred.Autocorrelation.GATS` (5, 'se')", 2D
-    567, , GATS6se, ":py:class:`~mordred.Autocorrelation.GATS` (6, 'se')", 2D
-    568, , GATS7se, ":py:class:`~mordred.Autocorrelation.GATS` (7, 'se')", 2D
-    569, , GATS8se, ":py:class:`~mordred.Autocorrelation.GATS` (8, 'se')", 2D
+    546, , GATS1d, ":py:class:`~mordred.Autocorrelation.GATS` (1, 'd')", 2D
+    547, , GATS2d, ":py:class:`~mordred.Autocorrelation.GATS` (2, 'd')", 2D
+    548, , GATS3d, ":py:class:`~mordred.Autocorrelation.GATS` (3, 'd')", 2D
+    549, , GATS4d, ":py:class:`~mordred.Autocorrelation.GATS` (4, 'd')", 2D
+    550, , GATS5d, ":py:class:`~mordred.Autocorrelation.GATS` (5, 'd')", 2D
+    551, , GATS6d, ":py:class:`~mordred.Autocorrelation.GATS` (6, 'd')", 2D
+    552, , GATS7d, ":py:class:`~mordred.Autocorrelation.GATS` (7, 'd')", 2D
+    553, , GATS8d, ":py:class:`~mordred.Autocorrelation.GATS` (8, 'd')", 2D
+    554, , GATS1pe, ":py:class:`~mordred.Autocorrelation.GATS` (1, 'pe')", 2D
+    555, , GATS2pe, ":py:class:`~mordred.Autocorrelation.GATS` (2, 'pe')", 2D
+    556, , GATS3pe, ":py:class:`~mordred.Autocorrelation.GATS` (3, 'pe')", 2D
+    557, , GATS4pe, ":py:class:`~mordred.Autocorrelation.GATS` (4, 'pe')", 2D
+    558, , GATS5pe, ":py:class:`~mordred.Autocorrelation.GATS` (5, 'pe')", 2D
+    559, , GATS6pe, ":py:class:`~mordred.Autocorrelation.GATS` (6, 'pe')", 2D
+    560, , GATS7pe, ":py:class:`~mordred.Autocorrelation.GATS` (7, 'pe')", 2D
+    561, , GATS8pe, ":py:class:`~mordred.Autocorrelation.GATS` (8, 'pe')", 2D
+    562, , GATS1i, ":py:class:`~mordred.Autocorrelation.GATS` (1, 'i')", 2D
+    563, , GATS2i, ":py:class:`~mordred.Autocorrelation.GATS` (2, 'i')", 2D
+    564, , GATS3i, ":py:class:`~mordred.Autocorrelation.GATS` (3, 'i')", 2D
+    565, , GATS4i, ":py:class:`~mordred.Autocorrelation.GATS` (4, 'i')", 2D
+    566, , GATS5i, ":py:class:`~mordred.Autocorrelation.GATS` (5, 'i')", 2D
+    567, , GATS6i, ":py:class:`~mordred.Autocorrelation.GATS` (6, 'i')", 2D
+    568, , GATS7i, ":py:class:`~mordred.Autocorrelation.GATS` (7, 'i')", 2D
+    569, , GATS8i, ":py:class:`~mordred.Autocorrelation.GATS` (8, 'i')", 2D
     570, , GATS1are, ":py:class:`~mordred.Autocorrelation.GATS` (1, 'are')", 2D
     571, , GATS2are, ":py:class:`~mordred.Autocorrelation.GATS` (2, 'are')", 2D
     572, , GATS3are, ":py:class:`~mordred.Autocorrelation.GATS` (3, 'are')", 2D
@@ -587,38 +587,38 @@ preset descriptors
     575, , GATS6are, ":py:class:`~mordred.Autocorrelation.GATS` (6, 'are')", 2D
     576, , GATS7are, ":py:class:`~mordred.Autocorrelation.GATS` (7, 'are')", 2D
     577, , GATS8are, ":py:class:`~mordred.Autocorrelation.GATS` (8, 'are')", 2D
-    578, , GATS1c, ":py:class:`~mordred.Autocorrelation.GATS` (1, 'c')", 2D
-    579, , GATS2c, ":py:class:`~mordred.Autocorrelation.GATS` (2, 'c')", 2D
-    580, , GATS3c, ":py:class:`~mordred.Autocorrelation.GATS` (3, 'c')", 2D
-    581, , GATS4c, ":py:class:`~mordred.Autocorrelation.GATS` (4, 'c')", 2D
-    582, , GATS5c, ":py:class:`~mordred.Autocorrelation.GATS` (5, 'c')", 2D
-    583, , GATS6c, ":py:class:`~mordred.Autocorrelation.GATS` (6, 'c')", 2D
-    584, , GATS7c, ":py:class:`~mordred.Autocorrelation.GATS` (7, 'c')", 2D
-    585, , GATS8c, ":py:class:`~mordred.Autocorrelation.GATS` (8, 'c')", 2D
-    586, , GATS1Z, ":py:class:`~mordred.Autocorrelation.GATS` (1, 'Z')", 2D
-    587, , GATS2Z, ":py:class:`~mordred.Autocorrelation.GATS` (2, 'Z')", 2D
-    588, , GATS3Z, ":py:class:`~mordred.Autocorrelation.GATS` (3, 'Z')", 2D
-    589, , GATS4Z, ":py:class:`~mordred.Autocorrelation.GATS` (4, 'Z')", 2D
-    590, , GATS5Z, ":py:class:`~mordred.Autocorrelation.GATS` (5, 'Z')", 2D
-    591, , GATS6Z, ":py:class:`~mordred.Autocorrelation.GATS` (6, 'Z')", 2D
-    592, , GATS7Z, ":py:class:`~mordred.Autocorrelation.GATS` (7, 'Z')", 2D
-    593, , GATS8Z, ":py:class:`~mordred.Autocorrelation.GATS` (8, 'Z')", 2D
-    594, , GATS1i, ":py:class:`~mordred.Autocorrelation.GATS` (1, 'i')", 2D
-    595, , GATS2i, ":py:class:`~mordred.Autocorrelation.GATS` (2, 'i')", 2D
-    596, , GATS3i, ":py:class:`~mordred.Autocorrelation.GATS` (3, 'i')", 2D
-    597, , GATS4i, ":py:class:`~mordred.Autocorrelation.GATS` (4, 'i')", 2D
-    598, , GATS5i, ":py:class:`~mordred.Autocorrelation.GATS` (5, 'i')", 2D
-    599, , GATS6i, ":py:class:`~mordred.Autocorrelation.GATS` (6, 'i')", 2D
-    600, , GATS7i, ":py:class:`~mordred.Autocorrelation.GATS` (7, 'i')", 2D
-    601, , GATS8i, ":py:class:`~mordred.Autocorrelation.GATS` (8, 'i')", 2D
-    602, , GATS1v, ":py:class:`~mordred.Autocorrelation.GATS` (1, 'v')", 2D
-    603, , GATS2v, ":py:class:`~mordred.Autocorrelation.GATS` (2, 'v')", 2D
-    604, , GATS3v, ":py:class:`~mordred.Autocorrelation.GATS` (3, 'v')", 2D
-    605, , GATS4v, ":py:class:`~mordred.Autocorrelation.GATS` (4, 'v')", 2D
-    606, , GATS5v, ":py:class:`~mordred.Autocorrelation.GATS` (5, 'v')", 2D
-    607, , GATS6v, ":py:class:`~mordred.Autocorrelation.GATS` (6, 'v')", 2D
-    608, , GATS7v, ":py:class:`~mordred.Autocorrelation.GATS` (7, 'v')", 2D
-    609, , GATS8v, ":py:class:`~mordred.Autocorrelation.GATS` (8, 'v')", 2D
+    578, , GATS1v, ":py:class:`~mordred.Autocorrelation.GATS` (1, 'v')", 2D
+    579, , GATS2v, ":py:class:`~mordred.Autocorrelation.GATS` (2, 'v')", 2D
+    580, , GATS3v, ":py:class:`~mordred.Autocorrelation.GATS` (3, 'v')", 2D
+    581, , GATS4v, ":py:class:`~mordred.Autocorrelation.GATS` (4, 'v')", 2D
+    582, , GATS5v, ":py:class:`~mordred.Autocorrelation.GATS` (5, 'v')", 2D
+    583, , GATS6v, ":py:class:`~mordred.Autocorrelation.GATS` (6, 'v')", 2D
+    584, , GATS7v, ":py:class:`~mordred.Autocorrelation.GATS` (7, 'v')", 2D
+    585, , GATS8v, ":py:class:`~mordred.Autocorrelation.GATS` (8, 'v')", 2D
+    586, , GATS1s, ":py:class:`~mordred.Autocorrelation.GATS` (1, 's')", 2D
+    587, , GATS2s, ":py:class:`~mordred.Autocorrelation.GATS` (2, 's')", 2D
+    588, , GATS3s, ":py:class:`~mordred.Autocorrelation.GATS` (3, 's')", 2D
+    589, , GATS4s, ":py:class:`~mordred.Autocorrelation.GATS` (4, 's')", 2D
+    590, , GATS5s, ":py:class:`~mordred.Autocorrelation.GATS` (5, 's')", 2D
+    591, , GATS6s, ":py:class:`~mordred.Autocorrelation.GATS` (6, 's')", 2D
+    592, , GATS7s, ":py:class:`~mordred.Autocorrelation.GATS` (7, 's')", 2D
+    593, , GATS8s, ":py:class:`~mordred.Autocorrelation.GATS` (8, 's')", 2D
+    594, , GATS1se, ":py:class:`~mordred.Autocorrelation.GATS` (1, 'se')", 2D
+    595, , GATS2se, ":py:class:`~mordred.Autocorrelation.GATS` (2, 'se')", 2D
+    596, , GATS3se, ":py:class:`~mordred.Autocorrelation.GATS` (3, 'se')", 2D
+    597, , GATS4se, ":py:class:`~mordred.Autocorrelation.GATS` (4, 'se')", 2D
+    598, , GATS5se, ":py:class:`~mordred.Autocorrelation.GATS` (5, 'se')", 2D
+    599, , GATS6se, ":py:class:`~mordred.Autocorrelation.GATS` (6, 'se')", 2D
+    600, , GATS7se, ":py:class:`~mordred.Autocorrelation.GATS` (7, 'se')", 2D
+    601, , GATS8se, ":py:class:`~mordred.Autocorrelation.GATS` (8, 'se')", 2D
+    602, , GATS1dv, ":py:class:`~mordred.Autocorrelation.GATS` (1, 'dv')", 2D
+    603, , GATS2dv, ":py:class:`~mordred.Autocorrelation.GATS` (2, 'dv')", 2D
+    604, , GATS3dv, ":py:class:`~mordred.Autocorrelation.GATS` (3, 'dv')", 2D
+    605, , GATS4dv, ":py:class:`~mordred.Autocorrelation.GATS` (4, 'dv')", 2D
+    606, , GATS5dv, ":py:class:`~mordred.Autocorrelation.GATS` (5, 'dv')", 2D
+    607, , GATS6dv, ":py:class:`~mordred.Autocorrelation.GATS` (6, 'dv')", 2D
+    608, , GATS7dv, ":py:class:`~mordred.Autocorrelation.GATS` (7, 'dv')", 2D
+    609, , GATS8dv, ":py:class:`~mordred.Autocorrelation.GATS` (8, 'dv')", 2D
     610, , GATS1p, ":py:class:`~mordred.Autocorrelation.GATS` (1, 'p')", 2D
     611, , GATS2p, ":py:class:`~mordred.Autocorrelation.GATS` (2, 'p')", 2D
     612, , GATS3p, ":py:class:`~mordred.Autocorrelation.GATS` (3, 'p')", 2D
@@ -627,22 +627,22 @@ preset descriptors
     615, , GATS6p, ":py:class:`~mordred.Autocorrelation.GATS` (6, 'p')", 2D
     616, , GATS7p, ":py:class:`~mordred.Autocorrelation.GATS` (7, 'p')", 2D
     617, , GATS8p, ":py:class:`~mordred.Autocorrelation.GATS` (8, 'p')", 2D
-    618, , GATS1pe, ":py:class:`~mordred.Autocorrelation.GATS` (1, 'pe')", 2D
-    619, , GATS2pe, ":py:class:`~mordred.Autocorrelation.GATS` (2, 'pe')", 2D
-    620, , GATS3pe, ":py:class:`~mordred.Autocorrelation.GATS` (3, 'pe')", 2D
-    621, , GATS4pe, ":py:class:`~mordred.Autocorrelation.GATS` (4, 'pe')", 2D
-    622, , GATS5pe, ":py:class:`~mordred.Autocorrelation.GATS` (5, 'pe')", 2D
-    623, , GATS6pe, ":py:class:`~mordred.Autocorrelation.GATS` (6, 'pe')", 2D
-    624, , GATS7pe, ":py:class:`~mordred.Autocorrelation.GATS` (7, 'pe')", 2D
-    625, , GATS8pe, ":py:class:`~mordred.Autocorrelation.GATS` (8, 'pe')", 2D
-    626, , GATS1dv, ":py:class:`~mordred.Autocorrelation.GATS` (1, 'dv')", 2D
-    627, , GATS2dv, ":py:class:`~mordred.Autocorrelation.GATS` (2, 'dv')", 2D
-    628, , GATS3dv, ":py:class:`~mordred.Autocorrelation.GATS` (3, 'dv')", 2D
-    629, , GATS4dv, ":py:class:`~mordred.Autocorrelation.GATS` (4, 'dv')", 2D
-    630, , GATS5dv, ":py:class:`~mordred.Autocorrelation.GATS` (5, 'dv')", 2D
-    631, , GATS6dv, ":py:class:`~mordred.Autocorrelation.GATS` (6, 'dv')", 2D
-    632, , GATS7dv, ":py:class:`~mordred.Autocorrelation.GATS` (7, 'dv')", 2D
-    633, , GATS8dv, ":py:class:`~mordred.Autocorrelation.GATS` (8, 'dv')", 2D
+    618, , GATS1c, ":py:class:`~mordred.Autocorrelation.GATS` (1, 'c')", 2D
+    619, , GATS2c, ":py:class:`~mordred.Autocorrelation.GATS` (2, 'c')", 2D
+    620, , GATS3c, ":py:class:`~mordred.Autocorrelation.GATS` (3, 'c')", 2D
+    621, , GATS4c, ":py:class:`~mordred.Autocorrelation.GATS` (4, 'c')", 2D
+    622, , GATS5c, ":py:class:`~mordred.Autocorrelation.GATS` (5, 'c')", 2D
+    623, , GATS6c, ":py:class:`~mordred.Autocorrelation.GATS` (6, 'c')", 2D
+    624, , GATS7c, ":py:class:`~mordred.Autocorrelation.GATS` (7, 'c')", 2D
+    625, , GATS8c, ":py:class:`~mordred.Autocorrelation.GATS` (8, 'c')", 2D
+    626, , GATS1Z, ":py:class:`~mordred.Autocorrelation.GATS` (1, 'Z')", 2D
+    627, , GATS2Z, ":py:class:`~mordred.Autocorrelation.GATS` (2, 'Z')", 2D
+    628, , GATS3Z, ":py:class:`~mordred.Autocorrelation.GATS` (3, 'Z')", 2D
+    629, , GATS4Z, ":py:class:`~mordred.Autocorrelation.GATS` (4, 'Z')", 2D
+    630, , GATS5Z, ":py:class:`~mordred.Autocorrelation.GATS` (5, 'Z')", 2D
+    631, , GATS6Z, ":py:class:`~mordred.Autocorrelation.GATS` (6, 'Z')", 2D
+    632, , GATS7Z, ":py:class:`~mordred.Autocorrelation.GATS` (7, 'Z')", 2D
+    633, , GATS8Z, ":py:class:`~mordred.Autocorrelation.GATS` (8, 'Z')", 2D
     634, , GATS1m, ":py:class:`~mordred.Autocorrelation.GATS` (1, 'm')", 2D
     635, , GATS2m, ":py:class:`~mordred.Autocorrelation.GATS` (2, 'm')", 2D
     636, , GATS3m, ":py:class:`~mordred.Autocorrelation.GATS` (3, 'm')", 2D
@@ -651,96 +651,96 @@ preset descriptors
     639, , GATS6m, ":py:class:`~mordred.Autocorrelation.GATS` (6, 'm')", 2D
     640, , GATS7m, ":py:class:`~mordred.Autocorrelation.GATS` (7, 'm')", 2D
     641, , GATS8m, ":py:class:`~mordred.Autocorrelation.GATS` (8, 'm')", 2D
-    642, :py:mod:`~mordred.BCUT`, BCUTs-1h, ":py:class:`~mordred.BCUT.BCUT` ('s', 0)", 2D
-    643, , BCUTs-1l, ":py:class:`~mordred.BCUT.BCUT` ('s', -1)", 2D
-    644, , BCUTd-1h, ":py:class:`~mordred.BCUT.BCUT` ('d', 0)", 2D
-    645, , BCUTd-1l, ":py:class:`~mordred.BCUT.BCUT` ('d', -1)", 2D
-    646, , BCUTse-1h, ":py:class:`~mordred.BCUT.BCUT` ('se', 0)", 2D
-    647, , BCUTse-1l, ":py:class:`~mordred.BCUT.BCUT` ('se', -1)", 2D
+    642, :py:mod:`~mordred.BCUT`, BCUTd-1h, ":py:class:`~mordred.BCUT.BCUT` ('d', 0)", 2D
+    643, , BCUTd-1l, ":py:class:`~mordred.BCUT.BCUT` ('d', -1)", 2D
+    644, , BCUTpe-1h, ":py:class:`~mordred.BCUT.BCUT` ('pe', 0)", 2D
+    645, , BCUTpe-1l, ":py:class:`~mordred.BCUT.BCUT` ('pe', -1)", 2D
+    646, , BCUTi-1h, ":py:class:`~mordred.BCUT.BCUT` ('i', 0)", 2D
+    647, , BCUTi-1l, ":py:class:`~mordred.BCUT.BCUT` ('i', -1)", 2D
     648, , BCUTare-1h, ":py:class:`~mordred.BCUT.BCUT` ('are', 0)", 2D
     649, , BCUTare-1l, ":py:class:`~mordred.BCUT.BCUT` ('are', -1)", 2D
-    650, , BCUTc-1h, ":py:class:`~mordred.BCUT.BCUT` ('c', 0)", 2D
-    651, , BCUTc-1l, ":py:class:`~mordred.BCUT.BCUT` ('c', -1)", 2D
-    652, , BCUTZ-1h, ":py:class:`~mordred.BCUT.BCUT` ('Z', 0)", 2D
-    653, , BCUTZ-1l, ":py:class:`~mordred.BCUT.BCUT` ('Z', -1)", 2D
-    654, , BCUTi-1h, ":py:class:`~mordred.BCUT.BCUT` ('i', 0)", 2D
-    655, , BCUTi-1l, ":py:class:`~mordred.BCUT.BCUT` ('i', -1)", 2D
-    656, , BCUTv-1h, ":py:class:`~mordred.BCUT.BCUT` ('v', 0)", 2D
-    657, , BCUTv-1l, ":py:class:`~mordred.BCUT.BCUT` ('v', -1)", 2D
+    650, , BCUTv-1h, ":py:class:`~mordred.BCUT.BCUT` ('v', 0)", 2D
+    651, , BCUTv-1l, ":py:class:`~mordred.BCUT.BCUT` ('v', -1)", 2D
+    652, , BCUTs-1h, ":py:class:`~mordred.BCUT.BCUT` ('s', 0)", 2D
+    653, , BCUTs-1l, ":py:class:`~mordred.BCUT.BCUT` ('s', -1)", 2D
+    654, , BCUTse-1h, ":py:class:`~mordred.BCUT.BCUT` ('se', 0)", 2D
+    655, , BCUTse-1l, ":py:class:`~mordred.BCUT.BCUT` ('se', -1)", 2D
+    656, , BCUTdv-1h, ":py:class:`~mordred.BCUT.BCUT` ('dv', 0)", 2D
+    657, , BCUTdv-1l, ":py:class:`~mordred.BCUT.BCUT` ('dv', -1)", 2D
     658, , BCUTp-1h, ":py:class:`~mordred.BCUT.BCUT` ('p', 0)", 2D
     659, , BCUTp-1l, ":py:class:`~mordred.BCUT.BCUT` ('p', -1)", 2D
-    660, , BCUTpe-1h, ":py:class:`~mordred.BCUT.BCUT` ('pe', 0)", 2D
-    661, , BCUTpe-1l, ":py:class:`~mordred.BCUT.BCUT` ('pe', -1)", 2D
-    662, , BCUTdv-1h, ":py:class:`~mordred.BCUT.BCUT` ('dv', 0)", 2D
-    663, , BCUTdv-1l, ":py:class:`~mordred.BCUT.BCUT` ('dv', -1)", 2D
+    660, , BCUTc-1h, ":py:class:`~mordred.BCUT.BCUT` ('c', 0)", 2D
+    661, , BCUTc-1l, ":py:class:`~mordred.BCUT.BCUT` ('c', -1)", 2D
+    662, , BCUTZ-1h, ":py:class:`~mordred.BCUT.BCUT` ('Z', 0)", 2D
+    663, , BCUTZ-1l, ":py:class:`~mordred.BCUT.BCUT` ('Z', -1)", 2D
     664, , BCUTm-1h, ":py:class:`~mordred.BCUT.BCUT` ('m', 0)", 2D
     665, , BCUTm-1l, ":py:class:`~mordred.BCUT.BCUT` ('m', -1)", 2D
     666, :py:mod:`~mordred.BalabanJ`, BalabanJ, ":py:class:`~mordred.BalabanJ.BalabanJ` ()", 2D
-    667, :py:mod:`~mordred.BaryszMatrix`, SpAbs_Dzse, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('se', 'SpAbs')", 2D
-    668, , SpMax_Dzse, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('se', 'SpMax')", 2D
-    669, , SpDiam_Dzse, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('se', 'SpDiam')", 2D
-    670, , SpAD_Dzse, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('se', 'SpAD')", 2D
-    671, , SpMAD_Dzse, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('se', 'SpMAD')", 2D
-    672, , LogEE_Dzse, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('se', 'LogEE')", 2D
-    673, , SM1_Dzse, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('se', 'SM1')", 2D
-    674, , VE1_Dzse, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('se', 'VE1')", 2D
-    675, , VE2_Dzse, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('se', 'VE2')", 2D
-    676, , VE3_Dzse, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('se', 'VE3')", 2D
-    677, , VR1_Dzse, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('se', 'VR1')", 2D
-    678, , VR2_Dzse, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('se', 'VR2')", 2D
-    679, , VR3_Dzse, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('se', 'VR3')", 2D
-    680, , SpAbs_Dzare, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('are', 'SpAbs')", 2D
-    681, , SpMax_Dzare, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('are', 'SpMax')", 2D
-    682, , SpDiam_Dzare, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('are', 'SpDiam')", 2D
-    683, , SpAD_Dzare, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('are', 'SpAD')", 2D
-    684, , SpMAD_Dzare, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('are', 'SpMAD')", 2D
-    685, , LogEE_Dzare, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('are', 'LogEE')", 2D
-    686, , SM1_Dzare, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('are', 'SM1')", 2D
-    687, , VE1_Dzare, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('are', 'VE1')", 2D
-    688, , VE2_Dzare, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('are', 'VE2')", 2D
-    689, , VE3_Dzare, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('are', 'VE3')", 2D
-    690, , VR1_Dzare, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('are', 'VR1')", 2D
-    691, , VR2_Dzare, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('are', 'VR2')", 2D
-    692, , VR3_Dzare, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('are', 'VR3')", 2D
-    693, , SpAbs_DzZ, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('Z', 'SpAbs')", 2D
-    694, , SpMax_DzZ, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('Z', 'SpMax')", 2D
-    695, , SpDiam_DzZ, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('Z', 'SpDiam')", 2D
-    696, , SpAD_DzZ, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('Z', 'SpAD')", 2D
-    697, , SpMAD_DzZ, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('Z', 'SpMAD')", 2D
-    698, , LogEE_DzZ, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('Z', 'LogEE')", 2D
-    699, , SM1_DzZ, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('Z', 'SM1')", 2D
-    700, , VE1_DzZ, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('Z', 'VE1')", 2D
-    701, , VE2_DzZ, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('Z', 'VE2')", 2D
-    702, , VE3_DzZ, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('Z', 'VE3')", 2D
-    703, , VR1_DzZ, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('Z', 'VR1')", 2D
-    704, , VR2_DzZ, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('Z', 'VR2')", 2D
-    705, , VR3_DzZ, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('Z', 'VR3')", 2D
-    706, , SpAbs_Dzi, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('i', 'SpAbs')", 2D
-    707, , SpMax_Dzi, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('i', 'SpMax')", 2D
-    708, , SpDiam_Dzi, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('i', 'SpDiam')", 2D
-    709, , SpAD_Dzi, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('i', 'SpAD')", 2D
-    710, , SpMAD_Dzi, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('i', 'SpMAD')", 2D
-    711, , LogEE_Dzi, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('i', 'LogEE')", 2D
-    712, , SM1_Dzi, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('i', 'SM1')", 2D
-    713, , VE1_Dzi, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('i', 'VE1')", 2D
-    714, , VE2_Dzi, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('i', 'VE2')", 2D
-    715, , VE3_Dzi, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('i', 'VE3')", 2D
-    716, , VR1_Dzi, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('i', 'VR1')", 2D
-    717, , VR2_Dzi, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('i', 'VR2')", 2D
-    718, , VR3_Dzi, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('i', 'VR3')", 2D
-    719, , SpAbs_Dzv, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('v', 'SpAbs')", 2D
-    720, , SpMax_Dzv, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('v', 'SpMax')", 2D
-    721, , SpDiam_Dzv, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('v', 'SpDiam')", 2D
-    722, , SpAD_Dzv, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('v', 'SpAD')", 2D
-    723, , SpMAD_Dzv, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('v', 'SpMAD')", 2D
-    724, , LogEE_Dzv, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('v', 'LogEE')", 2D
-    725, , SM1_Dzv, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('v', 'SM1')", 2D
-    726, , VE1_Dzv, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('v', 'VE1')", 2D
-    727, , VE2_Dzv, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('v', 'VE2')", 2D
-    728, , VE3_Dzv, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('v', 'VE3')", 2D
-    729, , VR1_Dzv, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('v', 'VR1')", 2D
-    730, , VR2_Dzv, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('v', 'VR2')", 2D
-    731, , VR3_Dzv, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('v', 'VR3')", 2D
+    667, :py:mod:`~mordred.BaryszMatrix`, SpAbs_Dzpe, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('pe', 'SpAbs')", 2D
+    668, , SpMax_Dzpe, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('pe', 'SpMax')", 2D
+    669, , SpDiam_Dzpe, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('pe', 'SpDiam')", 2D
+    670, , SpAD_Dzpe, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('pe', 'SpAD')", 2D
+    671, , SpMAD_Dzpe, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('pe', 'SpMAD')", 2D
+    672, , LogEE_Dzpe, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('pe', 'LogEE')", 2D
+    673, , SM1_Dzpe, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('pe', 'SM1')", 2D
+    674, , VE1_Dzpe, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('pe', 'VE1')", 2D
+    675, , VE2_Dzpe, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('pe', 'VE2')", 2D
+    676, , VE3_Dzpe, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('pe', 'VE3')", 2D
+    677, , VR1_Dzpe, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('pe', 'VR1')", 2D
+    678, , VR2_Dzpe, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('pe', 'VR2')", 2D
+    679, , VR3_Dzpe, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('pe', 'VR3')", 2D
+    680, , SpAbs_Dzi, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('i', 'SpAbs')", 2D
+    681, , SpMax_Dzi, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('i', 'SpMax')", 2D
+    682, , SpDiam_Dzi, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('i', 'SpDiam')", 2D
+    683, , SpAD_Dzi, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('i', 'SpAD')", 2D
+    684, , SpMAD_Dzi, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('i', 'SpMAD')", 2D
+    685, , LogEE_Dzi, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('i', 'LogEE')", 2D
+    686, , SM1_Dzi, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('i', 'SM1')", 2D
+    687, , VE1_Dzi, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('i', 'VE1')", 2D
+    688, , VE2_Dzi, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('i', 'VE2')", 2D
+    689, , VE3_Dzi, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('i', 'VE3')", 2D
+    690, , VR1_Dzi, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('i', 'VR1')", 2D
+    691, , VR2_Dzi, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('i', 'VR2')", 2D
+    692, , VR3_Dzi, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('i', 'VR3')", 2D
+    693, , SpAbs_Dzare, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('are', 'SpAbs')", 2D
+    694, , SpMax_Dzare, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('are', 'SpMax')", 2D
+    695, , SpDiam_Dzare, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('are', 'SpDiam')", 2D
+    696, , SpAD_Dzare, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('are', 'SpAD')", 2D
+    697, , SpMAD_Dzare, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('are', 'SpMAD')", 2D
+    698, , LogEE_Dzare, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('are', 'LogEE')", 2D
+    699, , SM1_Dzare, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('are', 'SM1')", 2D
+    700, , VE1_Dzare, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('are', 'VE1')", 2D
+    701, , VE2_Dzare, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('are', 'VE2')", 2D
+    702, , VE3_Dzare, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('are', 'VE3')", 2D
+    703, , VR1_Dzare, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('are', 'VR1')", 2D
+    704, , VR2_Dzare, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('are', 'VR2')", 2D
+    705, , VR3_Dzare, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('are', 'VR3')", 2D
+    706, , SpAbs_Dzv, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('v', 'SpAbs')", 2D
+    707, , SpMax_Dzv, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('v', 'SpMax')", 2D
+    708, , SpDiam_Dzv, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('v', 'SpDiam')", 2D
+    709, , SpAD_Dzv, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('v', 'SpAD')", 2D
+    710, , SpMAD_Dzv, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('v', 'SpMAD')", 2D
+    711, , LogEE_Dzv, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('v', 'LogEE')", 2D
+    712, , SM1_Dzv, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('v', 'SM1')", 2D
+    713, , VE1_Dzv, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('v', 'VE1')", 2D
+    714, , VE2_Dzv, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('v', 'VE2')", 2D
+    715, , VE3_Dzv, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('v', 'VE3')", 2D
+    716, , VR1_Dzv, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('v', 'VR1')", 2D
+    717, , VR2_Dzv, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('v', 'VR2')", 2D
+    718, , VR3_Dzv, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('v', 'VR3')", 2D
+    719, , SpAbs_Dzse, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('se', 'SpAbs')", 2D
+    720, , SpMax_Dzse, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('se', 'SpMax')", 2D
+    721, , SpDiam_Dzse, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('se', 'SpDiam')", 2D
+    722, , SpAD_Dzse, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('se', 'SpAD')", 2D
+    723, , SpMAD_Dzse, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('se', 'SpMAD')", 2D
+    724, , LogEE_Dzse, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('se', 'LogEE')", 2D
+    725, , SM1_Dzse, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('se', 'SM1')", 2D
+    726, , VE1_Dzse, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('se', 'VE1')", 2D
+    727, , VE2_Dzse, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('se', 'VE2')", 2D
+    728, , VE3_Dzse, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('se', 'VE3')", 2D
+    729, , VR1_Dzse, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('se', 'VR1')", 2D
+    730, , VR2_Dzse, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('se', 'VR2')", 2D
+    731, , VR3_Dzse, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('se', 'VR3')", 2D
     732, , SpAbs_Dzp, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('p', 'SpAbs')", 2D
     733, , SpMax_Dzp, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('p', 'SpMax')", 2D
     734, , SpDiam_Dzp, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('p', 'SpDiam')", 2D
@@ -754,19 +754,19 @@ preset descriptors
     742, , VR1_Dzp, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('p', 'VR1')", 2D
     743, , VR2_Dzp, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('p', 'VR2')", 2D
     744, , VR3_Dzp, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('p', 'VR3')", 2D
-    745, , SpAbs_Dzpe, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('pe', 'SpAbs')", 2D
-    746, , SpMax_Dzpe, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('pe', 'SpMax')", 2D
-    747, , SpDiam_Dzpe, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('pe', 'SpDiam')", 2D
-    748, , SpAD_Dzpe, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('pe', 'SpAD')", 2D
-    749, , SpMAD_Dzpe, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('pe', 'SpMAD')", 2D
-    750, , LogEE_Dzpe, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('pe', 'LogEE')", 2D
-    751, , SM1_Dzpe, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('pe', 'SM1')", 2D
-    752, , VE1_Dzpe, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('pe', 'VE1')", 2D
-    753, , VE2_Dzpe, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('pe', 'VE2')", 2D
-    754, , VE3_Dzpe, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('pe', 'VE3')", 2D
-    755, , VR1_Dzpe, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('pe', 'VR1')", 2D
-    756, , VR2_Dzpe, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('pe', 'VR2')", 2D
-    757, , VR3_Dzpe, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('pe', 'VR3')", 2D
+    745, , SpAbs_DzZ, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('Z', 'SpAbs')", 2D
+    746, , SpMax_DzZ, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('Z', 'SpMax')", 2D
+    747, , SpDiam_DzZ, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('Z', 'SpDiam')", 2D
+    748, , SpAD_DzZ, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('Z', 'SpAD')", 2D
+    749, , SpMAD_DzZ, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('Z', 'SpMAD')", 2D
+    750, , LogEE_DzZ, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('Z', 'LogEE')", 2D
+    751, , SM1_DzZ, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('Z', 'SM1')", 2D
+    752, , VE1_DzZ, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('Z', 'VE1')", 2D
+    753, , VE2_DzZ, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('Z', 'VE2')", 2D
+    754, , VE3_DzZ, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('Z', 'VE3')", 2D
+    755, , VR1_DzZ, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('Z', 'VR1')", 2D
+    756, , VR2_DzZ, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('Z', 'VR2')", 2D
+    757, , VR3_DzZ, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('Z', 'VR3')", 2D
     758, , SpAbs_Dzm, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('m', 'SpAbs')", 2D
     759, , SpMax_Dzm, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('m', 'SpMax')", 2D
     760, , SpDiam_Dzm, ":py:class:`~mordred.BaryszMatrix.BaryszMatrix` ('m', 'SpDiam')", 2D
@@ -899,21 +899,21 @@ preset descriptors
     887, , AXp-5dv, ":py:class:`~mordred.Chi.Chi` ('path', 5, 'dv', True)", 2D
     888, , AXp-6dv, ":py:class:`~mordred.Chi.Chi` ('path', 6, 'dv', True)", 2D
     889, , AXp-7dv, ":py:class:`~mordred.Chi.Chi` ('path', 7, 'dv', True)", 2D
-    890, :py:mod:`~mordred.Constitutional`, Sse, ":py:class:`~mordred.Constitutional.ConstitutionalSum` ('se')", 2D
-    891, , Sare, ":py:class:`~mordred.Constitutional.ConstitutionalSum` ('are')", 2D
-    892, , SZ, ":py:class:`~mordred.Constitutional.ConstitutionalSum` ('Z')", 2D
-    893, , Si, ":py:class:`~mordred.Constitutional.ConstitutionalSum` ('i')", 2D
-    894, , Sv, ":py:class:`~mordred.Constitutional.ConstitutionalSum` ('v')", 2D
+    890, :py:mod:`~mordred.Constitutional`, Spe, ":py:class:`~mordred.Constitutional.ConstitutionalSum` ('pe')", 2D
+    891, , Si, ":py:class:`~mordred.Constitutional.ConstitutionalSum` ('i')", 2D
+    892, , Sare, ":py:class:`~mordred.Constitutional.ConstitutionalSum` ('are')", 2D
+    893, , Sv, ":py:class:`~mordred.Constitutional.ConstitutionalSum` ('v')", 2D
+    894, , Sse, ":py:class:`~mordred.Constitutional.ConstitutionalSum` ('se')", 2D
     895, , Sp, ":py:class:`~mordred.Constitutional.ConstitutionalSum` ('p')", 2D
-    896, , Spe, ":py:class:`~mordred.Constitutional.ConstitutionalSum` ('pe')", 2D
+    896, , SZ, ":py:class:`~mordred.Constitutional.ConstitutionalSum` ('Z')", 2D
     897, , Sm, ":py:class:`~mordred.Constitutional.ConstitutionalSum` ('m')", 2D
-    898, , Mse, ":py:class:`~mordred.Constitutional.ConstitutionalMean` ('se')", 2D
-    899, , Mare, ":py:class:`~mordred.Constitutional.ConstitutionalMean` ('are')", 2D
-    900, , MZ, ":py:class:`~mordred.Constitutional.ConstitutionalMean` ('Z')", 2D
-    901, , Mi, ":py:class:`~mordred.Constitutional.ConstitutionalMean` ('i')", 2D
-    902, , Mv, ":py:class:`~mordred.Constitutional.ConstitutionalMean` ('v')", 2D
+    898, , Mpe, ":py:class:`~mordred.Constitutional.ConstitutionalMean` ('pe')", 2D
+    899, , Mi, ":py:class:`~mordred.Constitutional.ConstitutionalMean` ('i')", 2D
+    900, , Mare, ":py:class:`~mordred.Constitutional.ConstitutionalMean` ('are')", 2D
+    901, , Mv, ":py:class:`~mordred.Constitutional.ConstitutionalMean` ('v')", 2D
+    902, , Mse, ":py:class:`~mordred.Constitutional.ConstitutionalMean` ('se')", 2D
     903, , Mp, ":py:class:`~mordred.Constitutional.ConstitutionalMean` ('p')", 2D
-    904, , Mpe, ":py:class:`~mordred.Constitutional.ConstitutionalMean` ('pe')", 2D
+    904, , MZ, ":py:class:`~mordred.Constitutional.ConstitutionalMean` ('Z')", 2D
     905, , Mm, ":py:class:`~mordred.Constitutional.ConstitutionalMean` ('m')", 2D
     906, :py:mod:`~mordred.DetourMatrix`, SpAbs_Dt, ":py:class:`~mordred.DetourMatrix.DetourMatrix` ('SpAbs')", 2D
     907, , SpMax_Dt, ":py:class:`~mordred.DetourMatrix.DetourMatrix` ('SpMax')", 2D
