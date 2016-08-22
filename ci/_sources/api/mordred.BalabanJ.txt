@@ -1,0 +1,7 @@
+mordred.BalabanJ module
+=======================
+
+.. automodule:: mordred.BalabanJ
+    :members:
+    :undoc-members:
+    :show-inheritance:
