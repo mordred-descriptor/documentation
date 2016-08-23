@@ -1,0 +1,7 @@
+mordred.tests.test_ETA module
+=============================
+
+.. automodule:: mordred.tests.test_ETA
+    :members:
+    :undoc-members:
+    :show-inheritance:

@@ -1,0 +1,7 @@
+mordred.MoeType module
+======================
+
+.. automodule:: mordred.MoeType
+    :members:
+    :undoc-members:
+    :show-inheritance:

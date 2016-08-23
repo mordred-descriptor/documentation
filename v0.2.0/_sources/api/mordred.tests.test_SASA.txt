@@ -1,0 +1,7 @@
+mordred.tests.test_SASA module
+==============================
+
+.. automodule:: mordred.tests.test_SASA
+    :members:
+    :undoc-members:
+    :show-inheritance:

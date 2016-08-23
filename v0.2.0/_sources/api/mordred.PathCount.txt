@@ -1,0 +1,7 @@
+mordred.PathCount module
+========================
+
+.. automodule:: mordred.PathCount
+    :members:
+    :undoc-members:
+    :show-inheritance:
