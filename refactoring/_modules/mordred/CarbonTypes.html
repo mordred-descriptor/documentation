@@ -155,8 +155,8 @@
 <span class="k">class</span> <span class="nc">CarbonTypesCache</span><span class="p">(</span><span class="n">CarbonTypesBase</span><span class="p">):</span>
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">()</span>
+    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">()</span>
 
     <span class="n">_hybridization</span> <span class="o">=</span> <span class="p">{</span>
         <span class="n">HybridizationType</span><span class="o">.</span><span class="n">SP</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
@@ -206,8 +206,8 @@
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;C</span><span class="si">{}</span><span class="s1">SP</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_nCarbon</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_SP</span><span class="p">)</span>
 
-<div class="viewcode-block" id="CarbonTypes.as_key"><a class="viewcode-back" href="../../api/mordred.CarbonTypes.html#mordred.CarbonTypes.CarbonTypes.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_nCarbon</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_SP</span><span class="p">)</span></div>
+<div class="viewcode-block" id="CarbonTypes.parameters"><a class="viewcode-back" href="../../api/mordred.CarbonTypes.html#mordred.CarbonTypes.CarbonTypes.parameters">[docs]</a>    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nCarbon</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_SP</span></div>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nCarbon</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">SP</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
         <span class="k">assert</span> <span class="n">SP</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
@@ -242,8 +242,8 @@
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;HybRatio&#39;</span>
 
-<div class="viewcode-block" id="HybridizationRatio.as_key"><a class="viewcode-back" href="../../api/mordred.CarbonTypes.html#mordred.CarbonTypes.HybridizationRatio.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">()</span></div>
+<div class="viewcode-block" id="HybridizationRatio.parameters"><a class="viewcode-back" href="../../api/mordred.CarbonTypes.html#mordred.CarbonTypes.HybridizationRatio.parameters">[docs]</a>    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">()</span></div>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;CT&#39;</span><span class="p">:</span> <span class="n">CarbonTypesCache</span><span class="p">()}</span>

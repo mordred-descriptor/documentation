@@ -165,8 +165,8 @@
             <span class="s1">&#39;p&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pair</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
         <span class="p">)</span>
 
-<div class="viewcode-block" id="GravitationalIndex.as_key"><a class="viewcode-back" href="../../api/mordred.GravitationalIndex.html#mordred.GravitationalIndex.GravitationalIndex.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_heavy</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pair</span><span class="p">)</span></div>
+<div class="viewcode-block" id="GravitationalIndex.parameters"><a class="viewcode-back" href="../../api/mordred.GravitationalIndex.html#mordred.GravitationalIndex.GravitationalIndex.parameters">[docs]</a>    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_heavy</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pair</span></div>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">heavy</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">pair</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_heavy</span> <span class="o">=</span> <span class="n">heavy</span>

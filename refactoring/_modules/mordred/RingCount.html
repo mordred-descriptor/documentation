@@ -145,8 +145,8 @@
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="kc">False</span>
 
-    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">()</span>
+    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">()</span>
 
 
 <span class="k">class</span> <span class="nc">Rings</span><span class="p">(</span><span class="n">RingCountBase</span><span class="p">):</span>
@@ -240,11 +240,8 @@
 
         <span class="k">return</span> <span class="s1">&#39;n</span><span class="si">{}</span><span class="s1">Ring&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">attrs</span><span class="p">))</span>
 
-<div class="viewcode-block" id="RingCount.as_key"><a class="viewcode-back" href="../../api/mordred.RingCount.html#mordred.RingCount.RingCount.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">(</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span>
-            <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_greater</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fused</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_aromatic</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hetero</span><span class="p">)</span>
-        <span class="p">)</span></div>
+<div class="viewcode-block" id="RingCount.parameters"><a class="viewcode-back" href="../../api/mordred.RingCount.html#mordred.RingCount.RingCount.parameters">[docs]</a>    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_greater</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fused</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_aromatic</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hetero</span></div>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">greater</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fused</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">aromatic</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">hetero</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_order</span> <span class="o">=</span> <span class="n">order</span>

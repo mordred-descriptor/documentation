@@ -200,8 +200,8 @@
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="n">require_connected</span> <span class="o">=</span> <span class="kc">True</span>
 
-    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_eps</span><span class="p">,)</span>
+    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_eps</span><span class="p">,</span>
 
 
 <span class="k">class</span> <span class="nc">AtomicIds</span><span class="p">(</span><span class="n">MolecularIdBase</span><span class="p">):</span>
@@ -252,8 +252,8 @@
 
         <span class="k">return</span> <span class="n">n</span>
 
-<div class="viewcode-block" id="MolecularId.as_key"><a class="viewcode-back" href="../../api/mordred.MolecularId.html#mordred.MolecularId.MolecularId.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_orig_type</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_eps</span><span class="p">)</span></div>
+<div class="viewcode-block" id="MolecularId.parameters"><a class="viewcode-back" href="../../api/mordred.MolecularId.html#mordred.MolecularId.MolecularId.parameters">[docs]</a>    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_orig_type</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_eps</span></div>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;any&#39;</span><span class="p">,</span> <span class="n">averaged</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">_eps</span><span class="o">=</span><span class="mi">1</span><span class="n">e</span><span class="o">-</span><span class="mi">10</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_orig_type</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="o">=</span> <span class="nb">type</span>

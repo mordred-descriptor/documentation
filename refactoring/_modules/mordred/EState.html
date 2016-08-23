@@ -173,8 +173,8 @@
 <span class="k">class</span> <span class="nc">EStateCache</span><span class="p">(</span><span class="n">EStateBase</span><span class="p">):</span>
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">()</span>
+    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">EState</span><span class="o">.</span><span class="n">TypeAtoms</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="p">),</span> <span class="n">EState</span><span class="o">.</span><span class="n">EStateIndices</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="p">)</span>
@@ -236,8 +236,8 @@
 
         <span class="k">return</span> <span class="n">aggr</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_estate</span>
 
-<div class="viewcode-block" id="AtomTypeEState.as_key"><a class="viewcode-back" href="../../api/mordred.EState.html#mordred.EState.AtomTypeEState.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_estate</span><span class="p">)</span></div>
+<div class="viewcode-block" id="AtomTypeEState.parameters"><a class="viewcode-back" href="../../api/mordred.EState.html#mordred.EState.AtomTypeEState.parameters">[docs]</a>    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_estate</span></div>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="n">estate</span><span class="o">=</span><span class="s1">&#39;sLi&#39;</span><span class="p">):</span>
         <span class="k">assert</span> <span class="n">estate</span> <span class="ow">in</span> <span class="n">es_type_set</span>
