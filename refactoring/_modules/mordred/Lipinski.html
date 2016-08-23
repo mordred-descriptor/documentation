@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mordred.Lipinski &mdash; mordred 0.2.0a0 documentation</title>
+  <title>mordred.Lipinski &mdash; mordred 0.2.0b0 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="mordred 0.2.0a0 documentation" href="../../index.html"/>
+    <link rel="top" title="mordred 0.2.0b0 documentation" href="../../index.html"/>
         <link rel="up" title="Module code" href="../index.html"/> 
 
   
@@ -59,7 +59,7 @@
             
             
               <div class="version">
-                0.2.0a0
+                0.2.0b0
               </div>
             
           
@@ -133,17 +133,16 @@
            <div itemprop="articleBody">
             
   <h1>Source code for mordred.Lipinski</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">.HydrogenBond</span> <span class="kn">import</span> <span class="n">HBondAcceptor</span><span class="p">,</span> <span class="n">HBondDonor</span>
-<span class="kn">from</span> <span class="nn">.SLogP</span> <span class="kn">import</span> <span class="n">SLogP</span><span class="p">,</span> <span class="n">SMR</span>
-<span class="kn">from</span> <span class="nn">.Weight</span> <span class="kn">import</span> <span class="n">Weight</span>
-
-<span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
-
+<span></span><span class="kn">from</span> <span class="nn">._base</span> <span class="k">import</span> <span class="n">Descriptor</span>
+<span class="kn">from</span> <span class="nn">.SLogP</span> <span class="k">import</span> <span class="n">SMR</span><span class="p">,</span> <span class="n">SLogP</span>
+<span class="kn">from</span> <span class="nn">.Weight</span> <span class="k">import</span> <span class="n">Weight</span>
+<span class="kn">from</span> <span class="nn">.HydrogenBond</span> <span class="k">import</span> <span class="n">HBondDonor</span><span class="p">,</span> <span class="n">HBondAcceptor</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Lipinski&#39;</span><span class="p">,</span> <span class="s1">&#39;GhoseFilter&#39;</span><span class="p">)</span>
 
 
 <span class="k">class</span> <span class="nc">LipinskiLike</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
@@ -163,7 +162,6 @@
 
 <span class="sd">    LogP: SLogP</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -174,7 +172,7 @@
             <span class="s1">&#39;HBAcc&#39;</span><span class="p">:</span> <span class="n">HBondAcceptor</span><span class="p">(),</span>
         <span class="p">}</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">LogP</span><span class="p">,</span> <span class="n">MW</span><span class="p">,</span> <span class="n">HBDon</span><span class="p">,</span> <span class="n">HBAcc</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">LogP</span><span class="p">,</span> <span class="n">MW</span><span class="p">,</span> <span class="n">HBDon</span><span class="p">,</span> <span class="n">HBAcc</span><span class="p">):</span>
         <span class="k">return</span>\
             <span class="n">HBDon</span> <span class="o">&lt;=</span> <span class="mi">5</span> <span class="ow">and</span>\
             <span class="n">HBAcc</span> <span class="o">&lt;=</span> <span class="mi">10</span> <span class="ow">and</span>\
@@ -187,7 +185,6 @@
 
 <span class="sd">    LogP, MR: SLogP, SMR</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -197,10 +194,10 @@
             <span class="s1">&#39;MW&#39;</span><span class="p">:</span> <span class="n">Weight</span><span class="p">(),</span>
         <span class="p">}</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">MW</span><span class="p">,</span> <span class="n">LogP</span><span class="p">,</span> <span class="n">MR</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">MW</span><span class="p">,</span> <span class="n">LogP</span><span class="p">,</span> <span class="n">MR</span><span class="p">):</span>
         <span class="k">return</span>\
             <span class="p">(</span><span class="mi">160</span> <span class="o">&lt;=</span> <span class="n">MW</span> <span class="o">&lt;=</span> <span class="mi">480</span><span class="p">)</span> <span class="ow">and</span>\
-            <span class="p">(</span><span class="mi">20</span> <span class="o">&lt;=</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mi">70</span><span class="p">)</span> <span class="ow">and</span>\
+            <span class="p">(</span><span class="mi">20</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mi">70</span><span class="p">)</span> <span class="ow">and</span>\
             <span class="p">(</span><span class="o">-</span><span class="mf">0.4</span> <span class="o">&lt;=</span> <span class="n">LogP</span> <span class="o">&lt;=</span> <span class="mf">5.6</span><span class="p">)</span> <span class="ow">and</span>\
             <span class="p">(</span><span class="mi">40</span> <span class="o">&lt;=</span> <span class="n">MR</span> <span class="o">&lt;=</span> <span class="mi">130</span><span class="p">)</span></div>
 </pre></div>
@@ -236,7 +233,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'0.2.0a0',
+            VERSION:'0.2.0b0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

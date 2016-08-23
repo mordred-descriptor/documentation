@@ -11,6 +11,7 @@ Subpackages
 
 .. toctree::
 
+    mordred.error
     mordred.surface_area
     mordred.tests
 
@@ -48,6 +49,7 @@ Submodules
    mordred.KappaShapeIndex
    mordred.Lipinski
    mordred.McGowanVolume
+   mordred.MoRSE
    mordred.MoeType
    mordred.MolecularDistanceEdge
    mordred.MolecularId
@@ -66,5 +68,4 @@ Submodules
    mordred.Weight
    mordred.WienerIndex
    mordred.ZagrebIndex
-   mordred.exception
 

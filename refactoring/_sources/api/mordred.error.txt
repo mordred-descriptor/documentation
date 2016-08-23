@@ -1,0 +1,8 @@
+mordred.error package
+=====================
+
+.. automodule:: mordred.error
+    :members:
+    :undoc-members:
+    :show-inheritance:
+

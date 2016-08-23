@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mordred.BCUT &mdash; mordred 0.2.0a0 documentation</title>
+  <title>mordred.BCUT &mdash; mordred 0.2.0b0 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="mordred 0.2.0a0 documentation" href="../../index.html"/>
+    <link rel="top" title="mordred 0.2.0b0 documentation" href="../../index.html"/>
         <link rel="up" title="Module code" href="../index.html"/> 
 
   
@@ -59,7 +59,7 @@
             
             
               <div class="version">
-                0.2.0a0
+                0.2.0b0
               </div>
             
           
@@ -133,18 +133,18 @@
            <div itemprop="articleBody">
             
   <h1>Source code for mordred.BCUT</h1><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="kn">from</span> <span class="nn">._atomic_property</span> <span class="kn">import</span> <span class="n">AtomicProperty</span><span class="p">,</span> <span class="n">get_properties</span>
-<span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
-
+<span class="kn">from</span> <span class="nn">._base</span> <span class="k">import</span> <span class="n">Descriptor</span>
+<span class="kn">from</span> <span class="nn">._atomic_property</span> <span class="k">import</span> <span class="n">AtomicProperty</span><span class="p">,</span> <span class="n">get_properties</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;BCUT&#39;</span><span class="p">,)</span>
 
 
 <span class="k">class</span> <span class="nc">BCUTBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
-    <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
-    <span class="n">require_connected</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">require_connected</span> <span class="o">=</span> <span class="kc">True</span>
 
 
 <span class="k">class</span> <span class="nc">Burden</span><span class="p">(</span><span class="n">BCUTBase</span><span class="p">):</span>
@@ -153,12 +153,12 @@
     <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
-        <span class="n">N</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">N</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span>
 
         <span class="n">mat</span> <span class="o">=</span> <span class="mf">0.001</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="p">))</span>
 
-        <span class="k">for</span> <span class="n">bond</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetBonds</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">bond</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetBonds</span><span class="p">():</span>
             <span class="n">a</span> <span class="o">=</span> <span class="n">bond</span><span class="o">.</span><span class="n">GetBeginAtom</span><span class="p">()</span>
             <span class="n">b</span> <span class="o">=</span> <span class="n">bond</span><span class="o">.</span><span class="n">GetEndAtom</span><span class="p">()</span>
             <span class="n">i</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">GetIdx</span><span class="p">()</span>
@@ -167,7 +167,7 @@
             <span class="k">try</span><span class="p">:</span>
                 <span class="n">w</span> <span class="o">=</span> <span class="n">bond</span><span class="o">.</span><span class="n">GetBondTypeAsDouble</span><span class="p">()</span> <span class="o">/</span> <span class="mf">10.0</span>
             <span class="k">except</span> <span class="ne">RuntimeError</span><span class="p">:</span>
-                <span class="n">w</span> <span class="o">=</span> <span class="mf">1.0</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;unknown bond type&#39;</span><span class="p">))</span>
 
             <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">GetDegree</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">b</span><span class="o">.</span><span class="n">GetDegree</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
                 <span class="n">w</span> <span class="o">+=</span> <span class="mf">0.01</span>
@@ -193,11 +193,8 @@
             <span class="s1">&#39;burden&#39;</span><span class="p">:</span> <span class="n">Burden</span><span class="p">(),</span>
         <span class="p">}</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">burden</span><span class="p">,</span> <span class="n">ps</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">burden</span><span class="p">,</span> <span class="n">ps</span><span class="p">):</span>
         <span class="n">bmat</span> <span class="o">=</span> <span class="n">burden</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-
-        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">ps</span><span class="p">)):</span>
-            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">])</span>
 
         <span class="n">np</span><span class="o">.</span><span class="n">fill_diagonal</span><span class="p">(</span><span class="n">bmat</span><span class="p">,</span> <span class="n">ps</span><span class="p">)</span>
         <span class="n">ev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">bmat</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
@@ -222,22 +219,21 @@
 <span class="sd">        * any atomic properties are NaN</span>
 <span class="sd">        * :math:`\left| nth \right| &gt; A`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_prop&#39;</span><span class="p">,</span> <span class="s1">&#39;_nth&#39;</span><span class="p">,)</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">(</span>
             <span class="n">cls</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
-            <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">get_properties</span><span class="p">(</span><span class="n">istate</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">charge</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">get_properties</span><span class="p">(</span><span class="n">valence</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">charge</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nth</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">return</span> <span class="s1">&#39;BCUT{}-{}l&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_nth</span><span class="p">))</span>
+            <span class="k">return</span> <span class="s1">&#39;BCUT</span><span class="si">{}</span><span class="s1">-</span><span class="si">{}</span><span class="s1">l&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="o">.</span><span class="n">as_argument</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_nth</span><span class="p">))</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="s1">&#39;BCUT{}-{}h&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_prop&#39;</span><span class="p">,</span> <span class="s1">&#39;_nth&#39;</span><span class="p">,)</span>
+            <span class="k">return</span> <span class="s1">&#39;BCUT</span><span class="si">{}</span><span class="s1">-</span><span class="si">{}</span><span class="s1">h&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="o">.</span><span class="n">as_argument</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 
 <div class="viewcode-block" id="BCUT.as_key"><a class="viewcode-back" href="../../api/mordred.BCUT.html#mordred.BCUT.BCUT.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nth</span><span class="p">)</span></div>
@@ -249,11 +245,11 @@
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;bev&#39;</span><span class="p">:</span> <span class="n">BurdenEigenValues</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="p">)}</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">bev</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bev</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">bev</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_nth</span><span class="p">]</span>
         <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;nth greater then atom count&#39;</span><span class="p">))</span>
 
     <span class="n">rtype</span> <span class="o">=</span> <span class="nb">float</span></div>
 </pre></div>
@@ -289,7 +285,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'0.2.0a0',
+            VERSION:'0.2.0b0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

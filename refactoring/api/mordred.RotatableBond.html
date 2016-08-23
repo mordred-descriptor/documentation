@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mordred.RotatableBond module &mdash; mordred 0.2.0a0 documentation</title>
+  <title>mordred.RotatableBond module &mdash; mordred 0.2.0b0 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="mordred 0.2.0a0 documentation" href="../index.html"/>
+    <link rel="top" title="mordred 0.2.0b0 documentation" href="../index.html"/>
         <link rel="up" title="mordred package" href="mordred.html"/>
         <link rel="next" title="mordred.SLogP module" href="mordred.SLogP.html"/>
         <link rel="prev" title="mordred.RingCount module" href="mordred.RingCount.html"/> 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                0.2.0a0
+                0.2.0b0
               </div>
             
           
@@ -117,6 +117,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.KappaShapeIndex.html">mordred.KappaShapeIndex module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.Lipinski.html">mordred.Lipinski module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.McGowanVolume.html">mordred.McGowanVolume module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.MoRSE.html">mordred.MoRSE module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.MoeType.html">mordred.MoeType module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.MolecularDistanceEdge.html">mordred.MolecularDistanceEdge module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.MolecularId.html">mordred.MolecularId module</a></li>
@@ -135,7 +136,6 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.Weight.html">mordred.Weight module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.WienerIndex.html">mordred.WienerIndex module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.ZagrebIndex.html">mordred.ZagrebIndex module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mordred.exception.html">mordred.exception module</a></li>
 </ul>
 </li>
 </ul>
@@ -212,8 +212,23 @@
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="mordred.RotatableBond.RotatableBondsBase.coord">
+<code class="descname">coord</code><a class="headerlink" href="#mordred.RotatableBond.RotatableBondsBase.coord" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.RotatableBond.RotatableBondsBase.fail">
+<code class="descname">fail</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.RotatableBond.RotatableBondsBase.fail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="mordred.RotatableBond.RotatableBondsBase.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.RotatableBond.RotatableBondsBase.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.RotatableBond.RotatableBondsBase.mol">
+<code class="descname">mol</code><a class="headerlink" href="#mordred.RotatableBond.RotatableBondsBase.mol" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -224,6 +239,16 @@
 <dl class="attribute">
 <dt id="mordred.RotatableBond.RotatableBondsBase.require_connected">
 <code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.RotatableBond.RotatableBondsBase.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.RotatableBond.RotatableBondsBase.rethrow_na">
+<code class="descname">rethrow_na</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.RotatableBond.RotatableBondsBase.rethrow_na" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.RotatableBond.RotatableBondsBase.rethrow_zerodiv">
+<code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.RotatableBond.RotatableBondsBase.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -241,7 +266,7 @@
 <dl class="attribute">
 <dt id="mordred.RotatableBond.RotatableBondsCount.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.RotatableBond.RotatableBondsCount.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a></p>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a></p>
 </dd></dl>
 
 <dl class="attribute">
@@ -255,13 +280,28 @@
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="mordred.RotatableBond.RotatableBondsCount.coord">
+<code class="descname">coord</code><a class="headerlink" href="#mordred.RotatableBond.RotatableBondsCount.coord" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="mordred.RotatableBond.RotatableBondsCount.explicit_hydrogens">
 <code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.RotatableBond.RotatableBondsCount.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.RotatableBond.RotatableBondsCount.fail">
+<code class="descname">fail</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.RotatableBond.RotatableBondsCount.fail" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.RotatableBond.RotatableBondsCount.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.RotatableBond.RotatableBondsCount.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.RotatableBond.RotatableBondsCount.mol">
+<code class="descname">mol</code><a class="headerlink" href="#mordred.RotatableBond.RotatableBondsCount.mol" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -272,6 +312,16 @@
 <dl class="attribute">
 <dt id="mordred.RotatableBond.RotatableBondsCount.require_connected">
 <code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.RotatableBond.RotatableBondsCount.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.RotatableBond.RotatableBondsCount.rethrow_na">
+<code class="descname">rethrow_na</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.RotatableBond.RotatableBondsCount.rethrow_na" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.RotatableBond.RotatableBondsCount.rethrow_zerodiv">
+<code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.RotatableBond.RotatableBondsCount.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -294,7 +344,7 @@
 <dl class="attribute">
 <dt id="mordred.RotatableBond.RotatableBondsRatio.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.RotatableBond.RotatableBondsRatio.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
 
 <dl class="attribute">
@@ -308,13 +358,28 @@
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="mordred.RotatableBond.RotatableBondsRatio.coord">
+<code class="descname">coord</code><a class="headerlink" href="#mordred.RotatableBond.RotatableBondsRatio.coord" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="mordred.RotatableBond.RotatableBondsRatio.explicit_hydrogens">
 <code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.RotatableBond.RotatableBondsRatio.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.RotatableBond.RotatableBondsRatio.fail">
+<code class="descname">fail</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.RotatableBond.RotatableBondsRatio.fail" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.RotatableBond.RotatableBondsRatio.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.RotatableBond.RotatableBondsRatio.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.RotatableBond.RotatableBondsRatio.mol">
+<code class="descname">mol</code><a class="headerlink" href="#mordred.RotatableBond.RotatableBondsRatio.mol" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -325,6 +390,16 @@
 <dl class="attribute">
 <dt id="mordred.RotatableBond.RotatableBondsRatio.require_connected">
 <code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.RotatableBond.RotatableBondsRatio.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.RotatableBond.RotatableBondsRatio.rethrow_na">
+<code class="descname">rethrow_na</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.RotatableBond.RotatableBondsRatio.rethrow_na" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.RotatableBond.RotatableBondsRatio.rethrow_zerodiv">
+<code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.RotatableBond.RotatableBondsRatio.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -372,7 +447,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'0.2.0a0',
+            VERSION:'0.2.0b0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mordred.surface_area package &mdash; mordred 0.2.0a0 documentation</title>
+  <title>mordred.surface_area package &mdash; mordred 0.2.0b0 documentation</title>
   
 
   
@@ -30,10 +30,10 @@
   
 
   
-    <link rel="top" title="mordred 0.2.0a0 documentation" href="../index.html"/>
+    <link rel="top" title="mordred 0.2.0b0 documentation" href="../index.html"/>
         <link rel="up" title="mordred package" href="mordred.html"/>
         <link rel="next" title="mordred.tests package" href="mordred.tests.html"/>
-        <link rel="prev" title="mordred package" href="mordred.html"/> 
+        <link rel="prev" title="mordred.error package" href="mordred.error.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                0.2.0a0
+                0.2.0b0
               </div>
             
           
@@ -87,6 +87,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html#mordred">mordred</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="mordred.html">mordred package</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="mordred.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="mordred.error.html">mordred.error package</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">mordred.surface_area package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.tests.html">mordred.tests package</a></li>
 </ul>
@@ -162,8 +163,8 @@ optional arguments:
 </div>
 <dl class="class">
 <dt id="mordred.surface_area.SurfaceArea">
-<em class="property">class </em><code class="descclassname">mordred.surface_area.</code><code class="descname">SurfaceArea</code><span class="sig-paren">(</span><em>radiuses</em>, <em>xyzs</em>, <em>level=5</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/surface_area/_sasa.html#SurfaceArea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.surface_area.SurfaceArea" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<em class="property">class </em><code class="descclassname">mordred.surface_area.</code><code class="descname">SurfaceArea</code><span class="sig-paren">(</span><em>radiuses</em>, <em>xyzs</em>, <em>level=4</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/surface_area/_sasa.html#SurfaceArea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.surface_area.SurfaceArea" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
 <p>calculate solvent accessible surface area.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -172,7 +173,7 @@ optional arguments:
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>radiuses</strong> (<em>np.ndarray(dtype=float, shape=(N,))</em>) &#8211; atomic radius + solvent radius vector</li>
 <li><strong>xyzs</strong> (<em>np.ndarray(dtype=float, shape=(N, 3))</em>) &#8211; atomic position matrix</li>
-<li><strong>level</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; <p>mesh level. subdivide icosahedron n-1 times.</p>
+<li><strong>level</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; <p>mesh level. subdivide icosahedron n-1 times.</p>
 <div class="math">
 \[N_{\rm points} = 5 \times 4^{level} - 8\]</div>
 </li>
@@ -189,9 +190,9 @@ optional arguments:
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>i</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; atom index</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>i</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; atom index</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)">float</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)">float</a></td>
 </tr>
 </tbody>
 </table>
@@ -199,7 +200,7 @@ optional arguments:
 
 <dl class="classmethod">
 <dt id="mordred.surface_area.SurfaceArea.from_mol">
-<em class="property">classmethod </em><code class="descname">from_mol</code><span class="sig-paren">(</span><em>mol</em>, <em>conformer=-1</em>, <em>solvent_radius=1.4</em>, <em>level=5</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/surface_area/_sasa.html#SurfaceArea.from_mol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.surface_area.SurfaceArea.from_mol" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">from_mol</code><span class="sig-paren">(</span><em>mol</em>, <em>conformer=-1</em>, <em>solvent_radius=1.4</em>, <em>level=4</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/surface_area/_sasa.html#SurfaceArea.from_mol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.surface_area.SurfaceArea.from_mol" title="Permalink to this definition">¶</a></dt>
 <dd><p>construct SurfaceArea from rdkit Mol type.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -207,9 +208,9 @@ optional arguments:
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>mol</strong> (<em>rdkit.Chem.Mol</em>) &#8211; input molecule</li>
-<li><strong>conformer</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; conformer id</li>
-<li><strong>solvent_radius</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><em>float</em></a>) &#8211; solvent radius</li>
-<li><strong>level</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; mesh level</li>
+<li><strong>conformer</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; conformer id</li>
+<li><strong>solvent_radius</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><em>float</em></a>) &#8211; solvent radius</li>
+<li><strong>level</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; mesh level</li>
 </ul>
 </td>
 </tr>
@@ -253,7 +254,7 @@ optional arguments:
         <a href="mordred.tests.html" class="btn btn-neutral float-right" title="mordred.tests package" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="mordred.html" class="btn btn-neutral" title="mordred package" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mordred.error.html" class="btn btn-neutral" title="mordred.error package" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -284,7 +285,7 @@ optional arguments:
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'0.2.0a0',
+            VERSION:'0.2.0b0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

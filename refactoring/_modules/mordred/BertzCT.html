@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mordred.BertzCT &mdash; mordred 0.2.0a0 documentation</title>
+  <title>mordred.BertzCT &mdash; mordred 0.2.0b0 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="mordred 0.2.0a0 documentation" href="../../index.html"/>
+    <link rel="top" title="mordred 0.2.0b0 documentation" href="../../index.html"/>
         <link rel="up" title="Module code" href="../index.html"/> 
 
   
@@ -59,7 +59,7 @@
             
             
               <div class="version">
-                0.2.0a0
+                0.2.0b0
               </div>
             
           
@@ -133,26 +133,25 @@
            <div itemprop="articleBody">
             
   <h1>Source code for mordred.BertzCT</h1><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">rdkit.Chem.GraphDescriptors</span> <span class="kn">as</span> <span class="nn">RDKit</span>
+<span></span><span class="kn">import</span> <span class="nn">rdkit.Chem.GraphDescriptors</span> <span class="k">as</span> <span class="nn">RDKit</span>
 
-<span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
-<span class="kn">from</span> <span class="nn">._graph_matrix</span> <span class="kn">import</span> <span class="n">DistanceMatrix</span>
-
+<span class="kn">from</span> <span class="nn">._base</span> <span class="k">import</span> <span class="n">Descriptor</span>
+<span class="kn">from</span> <span class="nn">._graph_matrix</span> <span class="k">import</span> <span class="n">DistanceMatrix</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;BertzCT&#39;</span><span class="p">,)</span>
 
 
 <div class="viewcode-block" id="BertzCT"><a class="viewcode-back" href="../../api/mordred.BertzCT.html#mordred.BertzCT.BertzCT">[docs]</a><span class="k">class</span> <span class="nc">BertzCT</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
     <span class="sd">r&quot;&quot;&quot;Bertz CT descriptor(rdkit wrapper).&quot;&quot;&quot;</span>
-
-    <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="kc">False</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="k">yield</span> <span class="n">cls</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s1">&#39;BertzCT&#39;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span>
 
 <div class="viewcode-block" id="BertzCT.as_key"><a class="viewcode-back" href="../../api/mordred.BertzCT.html#mordred.BertzCT.BertzCT.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">()</span></div>
@@ -160,8 +159,8 @@
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="n">DistanceMatrix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)}</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">RDKit</span><span class="o">.</span><span class="n">BertzCT</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">dMat</span><span class="o">=</span><span class="n">D</span><span class="p">))</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">RDKit</span><span class="o">.</span><span class="n">BertzCT</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="p">,</span> <span class="n">dMat</span><span class="o">=</span><span class="n">D</span><span class="p">))</span>
 
     <span class="n">rtype</span> <span class="o">=</span> <span class="nb">float</span></div>
 </pre></div>
@@ -197,7 +196,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'0.2.0a0',
+            VERSION:'0.2.0b0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

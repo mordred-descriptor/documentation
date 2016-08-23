@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mordred.tests.test_SASA &mdash; mordred 0.2.0a0 documentation</title>
+  <title>mordred.tests.test_SASA &mdash; mordred 0.2.0b0 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="mordred 0.2.0a0 documentation" href="../../../index.html"/>
+    <link rel="top" title="mordred 0.2.0b0 documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   
@@ -59,7 +59,7 @@
             
             
               <div class="version">
-                0.2.0a0
+                0.2.0b0
               </div>
             
           
@@ -134,11 +134,12 @@
             
   <h1>Source code for mordred.tests.test_SASA</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span>
-<span class="kn">from</span> <span class="nn">mordred.surface_area</span> <span class="kn">import</span> <span class="n">SurfaceArea</span>
-<span class="kn">from</span> <span class="nn">mordred.CPSA</span> <span class="kn">import</span> <span class="n">TotalSurfaceArea</span>
-<span class="kn">from</span> <span class="nn">nose.tools</span> <span class="kn">import</span> <span class="n">ok_</span>
 
+<span class="kn">from</span> <span class="nn">rdkit</span> <span class="k">import</span> <span class="n">Chem</span>
+<span class="kn">from</span> <span class="nn">nose.tools</span> <span class="k">import</span> <span class="n">ok_</span>
+
+<span class="kn">from</span> <span class="nn">mordred.CPSA</span> <span class="k">import</span> <span class="n">TotalSurfaceArea</span>
+<span class="kn">from</span> <span class="nn">mordred.surface_area</span> <span class="k">import</span> <span class="n">SurfaceArea</span>
 
 <span class="c1"># calculated by pymol</span>
 <span class="n">txt_data</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
@@ -182,7 +183,7 @@
 
     <span class="n">tsa</span> <span class="o">=</span> <span class="n">TotalSurfaceArea</span><span class="p">()</span>
 
-    <span class="k">for</span> <span class="n">mol</span> <span class="ow">in</span> <span class="n">Chem</span><span class="o">.</span><span class="n">SDMolSupplier</span><span class="p">(</span><span class="n">sdf_file</span><span class="p">,</span> <span class="n">removeHs</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">mol</span> <span class="ow">in</span> <span class="n">Chem</span><span class="o">.</span><span class="n">SDMolSupplier</span><span class="p">(</span><span class="n">sdf_file</span><span class="p">,</span> <span class="n">removeHs</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="n">name</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetProp</span><span class="p">(</span><span class="s1">&#39;_Name&#39;</span><span class="p">)</span>
         <span class="n">actual</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">SurfaceArea</span><span class="o">.</span><span class="n">from_mol</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span><span class="o">.</span><span class="n">surface_area</span><span class="p">())</span>
 
@@ -194,11 +195,11 @@
         <span class="n">e</span> <span class="o">=</span> <span class="n">actual</span> <span class="o">/</span> <span class="n">desired</span>
         <span class="n">p</span> <span class="o">=</span> <span class="mf">0.05</span>
 
-        <span class="k">yield</span> <span class="n">ok_</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="n">e</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">p</span><span class="p">,</span> <span class="s1">&#39;large SASA error in {}: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+        <span class="k">yield</span> <span class="n">ok_</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="n">e</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">p</span><span class="p">,</span> <span class="s1">&#39;large SASA error in </span><span class="si">{}</span><span class="s1">: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
 
         <span class="n">e</span> <span class="o">=</span> <span class="n">tsa</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span> <span class="o">/</span> <span class="n">desired</span>
 
-        <span class="k">yield</span> <span class="n">ok_</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="n">e</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">p</span><span class="p">,</span> <span class="s1">&#39;large SASA error in {}: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span></div>
+        <span class="k">yield</span> <span class="n">ok_</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="n">e</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">p</span><span class="p">,</span> <span class="s1">&#39;large SASA error in </span><span class="si">{}</span><span class="s1">: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span></div>
 </pre></div>
 
            </div>
@@ -232,7 +233,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'0.2.0a0',
+            VERSION:'0.2.0b0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

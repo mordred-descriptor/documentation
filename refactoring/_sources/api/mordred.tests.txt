@@ -21,5 +21,6 @@ Submodules
    mordred.tests.test_base
    mordred.tests.test_by_references
    mordred.tests.test_exceptions
+   mordred.tests.test_mordred_main
    mordred.tests.test_parallel
 

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mordred.WalkCount &mdash; mordred 0.2.0a0 documentation</title>
+  <title>mordred.WalkCount &mdash; mordred 0.2.0b0 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="mordred 0.2.0a0 documentation" href="../../index.html"/>
+    <link rel="top" title="mordred 0.2.0b0 documentation" href="../../index.html"/>
         <link rel="up" title="Module code" href="../index.html"/> 
 
   
@@ -59,7 +59,7 @@
             
             
               <div class="version">
-                0.2.0a0
+                0.2.0b0
               </div>
             
           
@@ -133,11 +133,10 @@
            <div itemprop="articleBody">
             
   <h1>Source code for mordred.WalkCount</h1><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
-<span class="kn">from</span> <span class="nn">._graph_matrix</span> <span class="kn">import</span> <span class="n">AdjacencyMatrix</span>
-
+<span class="kn">from</span> <span class="nn">._base</span> <span class="k">import</span> <span class="n">Descriptor</span>
+<span class="kn">from</span> <span class="nn">._graph_matrix</span> <span class="k">import</span> <span class="n">AdjacencyMatrix</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;WalkCount&#39;</span><span class="p">,)</span>
 
@@ -154,27 +153,26 @@
 <span class="sd">    :type self_returning: bool</span>
 <span class="sd">    :param self_returning: use self returning walk only</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_order&#39;</span><span class="p">,</span> <span class="s1">&#39;_total&#39;</span><span class="p">,</span> <span class="s1">&#39;_self_returning&#39;</span><span class="p">,)</span>
 
-    <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="kc">False</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">start</span><span class="p">,</span> <span class="n">sr</span> <span class="ow">in</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">False</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="bp">True</span><span class="p">)]:</span>
+        <span class="k">for</span> <span class="n">start</span><span class="p">,</span> <span class="n">sr</span> <span class="ow">in</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="kc">True</span><span class="p">)]:</span>
             <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
-                <span class="k">yield</span> <span class="n">cls</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="n">sr</span><span class="p">)</span>
+                <span class="k">yield</span> <span class="n">cls</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="n">sr</span><span class="p">)</span>
 
-            <span class="k">yield</span> <span class="n">cls</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="n">sr</span><span class="p">)</span>
+            <span class="k">yield</span> <span class="n">cls</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">sr</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">T</span> <span class="o">=</span> <span class="s1">&#39;{}SRW{:02d}&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_self_returning</span> <span class="k">else</span> <span class="s1">&#39;{}MWC{:02d}&#39;</span>
+        <span class="n">T</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">SRW</span><span class="si">{:02d}</span><span class="s1">&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_self_returning</span> <span class="k">else</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">MWC</span><span class="si">{:02d}</span><span class="s1">&#39;</span>
         <span class="k">return</span> <span class="n">T</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;T&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_total</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">)</span>
-
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_order&#39;</span><span class="p">,</span> <span class="s1">&#39;_total&#39;</span><span class="p">,</span> <span class="s1">&#39;_self_returning&#39;</span><span class="p">,)</span>
 
 <div class="viewcode-block" id="WalkCount.as_key"><a class="viewcode-back" href="../../api/mordred.WalkCount.html#mordred.WalkCount.WalkCount.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_total</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_self_returning</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">total</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">self_returning</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">total</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">self_returning</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_order</span> <span class="o">=</span> <span class="n">order</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_total</span> <span class="o">=</span> <span class="n">total</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_self_returning</span> <span class="o">=</span> <span class="n">self_returning</span>
@@ -183,14 +181,14 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_total</span><span class="p">:</span>
             <span class="n">W</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;W&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">,</span>
-                <span class="bp">False</span><span class="p">,</span>
+                <span class="kc">False</span><span class="p">,</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_self_returning</span><span class="p">,</span>
             <span class="p">))</span>
 
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
                 <span class="n">T</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">_order</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span>
-                    <span class="bp">True</span><span class="p">,</span>
+                    <span class="kc">True</span><span class="p">,</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">_self_returning</span><span class="p">,</span>
                 <span class="p">))</span>
 
@@ -205,10 +203,10 @@
             <span class="p">)</span>
         <span class="p">}</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">An</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">W</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">An</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">W</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_total</span><span class="p">:</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-                <span class="k">return</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span> <span class="o">+</span> <span class="n">W</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span> <span class="o">+</span> <span class="n">W</span>
 
             <span class="k">return</span> <span class="n">T</span> <span class="o">+</span> <span class="n">W</span>
 
@@ -255,7 +253,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'0.2.0a0',
+            VERSION:'0.2.0b0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

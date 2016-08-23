@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mordred.InformationContent &mdash; mordred 0.2.0a0 documentation</title>
+  <title>mordred.InformationContent &mdash; mordred 0.2.0b0 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="mordred 0.2.0a0 documentation" href="../../index.html"/>
+    <link rel="top" title="mordred 0.2.0b0 documentation" href="../../index.html"/>
         <link rel="up" title="Module code" href="../index.html"/> 
 
   
@@ -59,7 +59,7 @@
             
             
               <div class="version">
-                0.2.0a0
+                0.2.0b0
               </div>
             
           
@@ -133,13 +133,12 @@
            <div itemprop="articleBody">
             
   <h1>Source code for mordred.InformationContent</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">groupby</span>
+<span></span><span class="kn">from</span> <span class="nn">itertools</span> <span class="k">import</span> <span class="n">chain</span><span class="p">,</span> <span class="n">groupby</span>
 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
-<span class="kn">from</span> <span class="nn">._graph_matrix</span> <span class="kn">import</span> <span class="n">DistanceMatrix</span>
-
+<span class="kn">from</span> <span class="nn">._base</span> <span class="k">import</span> <span class="n">Descriptor</span>
+<span class="kn">from</span> <span class="nn">._graph_matrix</span> <span class="k">import</span> <span class="n">DistanceMatrix</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span>
     <span class="s1">&#39;InformationContent&#39;</span><span class="p">,</span>
@@ -149,17 +148,32 @@
 
 
 <span class="k">class</span> <span class="nc">BFSTree</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;mol&#39;</span><span class="p">,</span> <span class="s1">&#39;tree&#39;</span><span class="p">,</span> <span class="s1">&#39;order&#39;</span><span class="p">,</span> <span class="s1">&#39;visited&#39;</span><span class="p">,)</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;tree&#39;</span><span class="p">,</span> <span class="s1">&#39;visited&#39;</span><span class="p">,</span> <span class="s1">&#39;bonds&#39;</span><span class="p">,</span> <span class="s1">&#39;atoms&#39;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">mol</span> <span class="o">=</span> <span class="n">mol</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">tree</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="p">()}</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">order</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">i</span><span class="p">])</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tree</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">bonds</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetBonds</span><span class="p">():</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">GetBeginAtomIdx</span><span class="p">()</span>
+            <span class="n">d</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">GetEndAtomIdx</span><span class="p">()</span>
+            <span class="n">t</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">GetBondType</span><span class="p">()</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">bonds</span><span class="p">[</span><span class="n">s</span><span class="p">,</span> <span class="n">d</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">bonds</span><span class="p">[</span><span class="n">d</span><span class="p">,</span> <span class="n">s</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">atoms</span> <span class="o">=</span> <span class="p">[(</span><span class="n">a</span><span class="o">.</span><span class="n">GetAtomicNum</span><span class="p">(),</span> <span class="n">a</span><span class="o">.</span><span class="n">GetDegree</span><span class="p">(),</span> <span class="n">a</span><span class="o">.</span><span class="n">GetNeighbors</span><span class="p">())</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">()]</span>
+
+    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tree</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">visited</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">tree</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">expand</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_expand</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tree</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">order</span> <span class="o">+=</span> <span class="mi">1</span>
 
     <span class="k">def</span> <span class="nf">_expand</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tree</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">src</span><span class="p">,</span> <span class="n">dst</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
@@ -168,16 +182,12 @@
             <span class="k">if</span> <span class="n">dst</span> <span class="ow">is</span> <span class="p">():</span>
                 <span class="n">tree</span><span class="p">[</span><span class="n">src</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
                     <span class="n">n</span><span class="o">.</span><span class="n">GetIdx</span><span class="p">():</span> <span class="p">()</span>
-                    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetAtomWithIdx</span><span class="p">(</span><span class="n">src</span><span class="p">)</span><span class="o">.</span><span class="n">GetNeighbors</span><span class="p">()</span>
+                    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">atoms</span><span class="p">[</span><span class="n">src</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
                     <span class="k">if</span> <span class="n">n</span><span class="o">.</span><span class="n">GetIdx</span><span class="p">()</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">visited</span>
                 <span class="p">}</span>
 
             <span class="k">else</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_expand</span><span class="p">(</span><span class="n">dst</span><span class="p">)</span>
-
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">code</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_code</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tree</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="p">())))</span>
 
     <span class="k">def</span> <span class="nf">_code</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tree</span><span class="p">,</span> <span class="n">before</span><span class="p">,</span> <span class="n">trail</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">tree</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -187,30 +197,28 @@
             <span class="k">for</span> <span class="n">src</span><span class="p">,</span> <span class="n">dst</span> <span class="ow">in</span> <span class="n">tree</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
 
                 <span class="n">code</span> <span class="o">=</span> <span class="p">[]</span>
-                <span class="k">if</span> <span class="n">before</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
-                    <span class="n">code</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetBondBetweenAtoms</span><span class="p">(</span><span class="n">before</span><span class="p">,</span> <span class="n">src</span><span class="p">)</span><span class="o">.</span><span class="n">GetBondType</span><span class="p">())</span>
+                <span class="k">if</span> <span class="n">before</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">bt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bonds</span><span class="p">[</span><span class="n">before</span><span class="p">,</span> <span class="n">src</span><span class="p">]</span>
+                    <span class="n">code</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bt</span><span class="p">)</span>
 
-                <span class="n">a</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetAtomWithIdx</span><span class="p">(</span><span class="n">src</span><span class="p">)</span>
-                <span class="n">code</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">GetAtomicNum</span><span class="p">())</span>
-                <span class="n">code</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">GetDegree</span><span class="p">())</span>
+                <span class="n">code</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">atoms</span><span class="p">[</span><span class="n">src</span><span class="p">][:</span><span class="mi">2</span><span class="p">])</span>
 
-                <span class="n">nxt</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">trail</span><span class="p">)</span> <span class="o">+</span> <span class="n">code</span><span class="p">)</span>
+                <span class="n">nxt</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">chain</span><span class="p">(</span><span class="n">trail</span><span class="p">,</span> <span class="n">code</span><span class="p">))</span>
                 <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_code</span><span class="p">(</span><span class="n">dst</span><span class="p">,</span> <span class="n">src</span><span class="p">,</span> <span class="n">nxt</span><span class="p">):</span>
                     <span class="k">yield</span> <span class="n">t</span>
 
+    <span class="k">def</span> <span class="nf">get_code</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">order</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reset</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">neighborhood_code</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">order</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">order</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetAtomWithIdx</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">GetAtomicNum</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">order</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span>
 
-    <span class="n">tree</span> <span class="o">=</span> <span class="n">BFSTree</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">order</span><span class="p">):</span>
-        <span class="n">tree</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">tree</span><span class="o">.</span><span class="n">code</span>
+        <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_code</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tree</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="p">())))</span>
 
 
 <span class="k">class</span> <span class="nc">InformationContentBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
-    <span class="n">kekulize</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_order&#39;</span><span class="p">,)</span>
+    <span class="n">kekulize</span> <span class="o">=</span> <span class="kc">True</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">)</span>
@@ -218,8 +226,6 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">(</span><span class="n">cls</span><span class="p">(</span><span class="n">o</span><span class="p">)</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span>
-
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_order&#39;</span><span class="p">,)</span>
 
     <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">,)</span>
@@ -231,19 +237,27 @@
 
 
 <span class="k">class</span> <span class="nc">Ag</span><span class="p">(</span><span class="n">InformationContentBase</span><span class="p">):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_order&#39;</span><span class="p">,)</span>
+
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">()</span>
 
     <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;Ag&#39;</span>
 
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_order&#39;</span><span class="p">,)</span>
-
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="n">DistanceMatrix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)}</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
-        <span class="n">atoms</span> <span class="o">=</span> <span class="p">[</span><span class="n">neighborhood_code</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">())]</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">atoms</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span><span class="o">.</span><span class="n">GetAtomicNum</span><span class="p">()</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">()]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">tree</span> <span class="o">=</span> <span class="n">BFSTree</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="p">)</span>
+            <span class="n">atoms</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">tree</span><span class="o">.</span><span class="n">get_code</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">())</span>
+            <span class="p">]</span>
+
         <span class="n">ad</span> <span class="o">=</span> <span class="p">{</span><span class="n">a</span><span class="p">:</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">atoms</span><span class="p">)}</span>
         <span class="n">Ags</span> <span class="o">=</span> <span class="p">[(</span><span class="n">k</span><span class="p">,</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">g</span><span class="p">))</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">groupby</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">atoms</span><span class="p">))]</span>
         <span class="n">Nags</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">Ags</span><span class="p">)</span>
@@ -252,7 +266,7 @@
             <span class="n">np</span><span class="o">.</span><span class="n">fromiter</span><span class="p">((</span><span class="n">ag</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">ag</span> <span class="ow">in</span> <span class="n">Ags</span><span class="p">),</span> <span class="s1">&#39;float&#39;</span><span class="p">,</span> <span class="n">Nags</span><span class="p">),</span>
         <span class="p">)</span>
 
-    <span class="n">rtype</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">rtype</span> <span class="o">=</span> <span class="kc">None</span>
 
 
 <span class="k">def</span> <span class="nf">_shannon_entropy_term</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
@@ -273,13 +287,14 @@
 <span class="sd">    :type order: int</span>
 <span class="sd">    :param order: order(number of edge) of subgraph</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;IC&#39;</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;iAgs&#39;</span><span class="p">:</span> <span class="n">Ag</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">)}</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">iAgs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iAgs</span><span class="p">):</span>
         <span class="n">_</span><span class="p">,</span> <span class="n">Ags</span> <span class="o">=</span> <span class="n">iAgs</span>
         <span class="k">return</span> <span class="n">shannon_entropy</span><span class="p">(</span><span class="n">Ags</span><span class="p">)</span></div>
 
@@ -293,14 +308,15 @@
 <span class="sd">    :type order: int</span>
 <span class="sd">    :param order: order(number of edge) of subgraph</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;TIC&#39;</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;ICm&#39;</span><span class="p">:</span> <span class="n">InformationContent</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">)}</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">ICm</span><span class="p">):</span>
-        <span class="n">A</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ICm</span><span class="p">):</span>
+        <span class="n">A</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span>
 
         <span class="k">return</span> <span class="n">A</span> <span class="o">*</span> <span class="n">ICm</span></div>
 
@@ -314,15 +330,15 @@
 <span class="sd">    :type order: int</span>
 <span class="sd">    :param order: order(number of edge) of subgraph</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;SIC&#39;</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">ICm</span><span class="p">):</span>
-        <span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">())</span>
-        <span class="k">if</span> <span class="n">d</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ICm</span><span class="p">):</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">())</span>
 
-        <span class="k">return</span> <span class="n">ICm</span> <span class="o">/</span> <span class="n">d</span></div>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">rethrow_zerodiv</span><span class="p">():</span>
+            <span class="k">return</span> <span class="n">ICm</span> <span class="o">/</span> <span class="n">d</span></div>
 
 
 <div class="viewcode-block" id="BondingIC"><a class="viewcode-back" href="../../api/mordred.InformationContent.html#mordred.InformationContent.BondingIC">[docs]</a><span class="k">class</span> <span class="nc">BondingIC</span><span class="p">(</span><span class="n">TotalIC</span><span class="p">):</span>
@@ -336,20 +352,16 @@
 
 <span class="sd">    :returns: NaN when :math:`\sum^B_{b=1} \pi^{*}_b &lt;= 0`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;BIC&#39;</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">ICm</span><span class="p">):</span>
-        <span class="n">B</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">GetBondTypeAsDouble</span><span class="p">()</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetBonds</span><span class="p">())</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ICm</span><span class="p">):</span>
+        <span class="n">B</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">GetBondTypeAsDouble</span><span class="p">()</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetBonds</span><span class="p">())</span>
 
-        <span class="k">if</span> <span class="n">B</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-
-        <span class="n">log2B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">log2B</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-
-        <span class="k">return</span> <span class="n">ICm</span> <span class="o">/</span> <span class="n">log2B</span></div>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">rethrow_zerodiv</span><span class="p">():</span>
+            <span class="n">log2B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">ICm</span> <span class="o">/</span> <span class="n">log2B</span></div>
 
 
 <div class="viewcode-block" id="ComplementaryIC"><a class="viewcode-back" href="../../api/mordred.InformationContent.html#mordred.InformationContent.ComplementaryIC">[docs]</a><span class="k">class</span> <span class="nc">ComplementaryIC</span><span class="p">(</span><span class="n">TotalIC</span><span class="p">):</span>
@@ -361,11 +373,12 @@
 <span class="sd">    :type order: int</span>
 <span class="sd">    :param order: order(number of edge) of subgraph</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;CIC&#39;</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">ICm</span><span class="p">):</span>
-        <span class="n">A</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ICm</span><span class="p">):</span>
+        <span class="n">A</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span>
 
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">-</span> <span class="n">ICm</span></div>
 
@@ -376,12 +389,13 @@
 <span class="sd">    :type order: int</span>
 <span class="sd">    :param order: order(number of edge) of subgraph</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;MIC&#39;</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">iAgs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iAgs</span><span class="p">):</span>
         <span class="n">ids</span><span class="p">,</span> <span class="n">Ags</span> <span class="o">=</span> <span class="n">iAgs</span>
-        <span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetAtomWithIdx</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">))</span><span class="o">.</span><span class="n">GetMass</span><span class="p">())(</span><span class="n">ids</span><span class="p">)</span>
+        <span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetAtomWithIdx</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">))</span><span class="o">.</span><span class="n">GetMass</span><span class="p">())(</span><span class="n">ids</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">shannon_entropy</span><span class="p">(</span><span class="n">Ags</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span></div>
 
 
@@ -391,12 +405,13 @@
 <span class="sd">    :type order: int</span>
 <span class="sd">    :param order: order(number of edge) of subgraph</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;ZMIC&#39;</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">iAgs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iAgs</span><span class="p">):</span>
         <span class="n">ids</span><span class="p">,</span> <span class="n">Ags</span> <span class="o">=</span> <span class="n">iAgs</span>
-        <span class="n">w</span> <span class="o">=</span> <span class="n">Ags</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetAtomWithIdx</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">))</span><span class="o">.</span><span class="n">GetAtomicNum</span><span class="p">())(</span><span class="n">ids</span><span class="p">)</span>
+        <span class="n">w</span> <span class="o">=</span> <span class="n">Ags</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetAtomWithIdx</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">))</span><span class="o">.</span><span class="n">GetAtomicNum</span><span class="p">())(</span><span class="n">ids</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">shannon_entropy</span><span class="p">(</span><span class="n">Ags</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span></div>
 </pre></div>
 
@@ -431,7 +446,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'0.2.0a0',
+            VERSION:'0.2.0b0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mordred.EccentricConnectivityIndex &mdash; mordred 0.2.0a0 documentation</title>
+  <title>mordred.EccentricConnectivityIndex &mdash; mordred 0.2.0b0 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="mordred 0.2.0a0 documentation" href="../../index.html"/>
+    <link rel="top" title="mordred 0.2.0b0 documentation" href="../../index.html"/>
         <link rel="up" title="Module code" href="../index.html"/> 
 
   
@@ -59,7 +59,7 @@
             
             
               <div class="version">
-                0.2.0a0
+                0.2.0b0
               </div>
             
           
@@ -133,9 +133,8 @@
            <div itemprop="articleBody">
             
   <h1>Source code for mordred.EccentricConnectivityIndex</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
-<span class="kn">from</span> <span class="nn">._graph_matrix</span> <span class="kn">import</span> <span class="n">Eccentricity</span><span class="p">,</span> <span class="n">Valence</span>
-
+<span></span><span class="kn">from</span> <span class="nn">._base</span> <span class="k">import</span> <span class="n">Descriptor</span>
+<span class="kn">from</span> <span class="nn">._graph_matrix</span> <span class="k">import</span> <span class="n">Valence</span><span class="p">,</span> <span class="n">Eccentricity</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;EccentricConnectivityIndex&#39;</span><span class="p">,)</span>
 
@@ -150,10 +149,8 @@
 <span class="sd">    :math:`E` is eccentricity of atoms,</span>
 <span class="sd">    :math:`V` is valences of atoms.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
-
-    <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="kc">False</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
@@ -171,7 +168,7 @@
             <span class="s1">&#39;V&#39;</span><span class="p">:</span> <span class="n">Valence</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">),</span>
         <span class="p">}</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">V</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">V</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">int</span><span class="p">((</span><span class="n">E</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int&#39;</span><span class="p">)</span> <span class="o">*</span> <span class="n">V</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
 
     <span class="n">rtype</span> <span class="o">=</span> <span class="nb">int</span></div>
@@ -208,7 +205,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'0.2.0a0',
+            VERSION:'0.2.0b0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

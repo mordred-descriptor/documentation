@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mordred.TopoPSA &mdash; mordred 0.2.0a0 documentation</title>
+  <title>mordred.TopoPSA &mdash; mordred 0.2.0b0 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="mordred 0.2.0a0 documentation" href="../../index.html"/>
+    <link rel="top" title="mordred 0.2.0b0 documentation" href="../../index.html"/>
         <link rel="up" title="Module code" href="../index.html"/> 
 
   
@@ -59,7 +59,7 @@
             
             
               <div class="version">
-                0.2.0a0
+                0.2.0b0
               </div>
             
           
@@ -133,12 +133,11 @@
            <div itemprop="articleBody">
             
   <h1>Source code for mordred.TopoPSA</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+<span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">defaultdict</span>
 
-<span class="kn">from</span> <span class="nn">rdkit.Chem</span> <span class="kn">import</span> <span class="n">BondType</span><span class="p">,</span> <span class="n">rdMolDescriptors</span>
+<span class="kn">from</span> <span class="nn">rdkit.Chem</span> <span class="k">import</span> <span class="n">BondType</span><span class="p">,</span> <span class="n">rdMolDescriptors</span>
 
-<span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
-
+<span class="kn">from</span> <span class="nn">._base</span> <span class="k">import</span> <span class="n">Descriptor</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;TopoPSA&#39;</span><span class="p">,)</span>
 
@@ -154,29 +153,28 @@
 <span class="sd">    References</span>
 <span class="sd">        * :cite:`10.1021/jm000942e`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_no_only&#39;</span><span class="p">,)</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
-        <span class="k">yield</span> <span class="n">cls</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
-        <span class="k">yield</span> <span class="n">cls</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+        <span class="k">yield</span> <span class="n">cls</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">yield</span> <span class="n">cls</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;TopoPSA(NO)&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_no_only</span> <span class="k">else</span> <span class="s1">&#39;TopoPSA&#39;</span>
 
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_no_only&#39;</span><span class="p">,)</span>
-
 <div class="viewcode-block" id="TopoPSA.as_key"><a class="viewcode-back" href="../../api/mordred.TopoPSA.html#mordred.TopoPSA.TopoPSA.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_no_only</span><span class="p">,)</span></div>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">no_only</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">no_only</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_no_only</span> <span class="o">=</span> <span class="n">no_only</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
-        <span class="n">tpsa</span> <span class="o">=</span> <span class="n">rdMolDescriptors</span><span class="o">.</span><span class="n">CalcTPSA</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">tpsa</span> <span class="o">=</span> <span class="n">rdMolDescriptors</span><span class="o">.</span><span class="n">CalcTPSA</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_no_only</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">tpsa</span>
 
-        <span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">():</span>
             <span class="n">atomic_num</span> <span class="o">=</span> <span class="n">atom</span><span class="o">.</span><span class="n">GetAtomicNum</span><span class="p">()</span>
 
             <span class="k">if</span> <span class="n">atomic_num</span> <span class="o">==</span> <span class="mi">15</span><span class="p">:</span>
@@ -286,7 +284,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'0.2.0a0',
+            VERSION:'0.2.0b0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

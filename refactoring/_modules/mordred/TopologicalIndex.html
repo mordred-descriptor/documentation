@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mordred.TopologicalIndex &mdash; mordred 0.2.0a0 documentation</title>
+  <title>mordred.TopologicalIndex &mdash; mordred 0.2.0b0 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="mordred 0.2.0a0 documentation" href="../../index.html"/>
+    <link rel="top" title="mordred 0.2.0b0 documentation" href="../../index.html"/>
         <link rel="up" title="Module code" href="../index.html"/> 
 
   
@@ -59,7 +59,7 @@
             
             
               <div class="version">
-                0.2.0a0
+                0.2.0b0
               </div>
             
           
@@ -133,16 +133,18 @@
            <div itemprop="articleBody">
             
   <h1>Source code for mordred.TopologicalIndex</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">Descriptor</span>
-<span class="kn">from</span> <span class="nn">._graph_matrix</span> <span class="kn">import</span> <span class="n">Diameter</span> <span class="k">as</span> <span class="n">CDiameter</span>
-<span class="kn">from</span> <span class="nn">._graph_matrix</span> <span class="kn">import</span> <span class="n">Radius</span> <span class="k">as</span> <span class="n">CRadius</span>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">division</span>
 
+<span class="kn">from</span> <span class="nn">._base</span> <span class="k">import</span> <span class="n">Descriptor</span>
+<span class="kn">from</span> <span class="nn">._graph_matrix</span> <span class="k">import</span> <span class="n">Radius</span> <span class="k">as</span> <span class="n">CRadius</span>
+<span class="kn">from</span> <span class="nn">._graph_matrix</span> <span class="k">import</span> <span class="n">Diameter</span> <span class="k">as</span> <span class="n">CDiameter</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Diameter&#39;</span><span class="p">,</span> <span class="s1">&#39;Radius&#39;</span><span class="p">,</span> <span class="s1">&#39;TopologicalShapeIndex&#39;</span><span class="p">,</span> <span class="s1">&#39;PetitjeanIndex&#39;</span><span class="p">,)</span>
 
 
 <span class="k">class</span> <span class="nc">TopologicalIndexBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
-    <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="kc">False</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
@@ -156,7 +158,6 @@
 
 <div class="viewcode-block" id="Radius"><a class="viewcode-back" href="../../api/mordred.TopologicalIndex.html#mordred.TopologicalIndex.Radius">[docs]</a><span class="k">class</span> <span class="nc">Radius</span><span class="p">(</span><span class="n">TopologicalIndexBase</span><span class="p">):</span>
     <span class="sd">r&quot;&quot;&quot;radius descriptor.&quot;&quot;&quot;</span>
-
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -165,13 +166,12 @@
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;R&#39;</span><span class="p">:</span> <span class="n">CRadius</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)}</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">R</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">R</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">R</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="Diameter"><a class="viewcode-back" href="../../api/mordred.TopologicalIndex.html#mordred.TopologicalIndex.Diameter">[docs]</a><span class="k">class</span> <span class="nc">Diameter</span><span class="p">(</span><span class="n">TopologicalIndexBase</span><span class="p">):</span>
     <span class="sd">r&quot;&quot;&quot;diameter descriptor.&quot;&quot;&quot;</span>
-
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -180,7 +180,7 @@
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="n">CDiameter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)}</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">D</span><span class="p">)</span></div>
 
 
@@ -197,7 +197,6 @@
 
 <span class="sd">    :returns: NaN when :math:`R = 0`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -209,11 +208,9 @@
             <span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="n">CDiameter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">),</span>
         <span class="p">}</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">R</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;nan&#39;</span><span class="p">)</span>
-
-        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">D</span> <span class="o">-</span> <span class="n">R</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">rethrow_zerodiv</span><span class="p">():</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">D</span> <span class="o">-</span> <span class="n">R</span><span class="p">)</span> <span class="o">/</span> <span class="n">R</span>
 
     <span class="n">rtype</span> <span class="o">=</span> <span class="nb">float</span></div>
 
@@ -231,17 +228,14 @@
 
 <span class="sd">    :returns: NaN when :math:`D = 0`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;PetitjeanIndex&#39;</span>
 
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">D</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;nan&#39;</span><span class="p">)</span>
-
-        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">D</span> <span class="o">-</span> <span class="n">R</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">D</span><span class="p">)</span></div>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">rethrow_zerodiv</span><span class="p">():</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">D</span> <span class="o">-</span> <span class="n">R</span><span class="p">)</span> <span class="o">/</span> <span class="n">D</span></div>
 </pre></div>
 
            </div>
@@ -275,7 +269,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'0.2.0a0',
+            VERSION:'0.2.0b0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

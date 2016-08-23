@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mordred.Lipinski module &mdash; mordred 0.2.0a0 documentation</title>
+  <title>mordred.Lipinski module &mdash; mordred 0.2.0b0 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="mordred 0.2.0a0 documentation" href="../index.html"/>
+    <link rel="top" title="mordred 0.2.0b0 documentation" href="../index.html"/>
         <link rel="up" title="mordred package" href="mordred.html"/>
         <link rel="next" title="mordred.McGowanVolume module" href="mordred.McGowanVolume.html"/>
         <link rel="prev" title="mordred.KappaShapeIndex module" href="mordred.KappaShapeIndex.html"/> 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                0.2.0a0
+                0.2.0b0
               </div>
             
           
@@ -117,6 +117,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.KappaShapeIndex.html">mordred.KappaShapeIndex module</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">mordred.Lipinski module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.McGowanVolume.html">mordred.McGowanVolume module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.MoRSE.html">mordred.MoRSE module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.MoeType.html">mordred.MoeType module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.MolecularDistanceEdge.html">mordred.MolecularDistanceEdge module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.MolecularId.html">mordred.MolecularId module</a></li>
@@ -135,7 +136,6 @@
 <li class="toctree-l3"><a class="reference internal" href="mordred.Weight.html">mordred.Weight module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.WienerIndex.html">mordred.WienerIndex module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mordred.ZagrebIndex.html">mordred.ZagrebIndex module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mordred.exception.html">mordred.exception module</a></li>
 </ul>
 </li>
 </ul>
@@ -209,13 +209,28 @@
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="mordred.Lipinski.Lipinski.coord">
+<code class="descname">coord</code><a class="headerlink" href="#mordred.Lipinski.Lipinski.coord" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="mordred.Lipinski.Lipinski.explicit_hydrogens">
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.Lipinski.Lipinski.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.Lipinski.Lipinski.fail">
+<code class="descname">fail</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Lipinski.Lipinski.fail" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.Lipinski.Lipinski.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Lipinski.Lipinski.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Lipinski.Lipinski.mol">
+<code class="descname">mol</code><a class="headerlink" href="#mordred.Lipinski.Lipinski.mol" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -228,10 +243,20 @@
 <code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Lipinski.Lipinski.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.Lipinski.Lipinski.rethrow_na">
+<code class="descname">rethrow_na</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Lipinski.Lipinski.rethrow_na" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.Lipinski.Lipinski.rethrow_zerodiv">
+<code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Lipinski.Lipinski.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.Lipinski.Lipinski.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.Lipinski.Lipinski.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a></p>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#bool" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a></p>
 </dd></dl>
 
 </dd></dl>
@@ -253,13 +278,28 @@
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="mordred.Lipinski.GhoseFilter.coord">
+<code class="descname">coord</code><a class="headerlink" href="#mordred.Lipinski.GhoseFilter.coord" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="mordred.Lipinski.GhoseFilter.explicit_hydrogens">
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.Lipinski.GhoseFilter.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.Lipinski.GhoseFilter.fail">
+<code class="descname">fail</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Lipinski.GhoseFilter.fail" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.Lipinski.GhoseFilter.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Lipinski.GhoseFilter.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Lipinski.GhoseFilter.mol">
+<code class="descname">mol</code><a class="headerlink" href="#mordred.Lipinski.GhoseFilter.mol" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -272,10 +312,20 @@
 <code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Lipinski.GhoseFilter.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.Lipinski.GhoseFilter.rethrow_na">
+<code class="descname">rethrow_na</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Lipinski.GhoseFilter.rethrow_na" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.Lipinski.GhoseFilter.rethrow_zerodiv">
+<code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Lipinski.GhoseFilter.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.Lipinski.GhoseFilter.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.Lipinski.GhoseFilter.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a></p>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#bool" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a></p>
 </dd></dl>
 
 </dd></dl>
@@ -323,7 +373,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'0.2.0a0',
+            VERSION:'0.2.0b0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
