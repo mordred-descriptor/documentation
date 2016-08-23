@@ -8,7 +8,15 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mordred.error package &mdash; mordred 0.2.0b0 documentation</title>
+  <title>mordred.error package &mdash; mordred import os
+
+
+def get_version():
+    with open(os.path.join(os.path.dirname(__file__), &#39;_version.txt&#39;)) as f:
+        return f.read().strip()
+
+
+__version__ = get_version() documentation</title>
   
 
   
@@ -30,7 +38,15 @@
   
 
   
-    <link rel="top" title="mordred 0.2.0b0 documentation" href="../index.html"/>
+    <link rel="top" title="mordred import os
+
+
+def get_version():
+    with open(os.path.join(os.path.dirname(__file__), &#39;_version.txt&#39;)) as f:
+        return f.read().strip()
+
+
+__version__ = get_version() documentation" href="../index.html"/>
         <link rel="up" title="mordred package" href="mordred.html"/>
         <link rel="next" title="mordred.surface_area package" href="mordred.surface_area.html"/>
         <link rel="prev" title="mordred package" href="mordred.html"/> 
@@ -61,7 +77,15 @@
             
             
               <div class="version">
-                0.2.0b0
+                import os
+
+
+def get_version():
+    with open(os.path.join(os.path.dirname(__file__), '_version.txt')) as f:
+        return f.read().strip()
+
+
+__version__ = get_version()
               </div>
             
           
@@ -172,6 +196,7 @@
 <dt id="mordred.error.Missing">
 <em class="property">class </em><code class="descclassname">mordred.error.</code><code class="descname">Missing</code><span class="sig-paren">(</span><em>error</em>, <em>stack</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/error.html#Missing"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.error.Missing" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#mordred.error.MissingValueBase" title="mordred.error.MissingValueBase"><code class="xref py py-class docutils literal"><span class="pre">mordred.error.MissingValueBase</span></code></a></p>
+<p>known errored value</p>
 <dl class="attribute">
 <dt id="mordred.error.Missing.header">
 <code class="descname">header</code><em class="property"> = 'Missing'</em><a class="headerlink" href="#mordred.error.Missing.header" title="Permalink to this definition">¶</a></dt>
@@ -193,6 +218,7 @@
 <dt id="mordred.error.Error">
 <em class="property">class </em><code class="descclassname">mordred.error.</code><code class="descname">Error</code><span class="sig-paren">(</span><em>error</em>, <em>stack</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/error.html#Error"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.error.Error" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#mordred.error.MissingValueBase" title="mordred.error.MissingValueBase"><code class="xref py py-class docutils literal"><span class="pre">mordred.error.MissingValueBase</span></code></a></p>
+<p>unknown errored value</p>
 <dl class="attribute">
 <dt id="mordred.error.Error.header">
 <code class="descname">header</code><em class="property"> = 'ERROR'</em><a class="headerlink" href="#mordred.error.Error.header" title="Permalink to this definition">¶</a></dt>
@@ -246,6 +272,24 @@ set self.__traceback__ to tb and return self.</p>
 
 </dd></dl>
 
+<dl class="exception">
+<dt id="mordred.error.Missing3DCoordinate">
+<em class="property">exception </em><code class="descclassname">mordred.error.</code><code class="descname">Missing3DCoordinate</code><a class="reference internal" href="../_modules/mordred/error.html#Missing3DCoordinate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.error.Missing3DCoordinate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mordred.error.MordredException" title="mordred.error.MordredException"><code class="xref py py-class docutils literal"><span class="pre">mordred.error.MordredException</span></code></a></p>
+<dl class="attribute">
+<dt id="mordred.error.Missing3DCoordinate.args">
+<code class="descname">args</code><a class="headerlink" href="#mordred.error.Missing3DCoordinate.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.error.Missing3DCoordinate.with_traceback">
+<code class="descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.error.Missing3DCoordinate.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) &#8211;
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
@@ -289,7 +333,15 @@ set self.__traceback__ to tb and return self.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'0.2.0b0',
+            VERSION:'import os
+
+
+def get_version():
+    with open(os.path.join(os.path.dirname(__file__), &#39;_version.txt&#39;)) as f:
+        return f.read().strip()
+
+
+__version__ = get_version()',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

@@ -8,7 +8,15 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mordred.tests.test_mordred_main &mdash; mordred 0.2.0b0 documentation</title>
+  <title>mordred.tests.test_mordred_main &mdash; mordred import os
+
+
+def get_version():
+    with open(os.path.join(os.path.dirname(__file__), &#39;_version.txt&#39;)) as f:
+        return f.read().strip()
+
+
+__version__ = get_version() documentation</title>
   
 
   
@@ -30,7 +38,15 @@
   
 
   
-    <link rel="top" title="mordred 0.2.0b0 documentation" href="../../../index.html"/>
+    <link rel="top" title="mordred import os
+
+
+def get_version():
+    with open(os.path.join(os.path.dirname(__file__), &#39;_version.txt&#39;)) as f:
+        return f.read().strip()
+
+
+__version__ = get_version() documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   
@@ -59,7 +75,15 @@
             
             
               <div class="version">
-                0.2.0b0
+                import os
+
+
+def get_version():
+    with open(os.path.join(os.path.dirname(__file__), '_version.txt')) as f:
+        return f.read().strip()
+
+
+__version__ = get_version()
               </div>
             
           
@@ -145,8 +169,8 @@
 <span class="kn">from</span> <span class="nn">..</span> <span class="k">import</span> <span class="n">Calculator</span><span class="p">,</span> <span class="n">__version__</span><span class="p">,</span> <span class="n">all_descriptors</span>
 <span class="kn">from</span> <span class="nn">..__main__</span> <span class="k">import</span> <span class="n">main</span> <span class="k">as</span> <span class="n">mordred</span>
 
-<span class="n">Nd2D</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">Calculator</span><span class="p">(</span><span class="n">all_descriptors</span><span class="p">(),</span> <span class="n">exclude3D</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">descriptors</span><span class="p">)</span>
-<span class="n">Nd3D</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">Calculator</span><span class="p">(</span><span class="n">all_descriptors</span><span class="p">(),</span> <span class="n">exclude3D</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">descriptors</span><span class="p">)</span>
+<span class="n">Nd2D</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">Calculator</span><span class="p">(</span><span class="n">all_descriptors</span><span class="p">(),</span> <span class="n">ignore_3D</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">descriptors</span><span class="p">)</span>
+<span class="n">Nd3D</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">Calculator</span><span class="p">(</span><span class="n">all_descriptors</span><span class="p">(),</span> <span class="n">ignore_3D</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">descriptors</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="in_"><a class="viewcode-back" href="../../../api/mordred.tests.test_mordred_main.html#mordred.tests.test_mordred_main.in_">[docs]</a><span class="k">def</span> <span class="nf">in_</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
@@ -227,8 +251,11 @@
     <span class="n">eq_</span><span class="p">(</span><span class="n">exitcode</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 
     <span class="n">vstr</span> <span class="o">=</span> <span class="s1">&#39;mordred-</span><span class="si">{}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">__version__</span><span class="p">)</span>
-    <span class="c1"># python3 or python2</span>
-    <span class="k">assert</span> <span class="p">(</span><span class="n">stderr</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span> <span class="ow">and</span> <span class="n">stdout</span> <span class="o">==</span> <span class="n">vstr</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">stdout</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span> <span class="ow">and</span> <span class="n">stderr</span> <span class="o">==</span> <span class="n">vstr</span><span class="p">)</span></div>
+
+    <span class="k">if</span> <span class="n">stderr</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>  <span class="c1"># python 3</span>
+        <span class="n">eq_</span><span class="p">(</span><span class="n">stdout</span><span class="p">,</span> <span class="n">vstr</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>  <span class="c1"># python2</span>
+        <span class="n">eq_</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="n">vstr</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="test_missing_file"><a class="viewcode-back" href="../../../api/mordred.tests.test_mordred_main.html#mordred.tests.test_mordred_main.test_missing_file">[docs]</a><span class="k">def</span> <span class="nf">test_missing_file</span><span class="p">():</span>
@@ -347,7 +374,15 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'0.2.0b0',
+            VERSION:'import os
+
+
+def get_version():
+    with open(os.path.join(os.path.dirname(__file__), &#39;_version.txt&#39;)) as f:
+        return f.read().strip()
+
+
+__version__ = get_version()',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

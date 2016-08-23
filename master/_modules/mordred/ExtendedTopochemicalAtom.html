@@ -8,7 +8,15 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mordred.ExtendedTopochemicalAtom &mdash; mordred 0.2.0b0 documentation</title>
+  <title>mordred.ExtendedTopochemicalAtom &mdash; mordred import os
+
+
+def get_version():
+    with open(os.path.join(os.path.dirname(__file__), &#39;_version.txt&#39;)) as f:
+        return f.read().strip()
+
+
+__version__ = get_version() documentation</title>
   
 
   
@@ -30,7 +38,15 @@
   
 
   
-    <link rel="top" title="mordred 0.2.0b0 documentation" href="../../index.html"/>
+    <link rel="top" title="mordred import os
+
+
+def get_version():
+    with open(os.path.join(os.path.dirname(__file__), &#39;_version.txt&#39;)) as f:
+        return f.read().strip()
+
+
+__version__ = get_version() documentation" href="../../index.html"/>
         <link rel="up" title="Module code" href="../index.html"/> 
 
   
@@ -59,7 +75,15 @@
             
             
               <div class="version">
-                0.2.0b0
+                import os
+
+
+def get_version():
+    with open(os.path.join(os.path.dirname(__file__), '_version.txt')) as f:
+        return f.read().strip()
+
+
+__version__ = get_version()
               </div>
             
           
@@ -168,8 +192,8 @@
     <span class="n">kekulize</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="n">require_connected</span> <span class="o">=</span> <span class="kc">True</span>
 
-    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_saturated</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_saturated</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">explicit_hydrogens</span><span class="p">,</span> <span class="n">saturated</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_saturated</span> <span class="o">=</span> <span class="n">saturated</span>
@@ -269,8 +293,8 @@
 
         <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">ETA_alpha</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ave</span><span class="p">,</span> <span class="n">suffix</span><span class="p">)</span>
 
-<div class="viewcode-block" id="EtaCoreCount.as_key"><a class="viewcode-back" href="../../api/mordred.ExtendedTopochemicalAtom.html#mordred.ExtendedTopochemicalAtom.EtaCoreCount.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reference</span><span class="p">)</span></div>
+<div class="viewcode-block" id="EtaCoreCount.parameters"><a class="viewcode-back" href="../../api/mordred.ExtendedTopochemicalAtom.html#mordred.ExtendedTopochemicalAtom.EtaCoreCount.parameters">[docs]</a>    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reference</span></div>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">averaged</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">reference</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span> <span class="o">=</span> <span class="n">averaged</span>
@@ -314,8 +338,8 @@
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;ETA_shape_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">)</span>
 
-<div class="viewcode-block" id="EtaShapeIndex.as_key"><a class="viewcode-back" href="../../api/mordred.ExtendedTopochemicalAtom.html#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">,)</span></div>
+<div class="viewcode-block" id="EtaShapeIndex.parameters"><a class="viewcode-back" href="../../api/mordred.ExtendedTopochemicalAtom.html#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.parameters">[docs]</a>    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">,</span></div>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;p&#39;</span><span class="p">):</span>
         <span class="k">assert</span> <span class="nb">type</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">shape_types</span>
@@ -398,8 +422,8 @@
 
     <span class="n">beta_types</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;ns&#39;</span><span class="p">,</span> <span class="s1">&#39;ns_d&#39;</span><span class="p">)</span>
 
-<div class="viewcode-block" id="EtaVEMCount.as_key"><a class="viewcode-back" href="../../api/mordred.ExtendedTopochemicalAtom.html#mordred.ExtendedTopochemicalAtom.EtaVEMCount.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span><span class="p">)</span></div>
+<div class="viewcode-block" id="EtaVEMCount.parameters"><a class="viewcode-back" href="../../api/mordred.ExtendedTopochemicalAtom.html#mordred.ExtendedTopochemicalAtom.EtaVEMCount.parameters">[docs]</a>    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span></div>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">averaged</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="k">assert</span> <span class="nb">type</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">beta_types</span>
@@ -483,8 +507,8 @@
 
         <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">ETA_eta</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ave</span><span class="p">,</span> <span class="n">suffix</span><span class="p">)</span>
 
-<div class="viewcode-block" id="EtaCompositeIndex.as_key"><a class="viewcode-back" href="../../api/mordred.ExtendedTopochemicalAtom.html#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_reference</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_local</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span><span class="p">)</span></div>
+<div class="viewcode-block" id="EtaCompositeIndex.parameters"><a class="viewcode-back" href="../../api/mordred.ExtendedTopochemicalAtom.html#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.parameters">[docs]</a>    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reference</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_local</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span></div>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reference</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">local</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">averaged</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_reference</span> <span class="o">=</span> <span class="n">reference</span>
@@ -555,8 +579,8 @@
 
         <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">ETA_eta_F</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ave</span><span class="p">,</span> <span class="n">loc</span><span class="p">)</span>
 
-<div class="viewcode-block" id="EtaFunctionalityIndex.as_key"><a class="viewcode-back" href="../../api/mordred.ExtendedTopochemicalAtom.html#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_local</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span><span class="p">)</span></div>
+<div class="viewcode-block" id="EtaFunctionalityIndex.parameters"><a class="viewcode-back" href="../../api/mordred.ExtendedTopochemicalAtom.html#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.parameters">[docs]</a>    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_local</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span></div>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">local</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">averaged</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_local</span> <span class="o">=</span> <span class="n">local</span>
@@ -609,8 +633,8 @@
 
         <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">ETA_eta_B</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ave</span><span class="p">,</span> <span class="n">ring</span><span class="p">)</span>
 
-<div class="viewcode-block" id="EtaBranchingIndex.as_key"><a class="viewcode-back" href="../../api/mordred.ExtendedTopochemicalAtom.html#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ring</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span><span class="p">)</span></div>
+<div class="viewcode-block" id="EtaBranchingIndex.parameters"><a class="viewcode-back" href="../../api/mordred.ExtendedTopochemicalAtom.html#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.parameters">[docs]</a>    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ring</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span></div>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ring</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">averaged</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_ring</span> <span class="o">=</span> <span class="n">ring</span>
@@ -662,8 +686,8 @@
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;ETA_dAlpha_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">)</span>
 
-<div class="viewcode-block" id="EtaDeltaAlpha.as_key"><a class="viewcode-back" href="../../api/mordred.ExtendedTopochemicalAtom.html#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">,)</span></div>
+<div class="viewcode-block" id="EtaDeltaAlpha.parameters"><a class="viewcode-back" href="../../api/mordred.ExtendedTopochemicalAtom.html#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.parameters">[docs]</a>    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">,</span></div>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;A&#39;</span><span class="p">):</span>
         <span class="k">assert</span> <span class="nb">type</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">delta_types</span>
@@ -724,8 +748,8 @@
 
     <span class="n">epsilon_types</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 
-<div class="viewcode-block" id="EtaEpsilon.as_key"><a class="viewcode-back" href="../../api/mordred.ExtendedTopochemicalAtom.html#mordred.ExtendedTopochemicalAtom.EtaEpsilon.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">,)</span></div>
+<div class="viewcode-block" id="EtaEpsilon.parameters"><a class="viewcode-back" href="../../api/mordred.ExtendedTopochemicalAtom.html#mordred.ExtendedTopochemicalAtom.EtaEpsilon.parameters">[docs]</a>    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">,</span></div>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="o">=</span> <span class="nb">type</span>
@@ -776,8 +800,8 @@
 
     <span class="n">delta_epsilon_types</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="s1">&#39;ABCD&#39;</span><span class="p">)</span>
 
-<div class="viewcode-block" id="EtaDeltaEpsilon.as_key"><a class="viewcode-back" href="../../api/mordred.ExtendedTopochemicalAtom.html#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">,)</span></div>
+<div class="viewcode-block" id="EtaDeltaEpsilon.parameters"><a class="viewcode-back" href="../../api/mordred.ExtendedTopochemicalAtom.html#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.parameters">[docs]</a>    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">,</span></div>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;A&#39;</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="o">=</span> <span class="nb">type</span>
@@ -820,8 +844,8 @@
 
         <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">ETA_dBeta&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ave</span><span class="p">)</span>
 
-<div class="viewcode-block" id="EtaDeltaBeta.as_key"><a class="viewcode-back" href="../../api/mordred.ExtendedTopochemicalAtom.html#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span><span class="p">,)</span></div>
+<div class="viewcode-block" id="EtaDeltaBeta.parameters"><a class="viewcode-back" href="../../api/mordred.ExtendedTopochemicalAtom.html#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.parameters">[docs]</a>    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span><span class="p">,</span></div>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">averaged</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span> <span class="o">=</span> <span class="n">averaged</span>
@@ -855,8 +879,8 @@
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;ETA_psi_1&#39;</span>
 
-<div class="viewcode-block" id="EtaPsi.as_key"><a class="viewcode-back" href="../../api/mordred.ExtendedTopochemicalAtom.html#mordred.ExtendedTopochemicalAtom.EtaPsi.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">()</span></div>
+<div class="viewcode-block" id="EtaPsi.parameters"><a class="viewcode-back" href="../../api/mordred.ExtendedTopochemicalAtom.html#mordred.ExtendedTopochemicalAtom.EtaPsi.parameters">[docs]</a>    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">()</span></div>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span>
@@ -890,8 +914,8 @@
 
     <span class="n">delta_psi_types</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,)</span>
 
-<div class="viewcode-block" id="EtaDeltaPsi.as_key"><a class="viewcode-back" href="../../api/mordred.ExtendedTopochemicalAtom.html#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.as_key">[docs]</a>    <span class="k">def</span> <span class="nf">as_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">,)</span></div>
+<div class="viewcode-block" id="EtaDeltaPsi.parameters"><a class="viewcode-back" href="../../api/mordred.ExtendedTopochemicalAtom.html#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.parameters">[docs]</a>    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">,</span></div>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;A&#39;</span><span class="p">):</span>
         <span class="k">assert</span> <span class="nb">type</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">delta_psi_types</span>
@@ -942,7 +966,15 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'0.2.0b0',
+            VERSION:'import os
+
+
+def get_version():
+    with open(os.path.join(os.path.dirname(__file__), &#39;_version.txt&#39;)) as f:
+        return f.read().strip()
+
+
+__version__ = get_version()',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

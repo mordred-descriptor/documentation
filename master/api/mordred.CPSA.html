@@ -8,7 +8,15 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mordred.CPSA module &mdash; mordred 0.2.0b0 documentation</title>
+  <title>mordred.CPSA module &mdash; mordred import os
+
+
+def get_version():
+    with open(os.path.join(os.path.dirname(__file__), &#39;_version.txt&#39;)) as f:
+        return f.read().strip()
+
+
+__version__ = get_version() documentation</title>
   
 
   
@@ -30,7 +38,15 @@
   
 
   
-    <link rel="top" title="mordred 0.2.0b0 documentation" href="../index.html"/>
+    <link rel="top" title="mordred import os
+
+
+def get_version():
+    with open(os.path.join(os.path.dirname(__file__), &#39;_version.txt&#39;)) as f:
+        return f.read().strip()
+
+
+__version__ = get_version() documentation" href="../index.html"/>
         <link rel="up" title="mordred package" href="mordred.html"/>
         <link rel="next" title="mordred.CarbonTypes module" href="mordred.CarbonTypes.html"/>
         <link rel="prev" title="mordred.BondCount module" href="mordred.BondCount.html"/> 
@@ -61,7 +77,15 @@
             
             
               <div class="version">
-                0.2.0b0
+                import os
+
+
+def get_version():
+    with open(os.path.join(os.path.dirname(__file__), '_version.txt')) as f:
+        return f.read().strip()
+
+
+__version__ = get_version()
               </div>
             
           
@@ -220,17 +244,14 @@
 <dl class="attribute">
 <dt id="mordred.CPSA.PNSA.as_argument">
 <code class="descname">as_argument</code><a class="headerlink" href="#mordred.CPSA.PNSA.as_argument" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="mordred.CPSA.PNSA.as_key">
-<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.PNSA.as_key" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>argument representation of descriptor</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.PNSA.coord">
 <code class="descname">coord</code><a class="headerlink" href="#mordred.CPSA.PNSA.coord" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>get 3D coordinate</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.PNSA.explicit_hydrogens">
@@ -240,7 +261,8 @@
 <dl class="method">
 <dt id="mordred.CPSA.PNSA.fail">
 <code class="descname">fail</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.PNSA.fail" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>raise known exception and return missing value</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.PNSA.kekulize">
@@ -250,6 +272,12 @@
 <dl class="attribute">
 <dt id="mordred.CPSA.PNSA.mol">
 <code class="descname">mol</code><a class="headerlink" href="#mordred.CPSA.PNSA.mol" title="Permalink to this definition">¶</a></dt>
+<dd><p>get molecule</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.PNSA.parameters">
+<code class="descname">parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.PNSA.parameters" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -265,12 +293,14 @@
 <dl class="method">
 <dt id="mordred.CPSA.PNSA.rethrow_na">
 <code class="descname">rethrow_na</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.PNSA.rethrow_na" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>treat any exceptions as known exception</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="mordred.CPSA.PNSA.rethrow_zerodiv">
 <code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.PNSA.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>treat zero div as known exception</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.PNSA.rtype">
@@ -301,17 +331,14 @@
 <dl class="attribute">
 <dt id="mordred.CPSA.PPSA.as_argument">
 <code class="descname">as_argument</code><a class="headerlink" href="#mordred.CPSA.PPSA.as_argument" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="mordred.CPSA.PPSA.as_key">
-<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.PPSA.as_key" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>argument representation of descriptor</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.PPSA.coord">
 <code class="descname">coord</code><a class="headerlink" href="#mordred.CPSA.PPSA.coord" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>get 3D coordinate</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.PPSA.explicit_hydrogens">
@@ -321,7 +348,8 @@
 <dl class="method">
 <dt id="mordred.CPSA.PPSA.fail">
 <code class="descname">fail</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.PPSA.fail" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>raise known exception and return missing value</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.PPSA.kekulize">
@@ -331,6 +359,12 @@
 <dl class="attribute">
 <dt id="mordred.CPSA.PPSA.mol">
 <code class="descname">mol</code><a class="headerlink" href="#mordred.CPSA.PPSA.mol" title="Permalink to this definition">¶</a></dt>
+<dd><p>get molecule</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.PPSA.parameters">
+<code class="descname">parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.PPSA.parameters" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -346,12 +380,14 @@
 <dl class="method">
 <dt id="mordred.CPSA.PPSA.rethrow_na">
 <code class="descname">rethrow_na</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.PPSA.rethrow_na" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>treat any exceptions as known exception</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="mordred.CPSA.PPSA.rethrow_zerodiv">
 <code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.PPSA.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>treat zero div as known exception</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.PPSA.rtype">
@@ -382,17 +418,14 @@
 <dl class="attribute">
 <dt id="mordred.CPSA.DPSA.as_argument">
 <code class="descname">as_argument</code><a class="headerlink" href="#mordred.CPSA.DPSA.as_argument" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="mordred.CPSA.DPSA.as_key">
-<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.DPSA.as_key" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>argument representation of descriptor</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.DPSA.coord">
 <code class="descname">coord</code><a class="headerlink" href="#mordred.CPSA.DPSA.coord" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>get 3D coordinate</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.DPSA.explicit_hydrogens">
@@ -402,7 +435,8 @@
 <dl class="method">
 <dt id="mordred.CPSA.DPSA.fail">
 <code class="descname">fail</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.DPSA.fail" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>raise known exception and return missing value</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.DPSA.kekulize">
@@ -412,6 +446,12 @@
 <dl class="attribute">
 <dt id="mordred.CPSA.DPSA.mol">
 <code class="descname">mol</code><a class="headerlink" href="#mordred.CPSA.DPSA.mol" title="Permalink to this definition">¶</a></dt>
+<dd><p>get molecule</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.DPSA.parameters">
+<code class="descname">parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.DPSA.parameters" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -427,12 +467,14 @@
 <dl class="method">
 <dt id="mordred.CPSA.DPSA.rethrow_na">
 <code class="descname">rethrow_na</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.DPSA.rethrow_na" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>treat any exceptions as known exception</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="mordred.CPSA.DPSA.rethrow_zerodiv">
 <code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.DPSA.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>treat zero div as known exception</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.DPSA.rtype">
@@ -463,17 +505,14 @@
 <dl class="attribute">
 <dt id="mordred.CPSA.FNSA.as_argument">
 <code class="descname">as_argument</code><a class="headerlink" href="#mordred.CPSA.FNSA.as_argument" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="mordred.CPSA.FNSA.as_key">
-<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.FNSA.as_key" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>argument representation of descriptor</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.FNSA.coord">
 <code class="descname">coord</code><a class="headerlink" href="#mordred.CPSA.FNSA.coord" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>get 3D coordinate</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.FNSA.explicit_hydrogens">
@@ -483,7 +522,8 @@
 <dl class="method">
 <dt id="mordred.CPSA.FNSA.fail">
 <code class="descname">fail</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.FNSA.fail" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>raise known exception and return missing value</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.FNSA.kekulize">
@@ -493,6 +533,12 @@
 <dl class="attribute">
 <dt id="mordred.CPSA.FNSA.mol">
 <code class="descname">mol</code><a class="headerlink" href="#mordred.CPSA.FNSA.mol" title="Permalink to this definition">¶</a></dt>
+<dd><p>get molecule</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.FNSA.parameters">
+<code class="descname">parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.FNSA.parameters" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -508,12 +554,14 @@
 <dl class="method">
 <dt id="mordred.CPSA.FNSA.rethrow_na">
 <code class="descname">rethrow_na</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.FNSA.rethrow_na" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>treat any exceptions as known exception</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="mordred.CPSA.FNSA.rethrow_zerodiv">
 <code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.FNSA.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>treat zero div as known exception</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.FNSA.rtype">
@@ -544,17 +592,14 @@
 <dl class="attribute">
 <dt id="mordred.CPSA.FPSA.as_argument">
 <code class="descname">as_argument</code><a class="headerlink" href="#mordred.CPSA.FPSA.as_argument" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="mordred.CPSA.FPSA.as_key">
-<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.FPSA.as_key" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>argument representation of descriptor</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.FPSA.coord">
 <code class="descname">coord</code><a class="headerlink" href="#mordred.CPSA.FPSA.coord" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>get 3D coordinate</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.FPSA.explicit_hydrogens">
@@ -564,7 +609,8 @@
 <dl class="method">
 <dt id="mordred.CPSA.FPSA.fail">
 <code class="descname">fail</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.FPSA.fail" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>raise known exception and return missing value</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.FPSA.kekulize">
@@ -574,6 +620,12 @@
 <dl class="attribute">
 <dt id="mordred.CPSA.FPSA.mol">
 <code class="descname">mol</code><a class="headerlink" href="#mordred.CPSA.FPSA.mol" title="Permalink to this definition">¶</a></dt>
+<dd><p>get molecule</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.FPSA.parameters">
+<code class="descname">parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.FPSA.parameters" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -589,12 +641,14 @@
 <dl class="method">
 <dt id="mordred.CPSA.FPSA.rethrow_na">
 <code class="descname">rethrow_na</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.FPSA.rethrow_na" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>treat any exceptions as known exception</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="mordred.CPSA.FPSA.rethrow_zerodiv">
 <code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.FPSA.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>treat zero div as known exception</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.FPSA.rtype">
@@ -625,17 +679,14 @@
 <dl class="attribute">
 <dt id="mordred.CPSA.WNSA.as_argument">
 <code class="descname">as_argument</code><a class="headerlink" href="#mordred.CPSA.WNSA.as_argument" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="mordred.CPSA.WNSA.as_key">
-<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.WNSA.as_key" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>argument representation of descriptor</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.WNSA.coord">
 <code class="descname">coord</code><a class="headerlink" href="#mordred.CPSA.WNSA.coord" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>get 3D coordinate</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.WNSA.explicit_hydrogens">
@@ -645,7 +696,8 @@
 <dl class="method">
 <dt id="mordred.CPSA.WNSA.fail">
 <code class="descname">fail</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.WNSA.fail" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>raise known exception and return missing value</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.WNSA.kekulize">
@@ -655,6 +707,12 @@
 <dl class="attribute">
 <dt id="mordred.CPSA.WNSA.mol">
 <code class="descname">mol</code><a class="headerlink" href="#mordred.CPSA.WNSA.mol" title="Permalink to this definition">¶</a></dt>
+<dd><p>get molecule</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.WNSA.parameters">
+<code class="descname">parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.WNSA.parameters" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -670,12 +728,14 @@
 <dl class="method">
 <dt id="mordred.CPSA.WNSA.rethrow_na">
 <code class="descname">rethrow_na</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.WNSA.rethrow_na" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>treat any exceptions as known exception</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="mordred.CPSA.WNSA.rethrow_zerodiv">
 <code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.WNSA.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>treat zero div as known exception</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.WNSA.rtype">
@@ -706,17 +766,14 @@
 <dl class="attribute">
 <dt id="mordred.CPSA.WPSA.as_argument">
 <code class="descname">as_argument</code><a class="headerlink" href="#mordred.CPSA.WPSA.as_argument" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="mordred.CPSA.WPSA.as_key">
-<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.WPSA.as_key" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>argument representation of descriptor</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.WPSA.coord">
 <code class="descname">coord</code><a class="headerlink" href="#mordred.CPSA.WPSA.coord" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>get 3D coordinate</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.WPSA.explicit_hydrogens">
@@ -726,7 +783,8 @@
 <dl class="method">
 <dt id="mordred.CPSA.WPSA.fail">
 <code class="descname">fail</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.WPSA.fail" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>raise known exception and return missing value</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.WPSA.kekulize">
@@ -736,6 +794,12 @@
 <dl class="attribute">
 <dt id="mordred.CPSA.WPSA.mol">
 <code class="descname">mol</code><a class="headerlink" href="#mordred.CPSA.WPSA.mol" title="Permalink to this definition">¶</a></dt>
+<dd><p>get molecule</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.WPSA.parameters">
+<code class="descname">parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.WPSA.parameters" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -751,12 +815,14 @@
 <dl class="method">
 <dt id="mordred.CPSA.WPSA.rethrow_na">
 <code class="descname">rethrow_na</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.WPSA.rethrow_na" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>treat any exceptions as known exception</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="mordred.CPSA.WPSA.rethrow_zerodiv">
 <code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.WPSA.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>treat zero div as known exception</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.WPSA.rtype">
@@ -784,17 +850,14 @@
 <dl class="attribute">
 <dt id="mordred.CPSA.RNCG.as_argument">
 <code class="descname">as_argument</code><a class="headerlink" href="#mordred.CPSA.RNCG.as_argument" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="mordred.CPSA.RNCG.as_key">
-<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RNCG.as_key" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>argument representation of descriptor</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.RNCG.coord">
 <code class="descname">coord</code><a class="headerlink" href="#mordred.CPSA.RNCG.coord" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>get 3D coordinate</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.RNCG.explicit_hydrogens">
@@ -804,7 +867,8 @@
 <dl class="method">
 <dt id="mordred.CPSA.RNCG.fail">
 <code class="descname">fail</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RNCG.fail" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>raise known exception and return missing value</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.RNCG.kekulize">
@@ -814,6 +878,12 @@
 <dl class="attribute">
 <dt id="mordred.CPSA.RNCG.mol">
 <code class="descname">mol</code><a class="headerlink" href="#mordred.CPSA.RNCG.mol" title="Permalink to this definition">¶</a></dt>
+<dd><p>get molecule</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.RNCG.parameters">
+<code class="descname">parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RNCG.parameters" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -824,12 +894,14 @@
 <dl class="method">
 <dt id="mordred.CPSA.RNCG.rethrow_na">
 <code class="descname">rethrow_na</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RNCG.rethrow_na" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>treat any exceptions as known exception</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="mordred.CPSA.RNCG.rethrow_zerodiv">
 <code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RNCG.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>treat zero div as known exception</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.RNCG.rtype">
@@ -847,17 +919,14 @@
 <dl class="attribute">
 <dt id="mordred.CPSA.RPCG.as_argument">
 <code class="descname">as_argument</code><a class="headerlink" href="#mordred.CPSA.RPCG.as_argument" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="mordred.CPSA.RPCG.as_key">
-<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPCG.as_key" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>argument representation of descriptor</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.RPCG.coord">
 <code class="descname">coord</code><a class="headerlink" href="#mordred.CPSA.RPCG.coord" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>get 3D coordinate</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.RPCG.explicit_hydrogens">
@@ -867,7 +936,8 @@
 <dl class="method">
 <dt id="mordred.CPSA.RPCG.fail">
 <code class="descname">fail</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPCG.fail" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>raise known exception and return missing value</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.RPCG.kekulize">
@@ -877,6 +947,12 @@
 <dl class="attribute">
 <dt id="mordred.CPSA.RPCG.mol">
 <code class="descname">mol</code><a class="headerlink" href="#mordred.CPSA.RPCG.mol" title="Permalink to this definition">¶</a></dt>
+<dd><p>get molecule</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.RPCG.parameters">
+<code class="descname">parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPCG.parameters" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -892,12 +968,14 @@
 <dl class="method">
 <dt id="mordred.CPSA.RPCG.rethrow_na">
 <code class="descname">rethrow_na</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPCG.rethrow_na" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>treat any exceptions as known exception</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="mordred.CPSA.RPCG.rethrow_zerodiv">
 <code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPCG.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>treat zero div as known exception</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.RPCG.rtype">
@@ -921,17 +999,14 @@
 <dl class="attribute">
 <dt id="mordred.CPSA.RNCS.as_argument">
 <code class="descname">as_argument</code><a class="headerlink" href="#mordred.CPSA.RNCS.as_argument" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="mordred.CPSA.RNCS.as_key">
-<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RNCS.as_key" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>argument representation of descriptor</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.RNCS.coord">
 <code class="descname">coord</code><a class="headerlink" href="#mordred.CPSA.RNCS.coord" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>get 3D coordinate</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.RNCS.explicit_hydrogens">
@@ -941,7 +1016,8 @@
 <dl class="method">
 <dt id="mordred.CPSA.RNCS.fail">
 <code class="descname">fail</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RNCS.fail" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>raise known exception and return missing value</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.RNCS.kekulize">
@@ -951,6 +1027,12 @@
 <dl class="attribute">
 <dt id="mordred.CPSA.RNCS.mol">
 <code class="descname">mol</code><a class="headerlink" href="#mordred.CPSA.RNCS.mol" title="Permalink to this definition">¶</a></dt>
+<dd><p>get molecule</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.RNCS.parameters">
+<code class="descname">parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RNCS.parameters" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -966,12 +1048,14 @@
 <dl class="method">
 <dt id="mordred.CPSA.RNCS.rethrow_na">
 <code class="descname">rethrow_na</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RNCS.rethrow_na" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>treat any exceptions as known exception</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="mordred.CPSA.RNCS.rethrow_zerodiv">
 <code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RNCS.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>treat zero div as known exception</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -983,17 +1067,14 @@
 <dl class="attribute">
 <dt id="mordred.CPSA.RPCS.as_argument">
 <code class="descname">as_argument</code><a class="headerlink" href="#mordred.CPSA.RPCS.as_argument" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="mordred.CPSA.RPCS.as_key">
-<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPCS.as_key" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>argument representation of descriptor</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.RPCS.coord">
 <code class="descname">coord</code><a class="headerlink" href="#mordred.CPSA.RPCS.coord" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>get 3D coordinate</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.RPCS.explicit_hydrogens">
@@ -1003,7 +1084,8 @@
 <dl class="method">
 <dt id="mordred.CPSA.RPCS.fail">
 <code class="descname">fail</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPCS.fail" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>raise known exception and return missing value</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.RPCS.kekulize">
@@ -1013,6 +1095,12 @@
 <dl class="attribute">
 <dt id="mordred.CPSA.RPCS.mol">
 <code class="descname">mol</code><a class="headerlink" href="#mordred.CPSA.RPCS.mol" title="Permalink to this definition">¶</a></dt>
+<dd><p>get molecule</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.RPCS.parameters">
+<code class="descname">parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPCS.parameters" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -1028,12 +1116,14 @@
 <dl class="method">
 <dt id="mordred.CPSA.RPCS.rethrow_na">
 <code class="descname">rethrow_na</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPCS.rethrow_na" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>treat any exceptions as known exception</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="mordred.CPSA.RPCS.rethrow_zerodiv">
 <code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPCS.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>treat zero div as known exception</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.RPCS.rtype">
@@ -1051,17 +1141,14 @@
 <dl class="attribute">
 <dt id="mordred.CPSA.TASA.as_argument">
 <code class="descname">as_argument</code><a class="headerlink" href="#mordred.CPSA.TASA.as_argument" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="mordred.CPSA.TASA.as_key">
-<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.TASA.as_key" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>argument representation of descriptor</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.TASA.coord">
 <code class="descname">coord</code><a class="headerlink" href="#mordred.CPSA.TASA.coord" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>get 3D coordinate</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.TASA.explicit_hydrogens">
@@ -1071,7 +1158,8 @@
 <dl class="method">
 <dt id="mordred.CPSA.TASA.fail">
 <code class="descname">fail</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.TASA.fail" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>raise known exception and return missing value</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.TASA.kekulize">
@@ -1081,6 +1169,12 @@
 <dl class="attribute">
 <dt id="mordred.CPSA.TASA.mol">
 <code class="descname">mol</code><a class="headerlink" href="#mordred.CPSA.TASA.mol" title="Permalink to this definition">¶</a></dt>
+<dd><p>get molecule</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.TASA.parameters">
+<code class="descname">parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.TASA.parameters" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -1096,12 +1190,14 @@
 <dl class="method">
 <dt id="mordred.CPSA.TASA.rethrow_na">
 <code class="descname">rethrow_na</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.TASA.rethrow_na" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>treat any exceptions as known exception</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="mordred.CPSA.TASA.rethrow_zerodiv">
 <code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.TASA.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>treat zero div as known exception</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.TASA.rtype">
@@ -1119,17 +1215,14 @@
 <dl class="attribute">
 <dt id="mordred.CPSA.TPSA.as_argument">
 <code class="descname">as_argument</code><a class="headerlink" href="#mordred.CPSA.TPSA.as_argument" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="mordred.CPSA.TPSA.as_key">
-<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.TPSA.as_key" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>argument representation of descriptor</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.TPSA.coord">
 <code class="descname">coord</code><a class="headerlink" href="#mordred.CPSA.TPSA.coord" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>get 3D coordinate</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.TPSA.explicit_hydrogens">
@@ -1139,7 +1232,8 @@
 <dl class="method">
 <dt id="mordred.CPSA.TPSA.fail">
 <code class="descname">fail</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.TPSA.fail" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>raise known exception and return missing value</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.TPSA.kekulize">
@@ -1149,6 +1243,12 @@
 <dl class="attribute">
 <dt id="mordred.CPSA.TPSA.mol">
 <code class="descname">mol</code><a class="headerlink" href="#mordred.CPSA.TPSA.mol" title="Permalink to this definition">¶</a></dt>
+<dd><p>get molecule</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.TPSA.parameters">
+<code class="descname">parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.TPSA.parameters" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -1164,12 +1264,14 @@
 <dl class="method">
 <dt id="mordred.CPSA.TPSA.rethrow_na">
 <code class="descname">rethrow_na</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.TPSA.rethrow_na" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>treat any exceptions as known exception</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="mordred.CPSA.TPSA.rethrow_zerodiv">
 <code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.TPSA.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>treat zero div as known exception</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.TPSA.rtype">
@@ -1187,17 +1289,14 @@
 <dl class="attribute">
 <dt id="mordred.CPSA.RASA.as_argument">
 <code class="descname">as_argument</code><a class="headerlink" href="#mordred.CPSA.RASA.as_argument" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="mordred.CPSA.RASA.as_key">
-<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RASA.as_key" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>argument representation of descriptor</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.RASA.coord">
 <code class="descname">coord</code><a class="headerlink" href="#mordred.CPSA.RASA.coord" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>get 3D coordinate</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.RASA.explicit_hydrogens">
@@ -1207,7 +1306,8 @@
 <dl class="method">
 <dt id="mordred.CPSA.RASA.fail">
 <code class="descname">fail</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RASA.fail" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>raise known exception and return missing value</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.RASA.kekulize">
@@ -1217,6 +1317,12 @@
 <dl class="attribute">
 <dt id="mordred.CPSA.RASA.mol">
 <code class="descname">mol</code><a class="headerlink" href="#mordred.CPSA.RASA.mol" title="Permalink to this definition">¶</a></dt>
+<dd><p>get molecule</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.RASA.parameters">
+<code class="descname">parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RASA.parameters" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -1232,12 +1338,14 @@
 <dl class="method">
 <dt id="mordred.CPSA.RASA.rethrow_na">
 <code class="descname">rethrow_na</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RASA.rethrow_na" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>treat any exceptions as known exception</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="mordred.CPSA.RASA.rethrow_zerodiv">
 <code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RASA.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>treat zero div as known exception</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.RASA.rtype">
@@ -1255,17 +1363,14 @@
 <dl class="attribute">
 <dt id="mordred.CPSA.RPSA.as_argument">
 <code class="descname">as_argument</code><a class="headerlink" href="#mordred.CPSA.RPSA.as_argument" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="mordred.CPSA.RPSA.as_key">
-<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPSA.as_key" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>argument representation of descriptor</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.RPSA.coord">
 <code class="descname">coord</code><a class="headerlink" href="#mordred.CPSA.RPSA.coord" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>get 3D coordinate</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.RPSA.explicit_hydrogens">
@@ -1275,7 +1380,8 @@
 <dl class="method">
 <dt id="mordred.CPSA.RPSA.fail">
 <code class="descname">fail</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPSA.fail" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>raise known exception and return missing value</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.RPSA.kekulize">
@@ -1285,6 +1391,12 @@
 <dl class="attribute">
 <dt id="mordred.CPSA.RPSA.mol">
 <code class="descname">mol</code><a class="headerlink" href="#mordred.CPSA.RPSA.mol" title="Permalink to this definition">¶</a></dt>
+<dd><p>get molecule</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.RPSA.parameters">
+<code class="descname">parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPSA.parameters" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -1300,12 +1412,14 @@
 <dl class="method">
 <dt id="mordred.CPSA.RPSA.rethrow_na">
 <code class="descname">rethrow_na</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPSA.rethrow_na" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>treat any exceptions as known exception</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="mordred.CPSA.RPSA.rethrow_zerodiv">
 <code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPSA.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>treat zero div as known exception</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.CPSA.RPSA.rtype">
@@ -1358,7 +1472,15 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'0.2.0b0',
+            VERSION:'import os
+
+
+def get_version():
+    with open(os.path.join(os.path.dirname(__file__), &#39;_version.txt&#39;)) as f:
+        return f.read().strip()
+
+
+__version__ = get_version()',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

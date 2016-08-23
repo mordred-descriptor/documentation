@@ -8,7 +8,15 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mordred.error &mdash; mordred 0.2.0b0 documentation</title>
+  <title>mordred.error &mdash; mordred import os
+
+
+def get_version():
+    with open(os.path.join(os.path.dirname(__file__), &#39;_version.txt&#39;)) as f:
+        return f.read().strip()
+
+
+__version__ = get_version() documentation</title>
   
 
   
@@ -30,7 +38,15 @@
   
 
   
-    <link rel="top" title="mordred 0.2.0b0 documentation" href="../../index.html"/>
+    <link rel="top" title="mordred import os
+
+
+def get_version():
+    with open(os.path.join(os.path.dirname(__file__), &#39;_version.txt&#39;)) as f:
+        return f.read().strip()
+
+
+__version__ = get_version() documentation" href="../../index.html"/>
         <link rel="up" title="Module code" href="../index.html"/> 
 
   
@@ -59,7 +75,15 @@
             
             
               <div class="version">
-                0.2.0b0
+                import os
+
+
+def get_version():
+    with open(os.path.join(os.path.dirname(__file__), '_version.txt')) as f:
+        return f.read().strip()
+
+
+__version__ = get_version()
               </div>
             
           
@@ -166,11 +190,13 @@
 
 
 <div class="viewcode-block" id="Missing"><a class="viewcode-back" href="../../api/mordred.error.html#mordred.error.Missing">[docs]</a><span class="k">class</span> <span class="nc">Missing</span><span class="p">(</span><span class="n">MissingValueBase</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;known errored value&#39;&#39;&#39;</span>
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
     <span class="n">header</span> <span class="o">=</span> <span class="s1">&#39;Missing&#39;</span></div>
 
 
 <div class="viewcode-block" id="Error"><a class="viewcode-back" href="../../api/mordred.error.html#mordred.error.Error">[docs]</a><span class="k">class</span> <span class="nc">Error</span><span class="p">(</span><span class="n">MissingValueBase</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;unknown errored value&#39;&#39;&#39;</span>
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
     <span class="n">header</span> <span class="o">=</span> <span class="s1">&#39;ERROR&#39;</span></div>
 
@@ -182,11 +208,15 @@
 <div class="viewcode-block" id="MultipleFragments"><a class="viewcode-back" href="../../api/mordred.error.html#mordred.error.MultipleFragments">[docs]</a><span class="k">class</span> <span class="nc">MultipleFragments</span><span class="p">(</span><span class="n">MordredException</span><span class="p">):</span>
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">pass</span>
-
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;multiple fragments&#39;</span></div>
+
+
+<div class="viewcode-block" id="Missing3DCoordinate"><a class="viewcode-back" href="../../api/mordred.error.html#mordred.error.Missing3DCoordinate">[docs]</a><span class="k">class</span> <span class="nc">Missing3DCoordinate</span><span class="p">(</span><span class="n">MordredException</span><span class="p">):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;missing 3D coordinate&#39;</span></div>
 </pre></div>
 
            </div>
@@ -220,7 +250,15 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'0.2.0b0',
+            VERSION:'import os
+
+
+def get_version():
+    with open(os.path.join(os.path.dirname(__file__), &#39;_version.txt&#39;)) as f:
+        return f.read().strip()
+
+
+__version__ = get_version()',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

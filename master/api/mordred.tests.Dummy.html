@@ -8,7 +8,15 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mordred.tests.Dummy module &mdash; mordred 0.2.0b0 documentation</title>
+  <title>mordred.tests.Dummy module &mdash; mordred import os
+
+
+def get_version():
+    with open(os.path.join(os.path.dirname(__file__), &#39;_version.txt&#39;)) as f:
+        return f.read().strip()
+
+
+__version__ = get_version() documentation</title>
   
 
   
@@ -30,7 +38,15 @@
   
 
   
-    <link rel="top" title="mordred 0.2.0b0 documentation" href="../index.html"/>
+    <link rel="top" title="mordred import os
+
+
+def get_version():
+    with open(os.path.join(os.path.dirname(__file__), &#39;_version.txt&#39;)) as f:
+        return f.read().strip()
+
+
+__version__ = get_version() documentation" href="../index.html"/>
         <link rel="up" title="mordred.tests package" href="mordred.tests.html"/>
         <link rel="next" title="mordred.tests.test_ABCIndex module" href="mordred.tests.test_ABCIndex.html"/>
         <link rel="prev" title="mordred.tests package" href="mordred.tests.html"/> 
@@ -61,7 +77,15 @@
             
             
               <div class="version">
-                0.2.0b0
+                import os
+
+
+def get_version():
+    with open(os.path.join(os.path.dirname(__file__), '_version.txt')) as f:
+        return f.read().strip()
+
+
+__version__ = get_version()
               </div>
             
           
@@ -159,17 +183,14 @@
 <dl class="attribute">
 <dt id="mordred.tests.Dummy.Dummy1.as_argument">
 <code class="descname">as_argument</code><a class="headerlink" href="#mordred.tests.Dummy.Dummy1.as_argument" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="mordred.tests.Dummy.Dummy1.as_key">
-<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.tests.Dummy.Dummy1.as_key" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>argument representation of descriptor</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.tests.Dummy.Dummy1.coord">
 <code class="descname">coord</code><a class="headerlink" href="#mordred.tests.Dummy.Dummy1.coord" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>get 3D coordinate</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.tests.Dummy.Dummy1.explicit_hydrogens">
@@ -179,7 +200,8 @@
 <dl class="method">
 <dt id="mordred.tests.Dummy.Dummy1.fail">
 <code class="descname">fail</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.tests.Dummy.Dummy1.fail" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>raise known exception and return missing value</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.tests.Dummy.Dummy1.kekulize">
@@ -189,7 +211,15 @@
 <dl class="attribute">
 <dt id="mordred.tests.Dummy.Dummy1.mol">
 <code class="descname">mol</code><a class="headerlink" href="#mordred.tests.Dummy.Dummy1.mol" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>get molecule</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.tests.Dummy.Dummy1.parameters">
+<code class="descname">parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.tests.Dummy.Dummy1.parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>get __init__ arguments of this descriptor instance.</p>
+<p>(abstract method)</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.tests.Dummy.Dummy1.require_3D">
@@ -204,12 +234,14 @@
 <dl class="method">
 <dt id="mordred.tests.Dummy.Dummy1.rethrow_na">
 <code class="descname">rethrow_na</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.tests.Dummy.Dummy1.rethrow_na" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>treat any exceptions as known exception</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="mordred.tests.Dummy.Dummy1.rethrow_zerodiv">
 <code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.tests.Dummy.Dummy1.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>treat zero div as known exception</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.tests.Dummy.Dummy1.rtype">
@@ -223,8 +255,8 @@
 <em class="property">class </em><code class="descclassname">mordred.tests.Dummy.</code><code class="descname">Dummy2</code><a class="reference internal" href="../_modules/mordred/tests/Dummy.html#Dummy2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.tests.Dummy.Dummy2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#mordred.tests.Dummy.Dummy1" title="mordred.tests.Dummy.Dummy1"><code class="xref py py-class docutils literal"><span class="pre">mordred.tests.Dummy.Dummy1</span></code></a></p>
 <dl class="method">
-<dt id="mordred.tests.Dummy.Dummy2.as_key">
-<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/tests/Dummy.html#Dummy2.as_key"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.tests.Dummy.Dummy2.as_key" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.tests.Dummy.Dummy2.parameters">
+<code class="descname">parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/tests/Dummy.html#Dummy2.parameters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.tests.Dummy.Dummy2.parameters" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -236,12 +268,14 @@
 <dl class="attribute">
 <dt id="mordred.tests.Dummy.Dummy2.as_argument">
 <code class="descname">as_argument</code><a class="headerlink" href="#mordred.tests.Dummy.Dummy2.as_argument" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>argument representation of descriptor</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.tests.Dummy.Dummy2.coord">
 <code class="descname">coord</code><a class="headerlink" href="#mordred.tests.Dummy.Dummy2.coord" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>get 3D coordinate</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.tests.Dummy.Dummy2.explicit_hydrogens">
@@ -251,7 +285,8 @@
 <dl class="method">
 <dt id="mordred.tests.Dummy.Dummy2.fail">
 <code class="descname">fail</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.tests.Dummy.Dummy2.fail" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>raise known exception and return missing value</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.tests.Dummy.Dummy2.kekulize">
@@ -261,7 +296,8 @@
 <dl class="attribute">
 <dt id="mordred.tests.Dummy.Dummy2.mol">
 <code class="descname">mol</code><a class="headerlink" href="#mordred.tests.Dummy.Dummy2.mol" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>get molecule</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.tests.Dummy.Dummy2.require_3D">
@@ -276,12 +312,14 @@
 <dl class="method">
 <dt id="mordred.tests.Dummy.Dummy2.rethrow_na">
 <code class="descname">rethrow_na</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.tests.Dummy.Dummy2.rethrow_na" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>treat any exceptions as known exception</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="mordred.tests.Dummy.Dummy2.rethrow_zerodiv">
 <code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.tests.Dummy.Dummy2.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>treat zero div as known exception</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -292,17 +330,14 @@
 <dl class="attribute">
 <dt id="mordred.tests.Dummy.Dummy3.as_argument">
 <code class="descname">as_argument</code><a class="headerlink" href="#mordred.tests.Dummy.Dummy3.as_argument" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="mordred.tests.Dummy.Dummy3.as_key">
-<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.tests.Dummy.Dummy3.as_key" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>argument representation of descriptor</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.tests.Dummy.Dummy3.coord">
 <code class="descname">coord</code><a class="headerlink" href="#mordred.tests.Dummy.Dummy3.coord" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>get 3D coordinate</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.tests.Dummy.Dummy3.explicit_hydrogens">
@@ -312,7 +347,8 @@
 <dl class="method">
 <dt id="mordred.tests.Dummy.Dummy3.fail">
 <code class="descname">fail</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.tests.Dummy.Dummy3.fail" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>raise known exception and return missing value</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.tests.Dummy.Dummy3.kekulize">
@@ -322,6 +358,12 @@
 <dl class="attribute">
 <dt id="mordred.tests.Dummy.Dummy3.mol">
 <code class="descname">mol</code><a class="headerlink" href="#mordred.tests.Dummy.Dummy3.mol" title="Permalink to this definition">¶</a></dt>
+<dd><p>get molecule</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.tests.Dummy.Dummy3.parameters">
+<code class="descname">parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.tests.Dummy.Dummy3.parameters" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -337,12 +379,14 @@
 <dl class="method">
 <dt id="mordred.tests.Dummy.Dummy3.rethrow_na">
 <code class="descname">rethrow_na</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.tests.Dummy.Dummy3.rethrow_na" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>treat any exceptions as known exception</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="mordred.tests.Dummy.Dummy3.rethrow_zerodiv">
 <code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.tests.Dummy.Dummy3.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>treat zero div as known exception</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.tests.Dummy.Dummy3.rtype">
@@ -359,17 +403,14 @@
 <dl class="attribute">
 <dt id="mordred.tests.Dummy.Dummy4.as_argument">
 <code class="descname">as_argument</code><a class="headerlink" href="#mordred.tests.Dummy.Dummy4.as_argument" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="mordred.tests.Dummy.Dummy4.as_key">
-<code class="descname">as_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.tests.Dummy.Dummy4.as_key" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>argument representation of descriptor</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.tests.Dummy.Dummy4.coord">
 <code class="descname">coord</code><a class="headerlink" href="#mordred.tests.Dummy.Dummy4.coord" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>get 3D coordinate</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.tests.Dummy.Dummy4.explicit_hydrogens">
@@ -379,7 +420,8 @@
 <dl class="method">
 <dt id="mordred.tests.Dummy.Dummy4.fail">
 <code class="descname">fail</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.tests.Dummy.Dummy4.fail" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>raise known exception and return missing value</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.tests.Dummy.Dummy4.kekulize">
@@ -389,6 +431,12 @@
 <dl class="attribute">
 <dt id="mordred.tests.Dummy.Dummy4.mol">
 <code class="descname">mol</code><a class="headerlink" href="#mordred.tests.Dummy.Dummy4.mol" title="Permalink to this definition">¶</a></dt>
+<dd><p>get molecule</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.tests.Dummy.Dummy4.parameters">
+<code class="descname">parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.tests.Dummy.Dummy4.parameters" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -404,12 +452,14 @@
 <dl class="method">
 <dt id="mordred.tests.Dummy.Dummy4.rethrow_na">
 <code class="descname">rethrow_na</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.tests.Dummy.Dummy4.rethrow_na" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>treat any exceptions as known exception</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="mordred.tests.Dummy.Dummy4.rethrow_zerodiv">
 <code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.tests.Dummy.Dummy4.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>treat zero div as known exception</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.tests.Dummy.Dummy4.rtype">
@@ -462,7 +512,15 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'0.2.0b0',
+            VERSION:'import os
+
+
+def get_version():
+    with open(os.path.join(os.path.dirname(__file__), &#39;_version.txt&#39;)) as f:
+        return f.read().strip()
+
+
+__version__ = get_version()',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
