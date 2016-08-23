@@ -144,6 +144,8 @@
 
 
 <span class="k">class</span> <span class="nc">MissingValueException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="s2">&quot;internally used exception&quot;</span>
+
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,)</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">error</span><span class="p">):</span>
@@ -165,10 +167,15 @@
 
     <span class="nd">@abstractmethod</span>
 <div class="viewcode-block" id="Descriptor.parameters"><a class="viewcode-back" href="../../../api/mordred.html#mordred.Descriptor.parameters">[docs]</a>    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;get __init__ arguments of this descriptor instance.</span>
+
+<span class="sd">        (abstract method)</span>
+<span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s1">&#39;not implemented Descriptor.parameters method&#39;</span><span class="p">)</span></div>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">as_argument</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;argument representation of descriptor&#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span>
 
     <span class="nd">@staticmethod</span>
@@ -187,14 +194,9 @@
 
     <span class="k">def</span> <span class="nf">__compare_by_reduce</span><span class="p">(</span><span class="n">meth</span><span class="p">):</span>
         <span class="k">def</span> <span class="nf">compare</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">):</span>
-                <span class="n">l</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parameters</span><span class="p">()</span>
-                <span class="n">r</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">parameters</span><span class="p">()</span>
-                <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">meth</span><span class="p">)(</span><span class="n">r</span><span class="p">)</span>
-
-            <span class="c1"># TODO: add comment</span>
-            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-                <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">l</span><span class="p">),</span> <span class="n">meth</span><span class="p">)(</span><span class="nb">str</span><span class="p">(</span><span class="n">r</span><span class="p">))</span>
+            <span class="n">l</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">parameters</span><span class="p">()</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">parameters</span><span class="p">()</span>
+            <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">meth</span><span class="p">)(</span><span class="n">r</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">compare</span>
 
@@ -245,10 +247,12 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">mol</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;get molecule&#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">get_mol</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">coord</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;get 3D coordinate&#39;&#39;&#39;</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">require_3D</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="ne">AttributeError</span><span class="p">(</span><span class="s1">&#39;use 3D coordinate in 2D descriptor&#39;</span><span class="p">))</span>
 
@@ -256,6 +260,7 @@
 
     <span class="nd">@contextmanager</span>
 <div class="viewcode-block" id="Descriptor.rethrow_zerodiv"><a class="viewcode-back" href="../../../api/mordred.html#mordred.Descriptor.rethrow_zerodiv">[docs]</a>    <span class="k">def</span> <span class="nf">rethrow_zerodiv</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;treat zero div as known exception&#39;&#39;&#39;</span>
         <span class="k">with</span> <span class="n">np</span><span class="o">.</span><span class="n">errstate</span><span class="p">(</span><span class="n">divide</span><span class="o">=</span><span class="s1">&#39;raise&#39;</span><span class="p">,</span> <span class="n">invalid</span><span class="o">=</span><span class="s1">&#39;raise&#39;</span><span class="p">):</span>
             <span class="k">try</span><span class="p">:</span>
                 <span class="k">yield</span>
@@ -263,10 +268,12 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="ne">ZeroDivisionError</span><span class="p">(</span><span class="o">*</span><span class="n">e</span><span class="o">.</span><span class="n">args</span><span class="p">))</span></div>
 
 <div class="viewcode-block" id="Descriptor.fail"><a class="viewcode-back" href="../../../api/mordred.html#mordred.Descriptor.fail">[docs]</a>    <span class="k">def</span> <span class="nf">fail</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exception</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;raise known exception and return missing value&#39;&#39;&#39;</span>
         <span class="k">raise</span> <span class="n">MissingValueException</span><span class="p">(</span><span class="n">exception</span><span class="p">)</span></div>
 
     <span class="nd">@contextmanager</span>
 <div class="viewcode-block" id="Descriptor.rethrow_na"><a class="viewcode-back" href="../../../api/mordred.html#mordred.Descriptor.rethrow_na">[docs]</a>    <span class="k">def</span> <span class="nf">rethrow_na</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exception</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;treat any exceptions as known exception&#39;&#39;&#39;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">yield</span>
         <span class="k">except</span> <span class="n">exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>

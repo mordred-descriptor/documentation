@@ -203,7 +203,8 @@
 <dl class="attribute">
 <dt id="mordred.Descriptor.as_argument">
 <code class="descname">as_argument</code><a class="headerlink" href="#mordred.Descriptor.as_argument" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>argument representation of descriptor</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="mordred.Descriptor.calculate">
@@ -215,7 +216,8 @@
 <dl class="attribute">
 <dt id="mordred.Descriptor.coord">
 <code class="descname">coord</code><a class="headerlink" href="#mordred.Descriptor.coord" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>get 3D coordinate</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="mordred.Descriptor.dependencies">
@@ -239,7 +241,8 @@
 <dl class="method">
 <dt id="mordred.Descriptor.fail">
 <code class="descname">fail</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base/descriptor.html#Descriptor.fail"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Descriptor.fail" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>raise known exception and return missing value</p>
+</dd></dl>
 
 <dl class="classmethod">
 <dt id="mordred.Descriptor.is_descriptor_class">
@@ -263,12 +266,15 @@
 <dl class="attribute">
 <dt id="mordred.Descriptor.mol">
 <code class="descname">mol</code><a class="headerlink" href="#mordred.Descriptor.mol" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>get molecule</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="mordred.Descriptor.parameters">
 <code class="descname">parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base/descriptor.html#Descriptor.parameters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Descriptor.parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>get __init__ arguments of this descriptor instance.</p>
+<p>(abstract method)</p>
+</dd></dl>
 
 <dl class="classmethod">
 <dt id="mordred.Descriptor.preset">
@@ -297,12 +303,14 @@
 <dl class="method">
 <dt id="mordred.Descriptor.rethrow_na">
 <code class="descname">rethrow_na</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base/descriptor.html#Descriptor.rethrow_na"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Descriptor.rethrow_na" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>treat any exceptions as known exception</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="mordred.Descriptor.rethrow_zerodiv">
 <code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base/descriptor.html#Descriptor.rethrow_zerodiv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Descriptor.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>treat zero div as known exception</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.Descriptor.rtype">
@@ -313,7 +321,7 @@
 
 <dl class="class">
 <dt id="mordred.Calculator">
-<em class="property">class </em><code class="descclassname">mordred.</code><code class="descname">Calculator</code><span class="sig-paren">(</span><em>descs=[]</em>, <em>exclude3D=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base/calculator.html#Calculator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Calculator" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">mordred.</code><code class="descname">Calculator</code><span class="sig-paren">(</span><em>descs=[]</em>, <em>ignore_3D=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base/calculator.html#Calculator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Calculator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
 <p>descriptor calculator.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -334,7 +342,8 @@
 <dl class="method">
 <dt id="mordred.Calculator.echo">
 <code class="descname">echo</code><span class="sig-paren">(</span><em>s</em>, <em>file=&lt;_io.TextIOWrapper name='&lt;stdout&gt;' mode='w' encoding='UTF-8'&gt;</em>, <em>end='\n'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base/calculator.html#Calculator.echo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Calculator.echo" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>output message</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="mordred.Calculator.map">
@@ -379,7 +388,7 @@
 
 <dl class="method">
 <dt id="mordred.Calculator.register">
-<code class="descname">register</code><span class="sig-paren">(</span><em>desc</em>, <em>exclude3D=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base/calculator.html#Calculator.register"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Calculator.register" title="Permalink to this definition">¶</a></dt>
+<code class="descname">register</code><span class="sig-paren">(</span><em>desc</em>, <em>ignore_3D=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base/calculator.html#Calculator.register"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Calculator.register" title="Permalink to this definition">¶</a></dt>
 <dd><p>register descriptors.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />

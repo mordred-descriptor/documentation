@@ -174,12 +174,7 @@
 </li>
 <li><p class="first">install mordred</p>
 <blockquote>
-<div><p>stable</p>
-<div class="code console highlight-default"><div class="highlight"><pre><span></span>$ conda install -c rdkit -c mordred-descriptor mordred
-</pre></div>
-</div>
-<p>beta</p>
-<div class="code console highlight-default"><div class="highlight"><pre><span></span>$ conda install -c rdkit -c mordred-descriptor/channel/dev mordred
+<div><div class="code console highlight-default"><div class="highlight"><pre><span></span>$ conda install -c rdkit -c mordred-descriptor mordred
 </pre></div>
 </div>
 </div></blockquote>
@@ -205,49 +200,66 @@
 <h2>examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="as-command">
 <h3>as command<a class="headerlink" href="#as-command" title="Permalink to this headline">¶</a></h3>
-<div class="code console highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">mordred</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">f</span> <span class="n">TYPE</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">o</span> <span class="n">PATH</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">p</span> <span class="n">N</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">q</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">s</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span> <span class="n">INPUT</span>
+<div class="code console highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">mordred</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">version</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">t</span> <span class="p">{</span><span class="n">auto</span><span class="p">,</span><span class="n">sdf</span><span class="p">,</span><span class="n">mol</span><span class="p">,</span><span class="n">smi</span><span class="p">}]</span> <span class="p">[</span><span class="o">-</span><span class="n">o</span> <span class="n">OUTPUT</span><span class="p">]</span>
+                         <span class="p">[</span><span class="o">-</span><span class="n">p</span> <span class="n">PROCESSES</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">q</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">s</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">d</span> <span class="n">DESC</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span>
+                         <span class="n">INPUT</span> <span class="p">[</span><span class="n">INPUT</span> <span class="o">...</span><span class="p">]</span>
 
 <span class="n">positional</span> <span class="n">arguments</span><span class="p">:</span>
-  <span class="n">INPUT</span>                 <span class="nb">input</span> <span class="n">file</span> <span class="ow">or</span> <span class="n">directory</span><span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="n">stdin</span><span class="p">)</span>
+  <span class="n">INPUT</span>
 
 <span class="n">optional</span> <span class="n">arguments</span><span class="p">:</span>
   <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>            <span class="n">show</span> <span class="n">this</span> <span class="n">help</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span>
-  <span class="o">-</span><span class="n">f</span> <span class="n">TYPE</span><span class="p">,</span> <span class="o">--</span><span class="kn">from</span> <span class="nn">TYPE</span>  <span class="nb">input</span> <span class="n">filetype</span><span class="p">(</span><span class="n">one</span> <span class="n">of</span> <span class="n">auto</span><span class="p">,</span> <span class="n">smi</span><span class="p">,</span> <span class="n">sdf</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">default</span><span class="p">:</span>
-                        <span class="n">auto</span><span class="p">)</span>
-  <span class="o">-</span><span class="n">o</span> <span class="n">PATH</span><span class="p">,</span> <span class="o">--</span><span class="n">output</span> <span class="n">PATH</span>
-                        <span class="n">output</span> <span class="n">csv</span> <span class="n">file</span><span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="n">stdout</span><span class="p">)</span>
-  <span class="o">-</span><span class="n">p</span> <span class="n">N</span><span class="p">,</span> <span class="o">--</span><span class="n">processes</span> <span class="n">N</span>   <span class="n">number</span> <span class="n">of</span> <span class="n">processes</span> <span class="n">to</span> <span class="n">use</span><span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="n">number</span> <span class="n">of</span> <span class="n">threads</span><span class="p">)</span>
+  <span class="o">--</span><span class="n">version</span>             <span class="nb">input</span> <span class="n">molecular</span> <span class="n">file</span>
+  <span class="o">-</span><span class="n">t</span> <span class="p">{</span><span class="n">auto</span><span class="p">,</span><span class="n">sdf</span><span class="p">,</span><span class="n">mol</span><span class="p">,</span><span class="n">smi</span><span class="p">},</span> <span class="o">--</span><span class="nb">type</span> <span class="p">{</span><span class="n">auto</span><span class="p">,</span><span class="n">sdf</span><span class="p">,</span><span class="n">mol</span><span class="p">,</span><span class="n">smi</span><span class="p">}</span>
+                        <span class="nb">input</span> <span class="n">filetype</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="n">auto</span><span class="p">)</span>
+  <span class="o">-</span><span class="n">o</span> <span class="n">OUTPUT</span><span class="p">,</span> <span class="o">--</span><span class="n">output</span> <span class="n">OUTPUT</span>
+                        <span class="n">output</span> <span class="n">file</span> <span class="n">path</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="n">stdout</span><span class="p">)</span>
+  <span class="o">-</span><span class="n">p</span> <span class="n">PROCESSES</span><span class="p">,</span> <span class="o">--</span><span class="n">processes</span> <span class="n">PROCESSES</span>
+                        <span class="n">number</span> <span class="n">of</span> <span class="n">processes</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="n">number</span> <span class="n">of</span> <span class="n">logical</span>
+                        <span class="n">processors</span><span class="p">)</span>
   <span class="o">-</span><span class="n">q</span><span class="p">,</span> <span class="o">--</span><span class="n">quiet</span>           <span class="n">hide</span> <span class="n">progress</span> <span class="n">bar</span>
   <span class="o">-</span><span class="n">s</span><span class="p">,</span> <span class="o">--</span><span class="n">stream</span>          <span class="n">stream</span> <span class="n">read</span>
-  <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">--</span><span class="k">with</span><span class="o">-</span><span class="mi">3</span><span class="n">D</span>         <span class="n">calculate</span> <span class="mi">3</span><span class="n">D</span> <span class="n">descriptor</span><span class="p">(</span><span class="n">require</span> <span class="n">sdf</span> <span class="ow">or</span> <span class="n">mol</span> <span class="n">file</span><span class="p">)</span>
+  <span class="o">-</span><span class="n">d</span> <span class="n">DESC</span><span class="p">,</span> <span class="o">--</span><span class="n">descriptor</span> <span class="n">DESC</span>
+                        <span class="n">descriptors</span> <span class="n">to</span> <span class="n">calculate</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="nb">all</span><span class="p">)</span>
+  <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">--</span><span class="mi">3</span><span class="n">D</span>              <span class="n">use</span> <span class="mi">3</span><span class="n">D</span> <span class="n">descriptors</span> <span class="p">(</span><span class="n">require</span> <span class="n">sdf</span> <span class="ow">or</span> <span class="n">mol</span> <span class="n">file</span><span class="p">)</span>
+  <span class="o">-</span><span class="n">v</span><span class="p">,</span> <span class="o">--</span><span class="n">verbosity</span>       <span class="n">verbosity</span>
+
+<span class="n">descriptors</span><span class="p">:</span> <span class="n">ABCIndex</span> <span class="n">AcidBase</span> <span class="n">AdjacencyMatrix</span> <span class="n">Aromatic</span> <span class="n">AtomCount</span>
+<span class="n">Autocorrelation</span> <span class="n">Autocorrelation3D</span> <span class="n">BalabanJ</span> <span class="n">BaryszMatrix</span> <span class="n">BCUT</span> <span class="n">BertzCT</span> <span class="n">BondCount</span>
+<span class="n">CarbonTypes</span> <span class="n">Chi</span> <span class="n">Constitutional</span> <span class="n">CPSA</span> <span class="n">DetourMatrix</span> <span class="n">DistanceMatrix</span>
+<span class="n">EccentricConnectivityIndex</span> <span class="n">EState</span> <span class="n">ExtendedTopochemicalAtom</span> <span class="n">FragmentComplexity</span>
+<span class="n">Framework</span> <span class="n">GeometricalIndex</span> <span class="n">GravitationalIndex</span> <span class="n">HydrogenBond</span> <span class="n">InformationContent</span>
+<span class="n">KappaShapeIndex</span> <span class="n">Lipinski</span> <span class="n">McGowanVolume</span> <span class="n">MoeType</span> <span class="n">MolecularDistanceEdge</span>
+<span class="n">MolecularId</span> <span class="n">MomentOfInertia</span> <span class="n">MoRSE</span> <span class="n">PathCount</span> <span class="n">Polarizability</span> <span class="n">RingCount</span>
+<span class="n">RotatableBond</span> <span class="n">SLogP</span> <span class="n">TopologicalCharge</span> <span class="n">TopologicalIndex</span> <span class="n">TopoPSA</span> <span class="n">VdwVolumeABC</span>
 </pre></div>
 </div>
 <div class="section" id="as-library">
 <h4>as library<a class="headerlink" href="#as-library" title="Permalink to this headline">¶</a></h4>
-<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rdkit</span> <span class="k">import</span> <span class="n">Chem</span>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">rdkit</span> <span class="k">import</span> <span class="n">Chem</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mordred</span> <span class="k">import</span> <span class="n">Calculator</span><span class="p">,</span> <span class="n">all_descriptors</span>
 
-<span class="kn">from</span> <span class="nn">mordred</span> <span class="k">import</span> <span class="n">Calculator</span><span class="p">,</span> <span class="n">all_descriptors</span>
+<span class="go"># create descriptor calculator with all descriptors</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">calc</span> <span class="o">=</span> <span class="n">Calculator</span><span class="p">(</span><span class="n">all_descriptors</span><span class="p">(),</span> <span class="n">exclude3D</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-<span class="c1"># create descriptor calculator with all descriptors</span>
-<span class="n">calc</span> <span class="o">=</span> <span class="n">Calculator</span><span class="p">(</span><span class="n">all_descriptors</span><span class="p">(),</span> <span class="n">exclude3D</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">calc</span><span class="o">.</span><span class="n">descriptors</span><span class="p">)</span>
+<span class="go">1824</span>
 
-<span class="n">mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="s1">&#39;c1ccccc1&#39;</span><span class="p">)</span>
+<span class="go"># calculate single molecule</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="s1">&#39;c1ccccc1&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">calc</span><span class="p">(</span><span class="n">mol</span><span class="p">)[:</span><span class="mi">3</span><span class="p">]</span>
+<span class="go">[4.242640687119286, 3.9999999999999996, 0]</span>
 
-<span class="n">mols</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">,</span> <span class="p">[</span>
-    <span class="s1">&#39;c1ccccc1Cl&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;c1ccccc1O&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;c1ccccc1N&#39;</span>
-<span class="p">])</span>
+<span class="go"># calculate multiple molecule</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="p">[</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">smi</span><span class="p">)</span> <span class="k">for</span> <span class="n">smi</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;c1ccccc1Cl&#39;</span><span class="p">,</span> <span class="s1">&#39;c1ccccc1O&#39;</span><span class="p">,</span> <span class="s1">&#39;c1ccccc1N&#39;</span><span class="p">]]</span>
 
-<span class="c1"># calculate single molecule</span>
-<span class="k">for</span> <span class="n">desc</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">calc</span><span class="o">.</span><span class="n">descriptors</span><span class="p">,</span> <span class="n">calc</span><span class="p">(</span><span class="n">mol</span><span class="p">)):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
-
-<span class="c1"># calculate multiple molecule</span>
-<span class="k">for</span> <span class="n">mol</span><span class="p">,</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">calc</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="n">processes</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolToSmiles</span><span class="p">(</span><span class="n">mol</span><span class="p">))</span>
-    <span class="k">for</span> <span class="n">desc</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">calc</span><span class="o">.</span><span class="n">descriptors</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+<span class="go"># as pandas</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">calc</span><span class="o">.</span><span class="n">pandas</span><span class="p">(</span><span class="n">mols</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;SLogP&#39;</span><span class="p">]</span>
+<span class="go">0    2.3400</span>
+<span class="go">1    1.3922</span>
+<span class="go">2    1.2688</span>
+<span class="go">Name: SLogP, dtype: float64</span>
 </pre></div>
 </div>
 </div>
