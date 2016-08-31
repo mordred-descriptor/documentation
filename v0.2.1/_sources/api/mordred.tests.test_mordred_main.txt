@@ -1,0 +1,7 @@
+mordred.tests.test_mordred_main module
+======================================
+
+.. automodule:: mordred.tests.test_mordred_main
+    :members:
+    :undoc-members:
+    :show-inheritance:

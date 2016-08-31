@@ -1,0 +1,7 @@
+mordred.TopologicalIndex module
+===============================
+
+.. automodule:: mordred.TopologicalIndex
+    :members:
+    :undoc-members:
+    :show-inheritance:
