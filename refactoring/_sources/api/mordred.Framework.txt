@@ -1,7 +1,0 @@
-mordred.Framework module
-========================
-
-.. automodule:: mordred.Framework
-    :members:
-    :undoc-members:
-    :show-inheritance:

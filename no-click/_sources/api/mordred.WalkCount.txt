@@ -1,7 +1,0 @@
-mordred.WalkCount module
-========================
-
-.. automodule:: mordred.WalkCount
-    :members:
-    :undoc-members:
-    :show-inheritance:

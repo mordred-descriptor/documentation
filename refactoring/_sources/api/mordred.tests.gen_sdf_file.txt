@@ -1,7 +1,0 @@
-mordred.tests.gen_sdf_file module
-=================================
-
-.. automodule:: mordred.tests.gen_sdf_file
-    :members:
-    :undoc-members:
-    :show-inheritance:

@@ -1,7 +1,0 @@
-mordred.Polarizability module
-=============================
-
-.. automodule:: mordred.Polarizability
-    :members:
-    :undoc-members:
-    :show-inheritance:

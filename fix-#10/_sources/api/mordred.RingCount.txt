@@ -1,7 +1,0 @@
-mordred.RingCount module
-========================
-
-.. automodule:: mordred.RingCount
-    :members:
-    :undoc-members:
-    :show-inheritance:

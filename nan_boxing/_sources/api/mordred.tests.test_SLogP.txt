@@ -1,7 +1,0 @@
-mordred.tests.test_SLogP module
-===============================
-
-.. automodule:: mordred.tests.test_SLogP
-    :members:
-    :undoc-members:
-    :show-inheritance:

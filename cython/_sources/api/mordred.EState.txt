@@ -1,7 +1,0 @@
-mordred.EState module
-=====================
-
-.. automodule:: mordred.EState
-    :members:
-    :undoc-members:
-    :show-inheritance:

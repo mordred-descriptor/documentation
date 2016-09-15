@@ -1,7 +1,0 @@
-mordred.VdwVolumeABC module
-===========================
-
-.. automodule:: mordred.VdwVolumeABC
-    :members:
-    :undoc-members:
-    :show-inheritance:

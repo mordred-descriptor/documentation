@@ -1,7 +1,0 @@
-mordred.GeometricalIndex module
-===============================
-
-.. automodule:: mordred.GeometricalIndex
-    :members:
-    :undoc-members:
-    :show-inheritance:

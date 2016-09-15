@@ -1,7 +1,0 @@
-mordred.TopologicalCharge module
-================================
-
-.. automodule:: mordred.TopologicalCharge
-    :members:
-    :undoc-members:
-    :show-inheritance:

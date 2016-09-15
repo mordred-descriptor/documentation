@@ -1,7 +1,0 @@
-mordred.tests.test_VEA module
-=============================
-
-.. automodule:: mordred.tests.test_VEA
-    :members:
-    :undoc-members:
-    :show-inheritance:

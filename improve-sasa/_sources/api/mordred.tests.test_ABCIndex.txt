@@ -1,7 +1,0 @@
-mordred.tests.test_ABCIndex module
-==================================
-
-.. automodule:: mordred.tests.test_ABCIndex
-    :members:
-    :undoc-members:
-    :show-inheritance:

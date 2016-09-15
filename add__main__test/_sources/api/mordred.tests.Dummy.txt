@@ -1,7 +1,0 @@
-mordred.tests.Dummy module
-==========================
-
-.. automodule:: mordred.tests.Dummy
-    :members:
-    :undoc-members:
-    :show-inheritance:

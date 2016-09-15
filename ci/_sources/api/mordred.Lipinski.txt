@@ -1,7 +1,0 @@
-mordred.Lipinski module
-=======================
-
-.. automodule:: mordred.Lipinski
-    :members:
-    :undoc-members:
-    :show-inheritance:

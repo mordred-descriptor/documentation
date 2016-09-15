@@ -1,7 +1,0 @@
-mordred.McGowanVolume module
-============================
-
-.. automodule:: mordred.McGowanVolume
-    :members:
-    :undoc-members:
-    :show-inheritance:

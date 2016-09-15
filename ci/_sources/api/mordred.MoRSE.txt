@@ -1,7 +1,0 @@
-mordred.MoRSE module
-====================
-
-.. automodule:: mordred.MoRSE
-    :members:
-    :undoc-members:
-    :show-inheritance:

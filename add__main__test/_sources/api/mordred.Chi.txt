@@ -1,7 +1,0 @@
-mordred.Chi module
-==================
-
-.. automodule:: mordred.Chi
-    :members:
-    :undoc-members:
-    :show-inheritance:

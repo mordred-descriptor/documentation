@@ -1,7 +1,0 @@
-mordred.error module
-====================
-
-.. automodule:: mordred.error
-    :members:
-    :undoc-members:
-    :show-inheritance:

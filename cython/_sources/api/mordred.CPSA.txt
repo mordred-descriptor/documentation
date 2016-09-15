@@ -1,7 +1,0 @@
-mordred.CPSA module
-===================
-
-.. automodule:: mordred.CPSA
-    :members:
-    :undoc-members:
-    :show-inheritance:

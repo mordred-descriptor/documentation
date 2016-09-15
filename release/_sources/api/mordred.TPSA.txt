@@ -1,7 +1,0 @@
-mordred.TPSA module
-===================
-
-.. automodule:: mordred.TPSA
-    :members:
-    :undoc-members:
-    :show-inheritance:

@@ -1,7 +1,0 @@
-mordred.MomentOfInertia module
-==============================
-
-.. automodule:: mordred.MomentOfInertia
-    :members:
-    :undoc-members:
-    :show-inheritance:

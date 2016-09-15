@@ -1,7 +1,0 @@
-mordred.CarbonTypes module
-==========================
-
-.. automodule:: mordred.CarbonTypes
-    :members:
-    :undoc-members:
-    :show-inheritance:

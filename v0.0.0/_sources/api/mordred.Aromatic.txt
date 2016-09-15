@@ -1,7 +1,0 @@
-mordred.Aromatic module
-=======================
-
-.. automodule:: mordred.Aromatic
-    :members:
-    :undoc-members:
-    :show-inheritance:

@@ -1,7 +1,0 @@
-mordred.MolecularId module
-==========================
-
-.. automodule:: mordred.MolecularId
-    :members:
-    :undoc-members:
-    :show-inheritance:

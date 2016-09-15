@@ -1,7 +1,0 @@
-mordred.KappaShapeIndex module
-==============================
-
-.. automodule:: mordred.KappaShapeIndex
-    :members:
-    :undoc-members:
-    :show-inheritance:

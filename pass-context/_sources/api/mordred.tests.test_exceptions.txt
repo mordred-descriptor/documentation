@@ -1,7 +1,0 @@
-mordred.tests.test_exceptions module
-====================================
-
-.. automodule:: mordred.tests.test_exceptions
-    :members:
-    :undoc-members:
-    :show-inheritance:

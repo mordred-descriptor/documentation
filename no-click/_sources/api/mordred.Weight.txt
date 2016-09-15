@@ -1,7 +1,0 @@
-mordred.Weight module
-=====================
-
-.. automodule:: mordred.Weight
-    :members:
-    :undoc-members:
-    :show-inheritance:
