@@ -3,27 +3,27 @@
 atomic properties
 =================
 
+c
+    gasteiger charge
+dv
+    valence electrons
+d
+    sigma electrons
+s
+    intrinsic state
 Z
-    atomic Number
+    atomic number
 m
-    atomic mass
+    mass
 v
-    van der waals volume
-e, se
-    sanderson electronegativity
+    vdw volume
+se
+    sanderson EN
 pe
-    pauling electronegativity
+    pauling EN
 are
-    allred rocow electronegativity
+    allred-rocow EN
 p
     polarizability
 i
-    ionpotential
-s
-    interinsic state
-delta
-    sigma electrons
-delta_v
-    valence electrons
-c
-    gasteiger charge
+    ionization potential
