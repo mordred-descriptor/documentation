@@ -1,0 +1,199 @@
+
+
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>mordred.TopologicalIndex &#8212; mordred 0.2.1.post1.dev1 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.2.1.post1.dev1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/bizstyle.js"></script>
+    <link rel="top" title="mordred 0.2.1.post1.dev1 documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">mordred 0.2.1.post1.dev1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Module code</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for mordred.TopologicalIndex</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">division</span>
+
+<span class="kn">from</span> <span class="nn">._base</span> <span class="k">import</span> <span class="n">Descriptor</span>
+<span class="kn">from</span> <span class="nn">._graph_matrix</span> <span class="k">import</span> <span class="n">Radius</span> <span class="k">as</span> <span class="n">CRadius</span>
+<span class="kn">from</span> <span class="nn">._graph_matrix</span> <span class="k">import</span> <span class="n">Diameter</span> <span class="k">as</span> <span class="n">CDiameter</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Diameter&#39;</span><span class="p">,</span> <span class="s1">&#39;Radius&#39;</span><span class="p">,</span> <span class="s1">&#39;TopologicalShapeIndex&#39;</span><span class="p">,</span> <span class="s1">&#39;PetitjeanIndex&#39;</span><span class="p">,)</span>
+
+
+<span class="k">class</span> <span class="nc">TopologicalIndexBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="n">cls</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">()</span>
+
+    <span class="n">rtype</span> <span class="o">=</span> <span class="nb">int</span>
+
+
+<div class="viewcode-block" id="Radius"><a class="viewcode-back" href="../../api/mordred.TopologicalIndex.html#mordred.TopologicalIndex.Radius">[docs]</a><span class="k">class</span> <span class="nc">Radius</span><span class="p">(</span><span class="n">TopologicalIndexBase</span><span class="p">):</span>
+    <span class="sd">r&quot;&quot;&quot;radius descriptor.&quot;&quot;&quot;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;Radius&#39;</span>
+
+<div class="viewcode-block" id="Radius.dependencies"><a class="viewcode-back" href="../../api/mordred.TopologicalIndex.html#mordred.TopologicalIndex.Radius.dependencies">[docs]</a>    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;R&#39;</span><span class="p">:</span> <span class="n">CRadius</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)}</span></div>
+
+<div class="viewcode-block" id="Radius.calculate"><a class="viewcode-back" href="../../api/mordred.TopologicalIndex.html#mordred.TopologicalIndex.Radius.calculate">[docs]</a>    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">R</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">R</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="Diameter"><a class="viewcode-back" href="../../api/mordred.TopologicalIndex.html#mordred.TopologicalIndex.Diameter">[docs]</a><span class="k">class</span> <span class="nc">Diameter</span><span class="p">(</span><span class="n">TopologicalIndexBase</span><span class="p">):</span>
+    <span class="sd">r&quot;&quot;&quot;diameter descriptor.&quot;&quot;&quot;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;Diameter&#39;</span>
+
+<div class="viewcode-block" id="Diameter.dependencies"><a class="viewcode-back" href="../../api/mordred.TopologicalIndex.html#mordred.TopologicalIndex.Diameter.dependencies">[docs]</a>    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="n">CDiameter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)}</span></div>
+
+<div class="viewcode-block" id="Diameter.calculate"><a class="viewcode-back" href="../../api/mordred.TopologicalIndex.html#mordred.TopologicalIndex.Diameter.calculate">[docs]</a>    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">D</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="TopologicalShapeIndex"><a class="viewcode-back" href="../../api/mordred.TopologicalIndex.html#mordred.TopologicalIndex.TopologicalShapeIndex">[docs]</a><span class="k">class</span> <span class="nc">TopologicalShapeIndex</span><span class="p">(</span><span class="n">TopologicalIndexBase</span><span class="p">):</span>
+    <span class="sd">r&quot;&quot;&quot;topological shape index descriptor.</span>
+
+<span class="sd">    .. math::</span>
+
+<span class="sd">        I_{\rm topo} = \frac{D - R}{R}</span>
+
+<span class="sd">    where</span>
+<span class="sd">    :math:`R` is graph radius,</span>
+<span class="sd">    :math:`D` is graph diameter.</span>
+
+<span class="sd">    :returns: NaN when :math:`R = 0`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;TopoShapeIndex&#39;</span>
+
+<div class="viewcode-block" id="TopologicalShapeIndex.dependencies"><a class="viewcode-back" href="../../api/mordred.TopologicalIndex.html#mordred.TopologicalIndex.TopologicalShapeIndex.dependencies">[docs]</a>    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s1">&#39;R&#39;</span><span class="p">:</span> <span class="n">CRadius</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">),</span>
+            <span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="n">CDiameter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">),</span>
+        <span class="p">}</span></div>
+
+<div class="viewcode-block" id="TopologicalShapeIndex.calculate"><a class="viewcode-back" href="../../api/mordred.TopologicalIndex.html#mordred.TopologicalIndex.TopologicalShapeIndex.calculate">[docs]</a>    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">rethrow_zerodiv</span><span class="p">():</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">D</span> <span class="o">-</span> <span class="n">R</span><span class="p">)</span> <span class="o">/</span> <span class="n">R</span></div>
+
+    <span class="n">rtype</span> <span class="o">=</span> <span class="nb">float</span></div>
+
+
+<div class="viewcode-block" id="PetitjeanIndex"><a class="viewcode-back" href="../../api/mordred.TopologicalIndex.html#mordred.TopologicalIndex.PetitjeanIndex">[docs]</a><span class="k">class</span> <span class="nc">PetitjeanIndex</span><span class="p">(</span><span class="n">TopologicalShapeIndex</span><span class="p">):</span>
+    <span class="sd">r&quot;&quot;&quot;Petitjean index descriptor.</span>
+
+<span class="sd">    .. math::</span>
+
+<span class="sd">        I_{\rm Petitjean} = \frac{D - R}{D}</span>
+
+<span class="sd">    where</span>
+<span class="sd">    :math:`R` is graph radius,</span>
+<span class="sd">    :math:`D` is graph diameter.</span>
+
+<span class="sd">    :returns: NaN when :math:`D = 0`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;PetitjeanIndex&#39;</span>
+
+<div class="viewcode-block" id="PetitjeanIndex.calculate"><a class="viewcode-back" href="../../api/mordred.TopologicalIndex.html#mordred.TopologicalIndex.PetitjeanIndex.calculate">[docs]</a>    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">rethrow_zerodiv</span><span class="p">():</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">D</span> <span class="o">-</span> <span class="n">R</span><span class="p">)</span> <span class="o">/</span> <span class="n">D</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">mordred 0.2.1.post1.dev1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Module code</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016, Hirotomo Moriwaki.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+    </div>
+  </body>
+</html>

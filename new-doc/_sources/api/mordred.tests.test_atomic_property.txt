@@ -1,0 +1,7 @@
+mordred.tests.test_atomic_property module
+=========================================
+
+.. automodule:: mordred.tests.test_atomic_property
+    :members:
+    :undoc-members:
+    :show-inheritance:

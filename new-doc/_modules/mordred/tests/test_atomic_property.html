@@ -1,0 +1,229 @@
+
+
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>mordred.tests.test_atomic_property &#8212; mordred 0.2.1.post1.dev1 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.2.1.post1.dev1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/bizstyle.js"></script>
+    <link rel="top" title="mordred 0.2.1.post1.dev1 documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">mordred 0.2.1.post1.dev1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for mordred.tests.test_atomic_property</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">rdkit</span> <span class="k">import</span> <span class="n">Chem</span>
+<span class="kn">from</span> <span class="nn">numpy.testing</span> <span class="k">import</span> <span class="n">assert_almost_equal</span>
+
+<span class="kn">from</span> <span class="nn">mordred</span> <span class="k">import</span> <span class="n">_atomic_property</span>
+
+<span class="n">_data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;&gt;C&lt;&#39;</span><span class="p">:</span> <span class="s1">&#39;CC(C)(C)C&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;&gt;CH-&#39;</span><span class="p">:</span> <span class="s1">&#39;CC(C)C&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;-CH2-&#39;</span><span class="p">:</span> <span class="s1">&#39;CCC&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;=C&lt;&#39;</span><span class="p">:</span> <span class="s1">&#39;C=C(C)C&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;-CH3&#39;</span><span class="p">:</span> <span class="s1">&#39;CC&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;=CH-&#39;</span><span class="p">:</span> <span class="s1">&#39;CC=C&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;&gt;N-&#39;</span><span class="p">:</span> <span class="s1">&#39;CN(C)C&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;#C-&#39;</span><span class="p">:</span> <span class="s1">&#39;C#CC&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;-NH-&#39;</span><span class="p">:</span> <span class="s1">&#39;CNC&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;=CH2&#39;</span><span class="p">:</span> <span class="s1">&#39;C=C&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;=N-&#39;</span><span class="p">:</span> <span class="s1">&#39;C=NC&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;-O-&#39;</span><span class="p">:</span> <span class="s1">&#39;COC&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;#CH&#39;</span><span class="p">:</span> <span class="s1">&#39;C#C&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;-NH2&#39;</span><span class="p">:</span> <span class="s1">&#39;CN&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;=NH&#39;</span><span class="p">:</span> <span class="s1">&#39;C=N&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;#N&#39;</span><span class="p">:</span> <span class="s1">&#39;C#N&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;-OH&#39;</span><span class="p">:</span> <span class="s1">&#39;CO&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;=O&#39;</span><span class="p">:</span> <span class="s1">&#39;C=O&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;-F&#39;</span><span class="p">:</span> <span class="s1">&#39;CF&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;-SH&#39;</span><span class="p">:</span> <span class="s1">&#39;CS&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;-S-&#39;</span><span class="p">:</span> <span class="s1">&#39;CSC&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;=S&#39;</span><span class="p">:</span> <span class="s1">&#39;C=S&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;-Cl&#39;</span><span class="p">:</span> <span class="s1">&#39;CCl&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;-Br&#39;</span><span class="p">:</span> <span class="s1">&#39;CBr&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;-I&#39;</span><span class="p">:</span> <span class="s1">&#39;CI&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">explicitHs</span> <span class="o">=</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">Chem</span><span class="o">.</span><span class="n">AddHs</span><span class="p">(</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">smi</span><span class="p">))</span><span class="o">.</span><span class="n">GetAtomWithIdx</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+              <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">smi</span> <span class="ow">in</span> <span class="n">_data</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+
+<span class="n">implicitHs</span> <span class="o">=</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">smi</span><span class="p">)</span><span class="o">.</span><span class="n">GetAtomWithIdx</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+              <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">smi</span> <span class="ow">in</span> <span class="n">_data</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+
+
+<div class="viewcode-block" id="make_cases"><a class="viewcode-back" href="../../../api/mordred.tests.test_atomic_property.html#mordred.tests.test_atomic_property.make_cases">[docs]</a><span class="k">def</span> <span class="nf">make_cases</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">fn</span><span class="p">,</span> <span class="n">decimal</span><span class="o">=</span><span class="mi">7</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">yield</span> <span class="n">assert_almost_equal</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">fn</span><span class="p">(</span><span class="n">explicitHs</span><span class="p">[</span><span class="n">key</span><span class="p">]),</span> <span class="n">decimal</span><span class="p">,</span> <span class="n">key</span>
+        <span class="k">yield</span> <span class="n">assert_almost_equal</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">fn</span><span class="p">(</span><span class="n">implicitHs</span><span class="p">[</span><span class="n">key</span><span class="p">]),</span> <span class="n">decimal</span><span class="p">,</span> <span class="n">key</span></div>
+
+
+<div class="viewcode-block" id="test_sigma"><a class="viewcode-back" href="../../../api/mordred.tests.test_atomic_property.html#mordred.tests.test_atomic_property.test_sigma">[docs]</a><span class="k">def</span> <span class="nf">test_sigma</span><span class="p">():</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;&gt;C&lt;&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="s1">&#39;&gt;CH-&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="s1">&#39;-CH2-&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s1">&#39;=C&lt;&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="s1">&#39;-CH3&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s1">&#39;=CH-&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s1">&#39;&gt;N-&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="s1">&#39;#C-&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s1">&#39;-NH-&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s1">&#39;=CH2&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s1">&#39;=N-&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s1">&#39;-O-&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s1">&#39;#CH&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s1">&#39;-NH2&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s1">&#39;=NH&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s1">&#39;#N&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s1">&#39;-OH&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s1">&#39;=O&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s1">&#39;-F&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s1">&#39;-SH&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s1">&#39;-S-&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s1">&#39;=S&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s1">&#39;-Cl&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s1">&#39;-Br&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s1">&#39;-I&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="n">test</span> <span class="ow">in</span> <span class="n">make_cases</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">_atomic_property</span><span class="o">.</span><span class="n">get_sigma_electrons</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="n">test</span></div>
+
+
+<div class="viewcode-block" id="test_valence_sigma"><a class="viewcode-back" href="../../../api/mordred.tests.test_atomic_property.html#mordred.tests.test_atomic_property.test_valence_sigma">[docs]</a><span class="k">def</span> <span class="nf">test_valence_sigma</span><span class="p">():</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;&gt;C&lt;&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="s1">&#39;&gt;CH-&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="s1">&#39;-CH2-&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s1">&#39;=C&lt;&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="s1">&#39;-CH3&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s1">&#39;=CH-&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="s1">&#39;&gt;N-&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+        <span class="s1">&#39;#C-&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="s1">&#39;-NH-&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="s1">&#39;=CH2&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s1">&#39;=N-&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+        <span class="s1">&#39;-O-&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+        <span class="s1">&#39;#CH&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="s1">&#39;-NH2&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="s1">&#39;=NH&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="s1">&#39;#N&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+        <span class="s1">&#39;-OH&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+        <span class="s1">&#39;=O&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+        <span class="s1">&#39;-F&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+        <span class="s1">&#39;-S-&#39;</span><span class="p">:</span> <span class="mf">0.67</span><span class="p">,</span>
+        <span class="s1">&#39;-Cl&#39;</span><span class="p">:</span> <span class="mf">0.78</span><span class="p">,</span>
+        <span class="s1">&#39;-Br&#39;</span><span class="p">:</span> <span class="mf">0.26</span><span class="p">,</span>
+        <span class="s1">&#39;-I&#39;</span><span class="p">:</span> <span class="mf">0.16</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="n">test</span> <span class="ow">in</span> <span class="n">make_cases</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">_atomic_property</span><span class="o">.</span><span class="n">get_valence_electrons</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="n">test</span></div>
+
+
+<div class="viewcode-block" id="test_IntrinsicState"><a class="viewcode-back" href="../../../api/mordred.tests.test_atomic_property.html#mordred.tests.test_atomic_property.test_IntrinsicState">[docs]</a><span class="k">def</span> <span class="nf">test_IntrinsicState</span><span class="p">():</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;&gt;C&lt;&#39;</span><span class="p">:</span> <span class="mf">1.25</span><span class="p">,</span>
+        <span class="s1">&#39;&gt;CH-&#39;</span><span class="p">:</span> <span class="mf">1.3333</span><span class="p">,</span>
+        <span class="s1">&#39;-CH2-&#39;</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">,</span>
+        <span class="s1">&#39;=C&lt;&#39;</span><span class="p">:</span> <span class="mf">1.6666</span><span class="p">,</span>
+        <span class="s1">&#39;-CH3&#39;</span><span class="p">:</span> <span class="mf">2.0</span><span class="p">,</span>
+        <span class="s1">&#39;=CH-&#39;</span><span class="p">:</span> <span class="mf">2.0</span><span class="p">,</span>
+        <span class="s1">&#39;&gt;N-&#39;</span><span class="p">:</span> <span class="mf">2.0</span><span class="p">,</span>
+        <span class="s1">&#39;#C-&#39;</span><span class="p">:</span> <span class="mf">2.5</span><span class="p">,</span>
+        <span class="s1">&#39;-NH-&#39;</span><span class="p">:</span> <span class="mf">2.5</span><span class="p">,</span>
+        <span class="s1">&#39;=CH2&#39;</span><span class="p">:</span> <span class="mf">3.0</span><span class="p">,</span>
+        <span class="s1">&#39;=N-&#39;</span><span class="p">:</span> <span class="mf">3.0</span><span class="p">,</span>
+        <span class="s1">&#39;-O-&#39;</span><span class="p">:</span> <span class="mf">3.5</span><span class="p">,</span>
+        <span class="s1">&#39;#CH&#39;</span><span class="p">:</span> <span class="mf">4.0</span><span class="p">,</span>
+        <span class="s1">&#39;-NH2&#39;</span><span class="p">:</span> <span class="mf">4.0</span><span class="p">,</span>
+        <span class="s1">&#39;=NH&#39;</span><span class="p">:</span> <span class="mf">5.0</span><span class="p">,</span>
+        <span class="s1">&#39;#N&#39;</span><span class="p">:</span> <span class="mf">6.0</span><span class="p">,</span>
+        <span class="s1">&#39;-OH&#39;</span><span class="p">:</span> <span class="mf">6.0</span><span class="p">,</span>
+        <span class="s1">&#39;=O&#39;</span><span class="p">:</span> <span class="mf">7.0</span><span class="p">,</span>
+        <span class="s1">&#39;-F&#39;</span><span class="p">:</span> <span class="mf">8.0</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="n">test</span> <span class="ow">in</span> <span class="n">make_cases</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">_atomic_property</span><span class="o">.</span><span class="n">get_intrinsic_state</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="n">test</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">mordred 0.2.1.post1.dev1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016, Hirotomo Moriwaki.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+    </div>
+  </body>
+</html>

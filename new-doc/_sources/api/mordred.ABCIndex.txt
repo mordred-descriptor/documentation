@@ -1,0 +1,7 @@
+mordred.ABCIndex module
+=======================
+
+.. automodule:: mordred.ABCIndex
+    :members:
+    :undoc-members:
+    :show-inheritance:
