@@ -1,0 +1,462 @@
+
+
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>mordred package &#8212; mordred 0.2.1.post1.dev1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.2.1.post1.dev1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/bizstyle.js"></script>
+    <link rel="top" title="mordred 0.2.1.post1.dev1 documentation" href="../index.html" />
+    <link rel="next" title="mordred.error package" href="mordred.error.html" />
+    <link rel="prev" title="Introduction" href="../introduction.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="mordred.error.html" title="mordred.error package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../introduction.html" title="Introduction"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">mordred 0.2.1.post1.dev1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">mordred package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../introduction.html"
+                        title="previous chapter">Introduction</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="mordred.error.html"
+                        title="next chapter">mordred.error package</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/mordred.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-mordred">
+<span id="mordred-package"></span><h1>mordred package<a class="headerlink" href="#module-mordred" title="Permalink to this headline">¶</a></h1>
+<p>modred descriptor calculator.</p>
+<dl class="class">
+<dt id="mordred.Descriptor">
+<em class="property">class </em><code class="descclassname">mordred.</code><code class="descname">Descriptor</code><a class="reference internal" href="../_modules/mordred/_base/descriptor.html#Descriptor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Descriptor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>abstract base class of descriptors.</p>
+<dl class="attribute">
+<dt id="mordred.Descriptor.as_argument">
+<code class="descname">as_argument</code><a class="headerlink" href="#mordred.Descriptor.as_argument" title="Permalink to this definition">¶</a></dt>
+<dd><p>argument representation of descriptor</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.Descriptor.calculate">
+<code class="descname">calculate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base/descriptor.html#Descriptor.calculate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Descriptor.calculate" title="Permalink to this definition">¶</a></dt>
+<dd><p>calculate descriptor value.</p>
+<p>(abstract method)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Descriptor.coord">
+<code class="descname">coord</code><a class="headerlink" href="#mordred.Descriptor.coord" title="Permalink to this definition">¶</a></dt>
+<dd><p>get 3D coordinate</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.Descriptor.dependencies">
+<code class="descname">dependencies</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base/descriptor.html#Descriptor.dependencies"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Descriptor.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd><p>descriptor dependencies.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">{<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>: (<a class="reference internal" href="#mordred.Descriptor" title="mordred.Descriptor"><code class="xref py py-class docutils literal"><span class="pre">Descriptor</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">None</span></code>)} or <code class="xref py py-class docutils literal"><span class="pre">None</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Descriptor.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.Descriptor.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.Descriptor.fail">
+<code class="descname">fail</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base/descriptor.html#Descriptor.fail"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Descriptor.fail" title="Permalink to this definition">¶</a></dt>
+<dd><p>raise known exception and return missing value</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="mordred.Descriptor.is_descriptor_class">
+<em class="property">classmethod </em><code class="descname">is_descriptor_class</code><span class="sig-paren">(</span><em>desc</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base/descriptor.html#Descriptor.is_descriptor_class"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Descriptor.is_descriptor_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>check calculatable descriptor class or not.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/functions.html#bool" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Descriptor.kekulize">
+<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Descriptor.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Descriptor.mol">
+<code class="descname">mol</code><a class="headerlink" href="#mordred.Descriptor.mol" title="Permalink to this definition">¶</a></dt>
+<dd><p>get molecule</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.Descriptor.parameters">
+<code class="descname">parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base/descriptor.html#Descriptor.parameters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Descriptor.parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>get __init__ arguments of this descriptor instance.</p>
+<p>(abstract method)</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="mordred.Descriptor.preset">
+<em class="property">classmethod </em><code class="descname">preset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base/descriptor.html#Descriptor.preset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Descriptor.preset" title="Permalink to this definition">¶</a></dt>
+<dd><p>generate preset descriptor instances.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">iterable</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Descriptor.require_3D">
+<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Descriptor.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Descriptor.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Descriptor.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.Descriptor.rethrow_na">
+<code class="descname">rethrow_na</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base/descriptor.html#Descriptor.rethrow_na"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Descriptor.rethrow_na" title="Permalink to this definition">¶</a></dt>
+<dd><p>treat any exceptions as known exception</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.Descriptor.rethrow_zerodiv">
+<code class="descname">rethrow_zerodiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base/descriptor.html#Descriptor.rethrow_zerodiv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Descriptor.rethrow_zerodiv" title="Permalink to this definition">¶</a></dt>
+<dd><p>treat zero div as known exception</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Descriptor.rtype">
+<code class="descname">rtype</code><em class="property"> = None</em><a class="headerlink" href="#mordred.Descriptor.rtype" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.Calculator">
+<em class="property">class </em><code class="descclassname">mordred.</code><code class="descname">Calculator</code><span class="sig-paren">(</span><em>descs=[]</em>, <em>ignore_3D=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base/calculator.html#Calculator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Calculator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>descriptor calculator.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>descs</strong> &#8211; see <a class="reference internal" href="#mordred.Calculator.register" title="mordred.Calculator.register"><code class="xref py py-meth docutils literal"><span class="pre">register()</span></code></a> method</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="mordred.Calculator.descriptors">
+<code class="descname">descriptors</code><a class="headerlink" href="#mordred.Calculator.descriptors" title="Permalink to this definition">¶</a></dt>
+<dd><p>all descriptors.</p>
+<p>you can get/set/delete descriptor.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.Calculator.echo">
+<code class="descname">echo</code><span class="sig-paren">(</span><em>s</em>, <em>file=&lt;_io.TextIOWrapper name='&lt;stdout&gt;' mode='w' encoding='UTF-8'&gt;</em>, <em>end='\n'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base/calculator.html#Calculator.echo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Calculator.echo" title="Permalink to this definition">¶</a></dt>
+<dd><p>output message</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.Calculator.map">
+<code class="descname">map</code><span class="sig-paren">(</span><em>mols</em>, <em>nproc=None</em>, <em>nmols=None</em>, <em>quiet=False</em>, <em>ipynb=False</em>, <em>id=-1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base/calculator.html#Calculator.map"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Calculator.map" title="Permalink to this definition">¶</a></dt>
+<dd><p>calculate descriptors over mols.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>mols</strong> (<code class="xref py py-class docutils literal"><span class="pre">Iterable</span></code> (<code class="xref py py-class docutils literal"><span class="pre">Mol</span></code>)) &#8211; moleculars</li>
+<li><strong>nproc</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; number of process. None is <a class="reference external" href="https://docs.python.org/2/library/multiprocessing.html#multiprocessing.cpu_count" title="(in Python v2.7)"><code class="xref py py-func docutils literal"><span class="pre">multiprocessing.cpu_count()</span></code></a></li>
+<li><strong>nmols</strong> (<code class="xref py py-class docutils literal"><span class="pre">None</span></code> or <a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; number of all mols for display progress bar</li>
+<li><strong>quiet</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#bool" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a>) &#8211; suppress progress bar</li>
+<li><strong>ipynb</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#bool" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a>) &#8211; use ipython notebook progress bar</li>
+<li><strong>id</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; conformer id</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><code class="xref py py-class docutils literal"><span class="pre">Iterator</span></code> [scalar]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.Calculator.pandas">
+<code class="descname">pandas</code><span class="sig-paren">(</span><em>mols</em>, <em>nproc=None</em>, <em>nmols=None</em>, <em>quiet=False</em>, <em>ipynb=False</em>, <em>id=-1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base/calculator.html#Calculator.pandas"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Calculator.pandas" title="Permalink to this definition">¶</a></dt>
+<dd><p>calculate descriptors over mols.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>mol_name</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; molecular column name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><code class="xref py py-class docutils literal"><span class="pre">pandas.DataFrame</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.Calculator.register">
+<code class="descname">register</code><span class="sig-paren">(</span><em>desc</em>, <em>ignore_3D=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base/calculator.html#Calculator.register"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Calculator.register" title="Permalink to this definition">¶</a></dt>
+<dd><p>register descriptors.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>desc</strong> (<code class="xref py py-class docutils literal"><span class="pre">module</span></code>,
+<a class="reference internal" href="#mordred.Descriptor" title="mordred.Descriptor"><code class="xref py py-class docutils literal"><span class="pre">Descriptor</span></code></a> class/instance or
+<code class="xref py py-class docutils literal"><span class="pre">Iterable</span></code>) &#8211; <p>descriptors to register</p>
+<ul class="simple">
+<li><code class="xref py py-class docutils literal"><span class="pre">module</span></code>: Descriptors in module</li>
+<li><a class="reference internal" href="#mordred.Descriptor" title="mordred.Descriptor"><code class="xref py py-class docutils literal"><span class="pre">Descriptor</span></code></a> class: use <a class="reference internal" href="#mordred.Descriptor.preset" title="mordred.Descriptor.preset"><code class="xref py py-meth docutils literal"><span class="pre">Descriptor.preset()</span></code></a></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="mordred.all_descriptors">
+<code class="descclassname">mordred.</code><code class="descname">all_descriptors</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base.html#all_descriptors"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.all_descriptors" title="Permalink to this definition">¶</a></dt>
+<dd><p>yield all descriptor modules.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">all modules</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><code class="xref py py-class docutils literal"><span class="pre">Iterator</span></code> (<a class="reference internal" href="#mordred.Descriptor" title="mordred.Descriptor"><code class="xref py py-class docutils literal"><span class="pre">Descriptor</span></code></a>)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="mordred.get_descriptors_from_module">
+<code class="descclassname">mordred.</code><code class="descname">get_descriptors_from_module</code><span class="sig-paren">(</span><em>mdl</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/_base/calculator.html#get_descriptors_from_module"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.get_descriptors_from_module" title="Permalink to this definition">¶</a></dt>
+<dd><p>get descriptors from module.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>mdl</strong> (<em>module</em>) &#8211; module to search</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">[<a class="reference internal" href="#mordred.Descriptor" title="mordred.Descriptor"><code class="xref py py-class docutils literal"><span class="pre">Descriptor</span></code></a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mordred.error.html">mordred.error package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.surface_area.html">mordred.surface_area package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.tests.html">mordred.tests package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mordred.tests.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mordred.tests.Dummy.html">mordred.tests.Dummy module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.tests.test_ABCIndex.html">mordred.tests.test_ABCIndex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.tests.test_ETA.html">mordred.tests.test_ETA module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.tests.test_SASA.html">mordred.tests.test_SASA module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.tests.test_SLogP.html">mordred.tests.test_SLogP module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.tests.test_VEA.html">mordred.tests.test_VEA module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.tests.test_atomic_property.html">mordred.tests.test_atomic_property module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.tests.test_base.html">mordred.tests.test_base module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.tests.test_by_references.html">mordred.tests.test_by_references module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.tests.test_compose_descriptor.html">mordred.tests.test_compose_descriptor module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.tests.test_exceptions.html">mordred.tests.test_exceptions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.tests.test_mordred_main.html">mordred.tests.test_mordred_main module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.tests.test_parallel.html">mordred.tests.test_parallel module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.tests.test_pickle.html">mordred.tests.test_pickle module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mordred.ABCIndex.html">mordred.ABCIndex module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.AcidBase.html">mordred.AcidBase module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.AdjacencyMatrix.html">mordred.AdjacencyMatrix module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.Aromatic.html">mordred.Aromatic module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.AtomCount.html">mordred.AtomCount module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.Autocorrelation.html">mordred.Autocorrelation module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.BCUT.html">mordred.BCUT module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.BalabanJ.html">mordred.BalabanJ module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.BaryszMatrix.html">mordred.BaryszMatrix module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.BertzCT.html">mordred.BertzCT module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.BondCount.html">mordred.BondCount module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.CPSA.html">mordred.CPSA module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.CarbonTypes.html">mordred.CarbonTypes module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.Chi.html">mordred.Chi module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.Constitutional.html">mordred.Constitutional module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.DetourMatrix.html">mordred.DetourMatrix module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.DistanceMatrix.html">mordred.DistanceMatrix module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.EState.html">mordred.EState module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.EccentricConnectivityIndex.html">mordred.EccentricConnectivityIndex module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.ExtendedTopochemicalAtom.html">mordred.ExtendedTopochemicalAtom module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.FragmentComplexity.html">mordred.FragmentComplexity module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.Framework.html">mordred.Framework module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.GeometricalIndex.html">mordred.GeometricalIndex module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.GravitationalIndex.html">mordred.GravitationalIndex module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.HydrogenBond.html">mordred.HydrogenBond module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.InformationContent.html">mordred.InformationContent module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.KappaShapeIndex.html">mordred.KappaShapeIndex module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.Lipinski.html">mordred.Lipinski module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.McGowanVolume.html">mordred.McGowanVolume module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.MoRSE.html">mordred.MoRSE module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.MoeType.html">mordred.MoeType module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.MolecularDistanceEdge.html">mordred.MolecularDistanceEdge module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.MolecularId.html">mordred.MolecularId module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.MomentOfInertia.html">mordred.MomentOfInertia module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.PathCount.html">mordred.PathCount module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.Polarizability.html">mordred.Polarizability module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.RingCount.html">mordred.RingCount module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.RotatableBond.html">mordred.RotatableBond module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.SLogP.html">mordred.SLogP module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.TopoPSA.html">mordred.TopoPSA module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.TopologicalCharge.html">mordred.TopologicalCharge module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.TopologicalIndex.html">mordred.TopologicalIndex module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.VdwVolumeABC.html">mordred.VdwVolumeABC module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.VertexAdjacencyInformation.html">mordred.VertexAdjacencyInformation module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.WalkCount.html">mordred.WalkCount module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.Weight.html">mordred.Weight module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.WienerIndex.html">mordred.WienerIndex module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.ZagrebIndex.html">mordred.ZagrebIndex module</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="mordred.error.html" title="mordred.error package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../introduction.html" title="Introduction"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">mordred 0.2.1.post1.dev1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016, Hirotomo Moriwaki.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+    </div>
+  </body>
+</html>

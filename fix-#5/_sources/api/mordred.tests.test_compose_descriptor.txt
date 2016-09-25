@@ -1,0 +1,7 @@
+mordred.tests.test_compose_descriptor module
+============================================
+
+.. automodule:: mordred.tests.test_compose_descriptor
+    :members:
+    :undoc-members:
+    :show-inheritance:
