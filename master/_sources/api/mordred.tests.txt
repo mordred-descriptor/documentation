@@ -20,7 +20,9 @@ Submodules
    mordred.tests.test_atomic_property
    mordred.tests.test_base
    mordred.tests.test_by_references
+   mordred.tests.test_compose_descriptor
    mordred.tests.test_exceptions
    mordred.tests.test_mordred_main
    mordred.tests.test_parallel
+   mordred.tests.test_pickle
 
