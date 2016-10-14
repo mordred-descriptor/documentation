@@ -1,0 +1,9 @@
+mordred.MolecularDistanceEdge module
+====================================
+
+.. automodule:: mordred.MolecularDistanceEdge
+.. autoclass:: mordred.MolecularDistanceEdge.MolecularDistanceEdge
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
+    :undoc-members:
+    :show-inheritance:
+
