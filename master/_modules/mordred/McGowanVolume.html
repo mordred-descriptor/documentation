@@ -87,18 +87,18 @@
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="McGowanVolume.preset"><a class="viewcode-back" href="../../api/mordred.McGowanVolume.html#mordred.McGowanVolume.McGowanVolume.preset">[docs]</a>    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
-        <span class="k">yield</span> <span class="n">cls</span><span class="p">()</span></div>
+    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="n">cls</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;VMcGowan&#39;</span>
 
-<div class="viewcode-block" id="McGowanVolume.parameters"><a class="viewcode-back" href="../../api/mordred.McGowanVolume.html#mordred.McGowanVolume.McGowanVolume.parameters">[docs]</a>    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">()</span></div>
+    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">()</span>
 
-<div class="viewcode-block" id="McGowanVolume.calculate"><a class="viewcode-back" href="../../api/mordred.McGowanVolume.html#mordred.McGowanVolume.McGowanVolume.calculate">[docs]</a>    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">a</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">get_mc_gowan_volume</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">())</span>
-        <span class="k">return</span> <span class="n">a</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetNumBonds</span><span class="p">()</span> <span class="o">*</span> <span class="mf">6.56</span></div>
+        <span class="k">return</span> <span class="n">a</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetNumBonds</span><span class="p">()</span> <span class="o">*</span> <span class="mf">6.56</span>
 
     <span class="n">rtype</span> <span class="o">=</span> <span class="nb">float</span></div>
 </pre></div>

@@ -2,6 +2,8 @@ mordred.BCUT module
 ===================
 
 .. automodule:: mordred.BCUT
-    :members:
+.. autoclass:: mordred.BCUT.BCUT
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
     :undoc-members:
     :show-inheritance:
+

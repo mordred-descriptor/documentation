@@ -2,6 +2,78 @@ mordred.CPSA module
 ===================
 
 .. automodule:: mordred.CPSA
-    :members:
+.. autoclass:: mordred.CPSA.PNSA
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype, versions
     :undoc-members:
     :show-inheritance:
+
+.. autoclass:: mordred.CPSA.PPSA
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype, versions
+    :undoc-members:
+    :show-inheritance:
+
+.. autoclass:: mordred.CPSA.DPSA
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype, versions
+    :undoc-members:
+    :show-inheritance:
+
+.. autoclass:: mordred.CPSA.FNSA
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype, versions
+    :undoc-members:
+    :show-inheritance:
+
+.. autoclass:: mordred.CPSA.FPSA
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype, versions
+    :undoc-members:
+    :show-inheritance:
+
+.. autoclass:: mordred.CPSA.WNSA
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype, versions
+    :undoc-members:
+    :show-inheritance:
+
+.. autoclass:: mordred.CPSA.WPSA
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype, versions
+    :undoc-members:
+    :show-inheritance:
+
+.. autoclass:: mordred.CPSA.RNCG
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
+    :undoc-members:
+    :show-inheritance:
+
+.. autoclass:: mordred.CPSA.RPCG
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
+    :undoc-members:
+    :show-inheritance:
+
+.. autoclass:: mordred.CPSA.RNCS
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
+    :undoc-members:
+    :show-inheritance:
+
+.. autoclass:: mordred.CPSA.RPCS
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
+    :undoc-members:
+    :show-inheritance:
+
+.. autoclass:: mordred.CPSA.TASA
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
+    :undoc-members:
+    :show-inheritance:
+
+.. autoclass:: mordred.CPSA.TPSA
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
+    :undoc-members:
+    :show-inheritance:
+
+.. autoclass:: mordred.CPSA.RASA
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
+    :undoc-members:
+    :show-inheritance:
+
+.. autoclass:: mordred.CPSA.RPSA
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
+    :undoc-members:
+    :show-inheritance:
+

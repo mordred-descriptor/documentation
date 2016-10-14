@@ -98,12 +98,12 @@
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
     <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;nAromAtom&#39;</span>
 
-<div class="viewcode-block" id="AromaticAtomsCount.calculate"><a class="viewcode-back" href="../../api/mordred.Aromatic.html#mordred.Aromatic.AromaticAtomsCount.calculate">[docs]</a>    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span>
             <span class="mi">1</span>
             <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">()</span>
             <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">GetIsAromatic</span><span class="p">()</span>
-        <span class="p">)</span></div></div>
+        <span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="AromaticBondsCount"><a class="viewcode-back" href="../../api/mordred.Aromatic.html#mordred.Aromatic.AromaticBondsCount">[docs]</a><span class="k">class</span> <span class="nc">AromaticBondsCount</span><span class="p">(</span><span class="n">AromaticBase</span><span class="p">):</span>
@@ -111,12 +111,12 @@
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
     <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;nAromBond&#39;</span>
 
-<div class="viewcode-block" id="AromaticBondsCount.calculate"><a class="viewcode-back" href="../../api/mordred.Aromatic.html#mordred.Aromatic.AromaticBondsCount.calculate">[docs]</a>    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span>
             <span class="mi">1</span>
             <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetBonds</span><span class="p">()</span>
             <span class="k">if</span> <span class="n">b</span><span class="o">.</span><span class="n">GetIsAromatic</span><span class="p">()</span>
-        <span class="p">)</span></div></div>
+        <span class="p">)</span></div>
 </pre></div>
 
           </div>

@@ -181,13 +181,13 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="PathCount.preset"><a class="viewcode-back" href="../../api/mordred.PathCount.html#mordred.PathCount.PathCount.preset">[docs]</a>    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">chain</span><span class="p">(</span>
             <span class="p">(</span><span class="n">cls</span><span class="p">(</span><span class="n">o</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">)),</span>
             <span class="p">[</span><span class="n">cls</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">)],</span>
             <span class="p">(</span><span class="n">cls</span><span class="p">(</span><span class="n">o</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)),</span>
             <span class="p">[</span><span class="n">cls</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">)],</span>
-        <span class="p">)</span></div>
+        <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">base</span> <span class="o">=</span> <span class="s1">&#39;T&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_total</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span>
@@ -197,8 +197,8 @@
 
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_order&#39;</span><span class="p">,</span> <span class="s1">&#39;_pi&#39;</span><span class="p">,</span> <span class="s1">&#39;_total&#39;</span><span class="p">,</span> <span class="s1">&#39;_log&#39;</span><span class="p">,)</span>
 
-<div class="viewcode-block" id="PathCount.parameters"><a class="viewcode-back" href="../../api/mordred.PathCount.html#mordred.PathCount.PathCount.parameters">[docs]</a>    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pi</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_total</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_log</span></div>
+    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pi</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_total</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_log</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">pi</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">total</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="k">assert</span> <span class="n">order</span> <span class="o">&gt;=</span> <span class="mi">0</span>
@@ -208,7 +208,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_total</span> <span class="o">=</span> <span class="n">total</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_log</span> <span class="o">=</span> <span class="n">log</span>
 
-<div class="viewcode-block" id="PathCount.dependencies"><a class="viewcode-back" href="../../api/mordred.PathCount.html#mordred.PathCount.PathCount.dependencies">[docs]</a>    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">deps</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;PC&#39;</span><span class="p">:</span> <span class="n">PathCountCache</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">)}</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_total</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">deps</span><span class="p">[</span><span class="s1">&#39;acc&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span>
@@ -217,9 +217,9 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">_total</span><span class="p">,</span>
             <span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">deps</span></div>
+        <span class="k">return</span> <span class="n">deps</span>
 
-<div class="viewcode-block" id="PathCount.calculate"><a class="viewcode-back" href="../../api/mordred.PathCount.html#mordred.PathCount.PathCount.calculate">[docs]</a>    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">PC</span><span class="p">,</span> <span class="n">acc</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">PC</span><span class="p">,</span> <span class="n">acc</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">rtype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">())</span>
 
@@ -231,7 +231,7 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_log</span><span class="p">:</span>
             <span class="n">v</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">v</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">v</span></div>
+        <span class="k">return</span> <span class="n">v</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">rtype</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>

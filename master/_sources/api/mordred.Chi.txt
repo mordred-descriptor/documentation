@@ -2,6 +2,8 @@ mordred.Chi module
 ==================
 
 .. automodule:: mordred.Chi
-    :members:
+.. autoclass:: mordred.Chi.Chi
+    :members: chi_types, explicit_hydrogens, kekulize, require_3D, require_connected, rtype
     :undoc-members:
     :show-inheritance:
+

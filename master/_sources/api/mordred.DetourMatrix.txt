@@ -2,6 +2,13 @@ mordred.DetourMatrix module
 ===========================
 
 .. automodule:: mordred.DetourMatrix
-    :members:
+.. autoclass:: mordred.DetourMatrix.DetourMatrix
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
     :undoc-members:
     :show-inheritance:
+
+.. autoclass:: mordred.DetourMatrix.DetourIndex
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
+    :undoc-members:
+    :show-inheritance:
+

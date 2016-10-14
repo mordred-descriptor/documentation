@@ -86,27 +86,27 @@
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="kc">False</span>
 
     <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="WienerIndex.preset"><a class="viewcode-back" href="../../api/mordred.WienerIndex.html#mordred.WienerIndex.WienerIndex.preset">[docs]</a>    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="k">yield</span> <span class="n">cls</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
-        <span class="k">yield</span> <span class="n">cls</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span></div>
+        <span class="k">yield</span> <span class="n">cls</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;WPol&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_polarity</span> <span class="k">else</span> <span class="s1">&#39;WPath&#39;</span>
 
-<div class="viewcode-block" id="WienerIndex.parameters"><a class="viewcode-back" href="../../api/mordred.WienerIndex.html#mordred.WienerIndex.WienerIndex.parameters">[docs]</a>    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_polarity</span><span class="p">,</span></div>
+    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_polarity</span><span class="p">,</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">polarity</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_polarity</span> <span class="o">=</span> <span class="n">polarity</span>
 
-<div class="viewcode-block" id="WienerIndex.dependencies"><a class="viewcode-back" href="../../api/mordred.WienerIndex.html#mordred.WienerIndex.WienerIndex.dependencies">[docs]</a>    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="n">DistanceMatrix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)}</span></div>
+    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="n">DistanceMatrix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)}</span>
 
-<div class="viewcode-block" id="WienerIndex.calculate"><a class="viewcode-back" href="../../api/mordred.WienerIndex.html#mordred.WienerIndex.WienerIndex.calculate">[docs]</a>    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_polarity</span><span class="p">:</span>
             <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">D</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">D</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span></div>
+            <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">D</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
 
     <span class="n">rtype</span> <span class="o">=</span> <span class="nb">int</span></div>
 </pre></div>

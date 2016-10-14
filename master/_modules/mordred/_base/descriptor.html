@@ -72,8 +72,8 @@
             
   <h1>Source code for mordred._base.descriptor</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">operator</span>
+<span class="kn">import</span> <span class="nn">inspect</span>
 <span class="kn">from</span> <span class="nn">abc</span> <span class="k">import</span> <span class="n">ABCMeta</span><span class="p">,</span> <span class="n">abstractmethod</span>
-<span class="kn">from</span> <span class="nn">inspect</span> <span class="k">import</span> <span class="n">isabstract</span>
 <span class="kn">from</span> <span class="nn">contextlib</span> <span class="k">import</span> <span class="n">contextmanager</span>
 
 <span class="kn">import</span> <span class="nn">six</span>
@@ -89,8 +89,12 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">error</span> <span class="o">=</span> <span class="n">error</span>
 
 
-<div class="viewcode-block" id="Descriptor"><a class="viewcode-back" href="../../../api/mordred.html#mordred.Descriptor">[docs]</a><span class="k">class</span> <span class="nc">Descriptor</span><span class="p">(</span><span class="n">six</span><span class="o">.</span><span class="n">with_metaclass</span><span class="p">(</span><span class="n">ABCMeta</span><span class="p">,</span> <span class="nb">object</span><span class="p">)):</span>
-    <span class="sd">r&quot;&quot;&quot;abstract base class of descriptors.&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="Descriptor"><a class="viewcode-back" href="../../../mordred.html#mordred.Descriptor">[docs]</a><span class="k">class</span> <span class="nc">Descriptor</span><span class="p">(</span><span class="n">six</span><span class="o">.</span><span class="n">with_metaclass</span><span class="p">(</span><span class="n">ABCMeta</span><span class="p">,</span> <span class="nb">object</span><span class="p">)):</span>
+    <span class="sd">r&quot;&quot;&quot;abstract base class of descriptors.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        mol(rdkit.Mol): target molecule</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">__slots__</span> <span class="o">=</span> <span class="s1">&#39;_context&#39;</span><span class="p">,</span>
 
@@ -102,17 +106,50 @@
     <span class="k">def</span> <span class="nf">__reduce_ex__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">version</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">parameters</span><span class="p">()</span>
 
-    <span class="nd">@abstractmethod</span>
-<div class="viewcode-block" id="Descriptor.parameters"><a class="viewcode-back" href="../../../api/mordred.html#mordred.Descriptor.parameters">[docs]</a>    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;get __init__ arguments of this descriptor instance.</span>
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Descriptor.preset"><a class="viewcode-back" href="../../../mordred.html#mordred.Descriptor.preset">[docs]</a>    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+        <span class="sd">r&quot;&quot;&quot;generate preset descriptor instances.</span>
 
-<span class="sd">        (abstract method)</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            Iterable[Descriptor]: preset descriptors</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">()</span></div>
+
+    <span class="nd">@abstractmethod</span>
+<div class="viewcode-block" id="Descriptor.parameters"><a class="viewcode-back" href="../../../mordred.html#mordred.Descriptor.parameters">[docs]</a>    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;[abstractmethod] get __init__ arguments of this descriptor instance.</span>
+
+<span class="sd">        this method used in pickling and identifying descriptor instance.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            tuple: tuple of __init__ arguments</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s1">&#39;not implemented Descriptor.parameters method&#39;</span><span class="p">)</span></div>
 
+    <span class="nd">@abstractmethod</span>
+<div class="viewcode-block" id="Descriptor.calculate"><a class="viewcode-back" href="../../../mordred.html#mordred.Descriptor.calculate">[docs]</a>    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">r&quot;&quot;&quot;[abstractmethod] calculate descriptor value.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            rtype</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s1">&#39;not implemented Descriptor.calculate method&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Descriptor.dependencies"><a class="viewcode-back" href="../../../mordred.html#mordred.Descriptor.dependencies">[docs]</a>    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">r&quot;&quot;&quot;descriptor dependencies.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            dict[str, Descriptor or None] or None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span></div>
+
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">as_argument</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;argument representation of descriptor&#39;&#39;&#39;</span>
+        <span class="sd">&#39;&#39;&#39;argument representation of descriptor</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            any</span>
+<span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span>
 
     <span class="nd">@staticmethod</span>
@@ -147,70 +184,51 @@
 
     <span class="n">rtype</span> <span class="o">=</span> <span class="kc">None</span>
 
-    <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="Descriptor.preset"><a class="viewcode-back" href="../../../api/mordred.html#mordred.Descriptor.preset">[docs]</a>    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
-        <span class="sd">r&quot;&quot;&quot;generate preset descriptor instances.</span>
-
-<span class="sd">        :rtype: iterable</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="p">()</span></div>
-
-<div class="viewcode-block" id="Descriptor.dependencies"><a class="viewcode-back" href="../../../api/mordred.html#mordred.Descriptor.dependencies">[docs]</a>    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">r&quot;&quot;&quot;descriptor dependencies.</span>
-
-<span class="sd">        :rtype: {:py:class:`str`: (:py:class:`Descriptor` or :py:class:`None`)} or :py:class:`None`</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">pass</span></div>
-
-    <span class="nd">@abstractmethod</span>
-<div class="viewcode-block" id="Descriptor.calculate"><a class="viewcode-back" href="../../../api/mordred.html#mordred.Descriptor.calculate">[docs]</a>    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">r&quot;&quot;&quot;calculate descriptor value.</span>
-
-<span class="sd">        (abstract method)</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s1">&#39;not implemented Descriptor.calculate method&#39;</span><span class="p">)</span></div>
-
-    <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="Descriptor.is_descriptor_class"><a class="viewcode-back" href="../../../api/mordred.html#mordred.Descriptor.is_descriptor_class">[docs]</a>    <span class="k">def</span> <span class="nf">is_descriptor_class</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">desc</span><span class="p">):</span>
-        <span class="sd">r&quot;&quot;&quot;check calculatable descriptor class or not.</span>
-
-<span class="sd">        :rtype: :py:class:`bool`</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="p">(</span>
-            <span class="nb">isinstance</span><span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span> <span class="ow">and</span>
-            <span class="nb">issubclass</span><span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="n">cls</span><span class="p">)</span> <span class="ow">and</span>
-            <span class="ow">not</span> <span class="n">isabstract</span><span class="p">(</span><span class="n">desc</span><span class="p">)</span>
-        <span class="p">)</span></div>
-
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">mol</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;get molecule&#39;&#39;&#39;</span>
+        <span class="sd">&#39;&#39;&#39;get molecule</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            rdkit.Mol</span>
+<span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">get_mol</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">coord</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;get 3D coordinate&#39;&#39;&#39;</span>
+        <span class="sd">&#39;&#39;&#39;get 3D coordinate</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            numpy.array[3, N]: coordinate matrix</span>
+<span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">require_3D</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="ne">AttributeError</span><span class="p">(</span><span class="s1">&#39;use 3D coordinate in 2D descriptor&#39;</span><span class="p">))</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">get_coord</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
+<div class="viewcode-block" id="Descriptor.fail"><a class="viewcode-back" href="../../../mordred.html#mordred.Descriptor.fail">[docs]</a>    <span class="k">def</span> <span class="nf">fail</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exception</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;raise known exception and return missing value</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            MissingValueException</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">raise</span> <span class="n">MissingValueException</span><span class="p">(</span><span class="n">exception</span><span class="p">)</span></div>
+
     <span class="nd">@contextmanager</span>
-<div class="viewcode-block" id="Descriptor.rethrow_zerodiv"><a class="viewcode-back" href="../../../api/mordred.html#mordred.Descriptor.rethrow_zerodiv">[docs]</a>    <span class="k">def</span> <span class="nf">rethrow_zerodiv</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;treat zero div as known exception&#39;&#39;&#39;</span>
+<div class="viewcode-block" id="Descriptor.rethrow_zerodiv"><a class="viewcode-back" href="../../../mordred.html#mordred.Descriptor.rethrow_zerodiv">[docs]</a>    <span class="k">def</span> <span class="nf">rethrow_zerodiv</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;[contextmanager] treat zero div as known exception</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+
         <span class="k">with</span> <span class="n">np</span><span class="o">.</span><span class="n">errstate</span><span class="p">(</span><span class="n">divide</span><span class="o">=</span><span class="s1">&#39;raise&#39;</span><span class="p">,</span> <span class="n">invalid</span><span class="o">=</span><span class="s1">&#39;raise&#39;</span><span class="p">):</span>
             <span class="k">try</span><span class="p">:</span>
                 <span class="k">yield</span>
             <span class="k">except</span> <span class="p">(</span><span class="ne">FloatingPointError</span><span class="p">,</span> <span class="ne">ZeroDivisionError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="ne">ZeroDivisionError</span><span class="p">(</span><span class="o">*</span><span class="n">e</span><span class="o">.</span><span class="n">args</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="Descriptor.fail"><a class="viewcode-back" href="../../../api/mordred.html#mordred.Descriptor.fail">[docs]</a>    <span class="k">def</span> <span class="nf">fail</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exception</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;raise known exception and return missing value&#39;&#39;&#39;</span>
-        <span class="k">raise</span> <span class="n">MissingValueException</span><span class="p">(</span><span class="n">exception</span><span class="p">)</span></div>
-
     <span class="nd">@contextmanager</span>
-<div class="viewcode-block" id="Descriptor.rethrow_na"><a class="viewcode-back" href="../../../api/mordred.html#mordred.Descriptor.rethrow_na">[docs]</a>    <span class="k">def</span> <span class="nf">rethrow_na</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exception</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;treat any exceptions as known exception&#39;&#39;&#39;</span>
+<div class="viewcode-block" id="Descriptor.rethrow_na"><a class="viewcode-back" href="../../../mordred.html#mordred.Descriptor.rethrow_na">[docs]</a>    <span class="k">def</span> <span class="nf">rethrow_na</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exception</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;[contextmanager] treat any exceptions as known exception</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+
         <span class="k">try</span><span class="p">:</span>
             <span class="k">yield</span>
         <span class="k">except</span> <span class="n">exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -248,6 +266,19 @@
         <span class="n">__floor__</span> <span class="o">=</span> <span class="n">_unary_common</span><span class="p">(</span><span class="s1">&#39;floor(</span><span class="si">{}</span><span class="s1">)&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">)</span>
 
     <span class="n">__trunc__</span> <span class="o">=</span> <span class="n">_unary_common</span><span class="p">(</span><span class="s1">&#39;trunc(</span><span class="si">{}</span><span class="s1">)&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">trunc</span><span class="p">)</span></div>
+
+
+<span class="k">def</span> <span class="nf">is_descriptor_class</span><span class="p">(</span><span class="n">desc</span><span class="p">):</span>
+    <span class="sd">r&quot;&quot;&quot;check calculatable descriptor class or not.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        bool</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="nb">isinstance</span><span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span> <span class="ow">and</span>
+        <span class="nb">issubclass</span><span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="n">Descriptor</span><span class="p">)</span> <span class="ow">and</span>
+        <span class="ow">not</span> <span class="n">inspect</span><span class="o">.</span><span class="n">isabstract</span><span class="p">(</span><span class="n">desc</span><span class="p">)</span>
+    <span class="p">)</span>
 
 
 <span class="k">class</span> <span class="nc">UnaryOperatingDescriptor</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>

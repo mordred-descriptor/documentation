@@ -159,12 +159,12 @@
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_prop&#39;</span><span class="p">,</span> <span class="s1">&#39;_nth&#39;</span><span class="p">,)</span>
 
     <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="BCUT.preset"><a class="viewcode-back" href="../../api/mordred.BCUT.html#mordred.BCUT.BCUT.preset">[docs]</a>    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">(</span>
             <span class="n">cls</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">get_properties</span><span class="p">(</span><span class="n">valence</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">charge</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-        <span class="p">)</span></div>
+        <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nth</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
@@ -172,21 +172,21 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="s1">&#39;BCUT</span><span class="si">{}</span><span class="s1">-</span><span class="si">{}</span><span class="s1">h&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="o">.</span><span class="n">as_argument</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 
-<div class="viewcode-block" id="BCUT.parameters"><a class="viewcode-back" href="../../api/mordred.BCUT.html#mordred.BCUT.BCUT.parameters">[docs]</a>    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nth</span></div>
+    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nth</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prop</span><span class="o">=</span><span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="n">nth</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_prop</span> <span class="o">=</span> <span class="n">AtomicProperty</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">,</span> <span class="n">prop</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_nth</span> <span class="o">=</span> <span class="n">nth</span>
 
-<div class="viewcode-block" id="BCUT.dependencies"><a class="viewcode-back" href="../../api/mordred.BCUT.html#mordred.BCUT.BCUT.dependencies">[docs]</a>    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;bev&#39;</span><span class="p">:</span> <span class="n">BurdenEigenValues</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="p">)}</span></div>
+    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;bev&#39;</span><span class="p">:</span> <span class="n">BurdenEigenValues</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="p">)}</span>
 
-<div class="viewcode-block" id="BCUT.calculate"><a class="viewcode-back" href="../../api/mordred.BCUT.html#mordred.BCUT.BCUT.calculate">[docs]</a>    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bev</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bev</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">bev</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_nth</span><span class="p">]</span>
         <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;nth greater then atom count&#39;</span><span class="p">))</span></div>
+            <span class="bp">self</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;nth greater then atom count&#39;</span><span class="p">))</span>
 
     <span class="n">rtype</span> <span class="o">=</span> <span class="nb">float</span></div>
 </pre></div>

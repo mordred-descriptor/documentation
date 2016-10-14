@@ -2,6 +2,38 @@ mordred.InformationContent module
 =================================
 
 .. automodule:: mordred.InformationContent
-    :members:
+.. autoclass:: mordred.InformationContent.InformationContent
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
     :undoc-members:
     :show-inheritance:
+
+.. autoclass:: mordred.InformationContent.TotalIC
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
+    :undoc-members:
+    :show-inheritance:
+
+.. autoclass:: mordred.InformationContent.StructuralIC
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
+    :undoc-members:
+    :show-inheritance:
+
+.. autoclass:: mordred.InformationContent.BondingIC
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
+    :undoc-members:
+    :show-inheritance:
+
+.. autoclass:: mordred.InformationContent.ComplementaryIC
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
+    :undoc-members:
+    :show-inheritance:
+
+.. autoclass:: mordred.InformationContent.ModifiedIC
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
+    :undoc-members:
+    :show-inheritance:
+
+.. autoclass:: mordred.InformationContent.ZModifiedIC
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
+    :undoc-members:
+    :show-inheritance:
+

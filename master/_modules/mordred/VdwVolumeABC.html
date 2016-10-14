@@ -118,23 +118,23 @@
     <span class="n">compat_atoms</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">bondi_radii</span><span class="p">)</span>
 
     <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="VdwVolumeABC.preset"><a class="viewcode-back" href="../../api/mordred.VdwVolumeABC.html#mordred.VdwVolumeABC.VdwVolumeABC.preset">[docs]</a>    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
-        <span class="k">yield</span> <span class="n">cls</span><span class="p">()</span></div>
+    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="n">cls</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;Vabc&#39;</span>
 
-<div class="viewcode-block" id="VdwVolumeABC.parameters"><a class="viewcode-back" href="../../api/mordred.VdwVolumeABC.html#mordred.VdwVolumeABC.VdwVolumeABC.parameters">[docs]</a>    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">()</span></div>
+    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">()</span>
 
-<div class="viewcode-block" id="VdwVolumeABC.dependencies"><a class="viewcode-back" href="../../api/mordred.VdwVolumeABC.html#mordred.VdwVolumeABC.VdwVolumeABC.dependencies">[docs]</a>    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span>
             <span class="s1">&#39;Nb&#39;</span><span class="p">:</span> <span class="n">BondCount</span><span class="p">(),</span>
             <span class="s1">&#39;NRa&#39;</span><span class="p">:</span> <span class="n">RingCount</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
             <span class="s1">&#39;NRA&#39;</span><span class="p">:</span> <span class="n">RingCount</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-        <span class="p">}</span></div>
+        <span class="p">}</span>
 
-<div class="viewcode-block" id="VdwVolumeABC.calculate"><a class="viewcode-back" href="../../api/mordred.VdwVolumeABC.html#mordred.VdwVolumeABC.VdwVolumeABC.calculate">[docs]</a>    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Nb</span><span class="p">,</span> <span class="n">NRa</span><span class="p">,</span> <span class="n">NRA</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Nb</span><span class="p">,</span> <span class="n">NRa</span><span class="p">,</span> <span class="n">NRA</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">ac</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span>
                 <span class="n">atom_contrib</span><span class="p">[</span><span class="n">a</span><span class="o">.</span><span class="n">GetAtomicNum</span><span class="p">()]</span>
@@ -143,7 +143,7 @@
         <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;unknown atom type&#39;</span><span class="p">))</span>
 
-        <span class="k">return</span> <span class="n">ac</span> <span class="o">-</span> <span class="mf">5.92</span> <span class="o">*</span> <span class="n">Nb</span> <span class="o">-</span> <span class="mf">14.7</span> <span class="o">*</span> <span class="n">NRa</span> <span class="o">-</span> <span class="mf">3.8</span> <span class="o">*</span> <span class="n">NRA</span></div>
+        <span class="k">return</span> <span class="n">ac</span> <span class="o">-</span> <span class="mf">5.92</span> <span class="o">*</span> <span class="n">Nb</span> <span class="o">-</span> <span class="mf">14.7</span> <span class="o">*</span> <span class="n">NRa</span> <span class="o">-</span> <span class="mf">3.8</span> <span class="o">*</span> <span class="n">NRA</span>
 
     <span class="n">rtype</span> <span class="o">=</span> <span class="nb">float</span></div>
 </pre></div>

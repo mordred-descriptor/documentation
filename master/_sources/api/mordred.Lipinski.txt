@@ -2,6 +2,13 @@ mordred.Lipinski module
 =======================
 
 .. automodule:: mordred.Lipinski
-    :members:
+.. autoclass:: mordred.Lipinski.Lipinski
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
     :undoc-members:
     :show-inheritance:
+
+.. autoclass:: mordred.Lipinski.GhoseFilter
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
+    :undoc-members:
+    :show-inheritance:
+

@@ -2,6 +2,8 @@ mordred.BaryszMatrix module
 ===========================
 
 .. automodule:: mordred.BaryszMatrix
-    :members:
+.. autoclass:: mordred.BaryszMatrix.BaryszMatrix
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
     :undoc-members:
     :show-inheritance:
+

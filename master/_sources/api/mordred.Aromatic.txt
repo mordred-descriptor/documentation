@@ -2,6 +2,13 @@ mordred.Aromatic module
 =======================
 
 .. automodule:: mordred.Aromatic
-    :members:
+.. autoclass:: mordred.Aromatic.AromaticAtomsCount
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
     :undoc-members:
     :show-inheritance:
+
+.. autoclass:: mordred.Aromatic.AromaticBondsCount
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
+    :undoc-members:
+    :show-inheritance:
+

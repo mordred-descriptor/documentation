@@ -29,7 +29,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="top" title="mordred 0.2.1.post1.dev1 documentation" href="../index.html" />
-    <link rel="up" title="mordred package" href="mordred.html" />
+    <link rel="up" title="Submodules" href="modules.html" />
     <link rel="next" title="mordred.VdwVolumeABC module" href="mordred.VdwVolumeABC.html" />
     <link rel="prev" title="mordred.TopologicalCharge module" href="mordred.TopologicalCharge.html" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -54,7 +54,8 @@
           <a href="mordred.TopologicalCharge.html" title="mordred.TopologicalCharge module"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">mordred 0.2.1.post1.dev1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="mordred.html" accesskey="U">mordred package</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../mordred.html" >mordred package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="modules.html" accesskey="U">Submodules</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -93,36 +94,68 @@
   <div class="section" id="module-mordred.TopologicalIndex">
 <span id="mordred-topologicalindex-module"></span><h1>mordred.TopologicalIndex module<a class="headerlink" href="#module-mordred.TopologicalIndex" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
-<dt id="mordred.TopologicalIndex.Radius">
-<em class="property">class </em><code class="descclassname">mordred.TopologicalIndex.</code><code class="descname">Radius</code><a class="reference internal" href="../_modules/mordred/TopologicalIndex.html#Radius"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.TopologicalIndex.Radius" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.TopologicalIndex.TopologicalIndexBase</span></code></p>
-<p>radius descriptor.</p>
-<dl class="method">
-<dt id="mordred.TopologicalIndex.Radius.dependencies">
-<code class="descname">dependencies</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/TopologicalIndex.html#Radius.dependencies"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.TopologicalIndex.Radius.dependencies" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="mordred.TopologicalIndex.Radius.calculate">
-<code class="descname">calculate</code><span class="sig-paren">(</span><em>R</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/TopologicalIndex.html#Radius.calculate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.TopologicalIndex.Radius.calculate" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
 <dt id="mordred.TopologicalIndex.Diameter">
 <em class="property">class </em><code class="descclassname">mordred.TopologicalIndex.</code><code class="descname">Diameter</code><a class="reference internal" href="../_modules/mordred/TopologicalIndex.html#Diameter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.TopologicalIndex.Diameter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.TopologicalIndex.TopologicalIndexBase</span></code></p>
 <p>diameter descriptor.</p>
-<dl class="method">
-<dt id="mordred.TopologicalIndex.Diameter.dependencies">
-<code class="descname">dependencies</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/TopologicalIndex.html#Diameter.dependencies"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.TopologicalIndex.Diameter.dependencies" title="Permalink to this definition">¶</a></dt>
+<dl class="attribute">
+<dt id="mordred.TopologicalIndex.Diameter.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.TopologicalIndex.Diameter.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="mordred.TopologicalIndex.Diameter.calculate">
-<code class="descname">calculate</code><span class="sig-paren">(</span><em>D</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/TopologicalIndex.html#Diameter.calculate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.TopologicalIndex.Diameter.calculate" title="Permalink to this definition">¶</a></dt>
+<dl class="attribute">
+<dt id="mordred.TopologicalIndex.Diameter.kekulize">
+<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.TopologicalIndex.Diameter.kekulize" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.TopologicalIndex.Diameter.require_3D">
+<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.TopologicalIndex.Diameter.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.TopologicalIndex.Diameter.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.TopologicalIndex.Diameter.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.TopologicalIndex.Diameter.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.TopologicalIndex.Diameter.rtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.TopologicalIndex.Radius">
+<em class="property">class </em><code class="descclassname">mordred.TopologicalIndex.</code><code class="descname">Radius</code><a class="reference internal" href="../_modules/mordred/TopologicalIndex.html#Radius"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.TopologicalIndex.Radius" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.TopologicalIndex.TopologicalIndexBase</span></code></p>
+<p>radius descriptor.</p>
+<dl class="attribute">
+<dt id="mordred.TopologicalIndex.Radius.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.TopologicalIndex.Radius.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.TopologicalIndex.Radius.kekulize">
+<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.TopologicalIndex.Radius.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.TopologicalIndex.Radius.require_3D">
+<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.TopologicalIndex.Radius.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.TopologicalIndex.Radius.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.TopologicalIndex.Radius.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.TopologicalIndex.Radius.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.TopologicalIndex.Radius.rtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a></p>
+</dd></dl>
 
 </dd></dl>
 
@@ -144,21 +177,31 @@
 </tr>
 </tbody>
 </table>
-<dl class="method">
-<dt id="mordred.TopologicalIndex.TopologicalShapeIndex.dependencies">
-<code class="descname">dependencies</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/TopologicalIndex.html#TopologicalShapeIndex.dependencies"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.TopologicalIndex.TopologicalShapeIndex.dependencies" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="mordred.TopologicalIndex.TopologicalShapeIndex.calculate">
-<code class="descname">calculate</code><span class="sig-paren">(</span><em>R</em>, <em>D</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/TopologicalIndex.html#TopologicalShapeIndex.calculate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.TopologicalIndex.TopologicalShapeIndex.calculate" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
 <dl class="attribute">
 <dt id="mordred.TopologicalIndex.TopologicalShapeIndex.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.TopologicalIndex.TopologicalShapeIndex.rtype" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.TopologicalIndex.TopologicalShapeIndex.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.TopologicalIndex.TopologicalShapeIndex.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.TopologicalIndex.TopologicalShapeIndex.kekulize">
+<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.TopologicalIndex.TopologicalShapeIndex.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.TopologicalIndex.TopologicalShapeIndex.require_3D">
+<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.TopologicalIndex.TopologicalShapeIndex.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.TopologicalIndex.TopologicalShapeIndex.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.TopologicalIndex.TopologicalShapeIndex.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
@@ -180,10 +223,31 @@
 </tr>
 </tbody>
 </table>
-<dl class="method">
-<dt id="mordred.TopologicalIndex.PetitjeanIndex.calculate">
-<code class="descname">calculate</code><span class="sig-paren">(</span><em>R</em>, <em>D</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/TopologicalIndex.html#PetitjeanIndex.calculate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.TopologicalIndex.PetitjeanIndex.calculate" title="Permalink to this definition">¶</a></dt>
+<dl class="attribute">
+<dt id="mordred.TopologicalIndex.PetitjeanIndex.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.TopologicalIndex.PetitjeanIndex.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.TopologicalIndex.PetitjeanIndex.kekulize">
+<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.TopologicalIndex.PetitjeanIndex.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.TopologicalIndex.PetitjeanIndex.require_3D">
+<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.TopologicalIndex.PetitjeanIndex.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.TopologicalIndex.PetitjeanIndex.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.TopologicalIndex.PetitjeanIndex.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.TopologicalIndex.PetitjeanIndex.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.TopologicalIndex.PetitjeanIndex.rtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
 
 </dd></dl>
 
@@ -211,7 +275,8 @@
           <a href="mordred.TopologicalCharge.html" title="mordred.TopologicalCharge module"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">mordred 0.2.1.post1.dev1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="mordred.html" >mordred package</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../mordred.html" >mordred package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="modules.html" >Submodules</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">

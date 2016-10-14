@@ -93,20 +93,20 @@
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_no_only&#39;</span><span class="p">,)</span>
 
     <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="TopoPSA.preset"><a class="viewcode-back" href="../../api/mordred.TopoPSA.html#mordred.TopoPSA.TopoPSA.preset">[docs]</a>    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="k">yield</span> <span class="n">cls</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-        <span class="k">yield</span> <span class="n">cls</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span></div>
+        <span class="k">yield</span> <span class="n">cls</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;TopoPSA(NO)&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_no_only</span> <span class="k">else</span> <span class="s1">&#39;TopoPSA&#39;</span>
 
-<div class="viewcode-block" id="TopoPSA.parameters"><a class="viewcode-back" href="../../api/mordred.TopoPSA.html#mordred.TopoPSA.TopoPSA.parameters">[docs]</a>    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_no_only</span><span class="p">,</span></div>
+    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_no_only</span><span class="p">,</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">no_only</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_no_only</span> <span class="o">=</span> <span class="n">no_only</span>
 
-<div class="viewcode-block" id="TopoPSA.calculate"><a class="viewcode-back" href="../../api/mordred.TopoPSA.html#mordred.TopoPSA.TopoPSA.calculate">[docs]</a>    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">tpsa</span> <span class="o">=</span> <span class="n">rdMolDescriptors</span><span class="o">.</span><span class="n">CalcTPSA</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_no_only</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">tpsa</span>
@@ -119,7 +119,7 @@
             <span class="k">elif</span> <span class="n">atomic_num</span> <span class="o">==</span> <span class="mi">16</span><span class="p">:</span>
                 <span class="n">tpsa</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_sulfur_contrib</span><span class="p">(</span><span class="n">atom</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">tpsa</span></div>
+        <span class="k">return</span> <span class="n">tpsa</span>
 
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">_hydrogen_count</span><span class="p">(</span><span class="n">atom</span><span class="p">):</span>

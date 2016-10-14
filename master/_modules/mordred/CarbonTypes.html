@@ -133,18 +133,18 @@
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_nCarbon&#39;</span><span class="p">,</span> <span class="s1">&#39;_SP&#39;</span><span class="p">,)</span>
 
     <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="CarbonTypes.preset"><a class="viewcode-back" href="../../api/mordred.CarbonTypes.html#mordred.CarbonTypes.CarbonTypes.preset">[docs]</a>    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">args</span><span class="p">:</span> <span class="n">cls</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">),</span> <span class="p">[</span>
             <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
             <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
             <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
-        <span class="p">])</span></div>
+        <span class="p">])</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;C</span><span class="si">{}</span><span class="s1">SP</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_nCarbon</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_SP</span><span class="p">)</span>
 
-<div class="viewcode-block" id="CarbonTypes.parameters"><a class="viewcode-back" href="../../api/mordred.CarbonTypes.html#mordred.CarbonTypes.CarbonTypes.parameters">[docs]</a>    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nCarbon</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_SP</span></div>
+    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nCarbon</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_SP</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nCarbon</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">SP</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
         <span class="k">assert</span> <span class="n">SP</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
@@ -152,11 +152,11 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_nCarbon</span> <span class="o">=</span> <span class="n">nCarbon</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_SP</span> <span class="o">=</span> <span class="n">SP</span>
 
-<div class="viewcode-block" id="CarbonTypes.dependencies"><a class="viewcode-back" href="../../api/mordred.CarbonTypes.html#mordred.CarbonTypes.CarbonTypes.dependencies">[docs]</a>    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;CT&#39;</span><span class="p">:</span> <span class="n">CarbonTypesCache</span><span class="p">()}</span></div>
+    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;CT&#39;</span><span class="p">:</span> <span class="n">CarbonTypesCache</span><span class="p">()}</span>
 
-<div class="viewcode-block" id="CarbonTypes.calculate"><a class="viewcode-back" href="../../api/mordred.CarbonTypes.html#mordred.CarbonTypes.CarbonTypes.calculate">[docs]</a>    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">CT</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">CT</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_SP</span><span class="p">][</span><span class="bp">self</span><span class="o">.</span><span class="n">_nCarbon</span><span class="p">]</span></div>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">CT</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">CT</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_SP</span><span class="p">][</span><span class="bp">self</span><span class="o">.</span><span class="n">_nCarbon</span><span class="p">]</span>
 
     <span class="n">rtype</span> <span class="o">=</span> <span class="nb">int</span></div>
 
@@ -173,26 +173,26 @@
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="HybridizationRatio.preset"><a class="viewcode-back" href="../../api/mordred.CarbonTypes.html#mordred.CarbonTypes.HybridizationRatio.preset">[docs]</a>    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
-        <span class="k">yield</span> <span class="n">cls</span><span class="p">()</span></div>
+    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="n">cls</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;HybRatio&#39;</span>
 
-<div class="viewcode-block" id="HybridizationRatio.parameters"><a class="viewcode-back" href="../../api/mordred.CarbonTypes.html#mordred.CarbonTypes.HybridizationRatio.parameters">[docs]</a>    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">()</span></div>
+    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">()</span>
 
-<div class="viewcode-block" id="HybridizationRatio.dependencies"><a class="viewcode-back" href="../../api/mordred.CarbonTypes.html#mordred.CarbonTypes.HybridizationRatio.dependencies">[docs]</a>    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;CT&#39;</span><span class="p">:</span> <span class="n">CarbonTypesCache</span><span class="p">()}</span></div>
+    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;CT&#39;</span><span class="p">:</span> <span class="n">CarbonTypesCache</span><span class="p">()}</span>
 
-<div class="viewcode-block" id="HybridizationRatio.calculate"><a class="viewcode-back" href="../../api/mordred.CarbonTypes.html#mordred.CarbonTypes.HybridizationRatio.calculate">[docs]</a>    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">CT</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">CT</span><span class="p">):</span>
         <span class="n">Nsp3</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">CT</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
         <span class="n">Nsp2</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">CT</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
 
         <span class="k">if</span> <span class="n">Nsp3</span> <span class="o">==</span> <span class="n">Nsp2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;there are no sp3 and sp2 carbons&#39;</span><span class="p">))</span>
 
-        <span class="k">return</span> <span class="n">Nsp3</span> <span class="o">/</span> <span class="p">(</span><span class="n">Nsp2</span> <span class="o">+</span> <span class="n">Nsp3</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">Nsp3</span> <span class="o">/</span> <span class="p">(</span><span class="n">Nsp2</span> <span class="o">+</span> <span class="n">Nsp3</span><span class="p">)</span>
 
     <span class="n">rtype</span> <span class="o">=</span> <span class="nb">float</span></div>
 </pre></div>

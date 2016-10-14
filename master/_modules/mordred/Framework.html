@@ -132,24 +132,24 @@
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="Framework.preset"><a class="viewcode-back" href="../../api/mordred.Framework.html#mordred.Framework.Framework.preset">[docs]</a>    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
-        <span class="k">yield</span> <span class="n">cls</span><span class="p">()</span></div>
+    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="n">cls</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;fMF&#39;</span>
 
-<div class="viewcode-block" id="Framework.parameters"><a class="viewcode-back" href="../../api/mordred.Framework.html#mordred.Framework.Framework.parameters">[docs]</a>    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">()</span></div>
+    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">()</span>
 
-<div class="viewcode-block" id="Framework.dependencies"><a class="viewcode-back" href="../../api/mordred.Framework.html#mordred.Framework.Framework.dependencies">[docs]</a>    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;F&#39;</span><span class="p">:</span> <span class="n">FrameworkCache</span><span class="p">()}</span></div>
+    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;F&#39;</span><span class="p">:</span> <span class="n">FrameworkCache</span><span class="p">()}</span>
 
-<div class="viewcode-block" id="Framework.calculate"><a class="viewcode-back" href="../../api/mordred.Framework.html#mordred.Framework.Framework.calculate">[docs]</a>    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">F</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">F</span><span class="p">):</span>
         <span class="n">linkers</span><span class="p">,</span> <span class="n">rings</span> <span class="o">=</span> <span class="n">F</span>
         <span class="n">Nmf</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">linkers</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">({</span><span class="n">i</span> <span class="k">for</span> <span class="n">ring</span> <span class="ow">in</span> <span class="n">rings</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ring</span><span class="p">})</span>
         <span class="n">N</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span>
 
-        <span class="k">return</span> <span class="n">Nmf</span> <span class="o">/</span> <span class="n">N</span></div>
+        <span class="k">return</span> <span class="n">Nmf</span> <span class="o">/</span> <span class="n">N</span>
 
     <span class="n">rtype</span> <span class="o">=</span> <span class="nb">float</span></div>
 </pre></div>

@@ -89,25 +89,25 @@
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="kc">True</span>
 
     <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="Weight.preset"><a class="viewcode-back" href="../../api/mordred.Weight.html#mordred.Weight.Weight.preset">[docs]</a>    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="k">yield</span> <span class="n">cls</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
-        <span class="k">yield</span> <span class="n">cls</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span></div>
+        <span class="k">yield</span> <span class="n">cls</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;AMW&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span> <span class="k">else</span> <span class="s1">&#39;MW&#39;</span>
 
-<div class="viewcode-block" id="Weight.parameters"><a class="viewcode-back" href="../../api/mordred.Weight.html#mordred.Weight.Weight.parameters">[docs]</a>    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span><span class="p">,</span></div>
+    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span><span class="p">,</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">averaged</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span> <span class="o">=</span> <span class="n">averaged</span>
 
-<div class="viewcode-block" id="Weight.calculate"><a class="viewcode-back" href="../../api/mordred.Weight.html#mordred.Weight.Weight.calculate">[docs]</a>    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">w</span> <span class="o">=</span> <span class="n">ExactMolWt</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span><span class="p">:</span>
             <span class="n">w</span> <span class="o">/=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span>
 
-        <span class="k">return</span> <span class="n">w</span></div>
+        <span class="k">return</span> <span class="n">w</span>
 
     <span class="n">rtype</span> <span class="o">=</span> <span class="nb">float</span></div>
 </pre></div>

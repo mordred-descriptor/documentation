@@ -228,12 +228,12 @@
 
     <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;IC&#39;</span>
 
-<div class="viewcode-block" id="InformationContent.dependencies"><a class="viewcode-back" href="../../api/mordred.InformationContent.html#mordred.InformationContent.InformationContent.dependencies">[docs]</a>    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;iAgs&#39;</span><span class="p">:</span> <span class="n">Ag</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">)}</span></div>
+    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;iAgs&#39;</span><span class="p">:</span> <span class="n">Ag</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">)}</span>
 
-<div class="viewcode-block" id="InformationContent.calculate"><a class="viewcode-back" href="../../api/mordred.InformationContent.html#mordred.InformationContent.InformationContent.calculate">[docs]</a>    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iAgs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iAgs</span><span class="p">):</span>
         <span class="n">_</span><span class="p">,</span> <span class="n">Ags</span> <span class="o">=</span> <span class="n">iAgs</span>
-        <span class="k">return</span> <span class="n">shannon_entropy</span><span class="p">(</span><span class="n">Ags</span><span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="n">shannon_entropy</span><span class="p">(</span><span class="n">Ags</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="TotalIC"><a class="viewcode-back" href="../../api/mordred.InformationContent.html#mordred.InformationContent.TotalIC">[docs]</a><span class="k">class</span> <span class="nc">TotalIC</span><span class="p">(</span><span class="n">InformationContentBase</span><span class="p">):</span>
@@ -249,13 +249,13 @@
 
     <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;TIC&#39;</span>
 
-<div class="viewcode-block" id="TotalIC.dependencies"><a class="viewcode-back" href="../../api/mordred.InformationContent.html#mordred.InformationContent.TotalIC.dependencies">[docs]</a>    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;ICm&#39;</span><span class="p">:</span> <span class="n">InformationContent</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">)}</span></div>
+    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;ICm&#39;</span><span class="p">:</span> <span class="n">InformationContent</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">)}</span>
 
-<div class="viewcode-block" id="TotalIC.calculate"><a class="viewcode-back" href="../../api/mordred.InformationContent.html#mordred.InformationContent.TotalIC.calculate">[docs]</a>    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ICm</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ICm</span><span class="p">):</span>
         <span class="n">A</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span>
 
-        <span class="k">return</span> <span class="n">A</span> <span class="o">*</span> <span class="n">ICm</span></div></div>
+        <span class="k">return</span> <span class="n">A</span> <span class="o">*</span> <span class="n">ICm</span></div>
 
 
 <div class="viewcode-block" id="StructuralIC"><a class="viewcode-back" href="../../api/mordred.InformationContent.html#mordred.InformationContent.StructuralIC">[docs]</a><span class="k">class</span> <span class="nc">StructuralIC</span><span class="p">(</span><span class="n">TotalIC</span><span class="p">):</span>
@@ -271,11 +271,11 @@
 
     <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;SIC&#39;</span>
 
-<div class="viewcode-block" id="StructuralIC.calculate"><a class="viewcode-back" href="../../api/mordred.InformationContent.html#mordred.InformationContent.StructuralIC.calculate">[docs]</a>    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ICm</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ICm</span><span class="p">):</span>
         <span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">())</span>
 
         <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">rethrow_zerodiv</span><span class="p">():</span>
-            <span class="k">return</span> <span class="n">ICm</span> <span class="o">/</span> <span class="n">d</span></div></div>
+            <span class="k">return</span> <span class="n">ICm</span> <span class="o">/</span> <span class="n">d</span></div>
 
 
 <div class="viewcode-block" id="BondingIC"><a class="viewcode-back" href="../../api/mordred.InformationContent.html#mordred.InformationContent.BondingIC">[docs]</a><span class="k">class</span> <span class="nc">BondingIC</span><span class="p">(</span><span class="n">TotalIC</span><span class="p">):</span>
@@ -293,12 +293,12 @@
 
     <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;BIC&#39;</span>
 
-<div class="viewcode-block" id="BondingIC.calculate"><a class="viewcode-back" href="../../api/mordred.InformationContent.html#mordred.InformationContent.BondingIC.calculate">[docs]</a>    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ICm</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ICm</span><span class="p">):</span>
         <span class="n">B</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">GetBondTypeAsDouble</span><span class="p">()</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetBonds</span><span class="p">())</span>
 
         <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">rethrow_zerodiv</span><span class="p">():</span>
             <span class="n">log2B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
-            <span class="k">return</span> <span class="n">ICm</span> <span class="o">/</span> <span class="n">log2B</span></div></div>
+            <span class="k">return</span> <span class="n">ICm</span> <span class="o">/</span> <span class="n">log2B</span></div>
 
 
 <div class="viewcode-block" id="ComplementaryIC"><a class="viewcode-back" href="../../api/mordred.InformationContent.html#mordred.InformationContent.ComplementaryIC">[docs]</a><span class="k">class</span> <span class="nc">ComplementaryIC</span><span class="p">(</span><span class="n">TotalIC</span><span class="p">):</span>
@@ -314,10 +314,10 @@
 
     <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;CIC&#39;</span>
 
-<div class="viewcode-block" id="ComplementaryIC.calculate"><a class="viewcode-back" href="../../api/mordred.InformationContent.html#mordred.InformationContent.ComplementaryIC.calculate">[docs]</a>    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ICm</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ICm</span><span class="p">):</span>
         <span class="n">A</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span>
 
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">-</span> <span class="n">ICm</span></div></div>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">-</span> <span class="n">ICm</span></div>
 
 
 <div class="viewcode-block" id="ModifiedIC"><a class="viewcode-back" href="../../api/mordred.InformationContent.html#mordred.InformationContent.ModifiedIC">[docs]</a><span class="k">class</span> <span class="nc">ModifiedIC</span><span class="p">(</span><span class="n">InformationContent</span><span class="p">):</span>
@@ -330,10 +330,10 @@
 
     <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;MIC&#39;</span>
 
-<div class="viewcode-block" id="ModifiedIC.calculate"><a class="viewcode-back" href="../../api/mordred.InformationContent.html#mordred.InformationContent.ModifiedIC.calculate">[docs]</a>    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iAgs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iAgs</span><span class="p">):</span>
         <span class="n">ids</span><span class="p">,</span> <span class="n">Ags</span> <span class="o">=</span> <span class="n">iAgs</span>
         <span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetAtomWithIdx</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">))</span><span class="o">.</span><span class="n">GetMass</span><span class="p">())(</span><span class="n">ids</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">shannon_entropy</span><span class="p">(</span><span class="n">Ags</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="n">shannon_entropy</span><span class="p">(</span><span class="n">Ags</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="ZModifiedIC"><a class="viewcode-back" href="../../api/mordred.InformationContent.html#mordred.InformationContent.ZModifiedIC">[docs]</a><span class="k">class</span> <span class="nc">ZModifiedIC</span><span class="p">(</span><span class="n">InformationContent</span><span class="p">):</span>
@@ -346,10 +346,10 @@
 
     <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;ZMIC&#39;</span>
 
-<div class="viewcode-block" id="ZModifiedIC.calculate"><a class="viewcode-back" href="../../api/mordred.InformationContent.html#mordred.InformationContent.ZModifiedIC.calculate">[docs]</a>    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iAgs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iAgs</span><span class="p">):</span>
         <span class="n">ids</span><span class="p">,</span> <span class="n">Ags</span> <span class="o">=</span> <span class="n">iAgs</span>
         <span class="n">w</span> <span class="o">=</span> <span class="n">Ags</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetAtomWithIdx</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">))</span><span class="o">.</span><span class="n">GetAtomicNum</span><span class="p">())(</span><span class="n">ids</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">shannon_entropy</span><span class="p">(</span><span class="n">Ags</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="n">shannon_entropy</span><span class="p">(</span><span class="n">Ags</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span></div>
 </pre></div>
 
           </div>

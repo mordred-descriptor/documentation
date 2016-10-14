@@ -98,13 +98,13 @@
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="kc">False</span>
 
     <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="MolecularDistanceEdge.preset"><a class="viewcode-back" href="../../api/mordred.MolecularDistanceEdge.html#mordred.MolecularDistanceEdge.MolecularDistanceEdge.preset">[docs]</a>    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">(</span>
             <span class="n">cls</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
             <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span> <span class="o">-</span> <span class="n">e</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">11</span> <span class="o">-</span> <span class="n">e</span><span class="p">)</span>
-        <span class="p">)</span></div>
+        <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;MDE</span><span class="si">{}</span><span class="s1">-</span><span class="si">{}{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
@@ -113,8 +113,8 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_valence2</span><span class="p">,</span>
         <span class="p">)</span>
 
-<div class="viewcode-block" id="MolecularDistanceEdge.parameters"><a class="viewcode-back" href="../../api/mordred.MolecularDistanceEdge.html#mordred.MolecularDistanceEdge.MolecularDistanceEdge.parameters">[docs]</a>    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_valence1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_valence2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_atomic_num</span></div>
+    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_valence1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_valence2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_atomic_num</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">valence1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">valence2</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">element</span><span class="o">=</span><span class="s1">&#39;C&#39;</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_valence1</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">valence1</span><span class="p">,</span> <span class="n">valence2</span><span class="p">)</span>
@@ -126,13 +126,13 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;element must be atomic number or atomic symbol&#39;</span><span class="p">)</span>
 
-<div class="viewcode-block" id="MolecularDistanceEdge.dependencies"><a class="viewcode-back" href="../../api/mordred.MolecularDistanceEdge.html#mordred.MolecularDistanceEdge.MolecularDistanceEdge.dependencies">[docs]</a>    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span>
             <span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="n">DistanceMatrix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">),</span>
             <span class="s1">&#39;V&#39;</span><span class="p">:</span> <span class="n">Valence</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">),</span>
-        <span class="p">}</span></div>
+        <span class="p">}</span>
 
-<div class="viewcode-block" id="MolecularDistanceEdge.calculate"><a class="viewcode-back" href="../../api/mordred.MolecularDistanceEdge.html#mordred.MolecularDistanceEdge.MolecularDistanceEdge.calculate">[docs]</a>    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">V</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">V</span><span class="p">):</span>
         <span class="n">N</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span>
         <span class="n">Dv</span> <span class="o">=</span> <span class="p">[</span>
             <span class="n">D</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
@@ -149,7 +149,7 @@
         <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">rethrow_zerodiv</span><span class="p">():</span>
             <span class="n">dx</span> <span class="o">=</span> <span class="n">product</span><span class="p">(</span><span class="n">Dv</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.</span> <span class="o">*</span> <span class="n">n</span><span class="p">))</span>
 
-        <span class="k">return</span> <span class="n">n</span> <span class="o">/</span> <span class="p">(</span><span class="n">dx</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">/</span> <span class="p">(</span><span class="n">dx</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
 
     <span class="n">rtype</span> <span class="o">=</span> <span class="nb">float</span></div>
 </pre></div>

@@ -2,6 +2,13 @@ mordred.AcidBase module
 =======================
 
 .. automodule:: mordred.AcidBase
-    :members:
+.. autoclass:: mordred.AcidBase.AcidicGroupCount
+    :members: SMARTS, explicit_hydrogens, kekulize, require_3D, require_connected, rtype
     :undoc-members:
     :show-inheritance:
+
+.. autoclass:: mordred.AcidBase.BasicGroupCount
+    :members: SMARTS, explicit_hydrogens, kekulize, require_3D, require_connected, rtype
+    :undoc-members:
+    :show-inheritance:
+

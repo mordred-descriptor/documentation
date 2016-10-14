@@ -29,7 +29,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="top" title="mordred 0.2.1.post1.dev1 documentation" href="../index.html" />
-    <link rel="up" title="mordred package" href="mordred.html" />
+    <link rel="up" title="Submodules" href="modules.html" />
     <link rel="next" title="mordred.McGowanVolume module" href="mordred.McGowanVolume.html" />
     <link rel="prev" title="mordred.KappaShapeIndex module" href="mordred.KappaShapeIndex.html" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -54,7 +54,8 @@
           <a href="mordred.KappaShapeIndex.html" title="mordred.KappaShapeIndex module"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">mordred 0.2.1.post1.dev1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="mordred.html" accesskey="U">mordred package</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../mordred.html" >mordred package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="modules.html" accesskey="U">Submodules</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -98,15 +99,31 @@
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.Lipinski.LipinskiLike</span></code></p>
 <p>Lipinski rule of 5 descriptor.</p>
 <p>LogP: SLogP</p>
-<dl class="method">
-<dt id="mordred.Lipinski.Lipinski.dependencies">
-<code class="descname">dependencies</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Lipinski.html#Lipinski.dependencies"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Lipinski.Lipinski.dependencies" title="Permalink to this definition">¶</a></dt>
+<dl class="attribute">
+<dt id="mordred.Lipinski.Lipinski.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.Lipinski.Lipinski.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="mordred.Lipinski.Lipinski.calculate">
-<code class="descname">calculate</code><span class="sig-paren">(</span><em>LogP</em>, <em>MW</em>, <em>HBDon</em>, <em>HBAcc</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Lipinski.html#Lipinski.calculate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Lipinski.Lipinski.calculate" title="Permalink to this definition">¶</a></dt>
+<dl class="attribute">
+<dt id="mordred.Lipinski.Lipinski.kekulize">
+<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Lipinski.Lipinski.kekulize" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Lipinski.Lipinski.require_3D">
+<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Lipinski.Lipinski.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Lipinski.Lipinski.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Lipinski.Lipinski.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Lipinski.Lipinski.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.Lipinski.Lipinski.rtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#bool" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a></p>
+</dd></dl>
 
 </dd></dl>
 
@@ -116,15 +133,31 @@
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.Lipinski.LipinskiLike</span></code></p>
 <p>Ghose filter descriptor.</p>
 <p>LogP, MR: SLogP, SMR</p>
-<dl class="method">
-<dt id="mordred.Lipinski.GhoseFilter.dependencies">
-<code class="descname">dependencies</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Lipinski.html#GhoseFilter.dependencies"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Lipinski.GhoseFilter.dependencies" title="Permalink to this definition">¶</a></dt>
+<dl class="attribute">
+<dt id="mordred.Lipinski.GhoseFilter.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.Lipinski.GhoseFilter.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="mordred.Lipinski.GhoseFilter.calculate">
-<code class="descname">calculate</code><span class="sig-paren">(</span><em>MW</em>, <em>LogP</em>, <em>MR</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Lipinski.html#GhoseFilter.calculate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Lipinski.GhoseFilter.calculate" title="Permalink to this definition">¶</a></dt>
+<dl class="attribute">
+<dt id="mordred.Lipinski.GhoseFilter.kekulize">
+<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Lipinski.GhoseFilter.kekulize" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Lipinski.GhoseFilter.require_3D">
+<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Lipinski.GhoseFilter.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Lipinski.GhoseFilter.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Lipinski.GhoseFilter.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Lipinski.GhoseFilter.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.Lipinski.GhoseFilter.rtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#bool" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a></p>
+</dd></dl>
 
 </dd></dl>
 
@@ -152,7 +185,8 @@
           <a href="mordred.KappaShapeIndex.html" title="mordred.KappaShapeIndex module"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">mordred 0.2.1.post1.dev1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="mordred.html" >mordred package</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../mordred.html" >mordred package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="modules.html" >Submodules</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">

@@ -94,11 +94,11 @@
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_prop&#39;</span><span class="p">,)</span>
 
     <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="ConstitutionalSum.preset"><a class="viewcode-back" href="../../api/mordred.Constitutional.html#mordred.Constitutional.ConstitutionalSum.preset">[docs]</a>    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">map</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">get_properties</span><span class="p">())</span></div>
+    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">map</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">get_properties</span><span class="p">())</span>
 
-<div class="viewcode-block" id="ConstitutionalSum.parameters"><a class="viewcode-back" href="../../api/mordred.Constitutional.html#mordred.Constitutional.ConstitutionalSum.parameters">[docs]</a>    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="p">,</span></div>
+    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="p">,</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prop</span><span class="o">=</span><span class="s1">&#39;v&#39;</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_prop</span> <span class="o">=</span> <span class="n">AtomicProperty</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">,</span> <span class="n">prop</span><span class="p">)</span>
@@ -108,11 +108,11 @@
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{}{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_prefix</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="o">.</span><span class="n">as_argument</span><span class="p">)</span>
 
-<div class="viewcode-block" id="ConstitutionalSum.dependencies"><a class="viewcode-back" href="../../api/mordred.Constitutional.html#mordred.Constitutional.ConstitutionalSum.dependencies">[docs]</a>    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;P&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="p">}</span></div>
+    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;P&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="p">}</span>
 
-<div class="viewcode-block" id="ConstitutionalSum.calculate"><a class="viewcode-back" href="../../api/mordred.Constitutional.html#mordred.Constitutional.ConstitutionalSum.calculate">[docs]</a>    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">P</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">P</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="o">.</span><span class="n">carbon</span><span class="p">)</span></div>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">P</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">P</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="o">.</span><span class="n">carbon</span><span class="p">)</span>
 
     <span class="n">rtype</span> <span class="o">=</span> <span class="nb">float</span></div>
 
@@ -132,14 +132,14 @@
     <span class="n">_prefix</span> <span class="o">=</span> <span class="s1">&#39;M&#39;</span>
 
     <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="ConstitutionalMean.preset"><a class="viewcode-back" href="../../api/mordred.Constitutional.html#mordred.Constitutional.ConstitutionalMean.preset">[docs]</a>    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">map</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">get_properties</span><span class="p">())</span></div>
+    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">map</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">get_properties</span><span class="p">())</span>
 
-<div class="viewcode-block" id="ConstitutionalMean.dependencies"><a class="viewcode-back" href="../../api/mordred.Constitutional.html#mordred.Constitutional.ConstitutionalMean.dependencies">[docs]</a>    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;S&#39;</span><span class="p">:</span> <span class="n">ConstitutionalSum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="p">)}</span></div>
+    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;S&#39;</span><span class="p">:</span> <span class="n">ConstitutionalSum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="p">)}</span>
 
-<div class="viewcode-block" id="ConstitutionalMean.calculate"><a class="viewcode-back" href="../../api/mordred.Constitutional.html#mordred.Constitutional.ConstitutionalMean.calculate">[docs]</a>    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">S</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">S</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span></div></div>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">S</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">S</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span></div>
 </pre></div>
 
           </div>

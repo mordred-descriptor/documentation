@@ -101,11 +101,11 @@
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;GeomRadius&#39;</span>
 
-<div class="viewcode-block" id="Radius3D.dependencies"><a class="viewcode-back" href="../../api/mordred.GeometricalIndex.html#mordred.GeometricalIndex.Radius3D.dependencies">[docs]</a>    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;R&#39;</span><span class="p">:</span> <span class="n">CRadius3D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)}</span></div>
+    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;R&#39;</span><span class="p">:</span> <span class="n">CRadius3D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)}</span>
 
-<div class="viewcode-block" id="Radius3D.calculate"><a class="viewcode-back" href="../../api/mordred.GeometricalIndex.html#mordred.GeometricalIndex.Radius3D.calculate">[docs]</a>    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">R</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">R</span></div></div>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">R</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">R</span></div>
 
 
 <div class="viewcode-block" id="Diameter3D"><a class="viewcode-back" href="../../api/mordred.GeometricalIndex.html#mordred.GeometricalIndex.Diameter3D">[docs]</a><span class="k">class</span> <span class="nc">Diameter3D</span><span class="p">(</span><span class="n">GeometricalIndexBase</span><span class="p">):</span>
@@ -115,11 +115,11 @@
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;GeomDiameter&#39;</span>
 
-<div class="viewcode-block" id="Diameter3D.dependencies"><a class="viewcode-back" href="../../api/mordred.GeometricalIndex.html#mordred.GeometricalIndex.Diameter3D.dependencies">[docs]</a>    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="n">CDiameter3D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)}</span></div>
+    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="n">CDiameter3D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)}</span>
 
-<div class="viewcode-block" id="Diameter3D.calculate"><a class="viewcode-back" href="../../api/mordred.GeometricalIndex.html#mordred.GeometricalIndex.Diameter3D.calculate">[docs]</a>    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">D</span></div></div>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">D</span></div>
 
 
 <div class="viewcode-block" id="GeometricalShapeIndex"><a class="viewcode-back" href="../../api/mordred.GeometricalIndex.html#mordred.GeometricalIndex.GeometricalShapeIndex">[docs]</a><span class="k">class</span> <span class="nc">GeometricalShapeIndex</span><span class="p">(</span><span class="n">GeometricalIndexBase</span><span class="p">):</span>
@@ -140,15 +140,15 @@
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;GeomShapeIndex&#39;</span>
 
-<div class="viewcode-block" id="GeometricalShapeIndex.dependencies"><a class="viewcode-back" href="../../api/mordred.GeometricalIndex.html#mordred.GeometricalIndex.GeometricalShapeIndex.dependencies">[docs]</a>    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span>
             <span class="s1">&#39;R&#39;</span><span class="p">:</span> <span class="n">CRadius3D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">),</span>
             <span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="n">CDiameter3D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">),</span>
-        <span class="p">}</span></div>
+        <span class="p">}</span>
 
-<div class="viewcode-block" id="GeometricalShapeIndex.calculate"><a class="viewcode-back" href="../../api/mordred.GeometricalIndex.html#mordred.GeometricalIndex.GeometricalShapeIndex.calculate">[docs]</a>    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
         <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">rethrow_zerodiv</span><span class="p">():</span>
-            <span class="k">return</span> <span class="p">(</span><span class="n">D</span> <span class="o">-</span> <span class="n">R</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">R</span><span class="p">)</span></div></div>
+            <span class="k">return</span> <span class="p">(</span><span class="n">D</span> <span class="o">-</span> <span class="n">R</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">R</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="PetitjeanIndex3D"><a class="viewcode-back" href="../../api/mordred.GeometricalIndex.html#mordred.GeometricalIndex.PetitjeanIndex3D">[docs]</a><span class="k">class</span> <span class="nc">PetitjeanIndex3D</span><span class="p">(</span><span class="n">GeometricalShapeIndex</span><span class="p">):</span>
@@ -169,9 +169,9 @@
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;GeomPetitjeanIndex&#39;</span>
 
-<div class="viewcode-block" id="PetitjeanIndex3D.calculate"><a class="viewcode-back" href="../../api/mordred.GeometricalIndex.html#mordred.GeometricalIndex.PetitjeanIndex3D.calculate">[docs]</a>    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
         <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">rethrow_zerodiv</span><span class="p">():</span>
-            <span class="k">return</span> <span class="p">(</span><span class="n">D</span> <span class="o">-</span> <span class="n">R</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">D</span><span class="p">)</span></div></div>
+            <span class="k">return</span> <span class="p">(</span><span class="n">D</span> <span class="o">-</span> <span class="n">R</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">D</span><span class="p">)</span></div>
 </pre></div>
 
           </div>

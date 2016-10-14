@@ -2,6 +2,13 @@ mordred.CarbonTypes module
 ==========================
 
 .. automodule:: mordred.CarbonTypes
-    :members:
+.. autoclass:: mordred.CarbonTypes.CarbonTypes
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
     :undoc-members:
     :show-inheritance:
+
+.. autoclass:: mordred.CarbonTypes.HybridizationRatio
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
+    :undoc-members:
+    :show-inheritance:
+

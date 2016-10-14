@@ -175,12 +175,12 @@
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_orig_type&#39;</span><span class="p">,</span> <span class="s1">&#39;_averaged&#39;</span><span class="p">,</span> <span class="s1">&#39;_eps&#39;</span><span class="p">,</span> <span class="s1">&#39;_type&#39;</span><span class="p">,</span> <span class="s1">&#39;_check&#39;</span><span class="p">)</span>
 
     <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="MolecularId.preset"><a class="viewcode-back" href="../../api/mordred.MolecularId.html#mordred.MolecularId.MolecularId.preset">[docs]</a>    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">(</span>
             <span class="n">cls</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;any&#39;</span><span class="p">,</span> <span class="s1">&#39;hetero&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">]</span>
             <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
-        <span class="p">)</span></div>
+        <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">n</span> <span class="o">=</span> <span class="s1">&#39;AMID&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span> <span class="k">else</span> <span class="s1">&#39;MID&#39;</span>
@@ -189,8 +189,8 @@
 
         <span class="k">return</span> <span class="n">n</span>
 
-<div class="viewcode-block" id="MolecularId.parameters"><a class="viewcode-back" href="../../api/mordred.MolecularId.html#mordred.MolecularId.MolecularId.parameters">[docs]</a>    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_orig_type</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_eps</span></div>
+    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_orig_type</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_eps</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;any&#39;</span><span class="p">,</span> <span class="n">averaged</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">_eps</span><span class="o">=</span><span class="mi">1</span><span class="n">e</span><span class="o">-</span><span class="mi">10</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_orig_type</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="o">=</span> <span class="nb">type</span>
@@ -210,10 +210,10 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_check</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">a</span> <span class="o">==</span> <span class="nb">type</span>
 
-<div class="viewcode-block" id="MolecularId.dependencies"><a class="viewcode-back" href="../../api/mordred.MolecularId.html#mordred.MolecularId.MolecularId.dependencies">[docs]</a>    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;aids&#39;</span><span class="p">:</span> <span class="n">AtomicIds</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_eps</span><span class="p">)}</span></div>
+    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;aids&#39;</span><span class="p">:</span> <span class="n">AtomicIds</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_eps</span><span class="p">)}</span>
 
-<div class="viewcode-block" id="MolecularId.calculate"><a class="viewcode-back" href="../../api/mordred.MolecularId.html#mordred.MolecularId.MolecularId.calculate">[docs]</a>    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">aids</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">aids</span><span class="p">):</span>
         <span class="n">v</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span>
             <span class="nb">sum</span><span class="p">(</span>
                 <span class="n">aid</span>
@@ -225,7 +225,7 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span><span class="p">:</span>
             <span class="n">v</span> <span class="o">/=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span>
 
-        <span class="k">return</span> <span class="n">v</span></div>
+        <span class="k">return</span> <span class="n">v</span>
 
     <span class="n">rtype</span> <span class="o">=</span> <span class="nb">float</span></div>
 </pre></div>

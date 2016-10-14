@@ -161,20 +161,20 @@
     <span class="n">es_types</span> <span class="o">=</span> <span class="n">es_types</span>
 
     <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="AtomTypeEState.preset"><a class="viewcode-back" href="../../api/mordred.EState.html#mordred.EState.AtomTypeEState.preset">[docs]</a>    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">(</span>
             <span class="n">cls</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">AggrType</span>
             <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">es_types</span>
-        <span class="p">)</span></div>
+        <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">aggr</span> <span class="o">=</span> <span class="n">aggr_name_dict</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">]</span>
 
         <span class="k">return</span> <span class="n">aggr</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_estate</span>
 
-<div class="viewcode-block" id="AtomTypeEState.parameters"><a class="viewcode-back" href="../../api/mordred.EState.html#mordred.EState.AtomTypeEState.parameters">[docs]</a>    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_estate</span></div>
+    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_estate</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="n">estate</span><span class="o">=</span><span class="s1">&#39;sLi&#39;</span><span class="p">):</span>
         <span class="k">assert</span> <span class="n">estate</span> <span class="ow">in</span> <span class="n">es_type_set</span>
@@ -182,10 +182,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="o">=</span> <span class="n">parse_enum</span><span class="p">(</span><span class="n">AggrType</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_estate</span> <span class="o">=</span> <span class="n">estate</span>
 
-<div class="viewcode-block" id="AtomTypeEState.dependencies"><a class="viewcode-back" href="../../api/mordred.EState.html#mordred.EState.AtomTypeEState.dependencies">[docs]</a>    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;E&#39;</span><span class="p">:</span> <span class="n">EStateCache</span><span class="p">()}</span></div>
+    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;E&#39;</span><span class="p">:</span> <span class="n">EStateCache</span><span class="p">()}</span>
 
-<div class="viewcode-block" id="AtomTypeEState.calculate"><a class="viewcode-back" href="../../api/mordred.EState.html#mordred.EState.AtomTypeEState.calculate">[docs]</a>    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">E</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">E</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="o">==</span> <span class="n">AggrType</span><span class="o">.</span><span class="n">count</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">,</span> <span class="n">E</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_estate</span><span class="p">)</span>
 
@@ -195,7 +195,7 @@
         <span class="p">)</span>
 
         <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">rethrow_na</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
-            <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">builtins</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="o">.</span><span class="n">name</span><span class="p">)(</span><span class="n">indices</span><span class="p">)</span></div>
+            <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">builtins</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="o">.</span><span class="n">name</span><span class="p">)(</span><span class="n">indices</span><span class="p">)</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">rtype</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -204,7 +204,9 @@
 <span class="sd">        * &#39;other&#39;: :py:class:`float`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
-        <span class="k">return</span> <span class="nb">int</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="o">==</span> <span class="n">AggrType</span><span class="o">.</span><span class="n">count</span> <span class="k">else</span> <span class="nb">float</span></div>
+        <span class="k">return</span> <span class="nb">int</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="o">==</span> <span class="n">AggrType</span><span class="o">.</span><span class="n">count</span> <span class="k">else</span> <span class="nb">float</span>
+
+    <span class="n">_extra_docs</span> <span class="o">=</span> <span class="s1">&#39;aggr_types&#39;</span><span class="p">,</span> <span class="s1">&#39;es_types&#39;</span></div>
 </pre></div>
 
           </div>

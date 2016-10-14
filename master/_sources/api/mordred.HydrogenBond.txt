@@ -2,6 +2,13 @@ mordred.HydrogenBond module
 ===========================
 
 .. automodule:: mordred.HydrogenBond
-    :members:
+.. autoclass:: mordred.HydrogenBond.HBondAcceptor
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
     :undoc-members:
     :show-inheritance:
+
+.. autoclass:: mordred.HydrogenBond.HBondDonor
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
+    :undoc-members:
+    :show-inheritance:
+

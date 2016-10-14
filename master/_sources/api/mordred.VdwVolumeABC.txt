@@ -2,6 +2,8 @@ mordred.VdwVolumeABC module
 ===========================
 
 .. automodule:: mordred.VdwVolumeABC
-    :members:
+.. autoclass:: mordred.VdwVolumeABC.VdwVolumeABC
+    :members: compat_atoms, explicit_hydrogens, kekulize, require_3D, require_connected, rtype
     :undoc-members:
     :show-inheritance:
+

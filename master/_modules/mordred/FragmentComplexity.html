@@ -94,22 +94,22 @@
     <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="FragmentComplexity.preset"><a class="viewcode-back" href="../../api/mordred.FragmentComplexity.html#mordred.FragmentComplexity.FragmentComplexity.preset">[docs]</a>    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
-        <span class="k">yield</span> <span class="n">cls</span><span class="p">()</span></div>
+    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="n">cls</span><span class="p">()</span>
 
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="kc">False</span>
 
-<div class="viewcode-block" id="FragmentComplexity.parameters"><a class="viewcode-back" href="../../api/mordred.FragmentComplexity.html#mordred.FragmentComplexity.FragmentComplexity.parameters">[docs]</a>    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">()</span></div>
+    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;fragCpx&#39;</span>
 
-<div class="viewcode-block" id="FragmentComplexity.calculate"><a class="viewcode-back" href="../../api/mordred.FragmentComplexity.html#mordred.FragmentComplexity.FragmentComplexity.calculate">[docs]</a>    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">A</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span>
         <span class="n">B</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetNumBonds</span><span class="p">()</span>
         <span class="n">H</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">()</span> <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">GetAtomicNum</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">6</span><span class="p">)</span>
-        <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="n">B</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">A</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">A</span><span class="p">)</span> <span class="o">+</span> <span class="n">H</span> <span class="o">/</span> <span class="mi">100</span></div>
+        <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="n">B</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">A</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">A</span><span class="p">)</span> <span class="o">+</span> <span class="n">H</span> <span class="o">/</span> <span class="mi">100</span>
 
     <span class="n">rtype</span> <span class="o">=</span> <span class="nb">float</span></div>
 </pre></div>

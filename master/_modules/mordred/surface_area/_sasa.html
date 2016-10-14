@@ -81,7 +81,7 @@
 <span class="kn">from</span> <span class="nn">.._atomic_property</span> <span class="k">import</span> <span class="n">table</span><span class="p">,</span> <span class="n">vdw_radii</span>
 
 
-<div class="viewcode-block" id="SurfaceArea"><a class="viewcode-back" href="../../../api/mordred.surface_area.html#mordred.surface_area.SurfaceArea">[docs]</a><span class="k">class</span> <span class="nc">SurfaceArea</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="SurfaceArea"><a class="viewcode-back" href="../../../subpackages/mordred.surface_area.html#mordred.surface_area.SurfaceArea">[docs]</a><span class="k">class</span> <span class="nc">SurfaceArea</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">r&quot;&quot;&quot;calculate solvent accessible surface area.</span>
 
 <span class="sd">    :type radiuses: np.ndarray(dtype=float, shape=(N,))</span>
@@ -127,7 +127,7 @@
 
         <span class="bp">self</span><span class="o">.</span><span class="n">neighbors</span> <span class="o">=</span> <span class="n">ns</span>
 
-<div class="viewcode-block" id="SurfaceArea.atomic_sa"><a class="viewcode-back" href="../../../api/mordred.surface_area.html#mordred.surface_area.SurfaceArea.atomic_sa">[docs]</a>    <span class="k">def</span> <span class="nf">atomic_sa</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+<div class="viewcode-block" id="SurfaceArea.atomic_sa"><a class="viewcode-back" href="../../../subpackages/mordred.surface_area.html#mordred.surface_area.SurfaceArea.atomic_sa">[docs]</a>    <span class="k">def</span> <span class="nf">atomic_sa</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
         <span class="sd">r&quot;&quot;&quot;calculate atomic surface area.</span>
 
 <span class="sd">        :type i: int</span>
@@ -157,7 +157,7 @@
 
         <span class="k">return</span> <span class="n">sa</span> <span class="o">*</span> <span class="n">sphere</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">N</span></div>
 
-<div class="viewcode-block" id="SurfaceArea.surface_area"><a class="viewcode-back" href="../../../api/mordred.surface_area.html#mordred.surface_area.SurfaceArea.surface_area">[docs]</a>    <span class="k">def</span> <span class="nf">surface_area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="SurfaceArea.surface_area"><a class="viewcode-back" href="../../../subpackages/mordred.surface_area.html#mordred.surface_area.SurfaceArea.surface_area">[docs]</a>    <span class="k">def</span> <span class="nf">surface_area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">r&quot;&quot;&quot;calculate all atomic surface area.</span>
 
 <span class="sd">        :rtype: [float]</span>
@@ -166,7 +166,7 @@
         <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">atomic_sa</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rads</span><span class="p">))]</span></div>
 
     <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="SurfaceArea.from_mol"><a class="viewcode-back" href="../../../api/mordred.surface_area.html#mordred.surface_area.SurfaceArea.from_mol">[docs]</a>    <span class="k">def</span> <span class="nf">from_mol</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">conformer</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">solvent_radius</span><span class="o">=</span><span class="mf">1.4</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+<div class="viewcode-block" id="SurfaceArea.from_mol"><a class="viewcode-back" href="../../../subpackages/mordred.surface_area.html#mordred.surface_area.SurfaceArea.from_mol">[docs]</a>    <span class="k">def</span> <span class="nf">from_mol</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">conformer</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">solvent_radius</span><span class="o">=</span><span class="mf">1.4</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
         <span class="sd">r&quot;&quot;&quot;construct SurfaceArea from rdkit Mol type.</span>
 
 <span class="sd">        :type mol: rdkit.Chem.Mol</span>
@@ -193,7 +193,7 @@
         <span class="k">return</span> <span class="n">cls</span><span class="p">(</span><span class="n">rs</span><span class="p">,</span> <span class="n">ps</span><span class="p">,</span> <span class="n">level</span><span class="p">)</span></div>
 
     <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="SurfaceArea.from_pdb"><a class="viewcode-back" href="../../../api/mordred.surface_area.html#mordred.surface_area.SurfaceArea.from_pdb">[docs]</a>    <span class="k">def</span> <span class="nf">from_pdb</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">pdb</span><span class="p">,</span> <span class="n">solvent_radius</span><span class="o">=</span><span class="mf">1.4</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+<div class="viewcode-block" id="SurfaceArea.from_pdb"><a class="viewcode-back" href="../../../subpackages/mordred.surface_area.html#mordred.surface_area.SurfaceArea.from_pdb">[docs]</a>    <span class="k">def</span> <span class="nf">from_pdb</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">pdb</span><span class="p">,</span> <span class="n">solvent_radius</span><span class="o">=</span><span class="mf">1.4</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="kn">from</span> <span class="nn">Bio.PDB</span> <span class="k">import</span> <span class="n">PDBParser</span>
         <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
