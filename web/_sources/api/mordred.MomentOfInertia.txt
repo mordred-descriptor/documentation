@@ -1,0 +1,9 @@
+mordred.MomentOfInertia module
+==============================
+
+.. automodule:: mordred.MomentOfInertia
+.. autoclass:: mordred.MomentOfInertia.MomentOfInertia
+    :members: axes, explicit_hydrogens, kekulize, require_3D, require_connected, rtype
+    :undoc-members:
+    :show-inheritance:
+

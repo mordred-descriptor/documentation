@@ -1,0 +1,203 @@
+
+
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>mordred.TopologicalCharge &#8212; mordred 0.2.1.post1.dev1 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.2.1.post1.dev1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="mordred 0.2.1.post1.dev1 documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">mordred 0.2.1.post1.dev1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Module code</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for mordred.TopologicalCharge</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">itertools</span> <span class="k">import</span> <span class="n">chain</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">six</span> <span class="k">import</span> <span class="n">integer_types</span>
+
+<span class="kn">from</span> <span class="nn">._base</span> <span class="k">import</span> <span class="n">Descriptor</span>
+<span class="kn">from</span> <span class="nn">._graph_matrix</span> <span class="k">import</span> <span class="n">DistanceMatrix</span><span class="p">,</span> <span class="n">AdjacencyMatrix</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;TopologicalCharge&#39;</span><span class="p">,)</span>
+
+
+<span class="k">class</span> <span class="nc">ChargeTermMatrix</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="n">AdjacencyMatrix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">),</span>
+            <span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="n">DistanceMatrix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">),</span>
+        <span class="p">}</span>
+
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
+        <span class="n">D2</span> <span class="o">=</span> <span class="n">D</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">D2</span><span class="p">[</span><span class="n">D2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">]</span> <span class="o">**=</span> <span class="o">-</span><span class="mi">2</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">fill_diagonal</span><span class="p">(</span><span class="n">D2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+        <span class="n">M</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">D2</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">M</span> <span class="o">-</span> <span class="n">M</span><span class="o">.</span><span class="n">T</span>
+
+
+<div class="viewcode-block" id="TopologicalCharge"><a class="viewcode-back" href="../../api/mordred.TopologicalCharge.html#mordred.TopologicalCharge.TopologicalCharge">[docs]</a><span class="k">class</span> <span class="nc">TopologicalCharge</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
+    <span class="sd">r&quot;&quot;&quot;topological charge descriptor.</span>
+
+<span class="sd">    :type type: str</span>
+<span class="sd">    :param type:</span>
+<span class="sd">        * &#39;sum&#39;: sum of order-distance atom pairs coefficient</span>
+<span class="sd">        * &#39;mean&#39;: mean of order-distance atom pairs coefficient</span>
+<span class="sd">        * &#39;global&#39;: sum of mean-topoCharge over 0 to order</span>
+
+<span class="sd">    :type order: int</span>
+<span class="sd">    :param order: int</span>
+
+<span class="sd">    References</span>
+<span class="sd">        * :doi:`10.1021/ci00019a008`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_type&#39;</span><span class="p">,</span> <span class="s1">&#39;_order&#39;</span><span class="p">,)</span>
+
+    <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="n">tc_types</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;global&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;raw&#39;</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">chain</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">cls</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">o</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;raw&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)),</span>
+            <span class="p">[</span><span class="n">cls</span><span class="p">(</span><span class="s1">&#39;global&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)]</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="o">==</span> <span class="s1">&#39;global&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;JGT</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="o">==</span> <span class="s1">&#39;mean&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;JGI</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;GGI</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;global&#39;</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="nb">type</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">tc_types</span>
+        <span class="k">assert</span> <span class="nb">type</span> <span class="o">==</span> <span class="s1">&#39;global&#39;</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">order</span><span class="p">,</span> <span class="n">integer_types</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="o">=</span> <span class="nb">type</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_order</span> <span class="o">=</span> <span class="n">order</span>
+
+    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s1">&#39;CT&#39;</span><span class="p">:</span> <span class="n">ChargeTermMatrix</span><span class="p">(),</span>
+            <span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="n">DistanceMatrix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)</span>
+        <span class="p">}</span>
+
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">CT</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
+        <span class="n">D</span> <span class="o">=</span> <span class="n">D</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">tri</span><span class="p">(</span><span class="o">*</span><span class="n">D</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+        <span class="n">D</span><span class="p">[</span><span class="n">D</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+
+        <span class="n">f</span> <span class="o">=</span> <span class="n">D</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="o">==</span> <span class="s1">&#39;global&#39;</span> <span class="k">else</span> <span class="n">D</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span>
+
+        <span class="n">CT</span> <span class="o">=</span> <span class="n">CT</span><span class="p">[</span><span class="n">f</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="o">==</span> <span class="s1">&#39;raw&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">CT</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+        <span class="c1"># create frequency vector</span>
+        <span class="n">Df</span> <span class="o">=</span> <span class="n">D</span><span class="p">[</span><span class="n">f</span><span class="p">]</span>
+        <span class="n">C</span> <span class="o">=</span> <span class="n">Df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">Df</span><span class="p">):</span>
+            <span class="n">C</span><span class="p">[</span><span class="n">Df</span> <span class="o">==</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">Df</span><span class="p">[</span><span class="n">Df</span> <span class="o">==</span> <span class="n">i</span><span class="p">])</span>
+
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">CT</span> <span class="o">/</span> <span class="n">C</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+    <span class="n">rtype</span> <span class="o">=</span> <span class="nb">float</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">mordred 0.2.1.post1.dev1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Module code</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016, Hirotomo Moriwaki.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.8.
+    </div>
+  </body>
+</html>
