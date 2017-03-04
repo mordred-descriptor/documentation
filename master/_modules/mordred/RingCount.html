@@ -18,7 +18,8 @@
         VERSION:     '0.2.1.post1.dev1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
@@ -28,8 +29,6 @@
     <script type="text/javascript" src="../../_static/bizstyle.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="top" title="mordred 0.2.1.post1.dev1 documentation" href="../../index.html" />
-    <link rel="up" title="Module code" href="../index.html" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <!--[if lt IE 9]>
     <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
@@ -79,7 +78,7 @@
 
 
 <span class="k">class</span> <span class="nc">RingCountBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="kc">False</span>
 
     <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -87,14 +86,14 @@
 
 
 <span class="k">class</span> <span class="nc">Rings</span><span class="p">(</span><span class="n">RingCountBase</span><span class="p">):</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">[</span><span class="nb">frozenset</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">Chem</span><span class="o">.</span><span class="n">GetSymmSSSR</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="p">)]</span>
 
 
 <span class="k">class</span> <span class="nc">FusedRings</span><span class="p">(</span><span class="n">RingCountBase</span><span class="p">):</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;Rings&#39;</span><span class="p">:</span> <span class="n">Rings</span><span class="p">()}</span>
@@ -117,7 +116,7 @@
 
 
 <div class="viewcode-block" id="RingCount"><a class="viewcode-back" href="../../api/mordred.RingCount.html#mordred.RingCount.RingCount">[docs]</a><span class="k">class</span> <span class="nc">RingCount</span><span class="p">(</span><span class="n">RingCountBase</span><span class="p">):</span>
-    <span class="sd">r&quot;&quot;&quot;ring count descriptor.</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;ring count descriptor.</span>
 
 <span class="sd">    :type order: int or None</span>
 <span class="sd">    :param order: number of bonds in ring</span>
@@ -140,18 +139,18 @@
 <span class="sd">        * False: count carbon rings</span>
 <span class="sd">        * None: count any rings</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_order&#39;</span><span class="p">,</span> <span class="s1">&#39;_greater&#39;</span><span class="p">,</span> <span class="s1">&#39;_fused&#39;</span><span class="p">,</span> <span class="s1">&#39;_aromatic&#39;</span><span class="p">,</span> <span class="s1">&#39;_hetero&#39;</span><span class="p">,)</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_order&#39;</span><span class="p">,</span> <span class="s1">&#39;_greater&#39;</span><span class="p">,</span> <span class="s1">&#39;_fused&#39;</span><span class="p">,</span> <span class="s1">&#39;_aromatic&#39;</span><span class="p">,</span> <span class="s1">&#39;_hetero&#39;</span><span class="p">,)</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">fused</span> <span class="ow">in</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">]:</span>
             <span class="k">for</span> <span class="n">arom</span> <span class="ow">in</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]:</span>
                 <span class="k">for</span> <span class="n">hetero</span> <span class="ow">in</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="kc">True</span><span class="p">]:</span>
-                    <span class="k">yield</span> <span class="n">cls</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="n">fused</span><span class="p">,</span> <span class="n">arom</span><span class="p">,</span> <span class="n">hetero</span><span class="p">)</span>
+                    <span class="k">yield</span> <span class="bp">cls</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="n">fused</span><span class="p">,</span> <span class="n">arom</span><span class="p">,</span> <span class="n">hetero</span><span class="p">)</span>
                     <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span> <span class="k">if</span> <span class="n">fused</span> <span class="k">else</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">13</span><span class="p">):</span>
-                        <span class="k">yield</span> <span class="n">cls</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="n">fused</span><span class="p">,</span> <span class="n">arom</span><span class="p">,</span> <span class="n">hetero</span><span class="p">)</span>
+                        <span class="k">yield</span> <span class="bp">cls</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="n">fused</span><span class="p">,</span> <span class="n">arom</span><span class="p">,</span> <span class="n">hetero</span><span class="p">)</span>
 
-                    <span class="k">yield</span> <span class="n">cls</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">fused</span><span class="p">,</span> <span class="n">arom</span><span class="p">,</span> <span class="n">hetero</span><span class="p">)</span>
+                    <span class="k">yield</span> <span class="bp">cls</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">fused</span><span class="p">,</span> <span class="n">arom</span><span class="p">,</span> <span class="n">hetero</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">attrs</span> <span class="o">=</span> <span class="p">[]</span>
@@ -254,7 +253,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2016, Hirotomo Moriwaki.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.8.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
   </body>
 </html>

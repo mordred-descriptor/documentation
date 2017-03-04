@@ -18,7 +18,8 @@
         VERSION:     '0.2.1.post1.dev1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
@@ -28,8 +29,6 @@
     <script type="text/javascript" src="../../_static/bizstyle.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="top" title="mordred 0.2.1.post1.dev1 documentation" href="../../index.html" />
-    <link rel="up" title="Module code" href="../index.html" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <!--[if lt IE 9]>
     <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
@@ -84,7 +83,7 @@
 
 
 <span class="k">class</span> <span class="nc">ChiType</span><span class="p">(</span><span class="n">IntEnum</span><span class="p">):</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="n">path</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">cluster</span> <span class="o">=</span> <span class="mi">2</span>
@@ -98,17 +97,17 @@
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">short</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">_chi_type_dict</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">path</span><span class="p">:</span> <span class="s1">&#39;p&#39;</span><span class="p">,</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">chain</span><span class="p">:</span> <span class="s1">&#39;ch&#39;</span><span class="p">,</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">path_cluster</span><span class="p">:</span> <span class="s1">&#39;pc&#39;</span><span class="p">,</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">cluster</span><span class="p">:</span> <span class="s1">&#39;c&#39;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">path</span><span class="p">:</span> <span class="s1">&#39;p&#39;</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">chain</span><span class="p">:</span> <span class="s1">&#39;ch&#39;</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">path_cluster</span><span class="p">:</span> <span class="s1">&#39;pc&#39;</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">cluster</span><span class="p">:</span> <span class="s1">&#39;c&#39;</span>
         <span class="p">}</span>
 
         <span class="k">return</span> <span class="n">_chi_type_dict</span><span class="p">[</span><span class="bp">self</span><span class="p">]</span>
 
 
 <span class="k">class</span> <span class="nc">DFS</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;mol&#39;</span><span class="p">,</span> <span class="s1">&#39;visited&#39;</span><span class="p">,</span> <span class="s1">&#39;vis_edges&#39;</span><span class="p">,</span> <span class="s1">&#39;is_chain&#39;</span><span class="p">,</span> <span class="s1">&#39;degrees&#39;</span><span class="p">,</span> <span class="s1">&#39;bonds&#39;</span><span class="p">,</span> <span class="s1">&#39;neighbors&#39;</span><span class="p">,)</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;mol&#39;</span><span class="p">,</span> <span class="s1">&#39;visited&#39;</span><span class="p">,</span> <span class="s1">&#39;vis_edges&#39;</span><span class="p">,</span> <span class="s1">&#39;is_chain&#39;</span><span class="p">,</span> <span class="s1">&#39;degrees&#39;</span><span class="p">,</span> <span class="s1">&#39;bonds&#39;</span><span class="p">,</span> <span class="s1">&#39;neighbors&#39;</span><span class="p">,)</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">mol</span> <span class="o">=</span> <span class="n">mol</span>
@@ -175,7 +174,7 @@
 
 
 <span class="k">class</span> <span class="nc">ChiBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="kc">False</span>
 
 
@@ -183,7 +182,7 @@
 
 
 <span class="k">class</span> <span class="nc">ChiCache</span><span class="p">(</span><span class="n">ChiBase</span><span class="p">):</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_order&#39;</span><span class="p">,)</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_order&#39;</span><span class="p">,)</span>
 
     <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">,</span>
@@ -216,7 +215,7 @@
 
 
 <div class="viewcode-block" id="Chi"><a class="viewcode-back" href="../../api/mordred.Chi.html#mordred.Chi.Chi">[docs]</a><span class="k">class</span> <span class="nc">Chi</span><span class="p">(</span><span class="n">ChiBase</span><span class="p">):</span>
-    <span class="sd">r&quot;&quot;&quot;chi descriptor.</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;chi descriptor.</span>
 
 <span class="sd">    :type type: str</span>
 <span class="sd">    :param type: one of chi_types</span>
@@ -232,20 +231,20 @@
 <span class="sd">        * any atomic properties &lt;= 0</span>
 <span class="sd">        * averaged and :math:`N_{\chi} = 0`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_type&#39;</span><span class="p">,</span> <span class="s1">&#39;_order&#39;</span><span class="p">,</span> <span class="s1">&#39;_prop&#39;</span><span class="p">,</span> <span class="s1">&#39;_averaged&#39;</span><span class="p">,)</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_type&#39;</span><span class="p">,</span> <span class="s1">&#39;_order&#39;</span><span class="p">,</span> <span class="s1">&#39;_prop&#39;</span><span class="p">,</span> <span class="s1">&#39;_averaged&#39;</span><span class="p">,)</span>
 
     <span class="n">chi_types</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">ChiType</span><span class="p">)</span>
 
     <span class="n">_deltas</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;dv&#39;</span><span class="p">]</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">chain</span><span class="p">(</span>
-            <span class="p">(</span><span class="n">cls</span><span class="p">(</span><span class="n">ChiType</span><span class="o">.</span><span class="n">chain</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">cls</span><span class="o">.</span><span class="n">_deltas</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">)),</span>
-            <span class="p">(</span><span class="n">cls</span><span class="p">(</span><span class="n">ChiType</span><span class="o">.</span><span class="n">cluster</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">cls</span><span class="o">.</span><span class="n">_deltas</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">)),</span>
-            <span class="p">(</span><span class="n">cls</span><span class="p">(</span><span class="n">ChiType</span><span class="o">.</span><span class="n">path_cluster</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">cls</span><span class="o">.</span><span class="n">_deltas</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">)),</span>
-            <span class="p">(</span><span class="n">cls</span><span class="p">(</span><span class="n">ChiType</span><span class="o">.</span><span class="n">path</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
-             <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">cls</span><span class="o">.</span><span class="n">_deltas</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)),</span>
+            <span class="p">(</span><span class="bp">cls</span><span class="p">(</span><span class="n">ChiType</span><span class="o">.</span><span class="n">chain</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_deltas</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">)),</span>
+            <span class="p">(</span><span class="bp">cls</span><span class="p">(</span><span class="n">ChiType</span><span class="o">.</span><span class="n">cluster</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_deltas</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">)),</span>
+            <span class="p">(</span><span class="bp">cls</span><span class="p">(</span><span class="n">ChiType</span><span class="o">.</span><span class="n">path_cluster</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_deltas</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">)),</span>
+            <span class="p">(</span><span class="bp">cls</span><span class="p">(</span><span class="n">ChiType</span><span class="o">.</span><span class="n">path</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+             <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_deltas</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)),</span>
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -318,7 +317,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2016, Hirotomo Moriwaki.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.8.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
   </body>
 </html>

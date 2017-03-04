@@ -18,7 +18,8 @@
         VERSION:     '0.2.1.post1.dev1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
@@ -28,8 +29,6 @@
     <script type="text/javascript" src="../../_static/bizstyle.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="top" title="mordred 0.2.1.post1.dev1 documentation" href="../../index.html" />
-    <link rel="up" title="Module code" href="../index.html" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <!--[if lt IE 9]>
     <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
@@ -83,16 +82,16 @@
 
 
 <div class="viewcode-block" id="LabuteASA"><a class="viewcode-back" href="../../api/mordred.MoeType.html#mordred.MoeType.LabuteASA">[docs]</a><span class="k">class</span> <span class="nc">LabuteASA</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
-    <span class="sd">r&quot;&quot;&quot;Labute&#39;s Approximate Surface Area descriptor(rdkit wrapper).&quot;&quot;&quot;</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Labute&#39;s Approximate Surface Area descriptor(rdkit wrapper).&quot;&quot;&quot;</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="kc">False</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
-        <span class="k">yield</span> <span class="n">cls</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="bp">cls</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span>
 
     <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">()</span>
@@ -104,16 +103,16 @@
 
 
 <span class="k">class</span> <span class="nc">MoeTypeBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_k&#39;</span><span class="p">,)</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_k&#39;</span><span class="p">,)</span>
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="n">_module</span> <span class="o">=</span> <span class="n">MolSurf</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">map</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">cls</span><span class="o">.</span><span class="n">k_max</span><span class="p">))</span>
+    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">map</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="n">k_max</span><span class="p">))</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_k</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_k</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_k</span><span class="p">,</span>
@@ -130,53 +129,53 @@
 
 
 <div class="viewcode-block" id="PEOE_VSA"><a class="viewcode-back" href="../../api/mordred.MoeType.html#mordred.MoeType.PEOE_VSA">[docs]</a><span class="k">class</span> <span class="nc">PEOE_VSA</span><span class="p">(</span><span class="n">MoeTypeBase</span><span class="p">):</span>
-    <span class="sd">r&quot;&quot;&quot;MOE type descriptors using gasteiger charge and surface area contribution(rdkit wrapper).</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;MOE type descriptors using gasteiger charge and surface area contribution(rdkit wrapper).</span>
 
 <span class="sd">    :type k: int</span>
 <span class="sd">    :param k: (:math:`1 &lt;= k &lt;= k_{\rm max}`)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
     <span class="n">k_max</span> <span class="o">=</span> <span class="mi">14</span></div>
 
 
 <div class="viewcode-block" id="SMR_VSA"><a class="viewcode-back" href="../../api/mordred.MoeType.html#mordred.MoeType.SMR_VSA">[docs]</a><span class="k">class</span> <span class="nc">SMR_VSA</span><span class="p">(</span><span class="n">MoeTypeBase</span><span class="p">):</span>
-    <span class="sd">r&quot;&quot;&quot;MOE type descriptors using Wildman-Crippen MR and surface area contribution(rdkit wrapper).</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;MOE type descriptors using Wildman-Crippen MR and surface area contribution(rdkit wrapper).</span>
 
 <span class="sd">    :type k: int</span>
 <span class="sd">    :param k: (:math:`1 &lt;= k &lt;= k_{\rm max}`)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
     <span class="n">k_max</span> <span class="o">=</span> <span class="mi">10</span></div>
 
 
 <div class="viewcode-block" id="SlogP_VSA"><a class="viewcode-back" href="../../api/mordred.MoeType.html#mordred.MoeType.SlogP_VSA">[docs]</a><span class="k">class</span> <span class="nc">SlogP_VSA</span><span class="p">(</span><span class="n">MoeTypeBase</span><span class="p">):</span>
-    <span class="sd">r&quot;&quot;&quot;MOE type descriptors using Wildman-Crippen LogP and surface area contribution(rdkit wrapper).</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;MOE type descriptors using Wildman-Crippen LogP and surface area contribution(rdkit wrapper).</span>
 
 <span class="sd">    :type k: int</span>
 <span class="sd">    :param k: (:math:`1 &lt;= k &lt;= k_{\rm max}`)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
     <span class="n">k_max</span> <span class="o">=</span> <span class="mi">12</span></div>
 
 
 <div class="viewcode-block" id="EState_VSA"><a class="viewcode-back" href="../../api/mordred.MoeType.html#mordred.MoeType.EState_VSA">[docs]</a><span class="k">class</span> <span class="nc">EState_VSA</span><span class="p">(</span><span class="n">MoeTypeBase</span><span class="p">):</span>
-    <span class="sd">r&quot;&quot;&quot;MOE type descriptors using EState indices and surface area contribution(rdkit wrapper).</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;MOE type descriptors using EState indices and surface area contribution(rdkit wrapper).</span>
 
 <span class="sd">    :type k: int</span>
 <span class="sd">    :param k: (:math:`1 &lt;= k &lt;= k_{\rm max}`)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
     <span class="n">_module</span> <span class="o">=</span> <span class="n">RDKit_EState_VSA</span>
     <span class="n">k_max</span> <span class="o">=</span> <span class="mi">11</span></div>
 
 
 <div class="viewcode-block" id="VSA_EState"><a class="viewcode-back" href="../../api/mordred.MoeType.html#mordred.MoeType.VSA_EState">[docs]</a><span class="k">class</span> <span class="nc">VSA_EState</span><span class="p">(</span><span class="n">MoeTypeBase</span><span class="p">):</span>
-    <span class="sd">r&quot;&quot;&quot;MOE type descriptors using EState indices and surface area contribution(rdkit wrapper).</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;MOE type descriptors using EState indices and surface area contribution(rdkit wrapper).</span>
 
 <span class="sd">    :type k: int</span>
 <span class="sd">    :param k: (:math:`1 &lt;= k &lt;= k_{\rm max}`)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
     <span class="n">_module</span> <span class="o">=</span> <span class="n">RDKit_EState_VSA</span>
     <span class="n">k_max</span> <span class="o">=</span> <span class="mi">10</span></div>
 </pre></div>
@@ -201,7 +200,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2016, Hirotomo Moriwaki.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.8.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
   </body>
 </html>

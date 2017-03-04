@@ -1,0 +1,9 @@
+mordred.EccentricConnectivityIndex module
+=========================================
+
+.. automodule:: mordred.EccentricConnectivityIndex
+.. autoclass:: mordred.EccentricConnectivityIndex.EccentricConnectivityIndex
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
+    :undoc-members:
+    :show-inheritance:
+

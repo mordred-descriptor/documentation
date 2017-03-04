@@ -18,7 +18,8 @@
         VERSION:     '0.2.1.post1.dev1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
@@ -28,8 +29,6 @@
     <script type="text/javascript" src="../../_static/bizstyle.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="top" title="mordred 0.2.1.post1.dev1 documentation" href="../../index.html" />
-    <link rel="up" title="Module code" href="../index.html" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <!--[if lt IE 9]>
     <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
@@ -80,12 +79,12 @@
 
 
 <span class="k">class</span> <span class="nc">AutocorrelationBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="s1">&#39;_prop&#39;</span><span class="p">,</span> <span class="s1">&#39;_order&#39;</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="s1">&#39;_prop&#39;</span><span class="p">,</span> <span class="s1">&#39;_order&#39;</span>
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="kc">True</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{}{}{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">,</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_avec</span><span class="o">.</span><span class="n">as_argument</span>
         <span class="p">)</span>
@@ -129,7 +128,7 @@
 
 
 <span class="k">class</span> <span class="nc">AutocorrelationProp</span><span class="p">(</span><span class="n">AutocorrelationBase</span><span class="p">):</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="p">,</span>
@@ -141,7 +140,7 @@
 
 
 <span class="k">class</span> <span class="nc">AutocorrelationOrder</span><span class="p">(</span><span class="n">AutocorrelationBase</span><span class="p">):</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">_prop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">pass</span>
@@ -156,7 +155,7 @@
 
 
 <span class="k">class</span> <span class="nc">CAVec</span><span class="p">(</span><span class="n">AutocorrelationProp</span><span class="p">):</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
     <span class="n">_order</span> <span class="o">=</span> <span class="mi">0</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -167,7 +166,7 @@
 
 
 <span class="k">class</span> <span class="nc">GMat</span><span class="p">(</span><span class="n">AutocorrelationOrder</span><span class="p">):</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;dmat&#39;</span><span class="p">:</span> <span class="n">DistanceMatrix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)}</span>
@@ -177,7 +176,7 @@
 
 
 <span class="k">class</span> <span class="nc">GSum</span><span class="p">(</span><span class="n">AutocorrelationOrder</span><span class="p">):</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;gmat&#39;</span><span class="p">:</span> <span class="n">GMat</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">)}</span>
@@ -192,7 +191,7 @@
 
 
 <div class="viewcode-block" id="ATS"><a class="viewcode-back" href="../../api/mordred.Autocorrelation.html#mordred.Autocorrelation.ATS">[docs]</a><span class="k">class</span> <span class="nc">ATS</span><span class="p">(</span><span class="n">AutocorrelationBase</span><span class="p">):</span>
-    <span class="sd">r&quot;&quot;&quot;Autocorrelation of Topological Structure descriptor.</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Autocorrelation of Topological Structure descriptor.</span>
 
 <span class="sd">    a.k.a. Moreau-Broto autocorrelation descriptor</span>
 
@@ -225,12 +224,12 @@
 <span class="sd">    :returns: NaN when any properties are NaN</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">(</span>
-            <span class="n">cls</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+            <span class="bp">cls</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">get_properties</span><span class="p">(</span><span class="n">valence</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">MAX_DISTANCE</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
         <span class="p">)</span>
@@ -246,7 +245,7 @@
 
 
 <div class="viewcode-block" id="AATS"><a class="viewcode-back" href="../../api/mordred.Autocorrelation.html#mordred.Autocorrelation.AATS">[docs]</a><span class="k">class</span> <span class="nc">AATS</span><span class="p">(</span><span class="n">ATS</span><span class="p">):</span>
-    <span class="sd">r&quot;&quot;&quot;averaged ATS descriptor.</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;averaged ATS descriptor.</span>
 
 <span class="sd">    .. math::</span>
 
@@ -263,7 +262,7 @@
 <span class="sd">        * some properties are NaN</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;ATS&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ATS</span><span class="p">,</span> <span class="s1">&#39;gsum&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gsum</span><span class="p">}</span>
@@ -274,7 +273,7 @@
 
 
 <div class="viewcode-block" id="ATSC"><a class="viewcode-back" href="../../api/mordred.Autocorrelation.html#mordred.Autocorrelation.ATSC">[docs]</a><span class="k">class</span> <span class="nc">ATSC</span><span class="p">(</span><span class="n">AutocorrelationBase</span><span class="p">):</span>
-    <span class="sd">r&quot;&quot;&quot;centered ATS descriptor.</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;centered ATS descriptor.</span>
 
 <span class="sd">    ATS with :math:`{\boldsymbol w}_{\rm c}` property</span>
 
@@ -286,12 +285,12 @@
 <span class="sd">    :returns: NaN when any properties are NaN</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">(</span>
-            <span class="n">cls</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+            <span class="bp">cls</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">get_properties</span><span class="p">(</span><span class="n">charge</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">valence</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">MAX_DISTANCE</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
         <span class="p">)</span>
@@ -307,7 +306,7 @@
 
 
 <div class="viewcode-block" id="AATSC"><a class="viewcode-back" href="../../api/mordred.Autocorrelation.html#mordred.Autocorrelation.AATSC">[docs]</a><span class="k">class</span> <span class="nc">AATSC</span><span class="p">(</span><span class="n">ATSC</span><span class="p">):</span>
-    <span class="sd">r&quot;&quot;&quot;averaged ATSC descriptor.</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;averaged ATSC descriptor.</span>
 
 <span class="sd">    .. math::</span>
 
@@ -324,7 +323,7 @@
 <span class="sd">        * any properties are NaN</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;ATSC&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ATSC</span><span class="p">,</span> <span class="s1">&#39;gsum&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gsum</span><span class="p">}</span>
@@ -335,7 +334,7 @@
 
 
 <div class="viewcode-block" id="MATS"><a class="viewcode-back" href="../../api/mordred.Autocorrelation.html#mordred.Autocorrelation.MATS">[docs]</a><span class="k">class</span> <span class="nc">MATS</span><span class="p">(</span><span class="n">AutocorrelationBase</span><span class="p">):</span>
-    <span class="sd">r&quot;&quot;&quot;Moran coefficient descriptor.</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Moran coefficient descriptor.</span>
 
 <span class="sd">    .. math::</span>
 
@@ -353,12 +352,12 @@
 <span class="sd">        * denominator = 0</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">(</span>
-            <span class="n">cls</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+            <span class="bp">cls</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">get_properties</span><span class="p">(</span><span class="n">charge</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">valence</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">MAX_DISTANCE</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
         <span class="p">)</span>
@@ -376,7 +375,7 @@
 
 
 <div class="viewcode-block" id="GATS"><a class="viewcode-back" href="../../api/mordred.Autocorrelation.html#mordred.Autocorrelation.GATS">[docs]</a><span class="k">class</span> <span class="nc">GATS</span><span class="p">(</span><span class="n">MATS</span><span class="p">):</span>
-    <span class="sd">r&quot;&quot;&quot;Geary coefficient descriptor.</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Geary coefficient descriptor.</span>
 
 <span class="sd">    :Parameters: see :py:class:`ATS`</span>
 
@@ -387,7 +386,7 @@
 <span class="sd">        * denominator = 0</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span>
@@ -427,7 +426,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2016, Hirotomo Moriwaki.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.8.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
   </body>
 </html>

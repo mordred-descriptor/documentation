@@ -18,7 +18,8 @@
         VERSION:     '0.2.1.post1.dev1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
@@ -28,8 +29,6 @@
     <script type="text/javascript" src="../../_static/bizstyle.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="top" title="mordred 0.2.1.post1.dev1 documentation" href="../../index.html" />
-    <link rel="up" title="Module code" href="../index.html" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <!--[if lt IE 9]>
     <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
@@ -77,14 +76,14 @@
 
 
 <span class="k">class</span> <span class="nc">PolarizabilityBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="s1">&#39;_use78&#39;</span><span class="p">,</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="s1">&#39;_use78&#39;</span><span class="p">,</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
-        <span class="k">yield</span> <span class="n">cls</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="bp">cls</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">+</span> <span class="p">(</span><span class="s1">&#39;78&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_use78</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">+</span> <span class="p">(</span><span class="s1">&#39;78&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_use78</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_use78</span><span class="p">,</span>
@@ -99,12 +98,12 @@
 
 
 <div class="viewcode-block" id="APol"><a class="viewcode-back" href="../../api/mordred.Polarizability.html#mordred.Polarizability.APol">[docs]</a><span class="k">class</span> <span class="nc">APol</span><span class="p">(</span><span class="n">PolarizabilityBase</span><span class="p">):</span>
-    <span class="sd">r&quot;&quot;&quot;atomic polarizability descriptor.</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;atomic polarizability descriptor.</span>
 
 <span class="sd">    :type use78: bool</span>
 <span class="sd">    :param use78: use old atomic polarizability data</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_table</span><span class="p">()</span>
@@ -112,12 +111,12 @@
 
 
 <div class="viewcode-block" id="BPol"><a class="viewcode-back" href="../../api/mordred.Polarizability.html#mordred.Polarizability.BPol">[docs]</a><span class="k">class</span> <span class="nc">BPol</span><span class="p">(</span><span class="n">PolarizabilityBase</span><span class="p">):</span>
-    <span class="sd">r&quot;&quot;&quot;bond polarizability descriptor.</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;bond polarizability descriptor.</span>
 
 <span class="sd">    :type use78: bool</span>
 <span class="sd">    :param use78: use old atomic polarizability data</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_table</span><span class="p">()</span>
@@ -150,7 +149,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2016, Hirotomo Moriwaki.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.8.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
   </body>
 </html>

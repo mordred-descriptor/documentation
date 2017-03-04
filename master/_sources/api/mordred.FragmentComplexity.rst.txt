@@ -1,0 +1,9 @@
+mordred.FragmentComplexity module
+=================================
+
+.. automodule:: mordred.FragmentComplexity
+.. autoclass:: mordred.FragmentComplexity.FragmentComplexity
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
+    :undoc-members:
+    :show-inheritance:
+

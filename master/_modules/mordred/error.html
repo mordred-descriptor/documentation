@@ -18,7 +18,8 @@
         VERSION:     '0.2.1.post1.dev1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
@@ -28,8 +29,6 @@
     <script type="text/javascript" src="../../_static/bizstyle.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="top" title="mordred 0.2.1.post1.dev1 documentation" href="../../index.html" />
-    <link rel="up" title="Module code" href="../index.html" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <!--[if lt IE 9]>
     <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
@@ -82,10 +81,10 @@
 <span class="sd">        error (Exception): error object</span>
 <span class="sd">        stack (callstack)</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="s1">&#39;stack&#39;</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="s1">&#39;stack&#39;</span>
 
     <span class="k">def</span> <span class="nf">__reduce_ex__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">version</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">error</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stack</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">error</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stack</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">stack</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">error</span> <span class="o">=</span> <span class="n">error</span>
@@ -115,23 +114,23 @@
 
 <div class="viewcode-block" id="Missing"><a class="viewcode-back" href="../../subpackages/mordred.error.html#mordred.error.Missing">[docs]</a><span class="k">class</span> <span class="nc">Missing</span><span class="p">(</span><span class="n">MissingValueBase</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;known errored value&#39;&#39;&#39;</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
     <span class="n">header</span> <span class="o">=</span> <span class="s1">&#39;Missing&#39;</span></div>
 
 
 <div class="viewcode-block" id="Error"><a class="viewcode-back" href="../../subpackages/mordred.error.html#mordred.error.Error">[docs]</a><span class="k">class</span> <span class="nc">Error</span><span class="p">(</span><span class="n">MissingValueBase</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;unknown errored value&#39;&#39;&#39;</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
     <span class="n">header</span> <span class="o">=</span> <span class="s1">&#39;ERROR&#39;</span></div>
 
 
 <div class="viewcode-block" id="MordredException"><a class="viewcode-back" href="../../subpackages/mordred.error.html#mordred.error.MordredException">[docs]</a><span class="k">class</span> <span class="nc">MordredException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span></div>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span></div>
 
 
 <div class="viewcode-block" id="MultipleFragments"><a class="viewcode-back" href="../../subpackages/mordred.error.html#mordred.error.MultipleFragments">[docs]</a><span class="k">class</span> <span class="nc">MultipleFragments</span><span class="p">(</span><span class="n">MordredException</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;multiple fragments detected on require_connected Descriptor.&#39;&#39;&#39;</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;multiple fragments&#39;</span></div>
@@ -139,7 +138,7 @@
 
 <div class="viewcode-block" id="Missing3DCoordinate"><a class="viewcode-back" href="../../subpackages/mordred.error.html#mordred.error.Missing3DCoordinate">[docs]</a><span class="k">class</span> <span class="nc">Missing3DCoordinate</span><span class="p">(</span><span class="n">MordredException</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;missing 3D coordinate on require_3D Descriptor.&#39;&#39;&#39;</span>
-    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;missing 3D coordinate&#39;</span></div>
@@ -165,7 +164,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2016, Hirotomo Moriwaki.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.8.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
   </body>
 </html>
