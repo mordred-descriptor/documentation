@@ -1,0 +1,194 @@
+
+
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>mordred.EState module &#8212; mordred 0.2.1.post1.dev1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.2.1.post1.dev1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="mordred.EccentricConnectivityIndex module" href="mordred.EccentricConnectivityIndex.html" />
+    <link rel="prev" title="mordred.DistanceMatrix module" href="mordred.DistanceMatrix.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="mordred.EccentricConnectivityIndex.html" title="mordred.EccentricConnectivityIndex module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="mordred.DistanceMatrix.html" title="mordred.DistanceMatrix module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">mordred 0.2.1.post1.dev1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../mordred.html" >mordred package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="modules.html" accesskey="U">Submodules</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="mordred.DistanceMatrix.html"
+                        title="previous chapter">mordred.DistanceMatrix module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="mordred.EccentricConnectivityIndex.html"
+                        title="next chapter">mordred.EccentricConnectivityIndex module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/mordred.EState.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-mordred.EState">
+<span id="mordred-estate-module"></span><h1>mordred.EState module<a class="headerlink" href="#module-mordred.EState" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="mordred.EState.AtomTypeEState">
+<em class="property">class </em><code class="descclassname">mordred.EState.</code><code class="descname">AtomTypeEState</code><span class="sig-paren">(</span><em>type='count'</em>, <em>estate='sLi'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/EState.html#AtomTypeEState"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.EState.AtomTypeEState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.EState.EStateBase</span></code></p>
+<p>atom type e-state descriptor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>type</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; one of aggr_types</li>
+<li><strong>estate</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; one of es_types</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">NaN when type in [&#8216;min&#8217;, &#8216;max&#8217;] and <span class="math">\(N_{\rm X} = 0\)</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>References</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="https://dx.doi.org/10.1021/ci00028a014">doi:10.1021/ci00028a014</a></li>
+</ul>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="mordred.EState.AtomTypeEState.aggr_types">
+<code class="descname">aggr_types</code><em class="property"> = ('count', 'sum', 'max', 'min')</em><a class="headerlink" href="#mordred.EState.AtomTypeEState.aggr_types" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.EState.AtomTypeEState.es_types">
+<code class="descname">es_types</code><em class="property"> = ('sLi', 'ssBe', 'ssssBe', 'ssBH', 'sssB', 'ssssB', 'sCH3', 'dCH2', 'ssCH2', 'tCH', 'dsCH', 'aaCH', 'sssCH', 'ddC', 'tsC', 'dssC', 'aasC', 'aaaC', 'ssssC', 'sNH3', 'sNH2', 'ssNH2', 'dNH', 'ssNH', 'aaNH', 'tN', 'sssNH', 'dsN', 'aaN', 'sssN', 'ddsN', 'aasN', 'ssssN', 'sOH', 'dO', 'ssO', 'aaO', 'sF', 'sSiH3', 'ssSiH2', 'sssSiH', 'ssssSi', 'sPH2', 'ssPH', 'sssP', 'dsssP', 'sssssP', 'sSH', 'dS', 'ssS', 'aaS', 'dssS', 'ddssS', 'sCl', 'sGeH3', 'ssGeH2', 'sssGeH', 'ssssGe', 'sAsH2', 'ssAsH', 'sssAs', 'sssdAs', 'sssssAs', 'sSeH', 'dSe', 'ssSe', 'aaSe', 'dssSe', 'ddssSe', 'sBr', 'sSnH3', 'ssSnH2', 'sssSnH', 'ssssSn', 'sI', 'sPbH3', 'ssPbH2', 'sssPbH', 'ssssPb')</em><a class="headerlink" href="#mordred.EState.AtomTypeEState.es_types" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.EState.AtomTypeEState.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.EState.AtomTypeEState.rtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>** &#8216;count&#8217;* &#8211; <a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>
+* &#8216;other&#8217;: <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.EState.AtomTypeEState.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.EState.AtomTypeEState.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.EState.AtomTypeEState.kekulize">
+<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.EState.AtomTypeEState.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.EState.AtomTypeEState.require_3D">
+<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.EState.AtomTypeEState.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.EState.AtomTypeEState.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.EState.AtomTypeEState.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="mordred.EccentricConnectivityIndex.html" title="mordred.EccentricConnectivityIndex module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="mordred.DistanceMatrix.html" title="mordred.DistanceMatrix module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">mordred 0.2.1.post1.dev1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../mordred.html" >mordred package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="modules.html" >Submodules</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016, Hirotomo Moriwaki.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+mordred.MoeType module
+======================
+
+.. automodule:: mordred.MoeType
+.. autoclass:: mordred.MoeType.LabuteASA
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
+    :undoc-members:
+    :show-inheritance:
+
+.. autoclass:: mordred.MoeType.PEOE_VSA
+    :members: explicit_hydrogens, k_max, kekulize, require_3D, require_connected, rtype
+    :undoc-members:
+    :show-inheritance:
+
+.. autoclass:: mordred.MoeType.SMR_VSA
+    :members: explicit_hydrogens, k_max, kekulize, require_3D, require_connected, rtype
+    :undoc-members:
+    :show-inheritance:
+
+.. autoclass:: mordred.MoeType.SlogP_VSA
+    :members: explicit_hydrogens, k_max, kekulize, require_3D, require_connected, rtype
+    :undoc-members:
+    :show-inheritance:
+
+.. autoclass:: mordred.MoeType.EState_VSA
+    :members: explicit_hydrogens, k_max, kekulize, require_3D, require_connected, rtype
+    :undoc-members:
+    :show-inheritance:
+
+.. autoclass:: mordred.MoeType.VSA_EState
+    :members: explicit_hydrogens, k_max, kekulize, require_3D, require_connected, rtype
+    :undoc-members:
+    :show-inheritance:
+

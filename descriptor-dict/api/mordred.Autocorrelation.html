@@ -1,0 +1,440 @@
+
+
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>mordred.Autocorrelation module &#8212; mordred 0.2.1.post1.dev1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.2.1.post1.dev1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="mordred.BCUT module" href="mordred.BCUT.html" />
+    <link rel="prev" title="mordred.AtomCount module" href="mordred.AtomCount.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="mordred.BCUT.html" title="mordred.BCUT module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="mordred.AtomCount.html" title="mordred.AtomCount module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">mordred 0.2.1.post1.dev1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../mordred.html" >mordred package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="modules.html" accesskey="U">Submodules</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="mordred.AtomCount.html"
+                        title="previous chapter">mordred.AtomCount module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="mordred.BCUT.html"
+                        title="next chapter">mordred.BCUT module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/mordred.Autocorrelation.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-mordred.Autocorrelation">
+<span id="mordred-autocorrelation-module"></span><h1>mordred.Autocorrelation module<a class="headerlink" href="#module-mordred.Autocorrelation" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="mordred.Autocorrelation.ATS">
+<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">ATS</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Autocorrelation.html#ATS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.ATS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.Autocorrelation.AutocorrelationBase</span></code></p>
+<p>Autocorrelation of Topological Structure descriptor.</p>
+<p>a.k.a. Moreau-Broto autocorrelation descriptor</p>
+<div class="math">
+\[ \begin{align}\begin{aligned}{\rm ATS}_0 = \sum^{A}_{i=1} {\boldsymbol w}_i^2\\{\rm ATS}_k = \frac{1}{2}
+    \left(
+        {\boldsymbol w}^{\rm T} \cdot
+        {}^k{\boldsymbol B} \cdot
+        {\boldsymbol w}
+    \right)\\\begin{split}{}^k{\boldsymbol B} =
+    \begin{cases}
+        1 &amp; (d_{ij} =    k) \\
+        0 &amp; (d_{ij} \neq k)
+    \end{cases}\end{split}\end{aligned}\end{align} \]</div>
+<p>where
+<span class="math">\({\boldsymbol w}\)</span> is atomic property vector,
+<span class="math">\(d_{ij}\)</span> is graph distance(smallest number of bonds between atom i and j).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>order</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; order(<span class="math">\(k\)</span>)</li>
+<li><strong>property</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a><em>, </em><em>function</em>) &#8211; <a class="reference internal" href="../atomic_prop.html#atomic-properties"><span class="std std-ref">atomic properties</span></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">NaN when any properties are NaN</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="mordred.Autocorrelation.ATS.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.Autocorrelation.ATS.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Autocorrelation.ATS.kekulize">
+<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Autocorrelation.ATS.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Autocorrelation.ATS.require_3D">
+<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Autocorrelation.ATS.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Autocorrelation.ATS.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Autocorrelation.ATS.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Autocorrelation.ATS.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.Autocorrelation.ATS.rtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.Autocorrelation.AATS">
+<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">AATS</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Autocorrelation.html#AATS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.AATS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mordred.Autocorrelation.ATS" title="mordred.Autocorrelation.ATS"><code class="xref py py-class docutils literal"><span class="pre">mordred.Autocorrelation.ATS</span></code></a></p>
+<p>averaged ATS descriptor.</p>
+<div class="math">
+\[{\rm AATS}_k = \frac{{\rm ATS}_k}{\Delta_k}\]</div>
+<p>where
+<span class="math">\(\Delta_k\)</span> is number of vertex pairs at order equal to <span class="math">\(k\)</span>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body">see <a class="reference internal" href="#mordred.Autocorrelation.ATS" title="mordred.Autocorrelation.ATS"><code class="xref py py-class docutils literal"><span class="pre">ATS</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">NaN when<ul class="simple">
+<li><span class="math">\(\Delta_k = 0\)</span></li>
+<li>some properties are NaN</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="mordred.Autocorrelation.AATS.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.Autocorrelation.AATS.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Autocorrelation.AATS.kekulize">
+<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Autocorrelation.AATS.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Autocorrelation.AATS.require_3D">
+<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Autocorrelation.AATS.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Autocorrelation.AATS.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Autocorrelation.AATS.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Autocorrelation.AATS.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.Autocorrelation.AATS.rtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.Autocorrelation.ATSC">
+<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">ATSC</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Autocorrelation.html#ATSC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.ATSC" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.Autocorrelation.AutocorrelationBase</span></code></p>
+<p>centered ATS descriptor.</p>
+<p>ATS with <span class="math">\({\boldsymbol w}_{\rm c}\)</span> property</p>
+<div class="math">
+\[{\boldsymbol w}_{\rm c} = {\boldsymbol w} - \bar{\boldsymbol w}\]</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body">see <a class="reference internal" href="#mordred.Autocorrelation.ATS" title="mordred.Autocorrelation.ATS"><code class="xref py py-class docutils literal"><span class="pre">ATS</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">NaN when any properties are NaN</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="mordred.Autocorrelation.ATSC.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.Autocorrelation.ATSC.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Autocorrelation.ATSC.kekulize">
+<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Autocorrelation.ATSC.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Autocorrelation.ATSC.require_3D">
+<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Autocorrelation.ATSC.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Autocorrelation.ATSC.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Autocorrelation.ATSC.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Autocorrelation.ATSC.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.Autocorrelation.ATSC.rtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.Autocorrelation.AATSC">
+<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">AATSC</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Autocorrelation.html#AATSC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.AATSC" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mordred.Autocorrelation.ATSC" title="mordred.Autocorrelation.ATSC"><code class="xref py py-class docutils literal"><span class="pre">mordred.Autocorrelation.ATSC</span></code></a></p>
+<p>averaged ATSC descriptor.</p>
+<div class="math">
+\[{\rm AATSC}_k = \frac{{\rm ATSC}_k}{\Delta_k}\]</div>
+<p>where
+<span class="math">\(\Delta_k\)</span> is number of vertex pairs at order equal to <span class="math">\(k\)</span>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body">see <a class="reference internal" href="#mordred.Autocorrelation.ATS" title="mordred.Autocorrelation.ATS"><code class="xref py py-class docutils literal"><span class="pre">ATS</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">NaN when<ul class="simple">
+<li><span class="math">\(\Delta_k = 0\)</span></li>
+<li>any properties are NaN</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="mordred.Autocorrelation.AATSC.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.Autocorrelation.AATSC.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Autocorrelation.AATSC.kekulize">
+<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Autocorrelation.AATSC.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Autocorrelation.AATSC.require_3D">
+<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Autocorrelation.AATSC.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Autocorrelation.AATSC.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Autocorrelation.AATSC.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Autocorrelation.AATSC.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.Autocorrelation.AATSC.rtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.Autocorrelation.MATS">
+<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">MATS</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Autocorrelation.html#MATS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.MATS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.Autocorrelation.AutocorrelationBase</span></code></p>
+<p>Moran coefficient descriptor.</p>
+<div class="math">
+\[{\rm MATS}_k = \frac{
+    {\rm AATSC}_k
+    }{
+    \frac{1}{A} \cdot \sum {\boldsymbol w}_{\rm c}^2
+    }\]</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body">see <a class="reference internal" href="#mordred.Autocorrelation.ATS" title="mordred.Autocorrelation.ATS"><code class="xref py py-class docutils literal"><span class="pre">ATS</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">NaN when<ul class="simple">
+<li>some properties are NaN</li>
+<li>denominator = 0</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="mordred.Autocorrelation.MATS.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.Autocorrelation.MATS.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Autocorrelation.MATS.kekulize">
+<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Autocorrelation.MATS.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Autocorrelation.MATS.require_3D">
+<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Autocorrelation.MATS.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Autocorrelation.MATS.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Autocorrelation.MATS.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Autocorrelation.MATS.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.Autocorrelation.MATS.rtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mordred.Autocorrelation.GATS">
+<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">GATS</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Autocorrelation.html#GATS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.GATS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mordred.Autocorrelation.MATS" title="mordred.Autocorrelation.MATS"><code class="xref py py-class docutils literal"><span class="pre">mordred.Autocorrelation.MATS</span></code></a></p>
+<p>Geary coefficient descriptor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body">see <a class="reference internal" href="#mordred.Autocorrelation.ATS" title="mordred.Autocorrelation.ATS"><code class="xref py py-class docutils literal"><span class="pre">ATS</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">NaN when<ul class="simple">
+<li><span class="math">\(\Delta_k = 0\)</span></li>
+<li>any properties are NaN</li>
+<li>denominator = 0</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="mordred.Autocorrelation.GATS.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.Autocorrelation.GATS.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Autocorrelation.GATS.kekulize">
+<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Autocorrelation.GATS.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Autocorrelation.GATS.require_3D">
+<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Autocorrelation.GATS.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Autocorrelation.GATS.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Autocorrelation.GATS.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Autocorrelation.GATS.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.Autocorrelation.GATS.rtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="mordred.BCUT.html" title="mordred.BCUT module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="mordred.AtomCount.html" title="mordred.AtomCount module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">mordred 0.2.1.post1.dev1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../mordred.html" >mordred package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="modules.html" >Submodules</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016, Hirotomo Moriwaki.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+    </div>
+  </body>
+</html>

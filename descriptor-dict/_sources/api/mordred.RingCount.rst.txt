@@ -1,0 +1,9 @@
+mordred.RingCount module
+========================
+
+.. automodule:: mordred.RingCount
+.. autoclass:: mordred.RingCount.RingCount
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
+    :undoc-members:
+    :show-inheritance:
+

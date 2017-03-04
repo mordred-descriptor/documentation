@@ -1,0 +1,9 @@
+mordred.TopoPSA module
+======================
+
+.. automodule:: mordred.TopoPSA
+.. autoclass:: mordred.TopoPSA.TopoPSA
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
+    :undoc-members:
+    :show-inheritance:
+
