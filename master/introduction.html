@@ -187,13 +187,14 @@
   <span class="o">-</span><span class="n">v</span><span class="p">,</span> <span class="o">--</span><span class="n">verbosity</span>       <span class="n">verbosity</span>
 
 <span class="n">descriptors</span><span class="p">:</span> <span class="n">ABCIndex</span> <span class="n">AcidBase</span> <span class="n">AdjacencyMatrix</span> <span class="n">Aromatic</span> <span class="n">AtomCount</span>
-<span class="n">Autocorrelation</span> <span class="n">Autocorrelation3D</span> <span class="n">BalabanJ</span> <span class="n">BaryszMatrix</span> <span class="n">BCUT</span> <span class="n">BertzCT</span> <span class="n">BondCount</span>
-<span class="n">CarbonTypes</span> <span class="n">Chi</span> <span class="n">Constitutional</span> <span class="n">CPSA</span> <span class="n">DetourMatrix</span> <span class="n">DistanceMatrix</span>
-<span class="n">EccentricConnectivityIndex</span> <span class="n">EState</span> <span class="n">ExtendedTopochemicalAtom</span> <span class="n">FragmentComplexity</span>
-<span class="n">Framework</span> <span class="n">GeometricalIndex</span> <span class="n">GravitationalIndex</span> <span class="n">HydrogenBond</span> <span class="n">InformationContent</span>
-<span class="n">KappaShapeIndex</span> <span class="n">Lipinski</span> <span class="n">McGowanVolume</span> <span class="n">MoeType</span> <span class="n">MolecularDistanceEdge</span>
-<span class="n">MolecularId</span> <span class="n">MomentOfInertia</span> <span class="n">MoRSE</span> <span class="n">PathCount</span> <span class="n">Polarizability</span> <span class="n">RingCount</span>
-<span class="n">RotatableBond</span> <span class="n">SLogP</span> <span class="n">TopologicalCharge</span> <span class="n">TopologicalIndex</span> <span class="n">TopoPSA</span> <span class="n">VdwVolumeABC</span>
+<span class="n">Autocorrelation</span> <span class="n">BalabanJ</span> <span class="n">BaryszMatrix</span> <span class="n">BCUT</span> <span class="n">BertzCT</span> <span class="n">BondCount</span> <span class="n">CarbonTypes</span> <span class="n">Chi</span>
+<span class="n">Constitutional</span> <span class="n">CPSA</span> <span class="n">DetourMatrix</span> <span class="n">DistanceMatrix</span> <span class="n">EccentricConnectivityIndex</span>
+<span class="n">EState</span> <span class="n">ExtendedTopochemicalAtom</span> <span class="n">FragmentComplexity</span> <span class="n">Framework</span> <span class="n">GeometricalIndex</span>
+<span class="n">GravitationalIndex</span> <span class="n">HydrogenBond</span> <span class="n">InformationContent</span> <span class="n">KappaShapeIndex</span> <span class="n">Lipinski</span>
+<span class="n">McGowanVolume</span> <span class="n">MoeType</span> <span class="n">MolecularDistanceEdge</span> <span class="n">MolecularId</span> <span class="n">MomentOfInertia</span> <span class="n">MoRSE</span>
+<span class="n">PathCount</span> <span class="n">Polarizability</span> <span class="n">RingCount</span> <span class="n">RotatableBond</span> <span class="n">SLogP</span> <span class="n">TopologicalCharge</span>
+<span class="n">TopologicalIndex</span> <span class="n">TopoPSA</span> <span class="n">VdwVolumeABC</span> <span class="n">VertexAdjacencyInformation</span> <span class="n">WalkCount</span>
+<span class="n">Weight</span> <span class="n">WienerIndex</span> <span class="n">ZagrebIndex</span>
 </pre></div>
 </div>
 <div class="section" id="as-library">
@@ -202,10 +203,10 @@
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mordred</span> <span class="k">import</span> <span class="n">Calculator</span><span class="p">,</span> <span class="n">descriptors</span>
 
 <span class="go"># create descriptor calculator with all descriptors</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">calc</span> <span class="o">=</span> <span class="n">Calculator</span><span class="p">(</span><span class="n">descriptors</span><span class="p">,</span> <span class="n">exclude3D</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">calc</span> <span class="o">=</span> <span class="n">Calculator</span><span class="p">(</span><span class="n">descriptors</span><span class="p">,</span> <span class="n">ignore_3D</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">calc</span><span class="o">.</span><span class="n">descriptors</span><span class="p">)</span>
-<span class="go">1824</span>
+<span class="go">1612</span>
 
 <span class="go"># calculate single molecule</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="s1">&#39;c1ccccc1&#39;</span><span class="p">)</span>
@@ -231,6 +232,7 @@
 <h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><a class="reference external" href="http://mordred-descriptor.github.io/documentation/master">master</a></li>
+<li><a class="reference external" href="http://mordred-descriptor.github.io/documentation/v0.3.0">v0.3.0</a></li>
 <li><a class="reference external" href="http://mordred-descriptor.github.io/documentation/v0.2.1">v0.2.1</a></li>
 <li><a class="reference external" href="http://mordred-descriptor.github.io/documentation/v0.2.0">v0.2.0</a></li>
 <li><a class="reference external" href="http://mordred-descriptor.github.io/documentation/v0.1.0">v0.1.0</a></li>
