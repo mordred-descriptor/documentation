@@ -197,7 +197,7 @@
                     <span class="bp">self</span><span class="o">.</span><span class="n">_register_one</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">ignore_3D</span><span class="o">=</span><span class="n">ignore_3D</span><span class="p">)</span>
 
             <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="n">ModuleType</span><span class="p">):</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">get_descriptors_from_module</span><span class="p">(</span><span class="n">desc</span><span class="p">),</span> <span class="n">ignore_3D</span><span class="o">=</span><span class="n">ignore_3D</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">get_descriptors_from_module</span><span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span> <span class="n">ignore_3D</span><span class="o">=</span><span class="n">ignore_3D</span><span class="p">)</span>
 
             <span class="k">else</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_register_one</span><span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="n">ignore_3D</span><span class="o">=</span><span class="n">ignore_3D</span><span class="p">)</span>
@@ -368,7 +368,7 @@
         <span class="p">)</span></div></div>
 
 
-<div class="viewcode-block" id="get_descriptors_from_module"><a class="viewcode-back" href="../../../mordred.html#mordred.get_descriptors_from_module">[docs]</a><span class="k">def</span> <span class="nf">get_descriptors_from_module</span><span class="p">(</span><span class="n">mdl</span><span class="p">):</span>
+<div class="viewcode-block" id="get_descriptors_from_module"><a class="viewcode-back" href="../../../mordred.html#mordred.get_descriptors_from_module">[docs]</a><span class="k">def</span> <span class="nf">get_descriptors_from_module</span><span class="p">(</span><span class="n">mdl</span><span class="p">,</span> <span class="n">submodule</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="sa">r</span><span class="sd">&quot;&quot;&quot;get descriptors from module.</span>
 
 <span class="sd">    Parameters:</span>
@@ -382,10 +382,17 @@
     <span class="k">if</span> <span class="n">__all__</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">__all__</span> <span class="o">=</span> <span class="nb">dir</span><span class="p">(</span><span class="n">mdl</span><span class="p">)</span>
 
+    <span class="k">if</span> <span class="n">submodule</span><span class="p">:</span>
+        <span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="n">fn</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">is_descriptor_class</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">ModuleType</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="n">fn</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">is_descriptor_class</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+
     <span class="n">descs</span> <span class="o">=</span> <span class="p">[</span>
         <span class="n">fn</span>
         <span class="k">for</span> <span class="n">fn</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">mdl</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">__all__</span> <span class="k">if</span> <span class="n">name</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;_&#39;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">is_descriptor_class</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">check</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
     <span class="p">]</span>
 
     <span class="k">def</span> <span class="nf">key_by_def</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>

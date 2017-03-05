@@ -70,6 +70,8 @@
             
   <h1>Source code for mordred._base</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+
 <span class="kn">from</span> <span class="nn">importlib</span> <span class="k">import</span> <span class="n">import_module</span>
 <span class="kn">from</span> <span class="nn">..error</span> <span class="k">import</span> <span class="n">MissingValueBase</span>
 
@@ -87,22 +89,25 @@
 
 
 <div class="viewcode-block" id="all_descriptors"><a class="viewcode-back" href="../../mordred.html#mordred.all_descriptors">[docs]</a><span class="k">def</span> <span class="nf">all_descriptors</span><span class="p">():</span>
-    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;yield all descriptor modules.</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;**[deprecated]** use mordred.descriptors module instead.</span>
+
+<span class="sd">    yield all descriptor modules.</span>
 
 <span class="sd">    :returns: all modules</span>
 <span class="sd">    :rtype: :py:class:`Iterator` (:py:class:`Descriptor`)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;all_descriptors() is deprecated, use mordred.descriptors module instead&#39;</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">base_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
 
     <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">base_dir</span><span class="p">):</span>
         <span class="n">name</span><span class="p">,</span> <span class="n">ext</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">name</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;_&#39;</span> <span class="ow">or</span> <span class="n">ext</span> <span class="o">!=</span> <span class="s1">&#39;.py&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">name</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;_&#39;</span> <span class="ow">or</span> <span class="n">ext</span> <span class="o">!=</span> <span class="s1">&#39;.py&#39;</span> <span class="ow">or</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;descriptors&#39;</span><span class="p">:</span>
             <span class="k">continue</span>
 
         <span class="k">yield</span> <span class="n">import_module</span><span class="p">(</span><span class="s1">&#39;..&#39;</span> <span class="o">+</span> <span class="n">name</span><span class="p">,</span> <span class="n">__package__</span><span class="p">)</span></div>
 
 
-<span class="k">def</span> <span class="nf">Descriptor__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="nb">id</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">_Descriptor__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="nb">id</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
     <span class="sa">r</span><span class="sd">&quot;&quot;&quot;calculate single descriptor value.</span>
 <span class="sd">    :type id: int</span>
 <span class="sd">    :param id: conformer id</span>
@@ -117,7 +122,7 @@
     <span class="k">return</span> <span class="n">v</span>
 
 
-<span class="n">Descriptor</span><span class="o">.</span><span class="fm">__call__</span> <span class="o">=</span> <span class="n">Descriptor__call__</span>
+<span class="n">Descriptor</span><span class="o">.</span><span class="fm">__call__</span> <span class="o">=</span> <span class="n">_Descriptor__call__</span>
 <span class="n">Calculator</span><span class="o">.</span><span class="n">_parallel</span> <span class="o">=</span> <span class="n">parallel</span>
 </pre></div>
 

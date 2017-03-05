@@ -199,10 +199,10 @@
 <div class="section" id="as-library">
 <h4>as library<a class="headerlink" href="#as-library" title="Permalink to this headline">¶</a></h4>
 <div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">rdkit</span> <span class="k">import</span> <span class="n">Chem</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mordred</span> <span class="k">import</span> <span class="n">Calculator</span><span class="p">,</span> <span class="n">all_descriptors</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mordred</span> <span class="k">import</span> <span class="n">Calculator</span><span class="p">,</span> <span class="n">descriptors</span>
 
 <span class="go"># create descriptor calculator with all descriptors</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">calc</span> <span class="o">=</span> <span class="n">Calculator</span><span class="p">(</span><span class="n">all_descriptors</span><span class="p">(),</span> <span class="n">exclude3D</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">calc</span> <span class="o">=</span> <span class="n">Calculator</span><span class="p">(</span><span class="n">descriptors</span><span class="p">,</span> <span class="n">exclude3D</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">calc</span><span class="o">.</span><span class="n">descriptors</span><span class="p">)</span>
 <span class="go">1824</span>
