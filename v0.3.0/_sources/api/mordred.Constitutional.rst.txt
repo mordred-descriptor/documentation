@@ -1,0 +1,14 @@
+mordred.Constitutional module
+=============================
+
+.. automodule:: mordred.Constitutional
+.. autoclass:: mordred.Constitutional.ConstitutionalSum
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
+    :undoc-members:
+    :show-inheritance:
+
+.. autoclass:: mordred.Constitutional.ConstitutionalMean
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
+    :undoc-members:
+    :show-inheritance:
+
