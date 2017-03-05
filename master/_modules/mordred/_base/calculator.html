@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>mordred._base.calculator &#8212; mordred 0.2.1.post1.dev1 documentation</title>
+    <title>mordred._base.calculator &#8212; mordred 0.3.0.post1.dev1 documentation</title>
     
     <link rel="stylesheet" href="../../../_static/bizstyle.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '0.2.1.post1.dev1',
+        VERSION:     '0.3.0.post1.dev1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -44,7 +44,7 @@
         <li class="right" >
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">mordred 0.2.1.post1.dev1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">mordred 0.3.0.post1.dev1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../_base.html" accesskey="U">mordred._base</a> &#187;</li> 
       </ul>
@@ -80,7 +80,7 @@
 <span class="kn">from</span> <span class="nn">tqdm</span> <span class="k">import</span> <span class="n">tqdm</span>
 
 <span class="kn">from</span> <span class="nn">.._util</span> <span class="k">import</span> <span class="n">Capture</span><span class="p">,</span> <span class="n">DummyBar</span><span class="p">,</span> <span class="n">NotebookWrapper</span>
-<span class="kn">from</span> <span class="nn">..error</span> <span class="k">import</span> <span class="n">Error</span><span class="p">,</span> <span class="n">Missing</span><span class="p">,</span> <span class="n">MultipleFragments</span>
+<span class="kn">from</span> <span class="nn">..error</span> <span class="k">import</span> <span class="n">Error</span><span class="p">,</span> <span class="n">Missing</span><span class="p">,</span> <span class="n">MultipleFragments</span><span class="p">,</span> <span class="n">DuplicatedDescriptorName</span>
 <span class="kn">from</span> <span class="nn">.context</span> <span class="k">import</span> <span class="n">Context</span>
 <span class="kn">from</span> <span class="nn">.descriptor</span> <span class="k">import</span> <span class="n">Descriptor</span><span class="p">,</span> <span class="n">MissingValueException</span><span class="p">,</span> <span class="n">is_descriptor_class</span>
 
@@ -94,12 +94,13 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="s1">&#39;_descriptors&#39;</span><span class="p">,</span> <span class="s1">&#39;_explicit_hydrogens&#39;</span><span class="p">,</span> <span class="s1">&#39;_kekulizes&#39;</span><span class="p">,</span> <span class="s1">&#39;_require_3D&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;_descriptors&#39;</span><span class="p">,</span> <span class="s1">&#39;_name_dict&#39;</span><span class="p">,</span> <span class="s1">&#39;_explicit_hydrogens&#39;</span><span class="p">,</span> <span class="s1">&#39;_kekulizes&#39;</span><span class="p">,</span> <span class="s1">&#39;_require_3D&#39;</span><span class="p">,</span>
         <span class="s1">&#39;_cache&#39;</span><span class="p">,</span> <span class="s1">&#39;_debug&#39;</span><span class="p">,</span> <span class="s1">&#39;_progress_bar&#39;</span>
     <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__setstate__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_descriptors</span> <span class="o">=</span> <span class="nb">dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_descriptors&#39;</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_descriptors</span> <span class="o">=</span> <span class="nb">dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_descriptors&#39;</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name_dict</span> <span class="o">=</span> <span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">d</span><span class="p">):</span> <span class="n">d</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">ds</span><span class="p">}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_explicit_hydrogens</span> <span class="o">=</span> <span class="nb">dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_explicit_hydrogens&#39;</span><span class="p">,</span> <span class="nb">set</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_kekulizes</span> <span class="o">=</span> <span class="nb">dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_kekulizes&#39;</span><span class="p">,</span> <span class="nb">set</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_require_3D</span> <span class="o">=</span> <span class="nb">dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_require_3D&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
@@ -112,8 +113,12 @@
             <span class="s1">&#39;_require_3D&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_require_3D</span><span class="p">,</span>
         <span class="p">}</span>
 
+    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">descs</span><span class="o">=</span><span class="p">[],</span> <span class="n">ignore_3D</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_descriptors</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name_dict</span> <span class="o">=</span> <span class="p">{}</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_explicit_hydrogens</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_kekulizes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
@@ -141,6 +146,7 @@
     <span class="nd">@descriptors</span><span class="o">.</span><span class="n">deleter</span>
     <span class="k">def</span> <span class="nf">descriptors</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_descriptors</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name_dict</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_explicit_hydrogens</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_kekulizes</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_require_3D</span> <span class="o">=</span> <span class="kc">False</span>
@@ -164,6 +170,12 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">_register_one</span><span class="p">(</span><span class="n">dep</span><span class="p">,</span> <span class="n">check_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="ow">not</span> <span class="n">check_only</span><span class="p">:</span>
+            <span class="n">sdesc</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">desc</span><span class="p">)</span>
+            <span class="n">old</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">sdesc</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">old</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">DuplicatedDescriptorName</span><span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="n">old</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">_name_dict</span><span class="p">[</span><span class="n">sdesc</span><span class="p">]</span> <span class="o">=</span> <span class="n">desc</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_descriptors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">desc</span><span class="p">)</span>
 
 <div class="viewcode-block" id="Calculator.register"><a class="viewcode-back" href="../../../mordred.html#mordred.Calculator.register">[docs]</a>    <span class="k">def</span> <span class="nf">register</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">desc</span><span class="p">,</span> <span class="n">ignore_3D</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
@@ -185,7 +197,7 @@
                     <span class="bp">self</span><span class="o">.</span><span class="n">_register_one</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">ignore_3D</span><span class="o">=</span><span class="n">ignore_3D</span><span class="p">)</span>
 
             <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="n">ModuleType</span><span class="p">):</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">get_descriptors_from_module</span><span class="p">(</span><span class="n">desc</span><span class="p">),</span> <span class="n">ignore_3D</span><span class="o">=</span><span class="n">ignore_3D</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">get_descriptors_from_module</span><span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span> <span class="n">ignore_3D</span><span class="o">=</span><span class="n">ignore_3D</span><span class="p">)</span>
 
             <span class="k">else</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_register_one</span><span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="n">ignore_3D</span><span class="o">=</span><span class="n">ignore_3D</span><span class="p">)</span>
@@ -356,7 +368,7 @@
         <span class="p">)</span></div></div>
 
 
-<div class="viewcode-block" id="get_descriptors_from_module"><a class="viewcode-back" href="../../../mordred.html#mordred.get_descriptors_from_module">[docs]</a><span class="k">def</span> <span class="nf">get_descriptors_from_module</span><span class="p">(</span><span class="n">mdl</span><span class="p">):</span>
+<div class="viewcode-block" id="get_descriptors_from_module"><a class="viewcode-back" href="../../../mordred.html#mordred.get_descriptors_from_module">[docs]</a><span class="k">def</span> <span class="nf">get_descriptors_from_module</span><span class="p">(</span><span class="n">mdl</span><span class="p">,</span> <span class="n">submodule</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="sa">r</span><span class="sd">&quot;&quot;&quot;get descriptors from module.</span>
 
 <span class="sd">    Parameters:</span>
@@ -370,10 +382,17 @@
     <span class="k">if</span> <span class="n">__all__</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">__all__</span> <span class="o">=</span> <span class="nb">dir</span><span class="p">(</span><span class="n">mdl</span><span class="p">)</span>
 
+    <span class="k">if</span> <span class="n">submodule</span><span class="p">:</span>
+        <span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="n">fn</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">is_descriptor_class</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">ModuleType</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="n">fn</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">is_descriptor_class</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+
     <span class="n">descs</span> <span class="o">=</span> <span class="p">[</span>
         <span class="n">fn</span>
         <span class="k">for</span> <span class="n">fn</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">mdl</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">__all__</span> <span class="k">if</span> <span class="n">name</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;_&#39;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">is_descriptor_class</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">check</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
     <span class="p">]</span>
 
     <span class="k">def</span> <span class="nf">key_by_def</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
@@ -400,7 +419,7 @@
         <li class="right" >
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">mordred 0.2.1.post1.dev1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">mordred 0.3.0.post1.dev1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../_base.html" >mordred._base</a> &#187;</li> 
       </ul>
