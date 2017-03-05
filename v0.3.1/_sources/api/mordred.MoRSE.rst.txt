@@ -1,0 +1,9 @@
+mordred.MoRSE module
+====================
+
+.. automodule:: mordred.MoRSE
+.. autoclass:: mordred.MoRSE.MoRSE
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
+    :undoc-members:
+    :show-inheritance:
+

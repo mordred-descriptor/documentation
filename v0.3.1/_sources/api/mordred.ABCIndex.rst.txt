@@ -1,0 +1,14 @@
+mordred.ABCIndex module
+=======================
+
+.. automodule:: mordred.ABCIndex
+.. autoclass:: mordred.ABCIndex.ABCIndex
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
+    :undoc-members:
+    :show-inheritance:
+
+.. autoclass:: mordred.ABCIndex.ABCGGIndex
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
+    :undoc-members:
+    :show-inheritance:
+

@@ -1,0 +1,9 @@
+mordred.ZagrebIndex module
+==========================
+
+.. automodule:: mordred.ZagrebIndex
+.. autoclass:: mordred.ZagrebIndex.ZagrebIndex
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
+    :undoc-members:
+    :show-inheritance:
+
