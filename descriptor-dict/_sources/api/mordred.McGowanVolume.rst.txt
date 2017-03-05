@@ -1,9 +1,0 @@
-mordred.McGowanVolume module
-============================
-
-.. automodule:: mordred.McGowanVolume
-.. autoclass:: mordred.McGowanVolume.McGowanVolume
-    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
-    :undoc-members:
-    :show-inheritance:
-

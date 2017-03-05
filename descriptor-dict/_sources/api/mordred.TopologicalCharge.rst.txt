@@ -1,9 +1,0 @@
-mordred.TopologicalCharge module
-================================
-
-.. automodule:: mordred.TopologicalCharge
-.. autoclass:: mordred.TopologicalCharge.TopologicalCharge
-    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype, tc_types
-    :undoc-members:
-    :show-inheritance:
-

@@ -1,9 +1,0 @@
-mordred.WalkCount module
-========================
-
-.. automodule:: mordred.WalkCount
-.. autoclass:: mordred.WalkCount.WalkCount
-    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
-    :undoc-members:
-    :show-inheritance:
-

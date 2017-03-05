@@ -1,7 +1,0 @@
-mordred.tests.test_pickle module
-================================
-
-.. automodule:: mordred.tests.test_pickle
-    :members:
-    :undoc-members:
-    :show-inheritance:

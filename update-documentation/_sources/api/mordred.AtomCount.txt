@@ -1,9 +1,0 @@
-mordred.AtomCount module
-========================
-
-.. automodule:: mordred.AtomCount
-.. autoclass:: mordred.AtomCount.AtomCount
-    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
-    :undoc-members:
-    :show-inheritance:
-

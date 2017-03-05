@@ -1,7 +1,0 @@
-mordred.DetourMatrix module
-===========================
-
-.. automodule:: mordred.DetourMatrix
-    :members:
-    :undoc-members:
-    :show-inheritance:
