@@ -1,0 +1,9 @@
+mordred.GravitationalIndex module
+=================================
+
+.. automodule:: mordred.GravitationalIndex
+.. autoclass:: mordred.GravitationalIndex.GravitationalIndex
+    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
+    :undoc-members:
+    :show-inheritance:
+

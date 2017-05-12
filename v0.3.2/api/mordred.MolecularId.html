@@ -1,0 +1,181 @@
+
+
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>mordred.MolecularId module &#8212; mordred 0.3.2 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.3.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="mordred.MomentOfInertia module" href="mordred.MomentOfInertia.html" />
+    <link rel="prev" title="mordred.MolecularDistanceEdge module" href="mordred.MolecularDistanceEdge.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="mordred.MomentOfInertia.html" title="mordred.MomentOfInertia module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="mordred.MolecularDistanceEdge.html" title="mordred.MolecularDistanceEdge module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">mordred 0.3.2 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../mordred.html" >mordred package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="modules.html" accesskey="U">Submodules</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="mordred.MolecularDistanceEdge.html"
+                        title="previous chapter">mordred.MolecularDistanceEdge module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="mordred.MomentOfInertia.html"
+                        title="next chapter">mordred.MomentOfInertia module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/mordred.MolecularId.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-mordred.MolecularId">
+<span id="mordred-molecularid-module"></span><h1>mordred.MolecularId module<a class="headerlink" href="#module-mordred.MolecularId" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="mordred.MolecularId.MolecularId">
+<em class="property">class </em><code class="descclassname">mordred.MolecularId.</code><code class="descname">MolecularId</code><span class="sig-paren">(</span><em>type='any'</em>, <em>averaged=False</em>, <em>_eps=1e-10</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/MolecularId.html#MolecularId"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.MolecularId.MolecularId" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.MolecularId.MolecularIdBase</span></code></p>
+<p>molecular id descriptor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>type</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; <p>target of atomic id source</p>
+<ul>
+<li>&#8216;any&#8217;: normal molecular id(sum of all atomic id)</li>
+<li>&#8216;X&#8217;: sum of halogen atomic id</li>
+<li>str: atomic symbol</li>
+<li>int: atomic number</li>
+</ul>
+</li>
+<li><strong>averaged</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; averaged by number of atoms</li>
+<li><strong>_eps</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><em>float</em></a>) &#8211; internally used</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="mordred.MolecularId.MolecularId.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.MolecularId.MolecularId.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.MolecularId.MolecularId.kekulize">
+<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.MolecularId.MolecularId.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.MolecularId.MolecularId.require_3D">
+<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.MolecularId.MolecularId.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.MolecularId.MolecularId.require_connected">
+<code class="descname">require_connected</code><em class="property"> = True</em><a class="headerlink" href="#mordred.MolecularId.MolecularId.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.MolecularId.MolecularId.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.MolecularId.MolecularId.rtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="mordred.MomentOfInertia.html" title="mordred.MomentOfInertia module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="mordred.MolecularDistanceEdge.html" title="mordred.MolecularDistanceEdge module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">mordred 0.3.2 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../mordred.html" >mordred package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="modules.html" >Submodules</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016, Hirotomo Moriwaki.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.4.
+    </div>
+  </body>
+</html>
