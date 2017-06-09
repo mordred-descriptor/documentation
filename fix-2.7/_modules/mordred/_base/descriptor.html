@@ -102,7 +102,7 @@
                 <span class="k">if</span> <span class="fm">__init__</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                     <span class="k">break</span>
 
-        <span class="nb">dict</span><span class="p">[</span><span class="s1">&#39;parameter_names&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">inspect</span><span class="o">.</span><span class="n">getfullargspec</span><span class="p">(</span><span class="fm">__init__</span><span class="p">)</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+        <span class="nb">dict</span><span class="p">[</span><span class="s1">&#39;parameter_names&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">getargspec</span><span class="p">(</span><span class="fm">__init__</span><span class="p">)</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
 
         <span class="k">return</span> <span class="n">ABCMeta</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">classname</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span>
 
