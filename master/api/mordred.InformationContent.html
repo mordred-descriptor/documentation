@@ -110,9 +110,37 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.InformationContent.InformationContent.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.InformationContent.InformationContent.from_json">
+<code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.InformationContent.InformationContent.from_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>create Descriptor instance from json dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; descriptor dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.InformationContent.InformationContent.get_parameter_dict">
+<code class="descname">get_parameter_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.InformationContent.InformationContent.get_parameter_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.InformationContent.InformationContent.kekulize">
 <code class="descname">kekulize</code><em class="property"> = True</em><a class="headerlink" href="#mordred.InformationContent.InformationContent.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.InformationContent.InformationContent.parameter_names">
+<code class="descname">parameter_names</code><em class="property"> = ('order',)</em><a class="headerlink" href="#mordred.InformationContent.InformationContent.parameter_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -129,6 +157,22 @@
 <dt id="mordred.InformationContent.InformationContent.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.InformationContent.InformationContent.rtype" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.InformationContent.InformationContent.to_json">
+<code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.InformationContent.InformationContent.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert to json serializable dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -153,9 +197,37 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.InformationContent.TotalIC.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.InformationContent.TotalIC.from_json">
+<code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.InformationContent.TotalIC.from_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>create Descriptor instance from json dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; descriptor dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.InformationContent.TotalIC.get_parameter_dict">
+<code class="descname">get_parameter_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.InformationContent.TotalIC.get_parameter_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.InformationContent.TotalIC.kekulize">
 <code class="descname">kekulize</code><em class="property"> = True</em><a class="headerlink" href="#mordred.InformationContent.TotalIC.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.InformationContent.TotalIC.parameter_names">
+<code class="descname">parameter_names</code><em class="property"> = ('order',)</em><a class="headerlink" href="#mordred.InformationContent.TotalIC.parameter_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -172,6 +244,22 @@
 <dt id="mordred.InformationContent.TotalIC.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.InformationContent.TotalIC.rtype" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.InformationContent.TotalIC.to_json">
+<code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.InformationContent.TotalIC.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert to json serializable dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -196,9 +284,37 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.InformationContent.StructuralIC.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.InformationContent.StructuralIC.from_json">
+<code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.InformationContent.StructuralIC.from_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>create Descriptor instance from json dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; descriptor dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.InformationContent.StructuralIC.get_parameter_dict">
+<code class="descname">get_parameter_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.InformationContent.StructuralIC.get_parameter_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.InformationContent.StructuralIC.kekulize">
 <code class="descname">kekulize</code><em class="property"> = True</em><a class="headerlink" href="#mordred.InformationContent.StructuralIC.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.InformationContent.StructuralIC.parameter_names">
+<code class="descname">parameter_names</code><em class="property"> = ('order',)</em><a class="headerlink" href="#mordred.InformationContent.StructuralIC.parameter_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -215,6 +331,22 @@
 <dt id="mordred.InformationContent.StructuralIC.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.InformationContent.StructuralIC.rtype" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.InformationContent.StructuralIC.to_json">
+<code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.InformationContent.StructuralIC.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert to json serializable dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -241,9 +373,37 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.InformationContent.BondingIC.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.InformationContent.BondingIC.from_json">
+<code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.InformationContent.BondingIC.from_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>create Descriptor instance from json dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; descriptor dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.InformationContent.BondingIC.get_parameter_dict">
+<code class="descname">get_parameter_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.InformationContent.BondingIC.get_parameter_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.InformationContent.BondingIC.kekulize">
 <code class="descname">kekulize</code><em class="property"> = True</em><a class="headerlink" href="#mordred.InformationContent.BondingIC.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.InformationContent.BondingIC.parameter_names">
+<code class="descname">parameter_names</code><em class="property"> = ('order',)</em><a class="headerlink" href="#mordred.InformationContent.BondingIC.parameter_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -260,6 +420,22 @@
 <dt id="mordred.InformationContent.BondingIC.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.InformationContent.BondingIC.rtype" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.InformationContent.BondingIC.to_json">
+<code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.InformationContent.BondingIC.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert to json serializable dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -284,9 +460,37 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.InformationContent.ComplementaryIC.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.InformationContent.ComplementaryIC.from_json">
+<code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.InformationContent.ComplementaryIC.from_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>create Descriptor instance from json dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; descriptor dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.InformationContent.ComplementaryIC.get_parameter_dict">
+<code class="descname">get_parameter_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.InformationContent.ComplementaryIC.get_parameter_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.InformationContent.ComplementaryIC.kekulize">
 <code class="descname">kekulize</code><em class="property"> = True</em><a class="headerlink" href="#mordred.InformationContent.ComplementaryIC.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.InformationContent.ComplementaryIC.parameter_names">
+<code class="descname">parameter_names</code><em class="property"> = ('order',)</em><a class="headerlink" href="#mordred.InformationContent.ComplementaryIC.parameter_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -303,6 +507,22 @@
 <dt id="mordred.InformationContent.ComplementaryIC.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.InformationContent.ComplementaryIC.rtype" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.InformationContent.ComplementaryIC.to_json">
+<code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.InformationContent.ComplementaryIC.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert to json serializable dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -325,9 +545,37 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.InformationContent.ModifiedIC.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.InformationContent.ModifiedIC.from_json">
+<code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.InformationContent.ModifiedIC.from_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>create Descriptor instance from json dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; descriptor dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.InformationContent.ModifiedIC.get_parameter_dict">
+<code class="descname">get_parameter_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.InformationContent.ModifiedIC.get_parameter_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.InformationContent.ModifiedIC.kekulize">
 <code class="descname">kekulize</code><em class="property"> = True</em><a class="headerlink" href="#mordred.InformationContent.ModifiedIC.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.InformationContent.ModifiedIC.parameter_names">
+<code class="descname">parameter_names</code><em class="property"> = ('order',)</em><a class="headerlink" href="#mordred.InformationContent.ModifiedIC.parameter_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -344,6 +592,22 @@
 <dt id="mordred.InformationContent.ModifiedIC.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.InformationContent.ModifiedIC.rtype" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.InformationContent.ModifiedIC.to_json">
+<code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.InformationContent.ModifiedIC.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert to json serializable dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -366,9 +630,37 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.InformationContent.ZModifiedIC.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.InformationContent.ZModifiedIC.from_json">
+<code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.InformationContent.ZModifiedIC.from_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>create Descriptor instance from json dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; descriptor dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.InformationContent.ZModifiedIC.get_parameter_dict">
+<code class="descname">get_parameter_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.InformationContent.ZModifiedIC.get_parameter_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.InformationContent.ZModifiedIC.kekulize">
 <code class="descname">kekulize</code><em class="property"> = True</em><a class="headerlink" href="#mordred.InformationContent.ZModifiedIC.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.InformationContent.ZModifiedIC.parameter_names">
+<code class="descname">parameter_names</code><em class="property"> = ('order',)</em><a class="headerlink" href="#mordred.InformationContent.ZModifiedIC.parameter_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -385,6 +677,22 @@
 <dt id="mordred.InformationContent.ZModifiedIC.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.InformationContent.ZModifiedIC.rtype" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.InformationContent.ZModifiedIC.to_json">
+<code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.InformationContent.ZModifiedIC.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert to json serializable dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>

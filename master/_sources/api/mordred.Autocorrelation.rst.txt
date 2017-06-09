@@ -3,32 +3,32 @@ mordred.Autocorrelation module
 
 .. automodule:: mordred.Autocorrelation
 .. autoclass:: mordred.Autocorrelation.ATS
-    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
+    :members: explicit_hydrogens, from_json, get_parameter_dict, kekulize, parameter_names, require_3D, require_connected, rtype, to_json
     :undoc-members:
     :show-inheritance:
 
 .. autoclass:: mordred.Autocorrelation.AATS
-    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
+    :members: explicit_hydrogens, from_json, get_parameter_dict, kekulize, parameter_names, require_3D, require_connected, rtype, to_json
     :undoc-members:
     :show-inheritance:
 
 .. autoclass:: mordred.Autocorrelation.ATSC
-    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
+    :members: explicit_hydrogens, from_json, get_parameter_dict, kekulize, parameter_names, require_3D, require_connected, rtype, to_json
     :undoc-members:
     :show-inheritance:
 
 .. autoclass:: mordred.Autocorrelation.AATSC
-    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
+    :members: explicit_hydrogens, from_json, get_parameter_dict, kekulize, parameter_names, require_3D, require_connected, rtype, to_json
     :undoc-members:
     :show-inheritance:
 
 .. autoclass:: mordred.Autocorrelation.MATS
-    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
+    :members: explicit_hydrogens, from_json, get_parameter_dict, kekulize, parameter_names, require_3D, require_connected, rtype, to_json
     :undoc-members:
     :show-inheritance:
 
 .. autoclass:: mordred.Autocorrelation.GATS
-    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
+    :members: explicit_hydrogens, from_json, get_parameter_dict, kekulize, parameter_names, require_3D, require_connected, rtype, to_json
     :undoc-members:
     :show-inheritance:
 

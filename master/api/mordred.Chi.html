@@ -134,9 +134,37 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Chi.Chi.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.Chi.Chi.from_json">
+<code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Chi.Chi.from_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>create Descriptor instance from json dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; descriptor dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.Chi.Chi.get_parameter_dict">
+<code class="descname">get_parameter_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Chi.Chi.get_parameter_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.Chi.Chi.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Chi.Chi.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Chi.Chi.parameter_names">
+<code class="descname">parameter_names</code><em class="property"> = ('type', 'order', 'prop', 'averaged')</em><a class="headerlink" href="#mordred.Chi.Chi.parameter_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -148,6 +176,22 @@
 <dt id="mordred.Chi.Chi.require_connected">
 <code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Chi.Chi.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.Chi.Chi.to_json">
+<code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Chi.Chi.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert to json serializable dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 </dd></dl>
 

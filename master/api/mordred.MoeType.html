@@ -108,9 +108,37 @@
 <dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
 
+<dl class="method">
+<dt id="mordred.MoeType.LabuteASA.from_json">
+<code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.LabuteASA.from_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>create Descriptor instance from json dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; descriptor dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.MoeType.LabuteASA.get_parameter_dict">
+<code class="descname">get_parameter_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.LabuteASA.get_parameter_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.MoeType.LabuteASA.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.MoeType.LabuteASA.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.MoeType.LabuteASA.parameter_names">
+<code class="descname">parameter_names</code><em class="property"> = ()</em><a class="headerlink" href="#mordred.MoeType.LabuteASA.parameter_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -122,6 +150,22 @@
 <dt id="mordred.MoeType.LabuteASA.require_connected">
 <code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.MoeType.LabuteASA.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.MoeType.LabuteASA.to_json">
+<code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.LabuteASA.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert to json serializable dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 </dd></dl>
 
@@ -148,9 +192,37 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.MoeType.PEOE_VSA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.MoeType.PEOE_VSA.from_json">
+<code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.PEOE_VSA.from_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>create Descriptor instance from json dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; descriptor dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.MoeType.PEOE_VSA.get_parameter_dict">
+<code class="descname">get_parameter_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.PEOE_VSA.get_parameter_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.MoeType.PEOE_VSA.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.MoeType.PEOE_VSA.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.MoeType.PEOE_VSA.parameter_names">
+<code class="descname">parameter_names</code><em class="property"> = ('k',)</em><a class="headerlink" href="#mordred.MoeType.PEOE_VSA.parameter_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -167,6 +239,22 @@
 <dt id="mordred.MoeType.PEOE_VSA.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.MoeType.PEOE_VSA.rtype" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.MoeType.PEOE_VSA.to_json">
+<code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.PEOE_VSA.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert to json serializable dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -194,9 +282,37 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.MoeType.SMR_VSA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.MoeType.SMR_VSA.from_json">
+<code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.SMR_VSA.from_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>create Descriptor instance from json dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; descriptor dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.MoeType.SMR_VSA.get_parameter_dict">
+<code class="descname">get_parameter_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.SMR_VSA.get_parameter_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.MoeType.SMR_VSA.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.MoeType.SMR_VSA.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.MoeType.SMR_VSA.parameter_names">
+<code class="descname">parameter_names</code><em class="property"> = ('k',)</em><a class="headerlink" href="#mordred.MoeType.SMR_VSA.parameter_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -213,6 +329,22 @@
 <dt id="mordred.MoeType.SMR_VSA.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.MoeType.SMR_VSA.rtype" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.MoeType.SMR_VSA.to_json">
+<code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.SMR_VSA.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert to json serializable dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -240,9 +372,37 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.MoeType.SlogP_VSA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.MoeType.SlogP_VSA.from_json">
+<code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.SlogP_VSA.from_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>create Descriptor instance from json dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; descriptor dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.MoeType.SlogP_VSA.get_parameter_dict">
+<code class="descname">get_parameter_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.SlogP_VSA.get_parameter_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.MoeType.SlogP_VSA.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.MoeType.SlogP_VSA.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.MoeType.SlogP_VSA.parameter_names">
+<code class="descname">parameter_names</code><em class="property"> = ('k',)</em><a class="headerlink" href="#mordred.MoeType.SlogP_VSA.parameter_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -259,6 +419,22 @@
 <dt id="mordred.MoeType.SlogP_VSA.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.MoeType.SlogP_VSA.rtype" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.MoeType.SlogP_VSA.to_json">
+<code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.SlogP_VSA.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert to json serializable dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -286,9 +462,37 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.MoeType.EState_VSA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.MoeType.EState_VSA.from_json">
+<code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.EState_VSA.from_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>create Descriptor instance from json dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; descriptor dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.MoeType.EState_VSA.get_parameter_dict">
+<code class="descname">get_parameter_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.EState_VSA.get_parameter_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.MoeType.EState_VSA.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.MoeType.EState_VSA.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.MoeType.EState_VSA.parameter_names">
+<code class="descname">parameter_names</code><em class="property"> = ('k',)</em><a class="headerlink" href="#mordred.MoeType.EState_VSA.parameter_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -305,6 +509,22 @@
 <dt id="mordred.MoeType.EState_VSA.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.MoeType.EState_VSA.rtype" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.MoeType.EState_VSA.to_json">
+<code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.EState_VSA.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert to json serializable dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -332,9 +552,37 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.MoeType.VSA_EState.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.MoeType.VSA_EState.from_json">
+<code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.VSA_EState.from_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>create Descriptor instance from json dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; descriptor dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.MoeType.VSA_EState.get_parameter_dict">
+<code class="descname">get_parameter_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.VSA_EState.get_parameter_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.MoeType.VSA_EState.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.MoeType.VSA_EState.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.MoeType.VSA_EState.parameter_names">
+<code class="descname">parameter_names</code><em class="property"> = ('k',)</em><a class="headerlink" href="#mordred.MoeType.VSA_EState.parameter_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -351,6 +599,22 @@
 <dt id="mordred.MoeType.VSA_EState.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.MoeType.VSA_EState.rtype" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.MoeType.VSA_EState.to_json">
+<code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.VSA_EState.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert to json serializable dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>

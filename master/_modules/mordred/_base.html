@@ -75,7 +75,7 @@
 <span class="kn">from</span> <span class="nn">importlib</span> <span class="k">import</span> <span class="n">import_module</span>
 <span class="kn">from</span> <span class="nn">..error</span> <span class="k">import</span> <span class="n">MissingValueBase</span>
 
-<span class="kn">from</span> <span class="nn">.descriptor</span> <span class="k">import</span> <span class="n">Descriptor</span>
+<span class="kn">from</span> <span class="nn">.descriptor</span> <span class="k">import</span> <span class="n">Descriptor</span><span class="p">,</span> <span class="n">UnaryOperatingDescriptor</span><span class="p">,</span> <span class="n">ConstDescriptor</span><span class="p">,</span> <span class="n">BinaryOperatingDescriptor</span>
 <span class="kn">from</span> <span class="nn">.calculator</span> <span class="k">import</span> <span class="n">Calculator</span><span class="p">,</span> <span class="n">get_descriptors_from_module</span>
 <span class="kn">from</span> <span class="nn">.parallel</span> <span class="k">import</span> <span class="n">parallel</span>
 
@@ -88,7 +88,7 @@
 <span class="p">)</span>
 
 
-<div class="viewcode-block" id="all_descriptors"><a class="viewcode-back" href="../../mordred.html#mordred.all_descriptors">[docs]</a><span class="k">def</span> <span class="nf">all_descriptors</span><span class="p">():</span>
+<div class="viewcode-block" id="all_descriptors"><a class="viewcode-back" href="../../mordred.html#mordred.ABCIndex.all_descriptors">[docs]</a><span class="k">def</span> <span class="nf">all_descriptors</span><span class="p">():</span>
     <span class="sa">r</span><span class="sd">&quot;&quot;&quot;**[deprecated]** use mordred.descriptors module instead.</span>
 
 <span class="sd">    yield all descriptor modules.</span>
@@ -121,8 +121,60 @@
 
     <span class="k">return</span> <span class="n">v</span>
 
+<span class="k">def</span> <span class="nf">_from_json</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">descs</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;args&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">{}</span>
+    <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;invalid json: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">obj</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="n">UnaryOperatingDescriptor</span><span class="o">.</span><span class="vm">__name__</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">UnaryOperatingDescriptor</span><span class="p">(</span>
+            <span class="n">args</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span>
+            <span class="n">args</span><span class="p">[</span><span class="s1">&#39;operator&#39;</span><span class="p">],</span>
+            <span class="n">_from_json</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">])</span>
+        <span class="p">)</span>
+
+    <span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="n">BinaryOperatingDescriptor</span><span class="o">.</span><span class="vm">__name__</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">BinaryOperatingDescriptor</span><span class="p">(</span>
+            <span class="n">args</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span>
+            <span class="n">args</span><span class="p">[</span><span class="s1">&#39;operator&#39;</span><span class="p">],</span>
+            <span class="n">_from_json</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">]),</span>
+            <span class="n">_from_json</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="s1">&#39;right&#39;</span><span class="p">])</span>
+        <span class="p">)</span>
+
+    <span class="bp">cls</span> <span class="o">=</span> <span class="n">descs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="k">if</span> <span class="bp">cls</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;unknown class: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+
+    <span class="n">instance</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="o">**</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;args&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">{}))</span>
+    <span class="k">return</span> <span class="n">instance</span>
+
+
+<span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">_Descriptor_from_json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;create Descriptor instance from json dict.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        obj(dict): descriptor dict</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Descriptor: descriptor</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">descs</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;_all_descriptors&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">descs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">mordred</span> <span class="k">import</span> <span class="n">descriptors</span>
+        <span class="n">descs</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span><span class="p">:</span> <span class="bp">cls</span>
+            <span class="k">for</span> <span class="bp">cls</span> <span class="ow">in</span> <span class="n">get_descriptors_from_module</span><span class="p">(</span><span class="n">descriptors</span><span class="p">,</span> <span class="n">submodule</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="n">descs</span><span class="p">[</span><span class="n">ConstDescriptor</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span> <span class="o">=</span> <span class="n">ConstDescriptor</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_all_descriptors</span> <span class="o">=</span> <span class="n">descs</span>
+
+    <span class="k">return</span> <span class="n">_from_json</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">descs</span><span class="p">)</span>
 
 <span class="n">Descriptor</span><span class="o">.</span><span class="fm">__call__</span> <span class="o">=</span> <span class="n">_Descriptor__call__</span>
+<span class="n">Descriptor</span><span class="o">.</span><span class="n">from_json</span> <span class="o">=</span> <span class="n">_Descriptor_from_json</span>
 <span class="n">Calculator</span><span class="o">.</span><span class="n">_parallel</span> <span class="o">=</span> <span class="n">parallel</span>
 </pre></div>
 

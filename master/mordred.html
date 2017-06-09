@@ -135,6 +135,22 @@
 </dd></dl>
 
 <dl class="method">
+<dt id="mordred.Descriptor.to_json">
+<code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/descriptor.html#Descriptor.to_json"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Descriptor.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert to json serializable dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="mordred.Descriptor.calculate">
 <code class="descname">calculate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/descriptor.html#Descriptor.calculate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Descriptor.calculate" title="Permalink to this definition">¶</a></dt>
 <dd><p><strong>[abstractmethod]</strong> calculate descriptor value.</p>
@@ -232,6 +248,24 @@
 <dd><p><strong>[contextmanager]</strong> treat any exceptions as known exception</p>
 </dd></dl>
 
+<dl class="classmethod">
+<dt id="mordred.Descriptor.from_json">
+<em class="property">classmethod </em><code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Descriptor.from_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>create Descriptor instance from json dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; descriptor dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -250,6 +284,54 @@
 </tr>
 </tbody>
 </table>
+<dl class="classmethod">
+<dt id="mordred.Calculator.from_json">
+<em class="property">classmethod </em><code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/calculator.html#Calculator.from_json"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Calculator.from_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>create Calculator from json descriptor objects</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<em>list</em><em> or </em><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; descriptors to register</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">calculator</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#mordred.Calculator" title="mordred.Calculator">Calculator</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.Calculator.register_json">
+<code class="descname">register_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/calculator.html#Calculator.register_json"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Calculator.register_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>register Descriptors from json descriptor objects</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<em>list</em><em> or </em><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; descriptors to register</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.Calculator.to_json">
+<code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/calculator.html#Calculator.to_json"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Calculator.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert descriptors to json serializable data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">descriptors</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.Calculator.descriptors">
 <code class="descname">descriptors</code><a class="headerlink" href="#mordred.Calculator.descriptors" title="Permalink to this definition">¶</a></dt>

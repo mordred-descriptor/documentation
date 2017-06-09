@@ -279,27 +279,28 @@
         <span class="k">return</span> <span class="n">PPSA</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_version</span><span class="p">)</span></div>
 
 
-<span class="k">class</span> <span class="nc">WxSAMixin</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">SA</span><span class="p">,</span> <span class="n">ASA</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">SA</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ASA</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1000.0</span>
-
-
-<div class="viewcode-block" id="WNSA"><a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.WNSA">[docs]</a><span class="k">class</span> <span class="nc">WNSA</span><span class="p">(</span><span class="n">WxSAMixin</span><span class="p">,</span> <span class="n">FNSA</span><span class="p">):</span>
+<div class="viewcode-block" id="WNSA"><a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.WNSA">[docs]</a><span class="k">class</span> <span class="nc">WNSA</span><span class="p">(</span><span class="n">FNSA</span><span class="p">):</span>
     <span class="sa">r</span><span class="sd">&quot;&quot;&quot;surface weighted charged partial negative surface area descriptor.</span>
 
 <span class="sd">    :type version: int</span>
 <span class="sd">    :param version: one of :py:attr:`versions`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span></div>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">SA</span><span class="p">,</span> <span class="n">ASA</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">SA</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ASA</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1000.0</span></div>
 
 
-<div class="viewcode-block" id="WPSA"><a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.WPSA">[docs]</a><span class="k">class</span> <span class="nc">WPSA</span><span class="p">(</span><span class="n">WxSAMixin</span><span class="p">,</span> <span class="n">FPSA</span><span class="p">):</span>
+<div class="viewcode-block" id="WPSA"><a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.WPSA">[docs]</a><span class="k">class</span> <span class="nc">WPSA</span><span class="p">(</span><span class="n">FPSA</span><span class="p">):</span>
     <span class="sa">r</span><span class="sd">&quot;&quot;&quot;surface weighted charged partial positive surface area descriptor.</span>
 
 <span class="sd">    :type version: int</span>
 <span class="sd">    :param version: one of :py:attr:`versions`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span></div>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">SA</span><span class="p">,</span> <span class="n">ASA</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">SA</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ASA</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1000.0</span></div>
 
 
 <div class="viewcode-block" id="RNCG"><a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.RNCG">[docs]</a><span class="k">class</span> <span class="nc">RNCG</span><span class="p">(</span><span class="n">CPSABase</span><span class="p">):</span>

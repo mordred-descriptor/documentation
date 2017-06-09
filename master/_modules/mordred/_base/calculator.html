@@ -105,6 +105,39 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_kekulizes</span> <span class="o">=</span> <span class="nb">dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_kekulizes&#39;</span><span class="p">,</span> <span class="nb">set</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_require_3D</span> <span class="o">=</span> <span class="nb">dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_require_3D&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
 
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Calculator.from_json"><a class="viewcode-back" href="../../../mordred.html#mordred.Calculator.from_json">[docs]</a>    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;create Calculator from json descriptor objects</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            obj(list or dict): descriptors to register</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Calculator: calculator</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">calc</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">()</span>
+        <span class="n">calc</span><span class="o">.</span><span class="n">register_json</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">calc</span></div>
+
+<div class="viewcode-block" id="Calculator.register_json"><a class="viewcode-back" href="../../../mordred.html#mordred.Calculator.register_json">[docs]</a>    <span class="k">def</span> <span class="nf">register_json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;register Descriptors from json descriptor objects</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            obj(list or dict): descriptors to register</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="n">obj</span> <span class="o">=</span> <span class="p">[</span><span class="n">obj</span><span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Descriptor</span><span class="o">.</span><span class="n">from_json</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">obj</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Calculator.to_json"><a class="viewcode-back" href="../../../mordred.html#mordred.Calculator.to_json">[docs]</a>    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;convert descriptors to json serializable data</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list: descriptors</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">d</span><span class="o">.</span><span class="n">to_json</span><span class="p">()</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">descriptors</span><span class="p">]</span></div>
+
     <span class="k">def</span> <span class="nf">__reduce_ex__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">version</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="p">(),</span> <span class="p">{</span>
             <span class="s1">&#39;_descriptors&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_descriptors</span><span class="p">,</span>

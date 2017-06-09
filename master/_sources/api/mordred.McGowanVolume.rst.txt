@@ -3,7 +3,7 @@ mordred.McGowanVolume module
 
 .. automodule:: mordred.McGowanVolume
 .. autoclass:: mordred.McGowanVolume.McGowanVolume
-    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
+    :members: explicit_hydrogens, from_json, get_parameter_dict, kekulize, parameter_names, require_3D, require_connected, rtype, to_json
     :undoc-members:
     :show-inheritance:
 

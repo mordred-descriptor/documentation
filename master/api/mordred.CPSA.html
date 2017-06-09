@@ -122,9 +122,37 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.PNSA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.PNSA.from_json">
+<code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.PNSA.from_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>create Descriptor instance from json dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; descriptor dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.PNSA.get_parameter_dict">
+<code class="descname">get_parameter_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.PNSA.get_parameter_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.PNSA.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.PNSA.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.PNSA.parameter_names">
+<code class="descname">parameter_names</code><em class="property"> = ('version',)</em><a class="headerlink" href="#mordred.CPSA.PNSA.parameter_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -141,6 +169,22 @@
 <dt id="mordred.CPSA.PNSA.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.CPSA.PNSA.rtype" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.PNSA.to_json">
+<code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.PNSA.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert to json serializable dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="attribute">
@@ -168,9 +212,37 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.PPSA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.PPSA.from_json">
+<code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.PPSA.from_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>create Descriptor instance from json dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; descriptor dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.PPSA.get_parameter_dict">
+<code class="descname">get_parameter_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.PPSA.get_parameter_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.PPSA.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.PPSA.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.PPSA.parameter_names">
+<code class="descname">parameter_names</code><em class="property"> = ('version',)</em><a class="headerlink" href="#mordred.CPSA.PPSA.parameter_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -187,6 +259,22 @@
 <dt id="mordred.CPSA.PPSA.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.CPSA.PPSA.rtype" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.PPSA.to_json">
+<code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.PPSA.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert to json serializable dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="attribute">
@@ -214,9 +302,37 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.DPSA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.DPSA.from_json">
+<code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.DPSA.from_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>create Descriptor instance from json dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; descriptor dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.DPSA.get_parameter_dict">
+<code class="descname">get_parameter_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.DPSA.get_parameter_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.DPSA.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.DPSA.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.DPSA.parameter_names">
+<code class="descname">parameter_names</code><em class="property"> = ('version',)</em><a class="headerlink" href="#mordred.CPSA.DPSA.parameter_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -233,6 +349,22 @@
 <dt id="mordred.CPSA.DPSA.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.CPSA.DPSA.rtype" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.DPSA.to_json">
+<code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.DPSA.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert to json serializable dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="attribute">
@@ -260,9 +392,37 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.FNSA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.FNSA.from_json">
+<code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.FNSA.from_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>create Descriptor instance from json dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; descriptor dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.FNSA.get_parameter_dict">
+<code class="descname">get_parameter_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.FNSA.get_parameter_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.FNSA.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.FNSA.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.FNSA.parameter_names">
+<code class="descname">parameter_names</code><em class="property"> = ('version',)</em><a class="headerlink" href="#mordred.CPSA.FNSA.parameter_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -279,6 +439,22 @@
 <dt id="mordred.CPSA.FNSA.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.CPSA.FNSA.rtype" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.FNSA.to_json">
+<code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.FNSA.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert to json serializable dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="attribute">
@@ -306,9 +482,37 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.FPSA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.FPSA.from_json">
+<code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.FPSA.from_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>create Descriptor instance from json dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; descriptor dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.FPSA.get_parameter_dict">
+<code class="descname">get_parameter_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.FPSA.get_parameter_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.FPSA.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.FPSA.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.FPSA.parameter_names">
+<code class="descname">parameter_names</code><em class="property"> = ('version',)</em><a class="headerlink" href="#mordred.CPSA.FPSA.parameter_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -327,6 +531,22 @@
 <dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.FPSA.to_json">
+<code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.FPSA.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert to json serializable dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.FPSA.versions">
 <code class="descname">versions</code><em class="property"> = [1, 2, 3, 4, 5]</em><a class="headerlink" href="#mordred.CPSA.FPSA.versions" title="Permalink to this definition">¶</a></dt>
@@ -337,7 +557,7 @@
 <dl class="class">
 <dt id="mordred.CPSA.WNSA">
 <em class="property">class </em><code class="descclassname">mordred.CPSA.</code><code class="descname">WNSA</code><span class="sig-paren">(</span><em>version=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/CPSA.html#WNSA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.CPSA.WNSA" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.CPSA.WxSAMixin</span></code>, <a class="reference internal" href="#mordred.CPSA.FNSA" title="mordred.CPSA.FNSA"><code class="xref py py-class docutils literal"><span class="pre">mordred.CPSA.FNSA</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#mordred.CPSA.FNSA" title="mordred.CPSA.FNSA"><code class="xref py py-class docutils literal"><span class="pre">mordred.CPSA.FNSA</span></code></a></p>
 <p>surface weighted charged partial negative surface area descriptor.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -352,9 +572,37 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.WNSA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.WNSA.from_json">
+<code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.WNSA.from_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>create Descriptor instance from json dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; descriptor dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.WNSA.get_parameter_dict">
+<code class="descname">get_parameter_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.WNSA.get_parameter_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.WNSA.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.WNSA.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.WNSA.parameter_names">
+<code class="descname">parameter_names</code><em class="property"> = ('version',)</em><a class="headerlink" href="#mordred.CPSA.WNSA.parameter_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -373,6 +621,22 @@
 <dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.WNSA.to_json">
+<code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.WNSA.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert to json serializable dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.WNSA.versions">
 <code class="descname">versions</code><em class="property"> = [1, 2, 3, 4, 5]</em><a class="headerlink" href="#mordred.CPSA.WNSA.versions" title="Permalink to this definition">¶</a></dt>
@@ -383,7 +647,7 @@
 <dl class="class">
 <dt id="mordred.CPSA.WPSA">
 <em class="property">class </em><code class="descclassname">mordred.CPSA.</code><code class="descname">WPSA</code><span class="sig-paren">(</span><em>version=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/CPSA.html#WPSA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.CPSA.WPSA" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.CPSA.WxSAMixin</span></code>, <a class="reference internal" href="#mordred.CPSA.FPSA" title="mordred.CPSA.FPSA"><code class="xref py py-class docutils literal"><span class="pre">mordred.CPSA.FPSA</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#mordred.CPSA.FPSA" title="mordred.CPSA.FPSA"><code class="xref py py-class docutils literal"><span class="pre">mordred.CPSA.FPSA</span></code></a></p>
 <p>surface weighted charged partial positive surface area descriptor.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -398,9 +662,37 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.WPSA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.WPSA.from_json">
+<code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.WPSA.from_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>create Descriptor instance from json dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; descriptor dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.WPSA.get_parameter_dict">
+<code class="descname">get_parameter_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.WPSA.get_parameter_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.WPSA.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.WPSA.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.WPSA.parameter_names">
+<code class="descname">parameter_names</code><em class="property"> = ('version',)</em><a class="headerlink" href="#mordred.CPSA.WPSA.parameter_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -417,6 +709,22 @@
 <dt id="mordred.CPSA.WPSA.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.CPSA.WPSA.rtype" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.WPSA.to_json">
+<code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.WPSA.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert to json serializable dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="attribute">
@@ -441,9 +749,37 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.RNCG.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.RNCG.from_json">
+<code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RNCG.from_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>create Descriptor instance from json dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; descriptor dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.RNCG.get_parameter_dict">
+<code class="descname">get_parameter_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RNCG.get_parameter_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.RNCG.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.RNCG.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RNCG.parameter_names">
+<code class="descname">parameter_names</code><em class="property"> = ()</em><a class="headerlink" href="#mordred.CPSA.RNCG.parameter_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -455,6 +791,22 @@
 <dt id="mordred.CPSA.RNCG.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.CPSA.RNCG.rtype" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.RNCG.to_json">
+<code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RNCG.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert to json serializable dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -469,9 +821,37 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.RPCG.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.RPCG.from_json">
+<code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPCG.from_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>create Descriptor instance from json dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; descriptor dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.RPCG.get_parameter_dict">
+<code class="descname">get_parameter_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPCG.get_parameter_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.RPCG.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.RPCG.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RPCG.parameter_names">
+<code class="descname">parameter_names</code><em class="property"> = ()</em><a class="headerlink" href="#mordred.CPSA.RPCG.parameter_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -488,6 +868,22 @@
 <dt id="mordred.CPSA.RPCG.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.CPSA.RPCG.rtype" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.RPCG.to_json">
+<code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPCG.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert to json serializable dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -508,9 +904,37 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.RNCS.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.RNCS.from_json">
+<code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RNCS.from_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>create Descriptor instance from json dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; descriptor dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.RNCS.get_parameter_dict">
+<code class="descname">get_parameter_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RNCS.get_parameter_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.RNCS.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.RNCS.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RNCS.parameter_names">
+<code class="descname">parameter_names</code><em class="property"> = ()</em><a class="headerlink" href="#mordred.CPSA.RNCS.parameter_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -522,6 +946,22 @@
 <dt id="mordred.CPSA.RNCS.require_connected">
 <code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.RNCS.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.RNCS.to_json">
+<code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RNCS.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert to json serializable dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 </dd></dl>
 
@@ -535,9 +975,37 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.RPCS.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.RPCS.from_json">
+<code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPCS.from_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>create Descriptor instance from json dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; descriptor dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.RPCS.get_parameter_dict">
+<code class="descname">get_parameter_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPCS.get_parameter_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.RPCS.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.RPCS.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RPCS.parameter_names">
+<code class="descname">parameter_names</code><em class="property"> = ()</em><a class="headerlink" href="#mordred.CPSA.RPCS.parameter_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -556,6 +1024,22 @@
 <dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.RPCS.to_json">
+<code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPCS.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert to json serializable dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -568,9 +1052,37 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.TASA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.TASA.from_json">
+<code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.TASA.from_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>create Descriptor instance from json dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; descriptor dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.TASA.get_parameter_dict">
+<code class="descname">get_parameter_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.TASA.get_parameter_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.TASA.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.TASA.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.TASA.parameter_names">
+<code class="descname">parameter_names</code><em class="property"> = ()</em><a class="headerlink" href="#mordred.CPSA.TASA.parameter_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -589,6 +1101,22 @@
 <dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.TASA.to_json">
+<code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.TASA.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert to json serializable dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -601,9 +1129,37 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.TPSA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.TPSA.from_json">
+<code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.TPSA.from_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>create Descriptor instance from json dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; descriptor dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.TPSA.get_parameter_dict">
+<code class="descname">get_parameter_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.TPSA.get_parameter_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.TPSA.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.TPSA.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.TPSA.parameter_names">
+<code class="descname">parameter_names</code><em class="property"> = ()</em><a class="headerlink" href="#mordred.CPSA.TPSA.parameter_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -622,6 +1178,22 @@
 <dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.TPSA.to_json">
+<code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.TPSA.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert to json serializable dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -634,9 +1206,37 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.RASA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.RASA.from_json">
+<code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RASA.from_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>create Descriptor instance from json dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; descriptor dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.RASA.get_parameter_dict">
+<code class="descname">get_parameter_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RASA.get_parameter_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.RASA.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.RASA.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RASA.parameter_names">
+<code class="descname">parameter_names</code><em class="property"> = ()</em><a class="headerlink" href="#mordred.CPSA.RASA.parameter_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -655,6 +1255,22 @@
 <dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.RASA.to_json">
+<code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RASA.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert to json serializable dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -667,9 +1283,37 @@
 <code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.CPSA.RPSA.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="mordred.CPSA.RPSA.from_json">
+<code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPSA.from_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>create Descriptor instance from json dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; descriptor dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.RPSA.get_parameter_dict">
+<code class="descname">get_parameter_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPSA.get_parameter_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="mordred.CPSA.RPSA.kekulize">
 <code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.CPSA.RPSA.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.CPSA.RPSA.parameter_names">
+<code class="descname">parameter_names</code><em class="property"> = ()</em><a class="headerlink" href="#mordred.CPSA.RPSA.parameter_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -686,6 +1330,22 @@
 <dt id="mordred.CPSA.RPSA.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.CPSA.RPSA.rtype" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.CPSA.RPSA.to_json">
+<code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPSA.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert to json serializable dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
