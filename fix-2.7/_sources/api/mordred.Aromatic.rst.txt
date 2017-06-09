@@ -1,0 +1,14 @@
+mordred.Aromatic module
+=======================
+
+.. automodule:: mordred.Aromatic
+.. autoclass:: mordred.Aromatic.AromaticAtomsCount
+    :members: explicit_hydrogens, from_json, get_parameter_dict, kekulize, parameter_names, require_3D, require_connected, rtype, to_json
+    :undoc-members:
+    :show-inheritance:
+
+.. autoclass:: mordred.Aromatic.AromaticBondsCount
+    :members: explicit_hydrogens, from_json, get_parameter_dict, kekulize, parameter_names, require_3D, require_connected, rtype, to_json
+    :undoc-members:
+    :show-inheritance:
+

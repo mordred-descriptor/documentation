@@ -1,0 +1,14 @@
+mordred.DetourMatrix module
+===========================
+
+.. automodule:: mordred.DetourMatrix
+.. autoclass:: mordred.DetourMatrix.DetourMatrix
+    :members: explicit_hydrogens, from_json, get_parameter_dict, kekulize, parameter_names, require_3D, require_connected, rtype, to_json
+    :undoc-members:
+    :show-inheritance:
+
+.. autoclass:: mordred.DetourMatrix.DetourIndex
+    :members: explicit_hydrogens, from_json, get_parameter_dict, kekulize, parameter_names, require_3D, require_connected, rtype, to_json
+    :undoc-members:
+    :show-inheritance:
+
