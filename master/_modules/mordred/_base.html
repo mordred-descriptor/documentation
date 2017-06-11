@@ -70,6 +70,7 @@
   <h1>Source code for mordred._base</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="kn">from</span> <span class="nn">importlib</span> <span class="k">import</span> <span class="n">import_module</span>
 <span class="kn">from</span> <span class="nn">..error</span> <span class="k">import</span> <span class="n">MissingValueBase</span>
@@ -84,6 +85,7 @@
     <span class="s1">&#39;Descriptor&#39;</span><span class="p">,</span>
     <span class="s1">&#39;Calculator&#39;</span><span class="p">,</span>
     <span class="s1">&#39;get_descriptors_from_module&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;is_missing&#39;</span><span class="p">,</span>
 <span class="p">)</span>
 
 
@@ -119,6 +121,7 @@
         <span class="k">raise</span> <span class="n">v</span><span class="o">.</span><span class="n">error</span>
 
     <span class="k">return</span> <span class="n">v</span>
+
 
 <span class="k">def</span> <span class="nf">_from_json</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">descs</span><span class="p">):</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
@@ -171,6 +174,19 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_all_descriptors</span> <span class="o">=</span> <span class="n">descs</span>
 
     <span class="k">return</span> <span class="n">_from_json</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">descs</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">is_missing</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;check argument is either MissingValue or not</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        v(any): value</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        bool</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">return</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">MissingValueBase</span><span class="p">)</span>
+
 
 <span class="n">Descriptor</span><span class="o">.</span><span class="fm">__call__</span> <span class="o">=</span> <span class="n">_Descriptor__call__</span>
 <span class="n">Descriptor</span><span class="o">.</span><span class="n">from_json</span> <span class="o">=</span> <span class="n">_Descriptor_from_json</span>
