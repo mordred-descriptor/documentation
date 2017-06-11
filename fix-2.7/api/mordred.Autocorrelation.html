@@ -2,7 +2,6 @@
 
 <!doctype html>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -36,7 +35,7 @@
     <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
     <![endif]-->
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -94,7 +93,7 @@
 <span id="mordred-autocorrelation-module"></span><h1>mordred.Autocorrelation module<a class="headerlink" href="#module-mordred.Autocorrelation" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="mordred.Autocorrelation.ATS">
-<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">ATS</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Autocorrelation.html#ATS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.ATS" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">ATS</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop=’m’</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Autocorrelation.html#ATS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.ATS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.Autocorrelation.AutocorrelationBase</span></code></p>
 <p>Autocorrelation of Topological Structure descriptor.</p>
 <p>a.k.a. Moreau-Broto autocorrelation descriptor</p>
@@ -117,8 +116,8 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>order</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; order(<span class="math">\(k\)</span>)</li>
-<li><strong>property</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a><em>, </em><em>function</em>) &#8211; <a class="reference internal" href="../atomic_prop.html#atomic-properties"><span class="std std-ref">atomic properties</span></a></li>
+<li><strong>order</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) – order(<span class="math">\(k\)</span>)</li>
+<li><strong>property</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a><em>, </em><em>function</em>) – <a class="reference internal" href="../atomic_prop.html#atomic-properties"><span class="std std-ref">atomic properties</span></a></li>
 </ul>
 </td>
 </tr>
@@ -140,7 +139,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; descriptor dict</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) – descriptor dict</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
 </tr>
@@ -162,7 +161,7 @@
 
 <dl class="attribute">
 <dt id="mordred.Autocorrelation.ATS.parameter_names">
-<code class="descname">parameter_names</code><em class="property"> = ('order', 'prop')</em><a class="headerlink" href="#mordred.Autocorrelation.ATS.parameter_names" title="Permalink to this definition">¶</a></dt>
+<code class="descname">parameter_names</code><em class="property"> = (‘order’, ‘prop’)</em><a class="headerlink" href="#mordred.Autocorrelation.ATS.parameter_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -201,7 +200,7 @@
 
 <dl class="class">
 <dt id="mordred.Autocorrelation.AATS">
-<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">AATS</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Autocorrelation.html#AATS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.AATS" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">AATS</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop=’m’</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Autocorrelation.html#AATS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.AATS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#mordred.Autocorrelation.ATS" title="mordred.Autocorrelation.ATS"><code class="xref py py-class docutils literal"><span class="pre">mordred.Autocorrelation.ATS</span></code></a></p>
 <p>averaged ATS descriptor.</p>
 <div class="math">
@@ -235,7 +234,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; descriptor dict</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) – descriptor dict</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
 </tr>
@@ -257,7 +256,7 @@
 
 <dl class="attribute">
 <dt id="mordred.Autocorrelation.AATS.parameter_names">
-<code class="descname">parameter_names</code><em class="property"> = ('order', 'prop')</em><a class="headerlink" href="#mordred.Autocorrelation.AATS.parameter_names" title="Permalink to this definition">¶</a></dt>
+<code class="descname">parameter_names</code><em class="property"> = (‘order’, ‘prop’)</em><a class="headerlink" href="#mordred.Autocorrelation.AATS.parameter_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -296,7 +295,7 @@
 
 <dl class="class">
 <dt id="mordred.Autocorrelation.ATSC">
-<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">ATSC</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Autocorrelation.html#ATSC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.ATSC" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">ATSC</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop=’m’</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Autocorrelation.html#ATSC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.ATSC" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.Autocorrelation.AutocorrelationBase</span></code></p>
 <p>centered ATS descriptor.</p>
 <p>ATS with <span class="math">\({\boldsymbol w}_{\rm c}\)</span> property</p>
@@ -325,7 +324,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; descriptor dict</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) – descriptor dict</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
 </tr>
@@ -347,7 +346,7 @@
 
 <dl class="attribute">
 <dt id="mordred.Autocorrelation.ATSC.parameter_names">
-<code class="descname">parameter_names</code><em class="property"> = ('order', 'prop')</em><a class="headerlink" href="#mordred.Autocorrelation.ATSC.parameter_names" title="Permalink to this definition">¶</a></dt>
+<code class="descname">parameter_names</code><em class="property"> = (‘order’, ‘prop’)</em><a class="headerlink" href="#mordred.Autocorrelation.ATSC.parameter_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -386,7 +385,7 @@
 
 <dl class="class">
 <dt id="mordred.Autocorrelation.AATSC">
-<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">AATSC</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Autocorrelation.html#AATSC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.AATSC" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">AATSC</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop=’m’</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Autocorrelation.html#AATSC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.AATSC" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#mordred.Autocorrelation.ATSC" title="mordred.Autocorrelation.ATSC"><code class="xref py py-class docutils literal"><span class="pre">mordred.Autocorrelation.ATSC</span></code></a></p>
 <p>averaged ATSC descriptor.</p>
 <div class="math">
@@ -420,7 +419,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; descriptor dict</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) – descriptor dict</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
 </tr>
@@ -442,7 +441,7 @@
 
 <dl class="attribute">
 <dt id="mordred.Autocorrelation.AATSC.parameter_names">
-<code class="descname">parameter_names</code><em class="property"> = ('order', 'prop')</em><a class="headerlink" href="#mordred.Autocorrelation.AATSC.parameter_names" title="Permalink to this definition">¶</a></dt>
+<code class="descname">parameter_names</code><em class="property"> = (‘order’, ‘prop’)</em><a class="headerlink" href="#mordred.Autocorrelation.AATSC.parameter_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -481,7 +480,7 @@
 
 <dl class="class">
 <dt id="mordred.Autocorrelation.MATS">
-<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">MATS</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Autocorrelation.html#MATS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.MATS" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">MATS</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop=’m’</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Autocorrelation.html#MATS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.MATS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.Autocorrelation.AutocorrelationBase</span></code></p>
 <p>Moran coefficient descriptor.</p>
 <div class="math">
@@ -517,7 +516,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; descriptor dict</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) – descriptor dict</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
 </tr>
@@ -539,7 +538,7 @@
 
 <dl class="attribute">
 <dt id="mordred.Autocorrelation.MATS.parameter_names">
-<code class="descname">parameter_names</code><em class="property"> = ('order', 'prop')</em><a class="headerlink" href="#mordred.Autocorrelation.MATS.parameter_names" title="Permalink to this definition">¶</a></dt>
+<code class="descname">parameter_names</code><em class="property"> = (‘order’, ‘prop’)</em><a class="headerlink" href="#mordred.Autocorrelation.MATS.parameter_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -578,7 +577,7 @@
 
 <dl class="class">
 <dt id="mordred.Autocorrelation.GATS">
-<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">GATS</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop='m'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Autocorrelation.html#GATS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.GATS" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">mordred.Autocorrelation.</code><code class="descname">GATS</code><span class="sig-paren">(</span><em>order=0</em>, <em>prop=’m’</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Autocorrelation.html#GATS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Autocorrelation.GATS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#mordred.Autocorrelation.MATS" title="mordred.Autocorrelation.MATS"><code class="xref py py-class docutils literal"><span class="pre">mordred.Autocorrelation.MATS</span></code></a></p>
 <p>Geary coefficient descriptor.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -609,7 +608,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; descriptor dict</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) – descriptor dict</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
 </tr>
@@ -631,7 +630,7 @@
 
 <dl class="attribute">
 <dt id="mordred.Autocorrelation.GATS.parameter_names">
-<code class="descname">parameter_names</code><em class="property"> = ('order', 'prop')</em><a class="headerlink" href="#mordred.Autocorrelation.GATS.parameter_names" title="Permalink to this definition">¶</a></dt>
+<code class="descname">parameter_names</code><em class="property"> = (‘order’, ‘prop’)</em><a class="headerlink" href="#mordred.Autocorrelation.GATS.parameter_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -698,7 +697,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2016, Hirotomo Moriwaki.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.2.
     </div>
   </body>
 </html>

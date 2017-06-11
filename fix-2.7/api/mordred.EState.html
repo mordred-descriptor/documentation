@@ -2,7 +2,6 @@
 
 <!doctype html>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -36,7 +35,7 @@
     <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
     <![endif]-->
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -94,7 +93,7 @@
 <span id="mordred-estate-module"></span><h1>mordred.EState module<a class="headerlink" href="#module-mordred.EState" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="mordred.EState.AtomTypeEState">
-<em class="property">class </em><code class="descclassname">mordred.EState.</code><code class="descname">AtomTypeEState</code><span class="sig-paren">(</span><em>type='count'</em>, <em>estate='sLi'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/EState.html#AtomTypeEState"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.EState.AtomTypeEState" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">mordred.EState.</code><code class="descname">AtomTypeEState</code><span class="sig-paren">(</span><em>type=’count’</em>, <em>estate=’sLi’</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/EState.html#AtomTypeEState"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.EState.AtomTypeEState" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred.EState.EStateBase</span></code></p>
 <p>atom type e-state descriptor.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -102,12 +101,12 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>type</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; one of aggr_types</li>
-<li><strong>estate</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; one of es_types</li>
+<li><strong>type</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) – one of aggr_types</li>
+<li><strong>estate</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) – one of es_types</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">NaN when type in [&#8216;min&#8217;, &#8216;max&#8217;] and <span class="math">\(N_{\rm X} = 0\)</span></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">NaN when type in [‘min’, ‘max’] and <span class="math">\(N_{\rm X} = 0\)</span></p>
 </td>
 </tr>
 </tbody>
@@ -121,19 +120,19 @@
 </dl>
 <dl class="attribute">
 <dt id="mordred.EState.AtomTypeEState.aggr_types">
-<code class="descname">aggr_types</code><em class="property"> = ('count', 'sum', 'max', 'min')</em><a class="headerlink" href="#mordred.EState.AtomTypeEState.aggr_types" title="Permalink to this definition">¶</a></dt>
+<code class="descname">aggr_types</code><em class="property"> = (‘count’, ‘sum’, ‘max’, ‘min’)</em><a class="headerlink" href="#mordred.EState.AtomTypeEState.aggr_types" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.EState.AtomTypeEState.es_types">
-<code class="descname">es_types</code><em class="property"> = ('sLi', 'ssBe', 'ssssBe', 'ssBH', 'sssB', 'ssssB', 'sCH3', 'dCH2', 'ssCH2', 'tCH', 'dsCH', 'aaCH', 'sssCH', 'ddC', 'tsC', 'dssC', 'aasC', 'aaaC', 'ssssC', 'sNH3', 'sNH2', 'ssNH2', 'dNH', 'ssNH', 'aaNH', 'tN', 'sssNH', 'dsN', 'aaN', 'sssN', 'ddsN', 'aasN', 'ssssN', 'sOH', 'dO', 'ssO', 'aaO', 'sF', 'sSiH3', 'ssSiH2', 'sssSiH', 'ssssSi', 'sPH2', 'ssPH', 'sssP', 'dsssP', 'sssssP', 'sSH', 'dS', 'ssS', 'aaS', 'dssS', 'ddssS', 'sCl', 'sGeH3', 'ssGeH2', 'sssGeH', 'ssssGe', 'sAsH2', 'ssAsH', 'sssAs', 'sssdAs', 'sssssAs', 'sSeH', 'dSe', 'ssSe', 'aaSe', 'dssSe', 'ddssSe', 'sBr', 'sSnH3', 'ssSnH2', 'sssSnH', 'ssssSn', 'sI', 'sPbH3', 'ssPbH2', 'sssPbH', 'ssssPb')</em><a class="headerlink" href="#mordred.EState.AtomTypeEState.es_types" title="Permalink to this definition">¶</a></dt>
+<code class="descname">es_types</code><em class="property"> = (‘sLi’, ‘ssBe’, ‘ssssBe’, ‘ssBH’, ‘sssB’, ‘ssssB’, ‘sCH3’, ‘dCH2’, ‘ssCH2’, ‘tCH’, ‘dsCH’, ‘aaCH’, ‘sssCH’, ‘ddC’, ‘tsC’, ‘dssC’, ‘aasC’, ‘aaaC’, ‘ssssC’, ‘sNH3’, ‘sNH2’, ‘ssNH2’, ‘dNH’, ‘ssNH’, ‘aaNH’, ‘tN’, ‘sssNH’, ‘dsN’, ‘aaN’, ‘sssN’, ‘ddsN’, ‘aasN’, ‘ssssN’, ‘sOH’, ‘dO’, ‘ssO’, ‘aaO’, ‘sF’, ‘sSiH3’, ‘ssSiH2’, ‘sssSiH’, ‘ssssSi’, ‘sPH2’, ‘ssPH’, ‘sssP’, ‘dsssP’, ‘sssssP’, ‘sSH’, ‘dS’, ‘ssS’, ‘aaS’, ‘dssS’, ‘ddssS’, ‘sCl’, ‘sGeH3’, ‘ssGeH2’, ‘sssGeH’, ‘ssssGe’, ‘sAsH2’, ‘ssAsH’, ‘sssAs’, ‘sssdAs’, ‘sssssAs’, ‘sSeH’, ‘dSe’, ‘ssSe’, ‘aaSe’, ‘dssSe’, ‘ddssSe’, ‘sBr’, ‘sSnH3’, ‘ssSnH2’, ‘sssSnH’, ‘ssssSn’, ‘sI’, ‘sPbH3’, ‘ssPbH2’, ‘sssPbH’, ‘ssssPb’)</em><a class="headerlink" href="#mordred.EState.AtomTypeEState.es_types" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.EState.AtomTypeEState.rtype">
 <code class="descname">rtype</code><a class="headerlink" href="#mordred.EState.AtomTypeEState.rtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>** &#8216;count&#8217;* &#8211; <a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>
-* &#8216;other&#8217;: <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
+<dd><p>** ‘count’* – <a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>
+* ‘other’: <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a></p>
 </dd></dl>
 
 <dl class="attribute">
@@ -149,7 +148,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; descriptor dict</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) – descriptor dict</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
 </tr>
@@ -171,7 +170,7 @@
 
 <dl class="attribute">
 <dt id="mordred.EState.AtomTypeEState.parameter_names">
-<code class="descname">parameter_names</code><em class="property"> = ('type', 'estate')</em><a class="headerlink" href="#mordred.EState.AtomTypeEState.parameter_names" title="Permalink to this definition">¶</a></dt>
+<code class="descname">parameter_names</code><em class="property"> = (‘type’, ‘estate’)</em><a class="headerlink" href="#mordred.EState.AtomTypeEState.parameter_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -232,7 +231,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2016, Hirotomo Moriwaki.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.2.
     </div>
   </body>
 </html>
