@@ -2,7 +2,6 @@
 
 <!doctype html>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -36,7 +35,7 @@
     <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
     <![endif]-->
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -94,7 +93,7 @@
 <span id="mordred-topologicalcharge-module"></span><h1>mordred.TopologicalCharge module<a class="headerlink" href="#module-mordred.TopologicalCharge" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="mordred.TopologicalCharge.TopologicalCharge">
-<em class="property">class </em><code class="descclassname">mordred.TopologicalCharge.</code><code class="descname">TopologicalCharge</code><span class="sig-paren">(</span><em>type='global'</em>, <em>order=10</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/TopologicalCharge.html#TopologicalCharge"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.TopologicalCharge.TopologicalCharge" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">mordred.TopologicalCharge.</code><code class="descname">TopologicalCharge</code><span class="sig-paren">(</span><em>type=’global’</em>, <em>order=10</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/TopologicalCharge.html#TopologicalCharge"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.TopologicalCharge.TopologicalCharge" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mordred._base.descriptor.Descriptor</span></code></p>
 <p>topological charge descriptor.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -102,13 +101,13 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>type</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; <ul>
-<li>&#8216;sum&#8217;: sum of order-distance atom pairs coefficient</li>
-<li>&#8216;mean&#8217;: mean of order-distance atom pairs coefficient</li>
-<li>&#8216;global&#8217;: sum of mean-topoCharge over 0 to order</li>
+<li><strong>type</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) – <ul>
+<li>‘sum’: sum of order-distance atom pairs coefficient</li>
+<li>’mean’: mean of order-distance atom pairs coefficient</li>
+<li>’global’: sum of mean-topoCharge over 0 to order</li>
 </ul>
 </li>
-<li><strong>order</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; int</li>
+<li><strong>order</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) – int</li>
 </ul>
 </td>
 </tr>
@@ -128,7 +127,7 @@
 
 <dl class="attribute">
 <dt id="mordred.TopologicalCharge.TopologicalCharge.tc_types">
-<code class="descname">tc_types</code><em class="property"> = ('global', 'mean', 'raw')</em><a class="headerlink" href="#mordred.TopologicalCharge.TopologicalCharge.tc_types" title="Permalink to this definition">¶</a></dt>
+<code class="descname">tc_types</code><em class="property"> = (‘global’, ‘mean’, ‘raw’)</em><a class="headerlink" href="#mordred.TopologicalCharge.TopologicalCharge.tc_types" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -145,7 +144,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; descriptor dict</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) – descriptor dict</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
 </tr>
@@ -167,7 +166,7 @@
 
 <dl class="attribute">
 <dt id="mordred.TopologicalCharge.TopologicalCharge.parameter_names">
-<code class="descname">parameter_names</code><em class="property"> = ('type', 'order')</em><a class="headerlink" href="#mordred.TopologicalCharge.TopologicalCharge.parameter_names" title="Permalink to this definition">¶</a></dt>
+<code class="descname">parameter_names</code><em class="property"> = (‘type’, ‘order’)</em><a class="headerlink" href="#mordred.TopologicalCharge.TopologicalCharge.parameter_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -228,7 +227,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2016, Hirotomo Moriwaki.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.2.
     </div>
   </body>
 </html>

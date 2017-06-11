@@ -2,7 +2,6 @@
 
 <!doctype html>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -36,7 +35,7 @@
     <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
     <![endif]-->
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -116,9 +115,9 @@ optional arguments:
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>radiuses</strong> (<em>np.ndarray</em><em>(</em><em>dtype=float</em><em>, </em><em>shape=</em><em>(</em><em>N</em><em>,</em><em>)</em><em>)</em>) &#8211; atomic radius + solvent radius vector</li>
-<li><strong>xyzs</strong> (<em>np.ndarray</em><em>(</em><em>dtype=float</em><em>, </em><em>shape=</em><em>(</em><em>N</em><em>, </em><em>3</em><em>)</em><em>)</em>) &#8211; atomic position matrix</li>
-<li><strong>level</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; <p>mesh level. subdivide icosahedron n-1 times.</p>
+<li><strong>radiuses</strong> (<em>np.ndarray</em><em>(</em><em>dtype=float</em><em>, </em><em>shape=</em><em>(</em><em>N</em><em>,</em><em>)</em><em>)</em>) – atomic radius + solvent radius vector</li>
+<li><strong>xyzs</strong> (<em>np.ndarray</em><em>(</em><em>dtype=float</em><em>, </em><em>shape=</em><em>(</em><em>N</em><em>, </em><em>3</em><em>)</em><em>)</em>) – atomic position matrix</li>
+<li><strong>level</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) – <p>mesh level. subdivide icosahedron n-1 times.</p>
 <div class="math">
 \[N_{\rm points} = 5 \times 4^{level} - 8\]</div>
 </li>
@@ -135,7 +134,7 @@ optional arguments:
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>i</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; atom index</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>i</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) – atom index</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)">float</a></td>
 </tr>
@@ -152,10 +151,10 @@ optional arguments:
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>mol</strong> (<em>rdkit.Chem.Mol</em>) &#8211; input molecule</li>
-<li><strong>conformer</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; conformer id</li>
-<li><strong>solvent_radius</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><em>float</em></a>) &#8211; solvent radius</li>
-<li><strong>level</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; mesh level</li>
+<li><strong>mol</strong> (<em>rdkit.Chem.Mol</em>) – input molecule</li>
+<li><strong>conformer</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) – conformer id</li>
+<li><strong>solvent_radius</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)"><em>float</em></a>) – solvent radius</li>
+<li><strong>level</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) – mesh level</li>
 </ul>
 </td>
 </tr>
@@ -217,7 +216,7 @@ optional arguments:
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2016, Hirotomo Moriwaki.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.2.
     </div>
   </body>
 </html>

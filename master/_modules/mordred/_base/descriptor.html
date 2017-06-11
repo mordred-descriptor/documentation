@@ -2,7 +2,6 @@
 
 <!doctype html>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -34,7 +33,7 @@
     <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
     <![endif]-->
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -78,6 +77,17 @@
 <span class="kn">import</span> <span class="nn">six</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
+<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">inspect</span><span class="p">,</span> <span class="s1">&#39;getfullargspec&#39;</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">getargs</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">inspect</span><span class="o">.</span><span class="n">getfullargspec</span><span class="p">(</span><span class="n">func</span><span class="p">)</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">getargs</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">inspect</span><span class="o">.</span><span class="n">getargspec</span><span class="p">(</span><span class="n">func</span><span class="p">)</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+        <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">()</span>
+
 
 <span class="k">class</span> <span class="nc">MissingValueException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
     <span class="s2">&quot;internally used exception&quot;</span>
@@ -97,7 +107,7 @@
                 <span class="k">if</span> <span class="fm">__init__</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                     <span class="k">break</span>
 
-        <span class="nb">dict</span><span class="p">[</span><span class="s1">&#39;parameter_names&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">inspect</span><span class="o">.</span><span class="n">getfullargspec</span><span class="p">(</span><span class="fm">__init__</span><span class="p">)</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+        <span class="nb">dict</span><span class="p">[</span><span class="s1">&#39;parameter_names&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">getargs</span><span class="p">(</span><span class="fm">__init__</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">ABCMeta</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">classname</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span>
 
@@ -119,8 +129,8 @@
     <span class="k">def</span> <span class="nf">__reduce_ex__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">version</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">parameters</span><span class="p">()</span>
 
-    <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="Descriptor.preset"><a class="viewcode-back" href="../../../mordred.html#mordred.ABCIndex.Descriptor.preset">[docs]</a>    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+<div class="viewcode-block" id="Descriptor.preset"><a class="viewcode-back" href="../../../mordred.html#mordred.ABCIndex.Descriptor.preset">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
         <span class="sa">r</span><span class="sd">&quot;&quot;&quot;generate preset descriptor instances.</span>
 
 <span class="sd">        Returns:</span>
@@ -128,8 +138,8 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">()</span></div>
 
-    <span class="nd">@abstractmethod</span>
-<div class="viewcode-block" id="Descriptor.parameters"><a class="viewcode-back" href="../../../mordred.html#mordred.ABCIndex.Descriptor.parameters">[docs]</a>    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Descriptor.parameters"><a class="viewcode-back" href="../../../mordred.html#mordred.ABCIndex.Descriptor.parameters">[docs]</a>    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;[abstractmethod] get __init__ arguments of this descriptor instance.</span>
 
 <span class="sd">        this method used in pickling and identifying descriptor instance.</span>
@@ -160,8 +170,8 @@
 
         <span class="k">return</span> <span class="n">d</span><span class="p">,</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="s1">&#39;as_argument&#39;</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">ps</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
 
-    <span class="nd">@abstractmethod</span>
-<div class="viewcode-block" id="Descriptor.calculate"><a class="viewcode-back" href="../../../mordred.html#mordred.ABCIndex.Descriptor.calculate">[docs]</a>    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Descriptor.calculate"><a class="viewcode-back" href="../../../mordred.html#mordred.ABCIndex.Descriptor.calculate">[docs]</a>    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sa">r</span><span class="sd">&quot;&quot;&quot;[abstractmethod] calculate descriptor value.</span>
 
 <span class="sd">        Returns:</span>
@@ -248,8 +258,8 @@
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">raise</span> <span class="n">MissingValueException</span><span class="p">(</span><span class="n">exception</span><span class="p">)</span></div>
 
-    <span class="nd">@contextmanager</span>
-<div class="viewcode-block" id="Descriptor.rethrow_zerodiv"><a class="viewcode-back" href="../../../mordred.html#mordred.ABCIndex.Descriptor.rethrow_zerodiv">[docs]</a>    <span class="k">def</span> <span class="nf">rethrow_zerodiv</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Descriptor.rethrow_zerodiv"><a class="viewcode-back" href="../../../mordred.html#mordred.ABCIndex.Descriptor.rethrow_zerodiv">[docs]</a>    <span class="nd">@contextmanager</span>
+    <span class="k">def</span> <span class="nf">rethrow_zerodiv</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;[contextmanager] treat zero div as known exception</span>
 <span class="sd">        &#39;&#39;&#39;</span>
 
@@ -259,8 +269,8 @@
             <span class="k">except</span> <span class="p">(</span><span class="ne">FloatingPointError</span><span class="p">,</span> <span class="ne">ZeroDivisionError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="ne">ZeroDivisionError</span><span class="p">(</span><span class="o">*</span><span class="n">e</span><span class="o">.</span><span class="n">args</span><span class="p">))</span></div>
 
-    <span class="nd">@contextmanager</span>
-<div class="viewcode-block" id="Descriptor.rethrow_na"><a class="viewcode-back" href="../../../mordred.html#mordred.ABCIndex.Descriptor.rethrow_na">[docs]</a>    <span class="k">def</span> <span class="nf">rethrow_na</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exception</span><span class="p">):</span>
+<div class="viewcode-block" id="Descriptor.rethrow_na"><a class="viewcode-back" href="../../../mordred.html#mordred.ABCIndex.Descriptor.rethrow_na">[docs]</a>    <span class="nd">@contextmanager</span>
+    <span class="k">def</span> <span class="nf">rethrow_na</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exception</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;[contextmanager] treat any exceptions as known exception</span>
 <span class="sd">        &#39;&#39;&#39;</span>
 
@@ -443,7 +453,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2016, Hirotomo Moriwaki.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.2.
     </div>
   </body>
 </html>
