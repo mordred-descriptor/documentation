@@ -312,7 +312,6 @@
         <span class="n">__floor__</span> <span class="o">=</span> <span class="n">_unary_common</span><span class="p">(</span><span class="s1">&#39;floor(</span><span class="si">{}</span><span class="s1">)&#39;</span><span class="p">,</span> <span class="s1">&#39;floor&#39;</span><span class="p">)</span></div>
 
 
-
 <span class="k">def</span> <span class="nf">is_descriptor_class</span><span class="p">(</span><span class="n">desc</span><span class="p">):</span>
     <span class="sa">r</span><span class="sd">&quot;&quot;&quot;check calculatable descriptor class or not.</span>
 
@@ -354,7 +353,7 @@
             <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">,</span>
             <span class="s1">&#39;operator&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_operator</span><span class="p">,</span>
             <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="o">.</span><span class="n">to_json</span><span class="p">(),</span>
-         <span class="p">}</span>
+        <span class="p">}</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span>
@@ -407,7 +406,7 @@
             <span class="s1">&#39;operator&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_operator</span><span class="p">,</span>
             <span class="s1">&#39;left&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_left</span><span class="o">.</span><span class="n">to_json</span><span class="p">(),</span>
             <span class="s1">&#39;right&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_right</span><span class="o">.</span><span class="n">to_json</span><span class="p">(),</span>
-         <span class="p">}</span>
+        <span class="p">}</span>
 
     <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_operator</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_left</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_right</span>
