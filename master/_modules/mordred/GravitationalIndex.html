@@ -74,11 +74,11 @@
 <span class="kn">from</span> <span class="nn">._util</span> <span class="k">import</span> <span class="n">atoms_to_numpy</span>
 <span class="kn">from</span> <span class="nn">._graph_matrix</span> <span class="k">import</span> <span class="n">AdjacencyMatrix</span><span class="p">,</span> <span class="n">DistanceMatrix3D</span>
 
-<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;GravitationalIndex&#39;</span><span class="p">,)</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;GravitationalIndex&quot;</span><span class="p">,)</span>
 
 
 <div class="viewcode-block" id="GravitationalIndex"><a class="viewcode-back" href="../../api/mordred.GravitationalIndex.html#mordred.GravitationalIndex.GravitationalIndex">[docs]</a><span class="k">class</span> <span class="nc">GravitationalIndex</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
-    <span class="vm">__slots__</span> <span class="o">=</span> <span class="s1">&#39;_heavy&#39;</span><span class="p">,</span> <span class="s1">&#39;_pair&#39;</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="s2">&quot;_heavy&quot;</span><span class="p">,</span> <span class="s2">&quot;_pair&quot;</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
@@ -95,9 +95,9 @@
         <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_heavy</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s1">&#39;GRAV</span><span class="si">{}{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-            <span class="s1">&#39;&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_heavy</span> <span class="k">else</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;p&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pair</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="k">return</span> <span class="s2">&quot;GRAV</span><span class="si">{}{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="s2">&quot;&quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_heavy</span> <span class="k">else</span> <span class="s2">&quot;H&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;p&quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pair</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -108,10 +108,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_pair</span> <span class="o">=</span> <span class="n">pair</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="n">DistanceMatrix3D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)}</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;D&quot;</span><span class="p">:</span> <span class="n">DistanceMatrix3D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)}</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pair</span><span class="p">:</span>
-            <span class="n">d</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">AdjacencyMatrix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)</span>
+            <span class="n">d</span><span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">AdjacencyMatrix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">d</span>
 

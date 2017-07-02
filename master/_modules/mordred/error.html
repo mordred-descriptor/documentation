@@ -68,19 +68,23 @@
           <div class="body" role="main">
             
   <h1>Source code for mordred.error</h1><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span></span><span class="sd">&quot;&quot;&quot;Error objects.&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">six</span>
 <span class="kn">from</span> <span class="nn">abc</span> <span class="k">import</span> <span class="n">ABCMeta</span><span class="p">,</span> <span class="n">abstractproperty</span>
 
 
 <div class="viewcode-block" id="MissingValueBase"><a class="viewcode-back" href="../../subpackages/mordred.error.html#mordred.error.MissingValueBase">[docs]</a><span class="k">class</span> <span class="nc">MissingValueBase</span><span class="p">(</span><span class="n">six</span><span class="o">.</span><span class="n">with_metaclass</span><span class="p">(</span><span class="n">ABCMeta</span><span class="p">,</span> <span class="nb">object</span><span class="p">)):</span>
-    <span class="sd">&#39;&#39;&#39;Base class of missing values.</span>
+    <span class="sd">&quot;&quot;&quot;Base class of missing values.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        error (Exception): error object</span>
 <span class="sd">        stack (callstack)</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-    <span class="vm">__slots__</span> <span class="o">=</span> <span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="s1">&#39;stack&#39;</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span> <span class="s2">&quot;stack&quot;</span>
 
     <span class="k">def</span> <span class="nf">__reduce_ex__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">version</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">error</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stack</span><span class="p">)</span>
@@ -99,28 +103,31 @@
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> (</span><span class="si">{}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">error</span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">stack</span><span class="p">))</span>
+        <span class="k">return</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> (</span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">error</span><span class="p">,</span> <span class="s2">&quot;/&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">stack</span><span class="p">))</span>
 
     <span class="nd">@abstractproperty</span>
     <span class="k">def</span> <span class="nf">header</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;header of warning message</span>
+        <span class="sd">&quot;&quot;&quot;Header of warning message.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            str</span>
-<span class="sd">        &#39;&#39;&#39;</span>
-        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s1">&#39;require header&#39;</span><span class="p">)</span></div>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;require header&quot;</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="Missing"><a class="viewcode-back" href="../../subpackages/mordred.error.html#mordred.error.Missing">[docs]</a><span class="k">class</span> <span class="nc">Missing</span><span class="p">(</span><span class="n">MissingValueBase</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;known errored value&#39;&#39;&#39;</span>
+    <span class="sd">&quot;&quot;&quot;known errored value.&quot;&quot;&quot;</span>
+
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
-    <span class="n">header</span> <span class="o">=</span> <span class="s1">&#39;Missing&#39;</span></div>
+    <span class="n">header</span> <span class="o">=</span> <span class="s2">&quot;Missing&quot;</span></div>
 
 
 <div class="viewcode-block" id="Error"><a class="viewcode-back" href="../../subpackages/mordred.error.html#mordred.error.Error">[docs]</a><span class="k">class</span> <span class="nc">Error</span><span class="p">(</span><span class="n">MissingValueBase</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;unknown errored value&#39;&#39;&#39;</span>
+    <span class="sd">&quot;&quot;&quot;unknown errored value.&quot;&quot;&quot;</span>
+
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
-    <span class="n">header</span> <span class="o">=</span> <span class="s1">&#39;ERROR&#39;</span></div>
+    <span class="n">header</span> <span class="o">=</span> <span class="s2">&quot;ERROR&quot;</span></div>
 
 
 <div class="viewcode-block" id="MordredException"><a class="viewcode-back" href="../../subpackages/mordred.error.html#mordred.error.MordredException">[docs]</a><span class="k">class</span> <span class="nc">MordredException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
@@ -128,23 +135,25 @@
 
 
 <div class="viewcode-block" id="MultipleFragments"><a class="viewcode-back" href="../../subpackages/mordred.error.html#mordred.error.MultipleFragments">[docs]</a><span class="k">class</span> <span class="nc">MultipleFragments</span><span class="p">(</span><span class="n">MordredException</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;multiple fragments detected on require_connected Descriptor.&#39;&#39;&#39;</span>
+    <span class="sd">&quot;&quot;&quot;multiple fragments detected on require_connected Descriptor.&quot;&quot;&quot;</span>
+
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s1">&#39;multiple fragments&#39;</span></div>
+        <span class="k">return</span> <span class="s2">&quot;multiple fragments&quot;</span></div>
 
 
 <div class="viewcode-block" id="Missing3DCoordinate"><a class="viewcode-back" href="../../subpackages/mordred.error.html#mordred.error.Missing3DCoordinate">[docs]</a><span class="k">class</span> <span class="nc">Missing3DCoordinate</span><span class="p">(</span><span class="n">MordredException</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;missing 3D coordinate on require_3D Descriptor.&#39;&#39;&#39;</span>
+    <span class="sd">&quot;&quot;&quot;missing 3D coordinate on require_3D Descriptor.&quot;&quot;&quot;</span>
+
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s1">&#39;missing 3D coordinate&#39;</span></div>
+        <span class="k">return</span> <span class="s2">&quot;missing 3D coordinate&quot;</span></div>
 
 
 <div class="viewcode-block" id="DuplicatedDescriptorName"><a class="viewcode-back" href="../../subpackages/mordred.error.html#mordred.error.DuplicatedDescriptorName">[docs]</a><span class="k">class</span> <span class="nc">DuplicatedDescriptorName</span><span class="p">(</span><span class="n">MordredException</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;duplicated string replisantation of descriptor&#39;&#39;&#39;</span>
+    <span class="sd">&quot;&quot;&quot;duplicated string replisantation of descriptor.&quot;&quot;&quot;</span>
 
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
@@ -153,7 +162,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s1">&#39;duplicated descriptor name: </span><span class="si">{!r}</span><span class="s1"> and </span><span class="si">{!r}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="s2">&quot;duplicated descriptor name: </span><span class="si">{!r}</span><span class="s2"> and </span><span class="si">{!r}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">)</span></div>
 </pre></div>
 
           </div>

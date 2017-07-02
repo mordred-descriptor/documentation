@@ -71,7 +71,7 @@
 <span></span><span class="kn">from</span> <span class="nn">._base</span> <span class="k">import</span> <span class="n">Descriptor</span>
 <span class="kn">from</span> <span class="nn">._graph_matrix</span> <span class="k">import</span> <span class="n">DistanceMatrix</span>
 
-<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;WienerIndex&#39;</span><span class="p">,)</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;WienerIndex&quot;</span><span class="p">,)</span>
 
 
 <div class="viewcode-block" id="WienerIndex"><a class="viewcode-back" href="../../api/mordred.WienerIndex.html#mordred.WienerIndex.WienerIndex">[docs]</a><span class="k">class</span> <span class="nc">WienerIndex</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
@@ -80,7 +80,8 @@
 <span class="sd">    :type polarity: bool</span>
 <span class="sd">    :param polarity: use polarity Wiener index</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_polarity&#39;</span><span class="p">,)</span>
+
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;_polarity&quot;</span><span class="p">,)</span>
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="kc">False</span>
 
     <span class="nd">@classmethod</span>
@@ -89,7 +90,7 @@
         <span class="k">yield</span> <span class="bp">cls</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s1">&#39;WPol&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_polarity</span> <span class="k">else</span> <span class="s1">&#39;WPath&#39;</span>
+        <span class="k">return</span> <span class="s2">&quot;WPol&quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_polarity</span> <span class="k">else</span> <span class="s2">&quot;WPath&quot;</span>
 
     <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_polarity</span><span class="p">,</span>
@@ -98,7 +99,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_polarity</span> <span class="o">=</span> <span class="n">polarity</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="n">DistanceMatrix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)}</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;D&quot;</span><span class="p">:</span> <span class="n">DistanceMatrix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)}</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_polarity</span><span class="p">:</span>

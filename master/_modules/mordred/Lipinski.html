@@ -73,7 +73,7 @@
 <span class="kn">from</span> <span class="nn">.Weight</span> <span class="k">import</span> <span class="n">Weight</span>
 <span class="kn">from</span> <span class="nn">.HydrogenBond</span> <span class="k">import</span> <span class="n">HBondDonor</span><span class="p">,</span> <span class="n">HBondAcceptor</span>
 
-<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Lipinski&#39;</span><span class="p">,</span> <span class="s1">&#39;GhoseFilter&#39;</span><span class="p">)</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Lipinski&quot;</span><span class="p">,</span> <span class="s2">&quot;GhoseFilter&quot;</span><span class="p">)</span>
 
 
 <span class="k">class</span> <span class="nc">LipinskiLike</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
@@ -97,14 +97,15 @@
 
 <span class="sd">    LogP: SLogP</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span>
-            <span class="s1">&#39;LogP&#39;</span><span class="p">:</span> <span class="n">SLogP</span><span class="p">(),</span>
-            <span class="s1">&#39;MW&#39;</span><span class="p">:</span> <span class="n">Weight</span><span class="p">(),</span>
-            <span class="s1">&#39;HBDon&#39;</span><span class="p">:</span> <span class="n">HBondDonor</span><span class="p">(),</span>
-            <span class="s1">&#39;HBAcc&#39;</span><span class="p">:</span> <span class="n">HBondAcceptor</span><span class="p">(),</span>
+            <span class="s2">&quot;HBAcc&quot;</span><span class="p">:</span> <span class="n">HBondAcceptor</span><span class="p">(),</span>
+            <span class="s2">&quot;HBDon&quot;</span><span class="p">:</span> <span class="n">HBondDonor</span><span class="p">(),</span>
+            <span class="s2">&quot;LogP&quot;</span><span class="p">:</span> <span class="n">SLogP</span><span class="p">(),</span>
+            <span class="s2">&quot;MW&quot;</span><span class="p">:</span> <span class="n">Weight</span><span class="p">(),</span>
         <span class="p">}</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">LogP</span><span class="p">,</span> <span class="n">MW</span><span class="p">,</span> <span class="n">HBDon</span><span class="p">,</span> <span class="n">HBAcc</span><span class="p">):</span>
@@ -120,13 +121,14 @@
 
 <span class="sd">    LogP, MR: SLogP, SMR</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span>
-            <span class="s1">&#39;LogP&#39;</span><span class="p">:</span> <span class="n">SLogP</span><span class="p">(),</span>
-            <span class="s1">&#39;MR&#39;</span><span class="p">:</span> <span class="n">SMR</span><span class="p">(),</span>
-            <span class="s1">&#39;MW&#39;</span><span class="p">:</span> <span class="n">Weight</span><span class="p">(),</span>
+            <span class="s2">&quot;LogP&quot;</span><span class="p">:</span> <span class="n">SLogP</span><span class="p">(),</span>
+            <span class="s2">&quot;MR&quot;</span><span class="p">:</span> <span class="n">SMR</span><span class="p">(),</span>
+            <span class="s2">&quot;MW&quot;</span><span class="p">:</span> <span class="n">Weight</span><span class="p">(),</span>
         <span class="p">}</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">MW</span><span class="p">,</span> <span class="n">LogP</span><span class="p">,</span> <span class="n">MR</span><span class="p">):</span>

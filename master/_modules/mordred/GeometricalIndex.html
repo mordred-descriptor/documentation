@@ -74,7 +74,7 @@
 <span class="kn">from</span> <span class="nn">._graph_matrix</span> <span class="k">import</span> <span class="n">Radius3D</span> <span class="k">as</span> <span class="n">CRadius3D</span>
 <span class="kn">from</span> <span class="nn">._graph_matrix</span> <span class="k">import</span> <span class="n">Diameter3D</span> <span class="k">as</span> <span class="n">CDiameter3D</span>
 
-<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Diameter3D&#39;</span><span class="p">,</span> <span class="s1">&#39;Radius3D&#39;</span><span class="p">,</span> <span class="s1">&#39;GeometricalShapeIndex&#39;</span><span class="p">,</span> <span class="s1">&#39;PetitjeanIndex3D&#39;</span><span class="p">,)</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Diameter3D&quot;</span><span class="p">,</span> <span class="s2">&quot;Radius3D&quot;</span><span class="p">,</span> <span class="s2">&quot;GeometricalShapeIndex&quot;</span><span class="p">,</span> <span class="s2">&quot;PetitjeanIndex3D&quot;</span><span class="p">,)</span>
 
 
 <span class="k">class</span> <span class="nc">GeometricalIndexBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
@@ -94,13 +94,14 @@
 
 <div class="viewcode-block" id="Radius3D"><a class="viewcode-back" href="../../api/mordred.GeometricalIndex.html#mordred.GeometricalIndex.Radius3D">[docs]</a><span class="k">class</span> <span class="nc">Radius3D</span><span class="p">(</span><span class="n">GeometricalIndexBase</span><span class="p">):</span>
     <span class="sa">r</span><span class="sd">&quot;&quot;&quot;geometric radius descriptor.&quot;&quot;&quot;</span>
+
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s1">&#39;GeomRadius&#39;</span>
+        <span class="k">return</span> <span class="s2">&quot;GeomRadius&quot;</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;R&#39;</span><span class="p">:</span> <span class="n">CRadius3D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)}</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;R&quot;</span><span class="p">:</span> <span class="n">CRadius3D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)}</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">R</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">R</span></div>
@@ -108,13 +109,14 @@
 
 <div class="viewcode-block" id="Diameter3D"><a class="viewcode-back" href="../../api/mordred.GeometricalIndex.html#mordred.GeometricalIndex.Diameter3D">[docs]</a><span class="k">class</span> <span class="nc">Diameter3D</span><span class="p">(</span><span class="n">GeometricalIndexBase</span><span class="p">):</span>
     <span class="sa">r</span><span class="sd">&quot;&quot;&quot;geometric diameter descriptor.&quot;&quot;&quot;</span>
+
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s1">&#39;GeomDiameter&#39;</span>
+        <span class="k">return</span> <span class="s2">&quot;GeomDiameter&quot;</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="n">CDiameter3D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)}</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;D&quot;</span><span class="p">:</span> <span class="n">CDiameter3D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)}</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">D</span></div>
@@ -133,15 +135,16 @@
 
 <span class="sd">    :returns: NaN when :math:`R = 0`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s1">&#39;GeomShapeIndex&#39;</span>
+        <span class="k">return</span> <span class="s2">&quot;GeomShapeIndex&quot;</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span>
-            <span class="s1">&#39;R&#39;</span><span class="p">:</span> <span class="n">CRadius3D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">),</span>
-            <span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="n">CDiameter3D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">),</span>
+            <span class="s2">&quot;D&quot;</span><span class="p">:</span> <span class="n">CDiameter3D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">),</span>
+            <span class="s2">&quot;R&quot;</span><span class="p">:</span> <span class="n">CRadius3D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">),</span>
         <span class="p">}</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
@@ -162,10 +165,11 @@
 
 <span class="sd">    :returns: NaN when :math:`D = 0`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s1">&#39;GeomPetitjeanIndex&#39;</span>
+        <span class="k">return</span> <span class="s2">&quot;GeomPetitjeanIndex&quot;</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
         <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">rethrow_zerodiv</span><span class="p">():</span>

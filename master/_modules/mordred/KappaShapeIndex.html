@@ -73,7 +73,7 @@
 <span class="kn">from</span> <span class="nn">.Chi</span> <span class="k">import</span> <span class="n">ChiCache</span>
 <span class="kn">from</span> <span class="nn">._base</span> <span class="k">import</span> <span class="n">Descriptor</span>
 
-<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;KappaShapeIndex1&#39;</span><span class="p">,</span> <span class="s1">&#39;KappaShapeIndex2&#39;</span><span class="p">,</span> <span class="s1">&#39;KappaShapeIndex3&#39;</span><span class="p">,)</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;KappaShapeIndex1&quot;</span><span class="p">,</span> <span class="s2">&quot;KappaShapeIndex2&quot;</span><span class="p">,</span> <span class="s2">&quot;KappaShapeIndex3&quot;</span><span class="p">,)</span>
 
 
 <span class="k">class</span> <span class="nc">KappaShapeIndexBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
@@ -84,7 +84,7 @@
         <span class="k">yield</span> <span class="bp">cls</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s1">&#39;Kier</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s2">&quot;Kier</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">()</span>
@@ -93,7 +93,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_order</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;Chi&#39;</span><span class="p">:</span> <span class="n">ChiCache</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">)}</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;Chi&quot;</span><span class="p">:</span> <span class="n">ChiCache</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">)}</span>
 
     <span class="k">def</span> <span class="nf">_common</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Chi</span><span class="p">):</span>
         <span class="n">P</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">Chi</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>

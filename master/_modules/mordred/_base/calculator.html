@@ -90,65 +90,72 @@
 <span class="sd">    Parameters:</span>
 <span class="sd">        descs: see Calculator.register() method</span>
 <span class="sd">        ignore_3D: see Calculator.register() method</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="s1">&#39;_descriptors&#39;</span><span class="p">,</span> <span class="s1">&#39;_name_dict&#39;</span><span class="p">,</span> <span class="s1">&#39;_explicit_hydrogens&#39;</span><span class="p">,</span> <span class="s1">&#39;_kekulizes&#39;</span><span class="p">,</span> <span class="s1">&#39;_require_3D&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;_cache&#39;</span><span class="p">,</span> <span class="s1">&#39;_debug&#39;</span><span class="p">,</span> <span class="s1">&#39;_progress_bar&#39;</span>
+        <span class="s2">&quot;_descriptors&quot;</span><span class="p">,</span> <span class="s2">&quot;_name_dict&quot;</span><span class="p">,</span> <span class="s2">&quot;_explicit_hydrogens&quot;</span><span class="p">,</span> <span class="s2">&quot;_kekulizes&quot;</span><span class="p">,</span> <span class="s2">&quot;_require_3D&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;_cache&quot;</span><span class="p">,</span> <span class="s2">&quot;_debug&quot;</span><span class="p">,</span> <span class="s2">&quot;_progress_bar&quot;</span><span class="p">,</span>
     <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__setstate__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
-        <span class="n">ds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_descriptors</span> <span class="o">=</span> <span class="nb">dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_descriptors&#39;</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_descriptors</span> <span class="o">=</span> <span class="nb">dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;_descriptors&quot;</span><span class="p">,</span> <span class="p">[])</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_name_dict</span> <span class="o">=</span> <span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">d</span><span class="p">):</span> <span class="n">d</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">ds</span><span class="p">}</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_explicit_hydrogens</span> <span class="o">=</span> <span class="nb">dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_explicit_hydrogens&#39;</span><span class="p">,</span> <span class="nb">set</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_kekulizes</span> <span class="o">=</span> <span class="nb">dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_kekulizes&#39;</span><span class="p">,</span> <span class="nb">set</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_require_3D</span> <span class="o">=</span> <span class="nb">dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_require_3D&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_explicit_hydrogens</span> <span class="o">=</span> <span class="nb">dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;_explicit_hydrogens&quot;</span><span class="p">,</span> <span class="p">{</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">})</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_kekulizes</span> <span class="o">=</span> <span class="nb">dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;_kekulizes&quot;</span><span class="p">,</span> <span class="p">{</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">})</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_require_3D</span> <span class="o">=</span> <span class="nb">dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;_require_3D&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
 
 <div class="viewcode-block" id="Calculator.from_json"><a class="viewcode-back" href="../../../mordred.html#mordred.Calculator.from_json">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;create Calculator from json descriptor objects</span>
+        <span class="sd">&quot;&quot;&quot;Create Calculator from json descriptor objects.</span>
 
 <span class="sd">        Parameters:</span>
 <span class="sd">            obj(list or dict): descriptors to register</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            Calculator: calculator</span>
-<span class="sd">        &#39;&#39;&#39;</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">calc</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">()</span>
         <span class="n">calc</span><span class="o">.</span><span class="n">register_json</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">calc</span></div>
 
 <div class="viewcode-block" id="Calculator.register_json"><a class="viewcode-back" href="../../../mordred.html#mordred.Calculator.register_json">[docs]</a>    <span class="k">def</span> <span class="nf">register_json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;register Descriptors from json descriptor objects</span>
+        <span class="sd">&quot;&quot;&quot;Register Descriptors from json descriptor objects.</span>
 
 <span class="sd">        Parameters:</span>
 <span class="sd">            obj(list or dict): descriptors to register</span>
-<span class="sd">        &#39;&#39;&#39;</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
             <span class="n">obj</span> <span class="o">=</span> <span class="p">[</span><span class="n">obj</span><span class="p">]</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Descriptor</span><span class="o">.</span><span class="n">from_json</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">obj</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Calculator.to_json"><a class="viewcode-back" href="../../../mordred.html#mordred.Calculator.to_json">[docs]</a>    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;convert descriptors to json serializable data</span>
+        <span class="sd">&quot;&quot;&quot;Convert descriptors to json serializable data.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            list: descriptors</span>
-<span class="sd">        &#39;&#39;&#39;</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">d</span><span class="o">.</span><span class="n">to_json</span><span class="p">()</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">descriptors</span><span class="p">]</span></div>
 
     <span class="k">def</span> <span class="nf">__reduce_ex__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">version</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="p">(),</span> <span class="p">{</span>
-            <span class="s1">&#39;_descriptors&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_descriptors</span><span class="p">,</span>
-            <span class="s1">&#39;_explicit_hydrogens&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_explicit_hydrogens</span><span class="p">,</span>
-            <span class="s1">&#39;_kekulizes&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_kekulizes</span><span class="p">,</span>
-            <span class="s1">&#39;_require_3D&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_require_3D</span><span class="p">,</span>
+            <span class="s2">&quot;_descriptors&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_descriptors</span><span class="p">,</span>
+            <span class="s2">&quot;_explicit_hydrogens&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_explicit_hydrogens</span><span class="p">,</span>
+            <span class="s2">&quot;_kekulizes&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_kekulizes</span><span class="p">,</span>
+            <span class="s2">&quot;_require_3D&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_require_3D</span><span class="p">,</span>
         <span class="p">}</span>
 
     <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">descs</span><span class="o">=</span><span class="p">[],</span> <span class="n">ignore_3D</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">descs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ignore_3D</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">descs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">descs</span> <span class="o">=</span> <span class="p">[]</span>
+
         <span class="bp">self</span><span class="o">.</span><span class="n">_descriptors</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_name_dict</span> <span class="o">=</span> <span class="p">{}</span>
 
@@ -161,13 +168,14 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">descriptors</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&#39;&#39;&#39;all descriptors.</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;All descriptors.</span>
 
 <span class="sd">        you can get/set/delete descriptor.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            tuple[Descriptor]: registered descriptors</span>
-<span class="sd">        &#39;&#39;&#39;</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_descriptors</span><span class="p">)</span>
 
     <span class="nd">@descriptors</span><span class="o">.</span><span class="n">setter</span>
@@ -188,7 +196,7 @@
 
     <span class="k">def</span> <span class="nf">_register_one</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">desc</span><span class="p">,</span> <span class="n">check_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ignore_3D</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="n">Descriptor</span><span class="p">):</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{!r}</span><span class="s1"> is not descriptor&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">desc</span><span class="p">))</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{!r}</span><span class="s2"> is not descriptor&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">desc</span><span class="p">))</span>
 
         <span class="k">if</span> <span class="n">ignore_3D</span> <span class="ow">and</span> <span class="n">desc</span><span class="o">.</span><span class="n">require_3D</span><span class="p">:</span>
             <span class="k">return</span>
@@ -211,7 +219,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_descriptors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">desc</span><span class="p">)</span>
 
 <div class="viewcode-block" id="Calculator.register"><a class="viewcode-back" href="../../../mordred.html#mordred.Calculator.register">[docs]</a>    <span class="k">def</span> <span class="nf">register</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">desc</span><span class="p">,</span> <span class="n">ignore_3D</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;register descriptors.</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Register descriptors.</span>
 
 <span class="sd">        Descriptor-like:</span>
 <span class="sd">            * Descriptor instance: self</span>
@@ -222,8 +230,9 @@
 <span class="sd">        Parameters:</span>
 <span class="sd">            desc(Descriptor-like): descriptors to register</span>
 <span class="sd">            ignore_3D(bool): ignore 3D descriptors</span>
+
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="s1">&#39;__iter__&#39;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="s2">&quot;__iter__&quot;</span><span class="p">):</span>
             <span class="k">if</span> <span class="n">is_descriptor_class</span><span class="p">(</span><span class="n">desc</span><span class="p">):</span>
                 <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">desc</span><span class="o">.</span><span class="n">preset</span><span class="p">():</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">_register_one</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">ignore_3D</span><span class="o">=</span><span class="n">ignore_3D</span><span class="p">)</span>
@@ -273,7 +282,7 @@
             <span class="k">return</span>
 
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">desc</span><span class="o">.</span><span class="n">rtype</span><span class="p">):</span>
-            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> not match </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">desc</span><span class="o">.</span><span class="n">rtype</span><span class="p">))</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> not match </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">desc</span><span class="o">.</span><span class="n">rtype</span><span class="p">))</span>
 
     <span class="k">def</span> <span class="nf">_calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cxt</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span> <span class="o">=</span> <span class="p">{}</span>
@@ -285,11 +294,11 @@
             <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                 <span class="k">yield</span> <span class="n">Error</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">desc</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">get_stack</span><span class="p">())</span>
             <span class="k">finally</span><span class="p">:</span>
-                <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="s1">&#39;_context&#39;</span><span class="p">):</span>
+                <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="s2">&quot;_context&quot;</span><span class="p">):</span>
                     <span class="k">del</span> <span class="n">desc</span><span class="o">.</span><span class="n">_context</span>
 
     <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="nb">id</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;calculate descriptors.</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Calculate descriptors.</span>
 
 <span class="sd">        :type mol: rdkit.Chem.Mol</span>
 <span class="sd">        :param mol: molecular</span>
@@ -321,9 +330,9 @@
     <span class="nd">@contextmanager</span>
     <span class="k">def</span> <span class="nf">_progress</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">quiet</span><span class="p">,</span> <span class="n">total</span><span class="p">,</span> <span class="n">ipynb</span><span class="p">):</span>
         <span class="n">args</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s1">&#39;dynamic_ncols&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-            <span class="s1">&#39;leave&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-            <span class="s1">&#39;total&#39;</span><span class="p">:</span> <span class="n">total</span>
+            <span class="s2">&quot;dynamic_ncols&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+            <span class="s2">&quot;leave&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+            <span class="s2">&quot;total&quot;</span><span class="p">:</span> <span class="n">total</span><span class="p">,</span>
         <span class="p">}</span>
 
         <span class="k">if</span> <span class="n">quiet</span><span class="p">:</span>
@@ -337,11 +346,11 @@
             <span class="k">with</span> <span class="n">Bar</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">)</span> <span class="k">as</span> <span class="bp">self</span><span class="o">.</span><span class="n">_progress_bar</span><span class="p">:</span>
                 <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">_progress_bar</span>
         <span class="k">finally</span><span class="p">:</span>
-            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;_progress_bar&#39;</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;_progress_bar&quot;</span><span class="p">):</span>
                 <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_progress_bar</span>
 
-<div class="viewcode-block" id="Calculator.echo"><a class="viewcode-back" href="../../../mordred.html#mordred.Calculator.echo">[docs]</a>    <span class="k">def</span> <span class="nf">echo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;output message</span>
+<div class="viewcode-block" id="Calculator.echo"><a class="viewcode-back" href="../../../mordred.html#mordred.Calculator.echo">[docs]</a>    <span class="k">def</span> <span class="nf">echo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Output message.</span>
 
 <span class="sd">        Parameters:</span>
 <span class="sd">            s(str): message to output</span>
@@ -350,16 +359,17 @@
 
 <span class="sd">        Return:</span>
 <span class="sd">            None</span>
-<span class="sd">        &#39;&#39;&#39;</span>
-        <span class="n">p</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;_progress_bar&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;_progress_bar&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">p</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">p</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">file</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="n">p</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">file</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
             <span class="k">return</span>
 
-        <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">file</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span></div>
+        <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">file</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># noqa: T003</span></div>
 
 <div class="viewcode-block" id="Calculator.map"><a class="viewcode-back" href="../../../mordred.html#mordred.Calculator.map">[docs]</a>    <span class="k">def</span> <span class="nf">map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mols</span><span class="p">,</span> <span class="n">nproc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nmols</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ipynb</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="nb">id</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;calculate descriptors over mols.</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Calculate descriptors over mols.</span>
 
 <span class="sd">        Parameters:</span>
 <span class="sd">            mols(Iterable[rdkit.Mol]): moleculars</span>
@@ -376,9 +386,9 @@
 
 <span class="sd">        Returns:</span>
 <span class="sd">            Iterator[scalar]</span>
-<span class="sd">        &quot;&quot;&quot;</span>
 
-        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="s1">&#39;__len__&#39;</span><span class="p">):</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="s2">&quot;__len__&quot;</span><span class="p">):</span>
             <span class="n">nmols</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">mols</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">nproc</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
@@ -387,34 +397,35 @@
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parallel</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="n">nproc</span><span class="p">,</span> <span class="n">nmols</span><span class="o">=</span><span class="n">nmols</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="n">quiet</span><span class="p">,</span> <span class="n">ipynb</span><span class="o">=</span><span class="n">ipynb</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Calculator.pandas"><a class="viewcode-back" href="../../../mordred.html#mordred.Calculator.pandas">[docs]</a>    <span class="k">def</span> <span class="nf">pandas</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mols</span><span class="p">,</span> <span class="n">nproc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nmols</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ipynb</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="nb">id</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;calculate descriptors over mols.</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Calculate descriptors over mols.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            pandas.DataFrame</span>
+
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="kn">import</span> <span class="nn">pandas</span>
 
         <span class="k">return</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="n">nproc</span><span class="p">,</span> <span class="n">nmols</span><span class="p">,</span> <span class="n">quiet</span><span class="p">,</span> <span class="n">ipynb</span><span class="p">,</span> <span class="nb">id</span><span class="p">),</span>
-            <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">descriptors</span><span class="p">]</span>
+            <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">descriptors</span><span class="p">],</span>
         <span class="p">)</span></div></div>
 
 
 <div class="viewcode-block" id="get_descriptors_from_module"><a class="viewcode-back" href="../../../mordred.html#mordred.get_descriptors_from_module">[docs]</a><span class="k">def</span> <span class="nf">get_descriptors_from_module</span><span class="p">(</span><span class="n">mdl</span><span class="p">,</span> <span class="n">submodule</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;get descriptors from module.</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Get descriptors from module.</span>
 
 <span class="sd">    Parameters:</span>
 <span class="sd">        mdl(module): module to search</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        [Descriptor]</span>
-<span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">__all__</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">mdl</span><span class="p">,</span> <span class="s1">&#39;__all__&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__all__</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">mdl</span><span class="p">,</span> <span class="s2">&quot;__all__&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">__all__</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">__all__</span> <span class="o">=</span> <span class="nb">dir</span><span class="p">(</span><span class="n">mdl</span><span class="p">)</span>
 
-    <span class="n">all_functions</span> <span class="o">=</span> <span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">mdl</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">__all__</span> <span class="k">if</span> <span class="n">name</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;_&#39;</span><span class="p">)</span>
+    <span class="n">all_functions</span> <span class="o">=</span> <span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">mdl</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">__all__</span> <span class="k">if</span> <span class="n">name</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">submodule</span><span class="p">:</span>
         <span class="n">descs</span> <span class="o">=</span> <span class="p">[</span>

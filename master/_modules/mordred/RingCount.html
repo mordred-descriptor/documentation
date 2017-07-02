@@ -73,7 +73,7 @@
 
 <span class="kn">from</span> <span class="nn">._base</span> <span class="k">import</span> <span class="n">Descriptor</span>
 
-<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;RingCount&#39;</span><span class="p">,)</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;RingCount&quot;</span><span class="p">,)</span>
 
 
 <span class="k">class</span> <span class="nc">RingCountBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
@@ -95,7 +95,7 @@
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;Rings&#39;</span><span class="p">:</span> <span class="n">Rings</span><span class="p">()}</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;Rings&quot;</span><span class="p">:</span> <span class="n">Rings</span><span class="p">()}</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Rings</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">Rings</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
@@ -138,7 +138,8 @@
 <span class="sd">        * False: count carbon rings</span>
 <span class="sd">        * None: count any rings</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_order&#39;</span><span class="p">,</span> <span class="s1">&#39;_greater&#39;</span><span class="p">,</span> <span class="s1">&#39;_fused&#39;</span><span class="p">,</span> <span class="s1">&#39;_aromatic&#39;</span><span class="p">,</span> <span class="s1">&#39;_hetero&#39;</span><span class="p">,)</span>
+
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;_order&quot;</span><span class="p">,</span> <span class="s2">&quot;_greater&quot;</span><span class="p">,</span> <span class="s2">&quot;_fused&quot;</span><span class="p">,</span> <span class="s2">&quot;_aromatic&quot;</span><span class="p">,</span> <span class="s2">&quot;_hetero&quot;</span><span class="p">,)</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
@@ -155,25 +156,25 @@
         <span class="n">attrs</span> <span class="o">=</span> <span class="p">[]</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_greater</span><span class="p">:</span>
-            <span class="n">attrs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;G&#39;</span><span class="p">)</span>
+            <span class="n">attrs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;G&quot;</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">attrs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">))</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fused</span><span class="p">:</span>
-            <span class="n">attrs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;F&#39;</span><span class="p">)</span>
+            <span class="n">attrs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;F&quot;</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_aromatic</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
-            <span class="n">attrs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+            <span class="n">attrs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
         <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_aromatic</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
-            <span class="n">attrs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+            <span class="n">attrs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hetero</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
-            <span class="n">attrs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">)</span>
+            <span class="n">attrs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;H&quot;</span><span class="p">)</span>
         <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hetero</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
-            <span class="n">attrs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
+            <span class="n">attrs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="s1">&#39;n</span><span class="si">{}</span><span class="s1">Ring&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">attrs</span><span class="p">))</span>
+        <span class="k">return</span> <span class="s2">&quot;n</span><span class="si">{}</span><span class="s2">Ring&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">attrs</span><span class="p">))</span>
 
     <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_greater</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fused</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_aromatic</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hetero</span>
@@ -187,7 +188,7 @@
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span>
-            <span class="s1">&#39;Rs&#39;</span><span class="p">:</span> <span class="p">(</span><span class="n">FusedRings</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fused</span> <span class="k">else</span> <span class="n">Rings</span><span class="p">)()</span>
+            <span class="s2">&quot;Rs&quot;</span><span class="p">:</span> <span class="p">(</span><span class="n">FusedRings</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fused</span> <span class="k">else</span> <span class="n">Rings</span><span class="p">)(),</span>
         <span class="p">}</span>
 
     <span class="k">def</span> <span class="nf">_check_order</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">R</span><span class="p">):</span>

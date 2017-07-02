@@ -72,12 +72,13 @@
 
 <span class="sd">References</span>
 <span class="sd">    * :doi:`10.1021/ci990307l`</span>
+
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="kn">from</span> <span class="nn">rdkit.Chem</span> <span class="k">import</span> <span class="n">Crippen</span>
 
 <span class="kn">from</span> <span class="nn">._base</span> <span class="k">import</span> <span class="n">Descriptor</span>
 
-<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;SLogP&#39;</span><span class="p">,</span> <span class="s1">&#39;SMR&#39;</span><span class="p">,)</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;SLogP&quot;</span><span class="p">,</span> <span class="s2">&quot;SMR&quot;</span><span class="p">,)</span>
 
 
 <span class="k">class</span> <span class="nc">WildmanCrippenBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
@@ -100,6 +101,7 @@
 
 <div class="viewcode-block" id="SLogP"><a class="viewcode-back" href="../../api/mordred.SLogP.html#mordred.SLogP.SLogP">[docs]</a><span class="k">class</span> <span class="nc">SLogP</span><span class="p">(</span><span class="n">WildmanCrippenBase</span><span class="p">):</span>
     <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Wildman-Crippen LogP descriptor(rdkit wrapper).&quot;&quot;&quot;</span>
+
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -108,6 +110,7 @@
 
 <div class="viewcode-block" id="SMR"><a class="viewcode-back" href="../../api/mordred.SLogP.html#mordred.SLogP.SMR">[docs]</a><span class="k">class</span> <span class="nc">SMR</span><span class="p">(</span><span class="n">WildmanCrippenBase</span><span class="p">):</span>
     <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Wildman-Crippen MR descriptor(rdkit wrapper).&quot;&quot;&quot;</span>
+
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>

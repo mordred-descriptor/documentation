@@ -68,9 +68,11 @@
           <div class="body" role="main">
             
   <h1>Source code for mordred.ABCIndex</h1><div class="highlight"><pre>
-<span></span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;ABC Index descriptor.</span>
+
 <span class="sd">References</span>
 <span class="sd">    * http://match.pmf.kg.ac.rs/electronic_versions/Match75/n1/match75n1_233-242.pdf</span>
+
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -78,7 +80,7 @@
 <span class="kn">from</span> <span class="nn">._base</span> <span class="k">import</span> <span class="n">Descriptor</span>
 <span class="kn">from</span> <span class="nn">._graph_matrix</span> <span class="k">import</span> <span class="n">DistanceMatrix</span>
 
-<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;ABCIndex&#39;</span><span class="p">,</span> <span class="s1">&#39;ABCGGIndex&#39;</span><span class="p">,)</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;ABCIndex&quot;</span><span class="p">,</span> <span class="s2">&quot;ABCGGIndex&quot;</span><span class="p">,)</span>
 
 
 <span class="k">class</span> <span class="nc">ABCIndexBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
@@ -104,7 +106,9 @@
 
 <span class="sd">    References:</span>
 <span class="sd">        * :doi:`10.2298/FIL1204733D`</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="nd">@staticmethod</span>
@@ -119,7 +123,7 @@
             <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_each_bond</span><span class="p">(</span><span class="n">bond</span><span class="p">)</span>
                 <span class="k">for</span> <span class="n">bond</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetBonds</span><span class="p">()</span>
-            <span class="p">)</span>
+            <span class="p">),</span>
         <span class="p">)</span></div>
 
 
@@ -128,11 +132,13 @@
 
 <span class="sd">    References:</span>
 <span class="sd">        * Furtula, B. Atom-bond connectivity index versus Graovac-Ghorbani analog. MATCH Commun. Math. Comput. Chem 75, 233-242 (2016).</span>
-<span class="sd">    &quot;&quot;&quot;</span> <span class="c1"># noqa</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>  <span class="c1"># noqa: E501</span>
+
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="n">DistanceMatrix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)}</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;D&quot;</span><span class="p">:</span> <span class="n">DistanceMatrix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)}</span>
 
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">_each_bond</span><span class="p">(</span><span class="n">bond</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
@@ -149,7 +155,7 @@
             <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_each_bond</span><span class="p">(</span><span class="n">bond</span><span class="p">,</span> <span class="n">D</span><span class="p">)</span>
                 <span class="k">for</span> <span class="n">bond</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetBonds</span><span class="p">()</span>
-            <span class="p">)</span>
+            <span class="p">),</span>
         <span class="p">)</span></div>
 </pre></div>
 

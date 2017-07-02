@@ -76,7 +76,7 @@
 <span class="kn">from</span> <span class="nn">._base</span> <span class="k">import</span> <span class="n">Descriptor</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="s1">&#39;PathCount&#39;</span><span class="p">,</span>
+    <span class="s2">&quot;PathCount&quot;</span><span class="p">,</span>
 <span class="p">)</span>
 
 
@@ -85,7 +85,7 @@
 
 
 <span class="k">class</span> <span class="nc">PathCountCache</span><span class="p">(</span><span class="n">PathCountBase</span><span class="p">):</span>
-    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_order&#39;</span><span class="p">,</span> <span class="s1">&#39;_bonds&#39;</span><span class="p">)</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;_order&quot;</span><span class="p">,</span> <span class="s2">&quot;_bonds&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">,</span>
@@ -188,12 +188,12 @@
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">base</span> <span class="o">=</span> <span class="s1">&#39;T&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_total</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span>
-        <span class="n">pi</span> <span class="o">=</span> <span class="s1">&#39;piPC&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pi</span> <span class="k">else</span> <span class="s1">&#39;MPC&#39;</span>
+        <span class="n">base</span> <span class="o">=</span> <span class="s2">&quot;T&quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_total</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
+        <span class="n">pi</span> <span class="o">=</span> <span class="s2">&quot;piPC&quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pi</span> <span class="k">else</span> <span class="s2">&quot;MPC&quot;</span>
 
-        <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{}{}{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s2">&quot;</span><span class="si">{}{}{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">)</span>
 
-    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_order&#39;</span><span class="p">,</span> <span class="s1">&#39;_pi&#39;</span><span class="p">,</span> <span class="s1">&#39;_total&#39;</span><span class="p">,</span> <span class="s1">&#39;_log&#39;</span><span class="p">,)</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;_order&quot;</span><span class="p">,</span> <span class="s2">&quot;_pi&quot;</span><span class="p">,</span> <span class="s2">&quot;_total&quot;</span><span class="p">,</span> <span class="s2">&quot;_log&quot;</span><span class="p">,)</span>
 
     <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pi</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_total</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_log</span>
@@ -207,9 +207,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_log</span> <span class="o">=</span> <span class="n">log</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">deps</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;PC&#39;</span><span class="p">:</span> <span class="n">PathCountCache</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">)}</span>
+        <span class="n">deps</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;PC&quot;</span><span class="p">:</span> <span class="n">PathCountCache</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">)}</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_total</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">deps</span><span class="p">[</span><span class="s1">&#39;acc&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span>
+            <span class="n">deps</span><span class="p">[</span><span class="s2">&quot;acc&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_order</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_pi</span><span class="p">,</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_total</span><span class="p">,</span>
@@ -233,7 +233,8 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">rtype</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Return type.</span>
+
 <span class="sd">        * pi = True: :py:class:`float`</span>
 <span class="sd">        * pi = False: :py:class:`int`</span>
 <span class="sd">        &quot;&quot;&quot;</span>

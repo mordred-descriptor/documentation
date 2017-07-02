@@ -76,14 +76,14 @@
 <span class="kn">from</span> <span class="nn">._graph_matrix</span> <span class="k">import</span> <span class="n">DistanceMatrix</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="s1">&#39;InformationContent&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;TotalIC&#39;</span><span class="p">,</span> <span class="s1">&#39;StructuralIC&#39;</span><span class="p">,</span> <span class="s1">&#39;BondingIC&#39;</span><span class="p">,</span> <span class="s1">&#39;ComplementaryIC&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;ModifiedIC&#39;</span><span class="p">,</span> <span class="s1">&#39;ZModifiedIC&#39;</span><span class="p">,</span>
+    <span class="s2">&quot;InformationContent&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;TotalIC&quot;</span><span class="p">,</span> <span class="s2">&quot;StructuralIC&quot;</span><span class="p">,</span> <span class="s2">&quot;BondingIC&quot;</span><span class="p">,</span> <span class="s2">&quot;ComplementaryIC&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ModifiedIC&quot;</span><span class="p">,</span> <span class="s2">&quot;ZModifiedIC&quot;</span><span class="p">,</span>
 <span class="p">)</span>
 
 
 <span class="k">class</span> <span class="nc">BFSTree</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;tree&#39;</span><span class="p">,</span> <span class="s1">&#39;visited&#39;</span><span class="p">,</span> <span class="s1">&#39;bonds&#39;</span><span class="p">,</span> <span class="s1">&#39;atoms&#39;</span><span class="p">)</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;tree&quot;</span><span class="p">,</span> <span class="s2">&quot;visited&quot;</span><span class="p">,</span> <span class="s2">&quot;bonds&quot;</span><span class="p">,</span> <span class="s2">&quot;atoms&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">tree</span> <span class="o">=</span> <span class="p">{}</span>
@@ -152,7 +152,7 @@
 
 
 <span class="k">class</span> <span class="nc">InformationContentBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
-    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_order&#39;</span><span class="p">,)</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;_order&quot;</span><span class="p">,)</span>
     <span class="n">kekulize</span> <span class="o">=</span> <span class="kc">True</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -172,16 +172,16 @@
 
 
 <span class="k">class</span> <span class="nc">Ag</span><span class="p">(</span><span class="n">InformationContentBase</span><span class="p">):</span>
-    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_order&#39;</span><span class="p">,)</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;_order&quot;</span><span class="p">,)</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">()</span>
 
-    <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;Ag&#39;</span>
+    <span class="n">_name</span> <span class="o">=</span> <span class="s2">&quot;Ag&quot;</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="n">DistanceMatrix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)}</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;D&quot;</span><span class="p">:</span> <span class="n">DistanceMatrix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)}</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -197,8 +197,8 @@
         <span class="n">Ags</span> <span class="o">=</span> <span class="p">[(</span><span class="n">k</span><span class="p">,</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">g</span><span class="p">))</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">groupby</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">atoms</span><span class="p">))]</span>
         <span class="n">Nags</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">Ags</span><span class="p">)</span>
         <span class="k">return</span> <span class="p">(</span>
-            <span class="n">np</span><span class="o">.</span><span class="n">fromiter</span><span class="p">((</span><span class="n">ad</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">Ags</span><span class="p">),</span> <span class="s1">&#39;int&#39;</span><span class="p">,</span> <span class="n">Nags</span><span class="p">),</span>
-            <span class="n">np</span><span class="o">.</span><span class="n">fromiter</span><span class="p">((</span><span class="n">ag</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">ag</span> <span class="ow">in</span> <span class="n">Ags</span><span class="p">),</span> <span class="s1">&#39;float&#39;</span><span class="p">,</span> <span class="n">Nags</span><span class="p">),</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">fromiter</span><span class="p">((</span><span class="n">ad</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">Ags</span><span class="p">),</span> <span class="s2">&quot;int&quot;</span><span class="p">,</span> <span class="n">Nags</span><span class="p">),</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">fromiter</span><span class="p">((</span><span class="n">ag</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">ag</span> <span class="ow">in</span> <span class="n">Ags</span><span class="p">),</span> <span class="s2">&quot;float&quot;</span><span class="p">,</span> <span class="n">Nags</span><span class="p">),</span>
         <span class="p">)</span>
 
     <span class="n">rtype</span> <span class="o">=</span> <span class="kc">None</span>
@@ -222,12 +222,13 @@
 <span class="sd">    :type order: int</span>
 <span class="sd">    :param order: order(number of edge) of subgraph</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
-    <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;IC&#39;</span>
+    <span class="n">_name</span> <span class="o">=</span> <span class="s2">&quot;IC&quot;</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;iAgs&#39;</span><span class="p">:</span> <span class="n">Ag</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">)}</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;iAgs&quot;</span><span class="p">:</span> <span class="n">Ag</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">)}</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iAgs</span><span class="p">):</span>
         <span class="n">_</span><span class="p">,</span> <span class="n">Ags</span> <span class="o">=</span> <span class="n">iAgs</span>
@@ -243,12 +244,13 @@
 <span class="sd">    :type order: int</span>
 <span class="sd">    :param order: order(number of edge) of subgraph</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
-    <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;TIC&#39;</span>
+    <span class="n">_name</span> <span class="o">=</span> <span class="s2">&quot;TIC&quot;</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;ICm&#39;</span><span class="p">:</span> <span class="n">InformationContent</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">)}</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;ICm&quot;</span><span class="p">:</span> <span class="n">InformationContent</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">)}</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ICm</span><span class="p">):</span>
         <span class="n">A</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span>
@@ -265,9 +267,10 @@
 <span class="sd">    :type order: int</span>
 <span class="sd">    :param order: order(number of edge) of subgraph</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
-    <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;SIC&#39;</span>
+    <span class="n">_name</span> <span class="o">=</span> <span class="s2">&quot;SIC&quot;</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ICm</span><span class="p">):</span>
         <span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">())</span>
@@ -287,9 +290,10 @@
 
 <span class="sd">    :returns: NaN when :math:`\sum^B_{b=1} \pi^{*}_b &lt;= 0`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
-    <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;BIC&#39;</span>
+    <span class="n">_name</span> <span class="o">=</span> <span class="s2">&quot;BIC&quot;</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ICm</span><span class="p">):</span>
         <span class="n">B</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">GetBondTypeAsDouble</span><span class="p">()</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetBonds</span><span class="p">())</span>
@@ -308,9 +312,10 @@
 <span class="sd">    :type order: int</span>
 <span class="sd">    :param order: order(number of edge) of subgraph</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
-    <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;CIC&#39;</span>
+    <span class="n">_name</span> <span class="o">=</span> <span class="s2">&quot;CIC&quot;</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ICm</span><span class="p">):</span>
         <span class="n">A</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span>
@@ -324,9 +329,10 @@
 <span class="sd">    :type order: int</span>
 <span class="sd">    :param order: order(number of edge) of subgraph</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
-    <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;MIC&#39;</span>
+    <span class="n">_name</span> <span class="o">=</span> <span class="s2">&quot;MIC&quot;</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iAgs</span><span class="p">):</span>
         <span class="n">ids</span><span class="p">,</span> <span class="n">Ags</span> <span class="o">=</span> <span class="n">iAgs</span>
@@ -340,9 +346,10 @@
 <span class="sd">    :type order: int</span>
 <span class="sd">    :param order: order(number of edge) of subgraph</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
-    <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;ZMIC&#39;</span>
+    <span class="n">_name</span> <span class="o">=</span> <span class="s2">&quot;ZMIC&quot;</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iAgs</span><span class="p">):</span>
         <span class="n">ids</span><span class="p">,</span> <span class="n">Ags</span> <span class="o">=</span> <span class="n">iAgs</span>

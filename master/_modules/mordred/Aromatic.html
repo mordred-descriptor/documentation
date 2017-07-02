@@ -71,7 +71,7 @@
 <span></span><span class="kn">from</span> <span class="nn">._base</span> <span class="k">import</span> <span class="n">Descriptor</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="s1">&#39;AromaticAtomsCount&#39;</span><span class="p">,</span> <span class="s1">&#39;AromaticBondsCount&#39;</span><span class="p">,</span>
+    <span class="s2">&quot;AromaticAtomsCount&quot;</span><span class="p">,</span> <span class="s2">&quot;AromaticBondsCount&quot;</span><span class="p">,</span>
 <span class="p">)</span>
 
 
@@ -93,8 +93,9 @@
 
 <div class="viewcode-block" id="AromaticAtomsCount"><a class="viewcode-back" href="../../api/mordred.Aromatic.html#mordred.Aromatic.AromaticAtomsCount">[docs]</a><span class="k">class</span> <span class="nc">AromaticAtomsCount</span><span class="p">(</span><span class="n">AromaticBase</span><span class="p">):</span>
     <span class="sa">r</span><span class="sd">&quot;&quot;&quot;aromatic atoms count descriptor.&quot;&quot;&quot;</span>
+
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
-    <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;nAromAtom&#39;</span>
+    <span class="n">_name</span> <span class="o">=</span> <span class="s2">&quot;nAromAtom&quot;</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span>
@@ -106,8 +107,9 @@
 
 <div class="viewcode-block" id="AromaticBondsCount"><a class="viewcode-back" href="../../api/mordred.Aromatic.html#mordred.Aromatic.AromaticBondsCount">[docs]</a><span class="k">class</span> <span class="nc">AromaticBondsCount</span><span class="p">(</span><span class="n">AromaticBase</span><span class="p">):</span>
     <span class="sa">r</span><span class="sd">&quot;&quot;&quot;aromatic bonds count descriptor.&quot;&quot;&quot;</span>
+
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
-    <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;nAromBond&#39;</span>
+    <span class="n">_name</span> <span class="o">=</span> <span class="s2">&quot;nAromBond&quot;</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span>

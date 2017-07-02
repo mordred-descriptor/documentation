@@ -71,18 +71,18 @@
 <span></span><span class="kn">from</span> <span class="nn">._base</span> <span class="k">import</span> <span class="n">Descriptor</span>
 <span class="kn">from</span> <span class="nn">._atomic_property</span> <span class="k">import</span> <span class="n">polarizability78</span><span class="p">,</span> <span class="n">polarizability94</span>
 
-<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;APol&#39;</span><span class="p">,</span> <span class="s1">&#39;BPol&#39;</span><span class="p">,)</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;APol&quot;</span><span class="p">,</span> <span class="s2">&quot;BPol&quot;</span><span class="p">,)</span>
 
 
 <span class="k">class</span> <span class="nc">PolarizabilityBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
-    <span class="vm">__slots__</span> <span class="o">=</span> <span class="s1">&#39;_use78&#39;</span><span class="p">,</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="s2">&quot;_use78&quot;</span><span class="p">,</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
         <span class="k">yield</span> <span class="bp">cls</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">+</span> <span class="p">(</span><span class="s1">&#39;78&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_use78</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">+</span> <span class="p">(</span><span class="s2">&quot;78&quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_use78</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_use78</span><span class="p">,</span>
@@ -102,6 +102,7 @@
 <span class="sd">    :type use78: bool</span>
 <span class="sd">    :param use78: use old atomic polarizability data</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -115,6 +116,7 @@
 <span class="sd">    :type use78: bool</span>
 <span class="sd">    :param use78: use old atomic polarizability data</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
