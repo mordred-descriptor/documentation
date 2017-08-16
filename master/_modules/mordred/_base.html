@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>mordred._base &#8212; mordred 0.4.0.post1.dev1 documentation</title>
+    <title>mordred._base &#8212; mordred 0.4.1.post1.dev1 documentation</title>
     
     <link rel="stylesheet" href="../../_static/bizstyle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '0.4.0.post1.dev1',
+        VERSION:     '0.4.1.post1.dev1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -43,7 +43,7 @@
         <li class="right" >
           <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">mordred 0.4.0.post1.dev1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">mordred 0.4.1.post1.dev1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Module code</a> &#187;</li> 
       </ul>
     </div>
@@ -70,10 +70,6 @@
   <h1>Source code for mordred._base</h1><div class="highlight"><pre>
 <span></span><span class="sd">&quot;&quot;&quot;Mordred base package.&quot;&quot;&quot;</span>
 
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">warnings</span>
-
-<span class="kn">from</span> <span class="nn">importlib</span> <span class="k">import</span> <span class="n">import_module</span>
 <span class="kn">from</span> <span class="nn">..error</span> <span class="k">import</span> <span class="n">MissingValueBase</span>
 
 <span class="kn">from</span> <span class="nn">.descriptor</span> <span class="k">import</span> <span class="p">(</span>
@@ -82,6 +78,8 @@
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">.calculator</span> <span class="k">import</span> <span class="n">Calculator</span><span class="p">,</span> <span class="n">get_descriptors_from_module</span>
 <span class="kn">from</span> <span class="nn">.parallel</span> <span class="k">import</span> <span class="n">parallel</span>
+<span class="kn">from</span> <span class="nn">.util</span> <span class="k">import</span> <span class="n">is_missing</span><span class="p">,</span> <span class="n">all_descriptors</span>
+<span class="kn">from</span> <span class="nn">.result</span> <span class="k">import</span> <span class="n">Result</span>
 
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span>
@@ -90,30 +88,8 @@
     <span class="s2">&quot;Calculator&quot;</span><span class="p">,</span>
     <span class="s2">&quot;get_descriptors_from_module&quot;</span><span class="p">,</span>
     <span class="s2">&quot;is_missing&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Result&quot;</span><span class="p">,</span>
 <span class="p">)</span>
-
-
-<div class="viewcode-block" id="all_descriptors"><a class="viewcode-back" href="../../mordred.html#mordred.ABCIndex.all_descriptors">[docs]</a><span class="k">def</span> <span class="nf">all_descriptors</span><span class="p">():</span>
-    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;**[deprecated]** use mordred.descriptors module instead.</span>
-
-<span class="sd">    yield all descriptor modules.</span>
-
-<span class="sd">    :returns: all modules</span>
-<span class="sd">    :rtype: :py:class:`Iterator` (:py:class:`Descriptor`)</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-        <span class="s2">&quot;all_descriptors() is deprecated, use mordred.descriptors module instead&quot;</span><span class="p">,</span>
-        <span class="ne">DeprecationWarning</span><span class="p">,</span>
-        <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-    <span class="p">)</span>
-    <span class="n">base_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
-
-    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">base_dir</span><span class="p">):</span>
-        <span class="n">name</span><span class="p">,</span> <span class="n">ext</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">name</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;_&quot;</span> <span class="ow">or</span> <span class="n">ext</span> <span class="o">!=</span> <span class="s2">&quot;.py&quot;</span> <span class="ow">or</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;descriptors&quot;</span><span class="p">:</span>
-            <span class="k">continue</span>
-
-        <span class="k">yield</span> <span class="n">import_module</span><span class="p">(</span><span class="s2">&quot;..&quot;</span> <span class="o">+</span> <span class="n">name</span><span class="p">,</span> <span class="n">__package__</span><span class="p">)</span></div>
 
 
 <span class="k">def</span> <span class="nf">_Descriptor__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="nb">id</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
@@ -186,19 +162,6 @@
     <span class="k">return</span> <span class="n">_from_json</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">descs</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">is_missing</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Check argument is either MissingValue or not.</span>
-
-<span class="sd">    Parameters:</span>
-<span class="sd">        v(any): value</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">        bool</span>
-
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">MissingValueBase</span><span class="p">)</span>
-
-
 <span class="n">Descriptor</span><span class="o">.</span><span class="fm">__call__</span> <span class="o">=</span> <span class="n">_Descriptor__call__</span>
 <span class="n">Descriptor</span><span class="o">.</span><span class="n">from_json</span> <span class="o">=</span> <span class="n">_Descriptor_from_json</span>
 <span class="n">Calculator</span><span class="o">.</span><span class="n">_parallel</span> <span class="o">=</span> <span class="n">parallel</span>
@@ -218,7 +181,7 @@
         <li class="right" >
           <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">mordred 0.4.0.post1.dev1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">mordred 0.4.1.post1.dev1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../index.html" >Module code</a> &#187;</li> 
       </ul>
     </div>

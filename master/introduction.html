@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Introduction &#8212; mordred 0.4.0.post1.dev1 documentation</title>
+    <title>Introduction &#8212; mordred 0.4.1.post1.dev1 documentation</title>
     
     <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.4.0.post1.dev1',
+        VERSION:     '0.4.1.post1.dev1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -51,7 +51,7 @@
         <li class="right" >
           <a href="index.html" title="Welcome to mordred’s documentation!"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">mordred 0.4.0.post1.dev1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">mordred 0.4.1.post1.dev1 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -162,39 +162,80 @@
 <h2>examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="as-command">
 <h3>as command<a class="headerlink" href="#as-command" title="Permalink to this headline">¶</a></h3>
-<div class="code console highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">mordred</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">version</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">t</span> <span class="p">{</span><span class="n">auto</span><span class="p">,</span><span class="n">sdf</span><span class="p">,</span><span class="n">mol</span><span class="p">,</span><span class="n">smi</span><span class="p">}]</span> <span class="p">[</span><span class="o">-</span><span class="n">o</span> <span class="n">OUTPUT</span><span class="p">]</span>
-                         <span class="p">[</span><span class="o">-</span><span class="n">p</span> <span class="n">PROCESSES</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">q</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">s</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">d</span> <span class="n">DESC</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span>
-                         <span class="n">INPUT</span> <span class="p">[</span><span class="n">INPUT</span> <span class="o">...</span><span class="p">]</span>
+<p>calculate all descriptors</p>
+<div class="code console highlight-default"><div class="highlight"><pre><span></span>$ python -m mordred example.smi
+name,ECIndex,WPath,WPol,Zagreb1, (snip)
+benzene,36,27,3,24.0, (snip)
+chrolobenzene,45,42,5,30.0, (snip)
+</pre></div>
+</div>
+<p>save to file (display progress bar)</p>
+<div class="code console highlight-default"><div class="highlight"><pre><span></span>$ python -m mordred example.smi -o example.csv
+50%|███████████████████████████████████████▌                                       | 1/2 [00:00&lt;00:00,  7.66it/s]
+</pre></div>
+</div>
+<p>stream read (low memory, no number of molecules information)</p>
+<div class="code console highlight-default"><div class="highlight"><pre><span></span>$ python -m mordred example.smi -s -o example.csv
+0it [00:00, ?it/s]
+</pre></div>
+</div>
+<p>only ABCIndex</p>
+<div class="code console highlight-default"><div class="highlight"><pre><span></span>$ python -m mordred example.smi -d ABCIndex
+name,ABC,ABCGG
+benzene,4.242640687119286,3.9999999999999996
+chlorobenzene,5.059137268047012,4.785854275382693
+</pre></div>
+</div>
+<p>ABCIndex and AcidBase</p>
+<div class="code console highlight-default"><div class="highlight"><pre><span></span>$ python -m mordred example.smi -d ABCIndex -d AcidBase
+name,ABC,ABCGG,nAcid,nBase
+benzene,4.242640687119286,3.9999999999999996,0,0
+chlorobenzene,5.059137268047012,4.785854275382693,0,0
+</pre></div>
+</div>
+<p>multiple input</p>
+<div class="code console highlight-default"><div class="highlight"><pre><span></span>$ python -m mordred example.smi example2.smi -d ABCIndex
+name,ABC,ABCGG
+benzene,4.242640687119286,3.9999999999999996
+chlorobenzene,5.059137268047012,4.785854275382693
+pentane,2.8284271247461903,3.1462643699419726
+</pre></div>
+</div>
+<p>show help</p>
+<div class="code console highlight-default"><div class="highlight"><pre><span></span>$ python -m mordred --help
+usage: python -m mordred [-h] [--version] [-t {auto,sdf,mol,smi}] [-o OUTPUT]
+                         [-p PROCESSES] [-q] [-s] [-d DESC] [-3] [-v]
+                         INPUT [INPUT ...]
 
-<span class="n">positional</span> <span class="n">arguments</span><span class="p">:</span>
-  <span class="n">INPUT</span>
+positional arguments:
+  INPUT
 
-<span class="n">optional</span> <span class="n">arguments</span><span class="p">:</span>
-  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>            <span class="n">show</span> <span class="n">this</span> <span class="n">help</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span>
-  <span class="o">--</span><span class="n">version</span>             <span class="nb">input</span> <span class="n">molecular</span> <span class="n">file</span>
-  <span class="o">-</span><span class="n">t</span> <span class="p">{</span><span class="n">auto</span><span class="p">,</span><span class="n">sdf</span><span class="p">,</span><span class="n">mol</span><span class="p">,</span><span class="n">smi</span><span class="p">},</span> <span class="o">--</span><span class="nb">type</span> <span class="p">{</span><span class="n">auto</span><span class="p">,</span><span class="n">sdf</span><span class="p">,</span><span class="n">mol</span><span class="p">,</span><span class="n">smi</span><span class="p">}</span>
-                        <span class="nb">input</span> <span class="n">filetype</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="n">auto</span><span class="p">)</span>
-  <span class="o">-</span><span class="n">o</span> <span class="n">OUTPUT</span><span class="p">,</span> <span class="o">--</span><span class="n">output</span> <span class="n">OUTPUT</span>
-                        <span class="n">output</span> <span class="n">file</span> <span class="n">path</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="n">stdout</span><span class="p">)</span>
-  <span class="o">-</span><span class="n">p</span> <span class="n">PROCESSES</span><span class="p">,</span> <span class="o">--</span><span class="n">processes</span> <span class="n">PROCESSES</span>
-                        <span class="n">number</span> <span class="n">of</span> <span class="n">processes</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="n">number</span> <span class="n">of</span> <span class="n">logical</span>
-                        <span class="n">processors</span><span class="p">)</span>
-  <span class="o">-</span><span class="n">q</span><span class="p">,</span> <span class="o">--</span><span class="n">quiet</span>           <span class="n">hide</span> <span class="n">progress</span> <span class="n">bar</span>
-  <span class="o">-</span><span class="n">s</span><span class="p">,</span> <span class="o">--</span><span class="n">stream</span>          <span class="n">stream</span> <span class="n">read</span>
-  <span class="o">-</span><span class="n">d</span> <span class="n">DESC</span><span class="p">,</span> <span class="o">--</span><span class="n">descriptor</span> <span class="n">DESC</span>
-                        <span class="n">descriptors</span> <span class="n">to</span> <span class="n">calculate</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="nb">all</span><span class="p">)</span>
-  <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">--</span><span class="mi">3</span><span class="n">D</span>              <span class="n">use</span> <span class="mi">3</span><span class="n">D</span> <span class="n">descriptors</span> <span class="p">(</span><span class="n">require</span> <span class="n">sdf</span> <span class="ow">or</span> <span class="n">mol</span> <span class="n">file</span><span class="p">)</span>
-  <span class="o">-</span><span class="n">v</span><span class="p">,</span> <span class="o">--</span><span class="n">verbosity</span>       <span class="n">verbosity</span>
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             input molecular file
+  -t {auto,sdf,mol,smi}, --type {auto,sdf,mol,smi}
+                        input filetype (default: auto)
+  -o OUTPUT, --output OUTPUT
+                        output file path (default: stdout)
+  -p PROCESSES, --processes PROCESSES
+                        number of processes (default: number of logical
+                        processors)
+  -q, --quiet           hide progress bar
+  -s, --stream          stream read
+  -d DESC, --descriptor DESC
+                        descriptors to calculate (default: all)
+  -3, --3D              use 3D descriptors (require sdf or mol file)
+  -v, --verbosity       verbosity
 
-<span class="n">descriptors</span><span class="p">:</span> <span class="n">ABCIndex</span> <span class="n">AcidBase</span> <span class="n">AdjacencyMatrix</span> <span class="n">Aromatic</span> <span class="n">AtomCount</span>
-<span class="n">Autocorrelation</span> <span class="n">BalabanJ</span> <span class="n">BaryszMatrix</span> <span class="n">BCUT</span> <span class="n">BertzCT</span> <span class="n">BondCount</span> <span class="n">CarbonTypes</span> <span class="n">Chi</span>
-<span class="n">Constitutional</span> <span class="n">CPSA</span> <span class="n">DetourMatrix</span> <span class="n">DistanceMatrix</span> <span class="n">EccentricConnectivityIndex</span>
-<span class="n">EState</span> <span class="n">ExtendedTopochemicalAtom</span> <span class="n">FragmentComplexity</span> <span class="n">Framework</span> <span class="n">GeometricalIndex</span>
-<span class="n">GravitationalIndex</span> <span class="n">HydrogenBond</span> <span class="n">InformationContent</span> <span class="n">KappaShapeIndex</span> <span class="n">Lipinski</span>
-<span class="n">McGowanVolume</span> <span class="n">MoeType</span> <span class="n">MolecularDistanceEdge</span> <span class="n">MolecularId</span> <span class="n">MomentOfInertia</span> <span class="n">MoRSE</span>
-<span class="n">PathCount</span> <span class="n">Polarizability</span> <span class="n">RingCount</span> <span class="n">RotatableBond</span> <span class="n">SLogP</span> <span class="n">TopologicalCharge</span>
-<span class="n">TopologicalIndex</span> <span class="n">TopoPSA</span> <span class="n">VdwVolumeABC</span> <span class="n">VertexAdjacencyInformation</span> <span class="n">WalkCount</span>
-<span class="n">Weight</span> <span class="n">WienerIndex</span> <span class="n">ZagrebIndex</span>
+descriptors: ABCIndex AcidBase AdjacencyMatrix Aromatic AtomCount
+Autocorrelation BalabanJ BaryszMatrix BCUT BertzCT BondCount CarbonTypes Chi
+Constitutional CPSA DetourMatrix DistanceMatrix EccentricConnectivityIndex
+EState ExtendedTopochemicalAtom FragmentComplexity Framework GeometricalIndex
+GravitationalIndex HydrogenBond InformationContent KappaShapeIndex Lipinski
+McGowanVolume MoeType MolecularDistanceEdge MolecularId MomentOfInertia MoRSE
+PathCount Polarizability RingCount RotatableBond SLogP TopologicalCharge
+TopologicalIndex TopoPSA VdwVolumeABC VertexAdjacencyInformation WalkCount
+Weight WienerIndex ZagrebIndex
 </pre></div>
 </div>
 <div class="section" id="as-library">
@@ -225,6 +266,7 @@
 <span class="go">Name: SLogP, dtype: float64</span>
 </pre></div>
 </div>
+<p>see <a class="reference external" href="examples">examples</a></p>
 </div>
 </div>
 </div>
@@ -261,7 +303,7 @@
         <li class="right" >
           <a href="index.html" title="Welcome to mordred’s documentation!"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">mordred 0.4.0.post1.dev1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">mordred 0.4.1.post1.dev1 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
