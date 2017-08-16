@@ -1,0 +1,184 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>mordred.KappaShapeIndex &#8212; mordred 0.4.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.4.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">mordred 0.4.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Module code</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for mordred.KappaShapeIndex</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">division</span>
+
+<span class="kn">from</span> <span class="nn">.Chi</span> <span class="k">import</span> <span class="n">ChiCache</span>
+<span class="kn">from</span> <span class="nn">._base</span> <span class="k">import</span> <span class="n">Descriptor</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;KappaShapeIndex1&quot;</span><span class="p">,</span> <span class="s2">&quot;KappaShapeIndex2&quot;</span><span class="p">,</span> <span class="s2">&quot;KappaShapeIndex3&quot;</span><span class="p">,)</span>
+
+
+<span class="k">class</span> <span class="nc">KappaShapeIndexBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
+    <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="bp">cls</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;Kier</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_order</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;Chi&quot;</span><span class="p">:</span> <span class="n">ChiCache</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">)}</span>
+
+    <span class="k">def</span> <span class="nf">_common</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Chi</span><span class="p">):</span>
+        <span class="n">P</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">Chi</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+
+        <span class="n">A</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span>
+        <span class="n">Pmin</span> <span class="o">=</span> <span class="n">A</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span>
+
+        <span class="k">return</span> <span class="n">P</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">Pmin</span>
+
+    <span class="n">rtype</span> <span class="o">=</span> <span class="nb">float</span>
+
+
+<div class="viewcode-block" id="KappaShapeIndex1"><a class="viewcode-back" href="../../api/mordred.KappaShapeIndex.html#mordred.KappaShapeIndex.KappaShapeIndex1">[docs]</a><span class="k">class</span> <span class="nc">KappaShapeIndex1</span><span class="p">(</span><span class="n">KappaShapeIndexBase</span><span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Kappa shape index 1 descriptor.</span>
+
+<span class="sd">    :returns: NaN when :math:`N_{\rm Chi-path} = 0`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Chi</span><span class="p">):</span>
+        <span class="n">P</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">Pmin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_common</span><span class="p">(</span><span class="n">Chi</span><span class="p">)</span>
+        <span class="n">Pmax</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">A</span> <span class="o">*</span> <span class="p">(</span><span class="n">A</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">rethrow_zerodiv</span><span class="p">():</span>
+            <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">Pmax</span> <span class="o">*</span> <span class="n">Pmin</span> <span class="o">/</span> <span class="p">(</span><span class="n">P</span> <span class="o">*</span> <span class="n">P</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="KappaShapeIndex2"><a class="viewcode-back" href="../../api/mordred.KappaShapeIndex.html#mordred.KappaShapeIndex.KappaShapeIndex2">[docs]</a><span class="k">class</span> <span class="nc">KappaShapeIndex2</span><span class="p">(</span><span class="n">KappaShapeIndexBase</span><span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Kappa shape index 2 descriptor.</span>
+
+<span class="sd">    :returns: NaN when :math:`N_{\rm Chi-path} = 0`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Chi</span><span class="p">):</span>
+        <span class="n">P</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">Pmin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_common</span><span class="p">(</span><span class="n">Chi</span><span class="p">)</span>
+        <span class="n">Pmax</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">A</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">A</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">rethrow_zerodiv</span><span class="p">():</span>
+            <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">Pmax</span> <span class="o">*</span> <span class="n">Pmin</span> <span class="o">/</span> <span class="p">(</span><span class="n">P</span> <span class="o">*</span> <span class="n">P</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="KappaShapeIndex3"><a class="viewcode-back" href="../../api/mordred.KappaShapeIndex.html#mordred.KappaShapeIndex.KappaShapeIndex3">[docs]</a><span class="k">class</span> <span class="nc">KappaShapeIndex3</span><span class="p">(</span><span class="n">KappaShapeIndexBase</span><span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Kappa shape index 3 descriptor.</span>
+
+<span class="sd">    :returns: NaN when :math:`N_{\rm Chi-path} = 0`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Chi</span><span class="p">):</span>
+        <span class="n">P</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">Pmin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_common</span><span class="p">(</span><span class="n">Chi</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">A</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">Pmax</span> <span class="o">=</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="p">(</span><span class="n">A</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">Pmax</span> <span class="o">=</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="p">(</span><span class="n">A</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">A</span> <span class="o">-</span> <span class="mi">3</span><span class="p">)</span>
+
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">rethrow_zerodiv</span><span class="p">():</span>
+            <span class="k">return</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">Pmax</span> <span class="o">*</span> <span class="n">Pmin</span> <span class="o">/</span> <span class="p">(</span><span class="n">P</span> <span class="o">*</span> <span class="n">P</span><span class="p">)</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">mordred 0.4.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Module code</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016, Hirotomo Moriwaki.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.2.
+    </div>
+  </body>
+</html>
