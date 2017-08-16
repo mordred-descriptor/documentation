@@ -1306,8 +1306,8 @@ preset descriptors
     1294, , ETA_dPsi_B, ":py:class:`~mordred.ExtendedTopochemicalAtom.EtaDeltaPsi` ('B')", 2D
     1295, :py:mod:`~mordred.FragmentComplexity`, fragCpx, ":py:class:`~mordred.FragmentComplexity.FragmentComplexity` ()", 2D
     1296, :py:mod:`~mordred.Framework`, fMF, ":py:class:`~mordred.Framework.Framework` ()", 2D
-    1297, :py:mod:`~mordred.GeometricalIndex`, GeomRadius, ":py:class:`~mordred.GeometricalIndex.Radius3D` ()", 3D
-    1298, , GeomDiameter, ":py:class:`~mordred.GeometricalIndex.Diameter3D` ()", 3D
+    1297, :py:mod:`~mordred.GeometricalIndex`, GeomDiameter, ":py:class:`~mordred.GeometricalIndex.Diameter3D` ()", 3D
+    1298, , GeomRadius, ":py:class:`~mordred.GeometricalIndex.Radius3D` ()", 3D
     1299, , GeomShapeIndex, ":py:class:`~mordred.GeometricalIndex.GeometricalShapeIndex` ()", 3D
     1300, , GeomPetitjeanIndex, ":py:class:`~mordred.GeometricalIndex.PetitjeanIndex3D` ()", 3D
     1301, :py:mod:`~mordred.GravitationalIndex`, GRAV, ":py:class:`~mordred.GravitationalIndex.GravitationalIndex` (True, False)", 3D
@@ -1799,8 +1799,8 @@ preset descriptors
     1787, , JGI9, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('mean', 9)", 2D
     1788, , JGI10, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('mean', 10)", 2D
     1789, , JGT10, ":py:class:`~mordred.TopologicalCharge.TopologicalCharge` ('global', 10)", 2D
-    1790, :py:mod:`~mordred.TopologicalIndex`, Radius, ":py:class:`~mordred.TopologicalIndex.Radius` ()", 2D
-    1791, , Diameter, ":py:class:`~mordred.TopologicalIndex.Diameter` ()", 2D
+    1790, :py:mod:`~mordred.TopologicalIndex`, Diameter, ":py:class:`~mordred.TopologicalIndex.Diameter` ()", 2D
+    1791, , Radius, ":py:class:`~mordred.TopologicalIndex.Radius` ()", 2D
     1792, , TopoShapeIndex, ":py:class:`~mordred.TopologicalIndex.TopologicalShapeIndex` ()", 2D
     1793, , PetitjeanIndex, ":py:class:`~mordred.TopologicalIndex.PetitjeanIndex` ()", 2D
     1794, :py:mod:`~mordred.VdwVolumeABC`, Vabc, ":py:class:`~mordred.VdwVolumeABC.VdwVolumeABC` ()", 2D

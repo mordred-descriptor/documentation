@@ -91,6 +91,62 @@
 <span id="mordred-package"></span><h1>mordred package<a class="headerlink" href="#module-mordred" title="Permalink to this headline">¶</a></h1>
 <p>modred descriptor calculator.</p>
 <dl class="class">
+<dt id="mordred.Result">
+<em class="property">class </em><code class="descclassname">mordred.</code><code class="descname">Result</code><span class="sig-paren">(</span><em>r</em>, <em>d</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/result.html#Result"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Result" title="Permalink to this definition">¶</a></dt>
+<dd><p>Result type.</p>
+<dl class="method">
+<dt id="mordred.Result.fillna">
+<code class="descname">fillna</code><span class="sig-paren">(</span><em>value=nan</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/result.html#Result.fillna"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Result.fillna" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replace missing value to ‘value’.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> – value that missing value is replaced</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Result</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.Result.dropna">
+<code class="descname">dropna</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/result.html#Result.dropna"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Result.dropna" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete missing value.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Result</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.Result.asdict">
+<code class="descname">asdict</code><span class="sig-paren">(</span><em>rawkey=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/result.html#Result.asdict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Result.asdict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert Result to dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>rawkey</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) – <ul class="simple">
+<li>True: dict key is Descriptor instance</li>
+<li>False: dict key is str</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
 <dt id="mordred.Descriptor">
 <em class="property">class </em><code class="descclassname">mordred.</code><code class="descname">Descriptor</code><a class="reference internal" href="_modules/mordred/_base/descriptor.html#Descriptor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Descriptor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Abstract base class of descriptors.</p>
