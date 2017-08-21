@@ -5,12 +5,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>mordred.GravitationalIndex &#8212; mordred 0.4.1.post1.dev1 documentation</title>
-    
     <link rel="stylesheet" href="../../_static/bizstyle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
@@ -24,7 +21,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/bizstyle.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -79,6 +76,12 @@
 
 <div class="viewcode-block" id="GravitationalIndex"><a class="viewcode-back" href="../../api/mordred.GravitationalIndex.html#mordred.GravitationalIndex.GravitationalIndex">[docs]</a><span class="k">class</span> <span class="nc">GravitationalIndex</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="s2">&quot;_heavy&quot;</span><span class="p">,</span> <span class="s2">&quot;_pair&quot;</span>
+
+<div class="viewcode-block" id="GravitationalIndex.description"><a class="viewcode-back" href="../../api/mordred.GravitationalIndex.html#mordred.GravitationalIndex.GravitationalIndex.description">[docs]</a>    <span class="k">def</span> <span class="nf">description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;</span><span class="si">{}{}</span><span class="s2">gravitational index&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="s2">&quot;heavy atom &quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_heavy</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;pair &quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pair</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="p">)</span></div>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
@@ -150,7 +153,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2016, Hirotomo Moriwaki.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>
