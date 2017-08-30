@@ -70,7 +70,7 @@
 <span class="kn">from</span> <span class="nn">._base</span> <span class="k">import</span> <span class="n">Descriptor</span>
 <span class="kn">from</span> <span class="nn">.BondCount</span> <span class="k">import</span> <span class="n">BondCount</span>
 <span class="kn">from</span> <span class="nn">.RingCount</span> <span class="k">import</span> <span class="n">RingCount</span>
-<span class="kn">from</span> <span class="nn">._atomic_property</span> <span class="k">import</span> <span class="n">table</span>
+<span class="kn">from</span> <span class="nn">._atomic_property</span> <span class="k">import</span> <span class="n">GetAtomicNumber</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span>
     <span class="s2">&quot;VdwVolumeABC&quot;</span><span class="p">,</span>
@@ -95,7 +95,7 @@
 
 
 <span class="n">atom_contrib</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">table</span><span class="o">.</span><span class="n">GetAtomicNumber</span><span class="p">(</span><span class="n">s</span><span class="p">):</span> <span class="mf">4.</span> <span class="o">/</span> <span class="mf">3.</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">r</span> <span class="o">**</span> <span class="mi">3</span>
+    <span class="n">GetAtomicNumber</span><span class="p">(</span><span class="n">s</span><span class="p">):</span> <span class="mf">4.</span> <span class="o">/</span> <span class="mf">3.</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">r</span> <span class="o">**</span> <span class="mi">3</span>
     <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">bondi_radii</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
 <span class="p">}</span>
 

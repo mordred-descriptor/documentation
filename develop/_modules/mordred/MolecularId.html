@@ -71,7 +71,7 @@
 <span class="kn">from</span> <span class="nn">networkx</span> <span class="k">import</span> <span class="n">Graph</span>
 
 <span class="kn">from</span> <span class="nn">._base</span> <span class="k">import</span> <span class="n">Descriptor</span>
-<span class="kn">from</span> <span class="nn">._atomic_property</span> <span class="k">import</span> <span class="n">table</span><span class="p">,</span> <span class="n">halogen</span>
+<span class="kn">from</span> <span class="nn">._atomic_property</span> <span class="k">import</span> <span class="n">GetAtomicNumber</span><span class="p">,</span> <span class="n">GetElementSymbol</span><span class="p">,</span> <span class="n">halogen</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;MolecularId&quot;</span><span class="p">,)</span>
 
@@ -179,7 +179,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="n">e</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span>
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">integer_types</span><span class="p">):</span>
-                <span class="n">e</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">GetAtomicSymbol</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+                <span class="n">e</span> <span class="o">=</span> <span class="n">GetElementSymbol</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 
             <span class="n">t</span> <span class="o">=</span> <span class="s2">&quot; on </span><span class="si">{}</span><span class="s2"> atoms&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 
@@ -209,7 +209,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_eps</span> <span class="o">=</span> <span class="n">_eps</span>
 
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;any&quot;</span><span class="p">,</span> <span class="s2">&quot;hetero&quot;</span><span class="p">,</span> <span class="s2">&quot;X&quot;</span><span class="p">]:</span>
-            <span class="nb">type</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">GetAtomicNumber</span><span class="p">(</span><span class="nb">type</span><span class="p">)</span>
+            <span class="nb">type</span> <span class="o">=</span> <span class="n">GetAtomicNumber</span><span class="p">(</span><span class="nb">type</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="nb">type</span> <span class="o">==</span> <span class="s2">&quot;any&quot;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_check</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">_</span><span class="p">:</span> <span class="kc">True</span>

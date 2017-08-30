@@ -70,7 +70,7 @@
 
 <span class="kn">from</span> <span class="nn">._base</span> <span class="k">import</span> <span class="n">Descriptor</span>
 <span class="kn">from</span> <span class="nn">._graph_matrix</span> <span class="k">import</span> <span class="n">Valence</span><span class="p">,</span> <span class="n">DistanceMatrix</span>
-<span class="kn">from</span> <span class="nn">._atomic_property</span> <span class="k">import</span> <span class="n">table</span>
+<span class="kn">from</span> <span class="nn">._atomic_property</span> <span class="k">import</span> <span class="n">GetAtomicNumber</span><span class="p">,</span> <span class="n">GetElementSymbol</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;MolecularDistanceEdge&quot;</span><span class="p">,)</span>
 
@@ -105,7 +105,7 @@
         <span class="k">return</span> <span class="s2">&quot;molecular distance edge between </span><span class="si">{a}</span><span class="s2"> </span><span class="si">{e}</span><span class="s2"> and </span><span class="si">{b}</span><span class="s2"> </span><span class="si">{e}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
             <span class="n">a</span><span class="o">=</span><span class="n">_sp_dict</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_valence1</span><span class="p">],</span>
             <span class="n">b</span><span class="o">=</span><span class="n">_sp_dict</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_valence2</span><span class="p">],</span>
-            <span class="n">e</span><span class="o">=</span><span class="n">table</span><span class="o">.</span><span class="n">GetElementSymbol</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_atomic_num</span><span class="p">),</span>
+            <span class="n">e</span><span class="o">=</span><span class="n">GetElementSymbol</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_atomic_num</span><span class="p">),</span>
         <span class="p">)</span></div>
 
     <span class="nd">@classmethod</span>
@@ -119,13 +119,13 @@
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s2">&quot;MDE</span><span class="si">{}</span><span class="s2">-</span><span class="si">{}{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-            <span class="n">table</span><span class="o">.</span><span class="n">GetElementSymbol</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_atomic_num</span><span class="p">),</span>
+            <span class="n">GetElementSymbol</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_atomic_num</span><span class="p">),</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_valence1</span><span class="p">,</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_valence2</span><span class="p">,</span>
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_valence1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_valence2</span><span class="p">,</span> <span class="n">table</span><span class="o">.</span><span class="n">GetElementSymbol</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_atomic_num</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_valence1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_valence2</span><span class="p">,</span> <span class="n">GetElementSymbol</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_atomic_num</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">valence1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">valence2</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">element</span><span class="o">=</span><span class="s2">&quot;C&quot;</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_valence1</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">valence1</span><span class="p">,</span> <span class="n">valence2</span><span class="p">)</span>
@@ -133,7 +133,7 @@
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">integer_types</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_atomic_num</span> <span class="o">=</span> <span class="n">element</span>
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">string_types</span><span class="p">):</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_atomic_num</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">GetAtomicNumber</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_atomic_num</span> <span class="o">=</span> <span class="n">GetAtomicNumber</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;element must be atomic number or atomic symbol&quot;</span><span class="p">)</span>
 
