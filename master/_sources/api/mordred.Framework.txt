@@ -1,9 +1,0 @@
-mordred.Framework module
-========================
-
-.. automodule:: mordred.Framework
-.. autoclass:: mordred.Framework.Framework
-    :members: explicit_hydrogens, kekulize, require_3D, require_connected, rtype
-    :undoc-members:
-    :show-inheritance:
-

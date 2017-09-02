@@ -1,7 +1,0 @@
-mordred.Atom module
-===================
-
-.. automodule:: mordred.Atom
-    :members:
-    :undoc-members:
-    :show-inheritance:

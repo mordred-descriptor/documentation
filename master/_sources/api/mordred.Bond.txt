@@ -1,7 +1,0 @@
-mordred.Bond module
-===================
-
-.. automodule:: mordred.Bond
-    :members:
-    :undoc-members:
-    :show-inheritance:
