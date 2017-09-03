@@ -1,0 +1,34 @@
+mordred.MoeType module
+======================
+
+.. automodule:: mordred.MoeType
+.. autoclass:: mordred.MoeType.LabuteASA
+    :members: description, explicit_hydrogens, from_json, get_parameter_dict, kekulize, parameter_names, require_3D, require_connected, rtype, to_json
+    :undoc-members:
+    :show-inheritance:
+
+.. autoclass:: mordred.MoeType.PEOE_VSA
+    :members: description, explicit_hydrogens, from_json, get_parameter_dict, k_max, kekulize, parameter_names, require_3D, require_connected, rtype, to_json
+    :undoc-members:
+    :show-inheritance:
+
+.. autoclass:: mordred.MoeType.SMR_VSA
+    :members: description, explicit_hydrogens, from_json, get_parameter_dict, k_max, kekulize, parameter_names, require_3D, require_connected, rtype, to_json
+    :undoc-members:
+    :show-inheritance:
+
+.. autoclass:: mordred.MoeType.SlogP_VSA
+    :members: description, explicit_hydrogens, from_json, get_parameter_dict, k_max, kekulize, parameter_names, require_3D, require_connected, rtype, to_json
+    :undoc-members:
+    :show-inheritance:
+
+.. autoclass:: mordred.MoeType.EState_VSA
+    :members: description, explicit_hydrogens, from_json, get_parameter_dict, k_max, kekulize, parameter_names, require_3D, require_connected, rtype, to_json
+    :undoc-members:
+    :show-inheritance:
+
+.. autoclass:: mordred.MoeType.VSA_EState
+    :members: description, explicit_hydrogens, from_json, get_parameter_dict, k_max, kekulize, parameter_names, require_3D, require_connected, rtype, to_json
+    :undoc-members:
+    :show-inheritance:
+
