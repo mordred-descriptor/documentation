@@ -5,13 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>mordred package &#8212; mordred 0.5.1.post1.dev1 documentation</title>
+    <title>mordred package &#8212; mordred 0.6.0.post1.dev1 documentation</title>
     <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.5.1.post1.dev1',
+        VERSION:     '0.6.0.post1.dev1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -48,7 +48,7 @@
         <li class="right" >
           <a href="introduction.html" title="Introduction"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">mordred 0.5.1.post1.dev1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">mordred 0.6.0.post1.dev1 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -92,8 +92,8 @@
 <em class="property">class </em><code class="descclassname">mordred.</code><code class="descname">Result</code><span class="sig-paren">(</span><em>r</em>, <em>d</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/result.html#Result"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Result" title="Permalink to this definition">¶</a></dt>
 <dd><p>Result type.</p>
 <dl class="method">
-<dt id="mordred.Result.fillna">
-<code class="descname">fillna</code><span class="sig-paren">(</span><em>value=nan</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/result.html#Result.fillna"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Result.fillna" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.Result.fill_missing">
+<code class="descname">fill_missing</code><span class="sig-paren">(</span><em>value=nan</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/result.html#Result.fill_missing"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Result.fill_missing" title="Permalink to this definition">¶</a></dt>
 <dd><p>Replace missing value to “value”.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -108,14 +108,56 @@
 </dd></dl>
 
 <dl class="method">
-<dt id="mordred.Result.dropna">
-<code class="descname">dropna</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/result.html#Result.dropna"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Result.dropna" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.Result.drop_missing">
+<code class="descname">drop_missing</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/result.html#Result.drop_missing"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Result.drop_missing" title="Permalink to this definition">¶</a></dt>
 <dd><p>Delete missing value.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Result</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.Result.items">
+<code class="descname">items</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/result.html#Result.items"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Result.items" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get items.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Iterable[(Descriptor, value)]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.Result.keys">
+<code class="descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/result.html#Result.keys"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Result.keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get descriptors instances.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Iterable[Descriptor]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.Result.values">
+<code class="descname">values</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/result.html#Result.values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Result.values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get descriptor values.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Iterable[value]</td>
 </tr>
 </tbody>
 </table>
@@ -139,6 +181,32 @@
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Result.ix">
+<code class="descname">ix</code><a class="headerlink" href="#mordred.Result.ix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Access descriptor value by index.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mordred</span> <span class="k">import</span> <span class="n">Calculator</span><span class="p">,</span> <span class="n">Lipinski</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">rdkit</span> <span class="k">import</span> <span class="n">Chem</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">Calculator</span><span class="p">(</span><span class="n">Lipinski</span><span class="o">.</span><span class="n">Lipinski</span><span class="p">)(</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="s2">&quot;C1CCCCC1&quot;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.Result.name">
+<code class="descname">name</code><a class="headerlink" href="#mordred.Result.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Access descriptor value by descriptor name or instance.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mordred</span> <span class="k">import</span> <span class="n">Calculator</span><span class="p">,</span> <span class="n">descriptors</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">rdkit</span> <span class="k">import</span> <span class="n">Chem</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">Calculator</span><span class="p">(</span><span class="n">descriptors</span><span class="p">)(</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="s2">&quot;C1CCCCC1&quot;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span><span class="o">.</span><span class="n">name</span><span class="p">[</span><span class="s2">&quot;C2SP3&quot;</span><span class="p">]</span>
+<span class="go">6</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </dd></dl>
@@ -493,23 +561,6 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="mordred.all_descriptors">
-<code class="descclassname">mordred.</code><code class="descname">all_descriptors</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/util.html#all_descriptors"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.all_descriptors" title="Permalink to this definition">¶</a></dt>
-<dd><p><strong>[deprecated]</strong> use mordred.descriptors module instead.</p>
-<p>yield all descriptor modules.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">all modules</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><code class="xref py py-class docutils literal"><span class="pre">Iterator</span></code> (<a class="reference internal" href="#mordred.Descriptor" title="mordred.Descriptor"><code class="xref py py-class docutils literal"><span class="pre">Descriptor</span></code></a>)</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="function">
 <dt id="mordred.get_descriptors_from_module">
 <code class="descclassname">mordred.</code><code class="descname">get_descriptors_from_module</code><span class="sig-paren">(</span><em>mdl</em>, <em>submodule=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/calculator.html#get_descriptors_from_module"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.get_descriptors_from_module" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get descriptors from module.</p>
@@ -609,7 +660,7 @@
         <li class="right" >
           <a href="introduction.html" title="Introduction"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">mordred 0.5.1.post1.dev1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">mordred 0.6.0.post1.dev1 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
