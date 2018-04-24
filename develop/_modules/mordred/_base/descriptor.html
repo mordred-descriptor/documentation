@@ -110,7 +110,7 @@
 
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="vm">__slots__</span> <span class="o">=</span> <span class="s2">&quot;_context&quot;</span><span class="p">,</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;_context&quot;</span><span class="p">,)</span>
 
     <span class="n">explicit_hydrogens</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="n">kekulize</span> <span class="o">=</span> <span class="kc">False</span>
@@ -213,9 +213,9 @@
 
     <span class="k">def</span> <span class="nf">__compare_by_reduce</span><span class="p">(</span><span class="n">meth</span><span class="p">):</span>
         <span class="k">def</span> <span class="nf">compare</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-            <span class="n">l</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">parameters</span><span class="p">()</span>
+            <span class="n">L</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">parameters</span><span class="p">()</span>
             <span class="n">r</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">parameters</span><span class="p">()</span>
-            <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">meth</span><span class="p">)(</span><span class="n">r</span><span class="p">)</span>
+            <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">meth</span><span class="p">)(</span><span class="n">r</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">compare</span>
 
@@ -373,7 +373,7 @@
         <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">,</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">,)</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="n">value</span>

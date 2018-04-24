@@ -78,7 +78,7 @@
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;_order&quot;</span><span class="p">,</span> <span class="s2">&quot;_bonds&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">,</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">,)</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_order</span> <span class="o">=</span> <span class="n">order</span>
@@ -123,7 +123,7 @@
         <span class="k">return</span> <span class="n">path</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">L</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="n">pi</span> <span class="o">=</span> <span class="mi">0</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_gen_bonds</span><span class="p">()</span>
@@ -146,10 +146,10 @@
                 <span class="n">before</span> <span class="o">=</span> <span class="n">i</span>
 
             <span class="k">else</span><span class="p">:</span>
-                <span class="n">l</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">L</span> <span class="o">+=</span> <span class="mi">1</span>
                 <span class="n">pi</span> <span class="o">+=</span> <span class="n">w</span>
 
-        <span class="k">return</span> <span class="n">l</span><span class="p">,</span> <span class="n">pi</span>
+        <span class="k">return</span> <span class="n">L</span><span class="p">,</span> <span class="n">pi</span>
 
 
 <div class="viewcode-block" id="PathCount"><a class="viewcode-back" href="../../api/mordred.PathCount.html#mordred.PathCount.PathCount">[docs]</a><span class="k">class</span> <span class="nc">PathCount</span><span class="p">(</span><span class="n">PathCountBase</span><span class="p">):</span>
@@ -168,7 +168,7 @@
 <span class="sd">    :param log: use log scale</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;_order&quot;</span><span class="p">,</span> <span class="s2">&quot;_pi&quot;</span><span class="p">,</span> <span class="s2">&quot;_total&quot;</span><span class="p">,</span> <span class="s2">&quot;_log&quot;</span><span class="p">,)</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;_order&quot;</span><span class="p">,</span> <span class="s2">&quot;_pi&quot;</span><span class="p">,</span> <span class="s2">&quot;_total&quot;</span><span class="p">,</span> <span class="s2">&quot;_log&quot;</span><span class="p">)</span>
 
 <div class="viewcode-block" id="PathCount.description"><a class="viewcode-back" href="../../api/mordred.PathCount.html#mordred.PathCount.PathCount.description">[docs]</a>    <span class="k">def</span> <span class="nf">description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">-ordered </span><span class="si">{}{}</span><span class="s2">path count</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>

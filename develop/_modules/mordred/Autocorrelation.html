@@ -64,7 +64,7 @@
 <span class="kn">from</span> <span class="nn">._graph_matrix</span> <span class="k">import</span> <span class="n">DistanceMatrix</span>
 <span class="kn">from</span> <span class="nn">._atomic_property</span> <span class="k">import</span> <span class="n">AtomicProperty</span><span class="p">,</span> <span class="n">get_properties</span>
 
-<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;ATS&quot;</span><span class="p">,</span> <span class="s2">&quot;AATS&quot;</span><span class="p">,</span> <span class="s2">&quot;ATSC&quot;</span><span class="p">,</span> <span class="s2">&quot;AATSC&quot;</span><span class="p">,</span> <span class="s2">&quot;MATS&quot;</span><span class="p">,</span> <span class="s2">&quot;GATS&quot;</span><span class="p">,)</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;ATS&quot;</span><span class="p">,</span> <span class="s2">&quot;AATS&quot;</span><span class="p">,</span> <span class="s2">&quot;ATSC&quot;</span><span class="p">,</span> <span class="s2">&quot;AATSC&quot;</span><span class="p">,</span> <span class="s2">&quot;MATS&quot;</span><span class="p">,</span> <span class="s2">&quot;GATS&quot;</span><span class="p">)</span>
 
 
 <span class="k">class</span> <span class="nc">AutocorrelationBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
@@ -124,7 +124,7 @@
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="p">,</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="p">,)</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prop</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_prop</span> <span class="o">=</span> <span class="n">prop</span>
@@ -139,7 +139,7 @@
         <span class="k">pass</span>
 
     <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">,</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">,)</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_order</span> <span class="o">=</span> <span class="n">order</span>
