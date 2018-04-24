@@ -30,6 +30,7 @@ Submodules
     mordred.InformationContent
     mordred.KappaShapeIndex
     mordred.Lipinski
+    mordred.LogS
     mordred.McGowanVolume
     mordred.MoRSE
     mordred.MoeType
