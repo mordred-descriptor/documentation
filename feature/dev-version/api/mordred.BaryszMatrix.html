@@ -1,0 +1,219 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>mordred.BaryszMatrix module &#8212; mordred 1.1.2a1 documentation</title>
+    <link rel="stylesheet" href="../_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="mordred.BertzCT module" href="mordred.BertzCT.html" />
+    <link rel="prev" title="mordred.BalabanJ module" href="mordred.BalabanJ.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="mordred.BertzCT.html" title="mordred.BertzCT module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="mordred.BalabanJ.html" title="mordred.BalabanJ module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">mordred 1.1.2a1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../mordred.html" >mordred package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="modules.html" accesskey="U">Submodules</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="mordred.BalabanJ.html"
+                        title="previous chapter">mordred.BalabanJ module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="mordred.BertzCT.html"
+                        title="next chapter">mordred.BertzCT module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/mordred.BaryszMatrix.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-mordred.BaryszMatrix">
+<span id="mordred-baryszmatrix-module"></span><h1>mordred.BaryszMatrix module<a class="headerlink" href="#module-mordred.BaryszMatrix" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="mordred.BaryszMatrix.BaryszMatrix">
+<em class="property">class </em><code class="descclassname">mordred.BaryszMatrix.</code><code class="descname">BaryszMatrix</code><span class="sig-paren">(</span><em>prop='Z'</em>, <em>type='SpMax'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/BaryszMatrix.html#BaryszMatrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.BaryszMatrix.BaryszMatrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">mordred.BaryszMatrix.BaryszMatrixBase</span></code></p>
+<p>barysz matrix descriptor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>prop</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> or <code class="xref py py-class docutils literal notranslate"><span class="pre">function</span></code>) – <a class="reference internal" href="../atomic_prop.html#atomic-properties"><span class="std std-ref">atomic properties</span></a></li>
+<li><strong>type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – <a class="reference internal" href="../matrix.html#matrix-aggregating-methods"><span class="std std-ref">Matrix aggregating methods</span></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">NaN when any properties are NaN</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="mordred.BaryszMatrix.BaryszMatrix.since">
+<code class="descname">since</code><em class="property"> = StrictVersion ('1.0')</em><a class="headerlink" href="#mordred.BaryszMatrix.BaryszMatrix.since" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.BaryszMatrix.BaryszMatrix.description">
+<code class="descname">description</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/BaryszMatrix.html#BaryszMatrix.description"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.BaryszMatrix.BaryszMatrix.description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.BaryszMatrix.BaryszMatrix.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.BaryszMatrix.BaryszMatrix.rtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">builtins.float</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.BaryszMatrix.BaryszMatrix.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.BaryszMatrix.BaryszMatrix.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="mordred.BaryszMatrix.BaryszMatrix.from_json">
+<em class="property">classmethod </em><code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.BaryszMatrix.BaryszMatrix.from_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.6)"><em>dict</em></a>) – descriptor dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.BaryszMatrix.BaryszMatrix.get_parameter_dict">
+<code class="descname">get_parameter_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.BaryszMatrix.BaryszMatrix.get_parameter_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.BaryszMatrix.BaryszMatrix.kekulize">
+<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.BaryszMatrix.BaryszMatrix.kekulize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.BaryszMatrix.BaryszMatrix.parameter_names">
+<code class="descname">parameter_names</code><em class="property"> = ('prop', 'type')</em><a class="headerlink" href="#mordred.BaryszMatrix.BaryszMatrix.parameter_names" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.BaryszMatrix.BaryszMatrix.require_3D">
+<code class="descname">require_3D</code><em class="property"> = False</em><a class="headerlink" href="#mordred.BaryszMatrix.BaryszMatrix.require_3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mordred.BaryszMatrix.BaryszMatrix.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.BaryszMatrix.BaryszMatrix.require_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mordred.BaryszMatrix.BaryszMatrix.to_json">
+<code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.BaryszMatrix.BaryszMatrix.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.6)">dict</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="mordred.BertzCT.html" title="mordred.BertzCT module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="mordred.BalabanJ.html" title="mordred.BalabanJ module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">mordred 1.1.2a1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../mordred.html" >mordred package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="modules.html" >Submodules</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016, Hirotomo Moriwaki.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.5.
+    </div>
+  </body>
+</html>
