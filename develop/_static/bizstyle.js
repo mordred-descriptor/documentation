@@ -36,6 +36,6 @@ $(window).resize(function(){
         $("li.nav-item-0 a").text("Top");
     }
     else {
-        $("li.nav-item-0 a").text("mordred 1.1.0.post1.dev1.post1.dev1 documentation");
+        $("li.nav-item-0 a").text("mordred 1.1.2a1 documentation");
     }
 });
