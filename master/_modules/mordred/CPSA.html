@@ -6,10 +6,10 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>mordred.CPSA &#8212; mordred 1.0.0.post1.dev1 documentation</title>
+    <title>mordred.CPSA &#8212; mordred 1.1.2a1 documentation</title>
     <link rel="stylesheet" href="../../_static/bizstyle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -31,7 +31,7 @@
         <li class="right" >
           <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">mordred 1.0.0.post1.dev1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">mordred 1.1.2a1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Module code</a> &#187;</li> 
       </ul>
     </div>
@@ -88,7 +88,7 @@
     <span class="n">require_3D</span> <span class="o">=</span> <span class="kc">True</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">version</span><span class="p">):</span>
         <span class="k">yield</span> <span class="bp">cls</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -101,14 +101,14 @@
 
 
 <span class="k">class</span> <span class="nc">VersionCPSABase</span><span class="p">(</span><span class="n">CPSABase</span><span class="p">):</span>
-    <span class="vm">__slots__</span> <span class="o">=</span> <span class="s2">&quot;_version&quot;</span><span class="p">,</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;_version&quot;</span><span class="p">,)</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">version</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">map</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="n">versions</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_version</span><span class="p">,</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_version</span><span class="p">,)</span>
 
     <span class="n">versions</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 
@@ -176,6 +176,7 @@
 <span class="sd">    :param version: one of :py:attr:`versions`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
+    <span class="n">since</span> <span class="o">=</span> <span class="s2">&quot;1.0.0&quot;</span>
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
 <div class="viewcode-block" id="PNSA.description"><a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.PNSA.description">[docs]</a>    <span class="k">def</span> <span class="nf">description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -216,6 +217,7 @@
 <span class="sd">    :param version: one of :py:attr:`versions`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
+    <span class="n">since</span> <span class="o">=</span> <span class="s2">&quot;1.0.0&quot;</span>
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
 <div class="viewcode-block" id="PPSA.description"><a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.PPSA.description">[docs]</a>    <span class="k">def</span> <span class="nf">description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -233,6 +235,7 @@
 <span class="sd">    :param version: one of :py:attr:`versions`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
+    <span class="n">since</span> <span class="o">=</span> <span class="s2">&quot;1.0.0&quot;</span>
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
 <div class="viewcode-block" id="DPSA.description"><a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.DPSA.description">[docs]</a>    <span class="k">def</span> <span class="nf">description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -255,6 +258,7 @@
 <span class="sd">    :param version: one of :py:attr:`versions`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
+    <span class="n">since</span> <span class="o">=</span> <span class="s2">&quot;1.0.0&quot;</span>
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
 <div class="viewcode-block" id="FNSA.description"><a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.FNSA.description">[docs]</a>    <span class="k">def</span> <span class="nf">description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -280,6 +284,7 @@
 <span class="sd">    :param version: one of :py:attr:`versions`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
+    <span class="n">since</span> <span class="o">=</span> <span class="s2">&quot;1.0.0&quot;</span>
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
 <div class="viewcode-block" id="FPSA.description"><a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.FPSA.description">[docs]</a>    <span class="k">def</span> <span class="nf">description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -296,6 +301,7 @@
 <span class="sd">    :param version: one of :py:attr:`versions`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
+    <span class="n">since</span> <span class="o">=</span> <span class="s2">&quot;1.0.0&quot;</span>
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
 <div class="viewcode-block" id="WNSA.description"><a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.WNSA.description">[docs]</a>    <span class="k">def</span> <span class="nf">description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -312,6 +318,7 @@
 <span class="sd">    :param version: one of :py:attr:`versions`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
+    <span class="n">since</span> <span class="o">=</span> <span class="s2">&quot;1.0.0&quot;</span>
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
 <div class="viewcode-block" id="WPSA.description"><a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.WPSA.description">[docs]</a>    <span class="k">def</span> <span class="nf">description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -324,6 +331,7 @@
 <div class="viewcode-block" id="RNCG"><a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.RNCG">[docs]</a><span class="k">class</span> <span class="nc">RNCG</span><span class="p">(</span><span class="n">CPSABase</span><span class="p">):</span>
     <span class="sa">r</span><span class="sd">&quot;&quot;&quot;relative negative charge descriptor.&quot;&quot;&quot;</span>
 
+    <span class="n">since</span> <span class="o">=</span> <span class="s2">&quot;1.0.0&quot;</span>
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
     <span class="n">require_3D</span> <span class="o">=</span> <span class="kc">False</span>
 
@@ -350,6 +358,7 @@
 <div class="viewcode-block" id="RPCG"><a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.RPCG">[docs]</a><span class="k">class</span> <span class="nc">RPCG</span><span class="p">(</span><span class="n">RNCG</span><span class="p">):</span>
     <span class="sa">r</span><span class="sd">&quot;&quot;&quot;relative positive charge descriptor.&quot;&quot;&quot;</span>
 
+    <span class="n">since</span> <span class="o">=</span> <span class="s2">&quot;1.0.0&quot;</span>
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
 <div class="viewcode-block" id="RPCG.description"><a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.RPCG.description">[docs]</a>    <span class="k">def</span> <span class="nf">description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -363,6 +372,7 @@
 <div class="viewcode-block" id="RNCS"><a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.RNCS">[docs]</a><span class="k">class</span> <span class="nc">RNCS</span><span class="p">(</span><span class="n">CPSABase</span><span class="p">):</span>
     <span class="sa">r</span><span class="sd">&quot;&quot;&quot;relative negative charge surface area descriptor.&quot;&quot;&quot;</span>
 
+    <span class="n">since</span> <span class="o">=</span> <span class="s2">&quot;1.0.0&quot;</span>
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
     <span class="n">_RCG</span> <span class="o">=</span> <span class="n">RNCG</span><span class="p">()</span>
 
@@ -396,6 +406,7 @@
 <div class="viewcode-block" id="RPCS"><a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.RPCS">[docs]</a><span class="k">class</span> <span class="nc">RPCS</span><span class="p">(</span><span class="n">RNCS</span><span class="p">):</span>
     <span class="sa">r</span><span class="sd">&quot;&quot;&quot;relative positive charge surface area descriptor.&quot;&quot;&quot;</span>
 
+    <span class="n">since</span> <span class="o">=</span> <span class="s2">&quot;1.0.0&quot;</span>
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
 <div class="viewcode-block" id="RPCS.description"><a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.RPCS.description">[docs]</a>    <span class="k">def</span> <span class="nf">description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -411,6 +422,7 @@
 <div class="viewcode-block" id="TASA"><a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.TASA">[docs]</a><span class="k">class</span> <span class="nc">TASA</span><span class="p">(</span><span class="n">CPSABase</span><span class="p">):</span>
     <span class="sa">r</span><span class="sd">&quot;&quot;&quot;total hydrophobic surface area descriptor.&quot;&quot;&quot;</span>
 
+    <span class="n">since</span> <span class="o">=</span> <span class="s2">&quot;1.0.0&quot;</span>
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
 <div class="viewcode-block" id="TASA.description"><a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.TASA.description">[docs]</a>    <span class="k">def</span> <span class="nf">description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -433,6 +445,7 @@
 <div class="viewcode-block" id="TPSA"><a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.TPSA">[docs]</a><span class="k">class</span> <span class="nc">TPSA</span><span class="p">(</span><span class="n">TASA</span><span class="p">):</span>
     <span class="sa">r</span><span class="sd">&quot;&quot;&quot;total polar surface area descriptor.&quot;&quot;&quot;</span>
 
+    <span class="n">since</span> <span class="o">=</span> <span class="s2">&quot;1.0.0&quot;</span>
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
 
 <div class="viewcode-block" id="TPSA.description"><a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.TPSA.description">[docs]</a>    <span class="k">def</span> <span class="nf">description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -446,6 +459,7 @@
 <div class="viewcode-block" id="RASA"><a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.RASA">[docs]</a><span class="k">class</span> <span class="nc">RASA</span><span class="p">(</span><span class="n">CPSABase</span><span class="p">):</span>
     <span class="sa">r</span><span class="sd">&quot;&quot;&quot;relative hydrophobic surface area descriptor.&quot;&quot;&quot;</span>
 
+    <span class="n">since</span> <span class="o">=</span> <span class="s2">&quot;1.0.0&quot;</span>
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
     <span class="n">_TxSA</span> <span class="o">=</span> <span class="n">TASA</span><span class="p">()</span>
 
@@ -468,6 +482,7 @@
 <div class="viewcode-block" id="RPSA.description"><a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.RPSA.description">[docs]</a>    <span class="k">def</span> <span class="nf">description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s2">&quot;relative polar surface area&quot;</span></div>
 
+    <span class="n">since</span> <span class="o">=</span> <span class="s2">&quot;1.0.0&quot;</span>
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
     <span class="n">_TxSA</span> <span class="o">=</span> <span class="n">TPSA</span><span class="p">()</span></div>
 </pre></div>
@@ -486,13 +501,13 @@
         <li class="right" >
           <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">mordred 1.0.0.post1.dev1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">mordred 1.1.2a1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../index.html" >Module code</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2016, Hirotomo Moriwaki.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.5.
     </div>
   </body>
 </html>
