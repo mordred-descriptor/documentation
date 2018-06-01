@@ -66,7 +66,7 @@
     <span class="n">Descriptor</span><span class="p">,</span> <span class="n">UnaryOperatingDescriptor</span><span class="p">,</span>
     <span class="n">ConstDescriptor</span><span class="p">,</span> <span class="n">BinaryOperatingDescriptor</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="kn">from</span> <span class="nn">.calculator</span> <span class="k">import</span> <span class="n">Calculator</span><span class="p">,</span> <span class="n">get_descriptors_from_module</span>
+<span class="kn">from</span> <span class="nn">.calculator</span> <span class="k">import</span> <span class="n">Calculator</span><span class="p">,</span> <span class="n">get_descriptors_from_module</span><span class="p">,</span> <span class="n">get_descriptors_in_module</span>
 <span class="kn">from</span> <span class="nn">.parallel</span> <span class="k">import</span> <span class="n">parallel</span>
 <span class="kn">from</span> <span class="nn">.util</span> <span class="k">import</span> <span class="n">is_missing</span>
 <span class="kn">from</span> <span class="nn">.result</span> <span class="k">import</span> <span class="n">Result</span>
@@ -76,6 +76,7 @@
     <span class="s2">&quot;Descriptor&quot;</span><span class="p">,</span>
     <span class="s2">&quot;Calculator&quot;</span><span class="p">,</span>
     <span class="s2">&quot;get_descriptors_from_module&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;get_descriptors_in_module&quot;</span><span class="p">,</span>
     <span class="s2">&quot;is_missing&quot;</span><span class="p">,</span>
     <span class="s2">&quot;Result&quot;</span><span class="p">,</span>
 <span class="p">)</span>
@@ -143,7 +144,7 @@
         <span class="kn">from</span> <span class="nn">mordred</span> <span class="k">import</span> <span class="n">descriptors</span>
         <span class="n">descs</span> <span class="o">=</span> <span class="p">{</span>
             <span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span><span class="p">:</span> <span class="bp">cls</span>
-            <span class="k">for</span> <span class="bp">cls</span> <span class="ow">in</span> <span class="n">get_descriptors_from_module</span><span class="p">(</span><span class="n">descriptors</span><span class="p">,</span> <span class="n">submodule</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="k">for</span> <span class="bp">cls</span> <span class="ow">in</span> <span class="n">get_descriptors_in_module</span><span class="p">(</span><span class="n">descriptors</span><span class="p">)</span>
         <span class="p">}</span>
         <span class="n">descs</span><span class="p">[</span><span class="n">ConstDescriptor</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span> <span class="o">=</span> <span class="n">ConstDescriptor</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_all_descriptors</span> <span class="o">=</span> <span class="n">descs</span>
