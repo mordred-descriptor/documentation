@@ -1,0 +1,326 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Introduction &#8212; mordred 1.1.2a1 documentation</title>
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="mordred package" href="mordred.html" />
+    <link rel="prev" title="Welcome to mordred’s documentation!" href="index.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="mordred.html" title="mordred package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to mordred’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">mordred 1.1.2a1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Introduction</a></li>
+<li><a class="reference internal" href="#mordred">mordred</a><ul>
+<li><a class="reference internal" href="#number-of-descriptors">number of descriptors</a></li>
+<li><a class="reference internal" href="#installation">Installation</a><ul>
+<li><a class="reference internal" href="#conda-recommended">conda(recommended)</a></li>
+<li><a class="reference internal" href="#pip">pip</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#examples">examples</a><ul>
+<li><a class="reference internal" href="#as-command">as command</a><ul>
+<li><a class="reference internal" href="#as-library">as library</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#citation">Citation</a></li>
+<li><a class="reference internal" href="#documentation">Documentation</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to mordred’s documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="mordred.html"
+                        title="next chapter">mordred package</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/introduction.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="mordred">
+<h1>mordred<a class="headerlink" href="#mordred" title="Permalink to this headline">¶</a></h1>
+<p>molecular descriptor calculator.</p>
+<a class="reference external image-reference" href="https://travis-ci.org/mordred-descriptor/mordred"><img alt="https://travis-ci.org/mordred-descriptor/mordred.svg?branch=master" src="https://travis-ci.org/mordred-descriptor/mordred.svg?branch=master" /></a>
+<a class="reference external image-reference" href="https://ci.appveyor.com/project/philopon/mordred/branch/master"><img alt="https://ci.appveyor.com/api/projects/status/iwk6268d27jusvni/branch/master?svg=true" src="https://ci.appveyor.com/api/projects/status/iwk6268d27jusvni/branch/master?svg=true" /></a>
+<a class="reference external image-reference" href="https://coveralls.io/github/mordred-descriptor/mordred?branch=master"><img alt="https://coveralls.io/repos/github/mordred-descriptor/mordred/badge.svg?branch=master" src="https://coveralls.io/repos/github/mordred-descriptor/mordred/badge.svg?branch=master" /></a>
+<a class="reference external image-reference" href="https://codeclimate.com/github/mordred-descriptor/mordred"><img alt="Code Climate" src="https://codeclimate.com/github/mordred-descriptor/mordred/badges/gpa.svg" /></a>
+<a class="reference external image-reference" href="https://anaconda.org/mordred-descriptor/mordred"><img alt="https://anaconda.org/mordred-descriptor/mordred/badges/version.svg" src="https://anaconda.org/mordred-descriptor/mordred/badges/version.svg" /></a>
+<a class="reference external image-reference" href="https://pypi.python.org/pypi/mordred"><img alt="https://img.shields.io/pypi/v/mordred.svg" src="https://img.shields.io/pypi/v/mordred.svg" /></a>
+<a class="reference external image-reference" href="https://doi.org/10.1186/s13321-018-0258-y"><img alt="https://img.shields.io/badge/doi-10.1186%2Fs13321--018--0258--y-blue.svg" src="https://img.shields.io/badge/doi-10.1186%2Fs13321--018--0258--y-blue.svg" /></a>
+<a class="reference external image-reference" href="https://join.slack.com/t/mordred-descriptor/shared_invite/enQtMzc1MzkyODk1NTY5LTdlYzM4MWUzY2YwZmEwMWYzN2M4YTVkMGRlMDY0ZjU2NjQ1M2RiYzllMzVjZGE4NGZkNWZjODBjODE0YmExNjk"><img alt="https://img.shields.io/badge/slack-mordred--descriptor-brightgreen.svg" src="https://img.shields.io/badge/slack-mordred--descriptor-brightgreen.svg" /></a>
+<div class="section" id="number-of-descriptors">
+<h2>number of descriptors<a class="headerlink" href="#number-of-descriptors" title="Permalink to this headline">¶</a></h2>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mordred</span> <span class="k">import</span> <span class="n">Calculator</span><span class="p">,</span> <span class="n">descriptors</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n_all</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">Calculator</span><span class="p">(</span><span class="n">descriptors</span><span class="p">,</span> <span class="n">ignore_3D</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">descriptors</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n_2D</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">Calculator</span><span class="p">(</span><span class="n">descriptors</span><span class="p">,</span> <span class="n">ignore_3D</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">descriptors</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2D:    </span><span class="si">{:5}</span><span class="se">\n</span><span class="s2">3D:    </span><span class="si">{:5}</span><span class="se">\n</span><span class="s2">------------</span><span class="se">\n</span><span class="s2">total: </span><span class="si">{:5}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_2D</span><span class="p">,</span> <span class="n">n_all</span> <span class="o">-</span> <span class="n">n_2D</span><span class="p">,</span> <span class="n">n_all</span><span class="p">))</span>
+<span class="go">2D:     1613</span>
+<span class="go">3D:      212</span>
+<span class="go">------------</span>
+<span class="go">total:  1825</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="conda-recommended">
+<h3>conda(recommended)<a class="headerlink" href="#conda-recommended" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">install conda</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://conda.pydata.org/miniconda.html">miniconda</a></li>
+<li><a class="reference external" href="https://www.continuum.io/why-anaconda">anaconda</a></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">install mordred</p>
+<blockquote>
+<div><div class="code console highlight-default notranslate"><div class="highlight"><pre><span></span>$ conda install -c rdkit -c mordred-descriptor mordred
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="pip">
+<h3>pip<a class="headerlink" href="#pip" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">install <a class="reference external" href="http://www.rdkit.org/">rdkit</a> python package</p>
+</li>
+<li><p class="first">install mordred</p>
+<blockquote>
+<div><div class="code console highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install mordred
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="examples">
+<h2>examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="as-command">
+<h3>as command<a class="headerlink" href="#as-command" title="Permalink to this headline">¶</a></h3>
+<p>calculate all descriptors</p>
+<div class="code console highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m mordred example.smi
+name,ECIndex,WPath,WPol,Zagreb1, (snip)
+benzene,36,27,3,24.0, (snip)
+chrolobenzene,45,42,5,30.0, (snip)
+</pre></div>
+</div>
+<p>save to file (display progress bar)</p>
+<div class="code console highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m mordred example.smi -o example.csv
+50%|███████████████████████████████████████▌                                       | 1/2 [00:00&lt;00:00,  7.66it/s]
+</pre></div>
+</div>
+<p>stream read (low memory, no number of molecules information)</p>
+<div class="code console highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m mordred example.smi -s -o example.csv
+0it [00:00, ?it/s]
+</pre></div>
+</div>
+<p>only ABCIndex</p>
+<div class="code console highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m mordred example.smi -d ABCIndex
+name,ABC,ABCGG
+benzene,4.242640687119286,3.9999999999999996
+chlorobenzene,5.059137268047012,4.785854275382693
+</pre></div>
+</div>
+<p>ABCIndex and AcidBase</p>
+<div class="code console highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m mordred example.smi -d ABCIndex -d AcidBase
+name,ABC,ABCGG,nAcid,nBase
+benzene,4.242640687119286,3.9999999999999996,0,0
+chlorobenzene,5.059137268047012,4.785854275382693,0,0
+</pre></div>
+</div>
+<p>multiple input</p>
+<div class="code console highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m mordred example.smi example2.smi -d ABCIndex
+name,ABC,ABCGG
+benzene,4.242640687119286,3.9999999999999996
+chlorobenzene,5.059137268047012,4.785854275382693
+pentane,2.8284271247461903,3.1462643699419726
+</pre></div>
+</div>
+<p>show help</p>
+<div class="code console highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m mordred --help
+usage: python -m mordred [-h] [--version] [-t {auto,sdf,mol,smi}] [-o OUTPUT]
+                         [-p PROCESSES] [-q] [-s] [-d DESC] [-3] [-v]
+                         INPUT [INPUT ...]
+
+positional arguments:
+  INPUT
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             input molecular file
+  -t {auto,sdf,mol,smi}, --type {auto,sdf,mol,smi}
+                        input filetype (default: auto)
+  -o OUTPUT, --output OUTPUT
+                        output file path (default: stdout)
+  -p PROCESSES, --processes PROCESSES
+                        number of processes (default: number of logical
+                        processors)
+  -q, --quiet           hide progress bar
+  -s, --stream          stream read
+  -d DESC, --descriptor DESC
+                        descriptors to calculate (default: all)
+  -3, --3D              use 3D descriptors (require sdf or mol file)
+  -v, --verbosity       verbosity
+
+descriptors: ABCIndex AcidBase AdjacencyMatrix Aromatic AtomCount
+Autocorrelation BalabanJ BaryszMatrix BCUT BertzCT BondCount CarbonTypes Chi
+Constitutional CPSA DetourMatrix DistanceMatrix EccentricConnectivityIndex
+EState ExtendedTopochemicalAtom FragmentComplexity Framework GeometricalIndex
+GravitationalIndex HydrogenBond InformationContent KappaShapeIndex Lipinski
+McGowanVolume MoeType MolecularDistanceEdge MolecularId MomentOfInertia MoRSE
+PathCount Polarizability RingCount RotatableBond SLogP TopologicalCharge
+TopologicalIndex TopoPSA VdwVolumeABC VertexAdjacencyInformation WalkCount
+Weight WienerIndex ZagrebIndex
+</pre></div>
+</div>
+<div class="section" id="as-library">
+<h4>as library<a class="headerlink" href="#as-library" title="Permalink to this headline">¶</a></h4>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">rdkit</span> <span class="k">import</span> <span class="n">Chem</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mordred</span> <span class="k">import</span> <span class="n">Calculator</span><span class="p">,</span> <span class="n">descriptors</span>
+
+<span class="go"># create descriptor calculator with all descriptors</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">calc</span> <span class="o">=</span> <span class="n">Calculator</span><span class="p">(</span><span class="n">descriptors</span><span class="p">,</span> <span class="n">ignore_3D</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">calc</span><span class="o">.</span><span class="n">descriptors</span><span class="p">)</span>
+<span class="go">1613</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">Calculator</span><span class="p">(</span><span class="n">descriptors</span><span class="p">,</span> <span class="n">ignore_3D</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s2">&quot;1.0.0&quot;</span><span class="p">))</span>
+<span class="go">1612</span>
+
+<span class="go"># calculate single molecule</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="s1">&#39;c1ccccc1&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">calc</span><span class="p">(</span><span class="n">mol</span><span class="p">)[:</span><span class="mi">3</span><span class="p">]</span>
+<span class="go">[4.242640687119286, 3.9999999999999996, 0]</span>
+
+<span class="go"># calculate multiple molecule</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="p">[</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">smi</span><span class="p">)</span> <span class="k">for</span> <span class="n">smi</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;c1ccccc1Cl&#39;</span><span class="p">,</span> <span class="s1">&#39;c1ccccc1O&#39;</span><span class="p">,</span> <span class="s1">&#39;c1ccccc1N&#39;</span><span class="p">]]</span>
+
+<span class="go"># as pandas</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">calc</span><span class="o">.</span><span class="n">pandas</span><span class="p">(</span><span class="n">mols</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;SLogP&#39;</span><span class="p">]</span>
+<span class="go">0    2.3400</span>
+<span class="go">1    1.3922</span>
+<span class="go">2    1.2688</span>
+<span class="go">Name: SLogP, dtype: float64</span>
+</pre></div>
+</div>
+<p>see <a class="reference external" href="examples">examples</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="citation">
+<h2>Citation<a class="headerlink" href="#citation" title="Permalink to this headline">¶</a></h2>
+<p>Moriwaki H, Tian Y-S, Kawashita N, Takagi T (2018) Mordred: a molecular descriptor calculator. Journal of Cheminformatics 10:4 . doi: <a class="reference external" href="https://doi.org/10.1186/s13321-018-0258-y">10.1186/s13321-018-0258-y</a></p>
+</div>
+<div class="section" id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="http://mordred-descriptor.github.io/documentation/master">master</a></li>
+<li><a class="reference external" href="http://mordred-descriptor.github.io/documentation/develop">develop</a></li>
+<li><a class="reference external" href="http://mordred-descriptor.github.io/documentation/v1.1.1">v1.1.0</a></li>
+<li><a class="reference external" href="http://mordred-descriptor.github.io/documentation/v1.0.0">v1.0.0</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="mordred.html" title="mordred package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to mordred’s documentation!"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">mordred 1.1.2a1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016, Hirotomo Moriwaki.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.7.
+    </div>
+  </body>
+</html>
