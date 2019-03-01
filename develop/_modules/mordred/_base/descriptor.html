@@ -9,11 +9,13 @@
     <title>mordred._base.descriptor &#8212; mordred 1.1.2a1 documentation</title>
     <link rel="stylesheet" href="../../../_static/bizstyle.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/bizstyle.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -67,6 +69,7 @@
 
 <span class="kn">import</span> <span class="nn">six</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">rdkit</span> <span class="k">import</span> <span class="n">Chem</span>
 
 <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">inspect</span><span class="p">,</span> <span class="s2">&quot;getfullargspec&quot;</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">getargs</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
@@ -255,6 +258,15 @@
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">get_coord</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
+    <span class="k">def</span> <span class="nf">get_3D_mol</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">Mol</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="p">)</span>
+        <span class="n">conf</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">Conformer</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">())</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">xyz</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coord</span><span class="p">):</span>
+            <span class="n">conf</span><span class="o">.</span><span class="n">SetAtomPosition</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">xyz</span><span class="p">)</span>
+
+        <span class="n">mol</span><span class="o">.</span><span class="n">AddConformer</span><span class="p">(</span><span class="n">conf</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">mol</span>
+
 <div class="viewcode-block" id="Descriptor.fail"><a class="viewcode-back" href="../../../mordred.html#mordred.ABCIndex.Descriptor.fail">[docs]</a>    <span class="k">def</span> <span class="nf">fail</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exception</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Raise known exception and return missing value.</span>
 
@@ -322,9 +334,9 @@
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="p">(</span>
-        <span class="nb">isinstance</span><span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span> <span class="ow">and</span>
-        <span class="nb">issubclass</span><span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="n">Descriptor</span><span class="p">)</span> <span class="ow">and</span>
-        <span class="p">(</span><span class="kc">True</span> <span class="k">if</span> <span class="n">include_abstract</span> <span class="k">else</span> <span class="ow">not</span> <span class="n">inspect</span><span class="o">.</span><span class="n">isabstract</span><span class="p">(</span><span class="n">desc</span><span class="p">))</span>
+        <span class="nb">isinstance</span><span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span>
+        <span class="ow">and</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="n">Descriptor</span><span class="p">)</span>
+        <span class="ow">and</span> <span class="p">(</span><span class="kc">True</span> <span class="k">if</span> <span class="n">include_abstract</span> <span class="k">else</span> <span class="ow">not</span> <span class="n">inspect</span><span class="o">.</span><span class="n">isabstract</span><span class="p">(</span><span class="n">desc</span><span class="p">))</span>
     <span class="p">)</span>
 
 
@@ -455,7 +467,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2016, Hirotomo Moriwaki.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.7.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.4.
     </div>
   </body>
 </html>

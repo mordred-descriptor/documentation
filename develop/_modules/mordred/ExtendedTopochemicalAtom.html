@@ -9,11 +9,13 @@
     <title>mordred.ExtendedTopochemicalAtom &#8212; mordred 1.1.2a1 documentation</title>
     <link rel="stylesheet" href="../../_static/bizstyle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/bizstyle.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -74,7 +76,6 @@
 <span class="kn">from</span> <span class="nn">._base</span> <span class="k">import</span> <span class="n">Descriptor</span>
 <span class="kn">from</span> <span class="nn">._util</span> <span class="k">import</span> <span class="n">atoms_to_numpy</span>
 <span class="kn">from</span> <span class="nn">.RingCount</span> <span class="k">import</span> <span class="n">RingCount</span>
-<span class="kn">from</span> <span class="nn">._graph_matrix</span> <span class="k">import</span> <span class="n">DistanceMatrix</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span>
     <span class="s2">&quot;EtaCoreCount&quot;</span><span class="p">,</span> <span class="s2">&quot;EtaShapeIndex&quot;</span><span class="p">,</span>
@@ -454,15 +455,14 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_averaged</span> <span class="o">=</span> <span class="n">averaged</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">deps</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;D&quot;</span><span class="p">:</span> <span class="n">DistanceMatrix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)}</span>
-
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reference</span><span class="p">:</span>
-            <span class="n">deps</span><span class="p">[</span><span class="s2">&quot;rmol&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">AlterMolecule</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">)</span>
+            <span class="k">return</span> <span class="p">{</span>
+                <span class="s2">&quot;rmol&quot;</span><span class="p">:</span> <span class="n">AlterMolecule</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">),</span>
+            <span class="p">}</span>
 
-        <span class="k">return</span> <span class="n">deps</span>
-
-    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">rmol</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rmol</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="n">mol</span> <span class="o">=</span> <span class="n">rmol</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reference</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span>
+        <span class="n">D</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">GetDistanceMatrix</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_local</span><span class="p">:</span>
             <span class="k">def</span> <span class="nf">checker</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
@@ -940,7 +940,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2016, Hirotomo Moriwaki.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.7.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.4.
     </div>
   </body>
 </html>

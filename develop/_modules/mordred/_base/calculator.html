@@ -9,11 +9,13 @@
     <title>mordred._base.calculator &#8212; mordred 1.1.2a1 documentation</title>
     <link rel="stylesheet" href="../../../_static/bizstyle.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/bizstyle.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -68,14 +70,18 @@
 <span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="k">import</span> <span class="n">cpu_count</span>
 <span class="kn">from</span> <span class="nn">distutils.version</span> <span class="k">import</span> <span class="n">StrictVersion</span>
 
-<span class="kn">from</span> <span class="nn">tqdm</span> <span class="k">import</span> <span class="n">tqdm</span>
-
-<span class="kn">from</span> <span class="nn">.._util</span> <span class="k">import</span> <span class="n">Capture</span><span class="p">,</span> <span class="n">DummyBar</span><span class="p">,</span> <span class="n">NotebookWrapper</span>
+<span class="kn">from</span> <span class="nn">.._util</span> <span class="k">import</span> <span class="n">Capture</span><span class="p">,</span> <span class="n">DummyBar</span>
 <span class="kn">from</span> <span class="nn">..error</span> <span class="k">import</span> <span class="n">Error</span><span class="p">,</span> <span class="n">Missing</span><span class="p">,</span> <span class="n">MultipleFragments</span><span class="p">,</span> <span class="n">DuplicatedDescriptorName</span>
 <span class="kn">from</span> <span class="nn">.result</span> <span class="k">import</span> <span class="n">Result</span>
 <span class="kn">from</span> <span class="nn">.context</span> <span class="k">import</span> <span class="n">Context</span>
 <span class="kn">from</span> <span class="nn">.._version</span> <span class="k">import</span> <span class="n">__version__</span>
 <span class="kn">from</span> <span class="nn">.descriptor</span> <span class="k">import</span> <span class="n">Descriptor</span><span class="p">,</span> <span class="n">MissingValueException</span><span class="p">,</span> <span class="n">is_descriptor_class</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">tqdm</span> <span class="k">import</span> <span class="n">tqdm</span>
+    <span class="kn">from</span> <span class="nn">.._util</span> <span class="k">import</span> <span class="n">NotebookWrapper</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="n">tqdm</span> <span class="o">=</span> <span class="n">NotebookWrapper</span> <span class="o">=</span> <span class="n">DummyBar</span>
 
 
 <div class="viewcode-block" id="Calculator"><a class="viewcode-back" href="../../../mordred.html#mordred.Calculator">[docs]</a><span class="k">class</span> <span class="nc">Calculator</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -524,7 +530,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2016, Hirotomo Moriwaki.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.7.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.4.
     </div>
   </body>
 </html>
