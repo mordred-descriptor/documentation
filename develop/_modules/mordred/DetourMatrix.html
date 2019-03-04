@@ -60,11 +60,14 @@
           <div class="body" role="main">
             
   <h1>Source code for mordred.DetourMatrix</h1><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span></span><span class="kn">import</span> <span class="nn">time</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">networkx</span>
 
 <span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">_matrix_attributes</span> <span class="k">as</span> <span class="n">ma</span>
 <span class="kn">from</span> <span class="nn">._base</span> <span class="k">import</span> <span class="n">Descriptor</span>
+<span class="kn">from</span> <span class="nn">.error</span> <span class="k">import</span> <span class="n">Timeout</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;DetourMatrix&quot;</span><span class="p">,</span> <span class="s2">&quot;DetourIndex&quot;</span><span class="p">)</span>
 
@@ -73,11 +76,13 @@
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span>
         <span class="s2">&quot;G&quot;</span><span class="p">,</span> <span class="s2">&quot;N&quot;</span><span class="p">,</span> <span class="s2">&quot;neighbors&quot;</span><span class="p">,</span>
         <span class="s2">&quot;start&quot;</span><span class="p">,</span> <span class="s2">&quot;result&quot;</span><span class="p">,</span> <span class="s2">&quot;visited&quot;</span><span class="p">,</span> <span class="s2">&quot;distance&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;timeout_at&quot;</span><span class="p">,</span>
     <span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">timeout_at</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">G</span> <span class="o">=</span> <span class="n">G</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">N</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">timeout_at</span> <span class="o">=</span> <span class="n">timeout_at</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">neighbors</span> <span class="o">=</span> <span class="p">{</span>
             <span class="n">n</span><span class="p">:</span> <span class="p">[(</span><span class="n">v</span><span class="p">,</span> <span class="n">d</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span> <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">G</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
             <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">()</span>
@@ -92,6 +97,9 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span>
 
     <span class="k">def</span> <span class="nf">_search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">u</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">timeout_at</span> <span class="o">&lt;</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="n">Timeout</span><span class="p">()</span>
+
         <span class="bp">self</span><span class="o">.</span><span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">neighbors</span><span class="p">[</span><span class="n">u</span><span class="p">]:</span>
             <span class="k">if</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">visited</span><span class="p">:</span>
@@ -104,8 +112,7 @@
             <span class="k">if</span> <span class="n">d</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="p">[</span><span class="n">v</span><span class="p">]:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span>
 
-            <span class="k">if</span> <span class="n">v</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">start</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_search</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_search</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
 
             <span class="bp">self</span><span class="o">.</span><span class="n">visited</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">distance</span> <span class="o">-=</span> <span class="n">w</span>
@@ -117,18 +124,14 @@
 
 
 <span class="k">class</span> <span class="nc">CalcDetour</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;N&quot;</span><span class="p">,</span> <span class="s2">&quot;Q&quot;</span><span class="p">,</span> <span class="s2">&quot;nodes&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">)</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;N&quot;</span><span class="p">,</span> <span class="s2">&quot;G&quot;</span><span class="p">,</span> <span class="s2">&quot;Q&quot;</span><span class="p">,</span> <span class="s2">&quot;nodes&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;weight&quot;</span><span class="p">,</span> <span class="s2">&quot;timeout&quot;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s2">&quot;weight&quot;</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s2">&quot;weight&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">G</span> <span class="o">=</span> <span class="n">G</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">N</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">Q</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">bcc</span> <span class="ow">in</span> <span class="n">networkx</span><span class="o">.</span><span class="n">biconnected_component_subgraphs</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
-            <span class="n">lsp</span> <span class="o">=</span> <span class="n">LongestSimplePath</span><span class="p">(</span><span class="n">bcc</span><span class="p">,</span> <span class="n">weight</span><span class="p">)()</span>
-            <span class="n">nodes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-            <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">lsp</span><span class="p">:</span>
-                <span class="n">nodes</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-                <span class="n">nodes</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">Q</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">nodes</span><span class="p">,</span> <span class="n">lsp</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">timeout</span> <span class="o">=</span> <span class="n">timeout</span>
 
     <span class="k">def</span> <span class="nf">merge</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Q</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
@@ -170,6 +173,16 @@
                   <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">j</span><span class="p">}</span>
 
     <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">timeout_at</span> <span class="o">=</span> <span class="kc">None</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">timeout</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">timeout</span>
+
+        <span class="k">for</span> <span class="n">bcc</span> <span class="ow">in</span> <span class="n">networkx</span><span class="o">.</span><span class="n">biconnected_component_subgraphs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+            <span class="n">lsp</span> <span class="o">=</span> <span class="n">LongestSimplePath</span><span class="p">(</span><span class="n">bcc</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="n">timeout_at</span><span class="p">)()</span>
+            <span class="n">nodes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">lsp</span><span class="p">:</span>
+                <span class="n">nodes</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+                <span class="n">nodes</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">Q</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">nodes</span><span class="p">,</span> <span class="n">lsp</span><span class="p">))</span>
+
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">N</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">]])</span>
 

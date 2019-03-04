@@ -70,9 +70,9 @@
 <span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="k">import</span> <span class="n">cpu_count</span>
 <span class="kn">from</span> <span class="nn">distutils.version</span> <span class="k">import</span> <span class="n">StrictVersion</span>
 
+<span class="kn">from</span> <span class="nn">.result</span> <span class="k">import</span> <span class="n">Result</span>
 <span class="kn">from</span> <span class="nn">.._util</span> <span class="k">import</span> <span class="n">Capture</span><span class="p">,</span> <span class="n">DummyBar</span>
 <span class="kn">from</span> <span class="nn">..error</span> <span class="k">import</span> <span class="n">Error</span><span class="p">,</span> <span class="n">Missing</span><span class="p">,</span> <span class="n">MultipleFragments</span><span class="p">,</span> <span class="n">DuplicatedDescriptorName</span>
-<span class="kn">from</span> <span class="nn">.result</span> <span class="k">import</span> <span class="n">Result</span>
 <span class="kn">from</span> <span class="nn">.context</span> <span class="k">import</span> <span class="n">Context</span>
 <span class="kn">from</span> <span class="nn">.._version</span> <span class="k">import</span> <span class="n">__version__</span>
 <span class="kn">from</span> <span class="nn">.descriptor</span> <span class="k">import</span> <span class="n">Descriptor</span><span class="p">,</span> <span class="n">MissingValueException</span><span class="p">,</span> <span class="n">is_descriptor_class</span>
@@ -272,22 +272,33 @@
         <span class="n">cxt</span><span class="o">.</span><span class="n">add_stack</span><span class="p">(</span><span class="n">desc</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">desc</span><span class="o">.</span><span class="n">require_connected</span> <span class="ow">and</span> <span class="n">desc</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">n_frags</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="n">desc</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="n">MultipleFragments</span><span class="p">())</span>
+            <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="n">Missing</span><span class="p">(</span><span class="n">MultipleFragments</span><span class="p">(),</span> <span class="n">desc</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">get_stack</span><span class="p">())</span>
 
-        <span class="n">args</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="n">name</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calculate_one</span><span class="p">(</span><span class="n">cxt</span><span class="p">,</span> <span class="n">dep</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">dep</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span>
-            <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">dep</span> <span class="ow">in</span> <span class="p">(</span><span class="n">desc</span><span class="o">.</span><span class="n">dependencies</span><span class="p">()</span> <span class="ow">or</span> <span class="p">{})</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
-        <span class="p">}</span>
+        <span class="n">args</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">dep</span> <span class="ow">in</span> <span class="p">(</span><span class="n">desc</span><span class="o">.</span><span class="n">dependencies</span><span class="p">()</span> <span class="ow">or</span> <span class="p">{})</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">dep</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">args</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">ok</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calculate_one</span><span class="p">(</span><span class="n">cxt</span><span class="p">,</span> <span class="n">dep</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">ok</span><span class="p">:</span>
+                    <span class="n">args</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="n">r</span>
 
-        <span class="n">r</span> <span class="o">=</span> <span class="n">desc</span><span class="o">.</span><span class="n">calculate</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">)</span>
+        <span class="n">ok</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">desc</span><span class="o">.</span><span class="n">calculate</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_debug</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_check_rtype</span><span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+            <span class="n">ok</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">except</span> <span class="n">MissingValueException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">Missing</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">error</span><span class="p">,</span> <span class="n">desc</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">get_stack</span><span class="p">())</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">Error</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">desc</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">get_stack</span><span class="p">())</span>
 
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_debug</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_check_rtype</span><span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">[</span><span class="n">desc</span><span class="p">]</span> <span class="o">=</span> <span class="n">ok</span><span class="p">,</span> <span class="n">r</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">[</span><span class="n">desc</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span>
-
-        <span class="k">return</span> <span class="n">r</span>
+        <span class="k">return</span> <span class="n">ok</span><span class="p">,</span> <span class="n">r</span>
 
     <span class="k">def</span> <span class="nf">_check_rtype</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">desc</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">desc</span><span class="o">.</span><span class="n">rtype</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -302,15 +313,8 @@
     <span class="k">def</span> <span class="nf">_calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cxt</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="k">for</span> <span class="n">desc</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">descriptors</span><span class="p">:</span>
-            <span class="k">try</span><span class="p">:</span>
-                <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calculate_one</span><span class="p">(</span><span class="n">cxt</span><span class="p">,</span> <span class="n">desc</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
-            <span class="k">except</span> <span class="n">MissingValueException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-                <span class="k">yield</span> <span class="n">Missing</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">error</span><span class="p">,</span> <span class="n">desc</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">get_stack</span><span class="p">())</span>
-            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-                <span class="k">yield</span> <span class="n">Error</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">desc</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">get_stack</span><span class="p">())</span>
-            <span class="k">finally</span><span class="p">:</span>
-                <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="s2">&quot;_context&quot;</span><span class="p">):</span>
-                    <span class="k">del</span> <span class="n">desc</span><span class="o">.</span><span class="n">_context</span>
+            <span class="n">_</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calculate_one</span><span class="p">(</span><span class="n">cxt</span><span class="p">,</span> <span class="n">desc</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+            <span class="k">yield</span> <span class="n">r</span>
 
     <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="nb">id</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
         <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Calculate descriptors.</span>
