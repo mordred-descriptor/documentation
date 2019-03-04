@@ -85,14 +85,18 @@
 <span id="mordred-detourmatrix-module"></span><h1>mordred.DetourMatrix module<a class="headerlink" href="#module-mordred.DetourMatrix" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="mordred.DetourMatrix.DetourMatrix">
-<em class="property">class </em><code class="descclassname">mordred.DetourMatrix.</code><code class="descname">DetourMatrix</code><span class="sig-paren">(</span><em>type='SpMax'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/DetourMatrix.html#DetourMatrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.DetourMatrix.DetourMatrix" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">mordred.DetourMatrix.</code><code class="descname">DetourMatrix</code><span class="sig-paren">(</span><em>type='SpMax'</em>, <em>timeout=60</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/DetourMatrix.html#DetourMatrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.DetourMatrix.DetourMatrix" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">mordred.DetourMatrix.DetourMatrixBase</span></code></p>
 <p>detour matrix descriptor.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – <a class="reference internal" href="../matrix.html#matrix-aggregating-methods"><span class="std std-ref">Matrix aggregating methods</span></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – <a class="reference internal" href="../matrix.html#matrix-aggregating-methods"><span class="std std-ref">Matrix aggregating methods</span></a></li>
+<li><strong>timeout</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.7)"><em>None</em></a>) – timeout in seconds</li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>
@@ -152,7 +156,7 @@
 
 <dl class="attribute">
 <dt id="mordred.DetourMatrix.DetourMatrix.parameter_names">
-<code class="descname">parameter_names</code><em class="property"> = ('type',)</em><a class="headerlink" href="#mordred.DetourMatrix.DetourMatrix.parameter_names" title="Permalink to this definition">¶</a></dt>
+<code class="descname">parameter_names</code><em class="property"> = ('type', 'timeout')</em><a class="headerlink" href="#mordred.DetourMatrix.DetourMatrix.parameter_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -185,7 +189,7 @@
 
 <dl class="class">
 <dt id="mordred.DetourMatrix.DetourIndex">
-<em class="property">class </em><code class="descclassname">mordred.DetourMatrix.</code><code class="descname">DetourIndex</code><a class="reference internal" href="../_modules/mordred/DetourMatrix.html#DetourIndex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.DetourMatrix.DetourIndex" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">mordred.DetourMatrix.</code><code class="descname">DetourIndex</code><span class="sig-paren">(</span><em>timeout=60</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/DetourMatrix.html#DetourIndex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.DetourMatrix.DetourIndex" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">mordred.DetourMatrix.DetourMatrixBase</span></code></p>
 <p>detour index descriptor.</p>
 <div class="math notranslate nohighlight">
@@ -249,7 +253,7 @@
 
 <dl class="attribute">
 <dt id="mordred.DetourMatrix.DetourIndex.parameter_names">
-<code class="descname">parameter_names</code><em class="property"> = ()</em><a class="headerlink" href="#mordred.DetourMatrix.DetourIndex.parameter_names" title="Permalink to this definition">¶</a></dt>
+<code class="descname">parameter_names</code><em class="property"> = ('timeout',)</em><a class="headerlink" href="#mordred.DetourMatrix.DetourIndex.parameter_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
