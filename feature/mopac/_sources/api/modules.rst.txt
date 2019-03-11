@@ -37,10 +37,10 @@ Submodules
     mordred.MolecularDistanceEdge
     mordred.MolecularId
     mordred.MomentOfInertia
-    mordred.Mopac
     mordred.PBF
     mordred.PathCount
     mordred.Polarizability
+    mordred.QM
     mordred.RingCount
     mordred.RotatableBond
     mordred.SLogP

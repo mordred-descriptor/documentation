@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>mordred.Mopac &#8212; mordred 1.1.2a1 documentation</title>
+    <title>mordred.QM &#8212; mordred 1.1.2a1 documentation</title>
     <link rel="stylesheet" href="../../_static/bizstyle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     
@@ -59,11 +59,11 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <h1>Source code for mordred.Mopac</h1><div class="highlight"><pre>
+  <h1>Source code for mordred.QM</h1><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">.mopac.calculate</span> <span class="k">import</span> <span class="n">calc_energy</span>
 <span class="kn">from</span> <span class="nn">._base.descriptor</span> <span class="k">import</span> <span class="n">Descriptor</span>
 
-<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Mopac&quot;</span><span class="p">,)</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;QM&quot;</span><span class="p">,)</span>
 
 
 <span class="k">class</span> <span class="nc">MopacCache</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
@@ -95,7 +95,9 @@
 <span class="p">}</span>
 
 
-<div class="viewcode-block" id="Mopac"><a class="viewcode-back" href="../../api/mordred.Mopac.html#mordred.Mopac.Mopac">[docs]</a><span class="k">class</span> <span class="nc">Mopac</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
+<div class="viewcode-block" id="QM"><a class="viewcode-back" href="../../api/mordred.QM.html#mordred.QM.QM">[docs]</a><span class="k">class</span> <span class="nc">QM</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Quantum Mechanics descriptor.&quot;&quot;&quot;</span>
+
     <span class="n">types</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s2">&quot;dipole&quot;</span><span class="p">:</span> <span class="s2">&quot;dipole moment&quot;</span><span class="p">,</span>
         <span class="s2">&quot;E&quot;</span><span class="p">:</span> <span class="s2">&quot;total energy (kcal/mol)&quot;</span><span class="p">,</span>
@@ -116,7 +118,7 @@
     <span class="k">def</span> <span class="nf">preset</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">version</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">(</span><span class="bp">cls</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;AM1&quot;</span><span class="p">,</span> <span class="s2">&quot;MNDO&quot;</span><span class="p">,</span> <span class="s2">&quot;PM3&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">types</span><span class="p">)</span>
 
-<div class="viewcode-block" id="Mopac.description"><a class="viewcode-back" href="../../api/mordred.Mopac.html#mordred.Mopac.Mopac.description">[docs]</a>    <span class="k">def</span> <span class="nf">description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="QM.description"><a class="viewcode-back" href="../../api/mordred.QM.html#mordred.QM.QM.description">[docs]</a>    <span class="k">def</span> <span class="nf">description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s2">&quot;The </span><span class="si">{}</span><span class="s2"> calculated usin the </span><span class="si">{}</span><span class="s2"> hamiltonian&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">types</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hamiltonian</span><span class="p">)</span></div>
 
@@ -132,7 +134,7 @@
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">type_to_attr</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">])</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hamiltonian</span><span class="o">=</span><span class="s2">&quot;AM1&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;total_energy&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hamiltonian</span><span class="o">=</span><span class="s2">&quot;AM1&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;E&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_hamiltonian</span> <span class="o">=</span> <span class="n">hamiltonian</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="o">=</span> <span class="nb">type</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_timeout</span> <span class="o">=</span> <span class="n">timeout</span>

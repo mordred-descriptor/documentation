@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>mordred.Mopac module &#8212; mordred 1.1.2a1 documentation</title>
+    <title>mordred.QM module &#8212; mordred 1.1.2a1 documentation</title>
     <link rel="stylesheet" href="../_static/bizstyle.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
@@ -19,8 +19,8 @@
     <script type="text/javascript" src="../_static/bizstyle.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="mordred.PBF module" href="mordred.PBF.html" />
-    <link rel="prev" title="mordred.MomentOfInertia module" href="mordred.MomentOfInertia.html" />
+    <link rel="next" title="mordred.RingCount module" href="mordred.RingCount.html" />
+    <link rel="prev" title="mordred.Polarizability module" href="mordred.Polarizability.html" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <!--[if lt IE 9]>
     <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
@@ -36,10 +36,10 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="mordred.PBF.html" title="mordred.PBF module"
+          <a href="mordred.RingCount.html" title="mordred.RingCount module"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="mordred.MomentOfInertia.html" title="mordred.MomentOfInertia module"
+          <a href="mordred.Polarizability.html" title="mordred.Polarizability module"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">mordred 1.1.2a1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../mordred.html" >mordred package</a> &#187;</li>
@@ -49,15 +49,15 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="mordred.MomentOfInertia.html"
-                        title="previous chapter">mordred.MomentOfInertia module</a></p>
+  <p class="topless"><a href="mordred.Polarizability.html"
+                        title="previous chapter">mordred.Polarizability module</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="mordred.PBF.html"
-                        title="next chapter">mordred.PBF module</a></p>
+  <p class="topless"><a href="mordred.RingCount.html"
+                        title="next chapter">mordred.RingCount module</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../_sources/api/mordred.Mopac.rst.txt"
+      <li><a href="../_sources/api/mordred.QM.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -81,46 +81,47 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="module-mordred.Mopac">
-<span id="mordred-mopac-module"></span><h1>mordred.Mopac module<a class="headerlink" href="#module-mordred.Mopac" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-mordred.QM">
+<span id="mordred-qm-module"></span><h1>mordred.QM module<a class="headerlink" href="#module-mordred.QM" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
-<dt id="mordred.Mopac.Mopac">
-<em class="property">class </em><code class="descclassname">mordred.Mopac.</code><code class="descname">Mopac</code><span class="sig-paren">(</span><em>hamiltonian='AM1'</em>, <em>type='total_energy'</em>, <em>timeout=60</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Mopac.html#Mopac"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Mopac.Mopac" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.QM.QM">
+<em class="property">class </em><code class="descclassname">mordred.QM.</code><code class="descname">QM</code><span class="sig-paren">(</span><em>hamiltonian='AM1'</em>, <em>type='E'</em>, <em>timeout=60</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/QM.html#QM"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.QM.QM" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">mordred._base.descriptor.Descriptor</span></code></p>
+<p>Quantum Mechanics descriptor.</p>
 <dl class="attribute">
-<dt id="mordred.Mopac.Mopac.types">
-<code class="descname">types</code><em class="property"> = {'E': 'total energy (kcal/mol)', 'Eele': 'electronic energy (kcal/mol)', 'HF': 'heat of formation (kcal/mol)', 'HOMO': 'energy (eV) of the Highest Occupied Molecular Orbital', 'IP': 'ionization potential (kcal/mol)', 'LUMO': 'energy (eV) of the Lowest Unoccupied Molecular Orbital', 'dipole': 'dipole moment'}</em><a class="headerlink" href="#mordred.Mopac.Mopac.types" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.QM.QM.types">
+<code class="descname">types</code><em class="property"> = {'E': 'total energy (kcal/mol)', 'Eele': 'electronic energy (kcal/mol)', 'HF': 'heat of formation (kcal/mol)', 'HOMO': 'energy (eV) of the Highest Occupied Molecular Orbital', 'IP': 'ionization potential (kcal/mol)', 'LUMO': 'energy (eV) of the Lowest Unoccupied Molecular Orbital', 'dipole': 'dipole moment'}</em><a class="headerlink" href="#mordred.QM.QM.types" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.Mopac.Mopac.since">
-<code class="descname">since</code><em class="property"> = StrictVersion ('1.2')</em><a class="headerlink" href="#mordred.Mopac.Mopac.since" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.QM.QM.since">
+<code class="descname">since</code><em class="property"> = StrictVersion ('1.2')</em><a class="headerlink" href="#mordred.QM.QM.since" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.Mopac.Mopac.require_3D">
-<code class="descname">require_3D</code><em class="property"> = True</em><a class="headerlink" href="#mordred.Mopac.Mopac.require_3D" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.QM.QM.require_3D">
+<code class="descname">require_3D</code><em class="property"> = True</em><a class="headerlink" href="#mordred.QM.QM.require_3D" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.Mopac.Mopac.explicit_hydrogens">
-<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.Mopac.Mopac.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.QM.QM.explicit_hydrogens">
+<code class="descname">explicit_hydrogens</code><em class="property"> = True</em><a class="headerlink" href="#mordred.QM.QM.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="mordred.Mopac.Mopac.description">
-<code class="descname">description</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Mopac.html#Mopac.description"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Mopac.Mopac.description" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.QM.QM.description">
+<code class="descname">description</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/QM.html#QM.description"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.QM.QM.description" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.Mopac.Mopac.rtype">
-<code class="descname">rtype</code><a class="headerlink" href="#mordred.Mopac.Mopac.rtype" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.QM.QM.rtype">
+<code class="descname">rtype</code><a class="headerlink" href="#mordred.QM.QM.rtype" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">builtins.float</span></code></p>
 </dd></dl>
 
 <dl class="classmethod">
-<dt id="mordred.Mopac.Mopac.from_json">
-<em class="property">classmethod </em><code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Mopac.Mopac.from_json" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.QM.QM.from_json">
+<em class="property">classmethod </em><code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.QM.QM.from_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create Descriptor instance from json dict.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -137,33 +138,33 @@
 </dd></dl>
 
 <dl class="method">
-<dt id="mordred.Mopac.Mopac.get_3D_mol">
-<code class="descname">get_3D_mol</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Mopac.Mopac.get_3D_mol" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.QM.QM.get_3D_mol">
+<code class="descname">get_3D_mol</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.QM.QM.get_3D_mol" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="mordred.Mopac.Mopac.get_parameter_dict">
-<code class="descname">get_parameter_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Mopac.Mopac.get_parameter_dict" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.QM.QM.get_parameter_dict">
+<code class="descname">get_parameter_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.QM.QM.get_parameter_dict" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.Mopac.Mopac.kekulize">
-<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Mopac.Mopac.kekulize" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.QM.QM.kekulize">
+<code class="descname">kekulize</code><em class="property"> = False</em><a class="headerlink" href="#mordred.QM.QM.kekulize" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.Mopac.Mopac.parameter_names">
-<code class="descname">parameter_names</code><em class="property"> = ('hamiltonian', 'type', 'timeout')</em><a class="headerlink" href="#mordred.Mopac.Mopac.parameter_names" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.QM.QM.parameter_names">
+<code class="descname">parameter_names</code><em class="property"> = ('hamiltonian', 'type', 'timeout')</em><a class="headerlink" href="#mordred.QM.QM.parameter_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="mordred.Mopac.Mopac.require_connected">
-<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.Mopac.Mopac.require_connected" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.QM.QM.require_connected">
+<code class="descname">require_connected</code><em class="property"> = False</em><a class="headerlink" href="#mordred.QM.QM.require_connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="mordred.Mopac.Mopac.to_json">
-<code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Mopac.Mopac.to_json" title="Permalink to this definition">¶</a></dt>
+<dt id="mordred.QM.QM.to_json">
+<code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.QM.QM.to_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert to json serializable dictionary.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -197,10 +198,10 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="mordred.PBF.html" title="mordred.PBF module"
+          <a href="mordred.RingCount.html" title="mordred.RingCount module"
              >next</a> |</li>
         <li class="right" >
-          <a href="mordred.MomentOfInertia.html" title="mordred.MomentOfInertia module"
+          <a href="mordred.Polarizability.html" title="mordred.Polarizability module"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">mordred 1.1.2a1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../mordred.html" >mordred package</a> &#187;</li>
