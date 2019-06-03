@@ -4,8 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>mordred._base &#8212; mordred 1.1.2a1 documentation</title>
     <link rel="stylesheet" href="../../_static/bizstyle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -45,8 +44,6 @@
     <form class="search" action="../../search.html" method="get">
       <input type="text" name="q" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -62,17 +59,14 @@
   <h1>Source code for mordred._base</h1><div class="highlight"><pre>
 <span></span><span class="sd">&quot;&quot;&quot;Mordred base package.&quot;&quot;&quot;</span>
 
-<span class="kn">from</span> <span class="nn">..error</span> <span class="k">import</span> <span class="n">MissingValueBase</span>
-
-<span class="kn">from</span> <span class="nn">.descriptor</span> <span class="k">import</span> <span class="p">(</span>
-    <span class="n">Descriptor</span><span class="p">,</span> <span class="n">UnaryOperatingDescriptor</span><span class="p">,</span>
-    <span class="n">ConstDescriptor</span><span class="p">,</span> <span class="n">BinaryOperatingDescriptor</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="kn">from</span> <span class="nn">.calculator</span> <span class="k">import</span> <span class="n">Calculator</span><span class="p">,</span> <span class="n">get_descriptors_from_module</span><span class="p">,</span> <span class="n">get_descriptors_in_module</span>
-<span class="kn">from</span> <span class="nn">.parallel</span> <span class="k">import</span> <span class="n">parallel</span>
 <span class="kn">from</span> <span class="nn">.util</span> <span class="k">import</span> <span class="n">is_missing</span>
+<span class="kn">from</span> <span class="nn">..error</span> <span class="k">import</span> <span class="n">MissingValueBase</span>
 <span class="kn">from</span> <span class="nn">.result</span> <span class="k">import</span> <span class="n">Result</span>
-
+<span class="kn">from</span> <span class="nn">.parallel</span> <span class="k">import</span> <span class="n">parallel</span>
+<span class="kn">from</span> <span class="nn">.calculator</span> <span class="k">import</span> <span class="n">Calculator</span><span class="p">,</span> <span class="n">get_descriptors_in_module</span><span class="p">,</span> <span class="n">get_descriptors_from_module</span>
+<span class="kn">from</span> <span class="nn">.descriptor</span> <span class="k">import</span> <span class="p">(</span>
+    <span class="n">Descriptor</span><span class="p">,</span> <span class="n">ConstDescriptor</span><span class="p">,</span> <span class="n">UnaryOperatingDescriptor</span><span class="p">,</span> <span class="n">BinaryOperatingDescriptor</span><span class="p">,</span>
+<span class="p">)</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span>
     <span class="s2">&quot;Descriptor&quot;</span><span class="p">,</span>
@@ -179,7 +173,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2016, Hirotomo Moriwaki.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.4.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.1.
     </div>
   </body>
 </html>
