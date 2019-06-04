@@ -102,10 +102,8 @@
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">{</span>
             <span class="s2">&quot;result&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">(</span>
-                <span class="n">D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">),</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">,</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">kekulize</span><span class="p">,</span>
-            <span class="p">),</span>
+                <span class="n">D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">kekulize</span>
+            <span class="p">)</span>
         <span class="p">}</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>

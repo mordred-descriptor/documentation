@@ -62,9 +62,7 @@
 <span class="kn">from</span> <span class="nn">._base</span> <span class="k">import</span> <span class="n">Descriptor</span>
 <span class="kn">from</span> <span class="nn">.BondCount</span> <span class="k">import</span> <span class="n">BondCount</span>
 
-<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="s2">&quot;RotatableBondsCount&quot;</span><span class="p">,</span> <span class="s2">&quot;RotatableBondsRatio&quot;</span><span class="p">,</span>
-<span class="p">)</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;RotatableBondsCount&quot;</span><span class="p">,</span> <span class="s2">&quot;RotatableBondsRatio&quot;</span><span class="p">)</span>
 
 
 <span class="k">class</span> <span class="nc">RotatableBondsBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
@@ -116,10 +114,7 @@
         <span class="k">return</span> <span class="s2">&quot;RotRatio&quot;</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">{</span>
-            <span class="s2">&quot;nB&quot;</span><span class="p">:</span> <span class="n">BondCount</span><span class="p">(</span><span class="s2">&quot;heavy&quot;</span><span class="p">),</span>
-            <span class="s2">&quot;nRot&quot;</span><span class="p">:</span> <span class="n">RotatableBondsCount</span><span class="p">(),</span>
-        <span class="p">}</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;nB&quot;</span><span class="p">:</span> <span class="n">BondCount</span><span class="p">(</span><span class="s2">&quot;heavy&quot;</span><span class="p">),</span> <span class="s2">&quot;nRot&quot;</span><span class="p">:</span> <span class="n">RotatableBondsCount</span><span class="p">()}</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nRot</span><span class="p">,</span> <span class="n">nB</span><span class="p">):</span>
         <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">rethrow_zerodiv</span><span class="p">():</span>

@@ -59,9 +59,7 @@
   <h1>Source code for mordred.Aromatic</h1><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">._base</span> <span class="k">import</span> <span class="n">Descriptor</span>
 
-<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="s2">&quot;AromaticAtomsCount&quot;</span><span class="p">,</span> <span class="s2">&quot;AromaticBondsCount&quot;</span><span class="p">,</span>
-<span class="p">)</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;AromaticAtomsCount&quot;</span><span class="p">,</span> <span class="s2">&quot;AromaticBondsCount&quot;</span><span class="p">)</span>
 
 
 <span class="k">class</span> <span class="nc">AromaticBase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
@@ -91,11 +89,7 @@
         <span class="k">return</span> <span class="s2">&quot;aromatic atoms count&quot;</span></div>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span>
-            <span class="mi">1</span>
-            <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">()</span>
-            <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">GetIsAromatic</span><span class="p">()</span>
-        <span class="p">)</span></div>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">()</span> <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">GetIsAromatic</span><span class="p">())</span></div>
 
 
 <div class="viewcode-block" id="AromaticBondsCount"><a class="viewcode-back" href="../../api/mordred.Aromatic.html#mordred.Aromatic.AromaticBondsCount">[docs]</a><span class="k">class</span> <span class="nc">AromaticBondsCount</span><span class="p">(</span><span class="n">AromaticBase</span><span class="p">):</span>
@@ -109,11 +103,7 @@
         <span class="k">return</span> <span class="s2">&quot;aromatic bonds count&quot;</span></div>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span>
-            <span class="mi">1</span>
-            <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetBonds</span><span class="p">()</span>
-            <span class="k">if</span> <span class="n">b</span><span class="o">.</span><span class="n">GetIsAromatic</span><span class="p">()</span>
-        <span class="p">)</span></div>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetBonds</span><span class="p">()</span> <span class="k">if</span> <span class="n">b</span><span class="o">.</span><span class="n">GetIsAromatic</span><span class="p">())</span></div>
 </pre></div>
 
           </div>

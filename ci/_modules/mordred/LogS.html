@@ -69,9 +69,7 @@
 <span class="kn">from</span> <span class="nn">._base</span> <span class="k">import</span> <span class="n">Descriptor</span>
 <span class="kn">from</span> <span class="nn">.Weight</span> <span class="k">import</span> <span class="n">Weight</span>
 
-<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="s2">&quot;LogS&quot;</span><span class="p">,</span>
-<span class="p">)</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;LogS&quot;</span><span class="p">,)</span>
 
 
 <span class="n">_smarts_logs</span> <span class="o">=</span> <span class="p">{</span>
@@ -90,13 +88,12 @@
     <span class="s2">&quot;F&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.21728</span><span class="p">,</span>
     <span class="s2">&quot;Cl&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.49721</span><span class="p">,</span>
     <span class="s2">&quot;Br&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.57982</span><span class="p">,</span>
-    <span class="s2">&quot;I&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.51547</span>
+    <span class="s2">&quot;I&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.51547</span><span class="p">,</span>
 <span class="p">}</span>
 
 
 <span class="n">_smarts_logs_molecules</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">(</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmarts</span><span class="p">(</span><span class="n">smarts</span><span class="p">),</span> <span class="n">log</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">smarts</span><span class="p">,</span> <span class="n">log</span> <span class="ow">in</span> <span class="n">_smarts_logs</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+    <span class="p">(</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmarts</span><span class="p">(</span><span class="n">smarts</span><span class="p">),</span> <span class="n">log</span><span class="p">)</span> <span class="k">for</span> <span class="n">smarts</span><span class="p">,</span> <span class="n">log</span> <span class="ow">in</span> <span class="n">_smarts_logs</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
 <span class="p">]</span>
 
 
@@ -117,9 +114,7 @@
         <span class="k">yield</span> <span class="bp">cls</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">{</span>
-            <span class="s2">&quot;MW&quot;</span><span class="p">:</span> <span class="n">Weight</span><span class="p">(</span><span class="n">exact</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
-        <span class="p">}</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;MW&quot;</span><span class="p">:</span> <span class="n">Weight</span><span class="p">(</span><span class="n">exact</span><span class="o">=</span><span class="kc">False</span><span class="p">)}</span>
 
 <div class="viewcode-block" id="LogS.description"><a class="viewcode-back" href="../../api/mordred.LogS.html#mordred.LogS.LogS.description">[docs]</a>    <span class="k">def</span> <span class="nf">description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s2">&quot;Filter-it™ LogS&quot;</span></div>

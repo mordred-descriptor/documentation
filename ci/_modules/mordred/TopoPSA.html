@@ -84,7 +84,7 @@
 
 <div class="viewcode-block" id="TopoPSA.description"><a class="viewcode-back" href="../../api/mordred.TopoPSA.html#mordred.TopoPSA.TopoPSA.description">[docs]</a>    <span class="k">def</span> <span class="nf">description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s2">&quot;topological polar surface area</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-            <span class="s2">&quot; (use only nitrogen and oxygen)&quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_no_only</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="s2">&quot; (use only nitrogen and oxygen)&quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_no_only</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
         <span class="p">)</span></div>
 
     <span class="nd">@classmethod</span>
@@ -118,8 +118,9 @@
 
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">_hydrogen_count</span><span class="p">(</span><span class="n">atom</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">atom</span><span class="o">.</span><span class="n">GetTotalNumHs</span><span class="p">()</span> <span class="o">+</span> \
-            <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">atom</span><span class="o">.</span><span class="n">GetNeighbors</span><span class="p">()</span> <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">GetAtomicNum</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">atom</span><span class="o">.</span><span class="n">GetTotalNumHs</span><span class="p">()</span> <span class="o">+</span> <span class="nb">sum</span><span class="p">(</span>
+            <span class="mi">1</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">atom</span><span class="o">.</span><span class="n">GetNeighbors</span><span class="p">()</span> <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">GetAtomicNum</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span>
+        <span class="p">)</span>
 
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">_bond_type_count</span><span class="p">(</span><span class="n">atom</span><span class="p">):</span>

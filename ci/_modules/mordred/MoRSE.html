@@ -78,7 +78,9 @@
 
 <div class="viewcode-block" id="MoRSE.description"><a class="viewcode-back" href="../../api/mordred.MoRSE.html#mordred.MoRSE.MoRSE.description">[docs]</a>    <span class="k">def</span> <span class="nf">description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s2">&quot;3D-MoRSE</span><span class="si">{}</span><span class="s2"> (distance = </span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-            <span class="s2">&quot;&quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prop</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="s2">&quot; weighted by </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="o">.</span><span class="n">get_long</span><span class="p">()),</span>
+            <span class="s2">&quot;&quot;</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prop</span> <span class="ow">is</span> <span class="kc">None</span>
+            <span class="k">else</span> <span class="s2">&quot; weighted by </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_prop</span><span class="o">.</span><span class="n">get_long</span><span class="p">()),</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_distance</span><span class="p">,</span>
         <span class="p">)</span></div>
 

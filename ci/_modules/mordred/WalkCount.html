@@ -113,27 +113,14 @@
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_total</span><span class="p">:</span>
             <span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
-            <span class="n">d</span><span class="p">[</span><span class="s2">&quot;W&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">,</span>
-                <span class="kc">False</span><span class="p">,</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_self_returning</span><span class="p">,</span>
-            <span class="p">)</span>
+            <span class="n">d</span><span class="p">[</span><span class="s2">&quot;W&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_self_returning</span><span class="p">)</span>
 
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-                <span class="n">d</span><span class="p">[</span><span class="s2">&quot;T&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">_order</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span>
-                    <span class="kc">True</span><span class="p">,</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">_self_returning</span><span class="p">,</span>
-                <span class="p">)</span>
+                <span class="n">d</span><span class="p">[</span><span class="s2">&quot;T&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_self_returning</span><span class="p">)</span>
 
             <span class="k">return</span> <span class="n">d</span>
 
-        <span class="k">return</span> <span class="p">{</span>
-            <span class="s2">&quot;An&quot;</span><span class="p">:</span> <span class="n">AdjacencyMatrix</span><span class="p">(</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">,</span>
-                <span class="n">order</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">,</span>
-            <span class="p">),</span>
-        <span class="p">}</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;An&quot;</span><span class="p">:</span> <span class="n">AdjacencyMatrix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">)}</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">An</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">W</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_total</span><span class="p">:</span>

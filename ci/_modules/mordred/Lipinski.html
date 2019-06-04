@@ -102,11 +102,7 @@
         <span class="p">}</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">LogP</span><span class="p">,</span> <span class="n">MW</span><span class="p">,</span> <span class="n">HBDon</span><span class="p">,</span> <span class="n">HBAcc</span><span class="p">):</span>
-        <span class="k">return</span>\
-            <span class="n">HBDon</span> <span class="o">&lt;=</span> <span class="mi">5</span> <span class="ow">and</span>\
-            <span class="n">HBAcc</span> <span class="o">&lt;=</span> <span class="mi">10</span> <span class="ow">and</span>\
-            <span class="n">MW</span> <span class="o">&lt;=</span> <span class="mi">500</span> <span class="ow">and</span>\
-            <span class="n">LogP</span> <span class="o">&lt;=</span> <span class="mi">5</span></div>
+        <span class="k">return</span> <span class="n">HBDon</span> <span class="o">&lt;=</span> <span class="mi">5</span> <span class="ow">and</span> <span class="n">HBAcc</span> <span class="o">&lt;=</span> <span class="mi">10</span> <span class="ow">and</span> <span class="n">MW</span> <span class="o">&lt;=</span> <span class="mi">500</span> <span class="ow">and</span> <span class="n">LogP</span> <span class="o">&lt;=</span> <span class="mi">5</span></div>
 
 
 <div class="viewcode-block" id="GhoseFilter"><a class="viewcode-back" href="../../api/mordred.Lipinski.html#mordred.Lipinski.GhoseFilter">[docs]</a><span class="k">class</span> <span class="nc">GhoseFilter</span><span class="p">(</span><span class="n">LipinskiLike</span><span class="p">):</span>
@@ -122,18 +118,15 @@
         <span class="k">return</span> <span class="s2">&quot;Ghose filter&quot;</span></div>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">{</span>
-            <span class="s2">&quot;LogP&quot;</span><span class="p">:</span> <span class="n">SLogP</span><span class="p">(),</span>
-            <span class="s2">&quot;MR&quot;</span><span class="p">:</span> <span class="n">SMR</span><span class="p">(),</span>
-            <span class="s2">&quot;MW&quot;</span><span class="p">:</span> <span class="n">Weight</span><span class="p">(),</span>
-        <span class="p">}</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;LogP&quot;</span><span class="p">:</span> <span class="n">SLogP</span><span class="p">(),</span> <span class="s2">&quot;MR&quot;</span><span class="p">:</span> <span class="n">SMR</span><span class="p">(),</span> <span class="s2">&quot;MW&quot;</span><span class="p">:</span> <span class="n">Weight</span><span class="p">()}</span>
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">MW</span><span class="p">,</span> <span class="n">LogP</span><span class="p">,</span> <span class="n">MR</span><span class="p">):</span>
-        <span class="k">return</span>\
-            <span class="p">(</span><span class="mi">160</span> <span class="o">&lt;=</span> <span class="n">MW</span> <span class="o">&lt;=</span> <span class="mi">480</span><span class="p">)</span> <span class="ow">and</span>\
-            <span class="p">(</span><span class="mi">20</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mi">70</span><span class="p">)</span> <span class="ow">and</span>\
-            <span class="p">(</span><span class="o">-</span><span class="mf">0.4</span> <span class="o">&lt;=</span> <span class="n">LogP</span> <span class="o">&lt;=</span> <span class="mf">5.6</span><span class="p">)</span> <span class="ow">and</span>\
-            <span class="p">(</span><span class="mi">40</span> <span class="o">&lt;=</span> <span class="n">MR</span> <span class="o">&lt;=</span> <span class="mi">130</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="p">(</span><span class="mi">160</span> <span class="o">&lt;=</span> <span class="n">MW</span> <span class="o">&lt;=</span> <span class="mi">480</span><span class="p">)</span>
+            <span class="ow">and</span> <span class="p">(</span><span class="mi">20</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mi">70</span><span class="p">)</span>
+            <span class="ow">and</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.4</span> <span class="o">&lt;=</span> <span class="n">LogP</span> <span class="o">&lt;=</span> <span class="mf">5.6</span><span class="p">)</span>
+            <span class="ow">and</span> <span class="p">(</span><span class="mi">40</span> <span class="o">&lt;=</span> <span class="n">MR</span> <span class="o">&lt;=</span> <span class="mi">130</span><span class="p">)</span>
+        <span class="p">)</span></div>
 </pre></div>
 
           </div>
