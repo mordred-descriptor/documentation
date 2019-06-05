@@ -4,8 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>mordred.ExtendedTopochemicalAtom module &#8212; mordred 1.1.2a1 documentation</title>
     <link rel="stylesheet" href="../_static/bizstyle.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -67,8 +66,6 @@
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -84,11 +81,10 @@
   <div class="section" id="module-mordred.ExtendedTopochemicalAtom">
 <span id="mordred-extendedtopochemicalatom-module"></span><h1>mordred.ExtendedTopochemicalAtom module<a class="headerlink" href="#module-mordred.ExtendedTopochemicalAtom" title="Permalink to this headline">¶</a></h1>
 <p>Extended Topochemical Atom(ETA) descriptor.</p>
-<dl class="docutils">
-<dt>References</dt>
-<dd><ul class="first last simple">
-<li><a class="reference external" href="https://dx.doi.org/10.1021/ci0342066">doi:10.1021/ci0342066</a></li>
-<li><a class="reference external" href="https://dx.doi.org/10.1016/j.jhazmat.2013.03.023">doi:10.1016/j.jhazmat.2013.03.023</a></li>
+<dl class="simple">
+<dt>References</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="https://dx.doi.org/10.1021/ci0342066">doi:10.1021/ci0342066</a></p></li>
+<li><p><a class="reference external" href="https://dx.doi.org/10.1016/j.jhazmat.2013.03.023">doi:10.1016/j.jhazmat.2013.03.023</a></p></li>
 </ul>
 </dd>
 </dl>
@@ -101,22 +97,18 @@
 \[\alpha = \sum_{i = 1}^A \frac{Z_i - Z_i^v}{Z_i^v} \cdot \frac{1}{PN_i - 1}\]</div>
 <p>where <span class="math notranslate nohighlight">\(Z_i\)</span> and <span class="math notranslate nohighlight">\(Z_i^v\)</span> are number of total and valence electons,
 <span class="math notranslate nohighlight">\(PN\)</span> is periodic number.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>averaged</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – averaged by number of heavy count</li>
-<li><strong>reference</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – use reference alkane
-(same graph structure, but all atoms are carbon and all bonds are single bond)</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>averaged</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – averaged by number of heavy count</p></li>
+<li><p><strong>reference</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – use reference alkane
+(same graph structure, but all atoms are carbon and all bonds are single bond)</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">reference and valence of any atoms &gt; 4</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>reference and valence of any atoms &gt; 4</p>
+</dd>
+</dl>
 <dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaCoreCount.since">
 <code class="descname">since</code><em class="property"> = StrictVersion ('1.0')</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount.since" title="Permalink to this definition">¶</a></dt>
@@ -128,6 +120,11 @@
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaCoreCount.config">
+<code class="descname">config</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount.config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaCoreCount.explicit_hydrogens">
 <code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -136,18 +133,17 @@
 <dt id="mordred.ExtendedTopochemicalAtom.EtaCoreCount.from_json">
 <em class="property">classmethod </em><code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount.from_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create Descriptor instance from json dict.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a>) – descriptor dict</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
@@ -190,16 +186,14 @@
 <dt id="mordred.ExtendedTopochemicalAtom.EtaCoreCount.to_json">
 <code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount.to_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert to json serializable dictionary.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)">dict</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)">dict</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -213,14 +207,11 @@
 \[{\rm shape}_t = \frac{\alpha_t}{\alpha}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\alpha_t\)</span> is p(alpha value only atoms which bond to 1 heavy atom),
 y(3), or x(4).</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – one of shape_types</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – one of shape_types</p>
+</dd>
+</dl>
 <dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaShapeIndex.since">
 <code class="descname">since</code><em class="property"> = StrictVersion ('1.0')</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.since" title="Permalink to this definition">¶</a></dt>
@@ -237,6 +228,11 @@ y(3), or x(4).</p>
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaShapeIndex.config">
+<code class="descname">config</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaShapeIndex.explicit_hydrogens">
 <code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -245,18 +241,17 @@ y(3), or x(4).</p>
 <dt id="mordred.ExtendedTopochemicalAtom.EtaShapeIndex.from_json">
 <em class="property">classmethod </em><code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.from_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create Descriptor instance from json dict.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a>) – descriptor dict</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
@@ -299,16 +294,14 @@ y(3), or x(4).</p>
 <dt id="mordred.ExtendedTopochemicalAtom.EtaShapeIndex.to_json">
 <code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.to_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert to json serializable dictionary.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)">dict</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)">dict</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -337,18 +330,14 @@ y(3), or x(4).</p>
 <p>where <span class="math notranslate nohighlight">\(\pi_{ij}\)</span> is pi bond count between i and j.</p>
 <div class="math notranslate nohighlight">
 \[\beta = \beta^{\rm s} + \beta^{\rm ns}\]</div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – one of beta_types</li>
-<li><strong>averaged</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – averaged by heavy atom count</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – one of beta_types</p></li>
+<li><p><strong>averaged</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – averaged by heavy atom count</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaVEMCount.since">
 <code class="descname">since</code><em class="property"> = StrictVersion ('1.0')</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.since" title="Permalink to this definition">¶</a></dt>
@@ -365,6 +354,11 @@ y(3), or x(4).</p>
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaVEMCount.config">
+<code class="descname">config</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaVEMCount.explicit_hydrogens">
 <code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -373,18 +367,17 @@ y(3), or x(4).</p>
 <dt id="mordred.ExtendedTopochemicalAtom.EtaVEMCount.from_json">
 <em class="property">classmethod </em><code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.from_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create Descriptor instance from json dict.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a>) – descriptor dict</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
@@ -427,16 +420,14 @@ y(3), or x(4).</p>
 <dt id="mordred.ExtendedTopochemicalAtom.EtaVEMCount.to_json">
 <code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.to_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert to json serializable dictionary.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)">dict</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)">dict</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -451,22 +442,18 @@ y(3), or x(4).</p>
 <p>where <span class="math notranslate nohighlight">\(r_{ij}\)</span> is graph distance.</p>
 <div class="math notranslate nohighlight">
 \[\eta^{\rm local} = \sum_{i &lt; j, r_{ij} = 1} \left( \gamma_i \gamma_j \right)^{0.5}\]</div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>reference</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – use reference alkane.</li>
-<li><strong>local</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – use <span class="math notranslate nohighlight">\(\eta^{\rm local}\)</span></li>
-<li><strong>averaged</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – averaged</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>reference</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – use reference alkane.</p></li>
+<li><p><strong>local</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – use <span class="math notranslate nohighlight">\(\eta^{\rm local}\)</span></p></li>
+<li><p><strong>averaged</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – averaged</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">reference and valence of any atoms &gt; 4</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>reference and valence of any atoms &gt; 4</p>
+</dd>
+</dl>
 <dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.since">
 <code class="descname">since</code><em class="property"> = StrictVersion ('1.0')</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.since" title="Permalink to this definition">¶</a></dt>
@@ -478,6 +465,11 @@ y(3), or x(4).</p>
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.config">
+<code class="descname">config</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.explicit_hydrogens">
 <code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -486,18 +478,17 @@ y(3), or x(4).</p>
 <dt id="mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.from_json">
 <em class="property">classmethod </em><code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.from_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create Descriptor instance from json dict.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a>) – descriptor dict</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
@@ -540,16 +531,14 @@ y(3), or x(4).</p>
 <dt id="mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.to_json">
 <code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.to_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert to json serializable dictionary.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)">dict</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)">dict</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -562,18 +551,14 @@ y(3), or x(4).</p>
 <div class="math notranslate nohighlight">
 \[\eta^{\rm F} = \eta^{\rm R} - \eta\]</div>
 <p>where <span class="math notranslate nohighlight">\(\eta^{\rm R}\)</span> is eta value for reference alkane.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>local</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – use local eta</li>
-<li><strong>averaged</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – averaged</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>local</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – use local eta</p></li>
+<li><p><strong>averaged</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – averaged</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.since">
 <code class="descname">since</code><em class="property"> = StrictVersion ('1.0')</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.since" title="Permalink to this definition">¶</a></dt>
@@ -585,6 +570,11 @@ y(3), or x(4).</p>
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.config">
+<code class="descname">config</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.explicit_hydrogens">
 <code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -593,18 +583,17 @@ y(3), or x(4).</p>
 <dt id="mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.from_json">
 <em class="property">classmethod </em><code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.from_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create Descriptor instance from json dict.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a>) – descriptor dict</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
@@ -647,16 +636,14 @@ y(3), or x(4).</p>
 <dt id="mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.to_json">
 <code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.to_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert to json serializable dictionary.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)">dict</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)">dict</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -670,21 +657,17 @@ y(3), or x(4).</p>
 \[\eta^{\rm B} = \eta^{\rm local,N} - \eta^{local,R} + 0.086 N^{\rm R}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\eta^{\rm local,N}\)</span> is <span class="math notranslate nohighlight">\(\eta^{\rm local}\)</span> for normal alkane.
 <span class="math notranslate nohighlight">\(N^{\rm R}\)</span> is ring count.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>ring</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – use ring count or not</li>
-<li><strong>averaged</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – averaged</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ring</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – use ring count or not</p></li>
+<li><p><strong>averaged</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – averaged</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">NaN when A &lt; 2</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>NaN when A &lt; 2</p>
+</dd>
+</dl>
 <dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.since">
 <code class="descname">since</code><em class="property"> = StrictVersion ('1.0')</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.since" title="Permalink to this definition">¶</a></dt>
@@ -696,6 +679,11 @@ y(3), or x(4).</p>
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.config">
+<code class="descname">config</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.explicit_hydrogens">
 <code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -704,18 +692,17 @@ y(3), or x(4).</p>
 <dt id="mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.from_json">
 <em class="property">classmethod </em><code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.from_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create Descriptor instance from json dict.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a>) – descriptor dict</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
@@ -758,16 +745,14 @@ y(3), or x(4).</p>
 <dt id="mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.to_json">
 <code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.to_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert to json serializable dictionary.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)">dict</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)">dict</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -779,14 +764,11 @@ y(3), or x(4).</p>
 <p>ETA delta alpha descriptor.</p>
 <div class="math notranslate nohighlight">
 \[ \begin{align}\begin{aligned}\Delta\alpha_{\rm A} = \max\left(\frac{\alpha - \alpha^{\rm R}}{A}, 0\right)\\\Delta\alpha_{\rm B} = \max\left(\frac{\alpha^{\rm R} - \alpha}{A}, 0\right)\end{aligned}\end{align} \]</div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – one of delta_types</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – one of delta_types</p>
+</dd>
+</dl>
 <dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.since">
 <code class="descname">since</code><em class="property"> = StrictVersion ('1.0')</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.since" title="Permalink to this definition">¶</a></dt>
@@ -803,6 +785,11 @@ y(3), or x(4).</p>
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.config">
+<code class="descname">config</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.explicit_hydrogens">
 <code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -811,18 +798,17 @@ y(3), or x(4).</p>
 <dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.from_json">
 <em class="property">classmethod </em><code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.from_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create Descriptor instance from json dict.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a>) – descriptor dict</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
@@ -865,16 +851,14 @@ y(3), or x(4).</p>
 <dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.to_json">
 <code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.to_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert to json serializable dictionary.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)">dict</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)">dict</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -887,32 +871,29 @@ y(3), or x(4).</p>
 <div class="math notranslate nohighlight">
 \[\epsilon^i = \frac{\epsilon^i}{N^i} (i \leq 4)
 \epsilon^5 = \frac{\epsilon^2 + \epsilon^{\rm XH}}{N^2 + N^{\rm XH}}\]</div>
-<dl class="docutils">
-<dt>types(i)</dt>
-<dd><dl class="first last docutils">
-<dt>1</dt>
-<dd>all atoms</dd>
-<dt>2</dt>
-<dd>heavy atoms</dd>
-<dt>3</dt>
-<dd>all atoms of reference alkane</dd>
-<dt>4</dt>
-<dd>all atoms of saturated carbon skeleton(reduce C-C bonds)</dd>
-<dt>XH</dt>
-<dd>hydrogens bond to hetero atoms</dd>
+<dl class="simple">
+<dt>types(i)</dt><dd><dl class="simple">
+<dt>1</dt><dd><p>all atoms</p>
+</dd>
+<dt>2</dt><dd><p>heavy atoms</p>
+</dd>
+<dt>3</dt><dd><p>all atoms of reference alkane</p>
+</dd>
+<dt>4</dt><dd><p>all atoms of saturated carbon skeleton(reduce C-C bonds)</p>
+</dd>
+<dt>XH</dt><dd><p>hydrogens bond to hetero atoms</p>
+</dd>
 </dl>
 </dd>
 </dl>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – one of epsilon_types</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">type = 3 and valence of any atoms &gt; 4</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – one of epsilon_types</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>type = 3 and valence of any atoms &gt; 4</p>
+</dd>
+</dl>
 <dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaEpsilon.since">
 <code class="descname">since</code><em class="property"> = StrictVersion ('1.0')</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.since" title="Permalink to this definition">¶</a></dt>
@@ -937,22 +918,26 @@ The class bool is a subclass of the class int, and cannot be subclassed.</p>
 <code class="descname">epsilon_types</code><em class="property"> = (1, 2, 3, 4, 5)</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.epsilon_types" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaEpsilon.config">
+<code class="descname">config</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="classmethod">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaEpsilon.from_json">
 <em class="property">classmethod </em><code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.from_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create Descriptor instance from json dict.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a>) – descriptor dict</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
@@ -995,16 +980,14 @@ The class bool is a subclass of the class int, and cannot be subclassed.</p>
 <dt id="mordred.ExtendedTopochemicalAtom.EtaEpsilon.to_json">
 <code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.to_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert to json serializable dictionary.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)">dict</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)">dict</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -1016,14 +999,11 @@ The class bool is a subclass of the class int, and cannot be subclassed.</p>
 <p>ETA delta epsilon descriptor.</p>
 <div class="math notranslate nohighlight">
 \[ \begin{align}\begin{aligned}\Delta \epsilon^{\rm A} = \epsilon^1 - \epsilon^3\\\Delta \epsilon^{\rm B} = \epsilon^1 - \epsilon^4\\\Delta \epsilon^{\rm C} = \epsilon^3 - \epsilon^4\\\Delta \epsilon^{\rm D} = \epsilon^2 - \epsilon^5\end{aligned}\end{align} \]</div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – one of delta_epsilon_types</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – one of delta_epsilon_types</p>
+</dd>
+</dl>
 <dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.since">
 <code class="descname">since</code><em class="property"> = StrictVersion ('1.0')</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.since" title="Permalink to this definition">¶</a></dt>
@@ -1040,6 +1020,11 @@ The class bool is a subclass of the class int, and cannot be subclassed.</p>
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.config">
+<code class="descname">config</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.explicit_hydrogens">
 <code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -1048,18 +1033,17 @@ The class bool is a subclass of the class int, and cannot be subclassed.</p>
 <dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.from_json">
 <em class="property">classmethod </em><code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.from_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create Descriptor instance from json dict.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a>) – descriptor dict</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
@@ -1102,16 +1086,14 @@ The class bool is a subclass of the class int, and cannot be subclassed.</p>
 <dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.to_json">
 <code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.to_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert to json serializable dictionary.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)">dict</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)">dict</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -1123,14 +1105,11 @@ The class bool is a subclass of the class int, and cannot be subclassed.</p>
 <p>ETA delta beta descriptor.</p>
 <div class="math notranslate nohighlight">
 \[\Delta\beta = \beta^{\rm ns} - \beta^{\rm s}\]</div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>averaged</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – averaged</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>averaged</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – averaged</p>
+</dd>
+</dl>
 <dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.since">
 <code class="descname">since</code><em class="property"> = StrictVersion ('1.0')</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.since" title="Permalink to this definition">¶</a></dt>
@@ -1142,6 +1121,11 @@ The class bool is a subclass of the class int, and cannot be subclassed.</p>
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.config">
+<code class="descname">config</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.explicit_hydrogens">
 <code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -1150,18 +1134,17 @@ The class bool is a subclass of the class int, and cannot be subclassed.</p>
 <dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.from_json">
 <em class="property">classmethod </em><code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.from_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create Descriptor instance from json dict.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a>) – descriptor dict</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
@@ -1204,16 +1187,14 @@ The class bool is a subclass of the class int, and cannot be subclassed.</p>
 <dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.to_json">
 <code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.to_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert to json serializable dictionary.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)">dict</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)">dict</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -1236,6 +1217,11 @@ The class bool is a subclass of the class int, and cannot be subclassed.</p>
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaPsi.config">
+<code class="descname">config</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaPsi.config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaPsi.explicit_hydrogens">
 <code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaPsi.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -1244,18 +1230,17 @@ The class bool is a subclass of the class int, and cannot be subclassed.</p>
 <dt id="mordred.ExtendedTopochemicalAtom.EtaPsi.from_json">
 <em class="property">classmethod </em><code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaPsi.from_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create Descriptor instance from json dict.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a>) – descriptor dict</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
@@ -1298,16 +1283,14 @@ The class bool is a subclass of the class int, and cannot be subclassed.</p>
 <dt id="mordred.ExtendedTopochemicalAtom.EtaPsi.to_json">
 <code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaPsi.to_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert to json serializable dictionary.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)">dict</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)">dict</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -1319,14 +1302,11 @@ The class bool is a subclass of the class int, and cannot be subclassed.</p>
 <p>ETA delta psi descriptor.</p>
 <div class="math notranslate nohighlight">
 \[ \begin{align}\begin{aligned}\Delta\psi_{\rm A} = \max\left(0.714 - \psi_1, 0\right)\\\Delta\psi_{\rm B} = \max\left(\psi_1 - 0.714, 0\right)\end{aligned}\end{align} \]</div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – one of delta_psi_types</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – one of delta_psi_types</p>
+</dd>
+</dl>
 <dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.since">
 <code class="descname">since</code><em class="property"> = StrictVersion ('1.0')</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.since" title="Permalink to this definition">¶</a></dt>
@@ -1343,6 +1323,11 @@ The class bool is a subclass of the class int, and cannot be subclassed.</p>
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.config">
+<code class="descname">config</code><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.explicit_hydrogens">
 <code class="descname">explicit_hydrogens</code><em class="property"> = False</em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.explicit_hydrogens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -1351,18 +1336,17 @@ The class bool is a subclass of the class int, and cannot be subclassed.</p>
 <dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.from_json">
 <em class="property">classmethod </em><code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.from_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create Descriptor instance from json dict.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a>) – descriptor dict</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
@@ -1405,16 +1389,14 @@ The class bool is a subclass of the class int, and cannot be subclassed.</p>
 <dt id="mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.to_json">
 <code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.to_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert to json serializable dictionary.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)">dict</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)">dict</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -1449,7 +1431,7 @@ The class bool is a subclass of the class int, and cannot be subclassed.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2016, Hirotomo Moriwaki.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.4.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.1.
     </div>
   </body>
 </html>
