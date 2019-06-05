@@ -99,7 +99,7 @@
         <span class="s2">&quot;_cache&quot;</span><span class="p">,</span>
         <span class="s2">&quot;_debug&quot;</span><span class="p">,</span>
         <span class="s2">&quot;_progress_bar&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;config&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;_config&quot;</span><span class="p">,</span>
     <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__setstate__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
@@ -150,11 +150,11 @@
             <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span>
             <span class="p">(),</span>
             <span class="p">{</span>
+                <span class="s2">&quot;_config&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_config</span><span class="p">,</span>
                 <span class="s2">&quot;_descriptors&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_descriptors</span><span class="p">,</span>
                 <span class="s2">&quot;_explicit_hydrogens&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_explicit_hydrogens</span><span class="p">,</span>
                 <span class="s2">&quot;_kekulizes&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_kekulizes</span><span class="p">,</span>
                 <span class="s2">&quot;_require_3D&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_require_3D</span><span class="p">,</span>
-                <span class="s2">&quot;config&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">,</span>
             <span class="p">},</span>
         <span class="p">)</span>
 
@@ -175,9 +175,13 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_kekulizes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_require_3D</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_debug</span> <span class="o">=</span> <span class="kc">False</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">config</span> <span class="o">=</span> <span class="n">config</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_config</span> <span class="o">=</span> <span class="n">config</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">descs</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="n">version</span><span class="p">,</span> <span class="n">ignore_3D</span><span class="o">=</span><span class="n">ignore_3D</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Calculator.config"><a class="viewcode-back" href="../../../mordred.html#mordred.Calculator.config">[docs]</a>    <span class="k">def</span> <span class="nf">config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">configs</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Set global configuration.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_config</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">configs</span><span class="p">)</span></div>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">descriptors</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
