@@ -4,16 +4,17 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>mordred.RingCount &#8212; mordred 1.1.2a1 documentation</title>
+    <meta charset="utf-8" />
+    <title>mordred.RingCount &#8212; mordred 1.2.1a1 documentation</title>
     <link rel="stylesheet" href="../../_static/bizstyle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/bizstyle.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -31,7 +32,7 @@
         <li class="right" >
           <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">mordred 1.1.2a1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">mordred 1.2.1a1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Module code</a> &#187;</li> 
       </ul>
     </div>
@@ -43,8 +44,6 @@
     <form class="search" action="../../search.html" method="get">
       <input type="text" name="q" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -148,10 +147,7 @@
             <span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;aliphatic &quot;</span>
 
         <span class="k">return</span> <span class="s2">&quot;</span><span class="si">{}{}{}{}</span><span class="s2">ring count&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-            <span class="n">o</span><span class="p">,</span>
-            <span class="n">a</span><span class="p">,</span>
-            <span class="s2">&quot;fused &quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fused</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;hetero &quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hetero</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="n">o</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="s2">&quot;fused &quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fused</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;hetero &quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hetero</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
         <span class="p">)</span></div>
 
     <span class="nd">@classmethod</span>
@@ -192,7 +188,9 @@
     <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_greater</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fused</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_aromatic</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hetero</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">greater</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fused</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">aromatic</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">hetero</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">greater</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fused</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">aromatic</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">hetero</span><span class="o">=</span><span class="kc">None</span>
+    <span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_order</span> <span class="o">=</span> <span class="n">order</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_greater</span> <span class="o">=</span> <span class="n">greater</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_fused</span> <span class="o">=</span> <span class="n">fused</span>
@@ -200,9 +198,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_hetero</span> <span class="o">=</span> <span class="n">hetero</span>
 
     <span class="k">def</span> <span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">{</span>
-            <span class="s2">&quot;Rs&quot;</span><span class="p">:</span> <span class="p">(</span><span class="n">FusedRings</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fused</span> <span class="k">else</span> <span class="n">Rings</span><span class="p">)(),</span>
-        <span class="p">}</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;Rs&quot;</span><span class="p">:</span> <span class="p">(</span><span class="n">FusedRings</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fused</span> <span class="k">else</span> <span class="n">Rings</span><span class="p">)()}</span>
 
     <span class="k">def</span> <span class="nf">_check_order</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">R</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -237,10 +233,9 @@
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Rs</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span>
-            <span class="mi">1</span> <span class="k">for</span> <span class="n">R</span> <span class="ow">in</span> <span class="n">Rs</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_order</span><span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="ow">and</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_check_arom</span><span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="ow">and</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_check_hetero</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
+            <span class="mi">1</span>
+            <span class="k">for</span> <span class="n">R</span> <span class="ow">in</span> <span class="n">Rs</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_order</span><span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_arom</span><span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_hetero</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
         <span class="p">)</span>
 
     <span class="n">rtype</span> <span class="o">=</span> <span class="nb">int</span></div>
@@ -260,13 +255,13 @@
         <li class="right" >
           <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">mordred 1.1.2a1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">mordred 1.2.1a1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../index.html" >Module code</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2016, Hirotomo Moriwaki.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.5.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.1.
     </div>
   </body>
 </html>

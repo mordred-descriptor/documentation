@@ -4,16 +4,17 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>mordred package &#8212; mordred 1.1.2a1 documentation</title>
+    <meta charset="utf-8" />
+    <title>mordred package &#8212; mordred 1.2.1a1 documentation</title>
     <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/bizstyle.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -39,7 +40,7 @@
         <li class="right" >
           <a href="introduction.html" title="Introduction"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">mordred 1.1.2a1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">mordred 1.2.1a1 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -63,8 +64,6 @@
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -88,92 +87,76 @@
 <dt id="mordred.Result.fill_missing">
 <code class="descname">fill_missing</code><span class="sig-paren">(</span><em>value=nan</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/result.html#Result.fill_missing"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Result.fill_missing" title="Permalink to this definition">¶</a></dt>
 <dd><p>Replace missing value to “value”.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> – value that missing value is replaced</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Result</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>value</strong> – value that missing value is replaced</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Result</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="mordred.Result.drop_missing">
 <code class="descname">drop_missing</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/result.html#Result.drop_missing"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Result.drop_missing" title="Permalink to this definition">¶</a></dt>
 <dd><p>Delete missing value.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Result</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Result</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="mordred.Result.items">
 <code class="descname">items</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/result.html#Result.items"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Result.items" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get items.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Iterable[(Descriptor, value)]</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Iterable[(Descriptor, value)]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="mordred.Result.keys">
 <code class="descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/result.html#Result.keys"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Result.keys" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get descriptors instances.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Iterable[Descriptor]</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Iterable[Descriptor]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="mordred.Result.values">
 <code class="descname">values</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/result.html#Result.values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Result.values" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get descriptor values.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Iterable[value]</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Iterable[value]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="mordred.Result.asdict">
 <code class="descname">asdict</code><span class="sig-paren">(</span><em>rawkey=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/result.html#Result.asdict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Result.asdict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert Result to dict.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>rawkey</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)"><em>bool</em></a>) – <ul class="simple">
-<li>True: dict key is Descriptor instance</li>
-<li>False: dict key is str</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>rawkey</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – <ul class="simple">
+<li><p>True: dict key is Descriptor instance</p></li>
+<li><p>False: dict key is str</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
-</tr>
-</tbody>
-</table>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="attribute">
@@ -211,23 +194,26 @@
 <dl class="attribute">
 <dt id="mordred.Descriptor.mol">
 <code class="descname">mol</code><a class="headerlink" href="#mordred.Descriptor.mol" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>rdkit.Mol</em> – target molecule</p>
+<dd><p>target molecule</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>rdkit.Mol</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="classmethod">
 <dt id="mordred.Descriptor.preset">
 <em class="property">classmethod </em><code class="descname">preset</code><span class="sig-paren">(</span><em>version</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/descriptor.html#Descriptor.preset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Descriptor.preset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate preset descriptor instances.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">preset descriptors</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">Iterable[<a class="reference internal" href="#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a>]</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>preset descriptors</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Iterable[<a class="reference internal" href="#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a>]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
@@ -235,118 +221,97 @@
 <code class="descname">parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/descriptor.html#Descriptor.parameters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Descriptor.parameters" title="Permalink to this definition">¶</a></dt>
 <dd><p><strong>[abstractmethod]</strong> get __init__ arguments of this descriptor instance.</p>
 <p>this method used in pickling and identifying descriptor instance.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">tuple of __init__ arguments</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.6)">tuple</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>tuple of __init__ arguments</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.7)">tuple</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="mordred.Descriptor.to_json">
 <code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/descriptor.html#Descriptor.to_json"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Descriptor.to_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert to json serializable dictionary.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of descriptor</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.6)">dict</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)">dict</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="mordred.Descriptor.calculate">
 <code class="descname">calculate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/descriptor.html#Descriptor.calculate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Descriptor.calculate" title="Permalink to this definition">¶</a></dt>
 <dd><p><strong>[abstractmethod]</strong> calculate descriptor value.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">rtype</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>rtype</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="mordred.Descriptor.dependencies">
 <code class="descname">dependencies</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/descriptor.html#Descriptor.dependencies"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Descriptor.dependencies" title="Permalink to this definition">¶</a></dt>
 <dd><p>Descriptor dependencies.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict[str, Descriptor or None] or None</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dict[str, Descriptor or None] or None</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.Descriptor.as_argument">
 <code class="descname">as_argument</code><a class="headerlink" href="#mordred.Descriptor.as_argument" title="Permalink to this definition">¶</a></dt>
 <dd><p>Argument representation of descriptor.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">any</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>any</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="attribute">
 <dt>
 <code class="descname">mol</code></dt>
 <dd><p>Get molecule.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">rdkit.Mol</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>rdkit.Mol</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="mordred.Descriptor.coord">
 <code class="descname">coord</code><a class="headerlink" href="#mordred.Descriptor.coord" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get 3D coordinate.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">coordinate matrix</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">numpy.array[3, N]</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>coordinate matrix</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>numpy.array[3, N]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="mordred.Descriptor.fail">
 <code class="descname">fail</code><span class="sig-paren">(</span><em>exception</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/descriptor.html#Descriptor.fail"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Descriptor.fail" title="Permalink to this definition">¶</a></dt>
 <dd><p>Raise known exception and return missing value.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">MissingValueException</span></code></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>MissingValueException</strong> – </p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
@@ -365,84 +330,79 @@
 <dt id="mordred.Descriptor.from_json">
 <em class="property">classmethod </em><code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Descriptor.from_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create Descriptor instance from json dict.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.6)"><em>dict</em></a>) – descriptor dict</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">descriptor</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="mordred.Calculator">
-<em class="property">class </em><code class="descclassname">mordred.</code><code class="descname">Calculator</code><span class="sig-paren">(</span><em>descs=None</em>, <em>version=None</em>, <em>ignore_3D=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/calculator.html#Calculator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Calculator" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">mordred.</code><code class="descname">Calculator</code><span class="sig-paren">(</span><em>descs=None</em>, <em>version=None</em>, <em>ignore_3D=False</em>, <em>config=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/calculator.html#Calculator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Calculator" title="Permalink to this definition">¶</a></dt>
 <dd><p>descriptor calculator.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>descs</strong> – see Calculator.register() method</li>
-<li><strong>ignore_3D</strong> – see Calculator.register() method</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>descs</strong> – see Calculator.register() method</p></li>
+<li><p><strong>ignore_3D</strong> – see Calculator.register() method</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <dl class="classmethod">
 <dt id="mordred.Calculator.from_json">
 <em class="property">classmethod </em><code class="descname">from_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/calculator.html#Calculator.from_json"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Calculator.from_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create Calculator from json descriptor objects.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)"><em>list</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.6)"><em>dict</em></a>) – descriptors to register</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">calculator</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#mordred.Calculator" title="mordred.Calculator">Calculator</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a>) – descriptors to register</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>calculator</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#mordred.Calculator" title="mordred.Calculator">Calculator</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="mordred.Calculator.register_json">
 <code class="descname">register_json</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/calculator.html#Calculator.register_json"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Calculator.register_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register Descriptors from json descriptor objects.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)"><em>list</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.6)"><em>dict</em></a>) – descriptors to register</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a>) – descriptors to register</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="mordred.Calculator.to_json">
 <code class="descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/calculator.html#Calculator.to_json"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Calculator.to_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert descriptors to json serializable data.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">descriptors</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)">list</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>descriptors</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)">list</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="mordred.Calculator.config">
+<code class="descname">config</code><span class="sig-paren">(</span><em>**configs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/calculator.html#Calculator.config"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Calculator.config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set global configuration.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -450,124 +410,121 @@
 <code class="descname">descriptors</code><a class="headerlink" href="#mordred.Calculator.descriptors" title="Permalink to this definition">¶</a></dt>
 <dd><p>All descriptors.</p>
 <p>you can get/set/delete descriptor.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">registered descriptors</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.6)">tuple</a>[<a class="reference internal" href="#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a>]</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>registered descriptors</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.7)">tuple</a>[<a class="reference internal" href="#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a>]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="mordred.Calculator.register">
 <code class="descname">register</code><span class="sig-paren">(</span><em>desc</em>, <em>version=None</em>, <em>ignore_3D=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/calculator.html#Calculator.register"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Calculator.register" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register descriptors.</p>
-<dl class="docutils">
-<dt>Descriptor-like:</dt>
-<dd><ul class="first last simple">
-<li>Descriptor instance: self</li>
-<li>Descriptor class: use Descriptor.preset() method</li>
-<li>module: use Descriptor-likes in module</li>
-<li>Iterable: use Descriptor-likes in Iterable</li>
+<dl class="simple">
+<dt>Descriptor-like:</dt><dd><ul class="simple">
+<li><p>Descriptor instance: self</p></li>
+<li><p>Descriptor class: use Descriptor.preset() method</p></li>
+<li><p>module: use Descriptor-likes in module</p></li>
+<li><p>Iterable: use Descriptor-likes in Iterable</p></li>
 </ul>
 </dd>
 </dl>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>desc</strong> (<em>Descriptor-like</em>) – descriptors to register</li>
-<li><strong>version</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – version</li>
-<li><strong>ignore_3D</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)"><em>bool</em></a>) – ignore 3D descriptors</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>desc</strong> (<em>Descriptor-like</em>) – descriptors to register</p></li>
+<li><p><strong>version</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – version</p></li>
+<li><p><strong>ignore_3D</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – ignore 3D descriptors</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="mordred.Calculator.echo">
 <code class="descname">echo</code><span class="sig-paren">(</span><em>s</em>, <em>file=&lt;_io.TextIOWrapper name='&lt;stdout&gt;' mode='w' encoding='UTF-8'&gt;</em>, <em>end='\n'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/calculator.html#Calculator.echo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Calculator.echo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Output message.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>s</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – message to output</li>
-<li><strong>file</strong> (<em>file-like</em>) – output to</li>
-<li><strong>end</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – end mark of message</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>s</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – message to output</p></li>
+<li><p><strong>file</strong> (<em>file-like</em>) – output to</p></li>
+<li><p><strong>end</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – end mark of message</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="mordred.Calculator.map">
 <code class="descname">map</code><span class="sig-paren">(</span><em>mols</em>, <em>nproc=None</em>, <em>nmols=None</em>, <em>quiet=False</em>, <em>ipynb=False</em>, <em>id=-1</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/calculator.html#Calculator.map"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Calculator.map" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate descriptors over mols.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>mols</strong> (<em>Iterable</em><em>[</em><em>rdkit.Mol</em><em>]</em>) – moleculars</li>
-<li><strong>nproc</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a>) – number of process to use. default: multiprocessing.cpu_count()</li>
-<li><strong>nmols</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a>) – number of all mols to use in progress-bar. default: mols.__len__()</li>
-<li><strong>quiet</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)"><em>bool</em></a>) – don’t show progress bar. default: False</li>
-<li><strong>ipynb</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)"><em>bool</em></a>) – use ipython notebook progress bar. default: False</li>
-<li><strong>id</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a>) – conformer id to use. default: -1.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mols</strong> (<em>Iterable</em><em>[</em><em>rdkit.Mol</em><em>]</em>) – moleculars</p></li>
+<li><p><strong>nproc</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – number of process to use. default: multiprocessing.cpu_count()</p></li>
+<li><p><strong>nmols</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – number of all mols to use in progress-bar. default: mols.__len__()</p></li>
+<li><p><strong>quiet</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – don’t show progress bar. default: False</p></li>
+<li><p><strong>ipynb</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – use ipython notebook progress bar. default: False</p></li>
+<li><p><strong>id</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – conformer id to use. default: -1.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Iterator[Result[scalar]]</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Iterator[Result[scalar]]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="mordred.Calculator.pandas">
 <code class="descname">pandas</code><span class="sig-paren">(</span><em>mols</em>, <em>nproc=None</em>, <em>nmols=None</em>, <em>quiet=False</em>, <em>ipynb=False</em>, <em>id=-1</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/calculator.html#Calculator.pandas"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.Calculator.pandas" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate descriptors over mols.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">pandas.DataFrame</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="function">
+<dt id="mordred.get_descriptors_in_module">
+<code class="descclassname">mordred.</code><code class="descname">get_descriptors_in_module</code><span class="sig-paren">(</span><em>mdl</em>, <em>submodule=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/calculator.html#get_descriptors_in_module"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.get_descriptors_in_module" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get descriptors in module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mdl</strong> (<em>module</em>) – module to search</p></li>
+<li><p><strong>submodule</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – search recursively</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Iterator[Descriptor]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
 <dt id="mordred.get_descriptors_from_module">
 <code class="descclassname">mordred.</code><code class="descname">get_descriptors_from_module</code><span class="sig-paren">(</span><em>mdl</em>, <em>submodule=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mordred/_base/calculator.html#get_descriptors_from_module"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mordred.get_descriptors_from_module" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get descriptors from module.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>mdl</strong> (<em>module</em>) – module to search</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">[Descriptor]</td>
-</tr>
-</tbody>
-</table>
+<dd><p><strong>[DEPRECATED]</strong> Get descriptors from module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mdl</strong> (<em>module</em>) – module to search</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>[Descriptor]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <div class="toctree-wrapper compound">
@@ -614,6 +571,7 @@
 <li class="toctree-l2"><a class="reference internal" href="api/mordred.MolecularDistanceEdge.html">mordred.MolecularDistanceEdge module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/mordred.MolecularId.html">mordred.MolecularId module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/mordred.MomentOfInertia.html">mordred.MomentOfInertia module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/mordred.PBF.html">mordred.PBF module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/mordred.PathCount.html">mordred.PathCount module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/mordred.Polarizability.html">mordred.Polarizability module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/mordred.RingCount.html">mordred.RingCount module</a></li>
@@ -655,12 +613,12 @@
         <li class="right" >
           <a href="introduction.html" title="Introduction"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">mordred 1.1.2a1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">mordred 1.2.1a1 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2016, Hirotomo Moriwaki.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.5.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.1.
     </div>
   </body>
 </html>
